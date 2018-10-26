@@ -32,4 +32,8 @@
 #'   assert_is_environment assert_is_factor assert_is_function assert_is_integer
 #'   assert_is_list assert_is_matrix assert_is_name assert_is_numeric
 #'   assert_is_symbol assert_is_tbl_df is_a_number is_a_string
+#' @importFrom methods is
+#' @importFrom utils globalVariables
 "_PACKAGE"
+
+globalVariables(".")

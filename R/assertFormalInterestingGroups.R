@@ -1,9 +1,3 @@
-# FIXME sampleData
-#' @importFrom basejump sampleData
-NULL
-
-
-
 #' Interesting Groups Formal Assert Check
 #'
 #' Prevent unwanted downstream behavior when a missing interesting group
@@ -22,7 +16,10 @@ NULL
 #' assertFormalInterestingGroups(rse_small, NULL)
 assertFormalInterestingGroups <- function(object, interestingGroups) {
     stopifnot(isS4(object))
-    sampleData <- sampleData(object)
+    # FIXME Change to basejump.experiment
+    requireNamespace("basejump", quietly = TRUE)
+
+    data <- basejump::sampleData(object)
     
     # Check `interestingGroups` argument.
     if (is.null(interestingGroups)) {
@@ -34,11 +31,11 @@ assertFormalInterestingGroups <- function(object, interestingGroups) {
     }
     
     # Check intersection with sample data.
-    assert_is_subset(interestingGroups, colnames(sampleData))
+    assert_is_subset(interestingGroups, colnames(data))
     
     # Check that interesting groups columns are factors.
     invisible(lapply(
-        X = sampleData[, interestingGroups, drop = FALSE],
+        X = data[, interestingGroups, drop = FALSE],
         FUN = assert_is_factor
     ))
 }

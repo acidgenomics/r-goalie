@@ -25,12 +25,16 @@ Imports:
     assertive.sets,
     assertive.strings,
     assertive.types,
-    basejump,
-    magrittr
+    magrittr,
+    methods,
+    utils
 Suggests:
     S4Vectors,
     SummarizedExperiment,
-    testthat (>= 2.0)
+    basejump,
+    ggplot2,
+    testthat (>= 2.0),
+    tibble
 biocViews: Infrastructure
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.0
