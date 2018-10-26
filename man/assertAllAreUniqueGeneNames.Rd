@@ -21,14 +21,14 @@ unique (non-amgibuous) symbols. It is designed to be used for gene plotting
 particularly when performing single-cell RNA-seq marker analysis.
 }
 \examples{
-library(SummarizedExperiment)
-data(rse_small, package = "basejump")
+library(basejump.data)
+data(rse_small, package = "basejump.data")
 
 object <- rse_small
 print(object)
 
 genes <- object \%>\%
-    rowData() \%>\%
+    SummarizedExperiment::rowData(.) \%>\%
     .[["geneName"]] \%>\%
     as.character() \%>\%
     head()

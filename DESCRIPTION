@@ -32,6 +32,7 @@ Imports:
 Suggests:
     S4Vectors,
     SummarizedExperiment,
+    basejump.data,
     ggplot2,
     testthat (>= 2.0),
     tibble
