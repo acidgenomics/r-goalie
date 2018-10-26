@@ -1,0 +1,31 @@
+Package: basejump.assertions
+Title: Assertions
+Description: Assertive check functions.
+Version: 0.99.0
+Date: 2018-10-26
+Authors@R: person(
+    "Michael", "Steinbaugh",
+    email = "mike@steinbaugh.com",
+    role = c("aut", "cre"),
+    comment = c(ORCID = "0000-0002-2403-2221"))
+URL:
+    https://steinbaugh.com/basejump,
+    https://github.com/steinbaugh/basejump
+BugReports: https://github.com/steinbaugh/basejump/issues
+License: MIT + file LICENSE
+Encoding: UTF-8
+Depends: R (>= 3.5)
+Imports:
+    assertive.base,
+    assertive.code,
+    assertive.data,
+    assertive.files,
+    assertive.numbers,
+    assertive.properties,
+    assertive.sets,
+    assertive.strings,
+    assertive.types
+Suggests: testthat (>= 2.0)
+biocViews: Infrastructure
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 6.1.0
