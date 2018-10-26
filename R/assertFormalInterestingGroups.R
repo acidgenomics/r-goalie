@@ -1,3 +1,8 @@
+# FIXME
+sampleData <- basejump::sampleData
+
+
+
 #' Interesting Groups Formal Assert Check
 #'
 #' Prevent unwanted downstream behavior when a missing interesting group
@@ -16,10 +21,7 @@
 #' assertFormalInterestingGroups(rse_small, NULL)
 assertFormalInterestingGroups <- function(object, interestingGroups) {
     stopifnot(isS4(object))
-    # FIXME Change to basejump.experiment
-    requireNamespace("basejump", quietly = TRUE)
-
-    data <- basejump::sampleData(object)
+    data <- sampleData(object)
     
     # Check `interestingGroups` argument.
     if (is.null(interestingGroups)) {
