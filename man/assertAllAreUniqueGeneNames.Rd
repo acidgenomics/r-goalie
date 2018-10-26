@@ -21,15 +21,18 @@ unique (non-amgibuous) symbols. It is designed to be used for gene plotting
 particularly when performing single-cell RNA-seq marker analysis.
 }
 \examples{
-# FIXME
+library(SummarizedExperiment)
 data(rse_small, package = "basejump")
+
 object <- rse_small
 print(object)
+
 genes <- object \%>\%
-    SummarizedExperiment::rowData(.) \%>\%
+    rowData() \%>\%
     .[["geneName"]] \%>\%
     as.character() \%>\%
     head()
 print(genes)
+
 assertAllAreUniqueGeneNames(object = object, genes = genes)
 }

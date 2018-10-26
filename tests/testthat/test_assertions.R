@@ -1,10 +1,17 @@
 context("Assertions")
 
-data(rse_small, package = "basejump", envir = environment())
+data(
+    rse_small, tx_se_small,
+    package = "basejump",
+    envir = environment()
+)
 
 DataFrame <- S4Vectors::DataFrame
 Gene2Symbol <- basejump::Gene2Symbol
-makeGRangesFromEnsembl <- basejump::makeGRangesFromEnsembl
+
+rowData <- SummarizedExperiment::rowData
+rowRanges <- SummarizedExperiment::rowRanges
+
 tibble <- tibble::tibble
 as_tibble <- tibble::as_tibble
 
@@ -30,7 +37,7 @@ test_that("assertAllAreNonExisting", {
 
 # assertAreGeneAnnotations =====================================================
 test_that("assertAreGeneAnnotations", {
-    object <- makeGRangesFromEnsembl("Homo sapiens", level = "genes")
+    object <- rowRanges(rse_small)
     expect_silent(assertAreGeneAnnotations(object))
     expect_error(
         object = assertAreGeneAnnotations(mtcars),
@@ -42,7 +49,7 @@ test_that("assertAreGeneAnnotations", {
 
 # assertAreTranscriptAnnotations ===============================================
 test_that("assertAreTranscriptAnnotations", {
-    object <- makeGRangesFromEnsembl("Homo sapiens", level = "transcripts")
+    object <- rowData(tx_se_small)
     expect_silent(assertAreTranscriptAnnotations(object))
     expect_error(
         object = assertAreTranscriptAnnotations(mtcars),
