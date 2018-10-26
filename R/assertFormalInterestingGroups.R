@@ -20,7 +20,7 @@ sampleData <- basejump::sampleData
 #' assertFormalInterestingGroups(rse_small, "treatment")
 #' assertFormalInterestingGroups(rse_small, NULL)
 assertFormalInterestingGroups <- function(object, interestingGroups) {
-    stopifnot(isS4(object))
+    assert_that(isS4(object))
     data <- sampleData(object)
     
     # Check `interestingGroups` argument.

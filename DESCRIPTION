@@ -25,13 +25,13 @@ Imports:
     assertive.sets,
     assertive.strings,
     assertive.types,
+    assertthat,
     magrittr,
     methods,
     utils
 Suggests:
     S4Vectors,
     SummarizedExperiment,
-    basejump,
     ggplot2,
     testthat (>= 2.0),
     tibble

@@ -27,7 +27,7 @@
 #' 
 #' assertAllAreUniqueGeneNames(object = object, genes = genes)
 assertAllAreUniqueGeneNames <- function(object, genes) {
-    stopifnot(isS4(object))
+    assert_that(isS4(object))
     assert_is_character(genes)
     # Get all of the gene names stashed in the object.
     if (is(object, "SummarizedExperiment")) {
