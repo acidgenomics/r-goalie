@@ -1,3 +1,9 @@
+# FIXME sampleData
+#' @importFrom basejump sampleData
+NULL
+
+
+
 #' Interesting Groups Formal Assert Check
 #'
 #' Prevent unwanted downstream behavior when a missing interesting group

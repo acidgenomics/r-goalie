@@ -1,3 +1,9 @@
+# FIXME basejump.experiment
+#' @importFrom basejump mapGenesToRownames
+NULL
+
+
+
 #' Assert Formal Gene-to-Symbol Mappings
 #'
 #' @inherit assert
@@ -13,6 +19,9 @@
 #'   rownames must be defined here, otherwise the function will error.
 #'
 #' @examples
+#' DataFrame <- S4Vectors::DataFrame
+#' Gene2Symbol <- basejump::Gene2Symbol
+#' 
 #' object <- DataFrame(
 #'     "sample1" = c(1L, 2L),
 #'     "sample2" = c(3L, 4L),
