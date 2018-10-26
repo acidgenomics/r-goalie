@@ -1,3 +1,3 @@
 library(testthat)
-library(basejump)
+library(basejump.assertions)
 test_check("basejump.assertions")
