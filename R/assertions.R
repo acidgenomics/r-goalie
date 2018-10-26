@@ -68,7 +68,8 @@ assertAllAreNonExisting <- function(
 #'   corresponding `SummarizedExperiment`.
 #'
 #' @examples
-#' data(rse_small)
+#' # FIXME
+#' data(rse_small, package = "basejump")
 #' object <- rse_small
 #' print(object)
 #' genes <- object %>%
@@ -349,7 +350,8 @@ assertFormalGene2Symbol <- function(
 #' @param interestingGroups `character`. Interesting groups.
 #'
 #' @examples
-#' data(rse_small)
+#' # FIXME
+#' data(rse_small, package = "basejump")
 #' assertFormalInterestingGroups(rse_small, "treatment")
 #' assertFormalInterestingGroups(rse_small, NULL)
 assertFormalInterestingGroups <- function(object, interestingGroups) {
