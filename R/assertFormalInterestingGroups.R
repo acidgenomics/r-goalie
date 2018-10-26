@@ -15,8 +15,8 @@ sampleData <- basejump::sampleData
 #' @param interestingGroups `character`. Interesting groups.
 #'
 #' @examples
-#' # FIXME
-#' data(rse_small, package = "basejump")
+#' library(basejump.data)
+#' data(rse_small, package = "basejump.data")
 #' assertFormalInterestingGroups(rse_small, "treatment")
 #' assertFormalInterestingGroups(rse_small, NULL)
 assertFormalInterestingGroups <- function(object, interestingGroups) {

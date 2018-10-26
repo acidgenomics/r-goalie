@@ -19,8 +19,8 @@ Prevent unwanted downstream behavior when a missing interesting group
 is requested by the user.
 }
 \examples{
-# FIXME
-data(rse_small, package = "basejump")
+library(basejump.data)
+data(rse_small, package = "basejump.data")
 assertFormalInterestingGroups(rse_small, "treatment")
 assertFormalInterestingGroups(rse_small, NULL)
 }

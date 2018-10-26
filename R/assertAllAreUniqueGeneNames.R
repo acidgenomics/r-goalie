@@ -12,14 +12,14 @@
 #'   corresponding `SummarizedExperiment`.
 #'
 #' @examples
-#' library(SummarizedExperiment)
-#' data(rse_small, package = "basejump")
+#' library(basejump.data)
+#' data(rse_small, package = "basejump.data")
 #' 
 #' object <- rse_small
 #' print(object)
 #' 
 #' genes <- object %>%
-#'     rowData() %>%
+#'     SummarizedExperiment::rowData(.) %>%
 #'     .[["geneName"]] %>%
 #'     as.character() %>%
 #'     head()
