@@ -2,8 +2,6 @@
 #' 
 #' Assertive check functions.
 #' 
-#' @importFrom SummarizedExperiment rowRanges
-#' @importFrom S4Vectors mcols
 #' @importFrom assertive.base assert_all_are_not_na assert_all_are_true
 #'   assert_are_identical assert_is_identical_to_na is_not_na
 #' @importFrom assertive.code assert_all_are_existing is_existing
@@ -34,5 +32,4 @@
 #'   assert_is_environment assert_is_factor assert_is_function assert_is_integer
 #'   assert_is_list assert_is_matrix assert_is_name assert_is_numeric
 #'   assert_is_symbol assert_is_tbl_df is_a_number is_a_string
-#' @importFrom rlang has_length
 "_PACKAGE"

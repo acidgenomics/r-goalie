@@ -16,8 +16,6 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 Depends: R (>= 3.5)
 Imports:
-    SummarizedExperiment,
-    S4Vectors,
     assertive.base,
     assertive.code,
     assertive.data,
@@ -28,9 +26,11 @@ Imports:
     assertive.strings,
     assertive.types,
     basejump,
-    magrittr,
-    rlang
-Suggests: testthat (>= 2.0)
+    magrittr
+Suggests:
+    S4Vectors,
+    SummarizedExperiment,
+    testthat (>= 2.0)
 biocViews: Infrastructure
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.0

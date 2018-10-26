@@ -26,7 +26,10 @@ assertAllAreURL <- function(object) {
 #'     "r-project.org"
 #' ))
 isURL <- function(object) {
-    if (!is.character(object) || !has_length(object)) {
+    if (
+        !is.character(object) ||
+        length(object) == 0L
+    ) {
         return(FALSE)
     }
     vapply(
