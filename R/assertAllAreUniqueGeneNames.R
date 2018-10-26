@@ -28,10 +28,13 @@ assertAllAreUniqueGeneNames <- function(object, genes) {
     assert_is_character(genes)
     # Get all of the gene names stashed in the object.
     if (is(object, "SummarizedExperiment")) {
-        allGenes <- mcols(rowRanges(object))[["geneName"]]
-    } else {
-        allGenes <- object[["geneName"]]
+        requireNamespace("S4Vectors", quietly = TRUE)
+        requireNamespace("SummarizedExperiment", quietly = TRUE)
+        object <- object %>%
+            SummarizedExperiment::rowRanges(.) %>%
+            S4Vectors::mcols(.)
     }
+    allGenes <- object[["geneName"]]
     assert_is_non_empty(allGenes)
     # Require that the user passed in gene names.
     assert_is_subset(genes, allGenes)
