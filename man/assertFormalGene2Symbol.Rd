@@ -25,6 +25,9 @@ Always stop on error.
 Assert Formal Gene-to-Symbol Mappings
 }
 \examples{
+DataFrame <- S4Vectors::DataFrame
+Gene2Symbol <- basejump::Gene2Symbol
+
 object <- DataFrame(
     "sample1" = c(1L, 2L),
     "sample2" = c(3L, 4L),
