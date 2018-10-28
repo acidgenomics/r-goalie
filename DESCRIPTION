@@ -26,6 +26,7 @@ Imports:
     assertive.strings,
     assertive.types,
     assertthat,
+    basejump,
     magrittr,
     methods,
     utils
