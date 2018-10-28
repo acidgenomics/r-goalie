@@ -12,7 +12,6 @@
 #'   corresponding `SummarizedExperiment`.
 #'
 #' @examples
-#' library(basejump.data)
 #' data(rse_small, package = "basejump.data")
 #' 
 #' object <- rse_small

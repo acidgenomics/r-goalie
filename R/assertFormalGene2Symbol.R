@@ -1,8 +1,3 @@
-# FIXME
-mapGenesToRownames <- basejump::mapGenesToRownames
-
-
-
 #' Assert Formal Gene-to-Symbol Mappings
 #'
 #' @inherit assert
