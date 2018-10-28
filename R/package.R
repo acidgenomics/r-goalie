@@ -38,3 +38,7 @@
 "_PACKAGE"
 
 globalVariables(".")
+
+#' @importFrom magrittr %>%
+#' @export
+magrittr::`%>%`
