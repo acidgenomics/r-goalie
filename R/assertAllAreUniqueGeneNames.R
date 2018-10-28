@@ -12,9 +12,9 @@
 #'   corresponding `SummarizedExperiment`.
 #'
 #' @examples
-#' data(rse_small, package = "basejump.data")
+#' data(rse, package = "basejump.data")
 #' 
-#' object <- rse_small
+#' object <- rse
 #' print(object)
 #' 
 #' genes <- object %>%

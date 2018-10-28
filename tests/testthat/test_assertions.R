@@ -1,10 +1,6 @@
 context("Assertions")
 
-data(
-    rse_small, tx_se_small,
-    package = "basejump",
-    envir = environment()
-)
+data(rse, tx_se, package = "basejump.data", envir = environment())
 
 DataFrame <- S4Vectors::DataFrame
 Gene2Symbol <- basejump::Gene2Symbol
@@ -37,7 +33,7 @@ test_that("assertAllAreNonExisting", {
 
 # assertAreGeneAnnotations =====================================================
 test_that("assertAreGeneAnnotations", {
-    object <- rowRanges(rse_small)
+    object <- rowRanges(rse)
     expect_silent(assertAreGeneAnnotations(object))
     expect_error(
         object = assertAreGeneAnnotations(mtcars),
@@ -49,7 +45,7 @@ test_that("assertAreGeneAnnotations", {
 
 # assertAreTranscriptAnnotations ===============================================
 test_that("assertAreTranscriptAnnotations", {
-    object <- rowData(tx_se_small)
+    object <- rowData(tx_se)
     expect_silent(assertAreTranscriptAnnotations(object))
     expect_error(
         object = assertAreTranscriptAnnotations(mtcars),
@@ -96,7 +92,7 @@ test_that("assertFormalGene2Symbol", {
 test_that("assertFormalInterestingGroups", {
     expect_silent(
         assertFormalInterestingGroups(
-            object = rse_small,
+            object = rse,
             interestingGroups = c("genotype", "treatment")
         )
     )
@@ -104,7 +100,7 @@ test_that("assertFormalInterestingGroups", {
     # Must exist as columns in sampleData.
     expect_error(
         object = assertFormalInterestingGroups(
-            object = rse_small,
+            object = rse,
             interestingGroups = "XXX"
         ),
         regexp = "is_subset : The element 'XXX'"

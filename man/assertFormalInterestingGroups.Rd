@@ -20,7 +20,7 @@ is requested by the user.
 }
 \examples{
 library(basejump.data)
-data(rse_small, package = "basejump.data")
-assertFormalInterestingGroups(rse_small, "treatment")
-assertFormalInterestingGroups(rse_small, NULL)
+data(rse, package = "basejump.data")
+assertFormalInterestingGroups(rse, "treatment")
+assertFormalInterestingGroups(rse, NULL)
 }
