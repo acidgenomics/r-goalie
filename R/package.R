@@ -42,9 +42,3 @@ globalVariables(".")
 #' @importFrom magrittr %>%
 #' @export
 magrittr::`%>%`
-
-# FIXME
-# mapGenesToRownames <- basejump::mapGenesToRownames
-
-# FIXME
-# sampleData <- basejump::sampleData
