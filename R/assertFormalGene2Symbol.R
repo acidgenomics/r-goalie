@@ -71,4 +71,5 @@ assertFormalGene2Symbol <- function(
         genes = genes
     )
     assert_is_subset(rownames, rownames(object))
+    invisible()
 }
