@@ -1,7 +1,3 @@
-#' basejump.assertions
-#' 
-#' Assertive check functions.
-#' 
 #' @importFrom assertive.base assert_all_are_not_na assert_all_are_true
 #'   assert_are_identical assert_is_identical_to_na is_not_na
 #' @importFrom assertive.code assert_all_are_existing is_existing
@@ -35,7 +31,7 @@
 #' @importFrom assertthat assert_that
 #' @importFrom methods is
 #' @importFrom utils globalVariables
-"_PACKAGE"
+NULL
 
 globalVariables(".")
 
