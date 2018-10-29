@@ -26,7 +26,7 @@ Assert Formal Gene-to-Symbol Mappings
 }
 \examples{
 DataFrame <- S4Vectors::DataFrame
-Gene2Symbol <- basejump::Gene2Symbol
+Gene2Symbol <- basejump.classes::Gene2Symbol
 
 object <- DataFrame(
     "sample1" = c(1L, 2L),

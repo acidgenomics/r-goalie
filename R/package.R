@@ -44,7 +44,7 @@ globalVariables(".")
 magrittr::`%>%`
 
 # FIXME
-mapGenesToRownames <- basejump::mapGenesToRownames
+# mapGenesToRownames <- basejump::mapGenesToRownames
 
 # FIXME
-sampleData <- basejump::sampleData
+# sampleData <- basejump::sampleData
