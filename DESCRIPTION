@@ -34,6 +34,7 @@ Suggests:
     SummarizedExperiment,
     basejump.classes,
     basejump.data,
+    basejump.experiment,
     ggplot2,
     testthat (>= 2.0),
     tibble

@@ -65,7 +65,8 @@ assertFormalGene2Symbol <- function(
         rownames(gene2symbol) <- rownames(object)
     }
     # Map genes to object rownames, using gene2symbol.
-    rownames <- mapGenesToRownames(
+    requireNamespace("basejump.experiment")
+    rownames <- basejump.experiment::mapGenesToRownames(
         object = gene2symbol,
         genes = genes
     )

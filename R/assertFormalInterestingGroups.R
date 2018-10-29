@@ -16,7 +16,9 @@
 #' assertFormalInterestingGroups(rse, NULL)
 assertFormalInterestingGroups <- function(object, interestingGroups) {
     assert_that(isS4(object))
-    data <- sampleData(object)
+    
+    requireNamespace("basejump.experiment")
+    data <- basejump.experiment::sampleData(object)
     
     # Check `interestingGroups` argument.
     if (is.null(interestingGroups)) {
