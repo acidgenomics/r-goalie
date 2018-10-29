@@ -3,13 +3,13 @@ context("Assertions")
 data(rse, tx_se, package = "basejump.data", envir = environment())
 
 DataFrame <- S4Vectors::DataFrame
-Gene2Symbol <- basejump::Gene2Symbol
+Gene2Symbol <- basejump.classes::Gene2Symbol
 
 rowData <- SummarizedExperiment::rowData
 rowRanges <- SummarizedExperiment::rowRanges
 
-tibble <- tibble::tibble
 as_tibble <- tibble::as_tibble
+tibble <- tibble::tibble
 
 g2s <- Gene2Symbol(
     object = DataFrame(
@@ -79,9 +79,19 @@ test_that("assertFormalGene2Symbol", {
         "sample2" = c(3L, 4L),
         row.names = genes
     )
-    expect_silent(assertFormalGene2Symbol(object, genes, g2s))
+    expect_null(
+        assertFormalGene2Symbol(
+            object = object,
+            genes = genes,
+            gene2symbol = g2s
+        )
+    )
     expect_error(
-        object = assertFormalGene2Symbol(mtcars, genes, g2s),
+        object = assertFormalGene2Symbol(
+            object = mtcars,
+            genes = genes,
+            gene2symbol = g2s
+        ),
         regexp = "are_identical :"
     )
 })
