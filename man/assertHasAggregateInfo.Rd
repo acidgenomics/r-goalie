@@ -7,7 +7,13 @@
 \usage{
 assertHasAggregateInfo(object)
 
-hasAggregateInfo(object, stop = FALSE)
+hasAggregateInfo(object)
+}
+\arguments{
+\item{object}{Object.}
+}
+\value{
+Always stop on error.
 }
 \description{
 Determine whether an object can be aggregated automatically.

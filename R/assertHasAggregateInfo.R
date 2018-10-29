@@ -3,6 +3,7 @@
 #' Determine whether an object can be aggregated automatically.
 #' 
 #' @name assertHasAggregateInfo
+#' @inherit assert
 NULL
 
 
@@ -18,7 +19,7 @@ assertHasAggregateInfo <- function(object) {
 
 #' @rdname assertHasAggregateInfo
 #' @export
-hasAggregateInfo <- function(object, stop = FALSE) {
+hasAggregateInfo <- function(object) {
     "aggregate" %in% colnames(object)
 }
 
