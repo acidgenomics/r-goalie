@@ -38,6 +38,10 @@ Suggests:
     ggplot2,
     testthat (>= 2.0),
     tibble
+Remotes:
+    steinbaugh/basejump.classes,
+    steinbaugh/basejump.data,
+    steinbaugh/basejump.experiment
 biocViews: Infrastructure
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.0

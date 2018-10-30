@@ -1,0 +1,45 @@
+language: r
+cache: packages
+sudo: false
+bioc_required: true
+
+matrix:
+  include:
+  - os: linux
+    r: bioc-release
+    warnings_are_errors: true
+  - os: linux
+    r: bioc-devel
+    latex: false
+    warnings_are_errors: false
+  - os: osx
+    r: bioc-release
+    fortran: false
+    latex: false
+    warnings_are_errors: false
+  fast_finish: true
+
+env:
+  global:
+    - _R_CHECK_FORCE_SUGGESTS_=false
+    - LINTR_COMMENT_BOT=true
+    - R_REMOTES_NO_ERRORS_FROM_WARNINGS=true
+
+r_packages:
+  - covr
+bioc_packages:
+  - BiocCheck
+r_github_packages:
+  - jimhester/lintr
+
+after_success:
+  - Rscript -e 'lintr::lint_package()'
+  - Rscript -e 'covr::codecov()'
+  - R CMD BiocCheck .
+
+notifications:
+  email:
+    recipients:
+      - mike@steinbaugh.com
+    on_success: change
+    on_failure: always
