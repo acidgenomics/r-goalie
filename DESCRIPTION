@@ -32,12 +32,11 @@ Imports:
 Suggests:
     S4Vectors,
     SummarizedExperiment,
-    basejump.classes,
-    basejump.data,
-    basejump.experiment,
+    basejump,
     ggplot2,
-    testthat (>= 2.0),
+    testthat,
     tibble
+Remotes: steinbaugh/basejump@bioconductor
 biocViews: Infrastructure
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.0
