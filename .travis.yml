@@ -31,6 +31,9 @@ bioc_packages:
   - BiocCheck
 r_github_packages:
   - jimhester/lintr
+  - steinbaugh/basejump.classes
+  - steinbaugh/basejump.data
+  - steinbaugh/basejump.experiment
 
 after_success:
   - Rscript -e 'lintr::lint_package()'
