@@ -9,6 +9,9 @@ install:
 
 platform: x64
 
+cache:
+  - C:\RLibrary
+
 environment:
   global:
     R_ARCH: x64
