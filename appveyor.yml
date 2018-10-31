@@ -18,9 +18,6 @@ environment:
     USE_RTOOLS: true
 
 build_script:
-  - travis-tool.sh install_github steinbaugh/basejump.classes
-  - travis-tool.sh install_github steinbaugh/basejump.data
-  - travis-tool.sh install_github steinbaugh/basejump.experiment
   - travis-tool.sh install_bioc_deps
   - travis-tool.sh install_deps
 
