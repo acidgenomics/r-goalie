@@ -2,7 +2,7 @@ Package: basejump.assertions
 Title: Assertions
 Description: Assertive check functions.
 Version: 0.99.1
-Date: 2018-10-30
+Date: 2018-11-01
 Authors@R: person(
     "Michael", "Steinbaugh",
     email = "mike@steinbaugh.com",
