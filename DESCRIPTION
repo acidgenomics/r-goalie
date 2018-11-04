@@ -1,8 +1,8 @@
 Package: basejump.assertions
 Title: Assertions
 Description: Assertive check functions.
-Version: 0.99.1
-Date: 2018-11-01
+Version: 0.8.0
+Date: 2018-11-04
 Authors@R: person(
     "Michael", "Steinbaugh",
     email = "mike@steinbaugh.com",
@@ -32,9 +32,9 @@ Imports:
 Suggests:
     S4Vectors,
     SummarizedExperiment,
-    basejump.classes,
-    basejump.data,
-    basejump.experiment,
+    basejump.classes (>= 0.8),
+    basejump.data (>= 0.8),
+    basejump.experiment (>= 0.8),
     ggplot2,
     testthat,
     tibble
@@ -44,4 +44,4 @@ Remotes:
     steinbaugh/basejump.experiment,
 biocViews: Infrastructure
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 6.1.0
+RoxygenNote: 6.1.0.9000
