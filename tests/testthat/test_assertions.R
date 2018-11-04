@@ -2,14 +2,14 @@ context("Assertions")
 
 data(rse, tx_se, package = "basejump.data", envir = environment())
 
+# nolint start
 DataFrame <- S4Vectors::DataFrame
 Gene2Symbol <- basejump.classes::Gene2Symbol
-
+as_tibble <- tibble::as_tibble
 rowData <- SummarizedExperiment::rowData
 rowRanges <- SummarizedExperiment::rowRanges
-
-as_tibble <- tibble::as_tibble
 tibble <- tibble::tibble
+# nolint end
 
 g2s <- Gene2Symbol(
     object = DataFrame(
@@ -106,7 +106,7 @@ test_that("assertFormalInterestingGroups", {
             interestingGroups = c("genotype", "treatment")
         )
     )
-    
+
     # Must exist as columns in sampleData.
     expect_error(
         object = assertFormalInterestingGroups(
@@ -135,7 +135,7 @@ test_that("assertHasRownames", {
     expect_silent(
         assertHasRownames(as_tibble(df, rownames = "rowname"))
     )
-    
+
     expect_error(
         assertHasRownames(DataFrame())
     )

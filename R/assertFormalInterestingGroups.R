@@ -16,10 +16,10 @@
 #' assertFormalInterestingGroups(rse, NULL)
 assertFormalInterestingGroups <- function(object, interestingGroups) {
     assert_that(isS4(object))
-    
+
     requireNamespace("basejump.experiment")
     data <- basejump.experiment::sampleData(object)
-    
+
     # Check `interestingGroups` argument.
     if (is.null(interestingGroups)) {
         # Early return clean on `NULL` value (e.g. DESeqDataSet).
@@ -28,10 +28,10 @@ assertFormalInterestingGroups <- function(object, interestingGroups) {
         # Otherwise, require that `interestingGroups` is a character.
         assert_is_character(interestingGroups)
     }
-    
+
     # Check intersection with sample data.
     assert_is_subset(interestingGroups, colnames(data))
-    
+
     # Check that interesting groups columns are factors.
     invisible(lapply(
         X = data[, interestingGroups, drop = FALSE],

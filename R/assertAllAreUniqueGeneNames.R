@@ -13,17 +13,17 @@
 #'
 #' @examples
 #' data(rse, package = "basejump.data")
-#' 
+#'
 #' object <- rse
 #' print(object)
-#' 
+#'
 #' genes <- object %>%
 #'     SummarizedExperiment::rowData(.) %>%
 #'     .[["geneName"]] %>%
 #'     as.character() %>%
 #'     head()
 #' print(genes)
-#' 
+#'
 #' assertAllAreUniqueGeneNames(object = object, genes = genes)
 assertAllAreUniqueGeneNames <- function(object, genes) {
     assert_that(isS4(object))
