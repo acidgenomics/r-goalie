@@ -1,0 +1,6 @@
+## basejump 0.1.0 (2018-11-1)
+
+- Initial release, migrating assertive check functions from [basejump][]
+  package.
+
+[basejump]: https://steinbaugh.com/basejump/
