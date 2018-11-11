@@ -17,6 +17,15 @@ areNonExisting <- function(
 
 #' @rdname areNonExisting
 #' @export
-assertAreNonExisting <- function(...) {
-    assert_that(areNonExisting(...))
+assertAreNonExisting <- function(
+    x,
+    envir = parent.frame(),
+    inherits = FALSE
+) {
+    # `assert_that()` isn't returning error correctly here.
+    stopifnot(areNonExisting(
+        x = x,
+        envir = envir,
+        inherits = inherits
+    ))
 }
