@@ -1,0 +1,66 @@
+#' Is Directory?
+#'
+#' @name isDir
+#' @inherit params
+#'
+#' @examples
+#' ## Requires scalar.
+#' isDir("~")
+#'
+#' ## Parameterized.
+#' areDirs("~")
+NULL
+
+
+
+# isDir ========================================================================
+#' @rdname isDir
+#' @export
+isDir <- function(x) {
+    assert_that(is_string(x))
+    dir.exists(x)
+}
+
+.msg.isDir <- function(x) {
+    paste(x, "is not a directory.")
+}
+
+on_failure(isDir) <- function(call, env) {
+    .msg.isDir(x = deparse(call[["x"]]))
+}
+
+#' @rdname isDir
+#' @export
+assertIsDir <- function(x) {
+    assert_that(
+        isDir(x),
+        msg = .msg.isDir(x = deparse(substitute(x)))
+    )
+}
+
+
+
+# areDirs ======================================================================
+#' @rdname isDir
+#' @export
+areDirs <- function(x) {
+    assert_that(is.character(x))
+    all(dir.exists(x))
+}
+
+.msg.areDirs <- function(x) {
+    paste(x, "are not all directories.")
+}
+
+on_failure(areDirs) <- function(call, env) {
+    .msg.areDirs(x = deparse(call[["x"]]))
+}
+
+#' @rdname isDir
+#' @export
+assertAreDirs <- function(x) {
+    assert_that(
+        areDirs(x),
+        msg = .msg.areDirs(x = deparse(substitute(x)))
+    )
+}
