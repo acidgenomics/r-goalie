@@ -4,13 +4,16 @@
 \alias{assertIsANumberOrNULL}
 \title{Assert Is a Number or NULL}
 \usage{
-assertIsANumberOrNULL(object)
+assertIsANumberOrNULL(x)
 }
 \arguments{
-\item{object}{Object.}
+\item{x}{Object.}
 }
 \value{
-Always stop on error.
+\itemize{
+\item \code{boolean flag} for \code{are/has/is*()} functions.
+\item Stop on error for \code{assert*()} functions  (see \code{stop()}for details).
+}
 }
 \description{
 Assert Is a Number or NULL
