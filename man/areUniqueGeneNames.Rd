@@ -26,8 +26,7 @@ unique (non-amgibuous) symbols. It is designed to be used for gene plotting
 particularly when performing single-cell RNA-seq marker analysis.
 }
 \examples{
-library(SummarizedExperiment)
-x <- SummarizedExperiment(
+x <- SummarizedExperiment::SummarizedExperiment(
     assays = matrix(
         data = seq_len(16L),
         nrow = 4L,
@@ -37,11 +36,11 @@ x <- SummarizedExperiment(
             paste0("sample", seq_len(4L))
         )
     ),
-    rowData = DataFrame(
+    rowData = S4Vectors::DataFrame(
         geneID = paste0("ENSG0000000000", seq_len(4L)),
         geneName = paste0("SYMBOL", seq_len(4L))
     )
 )
-genes <- rowData(x)$geneName
+genes <- SummarizedExperiment::rowData(x)$geneName
 areUniqueGeneNames(x = x, genes = genes)
 }

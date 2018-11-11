@@ -38,8 +38,8 @@ assertIsANumberOrNULL <- function(x) {
 #' @export
 #'
 #' @examples
-#' assertIsAStringOrNULL("hello world")
-#' assertIsAStringOrNULL(NULL)
+#' assertIsStringOrNULL("hello world")
+#' assertIsStringOrNULL(NULL)
 assertIsStringOrNULL <- function(x) {
     assert_is_any_of(x, classes = c("character", "NULL"))
     if (is.character(x)) {
