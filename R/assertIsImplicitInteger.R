@@ -1,70 +1,24 @@
 #' Assert Is Implicit Integer
 #'
 #' @name assertIsImplicitInteger
-#' @inherit assert
+#' @inherit params
+#'
+#' @examples
+#' isImplicitInteger(list(1, 1L, 1.1, "XXX"))
+#' assertIsImplicitInteger(c(1, 2))
+#' assertIsImplicitIntegerOrNULL(c(1, 2))
+#' assertIsImplicitIntegerOrNULL(NULL)
+#'
+#' isAnImplicitInteger(1)
+#' assertIsAnImplicitInteger(1)
+#' assertIsAnImplicitIntegerOrNULL(1)
+#' assertIsAnImplicitIntegerOrNULL(NULL)
 NULL
 
 
 
 #' @rdname assertIsImplicitInteger
 #' @export
-#' @examples
-#' assertIsAnImplicitInteger(1)
-assertIsAnImplicitInteger <- function(object) {
-    assert_all_are_true(isAnImplicitInteger(object))
-}
-
-
-
-#' @rdname assertIsImplicitInteger
-#' @export
-#' @examples
-#' assertIsAnImplicitIntegerOrNULL(1)
-#' assertIsAnImplicitIntegerOrNULL(NULL)
-assertIsAnImplicitIntegerOrNULL <- function(object) {
-    assert_all_are_true(any(isAnImplicitInteger(object), is.null(object)))
-}
-
-
-
-#' @rdname assertIsImplicitInteger
-#' @export
-#' @examples
-#' assertIsImplicitInteger(c(1, 2))
-assertIsImplicitInteger <- function(object) {
-    assert_all_are_true(isImplicitInteger(object))
-}
-
-
-
-#' @rdname assertIsImplicitInteger
-#' @export
-#' @examples
-#' assertIsImplicitIntegerOrNULL(c(1, 2))
-#' assertIsImplicitIntegerOrNULL(NULL)
-assertIsImplicitIntegerOrNULL <- function(object) {
-    assert_all_are_true(any(isImplicitInteger(object), is.null(object)))
-}
-
-
-
-#' @rdname assertIsImplicitInteger
-#' @export
-#' @examples
-#' isAnImplicitInteger(1)
-isAnImplicitInteger <- function(object) {
-    if (!is_a_number(object)) {
-        return(FALSE)
-    }
-    isImplicitInteger(object)
-}
-
-
-
-#' @rdname assertIsImplicitInteger
-#' @export
-#' @examples
-#' isImplicitInteger(list(1, 1L, 1.1, "XXX"))
 isImplicitInteger <- function(object) {
     vapply(
         X = object,
@@ -83,4 +37,50 @@ isImplicitInteger <- function(object) {
         },
         FUN.VALUE = logical(1L)
     )
+}
+
+
+
+#' @rdname assertIsImplicitInteger
+#' @export
+assertIsImplicitInteger <- function(object) {
+    assert_all_are_true(isImplicitInteger(object))
+}
+
+
+
+#' @rdname assertIsImplicitInteger
+#' @export
+assertIsImplicitIntegerOrNULL <- function(object) {
+    assert_any_are_true(c(
+        isImplicitInteger(object),
+        is.null(object)
+    ))
+}
+
+
+
+#' @rdname assertIsImplicitInteger
+#' @export
+isAnImplicitInteger <- function(object) {
+    if (!is_a_number(object)) {
+        return(FALSE)
+    }
+    isImplicitInteger(object)
+}
+
+
+
+#' @rdname assertIsImplicitInteger
+#' @export
+assertIsAnImplicitInteger <- function(object) {
+    assert_that(isAnImplicitInteger(object))
+}
+
+
+
+#' @rdname assertIsImplicitInteger
+#' @export
+assertIsAnImplicitIntegerOrNULL <- function(object) {
+    assert_that(any(isAnImplicitInteger(object), is.null(object)))
 }

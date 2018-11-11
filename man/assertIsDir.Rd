@@ -4,10 +4,7 @@
 \alias{assertIsDir}
 \title{Assert Is Directory}
 \usage{
-assertIsDir(object)
-}
-\arguments{
-\item{object}{Object.}
+assertIsDir(dir)
 }
 \value{
 Always stop on error.

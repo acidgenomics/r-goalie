@@ -1,6 +1,6 @@
 #' Assert All Variables Are Non-Existing
 #'
-#' @inherit assert
+#' @inherit params
 #' @export
 #'
 #' @param object `character`. Variable names to check in `environment`.

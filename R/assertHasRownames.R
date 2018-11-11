@@ -3,8 +3,8 @@
 #' A stricter alternative to the assertive version that works properly with
 #' data frames.
 #'
-#' @inherit assert
-#' @export
+#' @name assertHasRownames
+#' @inherit params
 #'
 #' @examples
 #' object <- S4Vectors::DataFrame(
@@ -14,24 +14,21 @@
 #' )
 #' print(object)
 #' assertHasRownames(object)
-assertHasRownames <- function(object) {
-    assert_all_are_true(hasRownames(object))
-    if (!is(object, "tbl_df")) {
-        assert_are_disjoint_sets(
-            x = rownames(object),
-            y = as.character(seq_len(nrow(object)))
-        )
-    }
-}
+NULL
 
 
 
-# `tibble::has_rownames()` may be more consistent than
+# `tibble::has_rownames()` appears to be more consistent than
 # `assertive.properties::has_rownames()` for `DataFrame` and `tbl_df` class.
 #' @rdname assertHasRownames
 #' @export
 hasRownames <- function(object) {
-    if (is(object, "tbl_df")) {
+    if (
+        is(object, "data.table") ||
+        is(object, "tbl_df")
+    ) {
+        # Check for rowname column for classes that inherit data.frame but
+        # don't allow rownames to be set.
         "rowname" %in% colnames(object)
     } else if (identical(
         x = as.character(rownames(object)),
@@ -41,5 +38,19 @@ hasRownames <- function(object) {
         FALSE
     } else {
         has_rownames(object)
+    }
+}
+
+
+
+#' @rdname assertHasRownames
+#' @export
+assertHasRownames <- function(object) {
+    assert_that(hasRownames(object))
+    if (!is(object, "tbl_df")) {
+        assert_are_disjoint_sets(
+            x = rownames(object),
+            y = as.character(seq_len(nrow(object)))
+        )
     }
 }

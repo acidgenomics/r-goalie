@@ -1,6 +1,6 @@
 #' Assert Formal Gene-to-Symbol Mappings
 #'
-#' @inherit assert
+#' @inherit params
 #' @export
 #'
 #' @param object Object class supporting `rownames`. All rownames in this object
@@ -14,7 +14,7 @@
 #'
 #' @examples
 #' DataFrame <- S4Vectors::DataFrame
-#' Gene2Symbol <- basejump.classes::Gene2Symbol
+#' Gene2Symbol <- basejump::Gene2Symbol
 #'
 #' object <- DataFrame(
 #'     "sample1" = c(1L, 2L),
@@ -65,11 +65,7 @@ assertFormalGene2Symbol <- function(
         rownames(gene2symbol) <- rownames(object)
     }
     # Map genes to object rownames, using gene2symbol.
-    requireNamespace("basejump.experiment")
-    rownames <- basejump.experiment::mapGenesToRownames(
-        object = gene2symbol,
-        genes = genes
-    )
+    rownames <- mapGenesToRownames(object = gene2symbol, genes = genes)
     assert_is_subset(rownames, rownames(object))
     invisible()
 }

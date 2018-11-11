@@ -1,7 +1,6 @@
 #' Assert Is Fill Palette Scale Discrete or NULL
 #'
-#' @inherit assert
-#'
+#' @inherit params
 #' @export
 #'
 #' @examples

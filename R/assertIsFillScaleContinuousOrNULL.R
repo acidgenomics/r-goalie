@@ -1,7 +1,6 @@
 #' Assert Is Fill Palette Scale Continuous or NULL
 #'
-#' @inherit assert
-#'
+#' @inherit params
 #' @export
 #'
 #' @examples

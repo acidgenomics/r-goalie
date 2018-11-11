@@ -1,6 +1,6 @@
 #' Assert Formal Compression
 #'
-#' @inherit assert
+#' @inherit params
 #' @export
 #'
 #' @examples

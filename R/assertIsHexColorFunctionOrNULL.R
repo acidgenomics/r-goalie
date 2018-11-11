@@ -1,6 +1,6 @@
 #' Assert Is Hex Color Function or NULL
 #'
-#' @inherit assert
+#' @inherit params
 #' @export
 #'
 #' @examples

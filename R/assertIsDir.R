@@ -1,12 +1,12 @@
 #' Assert Is Directory
 #'
-#' @inherit assert
-#'
+#' @inherit params
+#' @inheritParams params
 #' @export
 #'
 #' @examples
 #' assertIsDir("~")
-assertIsDir <- function(object) {
-    assert_is_a_string(object)
-    assert_all_are_dirs(object)
+assertIsDir <- function(dir) {
+    assert_is_a_string(dir)
+    assert_that(dir.exists(dir))
 }

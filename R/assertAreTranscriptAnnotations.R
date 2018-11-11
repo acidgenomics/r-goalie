@@ -3,7 +3,7 @@
 #' Must contain `transcriptID` and `transcriptName` columns. Does not need to
 #' contain rownames, so `tibble` class is supported.
 #'
-#' @inherit assert
+#' @inherit params
 #' @export
 #'
 #' @param object Object that can be coerced to `data.frame`.

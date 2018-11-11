@@ -19,8 +19,7 @@ Prevent unwanted downstream behavior when a missing interesting group
 is requested by the user.
 }
 \examples{
-library(basejump.data)
-data(rse, package = "basejump.data")
+data(rse)
 assertFormalInterestingGroups(rse, "treatment")
 assertFormalInterestingGroups(rse, NULL)
 }
