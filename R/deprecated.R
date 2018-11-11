@@ -81,13 +81,13 @@ assertIsAHeaderLevel <- function(...) {
 
 #' @rdname defunct
 #' @export
-assertIsCharacterOrNULL <- function(object, ...) {
+assertIsCharacterOrNULL <- function(...) {
     .Defunct("assertive::assert_is_any_of")
 }
 
 #' @rdname defunct
 #' @export
-assertIsDataFrameOrNULL <- function(object, ...) {
+assertIsDataFrameOrNULL <- function(...) {
     .Defunct("assertive::assert_is_any_of")
 }
 
