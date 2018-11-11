@@ -1,4 +1,4 @@
-context("Plots")
+context("Plot formal arguments")
 
 test_that("assertIsColorScaleContinuousOrNULL", {
     x <- ggplot2::scale_color_gradient(low = "red", high = "blue")
