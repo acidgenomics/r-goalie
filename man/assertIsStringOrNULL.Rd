@@ -19,6 +19,6 @@ assertIsStringOrNULL(x)
 Is String (or NULL)?
 }
 \examples{
-assertIsAStringOrNULL("hello world")
-assertIsAStringOrNULL(NULL)
+assertIsStringOrNULL("hello world")
+assertIsStringOrNULL(NULL)
 }
