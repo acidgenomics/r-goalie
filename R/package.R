@@ -2,9 +2,11 @@
 #'
 #' Assertive check functions for defensive R programming.
 #'
+#' @keywords internal
+#'
 #' @importFrom assertive.base assert_all_are_not_na assert_all_are_true
 #'   assert_any_are_true assert_are_identical assert_is_identical_to_na
-#'   is_not_na
+#'   get_name_in_parent is_not_na
 #' @importFrom assertive.code assert_all_are_existing is_existing
 #' @importFrom assertive.data assert_all_are_hex_colors is_hex_color
 #' @importFrom assertive.files assert_all_are_dirs assert_all_are_existing_files
@@ -13,6 +15,7 @@
 #'   assert_all_are_greater_than_or_equal_to assert_all_are_in_closed_range
 #'   assert_all_are_in_open_range assert_all_are_in_range
 #'   assert_all_are_non_negative assert_all_are_positive is_positive
+#'   is_in_open_range
 #' @importFrom assertive.properties assert_are_same_length assert_has_colnames
 #'   assert_has_dimnames assert_has_dims assert_has_names
 #'   assert_has_no_duplicates assert_has_rownames assert_has_rows
@@ -33,13 +36,36 @@
 #'   assert_is_environment assert_is_factor assert_is_function assert_is_integer
 #'   assert_is_list assert_is_matrix assert_is_name assert_is_numeric
 #'   assert_is_symbol assert_is_tbl_df is_a_number is_a_string
-#' @importFrom assertthat assert_that
+#' @importFrom assertthat assert_that on_failure<-
 #' @importFrom methods is
 #' @importFrom utils globalVariables
+#' @importFrom rlang is_integerish is_scalar_double is_scalar_integerish
+#'   is_string
 "_PACKAGE"
+
+
 
 globalVariables(".")
 
 #' @importFrom magrittr %>%
 #' @export
 magrittr::`%>%`
+
+
+
+#' Parameters
+#'
+#' @name params
+#' @keywords internal
+#'
+#' @param envir `environment`. Environment.
+#' @param genes `character`. Genes.
+#' @param inherits `boolean`. Should the enclosing frames of the `environment`
+#'   be searched?
+#' @param names `character`. Names (e.g. rownames, colnames).
+#' @param x Object.
+#'
+#' @return
+#' - `boolean flag` for `are/has/is*()` functions.
+#' - Stop on error for `assert*()` functions  (see `stop()`for details).
+NULL
