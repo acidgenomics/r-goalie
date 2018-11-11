@@ -7,7 +7,7 @@
 \usage{
 areNonExisting(x, envir = parent.frame(), inherits = TRUE)
 
-assertAreNonExisting(...)
+assertAreNonExisting(x, envir = parent.frame(), inherits = FALSE)
 }
 \arguments{
 \item{x}{\code{character}. Variable names to check in \code{environment}.}

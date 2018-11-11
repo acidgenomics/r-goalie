@@ -2,12 +2,15 @@
 % Please edit documentation in R/deprecated.R
 \name{deprecated}
 \alias{deprecated}
+\alias{assertAllAreNonExisting}
 \alias{assertAllAreValidNames}
 \alias{assertFormalGene2symbol}
 \alias{assertIsAHeaderLevel}
 \alias{assertIsAStringOrNULL}
 \title{Deprecated Functions}
 \usage{
+assertAllAreNonExisting(...)
+
 assertAllAreValidNames(...)
 
 assertFormalGene2symbol(...)
