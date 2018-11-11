@@ -28,6 +28,7 @@ Imports:
     assertthat,
     magrittr,
     methods,
+    rlang,
     utils
 Suggests:
     S4Vectors,

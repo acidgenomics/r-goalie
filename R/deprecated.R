@@ -63,20 +63,13 @@ assertAllAreValidNames <- function(...) {
 #' @rdname defunct
 #' @export
 assertAreGeneAnnotations <- function(...) {
-    .Defunct(msg = "Create `Gene2Symbol` class object.")
+    .Defunct(msg = "Create `Gene2Symbol` class object with basejump.")
 }
 
 #' @rdname defunct
 #' @export
 assertAreTranscriptAnnotations <- function(...) {
-    .Defunct(msg = "Create `Tx2Gene` class object.")
-}
-
-#' @rdname deprecated
-#' @export
-assertFormalGene2symbol <- function(...) {
-    .Deprecated("assertFormalGene2Symbol")
-    assertFormalGene2Symbol(...)
+    .Defunct(msg = "Create `Tx2Gene` class object with basejump.")
 }
 
 #' @rdname deprecated
@@ -108,13 +101,13 @@ assertIsDataFrameOrNULL <- function(...) {
 #' @rdname defunct
 #' @export
 assertIsGene2symbol <- function(...) {
-    .Defunct(msg = "Create `Gene2Symbol` class object.")
+    .Defunct(msg = "Create `Gene2Symbol` class object with basejump.")
 }
 
 #' @rdname defunct
 #' @export
 assertIsTx2gene <- function(...) {
-    .Defunct(msg = "Create `Tx2Gene` class object.")
+    .Defunct(msg = "Create `Tx2Gene` class object with basejump.")
 }
 
 

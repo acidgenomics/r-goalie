@@ -50,6 +50,6 @@ areUniqueGeneNames <- function(x, genes) {
 assertAreUniqueGeneNames <- function(x, genes) {
     assert_that(
         isS4(x),
-        allAreUniqueGeneNames(x, genes)
+        areUniqueGeneNames(x, genes)
     )
 }
