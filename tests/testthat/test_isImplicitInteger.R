@@ -1,7 +1,31 @@
 context("Is implicit integer (integerish)?")
 
 test_that("isImplicitInteger", {
-    expect_false(isImplicitInteger(list(1, 1L, 1.1, "XXX")))  # nolint
+    expect_true(isImplicitInteger(c(1, 2)))  # nolint
+    expect_false(isImplicitInteger(c(1.1, 2.1)))
+    expect_false(isImplicitInteger("XXX"))
+})
+
+test_that("assertIsImplicitInteger", {
+    expect_silent(assertIsImplicitInteger(c(1, 2)))  # nolint
+    expect_silent(assertIsImplicitInteger(c(1L, 2L)))
+    expect_silent(assertIsImplicitInteger(c(1.0, 2.0)))
+    expect_error(assertIsImplicitInteger(c(1.1, 2.1)))
+})
+
+test_that("assertIsImplicitIntegerOrNULL", {
+    expect_silent(assertIsImplicitIntegerOrNULL(NULL))
+    expect_silent(assertIsImplicitIntegerOrNULL(c(1, 2)))  # nolint
+    expect_silent(assertIsImplicitIntegerOrNULL(c(1L, 2L)))
+    expect_silent(assertIsImplicitIntegerOrNULL(c(1.0, 2.0)))
+    expect_error(assertIsImplicitIntegerOrNULL(c(1.1, 2.1)))
+})
+
+test_that("isAnImplicitInteger", {
+    expect_true(isAnImplicitInteger(1))  # nolint
+    expect_true(isAnImplicitInteger(1L))
+    expect_true(isAnImplicitInteger(1.0))
+    expect_false(isAnImplicitInteger(1.1))
 })
 
 test_that("assertIsAnImplicitInteger", {
