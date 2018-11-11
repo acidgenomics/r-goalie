@@ -14,12 +14,12 @@ isAlpha <- function(x) {
     x > 0L && x < 1L
 }
 
-.msg <- function(x) {
+.msg.isAlpha <- function(x) {
     paste(x, "is not an alpha (numeric scalar > 0 and < 1).")
 }
 
 on_failure(isAlpha) <- function(call, env) {
-    .msg(x = deparse(call[["x"]]))
+    .msg.isAlpha(x = deparse(call[["x"]]))
 }
 
 #' @rdname isAlpha
@@ -27,6 +27,6 @@ on_failure(isAlpha) <- function(call, env) {
 assertIsAlpha <- function(x) {
     assert_that(
         isAlpha(x),
-        msg = .msg(x = deparse(substitute(x)))
+        msg = .msg.isAlpha(x = deparse(substitute(x)))
     )
 }
