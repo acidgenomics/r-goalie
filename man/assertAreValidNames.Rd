@@ -19,6 +19,8 @@ validDimnames(object)
 assertHasValidDimnames(object)
 }
 \arguments{
+\item{names}{\code{character}. Names (e.g. rownames, colnames).}
+
 \item{object}{Object.}
 }
 \value{
@@ -28,7 +30,7 @@ Always stop on error.
 Assert Are Valid Names
 }
 \examples{
-data(rse)
+data(rse, package = "basejump")
 gr <- SummarizedExperiment::rowRanges(rse)
 
 # Dots (periods) and underscores are valid.

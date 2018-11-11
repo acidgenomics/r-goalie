@@ -8,7 +8,7 @@
 #' @export
 #'
 #' @examples
-#' data(rse)
+#' data(rse, package = "basejump")
 #'
 #' object <- rse
 #' print(object)

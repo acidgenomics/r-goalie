@@ -10,12 +10,13 @@
 #' @param interestingGroups `character`. Interesting groups.
 #'
 #' @examples
-#' data(rse)
+#' data(rse, package = "basejump")
 #' assertFormalInterestingGroups(rse, "treatment")
 #' assertFormalInterestingGroups(rse, NULL)
 assertFormalInterestingGroups <- function(object, interestingGroups) {
+    requireNamespace("basejump", quietly = TRUE)
     assert_that(isS4(object))
-    data <- sampleData(object)
+    data <- basejump::sampleData(object)
 
     # Check `interestingGroups` argument.
     if (is.null(interestingGroups)) {

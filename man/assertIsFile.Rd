@@ -6,6 +6,9 @@
 \usage{
 assertIsFile(file)
 }
+\arguments{
+\item{file}{\code{string}. File path.}
+}
 \value{
 Always stop on error.
 }

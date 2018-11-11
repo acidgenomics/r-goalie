@@ -10,7 +10,7 @@ assertAllAreNonExisting(object, envir = parent.frame(),
 \arguments{
 \item{object}{\code{character}. Variable names to check in \code{environment}.}
 
-\item{envir}{\code{environment}.}
+\item{envir}{\code{environment}. Environment.}
 
 \item{inherits}{\code{boolean}. Should the enclosing frames of the \code{environment}
 be searched?}

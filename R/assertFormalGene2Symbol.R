@@ -53,6 +53,7 @@ assertFormalGene2Symbol <- function(
     genes,
     gene2symbol
 ) {
+    requireNamespace("basejump", quietly = TRUE)
     assertHasRownames(object)
     assert_is_character(genes)
     assert_is_non_empty(genes)
@@ -65,7 +66,10 @@ assertFormalGene2Symbol <- function(
         rownames(gene2symbol) <- rownames(object)
     }
     # Map genes to object rownames, using gene2symbol.
-    rownames <- mapGenesToRownames(object = gene2symbol, genes = genes)
+    rownames <- basejump::mapGenesToRownames(
+        object = gene2symbol,
+        genes = genes
+    )
     assert_is_subset(rownames, rownames(object))
     invisible()
 }

@@ -6,6 +6,9 @@
 \usage{
 assertIsDir(dir)
 }
+\arguments{
+\item{dir}{\code{string}. Directory path.}
+}
 \value{
 Always stop on error.
 }
