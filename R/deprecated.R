@@ -46,7 +46,12 @@ assertIsGFF <- function(...) {
 
 
 # v0.1.0 =======================================================================
-# TODO Improve object to x remapping.
+#' @rdname deprecated
+#' @export
+assertAllAreNonExisting <- function(...) {
+    .Deprecated("assertAreNonExisting")
+    assertAreNonExisting(...)
+}
 
 #' @rdname deprecated
 #' @export
