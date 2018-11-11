@@ -2,8 +2,6 @@ context("Has rownames?")
 
 as_tibble <- tibble::as_tibble
 
-
-
 test_that("assertHasRownames", {
     df <- data.frame(
         x = seq_len(2L),
