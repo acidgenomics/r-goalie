@@ -1,17 +1,17 @@
-Package: basejump.assertions
+Package: goalie
 Title: Assertions
-Description: Assertive check functions.
-Version: 0.8.0
-Date: 2018-11-04
+Description: Assertive check functions for defensive R programming.
+Version: 0.1.0
+Date: 2018-11-11
 Authors@R: person(
     "Michael", "Steinbaugh",
     email = "mike@steinbaugh.com",
     role = c("aut", "cre"),
     comment = c(ORCID = "0000-0002-2403-2221"))
 URL:
-    https://steinbaugh.com/basejump,
-    https://github.com/steinbaugh/basejump
-BugReports: https://github.com/steinbaugh/basejump/issues
+    https://steinbaugh.com/goalie,
+    https://github.com/steinbaugh/goalie
+BugReports: https://github.com/steinbaugh/goalie/issues
 License: MIT + file LICENSE
 Encoding: UTF-8
 Depends: R (>= 3.5)
@@ -32,16 +32,10 @@ Imports:
 Suggests:
     S4Vectors,
     SummarizedExperiment,
-    basejump.classes (>= 0.8),
-    basejump.data (>= 0.8),
-    basejump.experiment (>= 0.8),
+    basejump,
     ggplot2,
     testthat,
     tibble
-Remotes:
-    steinbaugh/basejump.classes,
-    steinbaugh/basejump.data,
-    steinbaugh/basejump.experiment,
 biocViews: Infrastructure
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 6.1.0.9000
+RoxygenNote: 6.1.1

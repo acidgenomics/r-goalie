@@ -3,22 +3,19 @@
 #' Prevent unwanted downstream behavior when a missing interesting group
 #' is requested by the user.
 #'
-#' @inherit assert
+#' @inherit params
 #' @export
 #'
 #' @param object S4 class object.
 #' @param interestingGroups `character`. Interesting groups.
 #'
 #' @examples
-#' library(basejump.data)
-#' data(rse, package = "basejump.data")
+#' data(rse)
 #' assertFormalInterestingGroups(rse, "treatment")
 #' assertFormalInterestingGroups(rse, NULL)
 assertFormalInterestingGroups <- function(object, interestingGroups) {
     assert_that(isS4(object))
-
-    requireNamespace("basejump.experiment")
-    data <- basejump.experiment::sampleData(object)
+    data <- sampleData(object)
 
     # Check `interestingGroups` argument.
     if (is.null(interestingGroups)) {

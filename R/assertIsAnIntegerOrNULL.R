@@ -1,6 +1,6 @@
 #' Assert Is an Integer or NULL
 #'
-#' @inherit assert
+#' @inherit params
 #' @export
 #'
 #' @examples

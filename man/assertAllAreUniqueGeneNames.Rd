@@ -7,10 +7,7 @@
 assertAllAreUniqueGeneNames(object, genes)
 }
 \arguments{
-\item{object}{\code{SummarizedExperiment}.}
-
-\item{genes}{\code{character}. Input vector to check against definitions in the
-corresponding \code{SummarizedExperiment}.}
+\item{object}{Object.}
 }
 \value{
 Always stop on error.
@@ -21,7 +18,7 @@ unique (non-amgibuous) symbols. It is designed to be used for gene plotting
 particularly when performing single-cell RNA-seq marker analysis.
 }
 \examples{
-data(rse, package = "basejump.data")
+data(rse)
 
 object <- rse
 print(object)

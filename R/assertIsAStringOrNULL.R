@@ -1,6 +1,6 @@
 #' Assert Is a String or NULL
 #'
-#' @inherit assert
+#' @inherit params
 #' @export
 #'
 #' @examples

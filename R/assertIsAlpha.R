@@ -2,7 +2,7 @@
 #'
 #' An alpha level must be between 0 and 1, but not equal either 0 or 1.
 #'
-#' @inherit assert
+#' @inherit params
 #' @export
 #'
 #' @examples

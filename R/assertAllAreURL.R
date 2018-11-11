@@ -1,23 +1,8 @@
 #' Assert All Are URL
 #'
-#' @inherit assert
-#' @export
+#' @name assertAllAreURL
+#' @inherit params
 #'
-#' @examples
-#' assertAllAreURL(c(
-#'     "https://www.r-project.org",
-#'     "ftp://r-project.org"
-#' ))
-assertAllAreURL <- function(object) {
-    assert_is_character(object)
-    assert_is_non_empty(object)
-    assert_all_are_true(isURL(object))
-}
-
-
-
-#' @rdname assertAllAreURL
-#' @export
 #' @examples
 #' isURL(c(
 #'     "http://www.r-project.org",
@@ -25,19 +10,39 @@ assertAllAreURL <- function(object) {
 #'     "ftp://r-project.org",
 #'     "r-project.org"
 #' ))
-isURL <- function(object) {
+#' assertAllAreURL(c(
+#'     "https://www.r-project.org",
+#'     "ftp://r-project.org"
+#' ))
+NULL
+
+
+
+#' @rdname assertAllAreURL
+#' @export
+isURL <- function(url) {
     if (
-        !is.character(object) ||
-        length(object) == 0L
+        !is.character(url) ||
+        length(url) == 0L
     ) {
         return(FALSE)
     }
     vapply(
-        X = object,
-        FUN = function(object) {
-            grepl("^(http(s)?|ftp)\\://.+", object)
+        X = url,
+        FUN = function(url) {
+            grepl("^(http(s)?|ftp)\\://.+", url)
         },
         FUN.VALUE = logical(1L),
         USE.NAMES = FALSE
     )
+}
+
+
+
+#' @rdname assertAllAreURL
+#' @export
+assertAllAreURL <- function(url) {
+    assert_is_character(url)
+    assert_is_non_empty(url)
+    assert_all_are_true(isURL(url))
 }

@@ -4,15 +4,11 @@
 #' unique (non-amgibuous) symbols. It is designed to be used for gene plotting
 #' particularly when performing single-cell RNA-seq marker analysis.
 #'
-#' @inherit assert
+#' @inherit params
 #' @export
 #'
-#' @param object `SummarizedExperiment`.
-#' @param genes `character`. Input vector to check against definitions in the
-#'   corresponding `SummarizedExperiment`.
-#'
 #' @examples
-#' data(rse, package = "basejump.data")
+#' data(rse)
 #'
 #' object <- rse
 #' print(object)

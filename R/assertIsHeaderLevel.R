@@ -2,7 +2,7 @@
 #'
 #' Markdown supports header levels 1-7 (`<H1>`-`<H7>`).
 #'
-#' @inherit assert
+#' @inherit params
 #' @export
 #'
 #' @examples
