@@ -1,7 +1,5 @@
 context("Is Markdown header level?")
 
-
-
 test_that("assertIsHeaderLevel", {
     expect_silent(assertIsHeaderLevel(1L))
     expect_error(

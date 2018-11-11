@@ -1,7 +1,5 @@
 context("Are non-existing?")
 
-
-
 test_that("assertAreNonExisting", {
     expect_silent(assertAreNonExisting(
         x = c("a", "b", "c"),
