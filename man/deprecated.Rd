@@ -4,7 +4,6 @@
 \alias{deprecated}
 \alias{assertAllAreNonExisting}
 \alias{assertAllAreValidNames}
-\alias{assertFormalGene2symbol}
 \alias{assertIsAHeaderLevel}
 \alias{assertIsAStringOrNULL}
 \title{Deprecated Functions}
@@ -12,8 +11,6 @@
 assertAllAreNonExisting(...)
 
 assertAllAreValidNames(...)
-
-assertFormalGene2symbol(...)
 
 assertIsAHeaderLevel(...)
 

@@ -9,13 +9,13 @@
 \alias{assertIsAnImplicitIntegerOrNULL}
 \title{Is Integerish}
 \usage{
-isImplicitInteger(x, n = NULL, finite = NULL)
+isImplicitInteger(x)
 
 assertIsImplicitInteger(x)
 
 assertIsImplicitIntegerOrNULL(x)
 
-isAnImplicitInteger(x, finite = NULL)
+isAnImplicitInteger(x)
 
 assertIsAnImplicitInteger(x)
 

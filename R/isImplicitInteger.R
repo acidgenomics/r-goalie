@@ -16,7 +16,9 @@ NULL
 # isImplicitInteger ============================================================
 #' @rdname isImplicitInteger
 #' @export
-isImplicitInteger <- is_integerish
+isImplicitInteger <- function(x) {
+    is_integerish(x)
+}
 
 #' @rdname isImplicitInteger
 #' @export
@@ -38,7 +40,9 @@ assertIsImplicitIntegerOrNULL <- function(x) {
 # isAnImplicitInteger ==========================================================
 #' @rdname isImplicitInteger
 #' @export
-isAnImplicitInteger <- is_scalar_integerish
+isAnImplicitInteger <- function(x) {
+    is_scalar_integerish(x)
+}
 
 #' @rdname isImplicitInteger
 #' @export

@@ -2,4 +2,7 @@
 ^\.Rproj\.user$
 ^\.lintr$
 ^\.travis\.yml$
+^_pkgdown\.yml$
 ^appveyor\.yml$
+^docs$
+^pkgdown$
