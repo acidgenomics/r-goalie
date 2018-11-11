@@ -1,6 +1,6 @@
-#' Assert Is Alpha Level
+#' Assert Is Alpha
 #'
-#' An alpha level must be between 0 and 1, but not equal either 0 or 1.
+#' An alpha level must be a `numeric scalar` greater than 0 and less than 1.
 #'
 #' @inherit params
 #' @export
@@ -8,9 +8,10 @@
 #' @examples
 #' assertIsAlpha(0.05)
 assertIsAlpha <- function(object) {
-    assert_is_a_number(object)
-    assert_all_are_in_open_range(object, lower = 0L, upper = 1L)
-    if (object > 0.1) {
-        warning("An alpha level above 0.1 (10%) is not recommended.")
-    }
+    name <- get_name_in_parent(object)
+    assert_that(
+        is_a_number(object),
+        is_in_open_range(object, lower = 0L, upper = 1L),
+        msg = paste(name, "is not a numeric scalar between 0 and 1.")
+    )
 }
