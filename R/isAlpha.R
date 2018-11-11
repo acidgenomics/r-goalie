@@ -6,15 +6,27 @@
 #' @export
 #'
 #' @examples
-#' assert_that(isAlpha(0.05))
+#' isAlpha(0.05)
 isAlpha <- function(x) {
-    if (!is_a_number(x)) {
+    if (!is_scalar_double(x)) {
         return(FALSE)
     }
     x > 0L && x < 1L
 }
+
+.msg <- function(x) {
+    paste(x, "is not an alpha (numeric scalar > 0 and < 1).")
+}
+
 on_failure(isAlpha) <- function(call, env) {
-    paste0(
-        deparse(call[["x"]]), " is not an alpha (numeric scalar > 0 and < 1)."
+    .msg(x = deparse(call[["x"]]))
+}
+
+#' @rdname isAlpha
+#' @export
+assertIsAlpha <- function(x) {
+    assert_that(
+        isAlpha(x),
+        msg = .msg(x = deparse(substitute(x)))
     )
 }
