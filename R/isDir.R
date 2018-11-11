@@ -4,11 +4,13 @@
 #' @inherit params
 #'
 #' @examples
+#' x <- "~"
+#'
 #' ## Requires scalar.
-#' isDir("~")
+#' isDir(x)
 #'
 #' ## Parameterized.
-#' areDirs("~")
+#' areDirs(rep(x, times = 2L))
 NULL
 
 
@@ -22,7 +24,7 @@ isDir <- function(x) {
 }
 
 .msg.isDir <- function(x) {
-    paste(x, "is not a directory.")
+    paste(x, "is not an existing directory.")
 }
 
 on_failure(isDir) <- function(call, env) {
@@ -49,7 +51,7 @@ areDirs <- function(x) {
 }
 
 .msg.areDirs <- function(x) {
-    paste(x, "are not all directories.")
+    paste(x, "are not existing directories.")
 }
 
 on_failure(areDirs) <- function(call, env) {
