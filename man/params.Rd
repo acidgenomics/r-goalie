@@ -4,12 +4,20 @@
 \alias{params}
 \title{Parameters}
 \arguments{
-\item{object}{Object.}
+\item{dir}{\code{string}. Directory path.}
 
-\item{envir}{\code{environment}.}
+\item{envir}{\code{environment}. Environment.}
+
+\item{file}{\code{string}. File path.}
+
+\item{genes}{\code{character}. Genes.}
 
 \item{inherits}{\code{boolean}. Should the enclosing frames of the \code{environment}
 be searched?}
+
+\item{names}{\code{character}. Names (e.g. rownames, colnames).}
+
+\item{object}{Object.}
 
 \item{url}{\code{character}. Uniform Resource Locators (URLs). HTTP or FTP
 addresses.}

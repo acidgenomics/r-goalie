@@ -4,7 +4,7 @@
 #' @inherit params
 #'
 #' @examples
-#' data(rse)
+#' data(rse, package = "basejump")
 #' gr <- SummarizedExperiment::rowRanges(rse)
 #'
 #' # Dots (periods) and underscores are valid.

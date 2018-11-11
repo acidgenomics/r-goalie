@@ -1,10 +1,10 @@
 context("Assertions")
 
-data(rse, tx_se, package = "basejump.data", envir = environment())
+data(rse, tx_se, package = "basejump", envir = environment())
 
 # nolint start
 DataFrame <- S4Vectors::DataFrame
-Gene2Symbol <- basejump.classes::Gene2Symbol
+Gene2Symbol <- basejump::Gene2Symbol
 as_tibble <- tibble::as_tibble
 rowData <- SummarizedExperiment::rowData
 rowRanges <- SummarizedExperiment::rowRanges
@@ -27,30 +27,6 @@ test_that("assertAllAreNonExisting", {
     a <- 1L
     b <- 2L
     expect_error(assertAllAreNonExisting(c("a", "b", "c")))
-})
-
-
-
-# assertAreGeneAnnotations =====================================================
-test_that("assertAreGeneAnnotations", {
-    object <- rowRanges(rse)
-    expect_silent(assertAreGeneAnnotations(object))
-    expect_error(
-        object = assertAreGeneAnnotations(mtcars),
-        regexp = "is_subset : "
-    )
-})
-
-
-
-# assertAreTranscriptAnnotations ===============================================
-test_that("assertAreTranscriptAnnotations", {
-    object <- rowData(tx_se)
-    expect_silent(assertAreTranscriptAnnotations(object))
-    expect_error(
-        object = assertAreTranscriptAnnotations(mtcars),
-        regexp = "is_subset : "
-    )
 })
 
 
