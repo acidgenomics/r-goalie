@@ -4,12 +4,6 @@
 #' @inherit params
 #'
 #' @examples
-#' isURL(c(
-#'     "http://www.r-project.org",
-#'     "https://www.r-project.org",
-#'     "ftp://r-project.org",
-#'     "r-project.org"
-#' ))
 #' assertAllAreURL(c(
 #'     "https://www.r-project.org",
 #'     "ftp://r-project.org"
@@ -20,29 +14,32 @@ NULL
 
 #' @rdname assertAllAreURL
 #' @export
-isURL <- function(url) {
-    if (
-        !is.character(url) ||
-        length(url) == 0L
-    ) {
-        return(FALSE)
-    }
-    vapply(
-        X = url,
-        FUN = function(url) {
-            grepl("^(http(s)?|ftp)\\://.+", url)
-        },
-        FUN.VALUE = logical(1L),
-        USE.NAMES = FALSE
-    )
+assertAllAreURL <- function(x) {
+    assert_that(all(isURL(x)))
 }
 
 
 
 #' @rdname assertAllAreURL
 #' @export
-assertAllAreURL <- function(url) {
-    assert_is_character(url)
-    assert_is_non_empty(url)
-    assert_all_are_true(isURL(url))
+isURL <- function(x) {
+    assert_that(
+        is.character(x),
+        length(x) > 0L
+    )
+    vapply(
+        X = x,
+        FUN = function(x) {
+            grepl("^(http(s)?|ftp)\\://.+", x)
+        },
+        FUN.VALUE = logical(1L),
+        USE.NAMES = FALSE
+    )
+}
+
+on_failure(isURL) <- function(call, env) {
+    paste0(
+        deparse(call$x), " is not a URL.\n",
+        "URLs must begin with `http(s)` or `ftp` and contain `://`."
+    )
 }
