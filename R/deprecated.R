@@ -46,6 +46,8 @@ assertIsGFF <- function(...) {
 
 
 # v0.1.0 =======================================================================
+# TODO Improve object to x remapping.
+
 #' @rdname deprecated
 #' @export
 assertAllAreValidNames <- function(...) {
@@ -77,6 +79,13 @@ assertFormalGene2symbol <- function(...) {
 assertIsAHeaderLevel <- function(...) {
     .Deprecated("assertIsHeaderLevel")
     assertIsHeaderLevel(...)
+}
+
+#' @rdname deprecated
+#' @export
+assertIsAStringOrNULL <- function(...) {
+    .Deprecated("assertIsStringOrNULL")
+    assertIsStringOrNULL(...)
 }
 
 #' @rdname defunct
