@@ -5,6 +5,7 @@
 \alias{assertAllAreValidNames}
 \alias{assertFormalGene2symbol}
 \alias{assertIsAHeaderLevel}
+\alias{assertIsAStringOrNULL}
 \title{Deprecated Functions}
 \usage{
 assertAllAreValidNames(...)
@@ -12,6 +13,8 @@ assertAllAreValidNames(...)
 assertFormalGene2symbol(...)
 
 assertIsAHeaderLevel(...)
+
+assertIsAStringOrNULL(...)
 }
 \value{
 \code{\link[=.Deprecated]{.Deprecated()}}.
