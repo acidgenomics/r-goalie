@@ -6,9 +6,9 @@
 #' @examples
 #' assertIsAnIntegerOrNULL(1L)
 #' assertIsAnIntegerOrNULL(NULL)
-assertIsAnIntegerOrNULL <- function(object) {
-    assert_is_any_of(object, classes = c("integer", "NULL"))
-    if (is.integer(object)) {
-        assert_is_an_integer(object)
+assertIsAnIntegerOrNULL <- function(x) {
+    assert_is_any_of(x, classes = c("integer", "NULL"))
+    if (is.integer(x)) {
+        assert_is_an_integer(x)
     }
 }

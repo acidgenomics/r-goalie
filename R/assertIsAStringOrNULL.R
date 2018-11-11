@@ -6,9 +6,9 @@
 #' @examples
 #' assertIsAStringOrNULL("hello world")
 #' assertIsAStringOrNULL(NULL)
-assertIsAStringOrNULL <- function(object) {
-    assert_is_any_of(object, classes = c("character", "NULL"))
-    if (is.character(object)) {
-        assert_is_a_string(object)
+assertIsAStringOrNULL <- function(x) {
+    assert_is_any_of(x, classes = c("character", "NULL"))
+    if (is.character(x)) {
+        assert_is_a_string(x)
     }
 }
