@@ -1,7 +1,7 @@
 # goalie
 
-[![Travis CI](https://travis-ci.org/steinbaugh/goalie.svg?branch=master)](https://travis-ci.org/steinbaugh/goalie)
-[![AppVeyor CI](https://ci.appveyor.com/api/projects/status/007vq15089ukn6ej/branch/master?svg=true)](https://ci.appveyor.com/project/mjsteinbaugh/goalie/branch/master)
+[![Travis CI](https://travis-ci.com/steinbaugh/goalie.svg?branch=master)](https://travis-ci.com/steinbaugh/goalie)
+[![AppVeyor CI](https://ci.appveyor.com/api/projects/status/81he1lj6usgke7x2?svg=true)](https://ci.appveyor.com/project/mjsteinbaugh/goalie)
 [![Codecov](https://codecov.io/gh/steinbaugh/goalie/branch/master/graph/badge.svg)](https://codecov.io/gh/steinbaugh/goalie)
 [![Project Status: Active - The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 
