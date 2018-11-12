@@ -1,4 +1,4 @@
-#' Is Alpha
+#' Is Alpha?
 #'
 #' An alpha level must be a `numeric scalar` greater than 0 and less than 1.
 #'

@@ -1,5 +1,5 @@
 # ggplot2 scale ================================================================
-#' Assert Is Scale (or NULL)
+#' Is Scale (or NULL)?
 #'
 #' @name scale
 #' @inherit params
@@ -88,7 +88,7 @@ assertIsFillScaleDiscreteOrNULL <- function(x) {
 
 
 # Hexadecimal color function ===================================================
-#' Assert Is Hex Color Function (or NULL)
+#' Is Hex Color Function (or NULL)?
 #'
 #' @inherit params
 #' @export

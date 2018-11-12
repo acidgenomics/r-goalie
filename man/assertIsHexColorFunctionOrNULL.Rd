@@ -2,7 +2,7 @@
 % Please edit documentation in R/plots.R
 \name{assertIsHexColorFunctionOrNULL}
 \alias{assertIsHexColorFunctionOrNULL}
-\title{Assert Is Hex Color Function (or NULL)}
+\title{Is Hex Color Function (or NULL)?}
 \usage{
 assertIsHexColorFunctionOrNULL(x)
 }
@@ -12,11 +12,12 @@ assertIsHexColorFunctionOrNULL(x)
 \value{
 \itemize{
 \item \code{boolean flag} for \code{are/has/is*()} functions.
-\item Stop on error for \code{assert*()} functions  (see \code{stop()}for details).
+\item Stop on error for \code{assert*()} functions
+(see \code{base::stop()} or \code{base::stopifnot()} for details).
 }
 }
 \description{
-Assert Is Hex Color Function (or NULL)
+Is Hex Color Function (or NULL)?
 }
 \examples{
 hex <- function(n) {

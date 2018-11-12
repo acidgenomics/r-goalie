@@ -1,4 +1,4 @@
-#' Valid Names
+#' Are the Names Syntatically Valid?
 #'
 #' @name validNames
 #' @inherit params

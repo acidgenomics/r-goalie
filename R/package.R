@@ -44,5 +44,6 @@ magrittr::`%>%`
 #'
 #' @return
 #' - `boolean flag` for `are/has/is*()` functions.
-#' - Stop on error for `assert*()` functions  (see `stop()`for details).
+#' - Stop on error for `assert*()` functions
+#'   (see `base::stop()` or `base::stopifnot()` for details).
 NULL
