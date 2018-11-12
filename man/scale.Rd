@@ -6,7 +6,7 @@
 \alias{assertIsColorScaleDiscreteOrNULL}
 \alias{assertIsFillScaleContinuousOrNULL}
 \alias{assertIsFillScaleDiscreteOrNULL}
-\title{Assert Is Scale (or NULL)}
+\title{Is Scale (or NULL)?}
 \usage{
 assertIsColorScaleContinuousOrNULL(x)
 
@@ -22,11 +22,12 @@ assertIsFillScaleDiscreteOrNULL(x)
 \value{
 \itemize{
 \item \code{boolean flag} for \code{are/has/is*()} functions.
-\item Stop on error for \code{assert*()} functions  (see \code{stop()}for details).
+\item Stop on error for \code{assert*()} functions
+(see \code{base::stop()} or \code{base::stopifnot()} for details).
 }
 }
 \description{
-Assert Is Scale (or NULL)
+Is Scale (or NULL)?
 }
 \examples{
 color_c <- ggplot2::scale_colour_gradient(low = "red", high = "blue")

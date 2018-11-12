@@ -2,7 +2,7 @@
 % Please edit documentation in R/formals.R
 \name{assertFormalCompress}
 \alias{assertFormalCompress}
-\title{Assert Formal Compression}
+\title{Check Compression Formal}
 \usage{
 assertFormalCompress(x)
 }
@@ -12,11 +12,12 @@ assertFormalCompress(x)
 \value{
 \itemize{
 \item \code{boolean flag} for \code{are/has/is*()} functions.
-\item Stop on error for \code{assert*()} functions  (see \code{stop()}for details).
+\item Stop on error for \code{assert*()} functions
+(see \code{base::stop()} or \code{base::stopifnot()} for details).
 }
 }
 \description{
-Assert Formal Compression
+Check Compression Formal
 }
 \examples{
 assertFormalCompress("xz")

@@ -6,7 +6,7 @@
 \alias{assertHasValidNames}
 \alias{validDimnames}
 \alias{assertHasValidDimnames}
-\title{Valid Names}
+\title{Are the Names Syntatically Valid?}
 \usage{
 validNames(names)
 
@@ -26,11 +26,12 @@ assertHasValidDimnames(x)
 \value{
 \itemize{
 \item \code{boolean flag} for \code{are/has/is*()} functions.
-\item Stop on error for \code{assert*()} functions  (see \code{stop()}for details).
+\item Stop on error for \code{assert*()} functions
+(see \code{base::stop()} or \code{base::stopifnot()} for details).
 }
 }
 \description{
-Valid Names
+Are the Names Syntatically Valid?
 }
 \examples{
 # Dots (periods) and underscores are valid.

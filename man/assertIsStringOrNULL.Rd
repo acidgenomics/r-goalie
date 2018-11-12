@@ -12,7 +12,8 @@ assertIsStringOrNULL(x)
 \value{
 \itemize{
 \item \code{boolean flag} for \code{are/has/is*()} functions.
-\item Stop on error for \code{assert*()} functions  (see \code{stop()}for details).
+\item Stop on error for \code{assert*()} functions
+(see \code{base::stop()} or \code{base::stopifnot()} for details).
 }
 }
 \description{

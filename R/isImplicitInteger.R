@@ -1,4 +1,4 @@
-#' Is Integerish
+#' Is Implicit Integer (Integerish)?
 #'
 #' Check to see if a numeric vector is an implicit integer
 #' (e.g. `1` instead of `1L`).

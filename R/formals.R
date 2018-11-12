@@ -1,4 +1,4 @@
-#' Assert Formal Compression
+#' Check Compression Formal
 #'
 #' @inherit params
 #' @export
