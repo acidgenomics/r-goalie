@@ -89,5 +89,5 @@ validDimnames <- function(x) {
 #' @export
 assertHasValidDimnames <- function(x) {
     assert_has_dimnames(x)
-    assert_all_are_true(validDimnames(x))
+    assert_that(validDimnames(x))
 }
