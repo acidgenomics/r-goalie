@@ -1,7 +1,7 @@
 context("Has rownames?")
 
 library(S4Vectors)
-as_tibble <- tibble::as_tibble
+as_tibble <- tibble::as_tibble  # nolint
 
 test_that("assertHasRownames", {
     df <- data.frame(

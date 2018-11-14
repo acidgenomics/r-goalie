@@ -14,9 +14,10 @@ isAlpha <- function(x) {
     x > 0L && x < 1L
 }
 
-.msg.isAlpha <- function(x) {
-    paste(x, "is not an alpha (numeric scalar > 0 and < 1).")
-}
+.msg.isAlpha <-  # nolint
+    function(x) {
+        paste(x, "is not an alpha (numeric scalar > 0 and < 1).")
+    }
 
 on_failure(isAlpha) <- function(call, env) {
     .msg.isAlpha(x = deparse(call[["x"]]))
