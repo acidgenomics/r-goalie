@@ -17,6 +17,15 @@ areNonExisting <- function(
     all(!is_existing(x, envir = envir, inherits = inherits))
 }
 
+.msg.areNonExisting <-  # nolint
+    function(x) {
+        paste(x, "contains names that already exist in the environment.")
+    }
+
+on_failure(areNonExisting) <- function(call, env) {
+    .msg.areNonExisting(x = deparse(call[["x"]]))
+}
+
 #' @rdname areNonExisting
 #' @export
 assertAreNonExisting <- function(
@@ -24,10 +33,10 @@ assertAreNonExisting <- function(
     envir = parent.frame(),
     inherits = FALSE
 ) {
-    # `assert_that()` isn't returning error correctly here.
-    stopifnot(areNonExisting(
-        x = x,
-        envir = envir,
-        inherits = inherits
-    ))
+    # `assert_that()` isn't returning error as expected here because of `envir`.
+    if (!areNonExisting(x = x, envir = envir, inherits = inherits)) {
+        stop(.msg.areNonExisting(x = deparse(substitute(x))))
+    } else {
+        TRUE
+    }
 }
