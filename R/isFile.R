@@ -26,9 +26,10 @@ isFile <- function(x) {
     file.exists(x)
 }
 
-.msg.isFile <- function(x) {
-    paste(x, "is not an existing file.")
-}
+.msg.isFile <-  # nolint
+    function(x) {
+        paste(x, "is not an existing file.")
+    }
 
 on_failure(isFile) <- function(call, env) {
     .msg.isFile(x = deparse(call[["x"]]))
@@ -56,9 +57,10 @@ areFiles <- function(x) {
     all(file.exists(x))
 }
 
-.msg.areFiles <- function(x) {
-    paste(x, "are not existing files.")
-}
+.msg.areFiles <-  # nolint
+    function(x) {
+        paste(x, "are not existing files.")
+    }
 
 on_failure(areFiles) <- function(call, env) {
     .msg.areFiles(x = deparse(call[["x"]]))
