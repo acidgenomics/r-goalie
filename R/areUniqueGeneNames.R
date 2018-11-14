@@ -1,3 +1,7 @@
+# Consider improving the error message here.
+
+
+
 #' Are Unique Gene Names?
 #'
 #' This assert check determines if a user-defined gene name query is using only
