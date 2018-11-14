@@ -30,12 +30,13 @@ isURL <- function(x) {
     )
 }
 
-.msg.isURL <- function(x) {
-    paste0(
-        x, " does not contain a URL.\n",
-        "URLs must begin with `http(s)` or `ftp` and contain `://`."
-    )
-}
+.msg.isURL <-   # nolint
+    function(x) {
+        paste0(
+            x, " does not contain a URL.\n",
+            "URLs must begin with `http(s)` or `ftp` and contain `://`."
+        )
+    }
 
 on_failure(isURL) <- function(call, env) {
     .msg.isURL(x = deparse(call[["x"]]))

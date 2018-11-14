@@ -1,3 +1,8 @@
+## goalie 0.1.1 (2018-11-14)
+
+- `areUniqueGeneNames()` now returns `boolean` as expected.
+- Improved error message for `assertAreUniqueGeneNames()`.
+
 ## goalie 0.1.0 (2018-11-11)
 
 - Initial release, migrating assertive check functions from [basejump][]

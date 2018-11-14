@@ -23,9 +23,10 @@ isDir <- function(x) {
     dir.exists(x)
 }
 
-.msg.isDir <- function(x) {
-    paste(x, "is not an existing directory.")
-}
+.msg.isDir <-  # nolint
+    function(x) {
+        paste(x, "is not an existing directory.")
+    }
 
 on_failure(isDir) <- function(call, env) {
     .msg.isDir(x = deparse(call[["x"]]))
@@ -50,9 +51,10 @@ areDirs <- function(x) {
     all(dir.exists(x))
 }
 
-.msg.areDirs <- function(x) {
-    paste(x, "are not existing directories.")
-}
+.msg.areDirs <- ## nolint
+    function(x) {
+        paste(x, "are not existing directories.")
+    }
 
 on_failure(areDirs) <- function(call, env) {
     .msg.areDirs(x = deparse(call[["x"]]))

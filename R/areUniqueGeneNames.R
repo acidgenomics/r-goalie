@@ -1,3 +1,7 @@
+# Consider improving the error message here.
+
+
+
 #' Are Unique Gene Names?
 #'
 #' This assert check determines if a user-defined gene name query is using only
@@ -43,6 +47,7 @@ areUniqueGeneNames <- function(x, genes) {
     # Check for no intersect with duplicate names.
     duplicatedGenes <- allGenes[which(duplicated(allGenes))]
     assert_are_disjoint_sets(genes, duplicatedGenes)
+    TRUE
 }
 
 #' @rdname areUniqueGeneNames

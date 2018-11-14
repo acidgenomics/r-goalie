@@ -14,9 +14,10 @@ isHeaderLevel <- function(x) {
     x %in% seq_len(7L)
 }
 
-.msg.isHeaderLevel <- function(x) {
-    paste(x, "is not a valid Markdown header level (1-7).")
-}
+.msg.isHeaderLevel <-  # nolint
+    function(x) {
+        paste(x, "is not a valid Markdown header level (1-7).")
+    }
 
 on_failure(isHeaderLevel) <- function(call, env) {
     .msg.isHeaderLevel(x = deparse(call[["x"]]))
