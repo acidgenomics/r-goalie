@@ -16,15 +16,9 @@ NULL
 
 
 # isFile =======================================================================
-#' @rdname isFile
+#' @importFrom R.utils isFile
 #' @export
-isFile <- function(x) {
-    assert_that(
-        is_string(x),
-        !dir.exists(x)
-    )
-    file.exists(x)
-}
+R.utils::isFile
 
 .msg.isFile <-  # nolint
     function(x) {
