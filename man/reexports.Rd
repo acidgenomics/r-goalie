@@ -3,7 +3,6 @@
 \docType{import}
 \name{reexports}
 \alias{reexports}
-\alias{isFile}
 \alias{\%>\%}
 \title{Objects exported from other packages}
 \keyword{internal}

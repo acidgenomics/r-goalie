@@ -17,6 +17,7 @@ NULL
 
 # isFile =======================================================================
 #' @importFrom R.utils isFile
+#' @aliases NULL
 #' @export
 R.utils::isFile
 

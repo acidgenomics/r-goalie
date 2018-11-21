@@ -16,6 +16,8 @@ areDirs(x)
 assertAreDirs(x)
 }
 \arguments{
+\item{...}{Additional arguments.}
+
 \item{x}{Object.}
 }
 \value{
