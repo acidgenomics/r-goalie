@@ -7,7 +7,7 @@
 \alias{assertAreDirs}
 \title{Is Directory?}
 \usage{
-isDir(x)
+isDir(...)
 
 assertIsDir(x)
 

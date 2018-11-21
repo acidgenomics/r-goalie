@@ -4,6 +4,7 @@
 #'
 #' @keywords internal
 #'
+#' @importFrom R.utils isDirectory isFile
 #' @importFrom assertive.base assert_are_identical
 #' @importFrom assertive.code is_existing
 #' @importFrom assertive.data assert_all_are_hex_colors is_hex_color
