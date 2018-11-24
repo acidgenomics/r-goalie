@@ -82,7 +82,7 @@ assertIsAHeaderLevel <- function(...) {
 #' @rdname deprecated
 #' @export
 assertIsAStringOrNULL <- function(...) {
-    .Deprecated("assertIsStringOrNULL")
+    # Soft deprecated: assertIsStringOrNULL
     assertIsStringOrNULL(...)
 }
 
