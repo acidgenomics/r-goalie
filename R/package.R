@@ -4,7 +4,7 @@
 #'
 #' @keywords internal
 #'
-#' @importFrom BiocGenerics rowSums
+#' @importFrom BiocGenerics anyDuplicated rowSums
 #' @importFrom R.utils isDirectory isFile
 #' @importFrom SummarizedExperiment assay
 #' @importFrom assertive.base assert_are_identical
