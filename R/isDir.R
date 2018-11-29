@@ -18,10 +18,7 @@ NULL
 # isDir ========================================================================
 #' @rdname isDir
 #' @export
-isDir <- function(x) {
-    assert_that(is_string(x))
-    dir.exists(x)
-}
+isDir <- R.utils::isDirectory
 
 .msg.isDir <-  # nolint
     function(x) {

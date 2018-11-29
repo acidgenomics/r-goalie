@@ -16,8 +16,11 @@ assertIsAHeaderLevel(...)
 
 assertIsAStringOrNULL(...)
 }
+\arguments{
+\item{...}{Additional arguments.}
+}
 \value{
-\code{\link[=.Deprecated]{.Deprecated()}}.
+\code{.Deprecated()}.
 }
 \description{
 Deprecated Functions
