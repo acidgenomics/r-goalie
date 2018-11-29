@@ -2,35 +2,36 @@ Package: goalie
 Title: Assertions
 Description: Assertive check functions for defensive R programming.
 Version: 0.1.2
-Date: 2018-11-24
+Date: 2018-11-29
 Authors@R: person(
     "Michael", "Steinbaugh",
     email = "mike@steinbaugh.com",
     role = c("aut", "cre"),
     comment = c(ORCID = "0000-0002-2403-2221"))
 URL:
-    https://steinbaugh.com/goalie,
-    https://github.com/steinbaugh/goalie
-BugReports: https://github.com/steinbaugh/goalie/issues
+    https://steinbaugh.com/goalie/,
+    https://github.com/steinbaugh/goalie/
+BugReports: https://github.com/steinbaugh/goalie/issues/
 License: MIT + file LICENSE
 Encoding: UTF-8
 Depends: R (>= 3.5)
 Imports:
-    R.utils,
+    BiocGenerics,
+    R.utils (>= 2.7),
+    SummarizedExperiment,
     assertive.base,
     assertive.code,
     assertive.data,
     assertive.properties,
     assertive.sets,
     assertive.types,
-    assertthat,
-    magrittr,
+    assertthat (>= 0.2),
+    magrittr (>= 1.5),
     methods,
-    rlang,
+    rlang (>= 0.3),
     utils
 Suggests:
     S4Vectors,
-    SummarizedExperiment,
     ggplot2,
     testthat,
     tibble
