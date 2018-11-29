@@ -34,5 +34,5 @@ areSamplesUnique <- function(x) {
     }
 
     # Check that none of the samples are duplicated.
-    !any(duplicated(assay, MARGIN = 2L))
+    !any(duplicated(x, MARGIN = 2L))
 }
