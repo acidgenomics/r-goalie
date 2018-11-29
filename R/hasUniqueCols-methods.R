@@ -24,7 +24,8 @@ NULL
 
 
 
-hasUniqueCols.matrix <- function(x) {
+hasUniqueCols.ANY <- function(x) {
+    assert_has_dims(x)
     # Check for >= 2 samples.
     if (!ncol(x) >= 2L) {
         return(FALSE)
@@ -39,8 +40,8 @@ hasUniqueCols.matrix <- function(x) {
 #' @export
 setMethod(
     f = "hasUniqueCols",
-    signature = signature("matrix"),
-    definition = hasUniqueCols.matrix
+    signature = signature("ANY"),
+    definition = hasUniqueCols.ANY
 )
 
 
@@ -81,8 +82,5 @@ setMethod(
 #' @rdname hasUniqueCols
 #' @export
 assertHasUniqueCols <- function(x) {
-    assert_that(
-        isAlpha(x),
-        msg = .msg.isAlpha(x = deparse(substitute(x)))
-    )
+    assert_that(hasUniqueCols(x))
 }
