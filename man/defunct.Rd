@@ -28,8 +28,11 @@ assertIsGene2symbol(...)
 
 assertIsTx2gene(...)
 }
+\arguments{
+\item{...}{Additional arguments.}
+}
 \value{
-\code{\link[=.Defunct]{.Defunct()}}.
+\code{.Defunct()}.
 }
 \description{
 Defunct Functions

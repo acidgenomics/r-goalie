@@ -7,7 +7,7 @@
 \alias{assertAreDirs}
 \title{Is Directory?}
 \usage{
-isDir(x)
+isDir(...)
 
 assertIsDir(x)
 
@@ -16,6 +16,8 @@ areDirs(x)
 assertAreDirs(x)
 }
 \arguments{
+\item{...}{Additional arguments.}
+
 \item{x}{Object.}
 }
 \value{
