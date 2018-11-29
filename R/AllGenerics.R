@@ -1,8 +1,8 @@
-#' @rdname areSamplesUnique
+#' @rdname hasUniqueCols
 #' @export
 setGeneric(
-    name = "areSamplesUnique",
+    name = "hasUniqueCols",
     def = function(x, ...) {
-        standardGeneric("areSamplesUnique")
+        standardGeneric("hasUniqueCols")
     }
 )
