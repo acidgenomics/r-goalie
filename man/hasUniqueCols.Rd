@@ -3,7 +3,7 @@
 \docType{methods}
 \name{hasUniqueCols}
 \alias{hasUniqueCols}
-\alias{hasUniqueCols,matrix-method}
+\alias{hasUniqueCols,ANY-method}
 \alias{hasUniqueCols,sparseMatrix-method}
 \alias{hasUniqueCols,SummarizedExperiment-method}
 \alias{assertHasUniqueCols}
@@ -11,7 +11,7 @@
 \usage{
 hasUniqueCols(x, ...)
 
-\S4method{hasUniqueCols}{matrix}(x)
+\S4method{hasUniqueCols}{ANY}(x)
 
 \S4method{hasUniqueCols}{sparseMatrix}(x)
 
