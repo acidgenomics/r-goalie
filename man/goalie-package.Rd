@@ -11,9 +11,9 @@ Assertive check functions for defensive R programming.
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://steinbaugh.com/goalie}
-  \item \url{https://github.com/steinbaugh/goalie}
-  \item Report bugs at \url{https://github.com/steinbaugh/goalie/issues}
+  \item \url{https://steinbaugh.com/goalie/}
+  \item \url{https://github.com/steinbaugh/goalie/}
+  \item Report bugs at \url{https://github.com/steinbaugh/goalie/issues/}
 }
 
 }
