@@ -7,8 +7,6 @@
 \alias{assertAreFiles}
 \title{Is File?}
 \usage{
-isFile(x)
-
 assertIsFile(x)
 
 areFiles(x)

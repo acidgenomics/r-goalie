@@ -4,25 +4,19 @@
 
 
 #' Deprecated Functions
-#'
 #' @name deprecated
 #' @keywords internal
-#'
 #' @inheritParams params
-#'
-#' @return [.Deprecated()].
+#' @return `.Deprecated()`.
 NULL
 
 
 
 #' Defunct Functions
-#'
 #' @name defunct
 #' @keywords internal
-#'
 #' @inheritParams params
-#'
-#' @return [.Defunct()].
+#' @return `.Defunct()`.
 NULL
 
 
@@ -82,7 +76,7 @@ assertIsAHeaderLevel <- function(...) {
 #' @rdname deprecated
 #' @export
 assertIsAStringOrNULL <- function(...) {
-    .Deprecated("assertIsStringOrNULL")
+    # Soft deprecated: assertIsStringOrNULL
     assertIsStringOrNULL(...)
 }
 

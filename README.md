@@ -18,7 +18,7 @@ if (!require("BiocManager")) {
     install.packages("BiocManager")
 }
 BiocManager::install("remotes")
-BiocManager::install("steinbaugh/goalie", ref = "v0.1.0")
+BiocManager::install("steinbaugh/goalie")
 ```
 
 [BiocManager]: https://cran.r-project.org/package=BiocManager
