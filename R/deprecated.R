@@ -106,5 +106,15 @@ assertIsTx2gene <- function(...) {
 
 
 
+# v0.1.3 =======================================================================
+#' @rdname deprecated
+#' @export
+areSamplesUnique <- function(...) {
+    .Deprecated("hasUniqueCols")
+    hasUniqueCols(...)
+}
+
+
+
 # nolint end
 # nocov end

@@ -1,5 +1,3 @@
-# FIXME Improve the error messages here.
-
 #' Does the Variable Not Exist?
 #'
 #' @inherit params
