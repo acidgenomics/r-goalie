@@ -24,15 +24,16 @@ NULL
 
 
 
-hasUniqueCols.ANY <- function(x) {
-    assert_has_dims(x)
-    # Check for >= 2 samples.
-    if (!ncol(x) >= 2L) {
-        return(FALSE)
+hasUniqueCols.ANY <-  # nolint
+    function(x) {
+        assert_has_dims(x)
+        # Check for >= 2 samples.
+        if (!ncol(x) >= 2L) {
+            return(FALSE)
+        }
+        # Check that none of the samples are duplicated.
+        !any(duplicated(x, MARGIN = 2L))
     }
-    # Check that none of the samples are duplicated.
-    !any(duplicated(x, MARGIN = 2L))
-}
 
 
 
@@ -46,9 +47,10 @@ setMethod(
 
 
 
-hasUniqueCols.sparseMatrix <- function(x) {
-    hasUniqueCols(as.matrix(x))
-}
+hasUniqueCols.sparseMatrix <-  # nolint
+    function(x) {
+        hasUniqueCols(as.matrix(x))
+    }
 
 
 
@@ -63,9 +65,10 @@ setMethod(
 
 
 # Use primary assay matrix when dealing with SE.
-hasUniqueCols.SummarizedExperiment <- function(x) {
-    hasUniqueCols(assay(x))
-}
+hasUniqueCols.SummarizedExperiment <-  # nolint
+    function(x) {
+        hasUniqueCols(assay(x))
+    }
 
 
 
