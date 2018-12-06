@@ -5,7 +5,7 @@
 \alias{are_unique_gene_names}
 \alias{assertAreUniqueGeneNames}
 \alias{assert_are_unique_gene_names}
-\title{Are Unique Gene Names?}
+\title{Does the Object Have Unique Gene Names?}
 \usage{
 areUniqueGeneNames(x, genes)
 
