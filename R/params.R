@@ -12,6 +12,10 @@
 #' @param .var.name `string`. Name of the checked object to print in assertions.
 #' @param add `AssertCollection`. Extra information to be included in the
 #'   message for the testthat reporter. See `testthat::expect_that()`.
+#' @param name XXX
+#' @param class XXX
+#' @param env XXX
+#' @param msg XXX
 #' @param ... Additional arguments.
 #'
 #' @seealso
