@@ -2,16 +2,16 @@
 % Please edit documentation in R/allAreAtomic.R
 \name{allAreAtomic}
 \alias{allAreAtomic}
-\alias{assertAllAreAtomic}
 \alias{all_are_atomic}
+\alias{assertAllAreAtomic}
 \alias{assert_all_are_atomic}
 \title{Are All Items Atomic?}
 \usage{
 allAreAtomic(x)
 
-assertAllAreAtomic(x, .var.name = vname(x), add = NULL)
-
 all_are_atomic(x)
+
+assertAllAreAtomic(x, .var.name = vname(x), add = NULL)
 
 assert_all_are_atomic(x, .var.name = vname(x), add = NULL)
 }
