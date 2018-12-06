@@ -3,12 +3,15 @@
 \docType{methods}
 \name{hasUniqueCols}
 \alias{hasUniqueCols}
+\alias{has_unique_cols}
 \alias{hasUniqueCols,ANY-method}
 \alias{hasUniqueCols,sparseMatrix-method}
 \alias{hasUniqueCols,SummarizedExperiment-method}
 \alias{assertHasUniqueCols}
 \title{Does the Object Contain Unique Columns?}
 \usage{
+hasUniqueCols(x, ...)
+
 hasUniqueCols(x, ...)
 
 \S4method{hasUniqueCols}{ANY}(x)
