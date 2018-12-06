@@ -8,7 +8,7 @@ assertthat::assert_that -> assert
 #' @importFrom assertthat is.flag
 #' @inheritParams params
 #' @export
-assertthat::is.flag -> is_flag
+assertthat::is.flag -> isFlag
 
 #' Validity Check
 #' @importFrom assertthat validate_that
