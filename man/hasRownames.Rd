@@ -2,15 +2,26 @@
 % Please edit documentation in R/hasRownames.R
 \name{hasRownames}
 \alias{hasRownames}
+\alias{has_rownames}
 \alias{assertHasRownames}
-\title{Has Rownames?}
+\alias{assert_has_rownames}
+\title{Does the Object Have Rownames?}
 \usage{
 hasRownames(x)
 
-assertHasRownames(x)
+has_rownames(x)
+
+assertHasRownames(x, .var.name = vname(x), add = NULL)
+
+assert_has_rownames(x, .var.name = vname(x), add = NULL)
 }
 \arguments{
 \item{x}{Object.}
+
+\item{.var.name}{\code{string}. Name of the checked object to print in assertions.}
+
+\item{add}{\code{AssertCollection}. Extra information to be included in the
+message for the testthat reporter. See \code{testthat::expect_that()}.}
 }
 \value{
 \itemize{
@@ -22,10 +33,6 @@ assertHasRownames(x)
 \description{
 A stricter alternative to the assertive version that works properly with
 data frames.
-}
-\note{
-Also, \code{tibble::has_rownames()} appears to be more consistent than
-\code{assertive.properties::has_rownames()} for \code{DataFrame} and \code{tbl_df} class.
 }
 \examples{
 x <- S4Vectors::DataFrame(
