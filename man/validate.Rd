@@ -7,7 +7,15 @@
 validate(..., env = parent.frame(), msg = NULL)
 }
 \arguments{
-\item{...}{Additional arguments.}
+\item{...}{unnamed expressions that describe the conditions to be tested.
+Rather than combining expressions with \code{&&}, separate them by commas
+so that better error messages can be generated.}
+
+\item{env}{(advanced use only) the environment in which to evaluate the
+assertions.}
+
+\item{msg}{a custom error message to be printed if one of the conditions is
+false.}
 }
 \description{
 \code{validate()} is a variant of \code{assert()} that is specifically intended to be
