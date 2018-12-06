@@ -1,6 +1,6 @@
-#' Does an Object Contain Elements That Are All Atomic?
+#' Check If an Object Contain Elements That Are All Atomic
 #'
-#' @name allAreAtomic
+#' @name checkAllAreAtomic
 #' @inherit params
 #'
 #' @examples
@@ -19,7 +19,7 @@ NULL
 
 
 
-#' @rdname allAreAtomic
+#' @rdname checkAllAreAtomic
 #' @export
 checkAllAreAtomic <- function(x) {
     if (isTRUE(.allAreAtomic(x))) {
@@ -31,36 +31,36 @@ checkAllAreAtomic <- function(x) {
 
 
 
-#' @rdname allAreAtomic
+#' @rdname checkAllAreAtomic
 #' @export
 check_all_are_atomic <- checkAllAreAtomic
 
 
 
-#' @rdname allAreAtomic
+#' @rdname checkAllAreAtomic
 #' @export
 testAllAreAtomic <- makeTestFunction(checkAllAreAtomic)
 
 
 
-#' @rdname allAreAtomic
+#' @rdname checkAllAreAtomic
 #' @export
 test_all_are_atomic <- testAllAreAtomic
 
 
 
-#' @rdname allAreAtomic
+#' @rdname checkAllAreAtomic
 #' @export
 assertAllAreAtomic <- makeAssertionFunction(checkAllAreAtomic)
 
 
 
-#' @rdname allAreAtomic
+#' @rdname checkAllAreAtomic
 #' @export
 assert_all_are_atomic <- assertAllAreAtomic
 
 
 
-#' @rdname allAreAtomic
+#' @rdname checkAllAreAtomic
 #' @export
 expect_all_are_atomic <- makeExpectationFunction(checkAllAreAtomic)
