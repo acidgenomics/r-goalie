@@ -1,3 +1,7 @@
+# FIXME isAlpha
+
+
+
 # nocov start
 # nolint start
 
@@ -113,6 +117,17 @@ areSamplesUnique <- function(...) {
     .Deprecated("hasUniqueCols")
     hasUniqueCols(...)
 }
+
+
+
+# v0.2.0 =======================================================================
+# FIXME
+# assertIsAnImplicitInteger
+# assertIsAnImplicitIntegerOrNULL
+# assertIsImplicitInteger
+# assertIsImplicitIntegerOrNULL
+# isAnImplicitInteger
+# isImplicitInteger
 
 
 
