@@ -12,23 +12,18 @@ NULL
 
 
 
-.alpha <- function(x) {
-    if (!is_scalar_double(x)) {
-        return(FALSE)
-    }
-    x > 0L && x < 1L
-}
-
-
-
 #' @rdname checkAlpha
 #' @export
 checkAlpha <- function(x) {
-    if (isTRUE(.alpha(x))) {
-        TRUE
-    } else {
+    ok <- is_scalar_double(x)
+    if (!ok) {
+        return("Must be scalar double")
+    }
+    ok <- x > 0L && x < 1L
+    if (!ok) {
         "An alpha level must be a scalar numeric > 0 and < 1"
     }
+    TRUE
 }
 
 

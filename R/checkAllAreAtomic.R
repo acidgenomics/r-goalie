@@ -10,24 +10,18 @@ NULL
 
 
 
-.allAreAtomic <- function(x) {
-    all(vapply(
+#' @rdname checkAllAreAtomic
+#' @export
+checkAllAreAtomic <- function(x) {
+    ok <- all(vapply(
         X = x,
         FUN = is.atomic,
         FUN.VALUE = logical(1L)
     ))
-}
-
-
-
-#' @rdname checkAllAreAtomic
-#' @export
-checkAllAreAtomic <- function(x) {
-    if (isTRUE(.allAreAtomic(x))) {
-        TRUE
-    } else {
-        "Not all elements in the object are atomic"
+    if (!ok) {
+        return("Not all elements in the object are atomic")
     }
+    TRUE
 }
 
 
