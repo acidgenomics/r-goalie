@@ -1,6 +1,8 @@
+#' Assert Check
 #' @importFrom assertthat assert_that
+#' @inheritParams params
 #' @export
-assertthat::assert_that
+assertthat::assert_that -> assert
 
 #' Is a Boolean Flag?
 #' @importFrom assertthat is.flag
@@ -8,6 +10,8 @@ assertthat::assert_that
 #' @export
 assertthat::is.flag -> is_flag
 
+#' Validity Check
 #' @importFrom assertthat validate_that
+#' @inheritParams params
 #' @export
-assertthat::validate_that
+assertthat::validate_that -> validate
