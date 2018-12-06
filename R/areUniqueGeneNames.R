@@ -1,8 +1,9 @@
+# FIXME This should be renamed to `hasUniqueGeneNames()`?
 # TODO Improve the error message here.
 
 
 
-#' Are Unique Gene Names?
+#' Does the Object Have Unique Gene Names?
 #'
 #' This assert check determines if a user-defined gene name query is using only
 #' unique (non-amgibuous) symbols. It is designed to be used for gene plotting
