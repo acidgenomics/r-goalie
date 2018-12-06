@@ -1,4 +1,4 @@
-# Consider improving the error message here.
+# TODO Improve the error message here.
 
 
 
@@ -52,9 +52,14 @@ areUniqueGeneNames <- function(x, genes) {
 
 #' @rdname areUniqueGeneNames
 #' @export
-assertAreUniqueGeneNames <- function(x, genes) {
-    assert_that(
-        isS4(x),
-        areUniqueGeneNames(x, genes)
-    )
-}
+are_unique_gene_names <- areUniqueGeneNames
+
+
+
+#' @rdname areUniqueGeneNames
+#' @export
+assertAreUniqueGeneNames <- makeAssertionFunction(areUniqueGeneNames)
+
+#' @rdname areUniqueGeneNames
+#' @export
+assert_are_unique_gene_names <- assertAreUniqueGeneNames
