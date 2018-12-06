@@ -36,9 +36,9 @@ Imports:
     utils
 Suggests:
     S4Vectors,
-    ggplot2,
-    testthat,
-    tibble
+    ggplot2 (>= 3.1),
+    testthat (>= 2.0),
+    tibble (>= 1.4)
 biocViews: Infrastructure
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
