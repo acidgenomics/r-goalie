@@ -26,6 +26,7 @@ Imports:
     assertive.sets,
     assertive.types,
     assertthat (>= 0.2),
+    checkmate (>= 1.8),
     magrittr (>= 1.5),
     methods,
     rlang (>= 0.3),
