@@ -3,6 +3,7 @@
 #' An alpha level must be a `scalar numeric` greater than 0 and less than 1.
 #'
 #' @name checkAlpha
+#' @aliases alpha
 #' @inherit params
 #'
 #' @examples

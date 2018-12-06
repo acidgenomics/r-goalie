@@ -1,6 +1,7 @@
 #' Check If an Object Contain Elements That Are All Atomic
 #'
 #' @name checkAllAreAtomic
+#' @aliases allAreAtomic
 #' @inherit params
 #'
 #' @examples
