@@ -2,18 +2,31 @@
 % Please edit documentation in R/isFile.R
 \name{isFile}
 \alias{isFile}
+\alias{is_file}
 \alias{assertIsFile}
+\alias{assert_is_file}
 \alias{areFiles}
 \alias{assertAreFiles}
 \title{Is File?}
 \usage{
-assertIsFile(x)
+is_file(...)
+
+assertIsFile(..., .var.name = vname(x), add = NULL)
+
+assert_is_file(..., .var.name = vname(x), add = NULL)
 
 areFiles(x)
 
 assertAreFiles(x)
 }
 \arguments{
+\item{...}{Additional arguments.}
+
+\item{.var.name}{\code{string}. Name of the checked object to print in assertions.}
+
+\item{add}{\code{AssertCollection}. Extra information to be included in the
+message for the testthat reporter. See \code{testthat::expect_that()}.}
+
 \item{x}{Object.}
 }
 \value{
