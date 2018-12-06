@@ -2,12 +2,20 @@
 % Please edit documentation in R/areNonExisting.R
 \name{areNonExisting}
 \alias{areNonExisting}
+\alias{are_non_existing}
 \alias{assertAreNonExisting}
+\alias{assert_are_non_existing}
 \title{Does the Variable Not Exist?}
 \usage{
 areNonExisting(x, envir = parent.frame(), inherits = TRUE)
 
-assertAreNonExisting(x, envir = parent.frame(), inherits = FALSE)
+are_non_existing(x, envir = parent.frame(), inherits = TRUE)
+
+assertAreNonExisting(x, envir = parent.frame(), inherits = TRUE,
+  .var.name = vname(x), add = NULL)
+
+assert_are_non_existing(x, envir = parent.frame(), inherits = TRUE,
+  .var.name = vname(x), add = NULL)
 }
 \arguments{
 \item{x}{\code{character}. Variable names to check in \code{environment}.}
@@ -16,6 +24,11 @@ assertAreNonExisting(x, envir = parent.frame(), inherits = FALSE)
 
 \item{inherits}{\code{boolean}. Should the enclosing frames of the \code{environment}
 be searched?}
+
+\item{.var.name}{\code{string}. Name of the checked object to print in assertions.}
+
+\item{add}{\code{AssertCollection}. Extra information to be included in the
+message for the testthat reporter. See \code{testthat::expect_that()}.}
 }
 \value{
 \itemize{
