@@ -1,4 +1,4 @@
-# FIXME For `assertHasValidDimnames()`, export `hasValidDimnames()`?
+# FIXME Simplify to `validDimnames()`, and `assertHasValidDimnames()?
 
 
 
