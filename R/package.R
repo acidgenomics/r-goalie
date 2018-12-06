@@ -16,7 +16,7 @@
 #' @importFrom assertive.types assert_is_a_bool assert_is_a_number
 #'   assert_is_a_string assert_is_all_of assert_is_an_integer assert_is_any_of
 #'   assert_is_character
-#' @importFrom assertthat assert_that is.flag on_failure<-
+#' @importFrom assertthat on_failure<-
 #' @importFrom methods is setGeneric setMethod signature
 #' @importFrom utils globalVariables
 #' @importFrom rlang is_integerish is_scalar_double is_scalar_integerish
