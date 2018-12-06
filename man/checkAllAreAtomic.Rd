@@ -9,7 +9,7 @@
 \alias{assertAllAreAtomic}
 \alias{assert_all_are_atomic}
 \alias{expect_all_are_atomic}
-\title{Check If an Object Contain Elements That Are All Atomic}
+\title{Does an Object Contain Elements That Are All Atomic?}
 \usage{
 checkAllAreAtomic(x)
 
@@ -19,9 +19,9 @@ testAllAreAtomic(x)
 
 test_all_are_atomic(x)
 
-assertAllAreAtomic(x, .var.name = vname(x), add = NULL)
+assertAllAreAtomic(x, .var.name = checkmate::vname(x), add = NULL)
 
-assert_all_are_atomic(x, .var.name = vname(x), add = NULL)
+assert_all_are_atomic(x, .var.name = checkmate::vname(x), add = NULL)
 
 expect_all_are_atomic(x, info = NULL, label = vname(x))
 }
@@ -44,7 +44,7 @@ the testthat reporter. See \code{testthat::expect_that()}.}
 }
 }
 \description{
-Check If an Object Contain Elements That Are All Atomic
+Does an Object Contain Elements That Are All Atomic?
 }
 \examples{
 checkAllAreAtomic(datasets::mtcars)
