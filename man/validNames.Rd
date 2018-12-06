@@ -27,7 +27,7 @@ assertHasValidDimnames(x)
 \itemize{
 \item \code{boolean flag} for \code{are/has/is*()} functions.
 \item Stop on error for \code{assert*()} functions
-(see \code{base::stop()} or \code{base::stopifnot()} for details).
+(see \code{stop()} or \code{stopifnot()} for details).
 }
 }
 \description{
@@ -54,4 +54,9 @@ assertHasValidNames(list)
 # Check rows and columns (dimnames) in a single call.
 validDimnames(datasets::iris)    # TRUE
 validDimnames(datasets::mtcars)  # FALSE
+}
+\seealso{
+\itemize{
+\item \code{checkmate::makeAssertionFunction()}.
+}
 }

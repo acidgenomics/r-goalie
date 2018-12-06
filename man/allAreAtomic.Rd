@@ -2,21 +2,32 @@
 % Please edit documentation in R/allAreAtomic.R
 \name{allAreAtomic}
 \alias{allAreAtomic}
+\alias{assertAllAreAtomic}
 \alias{all_are_atomic}
+\alias{assert_all_are_atomic}
 \title{Are All Items Atomic?}
 \usage{
 allAreAtomic(x)
 
+assertAllAreAtomic(x, .var.name = vname(x), add = NULL)
+
 all_are_atomic(x)
+
+assert_all_are_atomic(x, .var.name = vname(x), add = NULL)
 }
 \arguments{
 \item{x}{Object.}
+
+\item{.var.name}{\code{string}. Name of the checked object to print in assertions.}
+
+\item{add}{\code{AssertCollection}. Extra information to be included in the
+message for the testthat reporter. See \code{testthat::expect_that()}.}
 }
 \value{
 \itemize{
 \item \code{boolean flag} for \code{are/has/is*()} functions.
 \item Stop on error for \code{assert*()} functions
-(see \code{base::stop()} or \code{base::stopifnot()} for details).
+(see \code{stop()} or \code{stopifnot()} for details).
 }
 }
 \description{
@@ -24,4 +35,9 @@ Are All Items Atomic?
 }
 \examples{
 allAreAtomic(datasets::mtcars)
+}
+\seealso{
+\itemize{
+\item \code{checkmate::makeAssertionFunction()}.
+}
 }

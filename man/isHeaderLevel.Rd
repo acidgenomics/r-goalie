@@ -16,7 +16,7 @@ assertIsHeaderLevel(x)
 \itemize{
 \item \code{boolean flag} for \code{are/has/is*()} functions.
 \item Stop on error for \code{assert*()} functions
-(see \code{base::stop()} or \code{base::stopifnot()} for details).
+(see \code{stop()} or \code{stopifnot()} for details).
 }
 }
 \description{
@@ -24,4 +24,9 @@ Markdown supports header levels 1-7 (\code{<H1>}-\code{<H7>}).
 }
 \examples{
 isHeaderLevel(1L)
+}
+\seealso{
+\itemize{
+\item \code{checkmate::makeAssertionFunction()}.
+}
 }

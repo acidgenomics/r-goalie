@@ -9,10 +9,16 @@
 #'   be searched?
 #' @param names `character`. Names (e.g. rownames, colnames).
 #' @param x Object.
+#' @param .var.name `string`. Name of the checked object to print in assertions.
+#' @param add `AssertCollection`. Extra information to be included in the
+#'   message for the testthat reporter. See `testthat::expect_that()`.
 #' @param ... Additional arguments.
+#'
+#' @seealso
+#' - `checkmate::makeAssertionFunction()`.
 #'
 #' @return
 #' - `boolean flag` for `are/has/is*()` functions.
 #' - Stop on error for `assert*()` functions
-#'   (see `base::stop()` or `base::stopifnot()` for details).
+#'   (see `stop()` or `stopifnot()` for details).
 NULL
