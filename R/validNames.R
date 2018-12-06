@@ -1,3 +1,7 @@
+# FIXME For `assertHasValidDimnames()`, export `hasValidDimnames()`?
+
+
+
 #' Are the Names Syntatically Valid?
 #'
 #' @name validNames
