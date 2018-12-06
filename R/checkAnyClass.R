@@ -1,4 +1,4 @@
-# FIXME `checkClass()` is very strict and doesn't allow for inheritance
+# NOTE `checkClass()` is very strict and doesn't allow for inheritance
 # (e.g. atomic, numeric, scalar all fail for integer).
 # TODO Consider adding `checkInheritedClass()`?
 # TODO Export a variant named `isAny()`?
@@ -33,7 +33,15 @@ NULL
 
 
 .anyClass <- function(x, classes) {
-    any(vapply(
+
+}
+
+
+
+#' @rdname checkAnyClass
+#' @export
+checkAnyClass <- function(x, classes) {
+    ok <- any(vapply(
         X = classes,
         x = x,
         FUN = function(class, x) {
@@ -41,19 +49,11 @@ NULL
         },
         FUN.VALUE = logical(1L)
     ))
-}
-
-
-
-# TODO Improve the error message here.
-#' @rdname checkAnyClass
-#' @export
-checkAnyClass <- function(x, classes) {
-    if (isTRUE(.anyClass(x, classes))) {
-        TRUE
-    } else {
-        "Object does not belong to any of these classes"
+    # TODO Improve the message here.
+    if (!ok) {
+        return("Object does not belong to any of these classes")
     }
+    TRUE
 }
 
 
