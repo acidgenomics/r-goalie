@@ -2,14 +2,25 @@
 % Please edit documentation in R/hasName.R
 \name{hasName}
 \alias{hasName}
+\alias{assertHasName}
+\alias{assert_has_name}
 \title{Does an Object Have an Element with This Name?}
 \usage{
 hasName(x, name)
+
+assertHasName(x, name, .var.name = vname(x), add = NULL)
+
+assert_has_name(x, name, .var.name = vname(x), add = NULL)
 }
 \arguments{
 \item{x}{Object.}
 
 \item{name}{\code{string}. Name.}
+
+\item{.var.name}{\code{string}. Name of the checked object to print in assertions.}
+
+\item{add}{\code{AssertCollection}. Extra information to be included in the
+message for the testthat reporter. See \code{testthat::expect_that()}.}
 }
 \description{
 Does an Object Have an Element with This Name?
