@@ -11,7 +11,7 @@
 #' methods.
 #'
 #' @importFrom assertthat validate_that
-#' @inheritParams params
+#' @inheritParams assertthat::validate_that
 #' @export
 #'
 #' @seealso
