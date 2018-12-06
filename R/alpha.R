@@ -26,7 +26,7 @@ checkAlpha <- function(x) {
     if (isTRUE(.alpha(x))) {
         TRUE
     } else {
-        "An alpha level must be a scalar numeric > 0 and < 1."
+        "An alpha level must be a scalar numeric > 0 and < 1"
     }
 }
 
