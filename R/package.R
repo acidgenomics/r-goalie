@@ -7,7 +7,7 @@
 #' @importFrom BiocGenerics duplicated rowSums
 #' @importFrom R.utils isDirectory isFile
 #' @importFrom SummarizedExperiment assay
-#' @importFrom assertive.base assert_are_identical
+#' @importFrom assertive.base assert_are_identical is2
 #' @importFrom assertive.code is_existing
 #' @importFrom assertive.data assert_all_are_hex_colors is_hex_color
 #' @importFrom assertive.properties assert_has_dims assert_has_dimnames
