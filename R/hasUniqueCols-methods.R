@@ -1,4 +1,4 @@
-#' Does the Object Contain Unique Columns?
+#' Does the Object Contain Columns with Unique Values?
 #'
 #' Checks a matrix for duplicated columns, which reprent samples. Duplicate
 #' rows are allowed here, because many genes (rows) can contain all zeros.
@@ -24,14 +24,14 @@ NULL
 
 
 
-hasUniqueCols.ANY <-  # nolint
+hasUniqueCols.matrix <-  # nolint
     function(x) {
-        assert_has_dims(x)
         # Check for >= 2 samples.
-        if (!ncol(x) >= 2L) {
+        if (!ncol(x) > 1L) {
             return(FALSE)
         }
-        # Check that none of the samples are duplicated.
+        # We're using the S3 assay `duplicated()` method here, which supports
+        # MARGIN, so we can check across the columns.
         !any(duplicated(x, MARGIN = 2L))
     }
 
@@ -41,25 +41,8 @@ hasUniqueCols.ANY <-  # nolint
 #' @export
 setMethod(
     f = "hasUniqueCols",
-    signature = signature("ANY"),
-    definition = hasUniqueCols.ANY
-)
-
-
-
-hasUniqueCols.sparseMatrix <-  # nolint
-    function(x) {
-        hasUniqueCols(as.matrix(x))
-    }
-
-
-
-#' @rdname hasUniqueCols
-#' @export
-setMethod(
-    f = "hasUniqueCols",
-    signature = signature("sparseMatrix"),
-    definition = hasUniqueCols.sparseMatrix
+    signature = signature("matrix"),
+    definition = hasUniqueCols.matrix
 )
 
 
@@ -82,8 +65,34 @@ setMethod(
 
 
 
+# For other data types, attempt to coerce to standard matrix before check.
+# This approach will work for sparseMatrix and data.frame.
+hasUniqueCols.ANY <-  # nolint
+    function(x) {
+        hasUniqueCols(as(x, "matrix"))
+    }
+
+
+
+#' @rdname hasUniqueCols
+#' @export
+setMethod(
+    f = "hasUniqueCols",
+    signature = signature("ANY"),
+    definition = hasUniqueCols.ANY
+)
+
+
+
 #' @rdname hasUniqueCols
 #' @export
 assertHasUniqueCols <- function(x) {
-    assert_that(hasUniqueCols(x))
+    assert(hasUniqueCols(x))
+    invisible(x)
 }
+
+
+
+#' @rdname hasUniqueCols
+#' @export
+assert_has_unique_cols <- assertHasUniqueCols
