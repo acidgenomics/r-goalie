@@ -13,12 +13,15 @@ message for the testthat reporter. See \code{testthat::expect_that()}.}
 
 \item{genes}{\code{character}. Genes.}
 
+\item{info}{\code{character}. Extra information to be included in the message for
+the testthat reporter. See \code{testthat::expect_that()}.}
+
 \item{inherits}{\code{boolean}. Should the enclosing frames of the \code{environment}
 be searched?}
 
-\item{name}{\code{string}. Name.}
+\item{name}{\code{character}. Element name.}
 
-\item{names}{\code{character}. Names (e.g. rownames, colnames).}
+\item{names}{\code{character}. Element names (e.g. rownames, colnames).}
 
 \item{x}{Object.}
 
@@ -38,7 +41,9 @@ Parameters
 }
 \seealso{
 \itemize{
+\item \code{checkmate::makeTestFunction()}.
 \item \code{checkmate::makeAssertionFunction()}.
+\item \code{checkmate::makeExpectationFunction()}.
 }
 }
 \keyword{internal}
