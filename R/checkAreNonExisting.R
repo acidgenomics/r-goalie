@@ -7,7 +7,7 @@
 #' @param x `character`. Variable names to check in `environment`.
 #'
 #' @examples
-#' areNonExisting(c("XXX", "YYY"))
+#' checkAreNonExisting(c("XXX", "YYY"))
 NULL
 
 
@@ -42,12 +42,6 @@ check_are_non_existing <- checkAreNonExisting
 
 #' @rdname checkAreNonExisting
 #' @export
-assertAreNonExisting <- makeAssertionFunction(checkAreNonExisting)
-
-
-
-#' @rdname checkAreNonExisting
-#' @export
 testAreNonExisting <- makeTestFunction(checkAreNonExisting)
 
 
@@ -55,6 +49,12 @@ testAreNonExisting <- makeTestFunction(checkAreNonExisting)
 #' @rdname checkAreNonExisting
 #' @export
 test_are_non_existing <- testAreNonExisting
+
+
+
+#' @rdname checkAreNonExisting
+#' @export
+assertAreNonExisting <- makeAssertionFunction(checkAreNonExisting)
 
 
 
