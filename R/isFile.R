@@ -32,12 +32,17 @@ on_failure(isFile) <- function(call, env) {
 
 #' @rdname isFile
 #' @export
-assertIsFile <- function(x) {
-    assert_that(
-        isFile(x),
-        msg = .msg.isFile(x = deparse(substitute(x)))
-    )
-}
+is_file <- isFile
+
+
+
+#' @rdname isFile
+#' @export
+assertIsFile <- makeAssertionFunction(isFile)
+
+#' @rdname isFile
+#' @export
+assert_is_file <- assertIsFile
 
 
 
@@ -60,6 +65,8 @@ areFiles <- function(x) {
 on_failure(areFiles) <- function(call, env) {
     .msg.areFiles(x = deparse(call[["x"]]))
 }
+
+
 
 #' @rdname isFile
 #' @export
