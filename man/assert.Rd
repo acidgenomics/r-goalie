@@ -19,11 +19,11 @@ Name of the checked object to print in error messages. Defaults to
 the heuristic implemented in \code{\link{vname}}.}
 }
 \description{
-\code{assert()} is a drop-in replacement for \code{stopifnot()} but is designed to
+\code{assert()} is a drop-in replacement for \code{stopifnot()}, but is designed to
 return more informative error messages.
 }
 \details{
-Currently \code{assert()} reexports \code{checkmate::assert()} with a stricter default
+Currently, \code{assert()} reexports \code{checkmate::assert()} with a stricter default
 setting of the \code{combine} argument set to \code{"and"} instead of \code{"or"}. This
 enables \code{assert()} to act as a substitute for \code{stopifnot()}.
 }
@@ -35,8 +35,8 @@ assert(
 }
 \seealso{
 \itemize{
-\item \code{stopifnot()}.
 \item \code{checkmate::assert()}.
+\item \code{stopifnot()}.
 \item \code{assertthat::assert_that()}.
 }
 }
