@@ -1,4 +1,4 @@
-#' Check If an Argument Contains an Alpha Level
+#' Does the Argument Contain an Alpha Level?
 #'
 #' An alpha level must be a `scalar numeric` greater than 0 and less than 1.
 #'
