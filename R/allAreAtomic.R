@@ -13,8 +13,6 @@ allAreAtomic <- function(x) {
     ))
 }
 
-
-
 #' @rdname allAreAtomic
 #' @export
 all_are_atomic <- allAreAtomic
@@ -23,4 +21,8 @@ all_are_atomic <- allAreAtomic
 
 #' @rdname allAreAtomic
 #' @export
-assert
+assertAllAreAtomic <- makeAssertionFunction(allAreAtomic)
+
+#' @rdname allAreAtomic
+#' @export
+assert_all_are_atomic <- assertAllAreAtomic
