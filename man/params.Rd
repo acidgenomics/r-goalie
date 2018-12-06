@@ -4,6 +4,11 @@
 \alias{params}
 \title{Parameters}
 \arguments{
+\item{add}{\code{AssertCollection}. Extra information to be included in the
+message for the testthat reporter. See \code{testthat::expect_that()}.}
+
+\item{classes}{\code{character}. Object classes.}
+
 \item{envir}{\code{environment}. Environment.}
 
 \item{genes}{\code{character}. Genes.}
@@ -11,14 +16,13 @@
 \item{inherits}{\code{boolean}. Should the enclosing frames of the \code{environment}
 be searched?}
 
+\item{name}{\code{string}. Name.}
+
 \item{names}{\code{character}. Names (e.g. rownames, colnames).}
 
 \item{x}{Object.}
 
 \item{.var.name}{\code{string}. Name of the checked object to print in assertions.}
-
-\item{add}{\code{AssertCollection}. Extra information to be included in the
-message for the testthat reporter. See \code{testthat::expect_that()}.}
 
 \item{...}{Additional arguments.}
 }

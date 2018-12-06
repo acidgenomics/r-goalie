@@ -8,6 +8,8 @@ hasName(x, name)
 }
 \arguments{
 \item{x}{Object.}
+
+\item{name}{\code{string}. Name.}
 }
 \description{
 Does an Object Have an Element with This Name?
