@@ -26,15 +26,14 @@ on_failure(areNonExisting) <- function(call, env) {
 
 #' @rdname areNonExisting
 #' @export
-assertAreNonExisting <- function(
-    x,
-    envir = parent.frame(),
-    inherits = FALSE
-) {
-    # `assert_that()` isn't returning error as expected here because of `envir`.
-    if (!areNonExisting(x = x, envir = envir, inherits = inherits)) {
-        stop(.msg.areNonExisting(x = deparse(substitute(x))))
-    } else {
-        TRUE
-    }
-}
+are_non_existing <- areNonExisting
+
+
+
+#' @rdname areNonExisting
+#' @export
+assertAreNonExisting <- makeAssertionFunction(areNonExisting)
+
+#' @rdname areNonExisting
+#' @export
+assert_are_non_existing <- assertAreNonExisting
