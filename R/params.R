@@ -3,17 +3,17 @@
 #' @name params
 #' @keywords internal
 #'
+#' @param add `AssertCollection`. Extra information to be included in the
+#'   message for the testthat reporter. See `testthat::expect_that()`.
+#' @param classes `character`. Object classes.
 #' @param envir `environment`. Environment.
 #' @param genes `character`. Genes.
 #' @param inherits `boolean`. Should the enclosing frames of the `environment`
 #'   be searched?
+#' @param name `string`. Name.
 #' @param names `character`. Names (e.g. rownames, colnames).
 #' @param x Object.
 #' @param .var.name `string`. Name of the checked object to print in assertions.
-#' @param add `AssertCollection`. Extra information to be included in the
-#'   message for the testthat reporter. See `testthat::expect_that()`.
-#' @param name XXX
-#' @param classes `character`. Object classes.
 #' @param ... Additional arguments.
 #'
 #' @seealso
