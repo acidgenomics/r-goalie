@@ -23,7 +23,7 @@ assertIsFillScaleDiscreteOrNULL(x)
 \itemize{
 \item \code{boolean flag} for \code{are/has/is*()} functions.
 \item Stop on error for \code{assert*()} functions
-(see \code{base::stop()} or \code{base::stopifnot()} for details).
+(see \code{stop()} or \code{stopifnot()} for details).
 }
 }
 \description{
@@ -46,4 +46,9 @@ assertIsColorScaleContinuousOrNULL(color_c)
 assertIsColorScaleDiscreteOrNULL(color_d)
 assertIsFillScaleContinuousOrNULL(fill_c)
 assertIsFillScaleDiscreteOrNULL(fill_d)
+}
+\seealso{
+\itemize{
+\item \code{checkmate::makeAssertionFunction()}.
+}
 }

@@ -15,16 +15,26 @@ be searched?}
 
 \item{x}{Object.}
 
+\item{.var.name}{\code{string}. Name of the checked object to print in assertions.}
+
+\item{add}{\code{AssertCollection}. Extra information to be included in the
+message for the testthat reporter. See \code{testthat::expect_that()}.}
+
 \item{...}{Additional arguments.}
 }
 \value{
 \itemize{
 \item \code{boolean flag} for \code{are/has/is*()} functions.
 \item Stop on error for \code{assert*()} functions
-(see \code{base::stop()} or \code{base::stopifnot()} for details).
+(see \code{stop()} or \code{stopifnot()} for details).
 }
 }
 \description{
 Parameters
+}
+\seealso{
+\itemize{
+\item \code{checkmate::makeAssertionFunction()}.
+}
 }
 \keyword{internal}

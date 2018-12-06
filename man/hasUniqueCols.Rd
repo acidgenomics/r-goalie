@@ -31,7 +31,7 @@ assertHasUniqueCols(x)
 \itemize{
 \item \code{boolean flag} for \code{are/has/is*()} functions.
 \item Stop on error for \code{assert*()} functions
-(see \code{base::stop()} or \code{base::stopifnot()} for details).
+(see \code{stop()} or \code{stopifnot()} for details).
 }
 }
 \description{
@@ -53,6 +53,11 @@ hasUniqueCols(x)
 ## Duplicated.
 x <- matrix(data = rep(seq_len(10L), times = 2L), ncol = 2L)
 hasUniqueCols(x)
+}
+\seealso{
+\itemize{
+\item \code{checkmate::makeAssertionFunction()}.
+}
 }
 \author{
 Michael Steinbaugh, Rory Kirchner

@@ -28,7 +28,7 @@ assertIsAnImplicitIntegerOrNULL(x)
 \itemize{
 \item \code{boolean flag} for \code{are/has/is*()} functions.
 \item Stop on error for \code{assert*()} functions
-(see \code{base::stop()} or \code{base::stopifnot()} for details).
+(see \code{stop()} or \code{stopifnot()} for details).
 }
 }
 \description{
@@ -38,4 +38,9 @@ Check to see if a numeric vector is an implicit integer
 \examples{
 isImplicitInteger(c(1, 2))
 isAnImplicitInteger(1)
+}
+\seealso{
+\itemize{
+\item \code{checkmate::makeAssertionFunction()}.
+}
 }

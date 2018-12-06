@@ -13,7 +13,7 @@ assertIsStringOrNULL(x)
 \itemize{
 \item \code{boolean flag} for \code{are/has/is*()} functions.
 \item Stop on error for \code{assert*()} functions
-(see \code{base::stop()} or \code{base::stopifnot()} for details).
+(see \code{stop()} or \code{stopifnot()} for details).
 }
 }
 \description{
@@ -22,4 +22,9 @@ Is String (or NULL)?
 \examples{
 assertIsStringOrNULL("hello world")
 assertIsStringOrNULL(NULL)
+}
+\seealso{
+\itemize{
+\item \code{checkmate::makeAssertionFunction()}.
+}
 }
