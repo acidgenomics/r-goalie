@@ -12,7 +12,7 @@
 #' @importFrom assertive.data is_hex_color
 #' @importFrom assertive.properties has_colnames has_dimnames has_rownames
 #' @importFrom assertthat on_failure<-
-#' @importFrom checkmate assert makeAssertion makeAssertionFunction
+#' @importFrom checkmate assert makeAssertion makeAssertionFunction vname
 #' @importFrom methods is setGeneric setMethod signature
 #' @importFrom utils globalVariables
 #' @importFrom rlang is_integerish is_scalar_double is_scalar_integerish
