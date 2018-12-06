@@ -6,3 +6,9 @@ setGeneric(
         standardGeneric("hasUniqueCols")
     }
 )
+
+
+
+#' @rdname hasUniqueCols
+#' @export
+has_unique_cols <- hasUniqueCols
