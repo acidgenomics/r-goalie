@@ -4,10 +4,12 @@
 \alias{isAny}
 \title{Does an Object Belong to Any of These Classes?}
 \usage{
-isAny(x, class)
+isAny(x, classes)
 }
 \arguments{
 \item{x}{Object.}
+
+\item{classes}{\code{character}. Object classes.}
 }
 \description{
 Does an Object Belong to Any of These Classes?
