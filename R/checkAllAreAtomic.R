@@ -1,4 +1,4 @@
-#' Check If an Object Contain Elements That Are All Atomic
+#' Does an Object Contain Elements That Are All Atomic?
 #'
 #' @name checkAllAreAtomic
 #' @aliases allAreAtomic
