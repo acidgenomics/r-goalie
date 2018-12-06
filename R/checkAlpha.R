@@ -2,7 +2,7 @@
 #'
 #' An alpha level must be a `scalar numeric` greater than 0 and less than 1.
 #'
-#' @name alpha
+#' @name checkAlpha
 #' @inherit params
 #'
 #' @examples
@@ -20,7 +20,7 @@ NULL
 
 
 
-#' @rdname alpha
+#' @rdname checkAlpha
 #' @export
 checkAlpha <- function(x) {
     if (isTRUE(.alpha(x))) {
@@ -32,36 +32,36 @@ checkAlpha <- function(x) {
 
 
 
-#' @rdname alpha
+#' @rdname checkAlpha
 #' @export
 check_alpha <- checkAlpha
 
 
 
-#' @rdname alpha
+#' @rdname checkAlpha
 #' @export
 testAlpha <- makeTestFunction(checkAlpha)
 
 
 
-#' @rdname alpha
+#' @rdname checkAlpha
 #' @export
 test_alpha <- testAlpha
 
 
 
-#' @rdname alpha
+#' @rdname checkAlpha
 #' @export
 assertAlpha <- makeAssertionFunction(checkAlpha)
 
 
 
-#' @rdname alpha
+#' @rdname checkAlpha
 #' @export
 assert_alpha <- assertAlpha
 
 
 
-#' @rdname alpha
+#' @rdname checkAlpha
 #' @export
 expect_alpha <- makeExpectationFunction(checkAlpha)
