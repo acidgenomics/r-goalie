@@ -2,17 +2,29 @@
 % Please edit documentation in R/areUniqueGeneNames.R
 \name{areUniqueGeneNames}
 \alias{areUniqueGeneNames}
+\alias{are_unique_gene_names}
 \alias{assertAreUniqueGeneNames}
+\alias{assert_are_unique_gene_names}
 \title{Are Unique Gene Names?}
 \usage{
 areUniqueGeneNames(x, genes)
 
-assertAreUniqueGeneNames(x, genes)
+are_unique_gene_names(x, genes)
+
+assertAreUniqueGeneNames(x, genes, .var.name = vname(x), add = NULL)
+
+assert_are_unique_gene_names(x, genes, .var.name = vname(x),
+  add = NULL)
 }
 \arguments{
 \item{x}{Object.}
 
 \item{genes}{\code{character}. Genes.}
+
+\item{.var.name}{\code{string}. Name of the checked object to print in assertions.}
+
+\item{add}{\code{AssertCollection}. Extra information to be included in the
+message for the testthat reporter. See \code{testthat::expect_that()}.}
 }
 \value{
 \itemize{
