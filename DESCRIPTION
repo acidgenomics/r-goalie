@@ -41,7 +41,7 @@ Suggests:
     testthat (>= 2.0),
     tibble (>= 1.4)
 Remotes:
-    mllg/checkmate
+    mjsteinbaugh/checkmate
 biocViews: Infrastructure
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
