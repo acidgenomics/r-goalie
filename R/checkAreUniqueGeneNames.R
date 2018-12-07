@@ -47,7 +47,7 @@ checkAreUniqueGeneNames <- function(x, genes) {
     # Coercing to character here to handle Rle/factor matching.
     all <- as(x[["geneName"]], "character")
     # Check for gene names (symbols).
-    if (!has_length(all)) {
+    if (length(all) == 0L) {
         return("Gene names are not defined in object")
     }
     # Require that the user passed in gene names.
@@ -60,7 +60,7 @@ checkAreUniqueGeneNames <- function(x, genes) {
     dupes <- all[which(duplicated(all))]
     # Now check for intersection with the user-defined genes vector.
     intersect <- intersect(genes, dupes)
-    if (has_length(intersect)) {
+    if (length(intersect) > 0L) {
         return(paste("Non-unique gene names:", toString(intersect)))
     }
     TRUE
