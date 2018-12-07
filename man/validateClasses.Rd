@@ -19,9 +19,9 @@ message on failure.
 Validity check capable of validating multiple slots in a single call.
 }
 \details{
-To be used inside S4 \code{methods::setValidity()} call or with
-\code{assertthat::validate_that()}. Particularly useful for checking multiple
-slotted objects inside \code{metadata()}.
+To be used inside S4 \code{methods::setValidity()} call or with \code{validate()}.
+Particularly useful for checking multiple slotted objects inside
+\code{metadata()}.
 }
 \examples{
 data(rse)
@@ -35,5 +35,9 @@ validateClasses(
 )
 }
 \seealso{
-\code{assertthat::validate_that()}.
+\itemize{
+\item \code{validate()}.
+\item \code{methods::setValidity()}.
+\item \code{methods::validObject()}.
+}
 }
