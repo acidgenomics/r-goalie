@@ -31,10 +31,12 @@ NULL
 
 
 checkAreUniqueGeneNames <- function(x, genes) {
-    if (!isS4(x)) {
+    ok <- isS4(x)
+    if (!ok) {
         return("x is not an S4 class object")
     }
-    if (!is(genes, "character")) {
+    ok <- is(genes, "character")
+    if (!ok) {
         return("genes are not character")
     }
     # Get all of the gene names stashed in the x.
@@ -43,19 +45,21 @@ checkAreUniqueGeneNames <- function(x, genes) {
         x <- SummarizedExperiment::rowData(x)
     }
     # Coercing to character here to handle Rle/factor matching.
-    allGenes <- as(x[["geneName"]], "character")
+    all <- as(x[["geneName"]], "character")
     # Check for gene names (symbols).
-    if (is.null(allGenes)) {
+    if (!has_length(all)) {
         return("Gene names are not defined in object")
     }
     # Require that the user passed in gene names.
-    if (!all(genes %in% allGenes)) {
-        return(paste("Genes missing in object:", setdiff(genes, allGenes)))
+    ok <- all(genes %in% allGenes)
+    if (!ok) {
+        setdiff <- setdiff(genes, allGenes)
+        return(paste("Genes missing in object:", setdiff))
     }
     # Get a vector of all duplicated gene names in the object.
-    duplicatedGenes <- allGenes[which(duplicated(allGenes))]
+    dupes <- all[which(duplicated(all))]
     # Now check for intersection with the user-defined genes vector.
-    intersect <- intersect(genes, duplicatedGenes)
+    intersect <- intersect(genes, dupes)
     if (has_length(intersect)) {
         return(paste("Non-unique gene names:", toString(intersect)))
     }
