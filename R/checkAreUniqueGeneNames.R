@@ -30,6 +30,8 @@ NULL
 
 
 
+#' @rdname checkAreUniqueGeneNames
+#' @export
 checkAreUniqueGeneNames <- function(x, genes) {
     ok <- isS4(x)
     if (!ok) {
@@ -51,9 +53,9 @@ checkAreUniqueGeneNames <- function(x, genes) {
         return("Gene names are not defined in object")
     }
     # Require that the user passed in gene names.
-    ok <- all(genes %in% allGenes)
+    ok <- all(genes %in% all)
     if (!ok) {
-        setdiff <- setdiff(genes, allGenes)
+        setdiff <- setdiff(genes, all)
         return(paste("Genes missing in object:", setdiff))
     }
     # Get a vector of all duplicated gene names in the object.
