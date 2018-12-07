@@ -1,3 +1,40 @@
+# TODO Remove this in a future update, in favor of `assert()`.
+#' @importFrom assertthat assert_that
+#' @export
+assertthat::assert_that
+
+# TODO Remove this in a future update, in favor of `validate()`.
+#' @importFrom assertthat validate_that
+#' @export
+assertthat::validate_that
+
+
+
+# isIntegerish =================================================================
+#' @importFrom rlang is_integerish
+#' @export
+rlang::is_integerish
+
+#' @rdname reexports
+#' @usage NULL
+#' @export
+isIntegerish <- is_integerish
+
+
+
+# isScalarIntegerish ===========================================================
+#' @importFrom rlang is_scalar_integerish
+#' @export
+is_scalar_integerish
+
+#' @rdname reexports
+#' @usage NULL
+#' @export
+isScalarIntegerish <- is_scalar_integerish
+
+
+
+# hasName ======================================================================
 #' @importFrom rlang has_name
 #' @export
 rlang::has_name
@@ -8,18 +45,20 @@ rlang::has_name
 hasName <- has_name
 
 
-#' @importFrom assertive.base assert_are_identical
-#' @importFrom assertive.data assert_all_are_hex_colors
-#' @importFrom assertive.properties assert_has_dims assert_has_dimnames
-#'   assert_has_names assert_is_non_empty
-#' @importFrom assertive.sets assert_are_disjoint_sets assert_is_subset
-#' @importFrom assertive.types assert_is_a_bool assert_is_a_number
-#'   assert_is_a_string assert_is_all_of assert_is_an_integer assert_is_any_of
-#'   assert_is_character
-NULL
+
+# hasNames =====================================================================
+#' @importFrom assertive.properties has_names
+#' @export
+assertive.properties::has_names
+
+#' @rdname reexports
+#' @usage NULL
+#' @export
+hasNames <- has_names
 
 
 
+# assertive ====================================================================
 #' @importFrom assertive.base assert_all_are_not_na assert_all_are_true
 #'   assert_any_are_true assert_are_identical assert_is_identical_to_na
 #'   is_not_na
@@ -45,27 +84,10 @@ NULL
 #'   assert_all_are_non_empty_character
 #'   assert_all_are_non_missing_nor_empty_character
 #'   assert_any_are_matching_regex
-#' @importFrom assertive.types assert_is_a_bool assert_is_a_number
+#' @importFrom assertive.types assert_is_a_number
 #'   assert_is_a_string assert_is_all_of assert_is_an_integer assert_is_any_of
 #'   assert_is_call assert_is_character assert_is_data.frame
 #'   assert_is_environment assert_is_factor assert_is_function assert_is_integer
 #'   assert_is_list assert_is_logical assert_is_matrix assert_is_name
 #'   assert_is_numeric assert_is_symbol assert_is_tbl_df is_a_number is_a_string
-#' @importFrom assertthat assert_that validate_that
 NULL
-
-
-
-# TODO Remove this in a future update, in favor of `assert()`.
-#' @importFrom assertthat assert_that
-#' @export
-assertthat::assert_that
-
-# TODO Remove this in a future update, in favor of `validate()`.
-#' @importFrom assertthat validate_that
-#' @export
-assertthat::validate_that
-
-#' @importFrom checkmate assert
-#' @export
-checkmate::assert
