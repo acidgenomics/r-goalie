@@ -8,6 +8,7 @@
 \alias{validate_that}
 \alias{is_integerish}
 \alias{isIntegerish}
+\alias{is_scalar_integerish}
 \alias{isScalarIntegerish}
 \alias{has_name}
 \alias{hasName}
@@ -26,6 +27,6 @@ below to see their documentation.
 
   \item{magrittr}{\code{\link[magrittr]{\%>\%}}}
 
-  \item{rlang}{\code{\link[rlang]{is_integerish}}, \code{\link[rlang]{has_name}}}
+  \item{rlang}{\code{\link[rlang]{is_integerish}}, \code{\link[rlang]{is_scalar_integerish}}, \code{\link[rlang]{has_name}}}
 }}
 
