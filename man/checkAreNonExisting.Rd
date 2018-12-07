@@ -11,22 +11,30 @@
 \alias{expect_are_non_existing}
 \title{Does the Requested Variable Exist?}
 \usage{
-checkAreNonExisting(x)
+checkAreNonExisting(x, envir = parent.frame(), inherits = TRUE)
 
-check_are_non_existing(x)
+check_are_non_existing(x, envir = parent.frame(), inherits = TRUE)
 
-testAreNonExisting(x)
+testAreNonExisting(x, envir = parent.frame(), inherits = TRUE)
 
-test_are_non_existing(x)
+test_are_non_existing(x, envir = parent.frame(), inherits = TRUE)
 
-assertAreNonExisting(x, .var.name = checkmate::vname(x), add = NULL)
+assertAreNonExisting(x, envir = parent.frame(), inherits = TRUE,
+  .var.name = checkmate::vname(x), add = NULL)
 
-assert_are_non_existing(x, .var.name = checkmate::vname(x), add = NULL)
+assert_are_non_existing(x, envir = parent.frame(), inherits = TRUE,
+  .var.name = checkmate::vname(x), add = NULL)
 
-expect_are_non_existing(x, info = NULL, label = vname(x))
+expect_are_non_existing(x, envir = parent.frame(), inherits = TRUE,
+  info = NULL, label = vname(x))
 }
 \arguments{
 \item{x}{\code{character}. Variable names to check in \code{environment}.}
+
+\item{envir}{\code{environment}. Environment.}
+
+\item{inherits}{\code{boolean}. Should the enclosing frames of the \code{environment}
+be searched?}
 
 \item{.var.name}{\code{string}. Name of the checked object to print in assertions.}
 

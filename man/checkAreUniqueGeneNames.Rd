@@ -11,6 +11,8 @@
 \alias{expect_alpha}
 \title{Are the Requested Gene Names Duplicated in the Corresponding Object?}
 \usage{
+checkAreUniqueGeneNames(x, genes)
+
 check_are_unique_gene_names(x, genes)
 
 testAreUniqueGeneNames(x, genes)
