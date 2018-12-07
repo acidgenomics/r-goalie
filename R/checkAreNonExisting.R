@@ -17,7 +17,7 @@ NULL
     envir = parent.frame(),
     inherits = TRUE
 ) {
-    all(!is_existing(x, envir = envir, inherits = inherits))
+
 }
 
 
@@ -25,11 +25,12 @@ NULL
 #' @rdname checkAreNonExisting
 #' @export
 checkAreNonExisting <- function(x) {
-    if (isTRUE(.areNonExisting(x))) {
-        TRUE
-    } else {
-        "Detected variables that already exist in the environment"
+    ok <- all(!is_existing(x, envir = envir, inherits = inherits))
+    # TODO Improve the message here.
+    if (!ok) {
+        return("Detected variables that already exist in the environment")
     }
+    TRUE
 }
 
 
