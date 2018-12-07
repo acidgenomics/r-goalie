@@ -8,7 +8,7 @@
 \alias{assertHasRownames}
 \alias{assert_has_rownames}
 \alias{expect_has_rownames}
-\title{Does the Object Have Rownames?}
+\title{Does the Object Have Row Names?}
 \usage{
 checkHasRownames(x)
 
@@ -43,9 +43,17 @@ the testthat reporter. See \code{testthat::expect_that()}.}
 }
 }
 \description{
-A stricter alternative to the assertive version that works properly with
-data frames.
+Does the Object Have Row Names?
 }
+\section{data.frame}{
+
+
+Standard \code{data.frame} class objects cannot have \code{NULL} row names defined.
+Here we are checking to see if a \code{data.frame} has soft \code{NULL} row names,
+meaning that they return as a sequence that is identical to the number of
+rows.
+}
+
 \examples{
 ## Pass ====
 x <- data.frame(
