@@ -11,6 +11,8 @@
 \alias{isScalarIntegerish}
 \alias{has_name}
 \alias{hasName}
+\alias{has_names}
+\alias{hasNames}
 \title{Objects exported from other packages}
 \keyword{internal}
 \description{
@@ -18,6 +20,8 @@ These objects are imported from other packages. Follow the links
 below to see their documentation.
 
 \describe{
+  \item{assertive.properties}{\code{\link[assertive.properties]{has_names}}}
+
   \item{assertthat}{\code{\link[assertthat]{assert_that}}, \code{\link[assertthat]{validate_that}}}
 
   \item{magrittr}{\code{\link[magrittr]{\%>\%}}}

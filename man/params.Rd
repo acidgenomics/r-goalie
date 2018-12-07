@@ -21,7 +21,7 @@ be searched?}
 
 \item{name}{\code{character}. Element name.}
 
-\item{names}{\code{character}. Element names (e.g. rownames, colnames).}
+\item{names}{\code{character}. Element names (e.g. row names, column names).}
 
 \item{x}{Object.}
 
