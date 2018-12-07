@@ -19,7 +19,7 @@ NULL
 checkHasValidDimnames <- function(x) {
     # Row names.
     if (isTRUE(testHasRownames(x))) {
-        rownames <- row.names(x)
+        rownames <- rownames(x)
         ok <- validNames(rownames)
         if (!ok) {
             return("Row names are invalid")
@@ -28,7 +28,7 @@ checkHasValidDimnames <- function(x) {
 
     # Column names.
     if (isTRUE(testHasColnames(x))) {
-        colnames <- col.names(x)
+        colnames <- colnames(x)
         ok <- validNames(colnames)
         if (!ok) {
             return("Column names are invalid")
