@@ -12,21 +12,15 @@ NULL
 
 
 
-.areNonExisting <- function(
+# TODO Improve the message here.
+#' @rdname checkAreNonExisting
+#' @export
+checkAreNonExisting <- function(
     x,
     envir = parent.frame(),
     inherits = TRUE
 ) {
-
-}
-
-
-
-#' @rdname checkAreNonExisting
-#' @export
-checkAreNonExisting <- function(x) {
     ok <- all(!is_existing(x, envir = envir, inherits = inherits))
-    # TODO Improve the message here.
     if (!ok) {
         return("Detected variables that already exist in the environment")
     }
