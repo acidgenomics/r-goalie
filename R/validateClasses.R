@@ -49,7 +49,7 @@ validateClasses <- function(
                 x = classes,
                 y = class(object[[slot]])
             )
-            if (!has_length(intersect)) {
+            if (length(intersect) == 0L) {
                 FALSE
             } else {
                 TRUE
