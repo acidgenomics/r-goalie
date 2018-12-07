@@ -19,9 +19,11 @@
 #' validNames("cell-AAAAAAAA")
 #' validNames("GFP+")
 validNames <- function(names) {
-    if (!is.character(names)) {
-        FALSE
-    } else {
-        identical(names, make.names(names, unique = TRUE))
+    if (
+        !is.character(names) ||
+        length(names) == 0L
+    ) {
+        return(FALSE)
     }
+    identical(names, make.names(names, unique = TRUE))
 }
