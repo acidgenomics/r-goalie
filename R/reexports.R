@@ -25,7 +25,7 @@ isIntegerish <- is_integerish
 # isScalarIntegerish ===========================================================
 #' @importFrom rlang is_scalar_integerish
 #' @export
-is_scalar_integerish
+rlang::is_scalar_integerish
 
 #' @rdname reexports
 #' @usage NULL
