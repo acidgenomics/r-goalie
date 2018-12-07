@@ -1,7 +1,15 @@
-#' Does the Object Have Rownames?
+# NOTE Consider using `row.names` instead of `rownames` for data.frame.
+
+
+
+#' Does the Object Have Row Names?
 #'
-#' A stricter alternative to the assertive version that works properly with
-#' data frames.
+#' @section data.frame:
+#'
+#' Standard `data.frame` class objects cannot have `NULL` row names defined.
+#' Here we are checking to see if a `data.frame` has soft `NULL` row names,
+#' meaning that they return as a sequence that is identical to the number of
+#' rows.
 #'
 #' @name checkHasRownames
 #' @inherit params
@@ -32,40 +40,34 @@ NULL
 
 
 
-.hasRownames <- function(x) {
+#' @rdname checkHasRownames
+#' @export
+checkHasRownames <- function(x) {
+    # Classes that extend data.frame but intentionally don't support row names.
+    if (is(x, "data.table")) {
+        return("data.table class objects don't support row names")
+    } else if (is(x, "tbl_df")) {
+        return("tibble (tbl_df) class objects don't support row names")
+    }
+
+    # Standard data frames can't return NULL row names, so check for sequence.
     if (
-        is(x, "data.table") ||
-        is(x, "tbl_df")
-    ) {
-        # Check for "rowname" column in classes that inherit data.frame but
-        # don't allow row names to be set.
-        "rowname" %in% colnames(x)
-    } else if (
         is(x, "data.frame") &&
         identical(
             x = as(rownames(x), "character"),
             y = as(seq_len(nrow(x)), "character")
         )
     ) {
-        # Standard data.frame doesn't allow NULL row names to be set, which is
-        # a poor default choice. So in this case, check for a numeric sequence
-        # that is identical to the number of rows.
-        FALSE
-    } else {
-        !is.null(rownames(x))
+        return("Object is data.frame with sequence row names (soft NULL)")
     }
-}
 
-
-
-#' @rdname checkHasRownames
-#' @export
-checkHasRownames <- function(x) {
-    if (isTRUE(.hasRownames(x))) {
-        TRUE
-    } else {
-        "Object does not have row names defined"
+    # Other classes (e.g. matrix, DataFrame) do support NULL row names.
+    ok <- !is.null(rownames(x))
+    if (!ok) {
+        "Object has NULL row names"
     }
+
+    TRUE
 }
 
 
