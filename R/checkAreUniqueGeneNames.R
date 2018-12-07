@@ -56,7 +56,7 @@ checkAreUniqueGeneNames <- function(x, genes) {
     duplicatedGenes <- allGenes[which(duplicated(allGenes))]
     # Now check for intersection with the user-defined genes vector.
     intersect <- intersect(genes, duplicatedGenes)
-    if (has_length(intersect)) {
+    if (length(intersect) > 0L) {
         return(paste("Non-unique gene names:", toString(intersect)))
     }
     TRUE
