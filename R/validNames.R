@@ -2,6 +2,7 @@
 #'
 #' @name validNames
 #' @inherit params
+#' @export
 #'
 #' @seealso
 #' - `make.names()`.
