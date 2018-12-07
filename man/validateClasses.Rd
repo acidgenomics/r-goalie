@@ -24,13 +24,16 @@ Particularly useful for checking multiple slotted objects inside
 \code{metadata()}.
 }
 \examples{
-data(rse)
 validateClasses(
-    object = S4Vectors::metadata(rse),
+    object = list(
+        a = character(),
+        b = integer(),
+        c = factor()
+    ),
     expected = list(
-        version = c("package_version", "numeric_version"),
-        date = "Date",
-        interestingGroups = "character"
+        a = "character",
+        b = "integer",
+        c = "factor"
     )
 )
 }
