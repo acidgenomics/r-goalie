@@ -16,7 +16,7 @@ NULL
 #' @export
 checkHasValidNames <- function(x) {
     names <- names(x)
-    ok <- has_length(names)
+    ok <- length(names) > 0L
     if (!ok) {
         return("Object does not have names")
     }
