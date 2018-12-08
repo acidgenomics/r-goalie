@@ -2,7 +2,7 @@
 % Please edit documentation in R/checkIdentical.R
 \name{checkIdentical}
 \alias{checkIdentical}
-\alias{allAreAtomic}
+\alias{identical}
 \alias{check_identical}
 \alias{testIdentical}
 \alias{test_identical}
@@ -40,6 +40,15 @@ message for the testthat reporter. See \code{testthat::expect_that()}.}
 \description{
 Are Two Objects Identical?
 }
+\section{Functions}{
+\itemize{
+\item \code{check_identical}: snake alias.
+
+\item \code{test_identical}: snake alias.
+
+\item \code{assert_identical}: snake alias.
+}}
+
 \examples{
 ## Pass ====
 checkIdentical(x = 1L, y = 1L)

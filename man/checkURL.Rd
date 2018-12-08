@@ -3,6 +3,7 @@
 \name{checkURL}
 \alias{checkURL}
 \alias{url}
+\alias{urls}
 \alias{check_url}
 \alias{testURL}
 \alias{test_url}
@@ -13,9 +14,9 @@
 \alias{check_urls}
 \alias{testURLs}
 \alias{test_urls}
-\alias{assertAreURLs}
-\alias{assert_are_urls}
-\alias{expect_are_urls}
+\alias{assertURLs}
+\alias{assert_urls}
+\alias{expect_urls}
 \title{Does the Argument Contain a URL?}
 \usage{
 checkURL(x)
@@ -40,11 +41,11 @@ testURLs(x)
 
 test_urls(x)
 
-assertAreURLs(x, .var.name = checkmate::vname(x), add = NULL)
+assertURLs(x, .var.name = checkmate::vname(x), add = NULL)
 
-assert_are_urls(x, .var.name = checkmate::vname(x), add = NULL)
+assert_urls(x, .var.name = checkmate::vname(x), add = NULL)
 
-expect_are_urls(x, info = NULL, label = vname(x))
+expect_urls(x, info = NULL, label = vname(x))
 }
 \arguments{
 \item{x}{Object.}
@@ -67,6 +68,25 @@ the testthat reporter. See \code{testthat::expect_that()}.}
 \description{
 Does the Argument Contain a URL?
 }
+\section{Functions}{
+\itemize{
+\item \code{checkURL}: Requires a single URL.
+
+\item \code{check_url}: snake alias.
+
+\item \code{test_url}: snake alias.
+
+\item \code{assert_url}: snake alias.
+
+\item \code{checkURLs}: Supports multiple URLs.
+
+\item \code{check_urls}: snake alias.
+
+\item \code{test_urls}: snake alias.
+
+\item \code{assert_urls}: snake alias.
+}}
+
 \examples{
 urls <- c("https://www.r-project.org", "ftp://r-project.org")
 

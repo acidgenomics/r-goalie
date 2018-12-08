@@ -3,6 +3,7 @@
 \name{checkAllAreAtomic}
 \alias{checkAllAreAtomic}
 \alias{allAreAtomic}
+\alias{all_are_atomic}
 \alias{check_all_are_atomic}
 \alias{testAllAreAtomic}
 \alias{test_all_are_atomic}
@@ -46,6 +47,15 @@ the testthat reporter. See \code{testthat::expect_that()}.}
 \description{
 Does an Object Contain Elements That Are All Atomic?
 }
+\section{Functions}{
+\itemize{
+\item \code{check_all_are_atomic}: snake alias.
+
+\item \code{test_all_are_atomic}: snake alias.
+
+\item \code{assert_all_are_atomic}: snake alias.
+}}
+
 \examples{
 ## Pass ====
 checkAllAreAtomic(data.frame(a = "foo", b = "bar"))

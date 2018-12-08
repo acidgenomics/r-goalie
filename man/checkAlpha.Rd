@@ -48,6 +48,15 @@ the testthat reporter. See \code{testthat::expect_that()}.}
 \description{
 An alpha level must be a \code{scalar numeric} greater than 0 and less than 1.
 }
+\section{Functions}{
+\itemize{
+\item \code{check_alpha}: snake alias.
+
+\item \code{test_alpha}: snake alias.
+
+\item \code{assert_alpha}: snake alias.
+}}
+
 \examples{
 ## Pass ====
 checkAlpha(0.05)

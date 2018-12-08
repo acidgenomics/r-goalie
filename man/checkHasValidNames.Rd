@@ -3,6 +3,7 @@
 \name{checkHasValidNames}
 \alias{checkHasValidNames}
 \alias{hasValidNames}
+\alias{has_valid_names}
 \alias{check_has_valid_names}
 \alias{testHasValidNames}
 \alias{test_has_valid_names}
@@ -46,6 +47,15 @@ the testthat reporter. See \code{testthat::expect_that()}.}
 \description{
 Does the Object Have Syntactically Valid Names?
 }
+\section{Functions}{
+\itemize{
+\item \code{check_has_valid_names}: snake alias.
+
+\item \code{test_has_valid_names}: snake alias.
+
+\item \code{assert_has_valid_names}: snake alias.
+}}
+
 \examples{
 ## Pass ====
 x <- list(a = 1, b = 2)

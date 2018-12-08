@@ -3,6 +3,7 @@
 \name{checkAreUniqueGeneNames}
 \alias{checkAreUniqueGeneNames}
 \alias{areUniqueGeneNames}
+\alias{are_unique_gene_names}
 \alias{check_are_unique_gene_names}
 \alias{testAreUniqueGeneNames}
 \alias{test_are_unique_gene_names}
@@ -52,6 +53,15 @@ This assert check determines if a user-defined gene name query is using only
 unique (non-amgibuous) symbols. It is designed to be used for gene plotting
 particularly when performing single-cell RNA-seq marker analysis.
 }
+\section{Functions}{
+\itemize{
+\item \code{check_are_unique_gene_names}: snake alias.
+
+\item \code{test_are_unique_gene_names}: snake alias.
+
+\item \code{assert_are_unique_gene_names}: snake alias.
+}}
+
 \examples{
 x <- SummarizedExperiment::SummarizedExperiment(
     assays = matrix(
