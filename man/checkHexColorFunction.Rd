@@ -4,12 +4,41 @@
 \alias{checkHexColorFunction}
 \alias{hexColorFunction}
 \alias{hex_color_function}
+\alias{check_hex_color_function}
+\alias{testHexColorFunction}
+\alias{test_hex_color_function}
+\alias{assertHexColorFunction}
+\alias{assert_hex_color_function}
+\alias{expect_hex_color_function}
 \title{Does the Argument Contain a Hex Color Function?}
 \usage{
 checkHexColorFunction(x, null.ok = FALSE)
+
+check_hex_color_function(x, null.ok = FALSE)
+
+testHexColorFunction(x, null.ok = FALSE)
+
+test_hex_color_function(x, null.ok = FALSE)
+
+assertHexColorFunction(x, null.ok = FALSE,
+  .var.name = checkmate::vname(x), add = NULL)
+
+assert_hex_color_function(x, null.ok = FALSE,
+  .var.name = checkmate::vname(x), add = NULL)
+
+expect_hex_color_function(x, null.ok = FALSE, info = NULL,
+  label = vname(x))
 }
 \arguments{
 \item{x}{Object.}
+
+\item{.var.name}{\code{string}. Name of the checked object to print in assertions.}
+
+\item{add}{\code{AssertCollection}. Extra information to be included in the
+message for the testthat reporter. See \code{testthat::expect_that()}.}
+
+\item{info}{\code{character}. Extra information to be included in the message for
+the testthat reporter. See \code{testthat::expect_that()}.}
 }
 \value{
 \itemize{
@@ -19,12 +48,22 @@ checkHexColorFunction(x, null.ok = FALSE)
 }
 }
 \description{
-Does the Argument Contain a Hex Color Function?
+This assert check is intended primarily to check for viridis hexadecimal
+color value return.
 }
+\section{Functions}{
+\itemize{
+\item \code{check_hex_color_function}: snake alias.
+
+\item \code{assert_hex_color_function}: snake alias.
+}}
+
 \examples{
-x <- function(n) {
-    colors <- c("#FFFFFF", "#000000")
-    colors[seq_len(n)]
-}
+## Pass ====
+x <- viridis::viridis
+checkHexColorFunction(x)
+
+## Fail ====
+x <- ggplot2::scale_colour_manual
 checkHexColorFunction(x)
 }
