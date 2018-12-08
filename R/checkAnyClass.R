@@ -1,15 +1,9 @@
-# NOTE `checkClass()` is very strict and doesn't allow for inheritance
-# (e.g. atomic, numeric, scalar all fail for integer).
-# TODO Consider adding `checkInheritedClass()`?
-# TODO Export a variant named `isAny()`?
-
-
-
 #' Does an Object Belong to Any of These Classes?
 #'
 #' @name checkAnyClass
 #' @aliases anyClass
 #' @inheritParams params
+#' @export
 #'
 #' @seealso
 #' - `checkmate::checkClass()`.
@@ -26,20 +20,6 @@
 #' # This should pass, but fails...very strict.
 #' checkClass(x, "numeric")
 #' checkClass(x, "character")
-#'
-#'
-NULL
-
-
-
-.anyClass <- function(x, classes) {
-
-}
-
-
-
-#' @rdname checkAnyClass
-#' @export
 checkAnyClass <- function(x, classes) {
     ok <- any(vapply(
         X = classes,
@@ -49,7 +29,7 @@ checkAnyClass <- function(x, classes) {
         },
         FUN.VALUE = logical(1L)
     ))
-    # TODO Improve the message here.
+    # TODO Improve the message here, showing which failed.
     if (!ok) {
         return("Object does not belong to any of these classes")
     }
