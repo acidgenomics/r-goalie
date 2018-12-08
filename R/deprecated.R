@@ -126,6 +126,8 @@ areSamplesUnique <- function(...) {
 # assertIsColorScaleDiscreteOrNULL
 #     assertColorScaleDiscreteOrNULL
 
+# assertIsHexColorFunctionOrNULL
+
 # assertIsAnImplicitInteger
 # assertIsAnImplicitIntegerOrNULL
 # assertIsHeaderLevel
