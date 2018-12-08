@@ -3,19 +3,19 @@
 #' @name checkHasValidDimnames
 #' @aliases hasValidDimnames
 #' @inherit params
+#' @export
 #'
 #' @examples
-#' ## Pass.
-#' checkHasValidDimnames(datasets::iris)
+#' ## Pass ====
+#' x <- datasets::iris
+#' lapply(dimnames(x), head)
+#' checkHasValidDimnames(x)
 #'
-#' ## Fail.
-#' checkHasValidDimnames(datasets::mtcars)
-NULL
-
-
-
-#' @rdname checkHasValidDimnames
-#' @export
+#' ## Fail ====
+#' x <- datasets::mtcars
+#' # Note the spaces in the row names here.
+#' lapply(dimnames(x), head)
+#' checkHasValidDimnames(x)
 checkHasValidDimnames <- function(x) {
     # Row names.
     if (isTRUE(testHasRownames(x))) {
