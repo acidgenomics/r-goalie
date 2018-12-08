@@ -1,3 +1,7 @@
+# TODO Consider deprecating these in a future release.
+
+
+
 # ggplot2 scale ================================================================
 #' Is Scale (or NULL)?
 #'
@@ -30,10 +34,7 @@ NULL
 assertIsColorScaleContinuousOrNULL <- function(x) {
     assert_is_any_of(x, classes = c("ScaleContinuous", "NULL"))
     if (!is.null(x)) {
-        assert_is_all_of(
-            x = x,
-            classes = c("ggproto", "Scale", "ScaleContinuous")
-        )
+        assertClass(x, classes = c("ScaleContinuous", "Scale", "ggproto", "gg"))
         # Note that this has to match the British spelling.
         assert_are_identical(x[["aesthetics"]], "colour")
     }
