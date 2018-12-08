@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Has Rownames? — hasRownames • goalie</title>
+<title>Does an Object Contain Elements That Are All Atomic? — checkAllAreAtomic • goalie</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -32,10 +32,9 @@
 
   <link href="../extra.css" rel="stylesheet">
   
-<meta property="og:title" content="Has Rownames? — hasRownames" />
+<meta property="og:title" content="Does an Object Contain Elements That Are All Atomic? — checkAllAreAtomic" />
 
-<meta property="og:description" content="A stricter alternative to the assertive version that works properly with
-data frames." />
+<meta property="og:description" content="Does an Object Contain Elements That Are All Atomic?" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -66,7 +65,7 @@ data frames." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">goalie</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
       </span>
     </div>
 
@@ -105,21 +104,30 @@ data frames." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Has Rownames?</h1>
-    <small class="dont-index">Source: <a href='https://github.com/steinbaugh/goalie/blob/master/R/hasRownames.R'><code>R/hasRownames.R</code></a></small>
-    <div class="hidden name"><code>hasRownames.Rd</code></div>
+    <h1>Does an Object Contain Elements That Are All Atomic?</h1>
+    <small class="dont-index">Source: <a href='https://github.com/steinbaugh/goalie/blob/master/R/checkAllAreAtomic.R'><code>R/checkAllAreAtomic.R</code></a></small>
+    <div class="hidden name"><code>checkAllAreAtomic.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>A stricter alternative to the assertive version that works properly with
-data frames.</p>
+    <p>Does an Object Contain Elements That Are All Atomic?</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>hasRownames</span>(<span class='no'>x</span>)
+    <pre class="usage"><span class='fu'>checkAllAreAtomic</span>(<span class='no'>x</span>)
 
-<span class='fu'>assertHasRownames</span>(<span class='no'>x</span>)</pre>
+<span class='fu'>check_all_are_atomic</span>(<span class='no'>x</span>)
+
+<span class='fu'>testAllAreAtomic</span>(<span class='no'>x</span>)
+
+<span class='fu'>test_all_are_atomic</span>(<span class='no'>x</span>)
+
+<span class='fu'>assertAllAreAtomic</span>(<span class='no'>x</span>, <span class='kw'>.var.name</span> <span class='kw'>=</span> <span class='kw pkg'>checkmate</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/checkmate/topics/vname'>vname</a></span>(<span class='no'>x</span>), <span class='kw'>add</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
+
+<span class='fu'>assert_all_are_atomic</span>(<span class='no'>x</span>, <span class='kw'>.var.name</span> <span class='kw'>=</span> <span class='kw pkg'>checkmate</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/checkmate/topics/vname'>vname</a></span>(<span class='no'>x</span>), <span class='kw'>add</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
+
+<span class='fu'>expect_all_are_atomic</span>(<span class='no'>x</span>, <span class='kw'>info</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>label</span> <span class='kw'>=</span> <span class='fu'>vname</span>(<span class='no'>x</span>))</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -127,6 +135,25 @@ data frames.</p>
     <tr>
       <th>x</th>
       <td><p>Object.</p></td>
+    </tr>
+    <tr>
+      <th>.var.name</th>
+      <td><p><code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>. Name of the checked object to print in
+assertions.</p></td>
+    </tr>
+    <tr>
+      <th>add</th>
+      <td><p><code>AssertCollection</code>. Extra information to be included in the
+message for the testthat reporter. See <code><a href='https://www.rdocumentation.org/packages/testthat/topics/expect_that'>testthat::expect_that()</a></code>.</p></td>
+    </tr>
+    <tr>
+      <th>info</th>
+      <td><p><code>character</code>. Extra information to be included in the message for
+the testthat reporter. See <code><a href='https://www.rdocumentation.org/packages/testthat/topics/expect_that'>testthat::expect_that()</a></code>.</p></td>
+    </tr>
+    <tr>
+      <th>label</th>
+      <td><p><code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>. Name of the checked object to print in messages.</p></td>
     </tr>
     </table>
     
@@ -136,27 +163,16 @@ data frames.</p>
 <ul>
 <li><p><code>boolean flag</code> for <code>are/has/is*()</code> functions.</p></li>
 <li><p>Stop on error for <code>assert*()</code> functions
-(see <code><a href='https://www.rdocumentation.org/packages/base/topics/stop'>base::stop()</a></code> or <code><a href='https://www.rdocumentation.org/packages/base/topics/stopifnot'>base::stopifnot()</a></code> for details).</p></li>
+(see <code><a href='https://www.rdocumentation.org/packages/base/topics/stop'>stop()</a></code> or <code><a href='https://www.rdocumentation.org/packages/base/topics/stopifnot'>stopifnot()</a></code> for details).</p></li>
 </ul>
 
     
-    <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
-
-    <p>Also, <code><a href='https://www.rdocumentation.org/packages/tibble/topics/rownames'>tibble::has_rownames()</a></code> appears to be more consistent than
-<code><a href='https://www.rdocumentation.org/packages/assertive.properties/topics/has_names'>assertive.properties::has_rownames()</a></code> for <code>DataFrame</code> and <code>tbl_df</code> class.</p>
-    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>S4Vectors</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/S4Vectors/topics/DataFrame-class'>DataFrame</a></span>(
-    <span class='st'>"sample1"</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='fl'>1L</span>, <span class='fl'>2L</span>),
-    <span class='st'>"sample2"</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='fl'>3L</span>, <span class='fl'>4L</span>),
-    <span class='kw'>row.names</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"gene1"</span>, <span class='st'>"gene2"</span>)
-)
-<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/print'>print</a></span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; DataFrame with 2 rows and 2 columns
-#&gt;         sample1   sample2
-#&gt;       &lt;integer&gt; &lt;integer&gt;
-#&gt; gene1         1         3
-#&gt; gene2         2         4</div><div class='input'><span class='fu'>hasRownames</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] TRUE</div></pre>
+    <pre class="examples"><div class='input'><span class='co'>## Pass ====</span>
+<span class='fu'>checkAllAreAtomic</span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/data.frame'>data.frame</a></span>(<span class='kw'>a</span> <span class='kw'>=</span> <span class='st'>"foo"</span>, <span class='kw'>b</span> <span class='kw'>=</span> <span class='st'>"bar"</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>checkAllAreAtomic</span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/list'>list</a></span>(<span class='kw'>a</span> <span class='kw'>=</span> <span class='st'>"foo"</span>, <span class='kw'>b</span> <span class='kw'>=</span> <span class='st'>"bar"</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
+<span class='co'>## Fail ====</span>
+<span class='fu'>checkAllAreAtomic</span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/list'>list</a></span>(<span class='kw'>a</span> <span class='kw'>=</span> <span class='st'>"x"</span>, <span class='kw'>b</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/list'>list</a></span>()))</div><div class='output co'>#&gt; [1] "Not all elements in the object are atomic"</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -164,8 +180,6 @@ data frames.</p>
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
-
-      <li><a href="#note">Note</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>
