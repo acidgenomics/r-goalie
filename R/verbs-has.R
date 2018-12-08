@@ -11,21 +11,21 @@ has_colnames <-  # nolint
 
 
 # hasCols ======================================================================
-has_cols
+# has_cols
 
-has_dimnames
+# has_dimnames
 
-has_dims
+# has_dims
 
 
 
 # hasRows ======================================================================
-has_rows
+# has_rows
 
 
 
 # hasRownames ==================================================================
-has_rownames
+# has_rownames
 
 
 
