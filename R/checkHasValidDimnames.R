@@ -1,7 +1,7 @@
 #' Does the Object Have Syntactically Valid Dimnames?
 #'
 #' @name checkHasValidDimnames
-#' @aliases hasValidDimnames
+#' @aliases hasValidDimnames has_valid_dimnames
 #' @inherit params
 #' @export
 #'
@@ -40,9 +40,10 @@ checkHasValidDimnames <- function(x) {
 
 
 
-#' @rdname checkHasValidDimnames
+#' @describeIn checkHasValidDimnames snake alias.
 #' @export
-check_has_valid_dimnames <- checkHasValidDimnames
+check_has_valid_dimnames <-  # nolint
+    checkHasValidDimnames
 
 
 
@@ -52,9 +53,10 @@ testHasValidDimnames <- makeTestFunction(checkHasValidDimnames)
 
 
 
-#' @rdname checkHasValidDimnames
+#' @describeIn checkHasValidDimnames snake alias.
 #' @export
-test_has_valid_dimnames <- testHasValidDimnames
+test_has_valid_dimnames <-  # nolint
+    testHasValidDimnames
 
 
 
@@ -64,12 +66,14 @@ assertHasValidDimnames <- makeAssertionFunction(checkHasValidDimnames)
 
 
 
+#' @describeIn checkHasValidDimnames snake alias.
+#' @export
+assert_has_valid_dimnames <-  # nolint
+    assertHasValidDimnames
+
+
+
 #' @rdname checkHasValidDimnames
 #' @export
-assert_has_valid_dimnames <- assertHasValidDimnames
-
-
-
-#' @rdname checkHasValidDimnames
-#' @export
-expect_has_valid_dimnames <- makeExpectationFunction(checkHasValidDimnames)
+expect_has_valid_dimnames <-  # nolint
+    makeExpectationFunction(checkHasValidDimnames)

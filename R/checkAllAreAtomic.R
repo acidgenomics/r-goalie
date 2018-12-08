@@ -1,6 +1,6 @@
 #' Does an Object Contain Elements That Are All Atomic?
 #'
-#' @aliases allAreAtomic
+#' @aliases allAreAtomic all_are_atomic
 #' @inherit params
 #' @export
 #'
@@ -25,9 +25,10 @@ checkAllAreAtomic <- function(x) {
 
 
 
-#' @rdname checkAllAreAtomic
+#' @describeIn checkAllAreAtomic snake alias.
 #' @export
-check_all_are_atomic <- checkAllAreAtomic
+check_all_are_atomic <-  # nolint
+    checkAllAreAtomic
 
 
 
@@ -37,9 +38,10 @@ testAllAreAtomic <- makeTestFunction(checkAllAreAtomic)
 
 
 
-#' @rdname checkAllAreAtomic
+#' @describeIn checkAllAreAtomic snake alias.
 #' @export
-test_all_are_atomic <- testAllAreAtomic
+test_all_are_atomic <-  # nolint
+    testAllAreAtomic
 
 
 
@@ -49,12 +51,14 @@ assertAllAreAtomic <- makeAssertionFunction(checkAllAreAtomic)
 
 
 
+#' @describeIn checkAllAreAtomic snake alias.
+#' @export
+assert_all_are_atomic <-  # nolint
+    assertAllAreAtomic
+
+
+
 #' @rdname checkAllAreAtomic
 #' @export
-assert_all_are_atomic <- assertAllAreAtomic
-
-
-
-#' @rdname checkAllAreAtomic
-#' @export
-expect_all_are_atomic <- makeExpectationFunction(checkAllAreAtomic)
+expect_all_are_atomic <-  # nolint
+    makeExpectationFunction(checkAllAreAtomic)

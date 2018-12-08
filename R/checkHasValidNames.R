@@ -1,7 +1,7 @@
 #' Does the Object Have Syntactically Valid Names?
 #'
 #' @name checkHasValidNames
-#' @aliases hasValidNames
+#' @aliases hasValidNames has_valid_names
 #' @inherit params
 #' @export
 #'
@@ -35,9 +35,10 @@ checkHasValidNames <- function(x) {
 
 
 
-#' @rdname checkHasValidNames
+#' @describeIn checkHasValidNames snake alias.
 #' @export
-check_has_valid_names <- checkHasValidNames
+check_has_valid_names <-  # nolint
+    checkHasValidNames
 
 
 
@@ -47,9 +48,10 @@ testHasValidNames <- makeTestFunction(checkHasValidNames)
 
 
 
-#' @rdname checkHasValidNames
+#' @describeIn checkHasValidNames snake alias.
 #' @export
-test_has_valid_names <- testHasValidNames
+test_has_valid_names <-  # nolint
+    testHasValidNames
 
 
 
@@ -59,12 +61,14 @@ assertHasValidNames <- makeAssertionFunction(checkHasValidNames)
 
 
 
+#' @describeIn checkHasValidNames snake alias.
+#' @export
+assert_has_valid_names <-  # nolint
+    assertHasValidNames
+
+
+
 #' @rdname checkHasValidNames
 #' @export
-assert_has_valid_names <- assertHasValidNames
-
-
-
-#' @rdname checkHasValidNames
-#' @export
-expect_has_valid_names <- makeExpectationFunction(checkHasValidNames)
+expect_has_valid_names <-  # nolint
+    makeExpectationFunction(checkHasValidNames)
