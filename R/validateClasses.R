@@ -33,11 +33,7 @@
 #'         c = "factor"
 #'     )
 #' )
-validateClasses <- function(
-    object,
-    expected,
-    subset = FALSE
-) {
+validateClasses <- function(object, expected, subset = FALSE) {
     assert(
         is(expected, "list"),
         hasNames(expected),
@@ -69,7 +65,8 @@ validateClasses <- function(
     } else {
         paste(
             "Class checks failed:",
-            printString(names(valid)[!valid]),
+            # See `basejump::printString()` for current method.
+            capture.output(print(names(valid)[!valid])),
             sep = "\n"
         )
     }
