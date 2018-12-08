@@ -1,3 +1,8 @@
+# FIXME Rework this function: I don't like how checkmate behaves here with
+# inheritance...it's too confusing.
+
+
+
 #' Does an Object Belong to Any of These Classes?
 #'
 #' @name checkAnyClass
@@ -12,14 +17,17 @@
 #' - `assertive::assert_is_any_of()`.
 #'
 #' @examples
-#' # Define an integer.
 #' x <- 1L
 #'
-#' testClass(x, classes = c("integer", "numeric", "character", "atomic"))
+#' ## Note that `checkAnyClass()` extends `checkClass()`, which  is very strict.
+#' is(x, "numeric")
+#' testClass(x, "numeric")
 #'
-#' # This should pass, but fails...very strict.
-#' checkClass(x, "numeric")
-#' checkClass(x, "character")
+#' ## Pass ====
+#' checkAnyClass(x, classes = c("integer", "character"))
+#'
+#' ## Fail ====
+#' checkAnyClass(x, classes = c("atomic", "numeric"))
 checkAnyClass <- function(x, classes) {
     ok <- any(vapply(
         X = classes,
