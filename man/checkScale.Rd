@@ -61,6 +61,15 @@ the testthat reporter. See \code{testthat::expect_that()}.}
 \description{
 Does the Argument Contain a ggplot2 Scale?
 }
+\section{Functions}{
+\itemize{
+\item \code{check_scale}: snake alias.
+
+\item \code{test_scale}: snake alias.
+
+\item \code{assert_scale}: snake alias.
+}}
+
 \examples{
 library(ggplot2)
 
