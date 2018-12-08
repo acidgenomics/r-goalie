@@ -16,8 +16,8 @@ message for the testthat reporter. See \code{testthat::expect_that()}.}
 \item{info}{\code{character}. Extra information to be included in the message for
 the testthat reporter. See \code{testthat::expect_that()}.}
 
-\item{inherits}{\code{boolean}. Should the enclosing frames of the \code{environment}
-be searched?}
+\item{inherits}{\code{logical(1)}. Should the enclosing frames of the
+\code{environment} be searched?}
 
 \item{label}{XXX}
 
@@ -25,7 +25,7 @@ be searched?}
 
 \item{names}{\code{character}. Element names (e.g. row names, column names).}
 
-\item{null.ok}{XXX}
+\item{null.ok}{\code{logical(1)}. If set to \code{TRUE}, \code{x} may also be \code{NULL}.}
 
 \item{object}{Object.}
 
@@ -33,7 +33,8 @@ be searched?}
 
 \item{y}{Secondary object.}
 
-\item{.var.name}{\code{string}. Name of the checked object to print in assertions.}
+\item{.var.name}{\code{character(1)}. Name of the checked object to print in
+assertions.}
 
 \item{...}{Additional arguments.}
 }
