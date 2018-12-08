@@ -46,7 +46,7 @@ message for the testthat reporter. See \code{testthat::expect_that()}.}
 \item{info}{\code{character}. Extra information to be included in the message for
 the testthat reporter. See \code{testthat::expect_that()}.}
 
-\item{label}{XXX}
+\item{label}{\code{character(1)}. Name of the checked object to print in messages.}
 }
 \value{
 \itemize{

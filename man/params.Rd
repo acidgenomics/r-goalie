@@ -19,7 +19,7 @@ the testthat reporter. See \code{testthat::expect_that()}.}
 \item{inherits}{\code{logical(1)}. Should the enclosing frames of the
 \code{environment} be searched?}
 
-\item{label}{XXX}
+\item{label}{\code{character(1)}. Name of the checked object to print in messages.}
 
 \item{name}{\code{character}. Element name.}
 
