@@ -63,13 +63,6 @@ checkHasUniqueCols(x)
 x <- matrix(data = rep(seq_len(10L), times = 2L), ncol = 2L)
 checkHasUniqueCols(x)
 }
-\seealso{
-\itemize{
-\item \code{checkmate::makeTestFunction()}.
-\item \code{checkmate::makeAssertionFunction()}.
-\item \code{checkmate::makeExpectationFunction()}.
-}
-}
 \author{
 Michael Steinbaugh
 }
