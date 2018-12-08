@@ -5,31 +5,28 @@
 #' @name checkHeaderLevel
 #' @aliases headerLevel
 #' @inherit params
+#' @export
 #'
 #' @examples
+#' ## Pass.
 #' checkHeaderLevel(1)
 #' checkHeaderLevel(1L)
-NULL
-
-
-
-.headerLevel <- function(x) {
-    if (!is_scalar_integerish(x)) {
-        return(FALSE)
-    }
-    x %in% seq_len(7L)
-}
-
-
-
-#' @rdname checkHeaderLevel
-#' @export
+#'
+#' ## Fail.
+#' checkHeaderLevel("xxx")
+#' checkHeaderLevel(0L)
 checkHeaderLevel <- function(x) {
-    if (isTRUE(.headerLevel(x))) {
-        TRUE
-    } else {
-        "Markdown supports header levels 1-7"
+    ok <- is_scalar_integerish(x)
+    if (!ok) {
+        return("Must be scalar integerish")
     }
+
+    ok <- x %in% seq_len(7L)
+    if (!ok) {
+        return("Markdown supports header levels 1-7")
+    }
+
+    TRUE
 }
 
 

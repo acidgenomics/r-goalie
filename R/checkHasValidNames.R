@@ -3,17 +3,12 @@
 #' @name checkHasValidNames
 #' @aliases hasValidNames
 #' @inherit params
+#' @export
 #'
 #' @seealso `validNames()`.
 #'
 #' @examples
 #' checkHasValidNames(datasets::mtcars)
-NULL
-
-
-
-#' @rdname checkHasValidNames
-#' @export
 checkHasValidNames <- function(x) {
     names <- names(x)
     ok <- length(names) > 0L
