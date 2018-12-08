@@ -12,11 +12,11 @@
 #' @importFrom assertive.properties has_colnames has_dimnames
 #' @importFrom assertthat on_failure<-
 #' @importFrom checkmate assert assertClass assertFlag assertLogical assertNames
-#'   checkClass makeAssertion makeAssertionFunction makeExpectation
-#'   makeExpectationFunction makeTest makeTestFunction testClass testFlag
-#'   testScalar testString vname
-#' @importFrom methods as is setGeneric setMethod signature
-#' @importFrom utils globalVariables
+#'   assertString checkClass checkFlag makeAssertion makeAssertionFunction
+#'   makeExpectation makeExpectationFunction makeTest makeTestFunction testClass
+#'   testFlag testScalar testString vname
+#' @importFrom methods as formalArgs is setGeneric setMethod signature
+#' @importFrom utils capture.output globalVariables
 "_PACKAGE"
 
 globalVariables(".")

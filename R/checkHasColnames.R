@@ -35,10 +35,9 @@ checkHasColnames <- function(x) {
 
 
 
-#' @describeIn checkHasColnames snake alias.
+#' @rdname checkHasColnames
 #' @export
-check_has_colnames <-  # nolint
-    checkHasColnames
+check_has_colnames <- checkHasColnames  # nolint
 
 
 
@@ -48,10 +47,9 @@ testHasColnames <- makeTestFunction(checkHasColnames)
 
 
 
-#' @describeIn checkHasColnames snake alias.
+#' @rdname checkHasColnames
 #' @export
-test_has_colnames <-  # nolint
-    testHasColnames
+test_has_colnames <- testHasColnames  # nolint
 
 
 
@@ -61,14 +59,12 @@ assertHasColnames <- makeAssertionFunction(checkHasColnames)
 
 
 
-#' @describeIn checkHasColnames snake alias.
+#' @rdname checkHasColnames
 #' @export
-assert_has_colnames <-  # nolint
-    assertHasColnames
+assert_has_colnames <- assertHasColnames  # nolint
 
 
 
 #' @rdname checkHasColnames
 #' @export
-expect_has_colnames <-  # nolint
-    makeExpectationFunction(checkHasColnames)
+expect_has_colnames <- makeExpectationFunction(checkHasColnames)  # nolint

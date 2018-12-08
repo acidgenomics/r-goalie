@@ -41,7 +41,7 @@ checkAnyClass <- function(x, classes) {
 
 
 
-#' @describeIn checkAnyClass snake alias.
+#' @rdname checkAnyClass
 #' @export
 check_any_class <-  # nolint
     checkAnyClass
@@ -54,7 +54,7 @@ testAnyClass <- makeTestFunction(checkAnyClass)
 
 
 
-#' @describeIn checkAnyClass snake alias.
+#' @rdname checkAnyClass
 #' @export
 test_any_class <-  # nolint
     testAnyClass
@@ -67,7 +67,7 @@ assertAnyClass <- makeAssertionFunction(checkAnyClass)
 
 
 
-#' @describeIn checkAnyClass snake alias.
+#' @rdname checkAnyClass
 #' @export
 assert_any_class <-  # nolint
     assertAnyClass

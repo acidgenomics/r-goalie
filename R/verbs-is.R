@@ -1,8 +1,6 @@
-# help(topic = "scalar-type-predicates", package = "rlang")
-#
 # Don't reexport `assertive::is_subset()` without hardening first. It doesn't
 # currently error on NULL values as expected.
-#
+
 # Don't reexport `assertive::is_scalar()`. Use the rlang approach instead which
 # requires a more specific declaration of the expected scalar type.
 
@@ -19,7 +17,7 @@ isAny <- function(x, classes) {
 #' @describeIn checkAnyClass snake alias.
 #' @usage NULL
 #' @export
-is_any <- isAny
+is_any <- isAny  # nolint
 
 
 
@@ -44,18 +42,6 @@ assertive.code::is_existing
 #' @usage NULL
 #' @export
 isExisting <- is_existing
-
-
-
-# isHexColor ===================================================================
-#' @importFrom assertive.data is_hex_color
-#' @export
-assertive.data::is_hex_color
-
-#' @rdname reexports
-#' @usage NULL
-#' @export
-isHexColor <- is_hex_color
 
 
 

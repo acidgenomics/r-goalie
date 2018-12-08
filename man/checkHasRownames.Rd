@@ -36,6 +36,8 @@ message for the testthat reporter. See \code{testthat::expect_that()}.}
 
 \item{info}{\code{character}. Extra information to be included in the message for
 the testthat reporter. See \code{testthat::expect_that()}.}
+
+\item{label}{XXX}
 }
 \value{
 \itemize{
@@ -50,10 +52,6 @@ Does the Object Have Row Names?
 \section{Functions}{
 \itemize{
 \item \code{check_has_rownames}: snake alias.
-
-\item \code{test_has_rownames}: snake alias.
-
-\item \code{assert_has_rownames}: snake alias.
 }}
 
 \section{data.frame}{

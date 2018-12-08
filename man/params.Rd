@@ -19,11 +19,19 @@ the testthat reporter. See \code{testthat::expect_that()}.}
 \item{inherits}{\code{boolean}. Should the enclosing frames of the \code{environment}
 be searched?}
 
+\item{label}{XXX}
+
 \item{name}{\code{character}. Element name.}
 
 \item{names}{\code{character}. Element names (e.g. row names, column names).}
 
+\item{null.ok}{XXX}
+
+\item{object}{Object.}
+
 \item{x}{Object.}
+
+\item{y}{Secondary object.}
 
 \item{.var.name}{\code{string}. Name of the checked object to print in assertions.}
 

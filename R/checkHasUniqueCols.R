@@ -51,8 +51,7 @@ checkHasUniqueCols <- function(x) {
 
 #' @describeIn checkHasUniqueCols snake alias.
 #' @export
-check_has_unique_cols <-  # nolint
-    checkHasUniqueCols
+check_has_unique_cols <- checkHasUniqueCols  # nolint
 
 
 
@@ -62,10 +61,9 @@ testHasUniqueCols <- makeTestFunction(checkHasUniqueCols)
 
 
 
-#' @describeIn checkHasUniqueCols snake alias.
+#' @rdname checkHasUniqueCols
 #' @export
-test_has_unique_cols <-  # nolint
-    testHasUniqueCols
+test_has_unique_cols <- testHasUniqueCols  # nolint
 
 
 
@@ -75,10 +73,9 @@ assertHasUniqueCols <- makeAssertionFunction(checkHasUniqueCols)
 
 
 
-#' @describeIn checkHasUniqueCols snake alias.
+#' @rdname checkHasUniqueCols
 #' @export
-assert_has_unique_cols <-  # nolint
-    assertHasUniqueCols
+assert_has_unique_cols <- assertHasUniqueCols  # nolint
 
 
 

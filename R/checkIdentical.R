@@ -21,10 +21,9 @@ checkIdentical <- function(x, y) {
 
 
 
-#' @describeIn checkIdentical snake alias.
+#' @rdname checkIdentical
 #' @export
-check_identical <-  # nolint
-    checkIdentical
+check_identical <- checkIdentical  # nolint
 
 
 
@@ -34,10 +33,9 @@ testIdentical <- makeTestFunction(checkIdentical)
 
 
 
-#' @describeIn checkIdentical snake alias.
+#' @rdname checkIdentical
 #' @export
-test_identical <-  # nolint
-    testIdentical
+test_identical <- testIdentical  # nolint
 
 
 
@@ -47,10 +45,9 @@ assertIdentical <- makeAssertionFunction(checkIdentical)
 
 
 
-#' @describeIn checkIdentical snake alias.
+#' @rdname checkIdentical
 #' @export
-assert_identical <-  # nolint
-    assertIdentical
+assert_identical <- assertIdentical  # nolint
 
 
 

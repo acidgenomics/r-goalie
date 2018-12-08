@@ -29,10 +29,9 @@ checkHeaderLevel <- function(x) {
 
 
 
-#' @describeIn checkHeaderLevel snake alias.
+#' @rdname checkHeaderLevel
 #' @export
-check_header_level <-  # nolint
-    checkHeaderLevel
+check_header_level <- checkHeaderLevel  # nolint
 
 
 
@@ -42,10 +41,9 @@ testHeaderLevel <- makeTestFunction(checkHeaderLevel)
 
 
 
-#' @describeIn checkHeaderLevel snake alias.
+#' @rdname checkHeaderLevel
 #' @export
-test_header_level <-  # nolint
-    testHeaderLevel
+test_header_level <- testHeaderLevel  # nolint
 
 
 
@@ -55,14 +53,12 @@ assertHeaderLevel <- makeAssertionFunction(checkHeaderLevel)
 
 
 
-#' @describeIn checkHeaderLevel snake alias.
+#' @rdname checkHeaderLevel
 #' @export
-assert_header_level <-  # nolint
-    assertHeaderLevel
+assert_header_level <- assertHeaderLevel  # nolint
 
 
 
 #' @rdname checkHeaderLevel
 #' @export
-expect_header_level <-  # nolint
-    makeExpectationFunction(checkHeaderLevel)
+expect_header_level <- makeExpectationFunction(checkHeaderLevel)  # nolint

@@ -67,10 +67,9 @@ checkAreUniqueGeneNames <- function(x, genes) {
 
 
 
-#' @describeIn checkAreUniqueGeneNames snake alias.
+#' @rdname checkAreUniqueGeneNames
 #' @export
-check_are_unique_gene_names <-  # nolint
-    checkAreUniqueGeneNames
+check_are_unique_gene_names <- checkAreUniqueGeneNames  # nolint
 
 
 
@@ -80,10 +79,9 @@ testAreUniqueGeneNames <- makeTestFunction(checkAreUniqueGeneNames)
 
 
 
-#' @describeIn checkAreUniqueGeneNames snake alias.
+#' @rdname checkAreUniqueGeneNames
 #' @export
-test_are_unique_gene_names <-  # nolint
-    testAreUniqueGeneNames
+test_are_unique_gene_names <- testAreUniqueGeneNames  # nolint
 
 
 
@@ -93,14 +91,13 @@ assertAreUniqueGeneNames <- makeAssertionFunction(checkAreUniqueGeneNames)
 
 
 
-#' @describeIn checkAreUniqueGeneNames snake alias.
+#' @rdname checkAreUniqueGeneNames
 #' @export
-assert_are_unique_gene_names <-  # nolint
-    assertAreUniqueGeneNames
+assert_are_unique_gene_names <- assertAreUniqueGeneNames  # nolint
 
 
 
 #' @rdname checkAreUniqueGeneNames
 #' @export
-expect_alpha <-  # nolint
+expect_are_unique_gene_names <-  # nolint
     makeExpectationFunction(checkAreUniqueGeneNames)

@@ -44,7 +44,7 @@ checkURL <- function(x) {
 
 
 
-#' @describeIn checkURL snake alias.
+#' @rdname checkURL
 #' @export
 check_url <-  # nolint
     checkURL
@@ -56,7 +56,7 @@ check_url <-  # nolint
 testURL <- makeTestFunction(checkURL)
 
 
-#' @describeIn checkURL snake alias.
+#' @rdname checkURL
 #' @export
 test_url <-  # nolint
     testURL
@@ -69,7 +69,7 @@ assertURL <- makeAssertionFunction(checkURL)
 
 
 
-#' @describeIn checkURL snake alias.
+#' @rdname checkURL
 #' @export
 assert_url <-  # nolint
     assertURL
@@ -83,7 +83,7 @@ expect_url <-  # nolint
 
 
 
-#' @describeIn checkURL Supports multiple URLs.
+#' @describeIn checkURL Requires multiple URLs, which is less common.
 #' @export
 checkURLs <- function(x) {
     if (testScalar(x)) {
@@ -98,7 +98,7 @@ checkURLs <- function(x) {
 
 
 
-#' @describeIn checkURL snake alias.
+#' @rdname checkURL
 #' @export
 check_urls <-  # nolint
     checkURLs
@@ -111,7 +111,7 @@ testURLs <- makeTestFunction(checkURLs)
 
 
 
-#' @describeIn checkURL snake alias.
+#' @rdname checkURL
 #' @export
 test_urls <-  # nolint
     testURLs
@@ -124,7 +124,7 @@ assertURLs <- makeAssertionFunction(checkURLs)
 
 
 
-#' @describeIn checkURL snake alias.
+#' @rdname checkURL
 #' @export
 assert_urls <-  # nolint
     assertURLs

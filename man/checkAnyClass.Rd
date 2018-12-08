@@ -43,18 +43,14 @@ message for the testthat reporter. See \code{testthat::expect_that()}.}
 
 \item{info}{\code{character}. Extra information to be included in the message for
 the testthat reporter. See \code{testthat::expect_that()}.}
+
+\item{label}{XXX}
 }
 \description{
 Does an Object Belong to Any of These Classes?
 }
 \section{Functions}{
 \itemize{
-\item \code{check_any_class}: snake alias.
-
-\item \code{test_any_class}: snake alias.
-
-\item \code{assert_any_class}: snake alias.
-
 \item \code{isAny}: Less strict variant that calls \code{assertive::is2()}
 internally, and allows for inherited classes to pass.
 

@@ -25,10 +25,9 @@ checkAllAreAtomic <- function(x) {
 
 
 
-#' @describeIn checkAllAreAtomic snake alias.
+#' @rdname checkAllAreAtomic
 #' @export
-check_all_are_atomic <-  # nolint
-    checkAllAreAtomic
+check_all_are_atomic <- checkAllAreAtomic  # nolint
 
 
 
@@ -38,10 +37,9 @@ testAllAreAtomic <- makeTestFunction(checkAllAreAtomic)
 
 
 
-#' @describeIn checkAllAreAtomic snake alias.
+#' @rdname checkAllAreAtomic
 #' @export
-test_all_are_atomic <-  # nolint
-    testAllAreAtomic
+test_all_are_atomic <- testAllAreAtomic  # nolint
 
 
 
@@ -51,14 +49,12 @@ assertAllAreAtomic <- makeAssertionFunction(checkAllAreAtomic)
 
 
 
-#' @describeIn checkAllAreAtomic snake alias.
+#' @rdname checkAllAreAtomic
 #' @export
-assert_all_are_atomic <-  # nolint
-    assertAllAreAtomic
+assert_all_are_atomic <- assertAllAreAtomic  # nolint
 
 
 
 #' @rdname checkAllAreAtomic
 #' @export
-expect_all_are_atomic <-  # nolint
-    makeExpectationFunction(checkAllAreAtomic)
+expect_all_are_atomic <- makeExpectationFunction(checkAllAreAtomic)  # nolint

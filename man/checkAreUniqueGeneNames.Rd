@@ -9,7 +9,7 @@
 \alias{test_are_unique_gene_names}
 \alias{assertAreUniqueGeneNames}
 \alias{assert_are_unique_gene_names}
-\alias{expect_alpha}
+\alias{expect_are_unique_gene_names}
 \title{Are the Requested Gene Names Duplicated in the Corresponding Object?}
 \usage{
 checkAreUniqueGeneNames(x, genes)
@@ -26,7 +26,7 @@ assertAreUniqueGeneNames(x, genes, .var.name = checkmate::vname(x),
 assert_are_unique_gene_names(x, genes, .var.name = checkmate::vname(x),
   add = NULL)
 
-expect_alpha(x, genes, info = NULL, label = vname(x))
+expect_are_unique_gene_names(x, genes, info = NULL, label = vname(x))
 }
 \arguments{
 \item{x}{Object.}
@@ -40,6 +40,8 @@ message for the testthat reporter. See \code{testthat::expect_that()}.}
 
 \item{info}{\code{character}. Extra information to be included in the message for
 the testthat reporter. See \code{testthat::expect_that()}.}
+
+\item{label}{XXX}
 }
 \value{
 \itemize{
@@ -53,15 +55,6 @@ This assert check determines if a user-defined gene name query is using only
 unique (non-amgibuous) symbols. It is designed to be used for gene plotting
 particularly when performing single-cell RNA-seq marker analysis.
 }
-\section{Functions}{
-\itemize{
-\item \code{check_are_unique_gene_names}: snake alias.
-
-\item \code{test_are_unique_gene_names}: snake alias.
-
-\item \code{assert_are_unique_gene_names}: snake alias.
-}}
-
 \examples{
 x <- SummarizedExperiment::SummarizedExperiment(
     assays = matrix(

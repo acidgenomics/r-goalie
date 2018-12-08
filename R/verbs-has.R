@@ -5,8 +5,7 @@ hasColnames <- testHasColnames
 
 #' @describeIn checkHasColnames snake alias.
 #' @export
-has_colnames <-  # nolint
-    hasColnames
+has_colnames <- hasColnames  # nolint
 
 
 
@@ -30,14 +29,16 @@ has_colnames <-  # nolint
 
 
 # hasName ======================================================================
-#' @importFrom rlang has_name
+# rlang::has_name
+
+#' @importFrom utils hasName
 #' @export
-rlang::has_name
+utils::hasName
 
 #' @rdname reexports
 #' @usage NULL
 #' @export
-hasName <- has_name
+has_name <- hasName  # nolint
 
 
 
@@ -51,4 +52,4 @@ hasNames <- checkmate::testNames
 #' @describeIn reexports `hasNames` snake alias.
 #' @usage NULL
 #' @export
-has_names <- hasNames
+has_names <- hasNames  # nolint

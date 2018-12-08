@@ -44,6 +44,8 @@ message for the testthat reporter. See \code{testthat::expect_that()}.}
 
 \item{info}{\code{character}. Extra information to be included in the message for
 the testthat reporter. See \code{testthat::expect_that()}.}
+
+\item{label}{XXX}
 }
 \value{
 \itemize{
@@ -55,15 +57,6 @@ the testthat reporter. See \code{testthat::expect_that()}.}
 \description{
 Does the Requested Variable Exist?
 }
-\section{Functions}{
-\itemize{
-\item \code{check_are_non_existing}: snake alias.
-
-\item \code{test_are_non_existing}: snake alias.
-
-\item \code{assert_are_non_existing}: snake alias.
-}}
-
 \examples{
 ## Pass ====
 a <- NULL

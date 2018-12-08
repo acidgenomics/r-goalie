@@ -33,7 +33,7 @@ checkScale <- function(
     x,
     scale = c("continuous", "discrete"),
     aes = c("colour", "fill"),
-    null.ok = FALSE
+    null.ok = FALSE  # nolint
 ) {
     scale <- match.arg(scale)
     aes <- match.arg(aes)
@@ -45,8 +45,6 @@ checkScale <- function(
         return(TRUE)
     }
 
-    # Can't use `upperCamel()` here because we're not importing basejump.
-    # c("ScaleContinuous", "Scale", "ggproto", "gg")
     classes <- c(
         paste0("Scale", capitalize(scale)),
         "Scale",
@@ -69,10 +67,9 @@ checkScale <- function(
 
 
 
-#' @describeIn checkScale snake alias.
+#' @rdname checkScale
 #' @export
-check_scale <-  # nolint
-    checkScale
+check_scale <- checkScale  # nolint
 
 
 
@@ -82,10 +79,9 @@ testScale <- makeTestFunction(checkScale)
 
 
 
-#' @describeIn checkScale snake alias.
+#' @rdname checkScale
 #' @export
-test_scale <-  # nolint
-    testScale
+test_scale <- testScale  # nolint
 
 
 
@@ -95,14 +91,12 @@ assertScale <- makeAssertionFunction(checkScale)
 
 
 
-#' @describeIn checkScale snake alias.
+#' @rdname checkScale
 #' @export
-assert_scale <-  # nolint
-    assertScale
+assert_scale <- assertScale  # nolint
 
 
 
 #' @rdname checkScale
 #' @export
-expect_scale <-  # nolint
-    makeExpectationFunction(checkScale)
+expect_scale <- makeExpectationFunction(checkScale)  # nolint
