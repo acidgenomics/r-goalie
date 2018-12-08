@@ -12,7 +12,7 @@
 #'   the testthat reporter. See `testthat::expect_that()`.
 #' @param inherits `logical(1)`. Should the enclosing frames of the
 #'   `environment` be searched?
-#' @param label XXX
+#' @param label `character(1)`. Name of the checked object to print in messages.
 #' @param name `character`. Element name.
 #' @param names `character`. Element names (e.g. row names, column names).
 #' @param null.ok `logical(1)`. If set to `TRUE`, `x` may also be `NULL`.
