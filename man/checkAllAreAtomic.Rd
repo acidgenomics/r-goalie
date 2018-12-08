@@ -54,10 +54,3 @@ checkAllAreAtomic(list(a = "foo", b = "bar"))
 ## Fail ====
 checkAllAreAtomic(list(a = "x", b = list()))
 }
-\seealso{
-\itemize{
-\item \code{checkmate::makeTestFunction()}.
-\item \code{checkmate::makeAssertionFunction()}.
-\item \code{checkmate::makeExpectationFunction()}.
-}
-}

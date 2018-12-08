@@ -53,10 +53,3 @@ checkHeaderLevel(1)
 ## Fail ====
 checkHeaderLevel(0)
 }
-\seealso{
-\itemize{
-\item \code{checkmate::makeTestFunction()}.
-\item \code{checkmate::makeAssertionFunction()}.
-\item \code{checkmate::makeExpectationFunction()}.
-}
-}

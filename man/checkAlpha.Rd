@@ -56,10 +56,3 @@ checkAlpha(0.05)
 checkAlpha("xxx")
 checkAlpha(1L)
 }
-\seealso{
-\itemize{
-\item \code{checkmate::makeTestFunction()}.
-\item \code{checkmate::makeAssertionFunction()}.
-\item \code{checkmate::makeExpectationFunction()}.
-}
-}

@@ -73,10 +73,3 @@ genes <- SummarizedExperiment::rowData(x)$geneName
 ## Pass ====
 checkAreUniqueGeneNames(x = x, genes = genes)
 }
-\seealso{
-\itemize{
-\item \code{checkmate::makeTestFunction()}.
-\item \code{checkmate::makeAssertionFunction()}.
-\item \code{checkmate::makeExpectationFunction()}.
-}
-}

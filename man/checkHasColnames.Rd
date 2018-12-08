@@ -66,10 +66,3 @@ print(x)
 colnames(x)
 checkHasColnames(x)
 }
-\seealso{
-\itemize{
-\item \code{checkmate::makeTestFunction()}.
-\item \code{checkmate::makeAssertionFunction()}.
-\item \code{checkmate::makeExpectationFunction()}.
-}
-}

@@ -65,10 +65,3 @@ a <- 1L
 b <- NULL
 checkAreNonExisting(c("a", "b"))
 }
-\seealso{
-\itemize{
-\item \code{checkmate::makeTestFunction()}.
-\item \code{checkmate::makeAssertionFunction()}.
-\item \code{checkmate::makeExpectationFunction()}.
-}
-}
