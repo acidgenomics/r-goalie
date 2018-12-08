@@ -1,18 +1,21 @@
-# FIXME Switch to using `null.ok` approach like `checkScale()`.
-
-
-
 #' Does the Argument Contain a Hex Color Function?
+#'
+#' This assert check is intended primarily to check for viridis hexadecimal
+#' color value return.
 #'
 #' @aliases hexColorFunction hex_color_function
 #' @inherit params
 #' @export
 #'
+#' @seealso RColorBrewer, viridis
+#'
 #' @examples
-#' x <- function(n) {
-#'     colors <- c("#FFFFFF", "#000000")
-#'     colors[seq_len(n)]
-#' }
+#' ## Pass ====
+#' x <- viridis::viridis
+#' checkHexColorFunction(x)
+#'
+#' ## Fail ====
+#' x <- ggplot2::scale_colour_manual
 #' checkHexColorFunction(x)
 checkHexColorFunction <- function(x, null.ok = FALSE) {
     # Allow NULL input, if desired. This is useful for plotting functions where
@@ -49,3 +52,40 @@ checkHexColorFunction <- function(x, null.ok = FALSE) {
 
     TRUE
 }
+
+
+
+#' @describeIn checkHexColorFunction snake alias.
+#' @export
+check_hex_color_function <-  # nolint
+    checkHexColorFunction
+
+
+
+#' @rdname checkHexColorFunction
+#' @export
+testHexColorFunction <- makeTestFunction(checkHexColorFunction)
+
+
+
+#' @rdname checkHexColorFunction
+#' @export
+test_hex_color_function <- checkHexColorFunction
+
+
+
+#' @rdname checkHexColorFunction
+#' @export
+assertHexColorFunction <- makeAssertionFunction(checkHexColorFunction)
+
+
+
+#' @describeIn checkHexColorFunction snake alias.
+#' @export
+assert_hex_color_function <- assertHexColorFunction
+
+
+
+#' @rdname checkHexColorFunction
+#' @export
+expect_hex_color_function <- makeExpectationFunction(checkHexColorFunction)
