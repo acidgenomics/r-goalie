@@ -34,10 +34,11 @@ expect_are_non_existing(x, envir = parent.frame(), inherits = TRUE,
 
 \item{envir}{\code{environment}. Environment.}
 
-\item{inherits}{\code{boolean}. Should the enclosing frames of the \code{environment}
-be searched?}
+\item{inherits}{\code{logical(1)}. Should the enclosing frames of the
+\code{environment} be searched?}
 
-\item{.var.name}{\code{string}. Name of the checked object to print in assertions.}
+\item{.var.name}{\code{character(1)}. Name of the checked object to print in
+assertions.}
 
 \item{add}{\code{AssertCollection}. Extra information to be included in the
 message for the testthat reporter. See \code{testthat::expect_that()}.}

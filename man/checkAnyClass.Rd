@@ -36,7 +36,8 @@ isAny(x, classes)
 
 \item{classes}{\code{character}. Object classes.}
 
-\item{.var.name}{\code{string}. Name of the checked object to print in assertions.}
+\item{.var.name}{\code{character(1)}. Name of the checked object to print in
+assertions.}
 
 \item{add}{\code{AssertCollection}. Extra information to be included in the
 message for the testthat reporter. See \code{testthat::expect_that()}.}

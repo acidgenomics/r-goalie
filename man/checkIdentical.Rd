@@ -27,7 +27,8 @@ assert_identical(x, y, .var.name = checkmate::vname(x), add = NULL)
 
 \item{y}{Secondary object.}
 
-\item{.var.name}{\code{string}. Name of the checked object to print in assertions.}
+\item{.var.name}{\code{character(1)}. Name of the checked object to print in
+assertions.}
 
 \item{add}{\code{AssertCollection}. Extra information to be included in the
 message for the testthat reporter. See \code{testthat::expect_that()}.}

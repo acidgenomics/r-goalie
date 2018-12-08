@@ -43,9 +43,10 @@ expect_scale(x, scale = c("continuous", "discrete"), aes = c("colour",
 that ggplot2 prefers British spelling, so we're enforcing that convention
 here.}
 
-\item{null.ok}{XXX}
+\item{null.ok}{\code{logical(1)}. If set to \code{TRUE}, \code{x} may also be \code{NULL}.}
 
-\item{.var.name}{\code{string}. Name of the checked object to print in assertions.}
+\item{.var.name}{\code{character(1)}. Name of the checked object to print in
+assertions.}
 
 \item{add}{\code{AssertCollection}. Extra information to be included in the
 message for the testthat reporter. See \code{testthat::expect_that()}.}
