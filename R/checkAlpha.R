@@ -5,23 +5,24 @@
 #' @name checkAlpha
 #' @aliases alpha
 #' @inherit params
+#' @export
 #'
 #' @examples
+#' ## Pass.
 #' checkAlpha(0.05)
-NULL
-
-
-
-#' @rdname checkAlpha
-#' @export
+#'
+#' ## Fail.
+#' checkAlpha("xxx")
+#' checkAlpha(1L)
 checkAlpha <- function(x) {
+    msg <- "An alpha level must be a scalar numeric > 0 and < 1"
     ok <- is_scalar_double(x)
     if (!ok) {
-        return("Must be scalar double")
+        return(msg)
     }
     ok <- x > 0L && x < 1L
     if (!ok) {
-        "An alpha level must be a scalar numeric > 0 and < 1"
+        return(msg)
     }
     TRUE
 }

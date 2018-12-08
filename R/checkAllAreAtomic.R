@@ -5,7 +5,12 @@
 #' @export
 #'
 #' @examples
-#' checkAllAreAtomic(datasets::mtcars)
+#' ## Pass.
+#' checkAllAreAtomic(data.frame(a = "foo", b = "bar"))
+#' checkAllAreAtomic(list(a = "foo", b = "bar"))
+#'
+#' ## Fail.
+#' checkAllAreAtomic(list(a = "x", b = list()))
 checkAllAreAtomic <- function(x) {
     ok <- all(vapply(
         X = x,
