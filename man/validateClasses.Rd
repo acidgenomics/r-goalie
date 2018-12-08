@@ -12,7 +12,7 @@ validateClasses(object, expected, subset = FALSE)
 \item{subset}{\code{boolean}. Only check a subset of slots in the object.}
 }
 \value{
-\code{boolean} (TRUE) on sucess or \code{string} containing informative
+\code{boolean} (\code{TRUE}) on sucess or \code{string} containing informative
 message on failure.
 }
 \description{

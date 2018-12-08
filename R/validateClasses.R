@@ -17,7 +17,7 @@
 #' - `methods::setValidity()`.
 #' - `methods::validObject()`.
 #'
-#' @return `boolean` (TRUE) on sucess or `string` containing informative
+#' @return `boolean` (`TRUE`) on sucess or `string` containing informative
 #'   message on failure.
 #'
 #' @examples
@@ -36,8 +36,7 @@
 validateClasses <- function(object, expected, subset = FALSE) {
     assert(
         is(expected, "list"),
-        hasNames(expected),
-        testFlag(subset)
+        checkFlag(subset)
     )
     if (isTRUE(subset)) {
         assertNames(names(object), must.include = names(expected))
@@ -59,15 +58,14 @@ validateClasses <- function(object, expected, subset = FALSE) {
         SIMPLIFY = TRUE,
         USE.NAMES = TRUE
     )
-    assertLogical(valid)
-    if (all(valid)) {
-        TRUE
-    } else {
-        paste(
+
+    if (!all(valid)) {
+        return(paste(
             "Class checks failed:",
             # See `basejump::printString()` for current method.
             capture.output(print(names(valid)[!valid])),
             sep = "\n"
-        )
+        ))
     }
+    TRUE
 }
