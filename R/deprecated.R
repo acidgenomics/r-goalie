@@ -120,6 +120,12 @@ areSamplesUnique <- function(...) {
 # FIXME
 # assertAreValidNames
 
+# assertIsColorScaleContinuousOrNULL
+#     assertColorScaleContinuousOrNULL
+
+# assertIsColorScaleDiscreteOrNULL
+#     assertColorScaleDiscreteOrNULL
+
 # assertIsAnImplicitInteger
 # assertIsAnImplicitIntegerOrNULL
 # assertIsHeaderLevel
