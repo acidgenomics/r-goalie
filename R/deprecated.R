@@ -21,24 +21,6 @@ NULL
 
 
 
-# basejump v0.4.0 ==============================================================
-#' @rdname defunct
-#' @export
-assertIsAnnotable <- function(...) {
-    .Defunct()
-}
-
-
-
-# basejump v0.5.4 ==============================================================
-#' @rdname defunct
-#' @export
-assertIsGFF <- function(...) {
-    .Defunct()
-}
-
-
-
 # v0.1.0 =======================================================================
 #' @rdname deprecated
 #' @export
@@ -50,8 +32,7 @@ assertAllAreNonExisting <- function(...) {
 #' @rdname deprecated
 #' @export
 assertAllAreValidNames <- function(...) {
-    .Deprecated("assertAreValidNames")
-    assertAreValidNames(...)
+    .Defunct("assertHasValidNames or validNames")
 }
 
 #' @rdname defunct
@@ -69,15 +50,15 @@ assertAreTranscriptAnnotations <- function(...) {
 #' @rdname deprecated
 #' @export
 assertIsAHeaderLevel <- function(...) {
-    .Deprecated("assertIsHeaderLevel")
-    assertIsHeaderLevel(...)
+    .Deprecated("assertHeaderLevel")
+    assertHeaderLevel(...)
 }
 
 #' @rdname deprecated
 #' @export
-assertIsAStringOrNULL <- function(...) {
-    # Soft deprecated: assertIsStringOrNULL
-    assertIsStringOrNULL(...)
+assertIsAStringOrNULL <- function(x) {
+    .Deprecated("assertString")
+    assertString(x = x, null.ok = TRUE)
 }
 
 #' @rdname defunct
