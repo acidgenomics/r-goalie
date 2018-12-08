@@ -37,6 +37,8 @@ message for the testthat reporter. See \code{testthat::expect_that()}.}
 
 \item{info}{\code{character}. Extra information to be included in the message for
 the testthat reporter. See \code{testthat::expect_that()}.}
+
+\item{label}{XXX}
 }
 \value{
 \itemize{
@@ -48,15 +50,6 @@ the testthat reporter. See \code{testthat::expect_that()}.}
 \description{
 Does the Object Have Syntactically Valid Dimnames?
 }
-\section{Functions}{
-\itemize{
-\item \code{check_has_valid_dimnames}: snake alias.
-
-\item \code{test_has_valid_dimnames}: snake alias.
-
-\item \code{assert_has_valid_dimnames}: snake alias.
-}}
-
 \examples{
 ## Pass ====
 x <- datasets::iris

@@ -36,6 +36,8 @@ message for the testthat reporter. See \code{testthat::expect_that()}.}
 
 \item{info}{\code{character}. Extra information to be included in the message for
 the testthat reporter. See \code{testthat::expect_that()}.}
+
+\item{label}{XXX}
 }
 \value{
 \itemize{
@@ -47,15 +49,6 @@ the testthat reporter. See \code{testthat::expect_that()}.}
 \description{
 Does an Object Contain Elements That Are All Atomic?
 }
-\section{Functions}{
-\itemize{
-\item \code{check_all_are_atomic}: snake alias.
-
-\item \code{test_all_are_atomic}: snake alias.
-
-\item \code{assert_all_are_atomic}: snake alias.
-}}
-
 \examples{
 ## Pass ====
 checkAllAreAtomic(data.frame(a = "foo", b = "bar"))

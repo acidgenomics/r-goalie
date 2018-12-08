@@ -35,10 +35,9 @@ checkHasValidNames <- function(x) {
 
 
 
-#' @describeIn checkHasValidNames snake alias.
+#' @rdname checkHasValidNames
 #' @export
-check_has_valid_names <-  # nolint
-    checkHasValidNames
+check_has_valid_names <- checkHasValidNames  # nolint
 
 
 
@@ -48,10 +47,9 @@ testHasValidNames <- makeTestFunction(checkHasValidNames)
 
 
 
-#' @describeIn checkHasValidNames snake alias.
+#' @rdname checkHasValidNames
 #' @export
-test_has_valid_names <-  # nolint
-    testHasValidNames
+test_has_valid_names <- testHasValidNames  # nolint
 
 
 
@@ -61,14 +59,12 @@ assertHasValidNames <- makeAssertionFunction(checkHasValidNames)
 
 
 
-#' @describeIn checkHasValidNames snake alias.
+#' @rdname checkHasValidNames
 #' @export
-assert_has_valid_names <-  # nolint
-    assertHasValidNames
+assert_has_valid_names <- assertHasValidNames  # nolint
 
 
 
 #' @rdname checkHasValidNames
 #' @export
-expect_has_valid_names <-  # nolint
-    makeExpectationFunction(checkHasValidNames)
+expect_has_valid_names <- makeExpectationFunction(checkHasValidNames)  # nolint

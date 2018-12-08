@@ -36,6 +36,8 @@ message for the testthat reporter. See \code{testthat::expect_that()}.}
 
 \item{info}{\code{character}. Extra information to be included in the message for
 the testthat reporter. See \code{testthat::expect_that()}.}
+
+\item{label}{XXX}
 }
 \value{
 \itemize{
@@ -47,15 +49,6 @@ the testthat reporter. See \code{testthat::expect_that()}.}
 \description{
 Does the Object Have Syntactically Valid Names?
 }
-\section{Functions}{
-\itemize{
-\item \code{check_has_valid_names}: snake alias.
-
-\item \code{test_has_valid_names}: snake alias.
-
-\item \code{assert_has_valid_names}: snake alias.
-}}
-
 \examples{
 ## Pass ====
 x <- list(a = 1, b = 2)

@@ -43,6 +43,8 @@ expect_scale(x, scale = c("continuous", "discrete"), aes = c("colour",
 that ggplot2 prefers British spelling, so we're enforcing that convention
 here.}
 
+\item{null.ok}{XXX}
+
 \item{.var.name}{\code{string}. Name of the checked object to print in assertions.}
 
 \item{add}{\code{AssertCollection}. Extra information to be included in the
@@ -50,6 +52,8 @@ message for the testthat reporter. See \code{testthat::expect_that()}.}
 
 \item{info}{\code{character}. Extra information to be included in the message for
 the testthat reporter. See \code{testthat::expect_that()}.}
+
+\item{label}{XXX}
 }
 \value{
 \itemize{
@@ -61,15 +65,6 @@ the testthat reporter. See \code{testthat::expect_that()}.}
 \description{
 Does the Argument Contain a ggplot2 Scale?
 }
-\section{Functions}{
-\itemize{
-\item \code{check_scale}: snake alias.
-
-\item \code{test_scale}: snake alias.
-
-\item \code{assert_scale}: snake alias.
-}}
-
 \examples{
 library(ggplot2)
 

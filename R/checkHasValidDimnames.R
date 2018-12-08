@@ -40,10 +40,9 @@ checkHasValidDimnames <- function(x) {
 
 
 
-#' @describeIn checkHasValidDimnames snake alias.
+#' @rdname checkHasValidDimnames
 #' @export
-check_has_valid_dimnames <-  # nolint
-    checkHasValidDimnames
+check_has_valid_dimnames <- checkHasValidDimnames  # nolint
 
 
 
@@ -53,10 +52,9 @@ testHasValidDimnames <- makeTestFunction(checkHasValidDimnames)
 
 
 
-#' @describeIn checkHasValidDimnames snake alias.
+#' @rdname checkHasValidDimnames
 #' @export
-test_has_valid_dimnames <-  # nolint
-    testHasValidDimnames
+test_has_valid_dimnames <- testHasValidDimnames  # nolint
 
 
 
@@ -66,10 +64,9 @@ assertHasValidDimnames <- makeAssertionFunction(checkHasValidDimnames)
 
 
 
-#' @describeIn checkHasValidDimnames snake alias.
+#' @rdname checkHasValidDimnames
 #' @export
-assert_has_valid_dimnames <-  # nolint
-    assertHasValidDimnames
+assert_has_valid_dimnames <- assertHasValidDimnames  # nolint
 
 
 

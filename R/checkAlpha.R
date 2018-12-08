@@ -28,10 +28,9 @@ checkAlpha <- function(x) {
 
 
 
-#' @describeIn checkAlpha snake alias.
+#' @rdname checkAlpha
 #' @export
-check_alpha <-  # nolint
-    checkAlpha
+check_alpha <- checkAlpha  # nolint
 
 
 
@@ -41,10 +40,9 @@ testAlpha <- makeTestFunction(checkAlpha)
 
 
 
-#' @describeIn checkAlpha snake alias.
+#' @rdname checkAlpha
 #' @export
-test_alpha <-  # nolint
-    testAlpha
+test_alpha <- testAlpha  # nolint
 
 
 
@@ -54,14 +52,12 @@ assertAlpha <- makeAssertionFunction(checkAlpha)
 
 
 
-#' @describeIn checkAlpha snake alias.
+#' @rdname checkAlpha
 #' @export
-assert_alpha <-  # nolint
-    assertAlpha
+assert_alpha <- assertAlpha  # nolint
 
 
 
 #' @rdname checkAlpha
 #' @export
-expect_alpha <-  # nolint
-    makeExpectationFunction(checkAlpha)
+expect_alpha <- makeExpectationFunction(checkAlpha)  # nolint

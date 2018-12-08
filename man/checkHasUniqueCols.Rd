@@ -36,6 +36,8 @@ message for the testthat reporter. See \code{testthat::expect_that()}.}
 
 \item{info}{\code{character}. Extra information to be included in the message for
 the testthat reporter. See \code{testthat::expect_that()}.}
+
+\item{label}{XXX}
 }
 \value{
 \itemize{
@@ -51,10 +53,6 @@ rows are allowed here, because many genes (rows) can contain all zeros.
 \section{Functions}{
 \itemize{
 \item \code{check_has_unique_cols}: snake alias.
-
-\item \code{test_has_unique_cols}: snake alias.
-
-\item \code{assert_has_unique_cols}: snake alias.
 }}
 
 \section{SummarizedExperiment}{
