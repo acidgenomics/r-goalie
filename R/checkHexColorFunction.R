@@ -1,7 +1,7 @@
-#' Does the Argument Contain a Hex Color Function?
+#' Does the Argument Contain a Function That Returns Hexadecimal Colors?
 #'
-#' This assert check is intended primarily to check for viridis hexadecimal
-#' color value return.
+#' This assert check is intended primarily to check for RColorBrewer or viridis
+#' hexadecimal color value return.
 #'
 #' @aliases hexColorFunction hex_color_function
 #' @inherit params
@@ -17,7 +17,10 @@
 #' ## Fail ====
 #' x <- ggplot2::scale_colour_manual
 #' checkHexColorFunction(x)
-checkHexColorFunction <- function(x, null.ok = FALSE) {
+checkHexColorFunction <- function(
+    x,
+    null.ok = FALSE  # nolint
+) {
     # Allow NULL input, if desired. This is useful for plotting functions where
     # we don't want the user to have to define manually.
     assertFlag(null.ok)
@@ -42,12 +45,9 @@ checkHexColorFunction <- function(x, null.ok = FALSE) {
         return("Hex color function didn't return any values")
     }
 
-    # viridis adds "FF" to the end of hex colors.
-    # Attempt to fix before running hex check.
-    colors <- gsub("^(#[A-Z0-9]{6})[A-Z0-9]{2}$", "\\1", colors)
-
-    if (!all(is_hex_color(colors))) {
-        return("Function doesn't appear to return hex colors")
+    check <- checkHexColor(colors)
+    if (is.character(check)) {
+        return(check)
     }
 
     TRUE
@@ -55,10 +55,9 @@ checkHexColorFunction <- function(x, null.ok = FALSE) {
 
 
 
-#' @describeIn checkHexColorFunction snake alias.
+#' @rdname checkHexColorFunction
 #' @export
-check_hex_color_function <-  # nolint
-    checkHexColorFunction
+check_hex_color_function <- checkHexColorFunction  # nolint
 
 
 
@@ -70,7 +69,7 @@ testHexColorFunction <- makeTestFunction(checkHexColorFunction)
 
 #' @rdname checkHexColorFunction
 #' @export
-test_hex_color_function <- checkHexColorFunction
+test_hex_color_function <- checkHexColorFunction  # nolint
 
 
 
@@ -80,12 +79,13 @@ assertHexColorFunction <- makeAssertionFunction(checkHexColorFunction)
 
 
 
-#' @describeIn checkHexColorFunction snake alias.
+#' @rdname checkHexColorFunction
 #' @export
-assert_hex_color_function <- assertHexColorFunction
+assert_hex_color_function <- assertHexColorFunction  # nolint
 
 
 
 #' @rdname checkHexColorFunction
 #' @export
-expect_hex_color_function <- makeExpectationFunction(checkHexColorFunction)
+expect_hex_color_function <-  # nolint
+    makeExpectationFunction(checkHexColorFunction)
