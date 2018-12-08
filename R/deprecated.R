@@ -1,7 +1,3 @@
-# FIXME isAlpha
-
-
-
 # nocov start
 # nolint start
 
@@ -87,13 +83,13 @@ assertIsAStringOrNULL <- function(...) {
 #' @rdname defunct
 #' @export
 assertIsCharacterOrNULL <- function(...) {
-    .Defunct("assertive::assert_is_any_of")
+    .Defunct("checkAnyClass")
 }
 
 #' @rdname defunct
 #' @export
 assertIsDataFrameOrNULL <- function(...) {
-    .Defunct("assertive::assert_is_any_of")
+    .Defunct("checkAnyClass")
 }
 
 #' @rdname defunct
@@ -114,18 +110,22 @@ assertIsTx2gene <- function(...) {
 #' @rdname deprecated
 #' @export
 areSamplesUnique <- function(...) {
-    .Deprecated("hasUniqueCols")
-    hasUniqueCols(...)
+    .Deprecated("testHasUniqueCols")
+    testHasUniqueCols(...)
 }
 
 
 
 # v0.2.0 =======================================================================
 # FIXME
+# assertAreValidNames
+
 # assertIsAnImplicitInteger
 # assertIsAnImplicitIntegerOrNULL
+# assertIsHeaderLevel
 # assertIsImplicitInteger
 # assertIsImplicitIntegerOrNULL
+# isAlpha
 # isAnImplicitInteger
 # isImplicitInteger
 
