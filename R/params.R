@@ -18,11 +18,6 @@
 #' @param .var.name `string`. Name of the checked object to print in assertions.
 #' @param ... Additional arguments.
 #'
-#' @seealso
-#' - `checkmate::makeTestFunction()`.
-#' - `checkmate::makeAssertionFunction()`.
-#' - `checkmate::makeExpectationFunction()`.
-#'
 #' @return
 #' - `boolean flag` for `are/has/is*()` functions.
 #' - Stop on error for `assert*()` functions
