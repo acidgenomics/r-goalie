@@ -1,7 +1,3 @@
-# TODO Improve working example, showing expected failure.
-
-
-
 #' Are the Requested Gene Names Duplicated in the Corresponding Object?
 #'
 #' This assert check determines if a user-defined gene name query is using only
@@ -9,7 +5,7 @@
 #' particularly when performing single-cell RNA-seq marker analysis.
 #'
 #' @name checkAreUniqueGeneNames
-#' @aliases areUniqueGeneNames
+#' @aliases areUniqueGeneNames are_unique_gene_names
 #' @inherit params
 #' @export
 #'
@@ -71,9 +67,10 @@ checkAreUniqueGeneNames <- function(x, genes) {
 
 
 
-#' @rdname checkAreUniqueGeneNames
+#' @describeIn checkAreUniqueGeneNames snake alias.
 #' @export
-check_are_unique_gene_names <- checkAreUniqueGeneNames
+check_are_unique_gene_names <-  # nolint
+    checkAreUniqueGeneNames
 
 
 
@@ -83,9 +80,10 @@ testAreUniqueGeneNames <- makeTestFunction(checkAreUniqueGeneNames)
 
 
 
-#' @rdname checkAreUniqueGeneNames
+#' @describeIn checkAreUniqueGeneNames snake alias.
 #' @export
-test_are_unique_gene_names <- testAreUniqueGeneNames
+test_are_unique_gene_names <-  # nolint
+    testAreUniqueGeneNames
 
 
 
@@ -95,12 +93,14 @@ assertAreUniqueGeneNames <- makeAssertionFunction(checkAreUniqueGeneNames)
 
 
 
+#' @describeIn checkAreUniqueGeneNames snake alias.
+#' @export
+assert_are_unique_gene_names <-  # nolint
+    assertAreUniqueGeneNames
+
+
+
 #' @rdname checkAreUniqueGeneNames
 #' @export
-assert_are_unique_gene_names <- assertAreUniqueGeneNames
-
-
-
-#' @rdname checkAreUniqueGeneNames
-#' @export
-expect_alpha <- makeExpectationFunction(checkAreUniqueGeneNames)
+expect_alpha <-  # nolint
+    makeExpectationFunction(checkAreUniqueGeneNames)

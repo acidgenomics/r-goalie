@@ -69,9 +69,10 @@ checkScale <- function(
 
 
 
-#' @rdname checkScale
+#' @describeIn checkScale snake alias.
 #' @export
-check_scale <- checkScale
+check_scale <-  # nolint
+    checkScale
 
 
 
@@ -81,9 +82,10 @@ testScale <- makeTestFunction(checkScale)
 
 
 
-#' @rdname checkScale
+#' @describeIn checkScale snake alias.
 #' @export
-test_scale <- testScale
+test_scale <-  # nolint
+    testScale
 
 
 
@@ -93,12 +95,14 @@ assertScale <- makeAssertionFunction(checkScale)
 
 
 
+#' @describeIn checkScale snake alias.
+#' @export
+assert_scale <-  # nolint
+    assertScale
+
+
+
 #' @rdname checkScale
 #' @export
-assert_scale <- assertScale
-
-
-
-#' @rdname checkScale
-#' @export
-expect_scale <- makeExpectationFunction(checkScale)
+expect_scale <-  # nolint
+    makeExpectationFunction(checkScale)

@@ -2,7 +2,6 @@
 #'
 #' An alpha level must be a `scalar numeric` greater than 0 and less than 1.
 #'
-#' @name checkAlpha
 #' @aliases alpha
 #' @inherit params
 #' @export
@@ -29,9 +28,10 @@ checkAlpha <- function(x) {
 
 
 
-#' @rdname checkAlpha
+#' @describeIn checkAlpha snake alias.
 #' @export
-check_alpha <- checkAlpha
+check_alpha <-  # nolint
+    checkAlpha
 
 
 
@@ -41,9 +41,10 @@ testAlpha <- makeTestFunction(checkAlpha)
 
 
 
-#' @rdname checkAlpha
+#' @describeIn checkAlpha snake alias.
 #' @export
-test_alpha <- testAlpha
+test_alpha <-  # nolint
+    testAlpha
 
 
 
@@ -53,12 +54,14 @@ assertAlpha <- makeAssertionFunction(checkAlpha)
 
 
 
+#' @describeIn checkAlpha snake alias.
+#' @export
+assert_alpha <-  # nolint
+    assertAlpha
+
+
+
 #' @rdname checkAlpha
 #' @export
-assert_alpha <- assertAlpha
-
-
-
-#' @rdname checkAlpha
-#' @export
-expect_alpha <- makeExpectationFunction(checkAlpha)
+expect_alpha <-  # nolint
+    makeExpectationFunction(checkAlpha)

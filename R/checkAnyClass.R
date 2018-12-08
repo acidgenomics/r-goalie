@@ -1,12 +1,7 @@
-# FIXME Rework this function: I don't like how checkmate behaves here with
-# inheritance...it's too confusing.
-
-
-
 #' Does an Object Belong to Any of These Classes?
 #'
 #' @name checkAnyClass
-#' @aliases anyClass
+#' @aliases anyClass any_class
 #' @inheritParams params
 #' @export
 #'
@@ -37,8 +32,8 @@ checkAnyClass <- function(x, classes) {
         },
         FUN.VALUE = logical(1L)
     ))
-    # TODO Improve the message here, showing which failed.
     if (!ok) {
+        # TODO Improve the message here, showing which failed.
         return("Object does not belong to any of these classes")
     }
     TRUE
@@ -46,9 +41,10 @@ checkAnyClass <- function(x, classes) {
 
 
 
-#' @rdname checkAnyClass
+#' @describeIn checkAnyClass snake alias.
 #' @export
-check_any_class <- checkAnyClass
+check_any_class <-  # nolint
+    checkAnyClass
 
 
 
@@ -58,9 +54,10 @@ testAnyClass <- makeTestFunction(checkAnyClass)
 
 
 
-#' @rdname checkAnyClass
+#' @describeIn checkAnyClass snake alias.
 #' @export
-test_any_class <- testAnyClass
+test_any_class <-  # nolint
+    testAnyClass
 
 
 
@@ -70,12 +67,14 @@ assertAnyClass <- makeAssertionFunction(checkAnyClass)
 
 
 
+#' @describeIn checkAnyClass snake alias.
+#' @export
+assert_any_class <-  # nolint
+    assertAnyClass
+
+
+
 #' @rdname checkAnyClass
 #' @export
-assert_any_class <- assertAnyClass
-
-
-
-#' @rdname checkAnyClass
-#' @export
-expect_any_class <- makeExpectationFunction(checkAnyClass)
+expect_any_class <-  # nolint
+    makeExpectationFunction(checkAnyClass)

@@ -1,6 +1,6 @@
 #' Are Two Objects Identical?
 #'
-#' @aliases allAreAtomic
+#' @aliases identical
 #' @inherit params
 #' @export
 #'
@@ -21,9 +21,10 @@ checkIdentical <- function(x, y) {
 
 
 
-#' @rdname checkIdentical
+#' @describeIn checkIdentical snake alias.
 #' @export
-check_identical <- checkIdentical
+check_identical <-  # nolint
+    checkIdentical
 
 
 
@@ -33,9 +34,10 @@ testIdentical <- makeTestFunction(checkIdentical)
 
 
 
-#' @rdname checkIdentical
+#' @describeIn checkIdentical snake alias.
 #' @export
-test_identical <- testIdentical
+test_identical <-  # nolint
+    testIdentical
 
 
 
@@ -45,9 +47,10 @@ assertIdentical <- makeAssertionFunction(checkIdentical)
 
 
 
-#' @rdname checkIdentical
+#' @describeIn checkIdentical snake alias.
 #' @export
-assert_identical <- assertIdentical
+assert_identical <-  # nolint
+    assertIdentical
 
 
 

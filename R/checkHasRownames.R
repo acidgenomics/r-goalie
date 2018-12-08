@@ -8,6 +8,7 @@
 #' rows.
 #'
 #' @name checkHasRownames
+#' @aliases hasRownames has_rownames
 #' @inherit params
 #' @export
 #'
@@ -63,9 +64,10 @@ checkHasRownames <- function(x) {
 
 
 
-#' @rdname checkHasRownames
+#' @describeIn checkHasRownames snake alias.
 #' @export
-check_has_rownames <- checkHasRownames
+check_has_rownames <-  # nolint
+    checkHasRownames
 
 
 
@@ -75,9 +77,10 @@ testHasRownames <- makeTestFunction(checkHasRownames)
 
 
 
-#' @rdname checkHasRownames
+#' @describeIn checkHasRownames snake alias.
 #' @export
-test_has_rownames <- testHasRownames
+test_has_rownames <-  # nolint
+    testHasRownames
 
 
 
@@ -87,12 +90,14 @@ assertHasRownames <- makeAssertionFunction(checkHasRownames)
 
 
 
+#' @describeIn checkHasRownames snake alias.
+#' @export
+assert_has_rownames <-  # nolint
+    assertHasRownames
+
+
+
 #' @rdname checkHasRownames
 #' @export
-assert_has_rownames <- assertHasRownames
-
-
-
-#' @rdname checkHasRownames
-#' @export
-expect_has_rownames <- makeExpectationFunction(checkHasRownames)
+expect_has_rownames <-  # nolint
+    makeExpectationFunction(checkHasRownames)

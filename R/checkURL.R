@@ -1,7 +1,7 @@
 #' Does the Argument Contain a URL?
 #'
 #' @name checkURL
-#' @aliases url
+#' @aliases url urls
 #' @inherit params
 #'
 #' @examples
@@ -19,8 +19,7 @@ NULL
 
 
 
-# Single URL ===================================================================
-#' @rdname checkURL
+#' @describeIn checkURL Requires a single URL.
 #' @export
 checkURL <- function(x) {
     ok <- testString(x)
@@ -45,9 +44,10 @@ checkURL <- function(x) {
 
 
 
-#' @rdname checkURL
+#' @describeIn checkURL snake alias.
 #' @export
-check_url <- checkURL
+check_url <-  # nolint
+    checkURL
 
 
 
@@ -56,9 +56,10 @@ check_url <- checkURL
 testURL <- makeTestFunction(checkURL)
 
 
-#' @rdname checkURL
+#' @describeIn checkURL snake alias.
 #' @export
-test_url <- testURL
+test_url <-  # nolint
+    testURL
 
 
 
@@ -68,20 +69,21 @@ assertURL <- makeAssertionFunction(checkURL)
 
 
 
+#' @describeIn checkURL snake alias.
+#' @export
+assert_url <-  # nolint
+    assertURL
+
+
+
 #' @rdname checkURL
 #' @export
-assert_url <- assertURL
+expect_url <-  # nolint
+    makeExpectationFunction(checkURL)
 
 
 
-#' @rdname checkURL
-#' @export
-expect_url <- makeExpectationFunction(checkURL)
-
-
-
-# Multiple URLs ================================================================
-#' @rdname checkURL
+#' @describeIn checkURL Supports multiple URLs.
 #' @export
 checkURLs <- function(x) {
     if (testScalar(x)) {
@@ -96,9 +98,10 @@ checkURLs <- function(x) {
 
 
 
-#' @rdname checkURL
+#' @describeIn checkURL snake alias.
 #' @export
-check_urls <- checkURLs
+check_urls <-  # nolint
+    checkURLs
 
 
 
@@ -108,24 +111,27 @@ testURLs <- makeTestFunction(checkURLs)
 
 
 
-#' @rdname checkURL
+#' @describeIn checkURL snake alias.
 #' @export
-test_urls <- testURLs
-
-
-
-#' @rdname checkURL
-#' @export
-assertAreURLs <- makeAssertionFunction(checkURLs)
+test_urls <-  # nolint
+    testURLs
 
 
 
 #' @rdname checkURL
 #' @export
-assert_are_urls <- assertAreURLs
+assertURLs <- makeAssertionFunction(checkURLs)
+
+
+
+#' @describeIn checkURL snake alias.
+#' @export
+assert_urls <-  # nolint
+    assertURLs
 
 
 
 #' @rdname checkURL
 #' @export
-expect_are_urls <- makeExpectationFunction(checkURLs)
+expect_urls <-  # nolint
+    makeExpectationFunction(checkURLs)

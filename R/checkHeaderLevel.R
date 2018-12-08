@@ -3,7 +3,7 @@
 #' Markdown supports header levels `1`-`7` (`<H1>`-`<H7>`).
 #'
 #' @name checkHeaderLevel
-#' @aliases headerLevel
+#' @aliases headerLevel header_level
 #' @inherit params
 #' @export
 #'
@@ -29,9 +29,10 @@ checkHeaderLevel <- function(x) {
 
 
 
-#' @rdname checkHeaderLevel
+#' @describeIn checkHeaderLevel snake alias.
 #' @export
-check_header_level <- checkHeaderLevel
+check_header_level <-  # nolint
+    checkHeaderLevel
 
 
 
@@ -41,9 +42,10 @@ testHeaderLevel <- makeTestFunction(checkHeaderLevel)
 
 
 
-#' @rdname checkHeaderLevel
+#' @describeIn checkHeaderLevel snake alias.
 #' @export
-test_header_level <- testHeaderLevel
+test_header_level <-  # nolint
+    testHeaderLevel
 
 
 
@@ -53,12 +55,14 @@ assertHeaderLevel <- makeAssertionFunction(checkHeaderLevel)
 
 
 
+#' @describeIn checkHeaderLevel snake alias.
+#' @export
+assert_header_level <-  # nolint
+    assertHeaderLevel
+
+
+
 #' @rdname checkHeaderLevel
 #' @export
-assert_header_level <- assertHeaderLevel
-
-
-
-#' @rdname checkHeaderLevel
-#' @export
-expect_header_level <- makeExpectationFunction(checkHeaderLevel)
+expect_header_level <-  # nolint
+    makeExpectationFunction(checkHeaderLevel)

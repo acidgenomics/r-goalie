@@ -9,7 +9,7 @@
 #' is checked for duplicated columns.
 #'
 #' @name checkHasUniqueCols
-#' @aliases hasUniqueCols
+#' @aliases hasUniqueCols has_unique_cols
 #' @author Michael Steinbaugh
 #' @inherit params
 #' @export
@@ -49,9 +49,10 @@ checkHasUniqueCols <- function(x) {
 
 
 
-#' @rdname checkHasUniqueCols
+#' @describeIn checkHasUniqueCols snake alias.
 #' @export
-check_has_unique_cols <- checkHasUniqueCols
+check_has_unique_cols <-  # nolint
+    checkHasUniqueCols
 
 
 
@@ -61,9 +62,10 @@ testHasUniqueCols <- makeTestFunction(checkHasUniqueCols)
 
 
 
-#' @rdname checkHasUniqueCols
+#' @describeIn checkHasUniqueCols snake alias.
 #' @export
-test_has_unique_cols <- testHasUniqueCols
+test_has_unique_cols <-  # nolint
+    testHasUniqueCols
 
 
 
@@ -73,12 +75,14 @@ assertHasUniqueCols <- makeAssertionFunction(checkHasUniqueCols)
 
 
 
+#' @describeIn checkHasUniqueCols snake alias.
+#' @export
+assert_has_unique_cols <-  # nolint
+    assertHasUniqueCols
+
+
+
 #' @rdname checkHasUniqueCols
 #' @export
-assert_has_unique_cols <- assertHasUniqueCols
-
-
-
-#' @rdname checkHasUniqueCols
-#' @export
-expect_has_unique_cols <- makeExpectationFunction(checkHasUniqueCols)
+expect_has_unique_cols <-  # nolint
+    makeExpectationFunction(checkHasUniqueCols)

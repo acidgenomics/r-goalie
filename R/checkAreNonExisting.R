@@ -1,7 +1,7 @@
 #' Does the Requested Variable Exist?
 #'
 #' @name checkAreNonExisting
-#' @aliases areNonExisting
+#' @aliases areNonExisting are_non_existing
 #' @inherit params
 #' @export
 #'
@@ -23,8 +23,8 @@ checkAreNonExisting <- function(
     inherits = TRUE
 ) {
     ok <- all(!is_existing(x, envir = envir, inherits = inherits))
-    # TODO Improve the message here.
     if (!ok) {
+        # TODO Improve the message here, indicating which.
         return("Detected variables that already exist in the environment")
     }
     TRUE
@@ -32,9 +32,10 @@ checkAreNonExisting <- function(
 
 
 
-#' @rdname checkAreNonExisting
+#' @describeIn checkAreNonExisting snake alias.
 #' @export
-check_are_non_existing <- checkAreNonExisting
+check_are_non_existing <-  # nolint
+    checkAreNonExisting
 
 
 
@@ -44,9 +45,10 @@ testAreNonExisting <- makeTestFunction(checkAreNonExisting)
 
 
 
-#' @rdname checkAreNonExisting
+#' @describeIn checkAreNonExisting snake alias.
 #' @export
-test_are_non_existing <- testAreNonExisting
+test_are_non_existing <-  # nolint
+    testAreNonExisting
 
 
 
@@ -56,12 +58,14 @@ assertAreNonExisting <- makeAssertionFunction(checkAreNonExisting)
 
 
 
+#' @describeIn checkAreNonExisting snake alias.
+#' @export
+assert_are_non_existing <-  # nolint
+    assertAreNonExisting
+
+
+
 #' @rdname checkAreNonExisting
 #' @export
-assert_are_non_existing <- assertAreNonExisting
-
-
-
-#' @rdname checkAreNonExisting
-#' @export
-expect_are_non_existing <- makeExpectationFunction(checkAreNonExisting)
+expect_are_non_existing <-  # nolint
+    makeExpectationFunction(checkAreNonExisting)

@@ -1,6 +1,7 @@
 #' Does the Object Have Column Names?
 #'
 #' @name checkHasColnames
+#' @aliases hasColnames has_colnames
 #' @inherit params
 #' @export
 #'
@@ -34,9 +35,10 @@ checkHasColnames <- function(x) {
 
 
 
-#' @rdname checkHasColnames
+#' @describeIn checkHasColnames snake alias.
 #' @export
-check_has_colnames <- checkHasColnames
+check_has_colnames <-  # nolint
+    checkHasColnames
 
 
 
@@ -46,9 +48,10 @@ testHasColnames <- makeTestFunction(checkHasColnames)
 
 
 
-#' @rdname checkHasColnames
+#' @describeIn checkHasColnames snake alias.
 #' @export
-test_has_colnames <- testHasColnames
+test_has_colnames <-  # nolint
+    testHasColnames
 
 
 
@@ -58,12 +61,14 @@ assertHasColnames <- makeAssertionFunction(checkHasColnames)
 
 
 
+#' @describeIn checkHasColnames snake alias.
+#' @export
+assert_has_colnames <-  # nolint
+    assertHasColnames
+
+
+
 #' @rdname checkHasColnames
 #' @export
-assert_has_colnames <- assertHasColnames
-
-
-
-#' @rdname checkHasColnames
-#' @export
-expect_has_colnames <- makeExpectationFunction(checkHasColnames)
+expect_has_colnames <-  # nolint
+    makeExpectationFunction(checkHasColnames)
