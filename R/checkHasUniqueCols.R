@@ -12,46 +12,40 @@
 #' @aliases hasUniqueCols
 #' @author Michael Steinbaugh
 #' @inherit params
+#' @export
 #'
 #' @examples
-#' ## Unique.
+#' ## Pass ====
 #' x <- matrix(data = seq_len(20L), ncol = 2L)
 #' checkHasUniqueCols(x)
 #'
-#' ## Duplicated.
+#' ## Fail ====
 #' x <- matrix(data = rep(seq_len(10L), times = 2L), ncol = 2L)
 #' checkHasUniqueCols(x)
-NULL
-
-
-
-#' @rdname checkHasUniqueCols
-#' @export
-checkHasUniqueCols <-
-    function(x) {
-        # Coerce SummarizedExperiment to matrix, if necessary.
-        if (is(x, "SummarizedExperiment")) {
-            x <- .coerceSummarizedExperimentToMatrix(x)
-        }
-
-        # Check for >= 2 samples.
-        if (!ncol(x) > 1L) {
-            return(FALSE)
-        }
-
-        # Ensure coercion to matrix, which can use the S3 assay method.
-        x <- as(x, "matrix")
-
-        # We're using the S3 assay `duplicated()` method here, which supports
-        # MARGIN, so we can check across the columns.
-        # TODO Improve the message about which columns.
-        ok <- !any(duplicated(x, MARGIN = 2L))
-        if (!ok) {
-            return("Object has duplicate columns")
-        }
-
-        TRUE
+checkHasUniqueCols <- function(x) {
+    # Coerce SummarizedExperiment to matrix, if necessary.
+    if (is(x, "SummarizedExperiment")) {
+        x <- .coerceSummarizedExperimentToMatrix(x)
     }
+
+    # Check for >= 2 samples.
+    if (!ncol(x) > 1L) {
+        return(FALSE)
+    }
+
+    # Ensure coercion to matrix, which can use the S3 assay method.
+    x <- as(x, "matrix")
+
+    # We're using the S3 assay `duplicated()` method here, which supports
+    # MARGIN, so we can check across the columns.
+    ok <- !any(duplicated(x, MARGIN = 2L))
+    if (!ok) {
+        # TODO Improve the message about which columns.
+        return("Object has duplicate columns")
+    }
+
+    TRUE
+}
 
 
 
