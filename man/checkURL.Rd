@@ -70,13 +70,14 @@ Does the Argument Contain a URL?
 \examples{
 urls <- c("https://www.r-project.org", "ftp://r-project.org")
 
-## Single URL.
+## Pass ====
 checkURL(urls[[1L]])
-checkURL(urls)  # fail
-
-## Multiple URLs.
 checkURLs(urls)
-checkURLs(urls[[1L]])  # fail
+
+## Fail ====
+checkURL("xxx")
+checkURL(urls)
+checkURLs(urls[[1L]])
 }
 \seealso{
 \itemize{

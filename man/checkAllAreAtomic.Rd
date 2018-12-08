@@ -47,7 +47,12 @@ the testthat reporter. See \code{testthat::expect_that()}.}
 Does an Object Contain Elements That Are All Atomic?
 }
 \examples{
-checkAllAreAtomic(datasets::mtcars)
+## Pass ====
+checkAllAreAtomic(data.frame(a = "foo", b = "bar"))
+checkAllAreAtomic(list(a = "foo", b = "bar"))
+
+## Fail ====
+checkAllAreAtomic(list(a = "x", b = list()))
 }
 \seealso{
 \itemize{

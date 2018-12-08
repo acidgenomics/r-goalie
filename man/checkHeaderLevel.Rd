@@ -47,8 +47,11 @@ the testthat reporter. See \code{testthat::expect_that()}.}
 Markdown supports header levels \code{1}-\code{7} (\code{<H1>}-\code{<H7>}).
 }
 \examples{
+## Pass ====
 checkHeaderLevel(1)
-checkHeaderLevel(1L)
+
+## Fail ====
+checkHeaderLevel(0)
 }
 \seealso{
 \itemize{

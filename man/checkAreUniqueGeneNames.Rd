@@ -69,6 +69,8 @@ x <- SummarizedExperiment::SummarizedExperiment(
     )
 )
 genes <- SummarizedExperiment::rowData(x)$geneName
+
+## Pass ====
 checkAreUniqueGeneNames(x = x, genes = genes)
 }
 \seealso{
