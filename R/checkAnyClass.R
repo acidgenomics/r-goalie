@@ -21,7 +21,7 @@
 #'
 #' ## Note that `checkAnyClass()` extends `checkClass()`, which  is very strict.
 #' is(x, "numeric")
-#' testClass(x, "numeric")
+#' checkmate::testClass(x, "numeric")
 #'
 #' ## Pass ====
 #' checkAnyClass(x, classes = c("integer", "character"))
