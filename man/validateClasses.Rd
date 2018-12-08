@@ -2,7 +2,7 @@
 % Please edit documentation in R/validateClasses.R
 \name{validateClasses}
 \alias{validateClasses}
-\title{Validate Classes}
+\title{Validate Expected Classes}
 \usage{
 validateClasses(object, expected, subset = FALSE)
 }

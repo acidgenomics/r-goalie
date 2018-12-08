@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Are Unique Gene Names? — areUniqueGeneNames • goalie</title>
+<title>Are the Requested Gene Names Duplicated in the Corresponding Object? — checkAreUniqueGeneNames • goalie</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -32,7 +32,7 @@
 
   <link href="../extra.css" rel="stylesheet">
   
-<meta property="og:title" content="Are Unique Gene Names? — areUniqueGeneNames" />
+<meta property="og:title" content="Are the Requested Gene Names Duplicated in the Corresponding Object? — checkAreUniqueGeneNames" />
 
 <meta property="og:description" content="This assert check determines if a user-defined gene name query is using only
 unique (non-amgibuous) symbols. It is designed to be used for gene plotting
@@ -67,7 +67,7 @@ particularly when performing single-cell RNA-seq marker analysis." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">goalie</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
       </span>
     </div>
 
@@ -106,9 +106,9 @@ particularly when performing single-cell RNA-seq marker analysis." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Are Unique Gene Names?</h1>
-    <small class="dont-index">Source: <a href='https://github.com/steinbaugh/goalie/blob/master/R/areUniqueGeneNames.R'><code>R/areUniqueGeneNames.R</code></a></small>
-    <div class="hidden name"><code>areUniqueGeneNames.Rd</code></div>
+    <h1>Are the Requested Gene Names Duplicated in the Corresponding Object?</h1>
+    <small class="dont-index">Source: <a href='https://github.com/steinbaugh/goalie/blob/master/R/checkAreUniqueGeneNames.R'><code>R/checkAreUniqueGeneNames.R</code></a></small>
+    <div class="hidden name"><code>checkAreUniqueGeneNames.Rd</code></div>
     </div>
 
     <div class="ref-description">
@@ -119,9 +119,21 @@ particularly when performing single-cell RNA-seq marker analysis.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>areUniqueGeneNames</span>(<span class='no'>x</span>, <span class='no'>genes</span>)
+    <pre class="usage"><span class='fu'>checkAreUniqueGeneNames</span>(<span class='no'>x</span>, <span class='no'>genes</span>)
 
-<span class='fu'>assertAreUniqueGeneNames</span>(<span class='no'>x</span>, <span class='no'>genes</span>)</pre>
+<span class='fu'>check_are_unique_gene_names</span>(<span class='no'>x</span>, <span class='no'>genes</span>)
+
+<span class='fu'>testAreUniqueGeneNames</span>(<span class='no'>x</span>, <span class='no'>genes</span>)
+
+<span class='fu'>test_are_unique_gene_names</span>(<span class='no'>x</span>, <span class='no'>genes</span>)
+
+<span class='fu'>assertAreUniqueGeneNames</span>(<span class='no'>x</span>, <span class='no'>genes</span>, <span class='kw'>.var.name</span> <span class='kw'>=</span> <span class='kw pkg'>checkmate</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/checkmate/topics/vname'>vname</a></span>(<span class='no'>x</span>),
+  <span class='kw'>add</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
+
+<span class='fu'>assert_are_unique_gene_names</span>(<span class='no'>x</span>, <span class='no'>genes</span>, <span class='kw'>.var.name</span> <span class='kw'>=</span> <span class='kw pkg'>checkmate</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/checkmate/topics/vname'>vname</a></span>(<span class='no'>x</span>),
+  <span class='kw'>add</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
+
+<span class='fu'>expect_are_unique_gene_names</span>(<span class='no'>x</span>, <span class='no'>genes</span>, <span class='kw'>info</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>label</span> <span class='kw'>=</span> <span class='fu'>vname</span>(<span class='no'>x</span>))</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -134,6 +146,25 @@ particularly when performing single-cell RNA-seq marker analysis.</p>
       <th>genes</th>
       <td><p><code>character</code>. Genes.</p></td>
     </tr>
+    <tr>
+      <th>.var.name</th>
+      <td><p><code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>. Name of the checked object to print in
+assertions.</p></td>
+    </tr>
+    <tr>
+      <th>add</th>
+      <td><p><code>AssertCollection</code>. Extra information to be included in the
+message for the testthat reporter. See <code><a href='https://www.rdocumentation.org/packages/testthat/topics/expect_that'>testthat::expect_that()</a></code>.</p></td>
+    </tr>
+    <tr>
+      <th>info</th>
+      <td><p><code>character</code>. Extra information to be included in the message for
+the testthat reporter. See <code><a href='https://www.rdocumentation.org/packages/testthat/topics/expect_that'>testthat::expect_that()</a></code>.</p></td>
+    </tr>
+    <tr>
+      <th>label</th>
+      <td><p><code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>. Name of the checked object to print in messages.</p></td>
+    </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
@@ -142,7 +173,7 @@ particularly when performing single-cell RNA-seq marker analysis.</p>
 <ul>
 <li><p><code>boolean flag</code> for <code>are/has/is*()</code> functions.</p></li>
 <li><p>Stop on error for <code>assert*()</code> functions
-(see <code><a href='https://www.rdocumentation.org/packages/base/topics/stop'>base::stop()</a></code> or <code><a href='https://www.rdocumentation.org/packages/base/topics/stopifnot'>base::stopifnot()</a></code> for details).</p></li>
+(see <code><a href='https://www.rdocumentation.org/packages/base/topics/stop'>stop()</a></code> or <code><a href='https://www.rdocumentation.org/packages/base/topics/stopifnot'>stopifnot()</a></code> for details).</p></li>
 </ul>
 
     
@@ -164,7 +195,9 @@ particularly when performing single-cell RNA-seq marker analysis.</p>
     )
 )
 <span class='no'>genes</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>SummarizedExperiment</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/SummarizedExperiment/topics/SummarizedExperiment-class'>rowData</a></span>(<span class='no'>x</span>)$<span class='no'>geneName</span>
-<span class='fu'>areUniqueGeneNames</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='no'>x</span>, <span class='kw'>genes</span> <span class='kw'>=</span> <span class='no'>genes</span>)</div><div class='output co'>#&gt; [1] TRUE</div></pre>
+
+<span class='co'>## Pass ====</span>
+<span class='fu'>checkAreUniqueGeneNames</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='no'>x</span>, <span class='kw'>genes</span> <span class='kw'>=</span> <span class='no'>genes</span>)</div><div class='output co'>#&gt; [1] TRUE</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

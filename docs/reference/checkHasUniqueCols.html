@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Does the Object Contain Unique Columns? — hasUniqueCols • goalie</title>
+<title>Does the Object Have Columns with Unique Values? — checkHasUniqueCols • goalie</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -32,7 +32,7 @@
 
   <link href="../extra.css" rel="stylesheet">
   
-<meta property="og:title" content="Does the Object Contain Unique Columns? — hasUniqueCols" />
+<meta property="og:title" content="Does the Object Have Columns with Unique Values? — checkHasUniqueCols" />
 
 <meta property="og:description" content="Checks a matrix for duplicated columns, which reprent samples. Duplicate
 rows are allowed here, because many genes (rows) can contain all zeros." />
@@ -66,7 +66,7 @@ rows are allowed here, because many genes (rows) can contain all zeros." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">goalie</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
       </span>
     </div>
 
@@ -105,9 +105,9 @@ rows are allowed here, because many genes (rows) can contain all zeros." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Does the Object Contain Unique Columns?</h1>
-    <small class="dont-index">Source: <a href='https://github.com/steinbaugh/goalie/blob/master/R/AllGenerics.R'><code>R/AllGenerics.R</code></a>, <a href='https://github.com/steinbaugh/goalie/blob/master/R/hasUniqueCols-methods.R'><code>R/hasUniqueCols-methods.R</code></a></small>
-    <div class="hidden name"><code>hasUniqueCols.Rd</code></div>
+    <h1>Does the Object Have Columns with Unique Values?</h1>
+    <small class="dont-index">Source: <a href='https://github.com/steinbaugh/goalie/blob/master/R/checkHasUniqueCols.R'><code>R/checkHasUniqueCols.R</code></a></small>
+    <div class="hidden name"><code>checkHasUniqueCols.Rd</code></div>
     </div>
 
     <div class="ref-description">
@@ -117,18 +117,19 @@ rows are allowed here, because many genes (rows) can contain all zeros.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>hasUniqueCols</span>(<span class='no'>x</span>, <span class='no'>...</span>)
+    <pre class="usage"><span class='fu'>checkHasUniqueCols</span>(<span class='no'>x</span>)
 
-<span class='co'># S4 method for ANY</span>
-<span class='fu'>hasUniqueCols</span>(<span class='no'>x</span>)
+<span class='fu'>check_has_unique_cols</span>(<span class='no'>x</span>)
 
-<span class='co'># S4 method for sparseMatrix</span>
-<span class='fu'>hasUniqueCols</span>(<span class='no'>x</span>)
+<span class='fu'>testHasUniqueCols</span>(<span class='no'>x</span>)
 
-<span class='co'># S4 method for SummarizedExperiment</span>
-<span class='fu'>hasUniqueCols</span>(<span class='no'>x</span>)
+<span class='fu'>test_has_unique_cols</span>(<span class='no'>x</span>)
 
-<span class='fu'>assertHasUniqueCols</span>(<span class='no'>x</span>)</pre>
+<span class='fu'>assertHasUniqueCols</span>(<span class='no'>x</span>, <span class='kw'>.var.name</span> <span class='kw'>=</span> <span class='kw pkg'>checkmate</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/checkmate/topics/vname'>vname</a></span>(<span class='no'>x</span>), <span class='kw'>add</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
+
+<span class='fu'>assert_has_unique_cols</span>(<span class='no'>x</span>, <span class='kw'>.var.name</span> <span class='kw'>=</span> <span class='kw pkg'>checkmate</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/checkmate/topics/vname'>vname</a></span>(<span class='no'>x</span>), <span class='kw'>add</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
+
+<span class='fu'>expect_has_unique_cols</span>(<span class='no'>x</span>, <span class='kw'>info</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>label</span> <span class='kw'>=</span> <span class='fu'>vname</span>(<span class='no'>x</span>))</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -138,8 +139,23 @@ rows are allowed here, because many genes (rows) can contain all zeros.</p>
       <td><p>Object.</p></td>
     </tr>
     <tr>
-      <th>...</th>
-      <td><p>Additional arguments.</p></td>
+      <th>.var.name</th>
+      <td><p><code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>. Name of the checked object to print in
+assertions.</p></td>
+    </tr>
+    <tr>
+      <th>add</th>
+      <td><p><code>AssertCollection</code>. Extra information to be included in the
+message for the testthat reporter. See <code><a href='https://www.rdocumentation.org/packages/testthat/topics/expect_that'>testthat::expect_that()</a></code>.</p></td>
+    </tr>
+    <tr>
+      <th>info</th>
+      <td><p><code>character</code>. Extra information to be included in the message for
+the testthat reporter. See <code><a href='https://www.rdocumentation.org/packages/testthat/topics/expect_that'>testthat::expect_that()</a></code>.</p></td>
+    </tr>
+    <tr>
+      <th>label</th>
+      <td><p><code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>. Name of the checked object to print in messages.</p></td>
     </tr>
     </table>
     
@@ -149,9 +165,15 @@ rows are allowed here, because many genes (rows) can contain all zeros.</p>
 <ul>
 <li><p><code>boolean flag</code> for <code>are/has/is*()</code> functions.</p></li>
 <li><p>Stop on error for <code>assert*()</code> functions
-(see <code><a href='https://www.rdocumentation.org/packages/base/topics/stop'>base::stop()</a></code> or <code><a href='https://www.rdocumentation.org/packages/base/topics/stopifnot'>base::stopifnot()</a></code> for details).</p></li>
+(see <code><a href='https://www.rdocumentation.org/packages/base/topics/stop'>stop()</a></code> or <code><a href='https://www.rdocumentation.org/packages/base/topics/stopifnot'>stopifnot()</a></code> for details).</p></li>
 </ul>
 
+    
+    <h2 class="hasAnchor" id="functions"><a class="anchor" href="#functions"></a>Functions</h2>
+
+    <ul>
+<li><p><code>check_has_unique_cols</code>: snake alias.</p></li>
+</ul>
     
     <h2 class="hasAnchor" id="summarizedexperiment"><a class="anchor" href="#summarizedexperiment"></a>SummarizedExperiment</h2>
 
@@ -161,12 +183,12 @@ is checked for duplicated columns.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'>## Unique.</span>
+    <pre class="examples"><div class='input'><span class='co'>## Pass ====</span>
 <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/matrix'>matrix</a></span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/seq'>seq_len</a></span>(<span class='fl'>20L</span>), <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fl'>2L</span>)
-<span class='fu'>hasUniqueCols</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
-<span class='co'>## Duplicated.</span>
+<span class='fu'>checkHasUniqueCols</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
+<span class='co'>## Fail ====</span>
 <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/matrix'>matrix</a></span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/rep'>rep</a></span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/seq'>seq_len</a></span>(<span class='fl'>10L</span>), <span class='kw'>times</span> <span class='kw'>=</span> <span class='fl'>2L</span>), <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fl'>2L</span>)
-<span class='fu'>hasUniqueCols</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] FALSE</div></pre>
+<span class='fu'>checkHasUniqueCols</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] "Object has duplicate columns"</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -175,13 +197,15 @@ is checked for duplicated columns.</p>
       
       <li><a href="#value">Value</a></li>
 
+      <li><a href="#functions">Functions</a></li>
+
       <li><a href="#summarizedexperiment">SummarizedExperiment</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>
 
     <h2>Author</h2>
-    <p>Michael Steinbaugh, Rory Kirchner</p>
+    <p>Michael Steinbaugh</p>
   </div>
 </div>
 
