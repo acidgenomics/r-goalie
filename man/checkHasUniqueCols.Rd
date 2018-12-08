@@ -55,11 +55,11 @@ is checked for duplicated columns.
 }
 
 \examples{
-## Unique.
+## Pass ====
 x <- matrix(data = seq_len(20L), ncol = 2L)
 checkHasUniqueCols(x)
 
-## Duplicated.
+## Fail ====
 x <- matrix(data = rep(seq_len(10L), times = 2L), ncol = 2L)
 checkHasUniqueCols(x)
 }

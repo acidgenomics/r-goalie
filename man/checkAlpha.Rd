@@ -49,7 +49,12 @@ the testthat reporter. See \code{testthat::expect_that()}.}
 An alpha level must be a \code{scalar numeric} greater than 0 and less than 1.
 }
 \examples{
+## Pass ====
 checkAlpha(0.05)
+
+## Fail ====
+checkAlpha("xxx")
+checkAlpha(1L)
 }
 \seealso{
 \itemize{

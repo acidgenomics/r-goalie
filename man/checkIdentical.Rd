@@ -41,10 +41,10 @@ message for the testthat reporter. See \code{testthat::expect_that()}.}
 Are Two Objects Identical?
 }
 \examples{
-## Pass.
+## Pass ====
 checkIdentical(x = 1L, y = 1L)
 
-## Fail.
+## Fail ====
 checkIdentical(x = 1L, y = 1)
 }
 \seealso{

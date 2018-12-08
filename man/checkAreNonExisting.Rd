@@ -55,7 +55,15 @@ the testthat reporter. See \code{testthat::expect_that()}.}
 Does the Requested Variable Exist?
 }
 \examples{
-checkAreNonExisting(c("XXX", "YYY"))
+## Pass ====
+a <- NULL
+b <- NULL
+checkAreNonExisting(c("a", "b"))
+
+## Fail ====
+a <- 1L
+b <- NULL
+checkAreNonExisting(c("a", "b"))
 }
 \seealso{
 \itemize{

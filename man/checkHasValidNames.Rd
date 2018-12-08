@@ -47,7 +47,18 @@ the testthat reporter. See \code{testthat::expect_that()}.}
 Does the Object Have Syntactically Valid Names?
 }
 \examples{
-checkHasValidNames(datasets::mtcars)
+## Pass ====
+x <- list(a = 1, b = 2)
+checkHasValidNames(x)
+
+## Fail ====
+x <- list(
+    `1`       = 1,  # can't start with number
+    `foo bar` = 2,  # no spaces
+    `foo-bar` = 3   # no hyphens
+)
+print(x)
+checkHasValidNames(x)
 }
 \seealso{
 \code{validNames()}.
