@@ -6,16 +6,14 @@
 \alias{assert_that}
 \alias{validate_that}
 \alias{\%>\%}
-\alias{has_name}
 \alias{hasName}
+\alias{has_name}
 \alias{hasNames}
 \alias{has_names}
 \alias{is_empty_file}
 \alias{isEmptyFile}
 \alias{is_existing}
 \alias{isExisting}
-\alias{is_hex_color}
-\alias{isHexColor}
 \alias{is_integerish}
 \alias{isIntegerish}
 \alias{is_negative}
@@ -52,8 +50,6 @@ below to see their documentation.
 
   \item{assertive.code}{\code{\link[assertive.code]{is_existing}}}
 
-  \item{assertive.data}{\code{\link[assertive.data]{is_hex_color}}}
-
   \item{assertive.files}{\code{\link[assertive.files]{is_empty_file}}, \code{\link[assertive.files]{is_non_empty_file}}}
 
   \item{assertive.numbers}{\code{\link[assertive.numbers]{is_negative}}, \code{\link[assertive.numbers]{is_positive}}}
@@ -62,6 +58,8 @@ below to see their documentation.
 
   \item{magrittr}{\code{\link[magrittr]{\%>\%}}}
 
-  \item{rlang}{\code{\link[rlang]{has_name}}, \code{\link[rlang]{is_integerish}}, \code{\link[rlang]{is_scalar_double}}, \code{\link[rlang]{is_scalar_integerish}}, \code{\link[rlang]{is_string}}}
+  \item{rlang}{\code{\link[rlang]{is_integerish}}, \code{\link[rlang]{is_scalar_double}}, \code{\link[rlang]{is_scalar_integerish}}, \code{\link[rlang]{is_string}}}
+
+  \item{utils}{\code{\link[utils]{hasName}}}
 }}
 

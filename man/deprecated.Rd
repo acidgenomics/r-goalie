@@ -15,12 +15,14 @@ assertAllAreValidNames(...)
 
 assertIsAHeaderLevel(...)
 
-assertIsAStringOrNULL(...)
+assertIsAStringOrNULL(x)
 
 areSamplesUnique(...)
 }
 \arguments{
 \item{...}{Additional arguments.}
+
+\item{x}{Object.}
 }
 \value{
 \code{.Deprecated()}.

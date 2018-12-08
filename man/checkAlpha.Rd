@@ -23,7 +23,7 @@ assertAlpha(x, .var.name = checkmate::vname(x), add = NULL)
 
 assert_alpha(x, .var.name = checkmate::vname(x), add = NULL)
 
-expect_alpha(x, genes, info = NULL, label = vname(x))
+expect_alpha(x, info = NULL, label = vname(x))
 }
 \arguments{
 \item{x}{Object.}
@@ -33,10 +33,10 @@ expect_alpha(x, genes, info = NULL, label = vname(x))
 \item{add}{\code{AssertCollection}. Extra information to be included in the
 message for the testthat reporter. See \code{testthat::expect_that()}.}
 
-\item{genes}{\code{character}. Genes.}
-
 \item{info}{\code{character}. Extra information to be included in the message for
 the testthat reporter. See \code{testthat::expect_that()}.}
+
+\item{label}{XXX}
 }
 \value{
 \itemize{
@@ -48,15 +48,6 @@ the testthat reporter. See \code{testthat::expect_that()}.}
 \description{
 An alpha level must be a \code{scalar numeric} greater than 0 and less than 1.
 }
-\section{Functions}{
-\itemize{
-\item \code{check_alpha}: snake alias.
-
-\item \code{test_alpha}: snake alias.
-
-\item \code{assert_alpha}: snake alias.
-}}
-
 \examples{
 ## Pass ====
 checkAlpha(0.05)

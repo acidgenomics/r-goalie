@@ -2,8 +2,6 @@
 % Please edit documentation in R/deprecated.R
 \name{defunct}
 \alias{defunct}
-\alias{assertIsAnnotable}
-\alias{assertIsGFF}
 \alias{assertAreGeneAnnotations}
 \alias{assertAreTranscriptAnnotations}
 \alias{assertIsCharacterOrNULL}
@@ -12,10 +10,6 @@
 \alias{assertIsTx2gene}
 \title{Defunct Functions}
 \usage{
-assertIsAnnotable(...)
-
-assertIsGFF(...)
-
 assertAreGeneAnnotations(...)
 
 assertAreTranscriptAnnotations(...)

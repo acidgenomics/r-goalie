@@ -36,6 +36,8 @@ message for the testthat reporter. See \code{testthat::expect_that()}.}
 
 \item{info}{\code{character}. Extra information to be included in the message for
 the testthat reporter. See \code{testthat::expect_that()}.}
+
+\item{label}{XXX}
 }
 \value{
 \itemize{
@@ -47,15 +49,6 @@ the testthat reporter. See \code{testthat::expect_that()}.}
 \description{
 Markdown supports header levels \code{1}-\code{7} (\code{<H1>}-\code{<H7>}).
 }
-\section{Functions}{
-\itemize{
-\item \code{check_header_level}: snake alias.
-
-\item \code{test_header_level}: snake alias.
-
-\item \code{assert_header_level}: snake alias.
-}}
-
 \examples{
 ## Pass ====
 checkHeaderLevel(1)

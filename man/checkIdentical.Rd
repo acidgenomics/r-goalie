@@ -25,6 +25,8 @@ assert_identical(x, y, .var.name = checkmate::vname(x), add = NULL)
 \arguments{
 \item{x}{Object.}
 
+\item{y}{Secondary object.}
+
 \item{.var.name}{\code{string}. Name of the checked object to print in assertions.}
 
 \item{add}{\code{AssertCollection}. Extra information to be included in the
@@ -40,15 +42,6 @@ message for the testthat reporter. See \code{testthat::expect_that()}.}
 \description{
 Are Two Objects Identical?
 }
-\section{Functions}{
-\itemize{
-\item \code{check_identical}: snake alias.
-
-\item \code{test_identical}: snake alias.
-
-\item \code{assert_identical}: snake alias.
-}}
-
 \examples{
 ## Pass ====
 checkIdentical(x = 1L, y = 1L)

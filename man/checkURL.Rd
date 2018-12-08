@@ -57,6 +57,8 @@ message for the testthat reporter. See \code{testthat::expect_that()}.}
 
 \item{info}{\code{character}. Extra information to be included in the message for
 the testthat reporter. See \code{testthat::expect_that()}.}
+
+\item{label}{XXX}
 }
 \value{
 \itemize{
@@ -72,19 +74,7 @@ Does the Argument Contain a URL?
 \itemize{
 \item \code{checkURL}: Requires a single URL.
 
-\item \code{check_url}: snake alias.
-
-\item \code{test_url}: snake alias.
-
-\item \code{assert_url}: snake alias.
-
-\item \code{checkURLs}: Supports multiple URLs.
-
-\item \code{check_urls}: snake alias.
-
-\item \code{test_urls}: snake alias.
-
-\item \code{assert_urls}: snake alias.
+\item \code{checkURLs}: Requires multiple URLs, which is less common.
 }}
 
 \examples{

@@ -32,10 +32,9 @@ checkAreNonExisting <- function(
 
 
 
-#' @describeIn checkAreNonExisting snake alias.
+#' @rdname checkAreNonExisting
 #' @export
-check_are_non_existing <-  # nolint
-    checkAreNonExisting
+check_are_non_existing <- checkAreNonExisting  # nolint
 
 
 
@@ -45,7 +44,7 @@ testAreNonExisting <- makeTestFunction(checkAreNonExisting)
 
 
 
-#' @describeIn checkAreNonExisting snake alias.
+#' @rdname checkAreNonExisting
 #' @export
 test_are_non_existing <-  # nolint
     testAreNonExisting
@@ -58,7 +57,7 @@ assertAreNonExisting <- makeAssertionFunction(checkAreNonExisting)
 
 
 
-#' @describeIn checkAreNonExisting snake alias.
+#' @rdname checkAreNonExisting
 #' @export
 assert_are_non_existing <-  # nolint
     assertAreNonExisting
