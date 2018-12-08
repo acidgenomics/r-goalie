@@ -8,13 +8,11 @@
 #' @export
 #'
 #' @examples
-#' ## Pass.
+#' ## Pass ====
 #' checkHeaderLevel(1)
-#' checkHeaderLevel(1L)
 #'
-#' ## Fail.
-#' checkHeaderLevel("xxx")
-#' checkHeaderLevel(0L)
+#' ## Fail ====
+#' checkHeaderLevel(0)
 checkHeaderLevel <- function(x) {
     ok <- is_scalar_integerish(x)
     if (!ok) {

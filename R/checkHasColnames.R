@@ -2,6 +2,7 @@
 #'
 #' @name checkHasColnames
 #' @inherit params
+#' @export
 #'
 #' @examples
 #' ## Pass ====
@@ -23,12 +24,6 @@
 #' print(x)
 #' colnames(x)
 #' checkHasColnames(x)
-NULL
-
-
-
-#' @rdname checkHasColnames
-#' @export
 checkHasColnames <- function(x) {
     ok <- length(colnames(x)) > 0L
     if (!ok) {

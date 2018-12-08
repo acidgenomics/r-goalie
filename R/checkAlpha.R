@@ -8,10 +8,10 @@
 #' @export
 #'
 #' @examples
-#' ## Pass.
+#' ## Pass ====
 #' checkAlpha(0.05)
 #'
-#' ## Fail.
+#' ## Fail ====
 #' checkAlpha("xxx")
 #' checkAlpha(1L)
 checkAlpha <- function(x) {

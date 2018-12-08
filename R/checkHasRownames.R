@@ -1,7 +1,3 @@
-# NOTE Consider using `row.names` instead of `rownames` for data.frame.
-
-
-
 #' Does the Object Have Row Names?
 #'
 #' @section data.frame:
@@ -13,6 +9,7 @@
 #'
 #' @name checkHasRownames
 #' @inherit params
+#' @export
 #'
 #' @examples
 #' ## Pass ====
@@ -36,12 +33,6 @@
 #' # S4 data frame does allow NULL row names.
 #' rownames(x)
 #' checkHasRownames(x)
-NULL
-
-
-
-#' @rdname checkHasRownames
-#' @export
 checkHasRownames <- function(x) {
     # Classes that extend data.frame but intentionally don't support row names.
     if (is(x, "data.table")) {

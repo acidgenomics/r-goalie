@@ -1,3 +1,7 @@
+# TODO Improve working example, showing expected failure.
+
+
+
 #' Are the Requested Gene Names Duplicated in the Corresponding Object?
 #'
 #' This assert check determines if a user-defined gene name query is using only
@@ -7,6 +11,7 @@
 #' @name checkAreUniqueGeneNames
 #' @aliases areUniqueGeneNames
 #' @inherit params
+#' @export
 #'
 #' @examples
 #' x <- SummarizedExperiment::SummarizedExperiment(
@@ -25,13 +30,9 @@
 #'     )
 #' )
 #' genes <- SummarizedExperiment::rowData(x)$geneName
+#'
+#' ## Pass ====
 #' checkAreUniqueGeneNames(x = x, genes = genes)
-NULL
-
-
-
-#' @rdname checkAreUniqueGeneNames
-#' @export
 checkAreUniqueGeneNames <- function(x, genes) {
     ok <- isS4(x)
     if (!ok) {
