@@ -67,3 +67,6 @@ checkHexColorFunction(x)
 x <- ggplot2::scale_colour_manual
 checkHexColorFunction(x)
 }
+\seealso{
+RColorBrewer, viridis
+}
