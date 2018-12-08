@@ -48,11 +48,16 @@ the testthat reporter. See \code{testthat::expect_that()}.}
 Does the Object Have Syntactically Valid Dimnames?
 }
 \examples{
-## Pass.
-checkHasValidDimnames(datasets::iris)
+## Pass ====
+x <- datasets::iris
+lapply(dimnames(x), head)
+checkHasValidDimnames(x)
 
-## Fail.
-checkHasValidDimnames(datasets::mtcars)
+## Fail ====
+x <- datasets::mtcars
+# Note the spaces in the row names here.
+lapply(dimnames(x), head)
+checkHasValidDimnames(x)
 }
 \seealso{
 \itemize{
