@@ -1,3 +1,8 @@
+# FIXME Use checkmate variants instead of rlang where possible?
+# (e.g. is_integerish, is_scalar_double, is_string)
+
+
+
 #' goalie
 #'
 #' Assertive check functions for defensive R programming.
@@ -11,9 +16,10 @@
 #' @importFrom assertive.data is_hex_color
 #' @importFrom assertive.properties has_colnames has_dimnames
 #' @importFrom assertthat on_failure<-
-#' @importFrom checkmate assert makeAssertion makeAssertionFunction
-#'   makeExpectation makeExpectationFunction makeTest makeTestFunction vname
-#' @importFrom methods is setGeneric setMethod signature
+#' @importFrom checkmate assert assertClass assertLogical assertNames
+#'   makeAssertion makeAssertionFunction makeExpectation makeExpectationFunction
+#'   makeTest makeTestFunction testClass testFlag testScalar testString vname
+#' @importFrom methods as is setGeneric setMethod signature
 #' @importFrom utils globalVariables
 #' @importFrom rlang is_integerish is_scalar_double
 #'   is_scalar_integerish is_string
