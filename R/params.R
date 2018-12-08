@@ -10,12 +10,17 @@
 #' @param genes `character`. Genes.
 #' @param info `character`. Extra information to be included in the message for
 #'   the testthat reporter. See `testthat::expect_that()`.
-#' @param inherits `boolean`. Should the enclosing frames of the `environment`
-#'   be searched?
+#' @param inherits `logical(1)`. Should the enclosing frames of the
+#'   `environment` be searched?
+#' @param label XXX
 #' @param name `character`. Element name.
 #' @param names `character`. Element names (e.g. row names, column names).
+#' @param null.ok `logical(1)`. If set to `TRUE`, `x` may also be `NULL`.
+#' @param object Object.
 #' @param x Object.
-#' @param .var.name `string`. Name of the checked object to print in assertions.
+#' @param y Secondary object.
+#' @param .var.name `character(1)`. Name of the checked object to print in
+#'   assertions.
 #' @param ... Additional arguments.
 #'
 #' @return
