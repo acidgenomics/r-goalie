@@ -39,7 +39,8 @@ Suggests:
     SummarizedExperiment,
     ggplot2 (>= 3.1),
     testthat (>= 2.0),
-    tibble (>= 1.4)
+    tibble (>= 1.4),
+    viridis
 Remotes:
     mjsteinbaugh/checkmate
 biocViews: Infrastructure
