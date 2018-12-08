@@ -15,8 +15,7 @@ BugReports: https://github.com/steinbaugh/goalie/issues/
 License: MIT + file LICENSE
 Encoding: UTF-8
 Depends:
-    R (>= 3.5),
-    checkmate (>= 1.8.9-9000)
+    R (>= 3.5)
 Imports:
     BiocGenerics,
     R.utils (>= 2.7),
@@ -30,6 +29,7 @@ Imports:
     assertive.strings,
     assertive.types,
     assertthat (>= 0.2),
+    checkmate (>= 1.8.9-9000),
     magrittr (>= 1.5),
     methods,
     rlang (>= 0.3),
