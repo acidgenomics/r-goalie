@@ -7,7 +7,11 @@
 #' @seealso `identical()`.
 #'
 #' @examples
-#' checkAllAreAtomic(datasets::mtcars)
+#' ## Pass.
+#' checkIdentical(x = 1L, y = 1L)
+#'
+#' ## Fail.
+#' checkIdentical(x = 1L, y = 1)
 checkIdentical <- function(x, y) {
     ok <- identical(x, y)
     if (!ok) {

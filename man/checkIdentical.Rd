@@ -41,7 +41,11 @@ message for the testthat reporter. See \code{testthat::expect_that()}.}
 Are Two Objects Identical?
 }
 \examples{
-checkAllAreAtomic(datasets::mtcars)
+## Pass.
+checkIdentical(x = 1L, y = 1L)
+
+## Fail.
+checkIdentical(x = 1L, y = 1)
 }
 \seealso{
 \code{identical()}.
