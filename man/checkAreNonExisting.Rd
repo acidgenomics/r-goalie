@@ -3,6 +3,7 @@
 \name{checkAreNonExisting}
 \alias{checkAreNonExisting}
 \alias{areNonExisting}
+\alias{are_non_existing}
 \alias{check_are_non_existing}
 \alias{testAreNonExisting}
 \alias{test_are_non_existing}
@@ -54,6 +55,15 @@ the testthat reporter. See \code{testthat::expect_that()}.}
 \description{
 Does the Requested Variable Exist?
 }
+\section{Functions}{
+\itemize{
+\item \code{check_are_non_existing}: snake alias.
+
+\item \code{test_are_non_existing}: snake alias.
+
+\item \code{assert_are_non_existing}: snake alias.
+}}
+
 \examples{
 ## Pass ====
 a <- NULL

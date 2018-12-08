@@ -2,6 +2,8 @@
 % Please edit documentation in R/checkHasRownames.R
 \name{checkHasRownames}
 \alias{checkHasRownames}
+\alias{hasRownames}
+\alias{has_rownames}
 \alias{check_has_rownames}
 \alias{testHasRownames}
 \alias{test_has_rownames}
@@ -45,6 +47,15 @@ the testthat reporter. See \code{testthat::expect_that()}.}
 \description{
 Does the Object Have Row Names?
 }
+\section{Functions}{
+\itemize{
+\item \code{check_has_rownames}: snake alias.
+
+\item \code{test_has_rownames}: snake alias.
+
+\item \code{assert_has_rownames}: snake alias.
+}}
+
 \section{data.frame}{
 
 

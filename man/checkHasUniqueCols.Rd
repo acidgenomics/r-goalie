@@ -3,6 +3,7 @@
 \name{checkHasUniqueCols}
 \alias{checkHasUniqueCols}
 \alias{hasUniqueCols}
+\alias{has_unique_cols}
 \alias{check_has_unique_cols}
 \alias{testHasUniqueCols}
 \alias{test_has_unique_cols}
@@ -47,6 +48,15 @@ the testthat reporter. See \code{testthat::expect_that()}.}
 Checks a matrix for duplicated columns, which reprent samples. Duplicate
 rows are allowed here, because many genes (rows) can contain all zeros.
 }
+\section{Functions}{
+\itemize{
+\item \code{check_has_unique_cols}: snake alias.
+
+\item \code{test_has_unique_cols}: snake alias.
+
+\item \code{assert_has_unique_cols}: snake alias.
+}}
+
 \section{SummarizedExperiment}{
 
 

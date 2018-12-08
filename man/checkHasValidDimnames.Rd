@@ -3,6 +3,7 @@
 \name{checkHasValidDimnames}
 \alias{checkHasValidDimnames}
 \alias{hasValidDimnames}
+\alias{has_valid_dimnames}
 \alias{check_has_valid_dimnames}
 \alias{testHasValidDimnames}
 \alias{test_has_valid_dimnames}
@@ -47,6 +48,15 @@ the testthat reporter. See \code{testthat::expect_that()}.}
 \description{
 Does the Object Have Syntactically Valid Dimnames?
 }
+\section{Functions}{
+\itemize{
+\item \code{check_has_valid_dimnames}: snake alias.
+
+\item \code{test_has_valid_dimnames}: snake alias.
+
+\item \code{assert_has_valid_dimnames}: snake alias.
+}}
+
 \examples{
 ## Pass ====
 x <- datasets::iris
