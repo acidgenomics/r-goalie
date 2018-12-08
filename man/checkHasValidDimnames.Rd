@@ -59,10 +59,3 @@ x <- datasets::mtcars
 lapply(dimnames(x), head)
 checkHasValidDimnames(x)
 }
-\seealso{
-\itemize{
-\item \code{checkmate::makeTestFunction()}.
-\item \code{checkmate::makeAssertionFunction()}.
-\item \code{checkmate::makeExpectationFunction()}.
-}
-}

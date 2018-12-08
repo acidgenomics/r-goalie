@@ -79,10 +79,3 @@ checkURL("xxx")
 checkURL(urls)
 checkURLs(urls[[1L]])
 }
-\seealso{
-\itemize{
-\item \code{checkmate::makeTestFunction()}.
-\item \code{checkmate::makeAssertionFunction()}.
-\item \code{checkmate::makeExpectationFunction()}.
-}
-}
