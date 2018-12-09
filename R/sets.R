@@ -11,21 +11,21 @@ NULL
 #' @rdname sets
 #' @importFrom assertive.sets are_disjoint_sets
 #' @export
-areDisjointSets <- assertive.sets::are_disjoint_sets
+areDisjointSets <- are_disjoint_sets
 
 
 
 #' @rdname sets
 #' @importFrom assertive.sets are_intersecting_sets
 #' @export
-areIntersectingSets <- assertive.sets::are_intersecting_sets
+areIntersectingSets <- are_intersecting_sets
 
 
 
 #' @rdname sets
 #' @importFrom assertive.sets are_set_equal
 #' @export
-areSetEqual <- assertive.sets::are_set_equal
+areSetEqual <- are_set_equal
 
 
 
@@ -41,4 +41,4 @@ isSubset <- function(x, y) {
 #' @rdname sets
 #' @importFrom assertive.sets is_superset
 #' @export
-isSuperset <- assertive.sets::is_superset
+isSuperset <- is_superset

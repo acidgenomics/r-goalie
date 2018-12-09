@@ -62,7 +62,6 @@ validateClasses <- function(object, expected, subset = FALSE) {
     if (!all(valid)) {
         return(paste(
             "Class checks failed:",
-            # See `basejump::printString()` for current method.
             capture.output(print(names(valid)[!valid])),
             sep = "\n"
         ))

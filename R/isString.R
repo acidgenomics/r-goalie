@@ -12,4 +12,4 @@
 #'
 #' ## Fail ====
 #' isString(c("a", "b"))
-isString <- checkmate::testString
+isString <- testString
