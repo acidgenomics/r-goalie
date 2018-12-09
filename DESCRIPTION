@@ -14,19 +14,20 @@ URL:
 BugReports: https://github.com/steinbaugh/goalie/issues/
 License: MIT + file LICENSE
 Encoding: UTF-8
-Depends:
-    R (>= 3.5)
+Depends: R (>= 3.5)
 Imports:
     BiocGenerics,
     R.utils (>= 2.7),
     assertive.base,
     assertive.code,
     assertive.data,
+    assertive.numbers,
     assertive.properties,
     assertive.sets,
+    assertive.strings,
     assertthat (>= 0.2),
-    checkmate (>= 1.8.9-9000),
-    curl,
+    checkmate (>= 1.8),
+    curl (>= 3.2),
     methods,
     rlang (>= 0.3),
     utils
@@ -38,8 +39,6 @@ Suggests:
     testthat (>= 2.0),
     tibble (>= 1.4),
     viridis
-Remotes:
-    mjsteinbaugh/checkmate
 biocViews: Infrastructure
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
