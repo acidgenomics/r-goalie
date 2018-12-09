@@ -37,6 +37,21 @@ checkmate::testDirectoryExists
 
 
 
+# checkFactor ==================================================================
+#' @importFrom checkmate assertFactor
+#' @export
+checkmate::assertFactor
+
+#' @importFrom checkmate checkFactor
+#' @export
+checkmate::checkFactor
+
+#' @importFrom checkmate testFactor
+#' @export
+checkmate::testFactor
+
+
+
 # checkFileExists ==============================================================
 #' @importFrom checkmate assertFileExists
 #' @export
