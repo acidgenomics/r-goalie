@@ -32,7 +32,7 @@ testHasInternet <- function() {
 
 #' @rdname checkHasInternet
 #' @export
-test_has_internet <- testHasInternet
+test_has_internet <- testHasInternet  # nolint
 
 
 
@@ -46,4 +46,4 @@ assertHasInternet <- function() {
 
 #' @rdname checkHasInternet
 #' @export
-assert_has_internet <- assertHasInternet
+assert_has_internet <- assertHasInternet  # nolint
