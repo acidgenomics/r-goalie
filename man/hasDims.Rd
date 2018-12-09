@@ -4,7 +4,6 @@
 \alias{hasDims}
 \alias{hasDimnames}
 \alias{hasRows}
-\alias{hasRownames}
 \alias{hasCols}
 \alias{hasColnames}
 \title{Does the Input Have Dimensions?}
@@ -14,8 +13,6 @@ hasDims(x, .xname = get_name_in_parent(x))
 hasDimnames(x, .xname = get_name_in_parent(x))
 
 hasRows(x, .xname = get_name_in_parent(x))
-
-hasRownames(x, .xname = get_name_in_parent(x))
 
 hasCols(x, .xname = get_name_in_parent(x))
 
@@ -40,4 +37,26 @@ Intended to be used in combination with \code{validate()} function.
 }
 \description{
 Does the Input Have Dimensions?
+}
+\examples{
+## Pass ====
+x <- datasets::mtcars
+hasDims(x)
+hasDimnames(x)
+hasRows(x)
+hasRownames(x)
+hasCols(x)
+hasColnames(x)
+
+## Note that dims don't have to be non-zero, just not NULL.
+hasDims(data.frame())
+
+## Fail ====
+x <- data.frame()
+hasDims(list())
+hasDimnames(x)
+hasRows(x)
+hasRownames(x)
+hasCols(x)
+hasColnames(x)
 }

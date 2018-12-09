@@ -2,12 +2,9 @@
 % Please edit documentation in R/isIntegerish.R
 \name{isIntegerish}
 \alias{isIntegerish}
-\alias{isInt}
 \title{Is Integerish?}
 \usage{
 isIntegerish(x, n = NULL, finite = NULL)
-
-isInt(x, finite = NULL)
 }
 \arguments{
 \item{x}{Object.}
@@ -35,25 +32,14 @@ Intended to be used in combination with \code{validate()} function.
 Check for valid input of either explicit (e.g. \code{1L}) and/or implict
 (e.g. \code{1}) integer.
 }
-\section{Functions}{
-\itemize{
-\item \code{isInt}: Short alias for \code{isScalarIntegerish}.
-}}
-
 \examples{
+isIntegerish(seq_len(2L))
 isIntegerish(c(1, 2))
-
-## Requires scalar integerish.
-isInt(1)
-isInt(1L)
 }
 \seealso{
 \itemize{
 \item \code{rlang::is_integerish()}.
-\item \code{rlang::is_scalar_integer()}.
-\item \code{rlang::is_scalar_integerish()}.
 \item \code{checkmate::checkIntegerish}.
-\item \code{checkmate::checkInt}.
 \item \code{assertive::is_a_number}.
 }
 }
