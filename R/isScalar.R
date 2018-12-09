@@ -1,22 +1,30 @@
-# TODO Include examples
-
 #' Is Scalar?
 #'
 #' @name isScalar
 #' @inherit params
-#' @inheritParams assertive.properties::is_scalar
+#' @inheritParams checkmate::testScalar
 #' @inheritParams rlang::is_scalar_integerish
 #'
 #' @seealso
 #' `help(topic = "scalar-type-predicates", package = "rlang")`.
+#'
+#' @examples
+#' ## Pass ====
+#' isScalar("a")
+#' isScalarInteger(1L)
+#' isScalarIntegerish(1)
+#'
+#' ## Fail ====
+#' isScalar(NULL)
+#' isScalar(c("a", "b"))
 NULL
 
 
 
 #' @rdname isScalar
-#' @importFrom assertive.properties is_scalar
+#' @importFrom checkmate testScalar
 #' @export
-isScalar <- is_scalar
+isScalar <- testScalar
 
 
 
