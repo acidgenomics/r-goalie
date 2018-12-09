@@ -2,7 +2,7 @@
 #'
 #' @name isScalar
 #' @inherit params
-#' @inheritParams checkmate::testScalar
+#' @inheritParams rlang::is_scalar_character
 #' @inheritParams rlang::is_scalar_integerish
 #'
 #' @seealso

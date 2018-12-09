@@ -43,28 +43,3 @@ Suggests:
 biocViews: Infrastructure
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
-Collate: 
-    'SummarizedExperiment-internal.R'
-    'assert.R'
-    'containsHexColors.R'
-    'containsURL.R'
-    'deprecated.R'
-    'hasDims.R'
-    'hasInternet.R'
-    'isAll.R'
-    'isAny.R'
-    'isEqualTo.R'
-    'isFlag.R'
-    'isHexColorFunction.R'
-    'isInRange.R'
-    'isScalar.R'
-    'isInteger.R'
-    'isPattern.R'
-    'isScale.R'
-    'isString.R'
-    'package.R'
-    'params.R'
-    'sets.R'
-    'validNames.R'
-    'validate.R'
-    'validateClasses.R'
