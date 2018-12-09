@@ -3,7 +3,7 @@
 #' This assert check is intended primarily to check for RColorBrewer or viridis
 #' hexadecimal color value return.
 #'
-#' @aliases hexColorFunction hex_color_function
+#' @name isHexColorFunction
 #' @inherit params
 #' @export
 #'
@@ -12,18 +12,22 @@
 #' @examples
 #' ## Pass ====
 #' x <- viridis::viridis
-#' checkHexColorFunction(x)
+#' isHexColorFunction(x)
 #'
 #' ## Fail ====
 #' x <- ggplot2::scale_colour_manual
-#' checkHexColorFunction(x)
-checkHexColorFunction <- function(
+#' isHexColorFunction(x)
+NULL
+
+
+
+.isHexColorFunction <- function(
     x,
     null.ok = FALSE  # nolint
 ) {
     # Allow NULL input, if desired. This is useful for plotting functions where
     # we don't want the user to have to define manually.
-    assertFlag(null.ok)
+    assert(isFlag(null.ok))
     if (is.null(x) && null.ok) {
         return(TRUE)
     }
@@ -45,7 +49,7 @@ checkHexColorFunction <- function(
         return("Hex color function didn't return any values")
     }
 
-    check <- checkHexColor(colors)
+    check <- .containsHexColors(colors)
     if (is.character(check)) {
         return(check)
     }
@@ -55,37 +59,4 @@ checkHexColorFunction <- function(
 
 
 
-#' @rdname checkHexColorFunction
-#' @export
-check_hex_color_function <- checkHexColorFunction  # nolint
-
-
-
-#' @rdname checkHexColorFunction
-#' @export
-testHexColorFunction <- makeTestFunction(checkHexColorFunction)
-
-
-
-#' @rdname checkHexColorFunction
-#' @export
-test_hex_color_function <- checkHexColorFunction  # nolint
-
-
-
-#' @rdname checkHexColorFunction
-#' @export
-assertHexColorFunction <- makeAssertionFunction(checkHexColorFunction)
-
-
-
-#' @rdname checkHexColorFunction
-#' @export
-assert_hex_color_function <- assertHexColorFunction  # nolint
-
-
-
-#' @rdname checkHexColorFunction
-#' @export
-expect_hex_color_function <-  # nolint
-    makeExpectationFunction(checkHexColorFunction)
+isHexColorFunction <- makeTestFunction(.isHexColorFunction)

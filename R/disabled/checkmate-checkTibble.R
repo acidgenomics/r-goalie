@@ -1,3 +1,7 @@
+# FIXME Put `is` in front of this...confusing otherwise.
+
+
+
 #' @importFrom checkmate checkTibble
 #' @export
 checkmate::checkTibble
