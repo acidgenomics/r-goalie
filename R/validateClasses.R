@@ -2,7 +2,7 @@
 #'
 #' Validity check capable of validating multiple slots in a single call.
 #'
-#' To be used inside S4 `methods::setValidity()` call or with `validate()`.
+#' To be used inside S4 `methods::setValidity()` call or with `validate_that()`.
 #' Particularly useful for checking multiple slotted objects inside
 #' `metadata()`.
 #'
@@ -13,7 +13,7 @@
 #' @param subset `boolean`. Only check a subset of slots in the object.
 #'
 #' @seealso
-#' - `validate()`.
+#' - `assertthat::validate_that()`.
 #' - `methods::setValidity()`.
 #' - `methods::validObject()`.
 #'

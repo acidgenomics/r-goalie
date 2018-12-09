@@ -1,3 +1,12 @@
+# assert =======================================================================
+#' @importFrom checkmate assert
+#' @export
+checkmate::assert
+# NOTE Using a stricter default for `combine` argument here.
+formals(assert)[["combine"]] <- "and"
+
+
+
 # checkClass ===================================================================
 #' @importFrom checkmate assertClass
 #' @export
