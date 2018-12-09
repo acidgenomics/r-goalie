@@ -46,6 +46,18 @@ isProportion(x, lower_is_strict = FALSE, upper_is_strict = FALSE,
 }
 \arguments{
 \item{x}{Object.}
+
+\item{lower}{Lower bound for the interval.}
+
+\item{upper}{Upper bound for the interval.}
+
+\item{lower_is_strict}{If \code{TRUE}, the lower bound is open (strict) 
+otherwise it is closed.}
+
+\item{upper_is_strict}{If \code{TRUE}, the upper bound is open (strict)
+otherwise it is closed.}
+
+\item{.xname}{\emph{Not intended to be used directly.}}
 }
 \value{
 \itemize{

@@ -3,6 +3,7 @@
 #' @name isString
 #' @importFrom checkmate testString
 #' @inherit params
+#' @inheritParams checkmate::testString
 #' @export
 #'
 #' @examples

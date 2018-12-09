@@ -3,6 +3,8 @@
 #' @name containsURL
 #' @inherit params
 #'
+#' @param string `logical(1)`. Require match against string?
+#'
 #' @examples
 #' urls <- c("https://www.r-project.org", "ftp://r-project.org")
 #'

@@ -1,11 +1,13 @@
 #' Is the Input in Range?
 #' @name inRange
 #' @inherit params
+#' @inheritParams assertive.numbers::is_in_range
 NULL
 
 
 #' @rdname inRange
 #' @importFrom assertive.numbers is_in_range
+
 #' @export
 isInRange <- assertive.numbers::is_in_range
 

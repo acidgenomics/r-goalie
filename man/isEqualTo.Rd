@@ -31,6 +31,12 @@ isLessThanOrEqualTo(x, y, .xname = get_name_in_parent(x),
 \item{x}{Object.}
 
 \item{y}{Secondary object.}
+
+\item{tol}{Values within \code{tol} are considered equal.}
+
+\item{.xname}{\emph{Not intended to be used directly.}}
+
+\item{.yname}{\emph{Not intended to be used directly.}}
 }
 \value{
 \itemize{

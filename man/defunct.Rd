@@ -2,29 +2,7 @@
 % Please edit documentation in R/deprecated.R
 \name{defunct}
 \alias{defunct}
-\alias{assertAreGeneAnnotations}
-\alias{assertAreTranscriptAnnotations}
-\alias{assertIsCharacterOrNULL}
-\alias{assertIsDataFrameOrNULL}
-\alias{assertIsGene2symbol}
-\alias{assertIsTx2gene}
 \title{Defunct Functions}
-\usage{
-assertAreGeneAnnotations(...)
-
-assertAreTranscriptAnnotations(...)
-
-assertIsCharacterOrNULL(...)
-
-assertIsDataFrameOrNULL(...)
-
-assertIsGene2symbol(...)
-
-assertIsTx2gene(...)
-}
-\arguments{
-\item{...}{Additional arguments.}
-}
 \value{
 \code{.Defunct()}.
 }

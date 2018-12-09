@@ -8,6 +8,8 @@ containsURL(x, string = FALSE)
 }
 \arguments{
 \item{x}{Object.}
+
+\item{string}{\code{logical(1)}. Require match against string?}
 }
 \value{
 \itemize{
