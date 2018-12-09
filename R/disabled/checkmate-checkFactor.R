@@ -1,3 +1,7 @@
+# FIXME Put `is` in front of this...confusing otherwise.
+
+
+
 #' @importFrom checkmate checkFactor
 #' @export
 checkmate::checkFactor

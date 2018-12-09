@@ -17,20 +17,20 @@
 #' @param names `character`. Element names (e.g. row names, column names).
 #' @param null.ok `logical(1)`. If set to `TRUE`, `x` may also be `NULL`.
 #' @param object Object.
-#' @param severity `character(1)`. How sever should the consequences of the
-#'   assertion be?
+#' @param pattern `character(1)`. Pattern to use for matching.
 #' @param x Object.
 #' @param y Secondary object.
 #' @param .var.name `character(1)`. Name of the checked object to print in
-#'   assertions.
-#' @param .xname *Not intended to be used directly.*
+#'   asserions.
 #' @param ... Additional arguments.
 #'
 #' @return
-#' - `are*`/`has*`/`is*`: `logical(1)`. Boolean flag (`TRUE`/`FALSE`).
+#' - `are*`/`contains*`/`has*`/`is*`:
+#'   `logical(1)`. Boolean flag (`TRUE`/`FALSE`).
 #'   Intended to be used in combination with `assert()` function.
-#' - `check*`: `TRUE` on success or `character` on failure.
+#' - `check*`:
+#'   `TRUE` on success or `character` on failure.
 #'   Intended to be used in combination with `validate()` function.
-#' - `assert()`: `TRUE` on success or error (`stop()`) on failure.
-#'   so it can be used in a magrittr pipe chain.
+#' - `assert*`:
+#'   `TRUE` on success or error (`stop()`) on failure.
 NULL
