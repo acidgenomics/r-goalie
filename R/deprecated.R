@@ -64,13 +64,13 @@ assertIsAStringOrNULL <- function(x) {
 #' @rdname defunct
 #' @export
 assertIsCharacterOrNULL <- function(...) {
-    .Defunct("checkAnyClass")
+    .Defunct("checkMultiClass")
 }
 
 #' @rdname defunct
 #' @export
 assertIsDataFrameOrNULL <- function(...) {
-    .Defunct("checkAnyClass")
+    .Defunct("checkMultiClass")
 }
 
 #' @rdname defunct

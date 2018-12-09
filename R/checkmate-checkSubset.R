@@ -7,6 +7,7 @@ checkmate::checkSubset
 checkmate::check_subset
 
 
+
 #' @importFrom checkmate testSubset
 #' @export
 checkmate::testSubset
@@ -16,6 +17,7 @@ checkmate::testSubset
 checkmate::test_subset
 
 
+
 #' @importFrom checkmate assertSubset
 #' @export
 checkmate::assertSubset
@@ -23,6 +25,7 @@ checkmate::assertSubset
 #' @importFrom checkmate assert_subset
 #' @export
 checkmate::assert_subset
+
 
 
 #' @importFrom checkmate expect_subset
