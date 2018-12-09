@@ -1,4 +1,9 @@
-#' @name isInteger
+#' Is Integerish?
+#'
+#' Check for valid input of either explicit (e.g. `1L`) and/or implict
+#' (e.g. `1`) integer.
+#'
+#' @name isIntegerish
 #' @inherit params
 #' @inheritParams rlang::is_integerish
 #'
@@ -20,14 +25,14 @@ NULL
 
 
 
-#' @rdname isInteger
+#' @rdname isIntegerish
 #' @importFrom rlang is_integerish
 #' @export
 isIntegerish <- is_integerish
 
 
 
-#' @rdname isInteger
+#' @describeIn isIntegerish Short alias for `isScalarIntegerish`.
 #' @importFrom rlang is_scalar_integerish
 #' @export
 isInt <- is_scalar_integerish
