@@ -1,4 +1,4 @@
-#' @importFrom assertive.properties has_dimnames
+#' @importFrom assertive has_dimnames
 #' @export
 assertive.properties::has_dimnames
 
@@ -9,7 +9,7 @@ hasDimnames <- has_dimnames
 
 
 
-#' @importFrom assertive.properties assert_has_dimnames
+#' @importFrom assertive assert_has_dimnames
 #' @export
 assertive.properties::assert_has_dimnames
 
