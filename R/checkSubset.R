@@ -1,55 +1,30 @@
-#' Does an Argument Match Against a Secondary Argument?
-#'
-#' @seealso
-#' - `match()`, `%in%`.
-#' - `checkNames()`.
-#'
-#' @examples
-#' checkSubset(x = "foo", y = c("foo", "bar"))
-checkSubset <- function(x, y) {
-    ok <- x %in% y
-    if (!isTRUE(ok)) {
-        return(paste(
-            deparse(substitute(x)),
-            "is not a subset of",
-            deparse(substitute(y))
-        ))
-    }
-    TRUE
-}
-
-
-
-#' @rdname checkSubset
+#' @importFrom checkmate checkSubset
 #' @export
-check_subset <- checkSubset
+checkmate::checkSubset
 
-
-
-#' @rdname checkSubset
+#' @importFrom checkmate check_subset
 #' @export
-testSubset <- makeTestFunction(checkSubset)
+checkmate::check_subset
 
 
-
-#' @rdname checkSubset
+#' @importFrom checkmate testSubset
 #' @export
-test_subset <- testSubset
+checkmate::testSubset
 
-
-
-#' @rdname checkSubset
+#' @importFrom checkmate test_subset
 #' @export
-assertSubset <- makeAssertionFunction(checkSubset)
+checkmate::test_subset
 
 
-
-#' @rdname checkSubset
+#' @importFrom checkmate assertSubset
 #' @export
-assert_subset <- assertSubset
+checkmate::assertSubset
 
-
-
-#' @rdname checkSubset
+#' @importFrom checkmate assert_subset
 #' @export
-expect_subset <- makeExpectationFunction(checkSubset)
+checkmate::assert_subset
+
+
+#' @importFrom checkmate expect_subset
+#' @export
+checkmate::expect_subset
