@@ -1,32 +1,9 @@
-# Don't reexport `assertive::is_subset()` without hardening first. It doesn't
-# currently error on NULL values as expected.
-
-# Don't reexport `assertive::is_scalar()`. Use the rlang approach instead which
-# requires a more specific declaration of the expected scalar type.
-
-
-
-# isAny ========================================================================
-#' @describeIn checkAnyClass Less strict variant that calls `assertive::is2()`
-#'   internally, and allows for inherited classes to pass.
-#' @export
-isAny <- function(x, classes) {
-    any(is2(x, class = classes))
-}
-
-#' @describeIn checkAnyClass snake alias.
-#' @usage NULL
-#' @export
-is_any <- isAny  # nolint
-
-
-
 # isEmptyFile ==================================================================
 #' @importFrom assertive.files is_empty_file
 #' @export
 assertive.files::is_empty_file
 
-#' @describeIn reexports `is_empty_file` camel alias.
+#' @describeIn reexports camel alias.
 #' @usage NULL
 #' @export
 isEmptyFile <- is_empty_file
@@ -38,7 +15,7 @@ isEmptyFile <- is_empty_file
 #' @export
 assertive.code::is_existing
 
-#' @rdname reexports
+#' @describeIn reexports camel alias.
 #' @usage NULL
 #' @export
 isExisting <- is_existing
@@ -50,7 +27,7 @@ isExisting <- is_existing
 #' @export
 rlang::is_integerish
 
-#' @rdname reexports
+#' @describeIn reexports camel alias.
 #' @usage NULL
 #' @export
 isIntegerish <- is_integerish
@@ -62,7 +39,7 @@ isIntegerish <- is_integerish
 #' @export
 assertive.numbers::is_negative
 
-#' @rdname reexports
+#' @describeIn reexports camel alias.
 #' @usage NULL
 #' @export
 isNegative <- is_negative
@@ -74,7 +51,7 @@ isNegative <- is_negative
 #' @export
 assertive.files::is_non_empty_file
 
-#' @rdname reexports
+#' @describeIn reexports camel alias.
 #' @usage NULL
 #' @export
 isNonEmptyFile <- is_non_empty_file
@@ -86,7 +63,7 @@ isNonEmptyFile <- is_non_empty_file
 #' @export
 assertive.base::is_not_na
 
-#' @rdname reexports
+#' @describeIn reexports camel alias.
 #' @usage NULL
 #' @export
 isNotNA <- is_not_na
@@ -98,7 +75,7 @@ isNotNA <- is_not_na
 #' @export
 assertive.numbers::is_positive
 
-#' @rdname reexports
+#' @describeIn reexports camel alias.
 #' @usage NULL
 #' @export
 isPositive <- is_positive
@@ -110,7 +87,7 @@ isPositive <- is_positive
 #' @export
 rlang::is_scalar_double
 
-#' @rdname reexports
+#' @describeIn reexports camel alias.
 #' @usage NULL
 #' @export
 isScalarDouble <- is_scalar_double
@@ -122,7 +99,7 @@ isScalarDouble <- is_scalar_double
 #' @export
 rlang::is_scalar_integerish
 
-#' @rdname reexports
+#' @describeIn reexports camel alias.
 #' @usage NULL
 #' @export
 isScalarIntegerish <- is_scalar_integerish
@@ -134,7 +111,7 @@ isScalarIntegerish <- is_scalar_integerish
 #' @export
 rlang::is_string
 
-#' @rdname reexports
+#' @describeIn reexports camel alias.
 #' @usage NULL
 #' @export
 isString <- is_string
