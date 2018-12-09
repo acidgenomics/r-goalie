@@ -1,8 +1,27 @@
-# TODO Needs examples.
-
 #' Does the Input Have Dimensions?
 #' @name hasDims
 #' @inherit params
+#' @examples
+#' ## Pass ====
+#' x <- datasets::mtcars
+#' hasDims(x)
+#' hasDimnames(x)
+#' hasRows(x)
+#' hasRownames(x)
+#' hasCols(x)
+#' hasColnames(x)
+#'
+#' ## Note that dims don't have to be non-zero, just not NULL.
+#' hasDims(data.frame())
+#'
+#' ## Fail ====
+#' x <- data.frame()
+#' hasDims(list())
+#' hasDimnames(x)
+#' hasRows(x)
+#' hasRownames(x)
+#' hasCols(x)
+#' hasColnames(x)
 NULL
 
 
@@ -25,13 +44,6 @@ hasDimnames <- has_dimnames
 #' @importFrom assertive.properties has_rows
 #' @export
 hasRows <- has_rows
-
-
-
-#' @rdname hasDims
-#' @importFrom assertive.properties has_rownames
-#' @export
-hasRownames <- has_rownames
 
 
 
