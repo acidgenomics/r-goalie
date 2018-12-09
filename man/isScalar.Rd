@@ -2,29 +2,59 @@
 % Please edit documentation in R/isScalar.R
 \name{isScalar}
 \alias{isScalar}
+\alias{isScalarList}
+\alias{isScalarAtomic}
+\alias{isScalarVector}
+\alias{isScalarNumeric}
 \alias{isScalarInteger}
 \alias{isScalarIntegerish}
+\alias{isScalarDouble}
+\alias{isScalarCharacter}
+\alias{isScalarLogical}
+\alias{isString}
+\alias{isFlag}
+\alias{isNumber}
+\alias{isInt}
 \title{Is Scalar?}
 \usage{
-isScalar(x, metric = c("length", "elements"),
-  .xname = get_name_in_parent(x))
+isScalar(x)
+
+isScalarList(x)
+
+isScalarAtomic(x)
+
+isScalarVector(x)
+
+isScalarNumeric(x)
 
 isScalarInteger(x)
 
 isScalarIntegerish(x, finite = NULL)
+
+isScalarDouble(x)
+
+isScalarCharacter(x, encoding = NULL)
+
+isScalarLogical(x)
+
+isString(x, encoding = NULL)
+
+isFlag(x)
+
+isNumber(x)
+
+isInt(x, finite = NULL)
 }
 \arguments{
 \item{x}{Object.}
-
-\item{metric}{A string. Should be length or the number of elements be used to
-determine if the object is empty/non-empty/scalar?}
-
-\item{.xname}{\emph{Not intended to be used directly.}}
 
 \item{finite}{Whether all values of the vector are finite. The
 non-finite values are \code{NA}, \code{Inf}, \code{-Inf} and \code{NaN}. Setting this
 to something other than \code{NULL} can be expensive because the whole
 vector needs to be traversed and checked.}
+
+\item{encoding}{Expected encoding of a string or character
+vector. One of \code{UTF-8}, \code{latin1}, or \code{unknown}.}
 }
 \value{
 \itemize{
@@ -40,6 +70,27 @@ Intended to be used in combination with \code{validate()} function.
 }
 \description{
 Is Scalar?
+}
+\section{Functions}{
+\itemize{
+\item \code{isString}: Alias for \code{isScalarCharacter}.
+
+\item \code{isFlag}: Alias for \code{isScalarLogical}.
+
+\item \code{isNumber}: Alias for \code{isScalarNumeric}.
+
+\item \code{isInt}: Alias for \code{isScalarIntegerish}.
+}}
+
+\examples{
+## Pass ====
+isScalar("a")
+isScalarInteger(1L)
+isScalarIntegerish(1)
+
+## Fail ====
+isScalar(NULL)
+isScalar(c("a", "b"))
 }
 \seealso{
 \code{help(topic = "scalar-type-predicates", package = "rlang")}.
