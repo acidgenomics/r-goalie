@@ -1,3 +1,7 @@
+# TODO Consider exporting with `NULL` spelling instead of `Null`.
+
+
+
 #' @importFrom checkmate checkNull
 #' @export
 checkmate::checkNull
