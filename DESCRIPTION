@@ -38,6 +38,7 @@ Suggests:
     S4Vectors,
     SummarizedExperiment,
     ggplot2 (>= 3.1),
+    patrick,
     testthat (>= 2.0),
     tibble (>= 1.4),
     viridis
