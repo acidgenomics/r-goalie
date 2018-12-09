@@ -1,6 +1,6 @@
 #' @importFrom assertive.properties has_names
 #' @export
-assertive::has_names
+assertive.properties::has_names
 
 #' @rdname reexports
 #' @usage NULL
@@ -11,7 +11,7 @@ hasNames <- has_names
 
 #' @importFrom assertive.properties assert_has_names
 #' @export
-assertive::assert_has_names
+assertive.properties::assert_has_names
 
 #' @rdname reexports
 #' @usage NULL

@@ -1,6 +1,6 @@
-#' @importFrom assertive assert_all_are_existing
+#' @importFrom assertive.code assert_all_are_existing
 #' @export
-assertive::assert_all_are_existing
+assertive.code::assert_all_are_existing
 
 #' @rdname reexports
 #' @usage NULL
