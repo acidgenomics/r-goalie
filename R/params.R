@@ -27,7 +27,10 @@
 #' @param ... Additional arguments.
 #'
 #' @return
-#' - `boolean flag` for `are/has/is*()` functions.
-#' - Stop on error for `assert*()` functions
-#'   (see `stop()` or `stopifnot()` for details).
+#' - `are*`/`has*`/`is*`: `logical(1)`. Boolean flag (`TRUE`/`FALSE`).
+#'   Intended to be used in combination with `assert()` function.
+#' - `check*`: `TRUE` on success or `character` on failure.
+#'   Intended to be used in combination with `validate()` function.
+#' - `assert()`: `TRUE` on success or error (`stop()`) on failure.
+#'   so it can be used in a magrittr pipe chain.
 NULL
