@@ -7,6 +7,7 @@
 \alias{\%>\%}
 \alias{assert_that}
 \alias{validate_that}
+\alias{validate}
 \alias{assert}
 \alias{assertClass}
 \alias{checkClass}
@@ -75,8 +76,13 @@
 \alias{is_string}
 \alias{isString}
 \title{Objects exported from other packages}
+\usage{
+validate(..., env = parent.frame(), msg = NULL)
+}
 \section{Functions}{
 \itemize{
+\item \code{validate}: Shorter name variant of \code{validate_that}.
+
 \item \code{assertHasCols}: camel alias.
 
 \item \code{hasCols}: camel alias.
