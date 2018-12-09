@@ -69,6 +69,6 @@ NULL
 }
 
 
-#' @rdname checkScale
+#' @rdname isScale
 #' @export
 isScale <- makeTestFunction(.isScale)

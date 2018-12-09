@@ -26,4 +26,4 @@
 #'     is.atomic("example"),
 #'     is.character("example")
 #' )
-validate <- assertthat::validate_that
+validate <- validate_that

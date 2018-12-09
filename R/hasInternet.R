@@ -1,6 +1,7 @@
 #' Does the Current Session Have an Internet Connection?
+#' @importFrom curl has_internet
 #' @inherit params
 #' @export
 #' @examples
 #' hasInternet()
-hasInternet <- curl::has_internet
+hasInternet <- has_internet
