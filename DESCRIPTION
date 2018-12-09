@@ -19,7 +19,11 @@ Depends:
 Imports:
     BiocGenerics,
     R.utils (>= 2.7),
-    assertive,
+    assertive.base,
+    assertive.code,
+    assertive.data,
+    assertive.properties,
+    assertive.sets,
     assertthat (>= 0.2),
     checkmate (>= 1.8.9-9000),
     curl,
