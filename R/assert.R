@@ -5,7 +5,7 @@
 #'
 #' Currently, `assert()` reexports `assertthat::assert_that()`.
 #'
-#' @importFrom checkmate assert
+#' @importFrom assertthat assert_that
 #' @inheritParams assertthat::assert_that
 #' @export
 #'
@@ -19,4 +19,4 @@
 #'     is.atomic("example"),
 #'     is.character("example")
 #' )
-assert <- assertthat::assert_that
+assert <- assert_that

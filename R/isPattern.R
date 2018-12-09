@@ -14,25 +14,25 @@ NULL
 #' @rdname isPattern
 #' @importFrom assertive.strings is_matching_fixed
 #' @export
-isMatchingFixed <- assertive.strings::is_matching_fixed
+isMatchingFixed <- is_matching_fixed
 
 
 
 #' @rdname isPattern
 #' @importFrom assertive.strings is_not_matching_fixed
 #' @export
-isNotMatchingFixed <- assertive.strings::is_not_matching_fixed
+isNotMatchingFixed <- is_not_matching_fixed
 
 
 
 #' @rdname isPattern
 #' @importFrom assertive.strings is_matching_regex
 #' @export
-isMatchingRegex <- assertive.strings::is_matching_regex
+isMatchingRegex <- is_matching_regex
 
 
 
 #' @rdname isPattern
 #' @importFrom assertive.strings is_not_matching_regex
 #' @export
-isNotMatchingRegex <- assertive.strings::is_not_matching_regex
+isNotMatchingRegex <- is_not_matching_regex
