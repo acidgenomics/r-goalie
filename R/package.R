@@ -11,25 +11,13 @@
 #' @importFrom assertive.data is_hex_color
 #' @importFrom assertive.properties has_colnames has_dimnames
 #' @importFrom assertthat on_failure<-
-#' @importFrom checkmate assert assertClass assertFlag assertLogical assertNames
-#'   assertString checkClass checkFlag makeAssertion makeAssertionFunction
-#'   makeExpectation makeExpectationFunction makeTest makeTestFunction testClass
-#'   testFlag testScalar testString vname
+#' @importFrom checkmate makeAssertion makeAssertionFunction makeExpectation
+#'   makeExpectationFunction makeTest makeTestFunction vname
 #' @importFrom methods as formalArgs is setGeneric setMethod signature
 #' @importFrom utils capture.output globalVariables
 "_PACKAGE"
 
 globalVariables(".")
-
-# Remove this in a future update, in favor of `assert()`.
-#' @importFrom assertthat assert_that
-#' @export
-assertthat::assert_that
-
-# Remove this in a future update, in favor of `validate()`.
-#' @importFrom assertthat validate_that
-#' @export
-assertthat::validate_that
 
 #' @importFrom magrittr %>%
 #' @export
