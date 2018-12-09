@@ -22,6 +22,21 @@ checkmate::testAtomic
 
 
 
+# checkCharacter ===============================================================
+#' @importFrom checkmate assertCharacter
+#' @export
+checkmate::assertCharacter
+
+#' @importFrom checkmate checkCharacter
+#' @export
+checkmate::checkCharacter
+
+#' @importFrom checkmate testCharacter
+#' @export
+checkmate::testCharacter
+
+
+
 # checkClass ===================================================================
 #' @importFrom checkmate assertClass
 #' @export
