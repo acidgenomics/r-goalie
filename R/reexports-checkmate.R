@@ -7,6 +7,21 @@ formals(assert)[["combine"]] <- "and"
 
 
 
+# checkAtomic ==================================================================
+#' @importFrom checkmate assertAtomic
+#' @export
+checkmate::assertAtomic
+
+#' @importFrom checkmate checkAtomic
+#' @export
+checkmate::checkAtomic
+
+#' @importFrom checkmate testAtomic
+#' @export
+checkmate::testAtomic
+
+
+
 # checkClass ===================================================================
 #' @importFrom checkmate assertClass
 #' @export
