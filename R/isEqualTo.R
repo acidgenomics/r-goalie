@@ -3,6 +3,7 @@
 #' How Does the Input Relate to a Value?
 #' @name isEqualTo
 #' @inherit params
+#' @inheritParams assertive.numbers::is_equal_to
 NULL
 
 

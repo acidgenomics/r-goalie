@@ -23,6 +23,8 @@ the testthat reporter. See \code{testthat::expect_that()}.}
 
 \item{name}{\code{character}. Element name.}
 
+\item{na.ok}{\code{logical(1)}. If set to \code{TRUE}, \code{x} may also be \code{NA}.}
+
 \item{names}{\code{character}. Element names (e.g. row names, column names).}
 
 \item{null.ok}{\code{logical(1)}. If set to \code{TRUE}, \code{x} may also be \code{NULL}.}
@@ -37,6 +39,10 @@ the testthat reporter. See \code{testthat::expect_that()}.}
 
 \item{.var.name}{\code{character(1)}. Name of the checked object to print in
 asserions.}
+
+\item{.xname}{\emph{Not intended to be used directly.}}
+
+\item{.yname}{\emph{Not intended to be used directly.}}
 
 \item{...}{Additional arguments.}
 }

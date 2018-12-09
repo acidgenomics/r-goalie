@@ -23,6 +23,8 @@ hasColnames(x, .xname = get_name_in_parent(x))
 }
 \arguments{
 \item{x}{Object.}
+
+\item{.xname}{\emph{Not intended to be used directly.}}
 }
 \value{
 \itemize{

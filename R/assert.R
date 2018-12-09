@@ -6,7 +6,7 @@
 #' Currently, `assert()` reexports `assertthat::assert_that()`.
 #'
 #' @importFrom checkmate assert
-#' @inheritParams checkmate::assert
+#' @inheritParams assertthat::assert_that
 #' @export
 #'
 #' @seealso
