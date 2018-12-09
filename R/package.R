@@ -13,12 +13,7 @@
 #' @importFrom assertthat on_failure<-
 #' @importFrom checkmate makeAssertion makeAssertionFunction makeExpectation
 #'   makeExpectationFunction makeTest makeTestFunction vname
+#' @importFrom curl has_internet
 #' @importFrom methods as formalArgs is setGeneric setMethod signature
-#' @importFrom utils capture.output globalVariables
+#' @importFrom utils capture.output
 "_PACKAGE"
-
-globalVariables(".")
-
-#' @importFrom magrittr %>%
-#' @export
-magrittr::`%>%`
