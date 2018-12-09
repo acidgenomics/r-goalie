@@ -1,5 +1,6 @@
 #' @name isInteger
 #' @inherit params
+#' @inheritParams rlang::is_integerish
 #'
 #' @seealso
 #' - `rlang::is_integerish()`.

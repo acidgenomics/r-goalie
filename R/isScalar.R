@@ -4,6 +4,8 @@
 #'
 #' @name isScalar
 #' @inherit params
+#' @inheritParams assertive.properties::is_scalar
+#' @inheritParams rlang::is_scalar_integerish
 #'
 #' @seealso
 #' `help(topic = "scalar-type-predicates", package = "rlang")`.
