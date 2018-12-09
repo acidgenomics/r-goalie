@@ -7,6 +7,7 @@
 \alias{\%>\%}
 \alias{assert_that}
 \alias{validate_that}
+\alias{assert}
 \alias{assertClass}
 \alias{checkClass}
 \alias{testClass}
@@ -137,7 +138,7 @@ below to see their documentation.
 
   \item{assertthat}{\code{\link[assertthat]{assert_that}}, \code{\link[assertthat]{validate_that}}}
 
-  \item{checkmate}{\code{\link[checkmate]{assertClass}}, \code{\link[checkmate]{checkClass}}, \code{\link[checkmate]{testClass}}, \code{\link[checkmate]{assertDirectoryExists}}, \code{\link[checkmate]{checkDirectoryExists}}, \code{\link[checkmate]{testDirectoryExists}}, \code{\link[checkmate]{assertFileExists}}, \code{\link[checkmate]{checkFileExists}}, \code{\link[checkmate]{testFileExists}}, \code{\link[checkmate]{assertFlag}}, \code{\link[checkmate]{checkFlag}}, \code{\link[checkmate]{testFlag}}, \code{\link[checkmate]{assertLogical}}, \code{\link[checkmate]{checkLogical}}, \code{\link[checkmate]{testLogical}}, \code{\link[checkmate]{assertNames}}, \code{\link[checkmate]{checkNames}}, \code{\link[checkmate]{testNames}}, \code{\link[checkmate]{assertScalar}}, \code{\link[checkmate]{checkScalar}}, \code{\link[checkmate]{testScalar}}, \code{\link[checkmate]{assertString}}, \code{\link[checkmate]{checkString}}, \code{\link[checkmate]{testString}}}
+  \item{checkmate}{\code{\link[checkmate]{assert}}, \code{\link[checkmate]{assertClass}}, \code{\link[checkmate]{checkClass}}, \code{\link[checkmate]{testClass}}, \code{\link[checkmate]{assertDirectoryExists}}, \code{\link[checkmate]{checkDirectoryExists}}, \code{\link[checkmate]{testDirectoryExists}}, \code{\link[checkmate]{assertFileExists}}, \code{\link[checkmate]{checkFileExists}}, \code{\link[checkmate]{testFileExists}}, \code{\link[checkmate]{assertFlag}}, \code{\link[checkmate]{checkFlag}}, \code{\link[checkmate]{testFlag}}, \code{\link[checkmate]{assertLogical}}, \code{\link[checkmate]{checkLogical}}, \code{\link[checkmate]{testLogical}}, \code{\link[checkmate]{assertNames}}, \code{\link[checkmate]{checkNames}}, \code{\link[checkmate]{testNames}}, \code{\link[checkmate]{assertScalar}}, \code{\link[checkmate]{checkScalar}}, \code{\link[checkmate]{testScalar}}, \code{\link[checkmate]{assertString}}, \code{\link[checkmate]{checkString}}, \code{\link[checkmate]{testString}}}
 
   \item{magrittr}{\code{\link[magrittr]{\%>\%}}}
 
