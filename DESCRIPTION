@@ -30,7 +30,7 @@ Imports:
     assertive.types,
     assertthat (>= 0.2),
     checkmate (>= 1.8.9-9000),
-    magrittr (>= 1.5),
+    curl,
     methods,
     rlang (>= 0.3),
     utils
