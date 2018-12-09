@@ -29,20 +29,27 @@ the testthat reporter. See \code{testthat::expect_that()}.}
 
 \item{object}{Object.}
 
+\item{pattern}{\code{character(1)}. Pattern to use for matching.}
+
 \item{x}{Object.}
 
 \item{y}{Secondary object.}
 
 \item{.var.name}{\code{character(1)}. Name of the checked object to print in
-assertions.}
+asserions.}
 
 \item{...}{Additional arguments.}
 }
 \value{
 \itemize{
-\item \code{boolean flag} for \code{are/has/is*()} functions.
-\item Stop on error for \code{assert*()} functions
-(see \code{stop()} or \code{stopifnot()} for details).
+\item \code{are*}/\code{contains*}/\code{has*}/\code{is*}:
+\code{logical(1)}. Boolean flag (\code{TRUE}/\code{FALSE}).
+Intended to be used in combination with \code{assert()} function.
+\item \code{check*}:
+\code{TRUE} on success or \code{character} on failure.
+Intended to be used in combination with \code{validate()} function.
+\item \code{assert*}:
+\code{TRUE} on success or error (\code{stop()}) on failure.
 }
 }
 \description{
