@@ -36,7 +36,7 @@
 validateClasses <- function(object, expected, subset = FALSE) {
     assert(
         is(expected, "list"),
-        checkFlag(subset)
+        isFlag(subset)
     )
     if (isTRUE(subset)) {
         assertNames(names(object), must.include = names(expected))
