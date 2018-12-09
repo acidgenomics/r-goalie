@@ -9,6 +9,8 @@ isFlag(x, na.ok = FALSE, null.ok = FALSE)
 \arguments{
 \item{x}{Object.}
 
+\item{na.ok}{\code{logical(1)}. If set to \code{TRUE}, \code{x} may also be \code{NA}.}
+
 \item{null.ok}{\code{logical(1)}. If set to \code{TRUE}, \code{x} may also be \code{NULL}.}
 }
 \value{

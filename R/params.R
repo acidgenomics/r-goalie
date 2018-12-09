@@ -14,6 +14,7 @@
 #'   `environment` be searched?
 #' @param label `character(1)`. Name of the checked object to print in messages.
 #' @param name `character`. Element name.
+#' @param na.ok `logical(1)`. If set to `TRUE`, `x` may also be `NA`.
 #' @param names `character`. Element names (e.g. row names, column names).
 #' @param null.ok `logical(1)`. If set to `TRUE`, `x` may also be `NULL`.
 #' @param object Object.
@@ -22,6 +23,8 @@
 #' @param y Secondary object.
 #' @param .var.name `character(1)`. Name of the checked object to print in
 #'   asserions.
+#' @param .xname *Not intended to be used directly.*
+#' @param .yname *Not intended to be used directly.*
 #' @param ... Additional arguments.
 #'
 #' @return

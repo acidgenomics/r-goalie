@@ -39,9 +39,9 @@ validateClasses <- function(object, expected, subset = FALSE) {
         isFlag(subset)
     )
     if (isTRUE(subset)) {
-        assertNames(names(object), must.include = names(expected))
+        assert(isSubset(names(expected), names(object)))
     } else {
-        assertNames(names(object), permutation.of = names(expected))
+        assert(areSetEqual(names(expected), names(object)))
     }
     valid <- mapply(
         slot = names(expected),

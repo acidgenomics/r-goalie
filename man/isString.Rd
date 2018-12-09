@@ -10,7 +10,20 @@ isString(x, na.ok = FALSE, min.chars = NULL, pattern = NULL,
 \arguments{
 \item{x}{Object.}
 
+\item{na.ok}{\code{logical(1)}. If set to \code{TRUE}, \code{x} may also be \code{NA}.}
+
+\item{min.chars}{[\code{integer(1)}]\cr
+Minimum number of characters for each element of \code{x}.}
+
 \item{pattern}{\code{character(1)}. Pattern to use for matching.}
+
+\item{fixed}{[\code{character(1)}]\cr
+Substring to detect in \code{x}. Will be used as \code{pattern} in \code{\link[base]{grepl}}
+with option \code{fixed} set to \code{TRUE}.
+All non-missing elements of \code{x} must contain this substring.}
+
+\item{ignore.case}{[\code{logical(1)}]\cr
+See \code{\link[base]{grepl}}. Default is \code{FALSE}.}
 
 \item{null.ok}{\code{logical(1)}. If set to \code{TRUE}, \code{x} may also be \code{NULL}.}
 }
