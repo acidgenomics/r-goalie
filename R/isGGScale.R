@@ -1,6 +1,6 @@
 #' Does the Argument Contain a ggplot2 Scale?
 #'
-#' @name isScale
+#' @name isGGScale
 #' @inherit params
 #' @export
 #'
@@ -24,15 +24,15 @@
 #' fill_d <- scale_fill_manual(values = c("red", "blue"))
 #' class(fill_d)
 #'
-#' isScale(x = colour_c, scale = "continuous", aes = "colour")
-#' isScale(x = colour_d, scale = "discrete", aes = "colour")
-#' isScale(x = fill_c, scale = "continuous", aes = "fill")
-#' isScale(x = fill_d, scale = "discrete", aes = "fill")
+#' isGGScale(x = colour_c, scale = "continuous", aes = "colour")
+#' isGGScale(x = colour_d, scale = "discrete", aes = "colour")
+#' isGGScale(x = fill_c, scale = "continuous", aes = "fill")
+#' isGGScale(x = fill_d, scale = "discrete", aes = "fill")
 NULL
 
 
 
-.isScale <- function(
+.isGGScale <- function(
     x,
     scale = c("continuous", "discrete"),
     aes = c("colour", "fill"),
@@ -69,6 +69,6 @@ NULL
 }
 
 
-#' @rdname isScale
+#' @rdname isGGScale
 #' @export
-isScale <- makeTestFunction(.isScale)
+isGGScale <- makeTestFunction(.isGGScale)
