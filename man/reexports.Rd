@@ -8,6 +8,9 @@
 \alias{assertAtomic}
 \alias{checkAtomic}
 \alias{testAtomic}
+\alias{assertCharacter}
+\alias{checkCharacter}
+\alias{testCharacter}
 \alias{assertClass}
 \alias{checkClass}
 \alias{testClass}
@@ -139,7 +142,7 @@ below to see their documentation.
 
   \item{assertive.properties}{\code{\link[assertive.properties]{assert_has_cols}}, \code{\link[assertive.properties]{has_cols}}, \code{\link[assertive.properties]{assert_has_dimnames}}, \code{\link[assertive.properties]{has_dimnames}}, \code{\link[assertive.properties]{assert_has_dims}}, \code{\link[assertive.properties]{has_dims}}, \code{\link[assertive.properties]{assert_has_names}}, \code{\link[assertive.properties]{has_names}}, \code{\link[assertive.properties]{assert_has_rows}}, \code{\link[assertive.properties]{has_rows}}}
 
-  \item{checkmate}{\code{\link[checkmate]{assert}}, \code{\link[checkmate]{assertAtomic}}, \code{\link[checkmate]{checkAtomic}}, \code{\link[checkmate]{testAtomic}}, \code{\link[checkmate]{assertClass}}, \code{\link[checkmate]{checkClass}}, \code{\link[checkmate]{testClass}}, \code{\link[checkmate]{assertDirectoryExists}}, \code{\link[checkmate]{checkDirectoryExists}}, \code{\link[checkmate]{testDirectoryExists}}, \code{\link[checkmate]{assertFactor}}, \code{\link[checkmate]{checkFactor}}, \code{\link[checkmate]{testFactor}}, \code{\link[checkmate]{assertFileExists}}, \code{\link[checkmate]{checkFileExists}}, \code{\link[checkmate]{testFileExists}}, \code{\link[checkmate]{assertFlag}}, \code{\link[checkmate]{checkFlag}}, \code{\link[checkmate]{testFlag}}, \code{\link[checkmate]{assertLogical}}, \code{\link[checkmate]{checkLogical}}, \code{\link[checkmate]{testLogical}}, \code{\link[checkmate]{assertNames}}, \code{\link[checkmate]{checkNames}}, \code{\link[checkmate]{testNames}}, \code{\link[checkmate]{assertScalar}}, \code{\link[checkmate]{checkScalar}}, \code{\link[checkmate]{testScalar}}, \code{\link[checkmate]{assertString}}, \code{\link[checkmate]{checkString}}, \code{\link[checkmate]{testString}}}
+  \item{checkmate}{\code{\link[checkmate]{assert}}, \code{\link[checkmate]{assertAtomic}}, \code{\link[checkmate]{checkAtomic}}, \code{\link[checkmate]{testAtomic}}, \code{\link[checkmate]{assertCharacter}}, \code{\link[checkmate]{checkCharacter}}, \code{\link[checkmate]{testCharacter}}, \code{\link[checkmate]{assertClass}}, \code{\link[checkmate]{checkClass}}, \code{\link[checkmate]{testClass}}, \code{\link[checkmate]{assertDirectoryExists}}, \code{\link[checkmate]{checkDirectoryExists}}, \code{\link[checkmate]{testDirectoryExists}}, \code{\link[checkmate]{assertFactor}}, \code{\link[checkmate]{checkFactor}}, \code{\link[checkmate]{testFactor}}, \code{\link[checkmate]{assertFileExists}}, \code{\link[checkmate]{checkFileExists}}, \code{\link[checkmate]{testFileExists}}, \code{\link[checkmate]{assertFlag}}, \code{\link[checkmate]{checkFlag}}, \code{\link[checkmate]{testFlag}}, \code{\link[checkmate]{assertLogical}}, \code{\link[checkmate]{checkLogical}}, \code{\link[checkmate]{testLogical}}, \code{\link[checkmate]{assertNames}}, \code{\link[checkmate]{checkNames}}, \code{\link[checkmate]{testNames}}, \code{\link[checkmate]{assertScalar}}, \code{\link[checkmate]{checkScalar}}, \code{\link[checkmate]{testScalar}}, \code{\link[checkmate]{assertString}}, \code{\link[checkmate]{checkString}}, \code{\link[checkmate]{testString}}}
 
   \item{rlang}{\code{\link[rlang]{is_integerish}}, \code{\link[rlang]{is_scalar_double}}, \code{\link[rlang]{is_scalar_integerish}}, \code{\link[rlang]{is_string}}}
 
