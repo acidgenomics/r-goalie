@@ -1,6 +1,5 @@
 #' Does the Requested Variable Exist?
 #'
-#' @name checkAreNonExisting
 #' @aliases areNonExisting are_non_existing
 #' @inherit params
 #' @export
