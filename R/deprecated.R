@@ -98,25 +98,63 @@ areSamplesUnique <- function(...) {
 
 
 # v0.2.0 =======================================================================
-# FIXME
+# areDirs : checkDirectoryExists
+# areFiles : checkFileExists
+# areNonExisting
+# areSamplesUnique
+# areURLs
+# areUniqueGeneNames
+# assertAllAreNonExisting
+# assertAllAreValidNames
+# assertAreDirs
+# assertAreFiles
+# assertAreGeneAnnotations
+# assertAreNonExisting
+# assertAreTranscriptAnnotations
+# assertAreURLs
+# assertAreUniqueGeneNames
 # assertAreValidNames
-
-# assertIsColorScaleContinuousOrNULL
-#     assertColorScaleContinuousOrNULL
-
-# assertIsColorScaleDiscreteOrNULL
-#     assertColorScaleDiscreteOrNULL
-
-# assertIsHexColorFunctionOrNULL
-
+# assertFormalCompress
+# assertHasRownames
+# assertHasUniqueCols
+# assertHasValidDimnames
+# assertHasValidNames
+# assertIsAHeaderLevel
+# assertIsANumberOrNULL
+# assertIsAStringOrNULL
+# assertIsAlpha
 # assertIsAnImplicitInteger
 # assertIsAnImplicitIntegerOrNULL
+# assertIsAnIntegerOrNULL
+# assertIsAnnotable
+# assertIsCharacterOrNULL
+# assertIsColorScaleContinuousOrNULL
+# assertIsColorScaleDiscreteOrNULL
+# assertIsDataFrameOrNULL
+# assertIsDir
+# assertIsFile
+# assertIsFillScaleContinuousOrNULL
+# assertIsFillScaleDiscreteOrNULL
+# assertIsGFF
+# assertIsGene2symbol
 # assertIsHeaderLevel
+# assertIsHexColorFunctionOrNULL
 # assertIsImplicitInteger
 # assertIsImplicitIntegerOrNULL
+# assertIsStringOrNULL
+# assertIsTx2gene
+# assertIsURL
+# hasRownames
+# hasUniqueCols
 # isAlpha
 # isAnImplicitInteger
+# isDir
+# isFile
+# isHeaderLevel
 # isImplicitInteger
+# isURL
+# validDimnames
+# validNames
 
 
 
