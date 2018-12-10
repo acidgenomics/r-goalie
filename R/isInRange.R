@@ -1,7 +1,29 @@
 #' Is the Input in Range?
+#'
 #' @name inRange
 #' @inherit params
 #' @inheritParams assertive.numbers::is_in_range
+#'
+#' @examples
+#' ## Pass ====
+#' isInRange(x = 1, lower = 0, upper = 1)
+#'
+#' isInClosedRange(x = 0, lower = 0, upper = 1)
+#' isInClosedRange(x = 1, lower = 0, upper = 1)
+#'
+#' isInOpenRange(x = 0.5, lower = 0, upper = 1)
+#'
+#' isInLeftOpenRange(x = 1, lower = 0, upper = 1)
+#' isInRightOpenRange(x = 0, lower = 0, upper = 1)
+#'
+#' ## Fail ====
+#' isInRange(x = 2, lower = 0, upper = 1)
+#'
+#' isInOpenRange(x = 0, lower = 0, upper = 1)
+#' isInOpenRange(x = 1, lower = 0, upper = 1)
+#'
+#' isInLeftOpenRange(x = 0, lower = 0, upper = 1)
+#' isInRightOpenRange(x = 1, lower = 0, upper = 1)
 NULL
 
 
