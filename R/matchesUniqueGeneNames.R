@@ -1,13 +1,11 @@
-#' Are the Requested Gene Names Duplicated in the Corresponding Object?
+#' Do the Input Gene Names Match Unique Values in the Corresponding Object?
 #'
 #' This assert check determines if a user-defined gene name query is using only
 #' unique (non-amgibuous) symbols. It is designed to be used for gene plotting
 #' particularly when performing single-cell RNA-seq marker analysis.
 #'
-#' @name checkAreUniqueGeneNames
-#' @aliases areUniqueGeneNames are_unique_gene_names
+#' @name matchesUniqueGeneNames
 #' @inherit params
-#' @export
 #'
 #' @examples
 #' x <- SummarizedExperiment::SummarizedExperiment(
@@ -28,76 +26,57 @@
 #' genes <- SummarizedExperiment::rowData(x)$geneName
 #'
 #' ## Pass ====
-#' checkAreUniqueGeneNames(x = x, genes = genes)
-checkAreUniqueGeneNames <- function(x, genes) {
+#' matchesUniqueGeneNames(x = x, genes = genes)
+NULL
+
+
+
+.matchesUniqueGeneNames <- function(x, genes) {
     ok <- isS4(x)
-    if (!ok) {
+    if (!isTRUE(ok)) {
         return("x is not an S4 class object")
     }
-    ok <- is(genes, "character")
-    if (!ok) {
-        return("genes are not character")
+
+    ok <- is.character(genes)
+    if (!isTRUE(ok)) {
+        return("`genes` is not character")
     }
+
     # Get all of the gene names stashed in the x.
     if (is(x, "SummarizedExperiment")) {
         requireNamespace("SummarizedExperiment", quietly = TRUE)
         x <- SummarizedExperiment::rowData(x)
     }
+
     # Coercing to character here to handle Rle/factor matching.
-    all <- as(x[["geneName"]], "character")
+    all <- as.character(x[["geneName"]])
+
     # Check for gene names (symbols).
     if (length(all) == 0L) {
         return("Gene names are not defined in object")
     }
+
     # Require that the user passed in gene names.
     ok <- all(genes %in% all)
-    if (!ok) {
+    if (!isTRUE(ok)) {
         setdiff <- setdiff(genes, all)
         return(paste("Genes missing in object:", setdiff))
     }
+
     # Get a vector of all duplicated gene names in the object.
     dupes <- all[which(duplicated(all))]
     # Now check for intersection with the user-defined genes vector.
     intersect <- intersect(genes, dupes)
+
     if (length(intersect) > 0L) {
         return(paste("Non-unique gene names:", toString(intersect)))
     }
+
     TRUE
 }
 
 
 
-#' @rdname checkAreUniqueGeneNames
+#' @rdname matchesUniqueGeneNames
 #' @export
-check_are_unique_gene_names <- checkAreUniqueGeneNames  # nolint
-
-
-
-#' @rdname checkAreUniqueGeneNames
-#' @export
-testAreUniqueGeneNames <- makeTestFunction(checkAreUniqueGeneNames)
-
-
-
-#' @rdname checkAreUniqueGeneNames
-#' @export
-test_are_unique_gene_names <- testAreUniqueGeneNames  # nolint
-
-
-
-#' @rdname checkAreUniqueGeneNames
-#' @export
-assertAreUniqueGeneNames <- makeAssertionFunction(checkAreUniqueGeneNames)
-
-
-
-#' @rdname checkAreUniqueGeneNames
-#' @export
-assert_are_unique_gene_names <- assertAreUniqueGeneNames  # nolint
-
-
-
-#' @rdname checkAreUniqueGeneNames
-#' @export
-expect_are_unique_gene_names <-  # nolint
-    makeExpectationFunction(checkAreUniqueGeneNames)
+matchesUniqueGeneNames <- makeTestFunction(.matchesUniqueGeneNames)
