@@ -1,4 +1,4 @@
-#' Does an Object Contain Elements That Are All Atomic?
+#' Does the Input Contain Elements That Are All Atomic?
 #'
 #' @name allAreAtomic
 #' @inherit params
