@@ -1,3 +1,7 @@
+# FIXME Simplify handling here -- always return boolean?
+
+
+
 #' Does the Argument Contain a URL?
 #'
 #' @name containsURL
