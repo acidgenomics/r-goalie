@@ -2,7 +2,7 @@
 % Please edit documentation in R/hasAccess.R
 \name{hasAccess}
 \alias{hasAccess}
-\title{Does the Session Have File System Access Rights?}
+\title{Does R Have File System Access Rights?}
 \usage{
 hasAccess(x, access = "r")
 }

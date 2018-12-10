@@ -2,7 +2,7 @@
 % Please edit documentation in R/containsHexColors.R
 \name{containsHexColors}
 \alias{containsHexColors}
-\title{Does the Argument Contain Hexadecimal Colors?}
+\title{Does the Input Contain Hexadecimal Colors?}
 \usage{
 containsHexColors(x)
 }
@@ -22,15 +22,17 @@ Intended to be used in combination with \code{validate()} function.
 }
 }
 \description{
-Does the Argument Contain Hexadecimal Colors?
+Does the Input Contain Hexadecimal Colors?
 }
 \examples{
 ## Pass ====
 x <- viridis::viridis(n = 2L)
+class(x)
 containsHexColors(x)
 
 ## Fail ====
 x <- ggplot2::scale_colour_manual
+class(x)
 containsHexColors(x)
 }
 \seealso{
