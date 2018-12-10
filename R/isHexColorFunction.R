@@ -5,9 +5,8 @@
 #'
 #' @name isHexColorFunction
 #' @inherit params
-#' @export
 #'
-#' @seealso RColorBrewer, viridis
+#' @seealso RColorBrewer, viridis packages.
 #'
 #' @examples
 #' ## Pass ====
@@ -21,17 +20,7 @@ NULL
 
 
 
-.isHexColorFunction <- function(
-    x,
-    null.ok = FALSE  # nolint
-) {
-    # Allow NULL input, if desired. This is useful for plotting functions where
-    # we don't want the user to have to define manually.
-    assert(isFlag(null.ok))
-    if (is.null(x) && null.ok) {
-        return(TRUE)
-    }
-
+.isHexColorFunction <- function(x) {
     if (!is.function(x)) {
         return("Must contain a function")
     }
@@ -59,4 +48,6 @@ NULL
 
 
 
+#' @rdname isHexColorFunction
+#' @export
 isHexColorFunction <- makeTestFunction(.isHexColorFunction)

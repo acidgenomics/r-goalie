@@ -1,10 +1,10 @@
-# TODO Improve documentation here, since not always boolean.
-
-#' Does the Argument Contain a File?
+#' Does the Input Contain a File?
 #'
 #' @name isFile
 #' @importFrom R.utils isFile
 #' @inherit params
+#'
+#' @return `logical`.
 #'
 #' @seealso `R.utils::isFile()`.
 #'
