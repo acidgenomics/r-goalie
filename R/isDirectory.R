@@ -4,6 +4,8 @@
 #' @importFrom R.utils isDirectory
 #' @inherit params
 #'
+#' @seealso `R.utils::isDirectory()`.
+#'
 #' @examples
 #' isADirectory("~")
 NULL
