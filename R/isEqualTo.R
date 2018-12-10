@@ -1,9 +1,24 @@
-# TODO Needs examples.
-
 #' How Does the Input Relate to a Value?
+#'
+#' @note These functions return `logical`, not necessarily `logical(1)`.
+#'
 #' @name isEqualTo
 #' @inherit params
 #' @inheritParams assertive.numbers::is_equal_to
+#'
+#' @return `logical`.
+#'
+#' @examples
+#' ## Pass ====
+#' isEqualTo(x = 1L, y = 1)
+#' isNotEqualTo(x = 2, y = 1)
+#' isGreaterThan(x = 1, y = 0)
+#' isGreaterThanOrEqualTo(x = seq_len(2), y = 1)
+#' isLessThan(x = -1, y = 0)
+#' isLessThanOrEqualTo(x = seq_len(2), y = 3)
+#'
+#' ## Fail ====
+#' isEqualTo(x = seq_len(2), y = 1)
 NULL
 
 
