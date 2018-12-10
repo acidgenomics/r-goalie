@@ -2,19 +2,19 @@
 % Please edit documentation in R/hasDims.R
 \name{hasDims}
 \alias{hasDims}
-\alias{hasDimnames}
 \alias{hasRows}
 \alias{hasCols}
+\alias{hasDimnames}
 \alias{hasColnames}
 \title{Does the Input Have Dimensions?}
 \usage{
 hasDims(x, .xname = get_name_in_parent(x))
 
-hasDimnames(x, .xname = get_name_in_parent(x))
-
 hasRows(x, .xname = get_name_in_parent(x))
 
 hasCols(x, .xname = get_name_in_parent(x))
+
+hasDimnames(x, .xname = get_name_in_parent(x))
 
 hasColnames(x, .xname = get_name_in_parent(x))
 }
@@ -41,11 +41,13 @@ Does the Input Have Dimensions?
 \examples{
 ## Pass ====
 x <- datasets::mtcars
+
 hasDims(x)
-hasDimnames(x)
 hasRows(x)
-hasRownames(x)
 hasCols(x)
+
+hasDimnames(x)
+hasRownames(x)
 hasColnames(x)
 
 ## Note that dims don't have to be non-zero, just not NULL.
@@ -53,10 +55,12 @@ hasDims(data.frame())
 
 ## Fail ====
 x <- data.frame()
+
 hasDims(list())
-hasDimnames(x)
 hasRows(x)
-hasRownames(x)
 hasCols(x)
+
+hasDimnames(x)
+hasRownames(x)
 hasColnames(x)
 }
