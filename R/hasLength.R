@@ -1,4 +1,4 @@
-#' Does the Input Have A Non-Zero Length?
+#' Does the Input Have a Non-Zero or Defined Length?
 #'
 #' @name hasLength
 #' @inherit params

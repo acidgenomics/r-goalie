@@ -1,4 +1,4 @@
-#' Does the Object Have Names?
+#' Does the Input Have Names?
 #'
 #' @importFrom assertive.properties has_names
 #' @inherit params

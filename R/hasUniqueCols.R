@@ -1,4 +1,4 @@
-#' Does the Object Have Columns with Unique Values?
+#' Does the Input Have Columns with Unique Values?
 #'
 #' Checks a matrix for duplicated columns, which reprent samples. Duplicate
 #' rows are allowed here, because many genes (rows) can contain all zeros.

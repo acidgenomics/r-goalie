@@ -1,4 +1,4 @@
-#' Does the Argument Contain a (Non-Empty) Character?
+#' Does the Input Contain a (Non-Empty) Character Vector?
 #'
 #' @section Enforced parameters:
 #'

@@ -1,4 +1,4 @@
-#' Does the Object Have Row Names?
+#' Does the Input Have Row Names?
 #'
 #' @section data.frame:
 #'

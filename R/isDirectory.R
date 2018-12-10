@@ -1,4 +1,4 @@
-#' Does the Argument Contain a Directory?
+#' Does the Input Contain a Directory?
 #'
 #' @name isDirectory
 #' @importFrom R.utils isDirectory
