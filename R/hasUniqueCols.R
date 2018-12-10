@@ -49,6 +49,6 @@ NULL
 
 
 
-#' @rdname HasUniqueCols
+#' @rdname hasUniqueCols
 #' @export
 hasUniqueCols <- makeTestFunction(.hasUniqueCols)
