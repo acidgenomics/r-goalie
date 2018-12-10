@@ -2,20 +2,44 @@
 % Please edit documentation in R/isFile.R
 \name{isFile}
 \alias{isFile}
-\title{Does the Argument Contain a Single (Existing) File?}
+\alias{isAFile}
+\title{Does the Argument Contain a File?}
 \usage{
 isFile(x)
+
+isAFile(x)
 }
 \arguments{
-\item{x}{\code{character(1)}. String specifying a local file path that must exist
-and be accessible.}
+\item{x}{Object.}
+}
+\value{
+\itemize{
+\item \code{are*}/\code{contains*}/\code{has*}/\code{is*}:
+\code{logical(1)}. Boolean flag (\code{TRUE}/\code{FALSE}).
+Intended to be used in combination with \code{assert()} function.
+\item \code{check*}:
+\code{TRUE} on success or \code{character(1)} on failure.
+Intended to be used in combination with \code{validate()} function.
+\item \code{assert*}:
+\code{TRUE} on success or error (\code{stop()}) on failure.
+}
 }
 \description{
-Does the Argument Contain a Single (Existing) File?
+Does the Argument Contain a File?
 }
+\section{Functions}{
+\itemize{
+\item \code{isFile}: Supports multiple files.
+
+\item \code{isAFile}: Check for a single file.
+}}
+
 \examples{
 x <- "example.txt"
 file.create(x)
-isFile(x)
+isAFile(x)
 unlink(x)
+}
+\seealso{
+\code{R.utils::isFile()}.
 }
