@@ -1,4 +1,4 @@
-#' Does the Argument Contain Hexadecimal Colors?
+#' Does the Input Contain Hexadecimal Colors?
 #'
 #' @name containsHexColors
 #' @inherit params
@@ -9,10 +9,12 @@
 #' @examples
 #' ## Pass ====
 #' x <- viridis::viridis(n = 2L)
+#' class(x)
 #' containsHexColors(x)
 #'
 #' ## Fail ====
 #' x <- ggplot2::scale_colour_manual
+#' class(x)
 #' containsHexColors(x)
 NULL
 
