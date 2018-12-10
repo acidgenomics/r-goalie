@@ -1,4 +1,4 @@
-#' Does the Argument Contain an Alpha Level?
+#' Does the Input Contain an Alpha Level?
 #'
 #' An alpha level must be a `scalar numeric` greater than 0 and less than 1.
 #'
@@ -18,7 +18,7 @@ NULL
 
 .containsAlpha <- function(x) {
     msg <- "An alpha level must be a scalar numeric > 0 and < 1"
-    ok <- is_scalar_double(x)
+    ok <- isScalarDouble(x)
     if (!isTRUE(ok)) {
         return(msg)
     }
