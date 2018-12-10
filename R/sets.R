@@ -1,9 +1,31 @@
-# TODO Need examples.
-
 #' Set Comparisons
+#'
 #' @name sets
 #' @inherit params
 #' @inheritParams assertive.sets::assert_is_superset
+#'
+#' @examples
+#' ## Pass ====
+#' areDisjointSets(x = c("a", "b"), y = c("c", "d"))
+#' areIntersectingSets(x = c("a", "b"), y = c("b", "c"))
+#' areSetEqual(x = c("a", "b"), y = c("b", "a"))
+#' isSubset(x = "a", y = c("a", "b"))
+#'
+#' ## This assert is particularly useful for checking required columns.
+#' isSuperset(
+#'     x = colnames(datasets::ChickWeight),
+#'     y = c("Time", "weight", "Diet")
+#' )
+#'
+#' ## Fail ====
+#' areDisjointSets(x = c("a", "b"), y = c("b", "a"))
+#' areIntersectingSets(x = c("a", "b"), y = c("c", "d"))
+#' areSetEqual(x = c("a", "b"), y = c("b", "c"))
+#' isSubset(x = "c", y = c("a", "b"))
+#' isSuperset(
+#'     x = c("Time", "weight", "Diet"),
+#'     y = colnames(datasets::ChickWeight)
+#' )
 NULL
 
 
@@ -33,6 +55,7 @@ areSetEqual <- are_set_equal
 #' @rdname sets
 #' @export
 isSubset <- function(x, y) {
+    assert(hasLength(x), hasLength(y))
     all(x %in% y)
 }
 

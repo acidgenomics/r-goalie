@@ -1,11 +1,13 @@
-#' Is Integerish?
+#' Is the Input Integerish?
 #'
 #' Check for valid input of either explicit (e.g. `1L`) and/or implict
 #' (e.g. `1`) integer.
 #'
 #' @name isIntegerish
+#' @importFrom rlang is_integerish
 #' @inherit params
 #' @inheritParams rlang::is_integerish
+#' @export
 #'
 #' @seealso
 #' - `rlang::is_integerish()`.
@@ -15,11 +17,4 @@
 #' @examples
 #' isIntegerish(seq_len(2L))
 #' isIntegerish(c(1, 2))
-NULL
-
-
-
-#' @rdname isIntegerish
-#' @importFrom rlang is_integerish
-#' @export
 isIntegerish <- is_integerish

@@ -16,7 +16,6 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 Depends: R (>= 3.5)
 Imports:
-    BiocGenerics,
     R.utils (>= 2.7),
     assertive.base,
     assertive.code,
