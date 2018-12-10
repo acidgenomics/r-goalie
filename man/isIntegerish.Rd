@@ -2,7 +2,7 @@
 % Please edit documentation in R/isIntegerish.R
 \name{isIntegerish}
 \alias{isIntegerish}
-\title{Is Integerish?}
+\title{Is the Input Integerish?}
 \usage{
 isIntegerish(x, n = NULL, finite = NULL)
 }

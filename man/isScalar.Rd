@@ -15,7 +15,7 @@
 \alias{isFlag}
 \alias{isNumber}
 \alias{isInt}
-\title{Is Scalar?}
+\title{Is the Input Scalar?}
 \usage{
 isScalar(x)
 
@@ -69,7 +69,7 @@ Intended to be used in combination with \code{validate()} function.
 }
 }
 \description{
-Is Scalar?
+Scalar represents a length of 1.
 }
 \section{Functions}{
 \itemize{

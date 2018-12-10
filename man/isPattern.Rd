@@ -32,17 +32,14 @@ isNotMatchingRegex(x, pattern, opts_regex = NULL,
 \item{opts_regex}{Passed to \code{\link[stringi]{stri_detect_regex}}.}
 }
 \value{
-\itemize{
-\item \code{are*}/\code{contains*}/\code{has*}/\code{is*}:
-\code{logical(1)}. Boolean flag (\code{TRUE}/\code{FALSE}).
-Intended to be used in combination with \code{assert()} function.
-\item \code{check*}:
-\code{TRUE} on success or \code{character(1)} on failure.
-Intended to be used in combination with \code{validate()} function.
-\item \code{assert*}:
-\code{TRUE} on success or error (\code{stop()}) on failure.
-}
+\code{logical}.
 }
 \description{
 Does the String Match a Pattern?
+}
+\examples{
+isMatchingFixed(x = "foobar", pattern = "bar")
+isNotMatchingFixed(x = "foo", pattern = "bar")
+isMatchingRegex(x = "foobar", pattern = "^f")
+isNotMatchingRegex(x = "foobar", pattern = "^b")
 }
