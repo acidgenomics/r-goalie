@@ -13,8 +13,6 @@
 #' hasLength(datasets::mtcars)
 #' hasLength("")
 #'
-#' hasLength(
-#'
 #' ## Fail ====
 #' hasLength(NULL)
 #' hasLength(character())
