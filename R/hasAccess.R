@@ -5,6 +5,7 @@
 #' @importFrom checkmate testAccess
 #' @inheritParams checkmate::testAccess
 #' @seealso `checkmate::testAccess()`.
+#' @export
 #'
 #' @examples
 #' hasAccess("~")
