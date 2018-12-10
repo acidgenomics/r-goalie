@@ -2,7 +2,7 @@
 % Please edit documentation in R/allAreAtomic.R
 \name{allAreAtomic}
 \alias{allAreAtomic}
-\title{Does an Object Contain Elements That Are All Atomic?}
+\title{Does the Input Contain Elements That Are All Atomic?}
 \usage{
 allAreAtomic(x)
 }
@@ -22,7 +22,7 @@ Intended to be used in combination with \code{validate()} function.
 }
 }
 \description{
-Does an Object Contain Elements That Are All Atomic?
+Does the Input Contain Elements That Are All Atomic?
 }
 \examples{
 ## Pass ====
