@@ -2,7 +2,7 @@
 % Please edit documentation in R/hasLength.R
 \name{hasLength}
 \alias{hasLength}
-\title{Does the Input Have A Non-Zero Length?}
+\title{Does the Input Have a Non-Zero or Defined Length?}
 \usage{
 hasLength(x, n = NULL)
 }
@@ -25,7 +25,7 @@ Intended to be used in combination with \code{validate()} function.
 }
 }
 \description{
-Does the Input Have A Non-Zero Length?
+Does the Input Have a Non-Zero or Defined Length?
 }
 \examples{
 ## Pass ====

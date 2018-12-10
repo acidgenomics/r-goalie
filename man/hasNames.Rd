@@ -2,7 +2,7 @@
 % Please edit documentation in R/hasNames.R
 \name{hasNames}
 \alias{hasNames}
-\title{Does the Object Have Names?}
+\title{Does the Input Have Names?}
 \usage{
 hasNames(x, .xname = get_name_in_parent(x))
 }
@@ -24,7 +24,7 @@ Intended to be used in combination with \code{validate()} function.
 }
 }
 \description{
-Does the Object Have Names?
+Does the Input Have Names?
 }
 \examples{
 x <- datasets::mtcars

@@ -2,7 +2,7 @@
 % Please edit documentation in R/hasUniqueCols.R
 \name{hasUniqueCols}
 \alias{hasUniqueCols}
-\title{Does the Object Have Columns with Unique Values?}
+\title{Does the Input Have Columns with Unique Values?}
 \usage{
 hasUniqueCols(x)
 }

@@ -39,17 +39,23 @@ isLessThanOrEqualTo(x, y, .xname = get_name_in_parent(x),
 \item{.yname}{\emph{Not intended to be used directly.}}
 }
 \value{
-\itemize{
-\item \code{are*}/\code{contains*}/\code{has*}/\code{is*}:
-\code{logical(1)}. Boolean flag (\code{TRUE}/\code{FALSE}).
-Intended to be used in combination with \code{assert()} function.
-\item \code{check*}:
-\code{TRUE} on success or \code{character(1)} on failure.
-Intended to be used in combination with \code{validate()} function.
-\item \code{assert*}:
-\code{TRUE} on success or error (\code{stop()}) on failure.
-}
+\code{logical}.
 }
 \description{
 How Does the Input Relate to a Value?
+}
+\note{
+These functions return \code{logical}, not necessarily \code{logical(1)}.
+}
+\examples{
+## Pass ====
+isEqualTo(x = 1L, y = 1)
+isNotEqualTo(x = 2, y = 1)
+isGreaterThan(x = 1, y = 0)
+isGreaterThanOrEqualTo(x = seq_len(2), y = 1)
+isLessThan(x = -1, y = 0)
+isLessThanOrEqualTo(x = seq_len(2), y = 3)
+
+## Fail ====
+isEqualTo(x = seq_len(2), y = 1)
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/hasRownames.R
 \name{hasRownames}
 \alias{hasRownames}
-\title{Does the Object Have Row Names?}
+\title{Does the Input Have Row Names?}
 \usage{
 hasRownames(x)
 }
@@ -22,7 +22,7 @@ Intended to be used in combination with \code{validate()} function.
 }
 }
 \description{
-Does the Object Have Row Names?
+Does the Input Have Row Names?
 }
 \section{data.frame}{
 

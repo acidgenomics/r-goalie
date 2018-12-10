@@ -2,7 +2,7 @@
 % Please edit documentation in R/isAll.R
 \name{isAll}
 \alias{isAll}
-\title{Does the Object Belong to or Inherit All of These Classes?}
+\title{Does the Input Belong to or Inherit All of These Classes?}
 \usage{
 isAll(x, classes)
 }
@@ -24,9 +24,14 @@ Intended to be used in combination with \code{validate()} function.
 }
 }
 \description{
-Does the Object Belong to or Inherit All of These Classes?
+Does the Input Belong to or Inherit All of These Classes?
 }
 \examples{
 x <- 1L
+
+## Pass ====
 isAll(x, classes = c("integer", "numeric"))
+
+## Fail ====
+isAll(x, classes = c("integer", "NULL"))
 }

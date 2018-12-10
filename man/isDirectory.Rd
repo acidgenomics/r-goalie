@@ -5,7 +5,7 @@
 \alias{isDir}
 \alias{isADirectory}
 \alias{isADir}
-\title{Does the Argument Contain a Directory?}
+\title{Does the Input Contain a Directory?}
 \usage{
 isDirectory(x)
 
@@ -31,7 +31,7 @@ Intended to be used in combination with \code{validate()} function.
 }
 }
 \description{
-Does the Argument Contain a Directory?
+Does the Input Contain a Directory?
 }
 \examples{
 isADirectory("~")
