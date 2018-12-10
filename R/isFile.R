@@ -1,40 +1,32 @@
-#' Does the Argument Contain a Single (Existing) File?
+# TODO Improve documentation here, since not always boolean.
+
+#' Does the Argument Contain a File?
 #'
 #' @name isFile
+#' @importFrom R.utils isFile
+#' @inherit params
 #'
-#' @param x `character(1)`. String specifying a local file path that must exist
-#'   and be accessible.
+#' @seealso `R.utils::isFile()`.
 #'
 #' @examples
 #' x <- "example.txt"
 #' file.create(x)
-#' isFile(x)
+#' isAFile(x)
 #' unlink(x)
 NULL
 
 
 
-.isFile <- function(x) {
-    ok <- isString(x)
-    if (!isTRUE(ok)) {
-        return("Must contain string")
-    }
-
-    ok <- dir.exists(x)
-    if (!isTRUE(ok)) {
-        return("File does not exist")
-    }
-
-    ok <- hasAccess(x)
-    if (!isTRUE(ok)) {
-        return("File does not have read access")
-    }
-
-    TRUE
+#' @describeIn isFile Supports multiple files.
+#' @export
+isFile <- function(x) {
+    R.utils::isFile(x)
 }
 
 
 
-#' @rdname isFile
+#' @describeIn isFile Check for a single file.
 #' @export
-isFile <- makeTestFunction(.isFile)
+isAFile <- function(x) {
+    isString(x) && isFile(x)
+}
