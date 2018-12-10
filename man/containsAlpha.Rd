@@ -2,7 +2,7 @@
 % Please edit documentation in R/containsAlpha.R
 \name{containsAlpha}
 \alias{containsAlpha}
-\title{Does the Argument Contain an Alpha Level?}
+\title{Does the Input Contain an Alpha Level?}
 \usage{
 containsAlpha(x)
 }

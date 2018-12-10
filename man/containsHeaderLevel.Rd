@@ -2,7 +2,7 @@
 % Please edit documentation in R/containsHeaderLevel.R
 \name{containsHeaderLevel}
 \alias{containsHeaderLevel}
-\title{Does the Argument Contain a Markdown Header Level?}
+\title{Does the Input Contain a Markdown Header Level?}
 \usage{
 containsHeaderLevel(x)
 }
