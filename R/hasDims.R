@@ -1,6 +1,8 @@
 #' Does the Input Have Dimensions?
+#'
 #' @name hasDims
 #' @inherit params
+#'
 #' @examples
 #' ## Pass ====
 #' x <- datasets::mtcars
