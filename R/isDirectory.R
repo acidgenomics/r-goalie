@@ -4,6 +4,8 @@
 #' @importFrom R.utils isDirectory
 #' @inherit params
 #'
+#' @return `logical`.
+#'
 #' @seealso `R.utils::isDirectory()`.
 #'
 #' @examples
