@@ -3,24 +3,20 @@
 #' `assert()` is a drop-in replacement for `stopifnot()`, but is designed to
 #' return more informative error messages.
 #'
-#' Currently, `assert()` reexports `checkmate::assert()` with a stricter default
-#' setting of the `combine` argument set to `"and"` instead of `"or"`. This
-#' enables `assert()` to act as a substitute for `stopifnot()`.
+#' Currently, `assert()` reexports `assertthat::assert_that()`.
 #'
-#' @importFrom checkmate assert
-#' @inheritParams checkmate::assert
+#' @importFrom assertthat assert_that
+#' @inheritParams assertthat::assert_that
 #' @export
 #'
 #' @seealso
-#' - `checkmate::assert()`.
 #' - `stopifnot()`.
 #' - `assertthat::assert_that()`.
+#' - `checkmate::assert()`.
 #'
 #' @examples
 #' assert(
 #'     is.atomic("example"),
 #'     is.character("example")
 #' )
-assert <- checkmate::assert
-# Stricter default.
-formals(assert)[["combine"]] <- "and"
+assert <- assert_that

@@ -3,6 +3,8 @@
 #' `validate()` is a variant of `assert()` that is specifically intended to be
 #' used inside of an S4 validity method definition.
 #'
+#' Currently, `validate()` reexports `assertthat::validate_that()`.
+#'
 #' Like `assert()`, `validate()` returns `TRUE` on success. However, on failure
 #' it returns a `character` instead of a `stop()` call. This is the current
 #' recommended practice for defining S4 validity methods inside of a
@@ -24,4 +26,4 @@
 #'     is.atomic("example"),
 #'     is.character("example")
 #' )
-assertthat::validate_that -> validate
+validate <- validate_that

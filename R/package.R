@@ -5,22 +5,12 @@
 #' @keywords internal
 #'
 #' @importFrom BiocGenerics duplicated rowSums
-#' @importFrom R.utils isDirectory isFile
-#' @importFrom SummarizedExperiment assay
+#' @importFrom R.utils capitalize
 #' @importFrom assertive.base is2
-#' @importFrom assertive.code is_existing
 #' @importFrom assertive.data is_hex_color
-#' @importFrom assertive.properties has_colnames has_dimnames has_rownames
-#' @importFrom assertthat on_failure<-
-#' @importFrom checkmate assert makeAssertion makeAssertionFunction vname
-#' @importFrom methods is setGeneric setMethod signature
-#' @importFrom utils globalVariables
-#' @importFrom rlang is_integerish is_scalar_double is_scalar_integerish
-#'   is_string
+#' @importFrom checkmate makeAssertion makeAssertionFunction makeExpectation
+#'   makeExpectationFunction makeTest makeTestFunction vname
+#' @importFrom curl has_internet
+#' @importFrom methods as formalArgs is setGeneric setMethod signature
+#' @importFrom utils capture.output
 "_PACKAGE"
-
-globalVariables(".")
-
-#' @importFrom magrittr %>%
-#' @export
-magrittr::`%>%`

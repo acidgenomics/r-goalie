@@ -18,27 +18,28 @@ Depends: R (>= 3.5)
 Imports:
     BiocGenerics,
     R.utils (>= 2.7),
-    SummarizedExperiment,
     assertive.base,
     assertive.code,
     assertive.data,
-    assertive.files,
     assertive.numbers,
     assertive.properties,
     assertive.sets,
     assertive.strings,
-    assertive.types,
     assertthat (>= 0.2),
     checkmate (>= 1.8),
-    magrittr (>= 1.5),
+    curl (>= 3.2),
     methods,
     rlang (>= 0.3),
+    stringi,
     utils
 Suggests:
     S4Vectors,
+    SummarizedExperiment,
     ggplot2 (>= 3.1),
+    patrick,
     testthat (>= 2.0),
-    tibble (>= 1.4)
+    tibble (>= 1.4),
+    viridis
 biocViews: Infrastructure
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
