@@ -6,11 +6,13 @@
 #' @examples
 #' ## Pass ====
 #' x <- datasets::mtcars
+#'
 #' hasDims(x)
-#' hasDimnames(x)
 #' hasRows(x)
-#' hasRownames(x)
 #' hasCols(x)
+#'
+#' hasDimnames(x)
+#' hasRownames(x)
 #' hasColnames(x)
 #'
 #' ## Note that dims don't have to be non-zero, just not NULL.
@@ -18,11 +20,13 @@
 #'
 #' ## Fail ====
 #' x <- data.frame()
+#'
 #' hasDims(list())
-#' hasDimnames(x)
 #' hasRows(x)
-#' hasRownames(x)
 #' hasCols(x)
+#'
+#' hasDimnames(x)
+#' hasRownames(x)
 #' hasColnames(x)
 NULL
 
@@ -32,13 +36,6 @@ NULL
 #' @importFrom assertive.properties has_dims
 #' @export
 hasDims <- has_dims
-
-
-
-#' @rdname hasDims
-#' @importFrom assertive.properties has_dimnames
-#' @export
-hasDimnames <- has_dimnames
 
 
 
@@ -53,6 +50,17 @@ hasRows <- has_rows
 #' @importFrom assertive.properties has_cols
 #' @export
 hasCols <- has_cols
+
+
+
+#' @rdname hasDims
+#' @importFrom assertive.properties has_dimnames
+#' @export
+hasDimnames <- has_dimnames
+
+
+
+# Documenting hasRownames in a separate Rd file.
 
 
 
