@@ -1,4 +1,4 @@
-#' Does the Session Have File System Access Rights?
+#' Does R Have File System Access Rights?
 #'
 #' Works for either file or directory paths.
 #'
