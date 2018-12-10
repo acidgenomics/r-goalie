@@ -2,10 +2,10 @@
 % Please edit documentation in R/isGGScale.R
 \name{isGGScale}
 \alias{isGGScale}
-\title{Does the Argument Contain a ggplot2 Scale?}
+\title{Does the Input Contain a ggplot2 Scale?}
 \usage{
 isGGScale(x, scale = c("continuous", "discrete"), aes = c("colour",
-  "fill"), null.ok = FALSE)
+  "fill"))
 }
 \arguments{
 \item{x}{Object.}
@@ -15,8 +15,6 @@ isGGScale(x, scale = c("continuous", "discrete"), aes = c("colour",
 \item{aes}{\code{string}. Aesthetic mapping, either \code{"colour"} or \code{"fill"}. Note
 that ggplot2 prefers British spelling, so we're enforcing that convention
 here.}
-
-\item{null.ok}{\code{logical(1)}. If set to \code{TRUE}, \code{x} may also be \code{NULL}.}
 }
 \value{
 \itemize{
@@ -31,7 +29,7 @@ Intended to be used in combination with \code{validate()} function.
 }
 }
 \description{
-Does the Argument Contain a ggplot2 Scale?
+Does the Input Contain a ggplot2 Scale?
 }
 \examples{
 library(ggplot2)

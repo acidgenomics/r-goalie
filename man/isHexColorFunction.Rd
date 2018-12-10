@@ -3,6 +3,12 @@
 \name{isHexColorFunction}
 \alias{isHexColorFunction}
 \title{Does the Argument Contain a Function That Returns Hexadecimal Colors?}
+\usage{
+isHexColorFunction(x)
+}
+\arguments{
+\item{x}{Object.}
+}
 \value{
 \itemize{
 \item \code{are*}/\code{contains*}/\code{has*}/\code{is*}:
@@ -29,5 +35,5 @@ x <- ggplot2::scale_colour_manual
 isHexColorFunction(x)
 }
 \seealso{
-RColorBrewer, viridis
+RColorBrewer, viridis packages.
 }
