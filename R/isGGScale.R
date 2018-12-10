@@ -1,8 +1,7 @@
-#' Does the Argument Contain a ggplot2 Scale?
+#' Does the Input Contain a ggplot2 Scale?
 #'
 #' @name isGGScale
 #' @inherit params
-#' @export
 #'
 #' @param scale `string`. Type of scale, either `"continuous"` or `"discrete"`.
 #' @param aes `string`. Aesthetic mapping, either `"colour"` or `"fill"`. Note
@@ -35,18 +34,10 @@ NULL
 .isGGScale <- function(
     x,
     scale = c("continuous", "discrete"),
-    aes = c("colour", "fill"),
-    null.ok = FALSE  # nolint
+    aes = c("colour", "fill")
 ) {
     scale <- match.arg(scale)
     aes <- match.arg(aes)
-
-    # Allow NULL input, if desired. This is useful for plotting functions
-    # where we don't want the user to have to define manually.
-    assert(isFlag(null.ok))
-    if (is.null(x) && isTRUE(null.ok)) {
-        return(TRUE)
-    }
 
     classes <- c(
         paste0("Scale", capitalize(scale)),
