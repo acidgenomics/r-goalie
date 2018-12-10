@@ -2,9 +2,12 @@
 % Please edit documentation in R/containsURL.R
 \name{containsURL}
 \alias{containsURL}
-\title{Does the Argument Contain a URL?}
+\alias{containsAURL}
+\title{Does the Input Contain a URL?}
 \usage{
-containsURL(x, string = FALSE)
+containsURL(x)
+
+containsAURL(x)
 }
 \arguments{
 \item{x}{Object.}
@@ -12,27 +15,26 @@ containsURL(x, string = FALSE)
 \item{string}{\code{logical(1)}. Require match against string?}
 }
 \value{
-\itemize{
-\item \code{are*}/\code{contains*}/\code{has*}/\code{is*}:
-\code{logical(1)}. Boolean flag (\code{TRUE}/\code{FALSE}).
-Intended to be used in combination with \code{assert()} function.
-\item \code{check*}:
-\code{TRUE} on success or \code{character(1)} on failure.
-Intended to be used in combination with \code{validate()} function.
-\item \code{assert*}:
-\code{TRUE} on success or error (\code{stop()}) on failure.
-}
+\code{logical}.
 }
 \description{
-Does the Argument Contain a URL?
+Does the Input Contain a URL?
 }
+\section{Functions}{
+\itemize{
+\item \code{containsURL}: Supports multiple URLs.
+
+\item \code{containsAURL}: Requires a single URL.
+}}
+
 \examples{
 urls <- c("https://www.r-project.org", "ftp://r-project.org")
 
 ## Pass ====
-containsURL(urls[[1L]], string = TRUE)
-containsURL(urls, string = FALSE)
+containsURL(urls)
+containsAURL(urls[[1L]])
 
 ## Fail ====
 containsURL("xxx")
+containsAURL(urls)
 }

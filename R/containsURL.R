@@ -1,37 +1,28 @@
-# FIXME Simplify handling here -- always return boolean?
-
-
-
-#' Does the Argument Contain a URL?
+#' Does the Input Contain a URL?
 #'
 #' @name containsURL
 #' @inherit params
 #'
 #' @param string `logical(1)`. Require match against string?
 #'
+#' @return `logical`.
+#'
 #' @examples
 #' urls <- c("https://www.r-project.org", "ftp://r-project.org")
 #'
 #' ## Pass ====
-#' containsURL(urls[[1L]], string = TRUE)
-#' containsURL(urls, string = FALSE)
+#' containsURL(urls)
+#' containsAURL(urls[[1L]])
 #'
 #' ## Fail ====
 #' containsURL("xxx")
+#' containsAURL(urls)
 NULL
 
 
 
-.containsURL <- function(x, string = FALSE) {
-    assert(isFlag(string))
-
-    if (isTRUE(string)) {
-        if (!isString(x)) {
-            return("Must contain string")
-        }
-    }
-
-    if (!is(x, "character")) {
+.containsURL <- function(x) {
+    if (!is.character(x)) {
         return("Must contain character")
     }
 
@@ -52,6 +43,14 @@ NULL
 
 
 
-#' @rdname containsURL
+#' @describeIn containsURL Supports multiple URLs.
 #' @export
 containsURL <- makeTestFunction(.containsURL)
+
+
+
+#' @describeIn containsURL Requires a single URL.
+#' @export
+containsAURL <- function(x) {
+    isScalar(x) && containsURL(x)
+}
