@@ -74,3 +74,24 @@ Intended to be used in combination with \code{validate()} function.
 \description{
 Is the Input in Range?
 }
+\examples{
+## Pass ====
+isInRange(x = 1, lower = 0, upper = 1)
+
+isInClosedRange(x = 0, lower = 0, upper = 1)
+isInClosedRange(x = 1, lower = 0, upper = 1)
+
+isInOpenRange(x = 0.5, lower = 0, upper = 1)
+
+isInLeftOpenRange(x = 1, lower = 0, upper = 1)
+isInRightOpenRange(x = 0, lower = 0, upper = 1)
+
+## Fail ====
+isInRange(x = 2, lower = 0, upper = 1)
+
+isInOpenRange(x = 0, lower = 0, upper = 1)
+isInOpenRange(x = 1, lower = 0, upper = 1)
+
+isInLeftOpenRange(x = 0, lower = 0, upper = 1)
+isInRightOpenRange(x = 1, lower = 0, upper = 1)
+}
