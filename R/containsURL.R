@@ -3,8 +3,6 @@
 #' @name containsURL
 #' @inherit params
 #'
-#' @param string `logical(1)`. Require match against string?
-#'
 #' @return `logical`.
 #'
 #' @examples
