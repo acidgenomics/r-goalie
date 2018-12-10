@@ -1,4 +1,4 @@
-#' Does the Argument Contain a Markdown Header Level?
+#' Does the Input Contain a Markdown Header Level?
 #'
 #' Markdown supports header levels `1`-`7` (`<H1>`-`<H7>`).
 #'
@@ -17,7 +17,7 @@ NULL
 
 
 .containsHeaderLevel <- function(x) {
-    ok <- is_scalar_integerish(x)
+    ok <- isScalarIntegerish(x)
     if (!ok) {
         return("Must be scalar integerish")
     }
