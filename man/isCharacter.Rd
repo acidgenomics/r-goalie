@@ -2,7 +2,7 @@
 % Please edit documentation in R/isCharacter.R
 \name{isCharacter}
 \alias{isCharacter}
-\title{Does the Argument Contain a (Non-Empty) Character?}
+\title{Does the Input Contain a (Non-Empty) Character Vector?}
 \usage{
 isCharacter(x)
 }
@@ -22,7 +22,7 @@ Intended to be used in combination with \code{validate()} function.
 }
 }
 \description{
-Does the Argument Contain a (Non-Empty) Character?
+Does the Input Contain a (Non-Empty) Character Vector?
 }
 \section{Enforced parameters}{
 
