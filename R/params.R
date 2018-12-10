@@ -32,7 +32,7 @@
 #'   `logical(1)`. Boolean flag (`TRUE`/`FALSE`).
 #'   Intended to be used in combination with `assert()` function.
 #' - `check*`:
-#'   `TRUE` on success or `character` on failure.
+#'   `TRUE` on success or `character(1)` on failure.
 #'   Intended to be used in combination with `validate()` function.
 #' - `assert*`:
 #'   `TRUE` on success or error (`stop()`) on failure.
