@@ -1,4 +1,6 @@
-#' Is Scalar?
+#' Is the Input Scalar?
+#'
+#' Scalar represents a length of 1.
 #'
 #' @name isScalar
 #' @inherit params

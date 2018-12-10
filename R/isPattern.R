@@ -1,12 +1,20 @@
-# TODO Add examples
-
 # NOTE These functions explicitly call the stringi package, so be sure to
 # include that in the imports.
+
+
 
 #' Does the String Match a Pattern?
 #' @name isPattern
 #' @inherit params
 #' @inheritParams assertive.strings::is_matching_fixed
+#'
+#' @return `logical`.
+#'
+#' @examples
+#' isMatchingFixed(x = "foobar", pattern = "bar")
+#' isNotMatchingFixed(x = "foo", pattern = "bar")
+#' isMatchingRegex(x = "foobar", pattern = "^f")
+#' isNotMatchingRegex(x = "foobar", pattern = "^b")
 NULL
 
 

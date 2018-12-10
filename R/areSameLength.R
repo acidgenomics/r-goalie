@@ -1,5 +1,8 @@
 #' Do the Inputs Have the Same Length?
 #'
+#' @note Non-zero lengths for `x` and `y` are required, otherwise the check
+#'   function will intentionally error.
+#'
 #' @inherit params
 #' @export
 #'
