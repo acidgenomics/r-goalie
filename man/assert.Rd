@@ -7,6 +7,9 @@
 assert(..., exprs, local = TRUE)
 }
 \arguments{
+\item{...}{Any number of expressions that return \code{logical(1)}, each of which
+should evaluate to \code{TRUE} on success and \code{FALSE} on failure.}
+
 \item{exprs}{any number of (typically but not necessarily
     \code{\link{logical}}) \R expressions, which should each evaluate to
     (a logical vector of all)
