@@ -2,6 +2,7 @@
 % Please edit documentation in R/isScalar.R
 \name{isScalar}
 \alias{isScalar}
+\alias{isNonScalar}
 \alias{isScalarList}
 \alias{isScalarAtomic}
 \alias{isScalarVector}
@@ -18,6 +19,8 @@
 \title{Is the Input Scalar?}
 \usage{
 isScalar(x)
+
+isNonScalar(x)
 
 isScalarList(x)
 

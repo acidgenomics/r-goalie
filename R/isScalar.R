@@ -1,3 +1,8 @@
+# TODO Consider allowing `isInt()` to only return true for non-negative
+# or positive values.
+
+
+
 #' Is the Input Scalar?
 #'
 #' Scalar represents a length of 1.
@@ -28,6 +33,14 @@ NULL
 #' @export
 isScalar <- function(x) {
     testScalar(x)
+}
+
+
+
+#' @rdname isScalar
+#' @export
+isNonScalar <- function(x) {
+    !isScalar(x)
 }
 
 
