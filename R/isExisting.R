@@ -1,10 +1,14 @@
+# FIXME Set the formals using `formals()` here for consistency.
+
+
+
 #' Does the Requested Input Exist in the Environment?
 #'
 #' @note `exists()` only supports `character(1)`, so we are exporting
 #'   `isExisting()` as a convenience function to check multiple variables in a
 #'   single call.
 #'
-#' @name existing
+#' @name isExisting
 #' @importFrom assertive.code is_existing
 #' @inherit params
 #'
@@ -26,14 +30,33 @@ NULL
 
 
 
-#' @rdname existing
+#' @rdname isExisting
 #' @export
 isExisting <- is_existing
 
 
 
-.areNonExisting <- function(x, envir = parent.frame(), inherits = TRUE) {
-    ok <- !isExisting(x, envir = envir, inherits = inherits)
+#' @rdname isExisting
+#' @export
+areExisting <- function(x, ...) {
+    if (length(x) == 1L) {
+        stop("Use `isExisting` for x scalar")
+    }
+    all(isExisting(x, ...))
+}
+
+
+
+#' @rdname isExisting
+#' @export
+isNonExisting <- function(x, ...) {
+    !isExisting(x, ...)
+}
+
+
+
+.areNonExisting <- function(x, ...) {
+    ok <- !isExisting(x, ...)
     if (!all(ok)) {
         which <- names(ok)[!ok]
         return(paste("Exists in environment:", which))
@@ -43,6 +66,6 @@ isExisting <- is_existing
 
 
 
-#' @rdname existing
+#' @rdname isExisting
 #' @export
 areNonExisting <- makeTestFunction(.areNonExisting)
