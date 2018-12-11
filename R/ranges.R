@@ -1,3 +1,5 @@
+# TODO Consider droping the `is` prefix from these?
+
 #' Is the Input in Range?
 #'
 #' @name ranges

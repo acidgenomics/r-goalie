@@ -109,6 +109,7 @@ isScalarLogical <- is_scalar_logical
 
 
 
+# TODO Consider adding `null.ok` mode here.
 #' @describeIn isScalar Alias for `isScalarCharacter`.
 #' @importFrom rlang is_string
 #' @export
