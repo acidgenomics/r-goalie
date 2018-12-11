@@ -1,3 +1,7 @@
+# TODO Improve assert engine messages, following assertthat approach.
+
+
+
 #' Assert That Certain Conditions Are True
 #'
 #' `assert()` is a drop-in replacement for `stopifnot()`, but is designed to
