@@ -27,8 +27,7 @@ should evaluate to \code{TRUE} on success and \code{FALSE} on failure.}
     evaluated; by default the one where \code{stopifnot()} has been called from.}
 }
 \description{
-\code{assert()} is a drop-in replacement for \code{stopifnot()}, but is designed to
-return more informative error messages.
+Currently, we're reexporting \code{stopifnot()} as \code{assert()} verbatim here.
 }
 \examples{
 assert(
@@ -39,7 +38,7 @@ assert(
 \seealso{
 \itemize{
 \item \code{stopifnot()}.
-\item \code{assertthat::assert_that()}.
 \item \code{checkmate::assert()}.
+\item \code{assertthat::assert_that()}.
 }
 }
