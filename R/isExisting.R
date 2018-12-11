@@ -39,9 +39,6 @@ isExisting <- is_existing
 #' @rdname isExisting
 #' @export
 areExisting <- function(x, ...) {
-    if (length(x) == 1L) {
-        stop("Use `isExisting` for x scalar")
-    }
     all(isExisting(x, ...))
 }
 
