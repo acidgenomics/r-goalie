@@ -6,6 +6,9 @@
 #' @inheritParams base::stopifnot
 #' @export
 #'
+#' @param ... Any number of expressions that return `logical(1)`, each of which
+#'   should evaluate to `TRUE` on success and `FALSE` on failure.
+#'
 #' @seealso
 #' - `stopifnot()`.
 #' - `assertthat::assert_that()`.
