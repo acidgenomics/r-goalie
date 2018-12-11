@@ -8,5 +8,5 @@
 #' @importFrom assertive.base is2
 #' @importFrom checkmate makeTest makeTestFunction vname
 #' @importFrom methods as formalArgs is setGeneric setMethod signature
-#' @importFrom utils capture.output
+#' @importFrom utils capture.output head
 "_PACKAGE"
