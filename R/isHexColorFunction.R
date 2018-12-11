@@ -1,3 +1,7 @@
+# TODO Consider adding `allowNULL` (`null.ok`) mode like checkmate here.
+
+
+
 #' Does the Argument Contain a Function That Returns Hexadecimal Colors?
 #'
 #' This assert check is intended primarily to check for RColorBrewer or viridis
