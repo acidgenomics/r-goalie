@@ -51,10 +51,9 @@ Does the Input Have Elements?
 }
 \examples{
 ## Pass ====
-hasElements("hello")
-hasElements(TRUE)
-hasElements(list(a = 1, b = 2))
+hasElements("hello", n = 1)
+hasElements(list(a = 1, b = 2), n = 2)
 
 ## Fail ====
-hasElements(list())
+hasElements(list(), n = 1)
 }
