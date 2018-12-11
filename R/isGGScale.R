@@ -1,3 +1,5 @@
+# TODO Consider adding `null.ok` mode here, like checkmate approach.
+
 #' Does the Input Contain a ggplot2 Scale?
 #'
 #' @name isGGScale
