@@ -4,25 +4,28 @@
 \alias{assert}
 \title{Assert That Certain Conditions Are True}
 \usage{
-assert(..., env = parent.frame(), msg = NULL)
+assert(..., exprs, local = TRUE)
 }
 \arguments{
-\item{...}{unnamed expressions that describe the conditions to be tested.
-Rather than combining expressions with \code{&&}, separate them by commas
-so that better error messages can be generated.}
+\item{exprs}{any number of (typically but not necessarily
+    \code{\link{logical}}) \R expressions, which should each evaluate to
+    (a logical vector of all)
+    \code{\link{TRUE}}.  Use \emph{either} \code{\dots} \emph{or}
+    \code{exprs}, the latter typically an unevaluated expression of the
+    form \preformatted{{
+   expr1
+   expr2
+   ....
+}}
+  }
 
-\item{env}{(advanced use only) the environment in which to evaluate the
-assertions.}
-
-\item{msg}{a custom error message to be printed if one of the conditions is
-false.}
+\item{local}{(only when \code{exprs} is used:) indicates the
+    \code{\link{environment}} in which the expressions should be
+    evaluated; by default the one where \code{stopifnot()} has been called from.}
 }
 \description{
 \code{assert()} is a drop-in replacement for \code{stopifnot()}, but is designed to
 return more informative error messages.
-}
-\details{
-Currently, \code{assert()} reexports \code{assertthat::assert_that()}.
 }
 \examples{
 assert(
