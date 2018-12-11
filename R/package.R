@@ -6,7 +6,20 @@
 #'
 #' @importFrom R.utils capitalize
 #' @importFrom assertive.base is2
-#' @importFrom checkmate makeTest makeTestFunction vname
 #' @importFrom methods as formalArgs is setGeneric setMethod signature
 #' @importFrom utils capture.output head
 "_PACKAGE"
+
+
+
+#' @importFrom checkmate makeTest
+#' @export
+checkmate::makeTest
+
+#' @importFrom checkmate makeTestFunction
+#' @export
+checkmate::makeTestFunction
+
+#' @importFrom checkmate vname
+#' @export
+checkmate::vname
