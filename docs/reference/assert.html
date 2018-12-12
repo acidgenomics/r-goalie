@@ -34,8 +34,7 @@
   
 <meta property="og:title" content="Assert That Certain Conditions Are True — assert" />
 
-<meta property="og:description" content="assert() is a drop-in replacement for stopifnot(), but is designed to
-return more informative error messages." />
+<meta property="og:description" content="Currently, we're reexporting stopifnot() as assert() verbatim here." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -112,46 +111,46 @@ return more informative error messages." />
 
     <div class="ref-description">
     
-    <p><code>assert()</code> is a drop-in replacement for <code><a href='https://www.rdocumentation.org/packages/base/topics/stopifnot'>stopifnot()</a></code>, but is designed to
-return more informative error messages.</p>
+    <p>Currently, we're reexporting <code><a href='https://www.rdocumentation.org/packages/base/topics/stopifnot'>stopifnot()</a></code> as <code>assert()</code> verbatim here.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>assert</span>(<span class='no'>...</span>, <span class='kw'>combine</span> <span class='kw'>=</span> <span class='st'>"and"</span>, <span class='kw'>.var.name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>assert</span>(<span class='no'>...</span>, <span class='no'>exprs</span>, <span class='kw'>local</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>...</th>
-      <td><p>[any]<br />
-List of calls to check functions.</p></td>
+      <td><p>Any number of expressions that return <code><a href='https://www.rdocumentation.org/packages/base/topics/logical'>logical(1)</a></code>, each of which
+should evaluate to <code>TRUE</code> on success and <code>FALSE</code> on failure.</p></td>
     </tr>
     <tr>
-      <th>combine</th>
-      <td><p>[<code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>]<br />
-&#8220;or&#8221; or &#8220;and&#8221; to combine the check functions with an OR
-or AND, respectively.</p></td>
+      <th>exprs</th>
+      <td><p>any number of (typically but not necessarily
+    <code><a href='https://www.rdocumentation.org/packages/base/topics/logical'>logical</a></code>) <span style="R">R</span> expressions, which should each evaluate to
+    (a logical vector of all)
+    <code><a href='https://www.rdocumentation.org/packages/base/topics/logical'>TRUE</a></code>.  Use <em>either</em> <code>&#8230;</code> <em>or</em>
+    <code>exprs</code>, the latter typically an unevaluated expression of the
+    form</p><pre>{
+   expr1
+   expr2
+   ....
+}</pre><p></p></td>
     </tr>
     <tr>
-      <th>.var.name</th>
-      <td><p>[<code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>]<br />
-Name of the checked object to print in error messages. Defaults to
-the heuristic implemented in <code>vname</code>.</p></td>
+      <th>local</th>
+      <td><p>(only when <code>exprs</code> is used:) indicates the
+    <code><a href='https://www.rdocumentation.org/packages/base/topics/environment'>environment</a></code> in which the expressions should be
+    evaluated; by default the one where <code><a href='https://www.rdocumentation.org/packages/base/topics/stopifnot'>stopifnot()</a></code> has been called from.</p></td>
     </tr>
     </table>
-    
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p>Currently, <code>assert()</code> reexports <code><a href='https://www.rdocumentation.org/packages/checkmate/topics/assert'>checkmate::assert()</a></code> with a stricter default
-setting of the <code>combine</code> argument set to <code>"and"</code> instead of <code>"or"</code>. This
-enables <code>assert()</code> to act as a substitute for <code><a href='https://www.rdocumentation.org/packages/base/topics/stopifnot'>stopifnot()</a></code>.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><ul>
-<li><p><code><a href='https://www.rdocumentation.org/packages/checkmate/topics/assert'>checkmate::assert()</a></code>.</p></li>
 <li><p><code><a href='https://www.rdocumentation.org/packages/base/topics/stopifnot'>stopifnot()</a></code>.</p></li>
+<li><p><code><a href='https://www.rdocumentation.org/packages/checkmate/topics/assert'>checkmate::assert()</a></code>.</p></li>
 <li><p><code><a href='https://www.rdocumentation.org/packages/assertthat/topics/assert_that'>assertthat::assert_that()</a></code>.</p></li>
 </ul></div>
     
@@ -167,8 +166,6 @@ enables <code>assert()</code> to act as a substitute for <code><a href='https://
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       
-      <li><a href="#details">Details</a></li>
-
       <li><a href="#see-also">See also</a></li>
       
       <li><a href="#examples">Examples</a></li>
@@ -183,7 +180,7 @@ enables <code>assert()</code> to act as a substitute for <code><a href='https://
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.2.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
 </div>
       </footer>
    </div>

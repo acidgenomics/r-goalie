@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Does the Object Have Syntactically Valid Names? — checkHasValidNames • goalie</title>
+<title>Is the Input Scalar? — isScalar • goalie</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -32,9 +32,9 @@
 
   <link href="../extra.css" rel="stylesheet">
   
-<meta property="og:title" content="Does the Object Have Syntactically Valid Names? — checkHasValidNames" />
+<meta property="og:title" content="Is the Input Scalar? — isScalar" />
 
-<meta property="og:description" content="Does the Object Have Syntactically Valid Names?" />
+<meta property="og:description" content="Scalar represents a length of 1." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -104,30 +104,46 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Does the Object Have Syntactically Valid Names?</h1>
-    <small class="dont-index">Source: <a href='https://github.com/steinbaugh/goalie/blob/master/R/checkHasValidNames.R'><code>R/checkHasValidNames.R</code></a></small>
-    <div class="hidden name"><code>checkHasValidNames.Rd</code></div>
+    <h1>Is the Input Scalar?</h1>
+    <small class="dont-index">Source: <a href='https://github.com/steinbaugh/goalie/blob/master/R/isScalar.R'><code>R/isScalar.R</code></a></small>
+    <div class="hidden name"><code>isScalar.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Does the Object Have Syntactically Valid Names?</p>
+    <p>Scalar represents a length of 1.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>checkHasValidNames</span>(<span class='no'>x</span>)
+    <pre class="usage"><span class='fu'>isScalar</span>(<span class='no'>x</span>)
 
-<span class='fu'>check_has_valid_names</span>(<span class='no'>x</span>)
+<span class='fu'>isNonScalar</span>(<span class='no'>x</span>)
 
-<span class='fu'>testHasValidNames</span>(<span class='no'>x</span>)
+<span class='fu'>isScalarList</span>(<span class='no'>x</span>)
 
-<span class='fu'>test_has_valid_names</span>(<span class='no'>x</span>)
+<span class='fu'>isScalarAtomic</span>(<span class='no'>x</span>)
 
-<span class='fu'>assertHasValidNames</span>(<span class='no'>x</span>, <span class='kw'>.var.name</span> <span class='kw'>=</span> <span class='kw pkg'>checkmate</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/checkmate/topics/vname'>vname</a></span>(<span class='no'>x</span>), <span class='kw'>add</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
+<span class='fu'>isScalarVector</span>(<span class='no'>x</span>)
 
-<span class='fu'>assert_has_valid_names</span>(<span class='no'>x</span>, <span class='kw'>.var.name</span> <span class='kw'>=</span> <span class='kw pkg'>checkmate</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/checkmate/topics/vname'>vname</a></span>(<span class='no'>x</span>), <span class='kw'>add</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
+<span class='fu'>isScalarNumeric</span>(<span class='no'>x</span>)
 
-<span class='fu'>expect_has_valid_names</span>(<span class='no'>x</span>, <span class='kw'>info</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>label</span> <span class='kw'>=</span> <span class='fu'>vname</span>(<span class='no'>x</span>))</pre>
+<span class='fu'>isScalarInteger</span>(<span class='no'>x</span>)
+
+<span class='fu'>isScalarIntegerish</span>(<span class='no'>x</span>, <span class='kw'>finite</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
+
+<span class='fu'>isScalarDouble</span>(<span class='no'>x</span>)
+
+<span class='fu'>isScalarCharacter</span>(<span class='no'>x</span>, <span class='kw'>encoding</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
+
+<span class='fu'>isScalarLogical</span>(<span class='no'>x</span>)
+
+<span class='fu'>isString</span>(<span class='no'>x</span>, <span class='kw'>encoding</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
+
+<span class='fu'>isFlag</span>(<span class='no'>x</span>)
+
+<span class='fu'>isNumber</span>(<span class='no'>x</span>)
+
+<span class='fu'>isInt</span>(<span class='no'>x</span>, <span class='kw'>finite</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -137,23 +153,16 @@
       <td><p>Object.</p></td>
     </tr>
     <tr>
-      <th>.var.name</th>
-      <td><p><code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>. Name of the checked object to print in
-assertions.</p></td>
+      <th>finite</th>
+      <td><p>Whether all values of the vector are finite. The
+non-finite values are <code>NA</code>, <code>Inf</code>, <code>-Inf</code> and <code>NaN</code>. Setting this
+to something other than <code>NULL</code> can be expensive because the whole
+vector needs to be traversed and checked.</p></td>
     </tr>
     <tr>
-      <th>add</th>
-      <td><p><code>AssertCollection</code>. Extra information to be included in the
-message for the testthat reporter. See <code><a href='https://www.rdocumentation.org/packages/testthat/topics/expect_that'>testthat::expect_that()</a></code>.</p></td>
-    </tr>
-    <tr>
-      <th>info</th>
-      <td><p><code>character</code>. Extra information to be included in the message for
-the testthat reporter. See <code><a href='https://www.rdocumentation.org/packages/testthat/topics/expect_that'>testthat::expect_that()</a></code>.</p></td>
-    </tr>
-    <tr>
-      <th>label</th>
-      <td><p><code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>. Name of the checked object to print in messages.</p></td>
+      <th>encoding</th>
+      <td><p>Expected encoding of a string or character
+vector. One of <code>UTF-8</code>, <code>latin1</code>, or <code>unknown</code>.</p></td>
     </tr>
     </table>
     
@@ -161,36 +170,36 @@ the testthat reporter. See <code><a href='https://www.rdocumentation.org/package
 
     
 <ul>
-<li><p><code>boolean flag</code> for <code>are/has/is*()</code> functions.</p></li>
-<li><p>Stop on error for <code>assert*()</code> functions
-(see <code><a href='https://www.rdocumentation.org/packages/base/topics/stop'>stop()</a></code> or <code><a href='https://www.rdocumentation.org/packages/base/topics/stopifnot'>stopifnot()</a></code> for details).</p></li>
+<li><p><code>are*</code>/<code>contains*</code>/<code>has*</code>/<code>is*</code>:
+<code><a href='https://www.rdocumentation.org/packages/base/topics/logical'>logical(1)</a></code>. Boolean flag (<code>TRUE</code>/<code>FALSE</code>).
+Intended to be used in combination with <code><a href='assert.html'>assert()</a></code> function.</p></li>
+<li><p><code>check*</code>:
+<code>TRUE</code> on success or <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code> on failure.
+Intended to be used in combination with <code><a href='validate.html'>validate()</a></code> function.</p></li>
+<li><p><code>assert*</code>:
+<code>TRUE</code> on success or error (<code><a href='https://www.rdocumentation.org/packages/base/topics/stop'>stop()</a></code>) on failure.</p></li>
 </ul>
 
     
+    <h2 class="hasAnchor" id="functions"><a class="anchor" href="#functions"></a>Functions</h2>
+
+    <ul>
+<li><p><code>isString</code>: Alias for <code>isScalarCharacter</code>.</p></li>
+<li><p><code>isFlag</code>: Alias for <code>isScalarLogical</code>.</p></li>
+<li><p><code>isNumber</code>: Alias for <code>isScalarNumeric</code>.</p></li>
+<li><p><code>isInt</code>: Alias for <code>isScalarIntegerish</code>.</p></li>
+</ul>
+    
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='validNames.html'>validNames()</a></code>.</p></div>
+    <div class='dont-index'><p><code><a href='https://www.rdocumentation.org/packages/utils/topics/help'>help(topic = "scalar-type-predicates", package = "rlang")</a></code>.</p></div>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'>## Pass ====</span>
-<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/list'>list</a></span>(<span class='kw'>a</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>b</span> <span class='kw'>=</span> <span class='fl'>2</span>)
-<span class='fu'>checkHasValidNames</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
+<span class='fu'>isScalar</span>(<span class='st'>"a"</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>isScalarInteger</span>(<span class='fl'>1L</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>isScalarIntegerish</span>(<span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
 <span class='co'>## Fail ====</span>
-<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/list'>list</a></span>(
-    <span class='kw'>`1`</span>       <span class='kw'>=</span> <span class='fl'>1</span>,  <span class='co'># can't start with number</span>
-    <span class='kw'>`foo bar`</span> <span class='kw'>=</span> <span class='fl'>2</span>,  <span class='co'># no spaces</span>
-    <span class='kw'>`foo-bar`</span> <span class='kw'>=</span> <span class='fl'>3</span>   <span class='co'># no hyphens</span>
-)
-<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/print'>print</a></span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; $`1`
-#&gt; [1] 1
-#&gt; 
-#&gt; $`foo bar`
-#&gt; [1] 2
-#&gt; 
-#&gt; $`foo-bar`
-#&gt; [1] 3
-#&gt; </div><div class='input'><span class='fu'>checkHasValidNames</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] "Object does not have valid names"</div></pre>
+<span class='fu'>isScalar</span>(<span class='kw'>NULL</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>isScalar</span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>))</div><div class='output co'>#&gt; [1] FALSE</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -198,6 +207,8 @@ the testthat reporter. See <code><a href='https://www.rdocumentation.org/package
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
+
+      <li><a href="#functions">Functions</a></li>
 
       <li><a href="#see-also">See also</a></li>
       
@@ -213,7 +224,7 @@ the testthat reporter. See <code><a href='https://www.rdocumentation.org/package
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.2.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
 </div>
       </footer>
    </div>

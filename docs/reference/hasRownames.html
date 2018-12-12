@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Does the Object Have Row Names? — checkHasRownames • goalie</title>
+<title>Does the Input Have Row Names? — hasRownames • goalie</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -32,9 +32,9 @@
 
   <link href="../extra.css" rel="stylesheet">
   
-<meta property="og:title" content="Does the Object Have Row Names? — checkHasRownames" />
+<meta property="og:title" content="Does the Input Have Row Names? — hasRownames" />
 
-<meta property="og:description" content="Does the Object Have Row Names?" />
+<meta property="og:description" content="Does the Input Have Row Names?" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -104,30 +104,18 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Does the Object Have Row Names?</h1>
-    <small class="dont-index">Source: <a href='https://github.com/steinbaugh/goalie/blob/master/R/checkHasRownames.R'><code>R/checkHasRownames.R</code></a></small>
-    <div class="hidden name"><code>checkHasRownames.Rd</code></div>
+    <h1>Does the Input Have Row Names?</h1>
+    <small class="dont-index">Source: <a href='https://github.com/steinbaugh/goalie/blob/master/R/hasRownames.R'><code>R/hasRownames.R</code></a></small>
+    <div class="hidden name"><code>hasRownames.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Does the Object Have Row Names?</p>
+    <p>Does the Input Have Row Names?</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>checkHasRownames</span>(<span class='no'>x</span>)
-
-<span class='fu'>check_has_rownames</span>(<span class='no'>x</span>)
-
-<span class='fu'>testHasRownames</span>(<span class='no'>x</span>)
-
-<span class='fu'>test_has_rownames</span>(<span class='no'>x</span>)
-
-<span class='fu'>assertHasRownames</span>(<span class='no'>x</span>, <span class='kw'>.var.name</span> <span class='kw'>=</span> <span class='kw pkg'>checkmate</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/checkmate/topics/vname'>vname</a></span>(<span class='no'>x</span>), <span class='kw'>add</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
-
-<span class='fu'>assert_has_rownames</span>(<span class='no'>x</span>, <span class='kw'>.var.name</span> <span class='kw'>=</span> <span class='kw pkg'>checkmate</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/checkmate/topics/vname'>vname</a></span>(<span class='no'>x</span>), <span class='kw'>add</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
-
-<span class='fu'>expect_has_rownames</span>(<span class='no'>x</span>, <span class='kw'>info</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>label</span> <span class='kw'>=</span> <span class='fu'>vname</span>(<span class='no'>x</span>))</pre>
+    <pre class="usage"><span class='fu'>hasRownames</span>(<span class='no'>x</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -136,42 +124,22 @@
       <th>x</th>
       <td><p>Object.</p></td>
     </tr>
-    <tr>
-      <th>.var.name</th>
-      <td><p><code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>. Name of the checked object to print in
-assertions.</p></td>
-    </tr>
-    <tr>
-      <th>add</th>
-      <td><p><code>AssertCollection</code>. Extra information to be included in the
-message for the testthat reporter. See <code><a href='https://www.rdocumentation.org/packages/testthat/topics/expect_that'>testthat::expect_that()</a></code>.</p></td>
-    </tr>
-    <tr>
-      <th>info</th>
-      <td><p><code>character</code>. Extra information to be included in the message for
-the testthat reporter. See <code><a href='https://www.rdocumentation.org/packages/testthat/topics/expect_that'>testthat::expect_that()</a></code>.</p></td>
-    </tr>
-    <tr>
-      <th>label</th>
-      <td><p><code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>. Name of the checked object to print in messages.</p></td>
-    </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     
 <ul>
-<li><p><code>boolean flag</code> for <code>are/has/is*()</code> functions.</p></li>
-<li><p>Stop on error for <code>assert*()</code> functions
-(see <code><a href='https://www.rdocumentation.org/packages/base/topics/stop'>stop()</a></code> or <code><a href='https://www.rdocumentation.org/packages/base/topics/stopifnot'>stopifnot()</a></code> for details).</p></li>
+<li><p><code>are*</code>/<code>contains*</code>/<code>has*</code>/<code>is*</code>:
+<code><a href='https://www.rdocumentation.org/packages/base/topics/logical'>logical(1)</a></code>. Boolean flag (<code>TRUE</code>/<code>FALSE</code>).
+Intended to be used in combination with <code><a href='assert.html'>assert()</a></code> function.</p></li>
+<li><p><code>check*</code>:
+<code>TRUE</code> on success or <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code> on failure.
+Intended to be used in combination with <code><a href='validate.html'>validate()</a></code> function.</p></li>
+<li><p><code>assert*</code>:
+<code>TRUE</code> on success or error (<code><a href='https://www.rdocumentation.org/packages/base/topics/stop'>stop()</a></code>) on failure.</p></li>
 </ul>
 
-    
-    <h2 class="hasAnchor" id="functions"><a class="anchor" href="#functions"></a>Functions</h2>
-
-    <ul>
-<li><p><code>check_has_rownames</code>: snake alias.</p></li>
-</ul>
     
     <h2 class="hasAnchor" id="data-frame"><a class="anchor" href="#data-frame"></a>data.frame</h2>
 
@@ -191,20 +159,20 @@ rows.</p>
 )
 <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/print'>print</a></span>(<span class='no'>x</span>)</div><div class='output co'>#&gt;       sample1 sample2
 #&gt; gene1       1       3
-#&gt; gene2       2       4</div><div class='input'><span class='fu'>checkHasRownames</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
+#&gt; gene2       2       4</div><div class='input'><span class='fu'>hasRownames</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
 <span class='co'>## Fail ====</span>
 <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/data.frame'>data.frame</a></span>(<span class='kw'>a</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/seq'>seq_len</a></span>(<span class='fl'>2L</span>))
 <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/print'>print</a></span>(<span class='no'>x</span>)</div><div class='output co'>#&gt;   a
 #&gt; 1 1
 #&gt; 2 2</div><div class='input'><span class='co'># Standard data frame doesn't allow NULL row names.</span>
-<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/colnames'>rownames</a></span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] "1" "2"</div><div class='input'><span class='fu'>checkHasRownames</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] "Object is data.frame with sequence row names (soft NULL)"</div><div class='input'>
+<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/colnames'>rownames</a></span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] "1" "2"</div><div class='input'><span class='fu'>hasRownames</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'>
 <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>S4Vectors</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/S4Vectors/topics/DataFrame-class'>DataFrame</a></span>(<span class='kw'>a</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/seq'>seq_len</a></span>(<span class='fl'>2L</span>))
 <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/print'>print</a></span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; DataFrame with 2 rows and 1 column
 #&gt;           a
 #&gt;   &lt;integer&gt;
 #&gt; 1         1
 #&gt; 2         2</div><div class='input'><span class='co'># S4 data frame does allow NULL row names.</span>
-<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/colnames'>rownames</a></span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; NULL</div><div class='input'><span class='fu'>checkHasRownames</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] TRUE</div></pre>
+<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/colnames'>rownames</a></span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; NULL</div><div class='input'><span class='fu'>hasRownames</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] TRUE</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -212,8 +180,6 @@ rows.</p>
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
-
-      <li><a href="#functions">Functions</a></li>
 
       <li><a href="#data-frame">data.frame</a></li>
       
@@ -229,7 +195,7 @@ rows.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.2.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
 </div>
       </footer>
    </div>
