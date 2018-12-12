@@ -4,24 +4,58 @@
 \alias{params}
 \title{Parameters}
 \arguments{
+\item{add}{\code{AssertCollection}. Extra information to be included in the
+message for the testthat reporter. See \code{testthat::expect_that()}.}
+
+\item{classes}{\code{character}. Object classes.}
+
 \item{envir}{\code{environment}. Environment.}
 
 \item{genes}{\code{character}. Genes.}
 
-\item{inherits}{\code{boolean}. Should the enclosing frames of the \code{environment}
-be searched?}
+\item{info}{\code{character}. Extra information to be included in the message for
+the testthat reporter. See \code{testthat::expect_that()}.}
 
-\item{names}{\code{character}. Names (e.g. rownames, colnames).}
+\item{inherits}{\code{logical(1)}. Should the enclosing frames of the
+\code{environment} be searched?}
+
+\item{label}{\code{character(1)}. Name of the checked object to print in messages.}
+
+\item{name}{\code{character}. Element name.}
+
+\item{na.ok}{\code{logical(1)}. If set to \code{TRUE}, \code{x} may also be \code{NA}.}
+
+\item{names}{\code{character}. Element names (e.g. row names, column names).}
+
+\item{null.ok}{\code{logical(1)}. If set to \code{TRUE}, \code{x} may also be \code{NULL}.}
+
+\item{object}{Object.}
+
+\item{pattern}{\code{character(1)}. Pattern to use for matching.}
 
 \item{x}{Object.}
+
+\item{y}{Secondary object.}
+
+\item{.var.name}{\code{character(1)}. Name of the checked object to print in
+asserions.}
+
+\item{.xname}{\emph{Not intended to be used directly.}}
+
+\item{.yname}{\emph{Not intended to be used directly.}}
 
 \item{...}{Additional arguments.}
 }
 \value{
 \itemize{
-\item \code{boolean flag} for \code{are/has/is*()} functions.
-\item Stop on error for \code{assert*()} functions
-(see \code{base::stop()} or \code{base::stopifnot()} for details).
+\item \code{are*}/\code{contains*}/\code{has*}/\code{is*}:
+\code{logical(1)}. Boolean flag (\code{TRUE}/\code{FALSE}).
+Intended to be used in combination with \code{assert()} function.
+\item \code{check*}:
+\code{TRUE} on success or \code{character(1)} on failure.
+Intended to be used in combination with \code{validate()} function.
+\item \code{assert*}:
+\code{TRUE} on success or error (\code{stop()}) on failure.
 }
 }
 \description{

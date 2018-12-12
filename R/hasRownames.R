@@ -1,49 +1,72 @@
-#' Has Rownames?
+#' Does the Input Have Row Names?
 #'
-#' A stricter alternative to the assertive version that works properly with
-#' data frames.
+#' @section data.frame:
 #'
+#' Standard `data.frame` class objects cannot have `NULL` row names defined.
+#' Here we are checking to see if a `data.frame` has soft `NULL` row names,
+#' meaning that they return as a sequence that is identical to the number of
+#' rows.
+#'
+#' @name hasRownames
 #' @inherit params
 #' @export
 #'
-#' @note Also, `tibble::has_rownames()` appears to be more consistent than
-#' `assertive.properties::has_rownames()` for `DataFrame` and `tbl_df` class.
-#'
 #' @examples
-#' x <- S4Vectors::DataFrame(
+#' ## Pass ====
+#' x <- data.frame(
 #'     "sample1" = c(1L, 2L),
 #'     "sample2" = c(3L, 4L),
 #'     row.names = c("gene1", "gene2")
 #' )
 #' print(x)
 #' hasRownames(x)
-hasRownames <- function(x) {
-    if (
-        is(x, "data.table") ||
-        is(x, "tbl_df")
-    ) {
-        # Check for rowname column for classes that inherit data.frame but
-        # don't allow rownames to be set.
-        "rowname" %in% colnames(x)
-    } else if (identical(
-        x = as.character(rownames(x)),
-        y = as.character(seq_len(nrow(x)))
-    )) {
-        # Check for numeric rownames that match rows.
-        FALSE
-    } else {
-        has_rownames(x)
+#'
+#' ## Fail ====
+#' x <- data.frame(a = seq_len(2L))
+#' print(x)
+#' # Standard data frame doesn't allow NULL row names.
+#' rownames(x)
+#' hasRownames(x)
+#'
+#' x <- S4Vectors::DataFrame(a = seq_len(2L))
+#' print(x)
+#' # S4 data frame does allow NULL row names.
+#' rownames(x)
+#' hasRownames(x)
+NULL
+
+
+
+.hasRownames <- function(x) {
+    # Classes that extend data.frame but intentionally don't support row names.
+    if (inherits(x, "data.table")) {
+        return("data.table class objects don't support row names")
+    } else if (inherits(x, "tbl_df")) {
+        return("tibble (tbl_df) class objects don't support row names")
     }
+
+    # Standard data frames can't return NULL row names, so check for sequence.
+    if (
+        inherits(x, "data.frame") &&
+        identical(
+            x = as(rownames(x), "character"),
+            y = as(seq_len(nrow(x)), "character")
+        )
+    ) {
+        return("Object is data.frame with sequence row names (soft NULL)")
+    }
+
+    # Other classes (e.g. matrix, DataFrame) do support NULL row names.
+    ok <- !is.null(rownames(x))
+    if (!ok) {
+        "Object has NULL row names"
+    }
+
+    TRUE
 }
+
+
 
 #' @rdname hasRownames
 #' @export
-assertHasRownames <- function(x) {
-    assert_that(hasRownames(x))
-    if (!is(x, "tbl_df")) {
-        assert_are_disjoint_sets(
-            x = rownames(x),
-            y = as.character(seq_len(nrow(x)))
-        )
-    }
-}
+hasRownames <- makeTestFunction(.hasRownames)
