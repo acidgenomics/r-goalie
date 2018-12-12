@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Are These Valid Names? — validNames • goalie</title>
+<title>Does the Requested Input Exist in the Environment? — isExisting • goalie</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -32,9 +32,9 @@
 
   <link href="../extra.css" rel="stylesheet">
   
-<meta property="og:title" content="Are These Valid Names? — validNames" />
+<meta property="og:title" content="Does the Requested Input Exist in the Environment? — isExisting" />
 
-<meta property="og:description" content="Are These Valid Names?" />
+<meta property="og:description" content="Does the Requested Input Exist in the Environment?" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -104,25 +104,49 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Are These Valid Names?</h1>
-    <small class="dont-index">Source: <a href='https://github.com/steinbaugh/goalie/blob/master/R/validNames.R'><code>R/validNames.R</code></a></small>
-    <div class="hidden name"><code>validNames.Rd</code></div>
+    <h1>Does the Requested Input Exist in the Environment?</h1>
+    <small class="dont-index">Source: <a href='https://github.com/steinbaugh/goalie/blob/master/R/isExisting.R'><code>R/isExisting.R</code></a></small>
+    <div class="hidden name"><code>isExisting.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Are These Valid Names?</p>
+    <p>Does the Requested Input Exist in the Environment?</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>validNames</span>(<span class='no'>x</span>)</pre>
+    <pre class="usage"><span class='fu'>isExisting</span>(<span class='no'>x</span>, <span class='kw'>envir</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/sys.parent'>parent.frame</a></span>(), <span class='kw'>inherits</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>.xname</span> <span class='kw'>=</span> <span class='fu'>get_name_in_parent</span>(<span class='no'>x</span>))
+
+<span class='fu'>areExisting</span>(<span class='no'>x</span>, <span class='no'>...</span>)
+
+<span class='fu'>isNonExisting</span>(<span class='no'>x</span>, <span class='no'>...</span>)
+
+<span class='fu'>areNonExisting</span>(<span class='no'>x</span>, <span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>x</th>
-      <td><p>Object.</p></td>
+      <td><p><code>character</code>. Variable names to check in <code>environment</code>.</p></td>
+    </tr>
+    <tr>
+      <th>envir</th>
+      <td><p><code>environment</code>. Environment.</p></td>
+    </tr>
+    <tr>
+      <th>inherits</th>
+      <td><p><code><a href='https://www.rdocumentation.org/packages/base/topics/logical'>logical(1)</a></code>. Should the enclosing frames of the
+<code>environment</code> be searched?</p></td>
+    </tr>
+    <tr>
+      <th>.xname</th>
+      <td><p><em>Not intended to be used directly.</em></p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>Additional arguments.</p></td>
     </tr>
     </table>
     
@@ -141,21 +165,24 @@ Intended to be used in combination with <code><a href='validate.html'>validate()
 </ul>
 
     
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+    <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
-    <div class='dont-index'><ul>
-<li><p><code><a href='https://www.rdocumentation.org/packages/base/topics/make.names'>make.names()</a></code>.</p></li>
-<li><p><code><a href='https://www.rdocumentation.org/packages/basejump/topics/makeNames'>basejump::makeNames()</a></code>.</p></li>
-</ul></div>
+    <p><code><a href='https://www.rdocumentation.org/packages/base/topics/exists'>exists()</a></code> only supports <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>, so we are exporting
+<code>isExisting()</code> as a convenience function to check multiple variables in a
+single call.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'>## Dots (periods) and underscores are valid.</span>
-<span class='fu'>validNames</span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"sample.1"</span>, <span class='st'>"sample_1"</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
-<span class='co'>## Can't begin with a number.</span>
-<span class='fu'>validNames</span>(<span class='st'>"293cells"</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'>
-<span class='co'>## Spaces, dashes (hyphens), and other non-alphanumerics aren't valid.</span>
-<span class='fu'>validNames</span>(<span class='st'>"sample 1"</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>validNames</span>(<span class='st'>"cell-AAAAAAAA"</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>validNames</span>(<span class='st'>"GFP+"</span>)</div><div class='output co'>#&gt; [1] FALSE</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/warning'>suppressWarnings</a></span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/rm'>rm</a></span>(<span class='no'>x</span>, <span class='no'>y</span>))
+<span class='no'>a</span> <span class='kw'>&lt;-</span> <span class='fl'>1L</span>
+<span class='no'>b</span> <span class='kw'>&lt;-</span> <span class='fl'>2L</span>
+
+<span class='co'>## Pass ====</span>
+<span class='fu'>isExisting</span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>))</div><div class='output co'>#&gt;    a    b 
+#&gt; TRUE TRUE </div><div class='input'><span class='fu'>areNonExisting</span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"x"</span>, <span class='st'>"y"</span>))</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'>
+<span class='co'>## Fail ====</span>
+<span class='fu'>isExisting</span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"x"</span>, <span class='st'>"y"</span>))</div><div class='output co'>#&gt;     x     y 
+#&gt; FALSE FALSE </div><div class='input'><span class='fu'>areNonExisting</span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>))</div><div class='output co'>#&gt; [1] TRUE</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -164,7 +191,7 @@ Intended to be used in combination with <code><a href='validate.html'>validate()
       
       <li><a href="#value">Value</a></li>
 
-      <li><a href="#see-also">See also</a></li>
+      <li><a href="#note">Note</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>

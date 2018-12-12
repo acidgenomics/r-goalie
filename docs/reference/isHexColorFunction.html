@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Does the Argument Contain an Alpha Level? — checkAlpha • goalie</title>
+<title>Does the Argument Contain a Function That Returns Hexadecimal Colors? — isHexColorFunction • goalie</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -32,9 +32,10 @@
 
   <link href="../extra.css" rel="stylesheet">
   
-<meta property="og:title" content="Does the Argument Contain an Alpha Level? — checkAlpha" />
+<meta property="og:title" content="Does the Argument Contain a Function That Returns Hexadecimal Colors? — isHexColorFunction" />
 
-<meta property="og:description" content="An alpha level must be a scalar numeric greater than 0 and less than 1." />
+<meta property="og:description" content="This assert check is intended primarily to check for RColorBrewer or viridis
+hexadecimal color value return." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -104,30 +105,19 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Does the Argument Contain an Alpha Level?</h1>
-    <small class="dont-index">Source: <a href='https://github.com/steinbaugh/goalie/blob/master/R/checkAlpha.R'><code>R/checkAlpha.R</code></a></small>
-    <div class="hidden name"><code>checkAlpha.Rd</code></div>
+    <h1>Does the Argument Contain a Function That Returns Hexadecimal Colors?</h1>
+    <small class="dont-index">Source: <a href='https://github.com/steinbaugh/goalie/blob/master/R/isHexColorFunction.R'><code>R/isHexColorFunction.R</code></a></small>
+    <div class="hidden name"><code>isHexColorFunction.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>An alpha level must be a <code>scalar numeric</code> greater than 0 and less than 1.</p>
+    <p>This assert check is intended primarily to check for RColorBrewer or viridis
+hexadecimal color value return.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>checkAlpha</span>(<span class='no'>x</span>)
-
-<span class='fu'>check_alpha</span>(<span class='no'>x</span>)
-
-<span class='fu'>testAlpha</span>(<span class='no'>x</span>)
-
-<span class='fu'>test_alpha</span>(<span class='no'>x</span>)
-
-<span class='fu'>assertAlpha</span>(<span class='no'>x</span>, <span class='kw'>.var.name</span> <span class='kw'>=</span> <span class='kw pkg'>checkmate</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/checkmate/topics/vname'>vname</a></span>(<span class='no'>x</span>), <span class='kw'>add</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
-
-<span class='fu'>assert_alpha</span>(<span class='no'>x</span>, <span class='kw'>.var.name</span> <span class='kw'>=</span> <span class='kw pkg'>checkmate</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/checkmate/topics/vname'>vname</a></span>(<span class='no'>x</span>), <span class='kw'>add</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
-
-<span class='fu'>expect_alpha</span>(<span class='no'>x</span>, <span class='kw'>info</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>label</span> <span class='kw'>=</span> <span class='fu'>vname</span>(<span class='no'>x</span>))</pre>
+    <pre class="usage"><span class='fu'>isHexColorFunction</span>(<span class='no'>x</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -136,43 +126,35 @@
       <th>x</th>
       <td><p>Object.</p></td>
     </tr>
-    <tr>
-      <th>.var.name</th>
-      <td><p><code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>. Name of the checked object to print in
-assertions.</p></td>
-    </tr>
-    <tr>
-      <th>add</th>
-      <td><p><code>AssertCollection</code>. Extra information to be included in the
-message for the testthat reporter. See <code><a href='https://www.rdocumentation.org/packages/testthat/topics/expect_that'>testthat::expect_that()</a></code>.</p></td>
-    </tr>
-    <tr>
-      <th>info</th>
-      <td><p><code>character</code>. Extra information to be included in the message for
-the testthat reporter. See <code><a href='https://www.rdocumentation.org/packages/testthat/topics/expect_that'>testthat::expect_that()</a></code>.</p></td>
-    </tr>
-    <tr>
-      <th>label</th>
-      <td><p><code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>. Name of the checked object to print in messages.</p></td>
-    </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     
 <ul>
-<li><p><code>boolean flag</code> for <code>are/has/is*()</code> functions.</p></li>
-<li><p>Stop on error for <code>assert*()</code> functions
-(see <code><a href='https://www.rdocumentation.org/packages/base/topics/stop'>stop()</a></code> or <code><a href='https://www.rdocumentation.org/packages/base/topics/stopifnot'>stopifnot()</a></code> for details).</p></li>
+<li><p><code>are*</code>/<code>contains*</code>/<code>has*</code>/<code>is*</code>:
+<code><a href='https://www.rdocumentation.org/packages/base/topics/logical'>logical(1)</a></code>. Boolean flag (<code>TRUE</code>/<code>FALSE</code>).
+Intended to be used in combination with <code><a href='assert.html'>assert()</a></code> function.</p></li>
+<li><p><code>check*</code>:
+<code>TRUE</code> on success or <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code> on failure.
+Intended to be used in combination with <code><a href='validate.html'>validate()</a></code> function.</p></li>
+<li><p><code>assert*</code>:
+<code>TRUE</code> on success or error (<code><a href='https://www.rdocumentation.org/packages/base/topics/stop'>stop()</a></code>) on failure.</p></li>
 </ul>
 
+    
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p>RColorBrewer, viridis packages.</p></div>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'>## Pass ====</span>
-<span class='fu'>checkAlpha</span>(<span class='fl'>0.05</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
+<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>viridis</span><span class='kw ns'>::</span><span class='no'><a href='https://www.rdocumentation.org/packages/viridis/topics/reexports'>viridis</a></span>
+<span class='fu'>isHexColorFunction</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
 <span class='co'>## Fail ====</span>
-<span class='fu'>checkAlpha</span>(<span class='st'>"xxx"</span>)</div><div class='output co'>#&gt; [1] "An alpha level must be a scalar numeric &gt; 0 and &lt; 1"</div><div class='input'><span class='fu'>checkAlpha</span>(<span class='fl'>1L</span>)</div><div class='output co'>#&gt; [1] "An alpha level must be a scalar numeric &gt; 0 and &lt; 1"</div></pre>
+<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>ggplot2</span><span class='kw ns'>::</span><span class='no'><a href='https://ggplot2.tidyverse.org/reference/scale_manual.html'>scale_colour_manual</a></span>
+<span class='fu'>isHexColorFunction</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] FALSE</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -180,6 +162,8 @@ the testthat reporter. See <code><a href='https://www.rdocumentation.org/package
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
+
+      <li><a href="#see-also">See also</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>
@@ -193,7 +177,7 @@ the testthat reporter. See <code><a href='https://www.rdocumentation.org/package
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.2.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
 </div>
       </footer>
    </div>
