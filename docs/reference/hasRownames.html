@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Has Rownames? — hasRownames • goalie</title>
+<title>Does the Input Have Row Names? — hasRownames • goalie</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -32,10 +32,9 @@
 
   <link href="../extra.css" rel="stylesheet">
   
-<meta property="og:title" content="Has Rownames? — hasRownames" />
+<meta property="og:title" content="Does the Input Have Row Names? — hasRownames" />
 
-<meta property="og:description" content="A stricter alternative to the assertive version that works properly with
-data frames." />
+<meta property="og:description" content="Does the Input Have Row Names?" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -66,7 +65,7 @@ data frames." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">goalie</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
       </span>
     </div>
 
@@ -105,21 +104,18 @@ data frames." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Has Rownames?</h1>
+    <h1>Does the Input Have Row Names?</h1>
     <small class="dont-index">Source: <a href='https://github.com/steinbaugh/goalie/blob/master/R/hasRownames.R'><code>R/hasRownames.R</code></a></small>
     <div class="hidden name"><code>hasRownames.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>A stricter alternative to the assertive version that works properly with
-data frames.</p>
+    <p>Does the Input Have Row Names?</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>hasRownames</span>(<span class='no'>x</span>)
-
-<span class='fu'>assertHasRownames</span>(<span class='no'>x</span>)</pre>
+    <pre class="usage"><span class='fu'>hasRownames</span>(<span class='no'>x</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -134,29 +130,49 @@ data frames.</p>
 
     
 <ul>
-<li><p><code>boolean flag</code> for <code>are/has/is*()</code> functions.</p></li>
-<li><p>Stop on error for <code>assert*()</code> functions
-(see <code><a href='https://www.rdocumentation.org/packages/base/topics/stop'>base::stop()</a></code> or <code><a href='https://www.rdocumentation.org/packages/base/topics/stopifnot'>base::stopifnot()</a></code> for details).</p></li>
+<li><p><code>are*</code>/<code>contains*</code>/<code>has*</code>/<code>is*</code>:
+<code><a href='https://www.rdocumentation.org/packages/base/topics/logical'>logical(1)</a></code>. Boolean flag (<code>TRUE</code>/<code>FALSE</code>).
+Intended to be used in combination with <code><a href='assert.html'>assert()</a></code> function.</p></li>
+<li><p><code>check*</code>:
+<code>TRUE</code> on success or <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code> on failure.
+Intended to be used in combination with <code><a href='validate.html'>validate()</a></code> function.</p></li>
+<li><p><code>assert*</code>:
+<code>TRUE</code> on success or error (<code><a href='https://www.rdocumentation.org/packages/base/topics/stop'>stop()</a></code>) on failure.</p></li>
 </ul>
 
     
-    <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
+    <h2 class="hasAnchor" id="data-frame"><a class="anchor" href="#data-frame"></a>data.frame</h2>
 
-    <p>Also, <code><a href='https://www.rdocumentation.org/packages/tibble/topics/rownames'>tibble::has_rownames()</a></code> appears to be more consistent than
-<code><a href='https://www.rdocumentation.org/packages/assertive.properties/topics/has_names'>assertive.properties::has_rownames()</a></code> for <code>DataFrame</code> and <code>tbl_df</code> class.</p>
+    
+    <p>Standard <code>data.frame</code> class objects cannot have <code>NULL</code> row names defined.
+Here we are checking to see if a <code>data.frame</code> has soft <code>NULL</code> row names,
+meaning that they return as a sequence that is identical to the number of
+rows.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>S4Vectors</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/S4Vectors/topics/DataFrame-class'>DataFrame</a></span>(
+    <pre class="examples"><div class='input'><span class='co'>## Pass ====</span>
+<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/data.frame'>data.frame</a></span>(
     <span class='st'>"sample1"</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='fl'>1L</span>, <span class='fl'>2L</span>),
     <span class='st'>"sample2"</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='fl'>3L</span>, <span class='fl'>4L</span>),
     <span class='kw'>row.names</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"gene1"</span>, <span class='st'>"gene2"</span>)
 )
-<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/print'>print</a></span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; DataFrame with 2 rows and 2 columns
-#&gt;         sample1   sample2
-#&gt;       &lt;integer&gt; &lt;integer&gt;
-#&gt; gene1         1         3
-#&gt; gene2         2         4</div><div class='input'><span class='fu'>hasRownames</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] TRUE</div></pre>
+<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/print'>print</a></span>(<span class='no'>x</span>)</div><div class='output co'>#&gt;       sample1 sample2
+#&gt; gene1       1       3
+#&gt; gene2       2       4</div><div class='input'><span class='fu'>hasRownames</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
+<span class='co'>## Fail ====</span>
+<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/data.frame'>data.frame</a></span>(<span class='kw'>a</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/seq'>seq_len</a></span>(<span class='fl'>2L</span>))
+<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/print'>print</a></span>(<span class='no'>x</span>)</div><div class='output co'>#&gt;   a
+#&gt; 1 1
+#&gt; 2 2</div><div class='input'><span class='co'># Standard data frame doesn't allow NULL row names.</span>
+<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/colnames'>rownames</a></span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] "1" "2"</div><div class='input'><span class='fu'>hasRownames</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'>
+<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>S4Vectors</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/S4Vectors/topics/DataFrame-class'>DataFrame</a></span>(<span class='kw'>a</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/seq'>seq_len</a></span>(<span class='fl'>2L</span>))
+<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/print'>print</a></span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; DataFrame with 2 rows and 1 column
+#&gt;           a
+#&gt;   &lt;integer&gt;
+#&gt; 1         1
+#&gt; 2         2</div><div class='input'><span class='co'># S4 data frame does allow NULL row names.</span>
+<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/colnames'>rownames</a></span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; NULL</div><div class='input'><span class='fu'>hasRownames</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] TRUE</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -165,7 +181,7 @@ data frames.</p>
       
       <li><a href="#value">Value</a></li>
 
-      <li><a href="#note">Note</a></li>
+      <li><a href="#data-frame">data.frame</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>
@@ -179,7 +195,7 @@ data frames.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.2.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
 </div>
       </footer>
    </div>

@@ -2,26 +2,7 @@
 % Please edit documentation in R/deprecated.R
 \name{deprecated}
 \alias{deprecated}
-\alias{assertAllAreNonExisting}
-\alias{assertAllAreValidNames}
-\alias{assertIsAHeaderLevel}
-\alias{assertIsAStringOrNULL}
-\alias{areSamplesUnique}
 \title{Deprecated Functions}
-\usage{
-assertAllAreNonExisting(...)
-
-assertAllAreValidNames(...)
-
-assertIsAHeaderLevel(...)
-
-assertIsAStringOrNULL(...)
-
-areSamplesUnique(...)
-}
-\arguments{
-\item{...}{Additional arguments.}
-}
 \value{
 \code{.Deprecated()}.
 }

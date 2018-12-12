@@ -2,36 +2,35 @@
 % Please edit documentation in R/isFile.R
 \name{isFile}
 \alias{isFile}
-\alias{assertIsFile}
-\alias{areFiles}
-\alias{assertAreFiles}
-\title{Is File?}
+\alias{isAFile}
+\title{Does the Input Contain a File?}
 \usage{
-assertIsFile(x)
+isFile(x)
 
-areFiles(x)
-
-assertAreFiles(x)
+isAFile(x)
 }
 \arguments{
 \item{x}{Object.}
 }
 \value{
-\itemize{
-\item \code{boolean flag} for \code{are/has/is*()} functions.
-\item Stop on error for \code{assert*()} functions
-(see \code{base::stop()} or \code{base::stopifnot()} for details).
-}
+\code{logical}.
 }
 \description{
-Is File?
+Does the Input Contain a File?
 }
+\section{Functions}{
+\itemize{
+\item \code{isFile}: Supports multiple files.
+
+\item \code{isAFile}: Check for a single file.
+}}
+
 \examples{
-x <- system.file("extdata/example.rds", package = "basejump")
-
-## Requires scalar.
-isFile(x)
-
-## Parameterized.
-areFiles(rep(x, times = 2L))
+x <- "example.txt"
+file.create(x)
+isAFile(x)
+unlink(x)
+}
+\seealso{
+\code{R.utils::isFile()}.
 }
