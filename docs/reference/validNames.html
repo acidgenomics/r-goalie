@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Are the Names Syntatically Valid? — validNames • goalie</title>
+<title>Are These Valid Names? — validNames • goalie</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -32,9 +32,9 @@
 
   <link href="../extra.css" rel="stylesheet">
   
-<meta property="og:title" content="Are the Names Syntatically Valid? — validNames" />
+<meta property="og:title" content="Are These Valid Names? — validNames" />
 
-<meta property="og:description" content="Are the Names Syntatically Valid?" />
+<meta property="og:description" content="Are These Valid Names?" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -65,7 +65,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">goalie</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
       </span>
     </div>
 
@@ -104,34 +104,22 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Are the Names Syntatically Valid?</h1>
+    <h1>Are These Valid Names?</h1>
     <small class="dont-index">Source: <a href='https://github.com/steinbaugh/goalie/blob/master/R/validNames.R'><code>R/validNames.R</code></a></small>
     <div class="hidden name"><code>validNames.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Are the Names Syntatically Valid?</p>
+    <p>Are These Valid Names?</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>validNames</span>(<span class='no'>names</span>)
-
-<span class='fu'>assertAreValidNames</span>(<span class='no'>names</span>)
-
-<span class='fu'>assertHasValidNames</span>(<span class='no'>x</span>)
-
-<span class='fu'>validDimnames</span>(<span class='no'>x</span>)
-
-<span class='fu'>assertHasValidDimnames</span>(<span class='no'>x</span>)</pre>
+    <pre class="usage"><span class='fu'>validNames</span>(<span class='no'>x</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>names</th>
-      <td><p><code>character</code>. Names (e.g. rownames, colnames).</p></td>
-    </tr>
     <tr>
       <th>x</th>
       <td><p>Object.</p></td>
@@ -142,26 +130,32 @@
 
     
 <ul>
-<li><p><code>boolean flag</code> for <code>are/has/is*()</code> functions.</p></li>
-<li><p>Stop on error for <code>assert*()</code> functions
-(see <code><a href='https://www.rdocumentation.org/packages/base/topics/stop'>base::stop()</a></code> or <code><a href='https://www.rdocumentation.org/packages/base/topics/stopifnot'>base::stopifnot()</a></code> for details).</p></li>
+<li><p><code>are*</code>/<code>contains*</code>/<code>has*</code>/<code>is*</code>:
+<code><a href='https://www.rdocumentation.org/packages/base/topics/logical'>logical(1)</a></code>. Boolean flag (<code>TRUE</code>/<code>FALSE</code>).
+Intended to be used in combination with <code><a href='assert.html'>assert()</a></code> function.</p></li>
+<li><p><code>check*</code>:
+<code>TRUE</code> on success or <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code> on failure.
+Intended to be used in combination with <code><a href='validate.html'>validate()</a></code> function.</p></li>
+<li><p><code>assert*</code>:
+<code>TRUE</code> on success or error (<code><a href='https://www.rdocumentation.org/packages/base/topics/stop'>stop()</a></code>) on failure.</p></li>
 </ul>
 
     
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><ul>
+<li><p><code><a href='https://www.rdocumentation.org/packages/base/topics/make.names'>make.names()</a></code>.</p></li>
+<li><p><code><a href='https://www.rdocumentation.org/packages/basejump/topics/makeNames'>basejump::makeNames()</a></code>.</p></li>
+</ul></div>
+    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># Dots (periods) and underscores are valid.</span>
+    <pre class="examples"><div class='input'><span class='co'>## Dots (periods) and underscores are valid.</span>
 <span class='fu'>validNames</span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"sample.1"</span>, <span class='st'>"sample_1"</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
-<span class='co'># Can't begin with a number.</span>
+<span class='co'>## Can't begin with a number.</span>
 <span class='fu'>validNames</span>(<span class='st'>"293cells"</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'>
-<span class='co'># Spaces, dashes (hyphens), and other non-alphanumerics aren't valid.</span>
-<span class='fu'>validNames</span>(<span class='st'>"sample 1"</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>validNames</span>(<span class='st'>"cell-AAAAAAAA"</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>validNames</span>(<span class='st'>"GFP+"</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'>
-<span class='fu'>assertAreValidNames</span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"sample1"</span>, <span class='st'>"sample2"</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
-<span class='no'>list</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/list'>list</a></span>(<span class='kw'>example</span> <span class='kw'>=</span> <span class='fl'>1L</span>)
-<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/names'>names</a></span>(<span class='no'>list</span>)</div><div class='output co'>#&gt; [1] "example"</div><div class='input'><span class='fu'>assertHasValidNames</span>(<span class='no'>list</span>)
-
-<span class='co'># Check rows and columns (dimnames) in a single call.</span>
-<span class='fu'>validDimnames</span>(<span class='kw pkg'>datasets</span><span class='kw ns'>::</span><span class='no'><a href='https://www.rdocumentation.org/packages/datasets/topics/iris'>iris</a></span>)    <span class='co'># TRUE</span></div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>validDimnames</span>(<span class='kw pkg'>datasets</span><span class='kw ns'>::</span><span class='no'><a href='https://www.rdocumentation.org/packages/datasets/topics/mtcars'>mtcars</a></span>)  <span class='co'># FALSE</span></div><div class='output co'>#&gt; [1] FALSE</div></pre>
+<span class='co'>## Spaces, dashes (hyphens), and other non-alphanumerics aren't valid.</span>
+<span class='fu'>validNames</span>(<span class='st'>"sample 1"</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>validNames</span>(<span class='st'>"cell-AAAAAAAA"</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>validNames</span>(<span class='st'>"GFP+"</span>)</div><div class='output co'>#&gt; [1] FALSE</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -169,6 +163,8 @@
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
+
+      <li><a href="#see-also">See also</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>
@@ -182,7 +178,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.2.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
 </div>
       </footer>
    </div>

@@ -2,37 +2,57 @@
 % Please edit documentation in R/hasRownames.R
 \name{hasRownames}
 \alias{hasRownames}
-\alias{assertHasRownames}
-\title{Has Rownames?}
+\title{Does the Input Have Row Names?}
 \usage{
 hasRownames(x)
-
-assertHasRownames(x)
 }
 \arguments{
 \item{x}{Object.}
 }
 \value{
 \itemize{
-\item \code{boolean flag} for \code{are/has/is*()} functions.
-\item Stop on error for \code{assert*()} functions
-(see \code{base::stop()} or \code{base::stopifnot()} for details).
+\item \code{are*}/\code{contains*}/\code{has*}/\code{is*}:
+\code{logical(1)}. Boolean flag (\code{TRUE}/\code{FALSE}).
+Intended to be used in combination with \code{assert()} function.
+\item \code{check*}:
+\code{TRUE} on success or \code{character(1)} on failure.
+Intended to be used in combination with \code{validate()} function.
+\item \code{assert*}:
+\code{TRUE} on success or error (\code{stop()}) on failure.
 }
 }
 \description{
-A stricter alternative to the assertive version that works properly with
-data frames.
+Does the Input Have Row Names?
 }
-\note{
-Also, \code{tibble::has_rownames()} appears to be more consistent than
-\code{assertive.properties::has_rownames()} for \code{DataFrame} and \code{tbl_df} class.
+\section{data.frame}{
+
+
+Standard \code{data.frame} class objects cannot have \code{NULL} row names defined.
+Here we are checking to see if a \code{data.frame} has soft \code{NULL} row names,
+meaning that they return as a sequence that is identical to the number of
+rows.
 }
+
 \examples{
-x <- S4Vectors::DataFrame(
+## Pass ====
+x <- data.frame(
     "sample1" = c(1L, 2L),
     "sample2" = c(3L, 4L),
     row.names = c("gene1", "gene2")
 )
 print(x)
+hasRownames(x)
+
+## Fail ====
+x <- data.frame(a = seq_len(2L))
+print(x)
+# Standard data frame doesn't allow NULL row names.
+rownames(x)
+hasRownames(x)
+
+x <- S4Vectors::DataFrame(a = seq_len(2L))
+print(x)
+# S4 data frame does allow NULL row names.
+rownames(x)
 hasRownames(x)
 }

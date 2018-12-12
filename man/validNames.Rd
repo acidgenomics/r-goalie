@@ -2,56 +2,43 @@
 % Please edit documentation in R/validNames.R
 \name{validNames}
 \alias{validNames}
-\alias{assertAreValidNames}
-\alias{assertHasValidNames}
-\alias{validDimnames}
-\alias{assertHasValidDimnames}
-\title{Are the Names Syntatically Valid?}
+\title{Are These Valid Names?}
 \usage{
-validNames(names)
-
-assertAreValidNames(names)
-
-assertHasValidNames(x)
-
-validDimnames(x)
-
-assertHasValidDimnames(x)
+validNames(x)
 }
 \arguments{
-\item{names}{\code{character}. Names (e.g. rownames, colnames).}
-
 \item{x}{Object.}
 }
 \value{
 \itemize{
-\item \code{boolean flag} for \code{are/has/is*()} functions.
-\item Stop on error for \code{assert*()} functions
-(see \code{base::stop()} or \code{base::stopifnot()} for details).
+\item \code{are*}/\code{contains*}/\code{has*}/\code{is*}:
+\code{logical(1)}. Boolean flag (\code{TRUE}/\code{FALSE}).
+Intended to be used in combination with \code{assert()} function.
+\item \code{check*}:
+\code{TRUE} on success or \code{character(1)} on failure.
+Intended to be used in combination with \code{validate()} function.
+\item \code{assert*}:
+\code{TRUE} on success or error (\code{stop()}) on failure.
 }
 }
 \description{
-Are the Names Syntatically Valid?
+Are These Valid Names?
 }
 \examples{
-# Dots (periods) and underscores are valid.
+## Dots (periods) and underscores are valid.
 validNames(c("sample.1", "sample_1"))
 
-# Can't begin with a number.
+## Can't begin with a number.
 validNames("293cells")
 
-# Spaces, dashes (hyphens), and other non-alphanumerics aren't valid.
+## Spaces, dashes (hyphens), and other non-alphanumerics aren't valid.
 validNames("sample 1")
 validNames("cell-AAAAAAAA")
 validNames("GFP+")
-
-assertAreValidNames(c("sample1", "sample2"))
-
-list <- list(example = 1L)
-names(list)
-assertHasValidNames(list)
-
-# Check rows and columns (dimnames) in a single call.
-validDimnames(datasets::iris)    # TRUE
-validDimnames(datasets::mtcars)  # FALSE
+}
+\seealso{
+\itemize{
+\item \code{make.names()}.
+\item \code{basejump::makeNames()}.
+}
 }

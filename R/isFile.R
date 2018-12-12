@@ -1,71 +1,32 @@
-#' Is File?
+#' Does the Input Contain a File?
 #'
 #' @name isFile
+#' @importFrom R.utils isFile
 #' @inherit params
 #'
+#' @return `logical`.
+#'
+#' @seealso `R.utils::isFile()`.
+#'
 #' @examples
-#' x <- system.file("extdata/example.rds", package = "basejump")
-#'
-#' ## Requires scalar.
-#' isFile(x)
-#'
-#' ## Parameterized.
-#' areFiles(rep(x, times = 2L))
+#' x <- "example.txt"
+#' file.create(x)
+#' isAFile(x)
+#' unlink(x)
 NULL
 
 
 
-# isFile =======================================================================
-#' @importFrom R.utils isFile
-#' @aliases NULL
+#' @describeIn isFile Supports multiple files.
 #' @export
-R.utils::isFile
-
-.msg.isFile <-  # nolint
-    function(x) {
-        paste(x, "is not an existing file.")
-    }
-
-on_failure(isFile) <- function(call, env) {
-    .msg.isFile(x = deparse(call[["x"]]))
-}
-
-#' @rdname isFile
-#' @export
-assertIsFile <- function(x) {
-    assert_that(
-        isFile(x),
-        msg = .msg.isFile(x = deparse(substitute(x)))
-    )
+isFile <- function(x) {
+    R.utils::isFile(x)
 }
 
 
 
-# areFiles ======================================================================
-#' @rdname isFile
+#' @describeIn isFile Check for a single file.
 #' @export
-areFiles <- function(x) {
-    assert_that(
-        is.character(x),
-        !any(dir.exists(x))
-    )
-    all(file.exists(x))
-}
-
-.msg.areFiles <-  # nolint
-    function(x) {
-        paste(x, "are not existing files.")
-    }
-
-on_failure(areFiles) <- function(call, env) {
-    .msg.areFiles(x = deparse(call[["x"]]))
-}
-
-#' @rdname isFile
-#' @export
-assertAreFiles <- function(x) {
-    assert_that(
-        areFiles(x),
-        msg = .msg.areFiles(x = deparse(substitute(x)))
-    )
+isAFile <- function(x) {
+    isString(x) && isFile(x)
 }
