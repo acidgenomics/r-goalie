@@ -18,7 +18,8 @@
 \alias{isInt}
 \title{Is the Input Scalar?}
 \usage{
-isScalar(x)
+isScalar(x, metric = c("length", "elements"),
+  .xname = get_name_in_parent(x))
 
 isNonScalar(x)
 
@@ -50,6 +51,11 @@ isInt(x, finite = NULL)
 }
 \arguments{
 \item{x}{Object.}
+
+\item{metric}{A string. Should be length or the number of elements be used to
+determine if the object is empty/non-empty/scalar?}
+
+\item{.xname}{\emph{Not intended to be used directly.}}
 
 \item{finite}{Whether all values of the vector are finite. The
 non-finite values are \code{NA}, \code{Inf}, \code{-Inf} and \code{NaN}. Setting this

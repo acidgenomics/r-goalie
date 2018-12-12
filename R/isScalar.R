@@ -9,6 +9,7 @@
 #'
 #' @name isScalar
 #' @inherit params
+#' @inheritParams assertive.properties::is_scalar
 #' @inheritParams rlang::is_scalar_character
 #' @inheritParams rlang::is_scalar_integerish
 #'
@@ -29,11 +30,9 @@ NULL
 
 
 #' @rdname isScalar
-#' @importFrom checkmate testScalar
+#' @importFrom assertive.properties is_scalar
 #' @export
-isScalar <- function(x) {
-    testScalar(x)
-}
+isScalar <- is_scalar
 
 
 
