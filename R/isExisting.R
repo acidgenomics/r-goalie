@@ -1,11 +1,11 @@
-# FIXME Set the formals using `formals()` here for consistency.
+# FIXME Set the formals using `formals` here for consistency.
 
 
 
 #' Does the Requested Input Exist in the Environment?
 #'
-#' @note `exists()` only supports `character(1)`, so we are exporting
-#'   `isExisting()` as a convenience function to check multiple variables in a
+#' @note `exists` only supports `character(1)`, so we are exporting
+#'   `isExisting` as a convenience function to check multiple variables in a
 #'   single call.
 #'
 #' @name isExisting
