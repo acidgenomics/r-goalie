@@ -1,9 +1,9 @@
-# NOTE Don't use `assert_that()` as a general `stopifnot()` replacement.
+# NOTE Don't use `assert_that` as a general `stopifnot` replacement.
 # It doesn't catch everything, and isn't hardened for S4 methods.
 
 #' Assert That Certain Conditions Are True
 #'
-#' Currently, we're reexporting `stopifnot()` as `assert()` verbatim here.
+#' Currently, we're reexporting `stopifnot` as `assert` verbatim here.
 #'
 #' @inheritParams base::stopifnot
 #' @export
@@ -12,9 +12,9 @@
 #'   should evaluate to `TRUE` on success and `FALSE` on failure.
 #'
 #' @seealso
-#' - `stopifnot()`.
-#' - `checkmate::assert()`.
-#' - `assertthat::assert_that()`.
+#' - `stopifnot`.
+#' - `checkmate::assert`.
+#' - `assertthat::assert_that`.
 #'
 #' @examples
 #' assert(

@@ -1,4 +1,4 @@
-# TODO Consider allowing `isInt()` to only return true for non-negative
+# TODO Consider allowing `isInt` to only return true for non-negative
 # or positive values.
 
 

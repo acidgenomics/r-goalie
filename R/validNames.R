@@ -4,8 +4,8 @@
 #' @inherit params
 #'
 #' @seealso
-#' - `make.names()`.
-#' - `basejump::makeNames()`.
+#' - `make.names`.
+#' - `basejump::makeNames`.
 #'
 #' @examples
 #' ## Dots (periods) and underscores are valid.

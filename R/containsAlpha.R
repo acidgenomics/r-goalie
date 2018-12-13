@@ -1,6 +1,6 @@
 #' Does the Input Contain an Alpha Level?
 #'
-#' An alpha level must be a `scalar numeric` greater than 0 and less than 1.
+#' An alpha level must be `numeric(1)` greater than 0 and less than 1.
 #'
 #' @name containsAlpha
 #' @inherit params
