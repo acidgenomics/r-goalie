@@ -7,7 +7,7 @@
 #' @name deprecated
 #' @keywords internal
 #' @inheritParams params
-#' @return `.Deprecated()`.
+#' @return `.Deprecated`.
 NULL
 
 
@@ -16,7 +16,7 @@ NULL
 #' @name defunct
 #' @keywords internal
 #' @inheritParams params
-#' @return `.Defunct()`.
+#' @return `.Defunct`.
 NULL
 
 

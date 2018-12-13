@@ -18,17 +18,17 @@ assertions.}
 false.}
 }
 \description{
-\code{validate()} is a variant of \code{assert()} that is specifically intended to be
+\code{validate} is a variant of \code{assert} that is specifically intended to be
 used inside of an S4 validity method definition.
 }
 \details{
-Currently, \code{validate()} reexports \code{assertthat::validate_that()}.
+Currently, \code{validate} reexports \code{assertthat::validate_that}.
 
-Like \code{assert()}, \code{validate()} returns \code{TRUE} on success. However, on failure
-it returns a \code{character} instead of a \code{stop()} call. This is the current
+Like \code{assert}, \code{validate} returns \code{TRUE} on success. However, on failure
+it returns a \code{character} instead of a \code{stop} call. This is the current
 recommended practice for defining S4 validity methods inside of a
-\code{setValidity()} call. Refer to the documentation in the methods package,
-specifically on \code{validObject()} for detailed information on S4 validity
+\code{setValidity} call. Refer to the documentation in the methods package,
+specifically on \code{validObject} for detailed information on S4 validity
 methods.
 }
 \examples{
@@ -39,8 +39,8 @@ validate(
 }
 \seealso{
 \itemize{
-\item \code{methods::setValidity()}.
-\item \code{methods::validObject()}.
-\item \code{assertthat::validate_that()}.
+\item \code{methods::setValidity}.
+\item \code{methods::validObject}.
+\item \code{assertthat::validate_that}.
 }
 }

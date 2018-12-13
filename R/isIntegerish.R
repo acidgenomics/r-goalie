@@ -10,7 +10,7 @@
 #' @export
 #'
 #' @seealso
-#' - `rlang::is_integerish()`.
+#' - `rlang::is_integerish`.
 #' - `checkmate::checkIntegerish`.
 #' - `assertive::is_a_number`.
 #'

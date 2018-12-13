@@ -4,7 +4,7 @@
 #' @inherit params
 #'
 #' @param compress `logical(1)` or `character(1)`. These character strings are
-#'   currently allowed for `save()`: `"gzip"`, `"bzip2"``, or `"xz"`.
+#'   currently allowed for `save`: `"gzip"`, `"bzip2"``, or `"xz"`.
 #'
 #' @examples
 #' ## Pass ====

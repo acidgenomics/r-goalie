@@ -13,16 +13,16 @@ containsAlpha(x)
 \itemize{
 \item \code{are*}/\code{contains*}/\code{has*}/\code{is*}:
 \code{logical(1)}. Boolean flag (\code{TRUE}/\code{FALSE}).
-Intended to be used in combination with \code{assert()} function.
+Intended to be used in combination with \code{assert} function.
 \item \code{check*}:
 \code{TRUE} on success or \code{character(1)} on failure.
-Intended to be used in combination with \code{validate()} function.
+Intended to be used in combination with \code{validate} function.
 \item \code{assert*}:
-\code{TRUE} on success or error (\code{stop()}) on failure.
+\code{TRUE} on success or error (\code{stop}) on failure.
 }
 }
 \description{
-An alpha level must be a \code{scalar numeric} greater than 0 and less than 1.
+An alpha level must be \code{numeric(1)} greater than 0 and less than 1.
 }
 \examples{
 ## Pass ====

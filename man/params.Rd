@@ -5,7 +5,7 @@
 \title{Parameters}
 \arguments{
 \item{add}{\code{AssertCollection}. Extra information to be included in the
-message for the testthat reporter. See \code{testthat::expect_that()}.}
+message for the testthat reporter. See \code{testthat::expect_that}.}
 
 \item{classes}{\code{character}. Object classes.}
 
@@ -14,7 +14,7 @@ message for the testthat reporter. See \code{testthat::expect_that()}.}
 \item{genes}{\code{character}. Genes.}
 
 \item{info}{\code{character}. Extra information to be included in the message for
-the testthat reporter. See \code{testthat::expect_that()}.}
+the testthat reporter. See \code{testthat::expect_that}.}
 
 \item{inherits}{\code{logical(1)}. Should the enclosing frames of the
 \code{environment} be searched?}
@@ -50,12 +50,12 @@ asserions.}
 \itemize{
 \item \code{are*}/\code{contains*}/\code{has*}/\code{is*}:
 \code{logical(1)}. Boolean flag (\code{TRUE}/\code{FALSE}).
-Intended to be used in combination with \code{assert()} function.
+Intended to be used in combination with \code{assert} function.
 \item \code{check*}:
 \code{TRUE} on success or \code{character(1)} on failure.
-Intended to be used in combination with \code{validate()} function.
+Intended to be used in combination with \code{validate} function.
 \item \code{assert*}:
-\code{TRUE} on success or error (\code{stop()}) on failure.
+\code{TRUE} on success or error (\code{stop}) on failure.
 }
 }
 \description{

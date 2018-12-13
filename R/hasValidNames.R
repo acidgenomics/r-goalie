@@ -3,7 +3,7 @@
 #' @name hasValidNames
 #' @inherit params
 #'
-#' @seealso `validNames()`.
+#' @seealso `validNames`.
 #'
 #' @examples
 #' ## Pass ====
