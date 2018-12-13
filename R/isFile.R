@@ -6,7 +6,7 @@
 #'
 #' @return `logical`.
 #'
-#' @seealso `R.utils::isFile()`.
+#' @seealso `R.utils::isFile`.
 #'
 #' @examples
 #' x <- "example.txt"

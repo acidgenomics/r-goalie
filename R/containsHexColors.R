@@ -4,7 +4,7 @@
 #' @inherit params
 #' @export
 #'
-#' @seealso `assertive::is_hex_color()`.
+#' @seealso `assertive::is_hex_color`.
 #'
 #' @examples
 #' ## Pass ====
@@ -25,7 +25,7 @@ NULL
         return("Must contain character")
     }
 
-    # NOTE `viridis()` adds an extra "FF" to the end of hex color return.
+    # NOTE `viridis` adds an extra "FF" to the end of hex color return.
     pattern <- "^(#[0-9A-F]{6})"
     ok <- all(grepl(
         pattern = pattern,

@@ -32,20 +32,20 @@ areNonExisting(x, ...)
 \itemize{
 \item \code{are*}/\code{contains*}/\code{has*}/\code{is*}:
 \code{logical(1)}. Boolean flag (\code{TRUE}/\code{FALSE}).
-Intended to be used in combination with \code{assert()} function.
+Intended to be used in combination with \code{assert} function.
 \item \code{check*}:
 \code{TRUE} on success or \code{character(1)} on failure.
-Intended to be used in combination with \code{validate()} function.
+Intended to be used in combination with \code{validate} function.
 \item \code{assert*}:
-\code{TRUE} on success or error (\code{stop()}) on failure.
+\code{TRUE} on success or error (\code{stop}) on failure.
 }
 }
 \description{
 Does the Requested Input Exist in the Environment?
 }
 \note{
-\code{exists()} only supports \code{character(1)}, so we are exporting
-\code{isExisting()} as a convenience function to check multiple variables in a
+\code{exists} only supports \code{character(1)}, so we are exporting
+\code{isExisting} as a convenience function to check multiple variables in a
 single call.
 }
 \examples{

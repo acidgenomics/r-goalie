@@ -4,12 +4,12 @@
 #' @keywords internal
 #'
 #' @param add `AssertCollection`. Extra information to be included in the
-#'   message for the testthat reporter. See `testthat::expect_that()`.
+#'   message for the testthat reporter. See `testthat::expect_that`.
 #' @param classes `character`. Object classes.
 #' @param envir `environment`. Environment.
 #' @param genes `character`. Genes.
 #' @param info `character`. Extra information to be included in the message for
-#'   the testthat reporter. See `testthat::expect_that()`.
+#'   the testthat reporter. See `testthat::expect_that`.
 #' @param inherits `logical(1)`. Should the enclosing frames of the
 #'   `environment` be searched?
 #' @param label `character(1)`. Name of the checked object to print in messages.
@@ -30,10 +30,10 @@
 #' @return
 #' - `are*`/`contains*`/`has*`/`is*`:
 #'   `logical(1)`. Boolean flag (`TRUE`/`FALSE`).
-#'   Intended to be used in combination with `assert()` function.
+#'   Intended to be used in combination with `assert` function.
 #' - `check*`:
 #'   `TRUE` on success or `character(1)` on failure.
-#'   Intended to be used in combination with `validate()` function.
+#'   Intended to be used in combination with `validate` function.
 #' - `assert*`:
-#'   `TRUE` on success or error (`stop()`) on failure.
+#'   `TRUE` on success or error (`stop`) on failure.
 NULL

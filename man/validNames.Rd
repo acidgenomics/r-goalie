@@ -13,12 +13,12 @@ validNames(x)
 \itemize{
 \item \code{are*}/\code{contains*}/\code{has*}/\code{is*}:
 \code{logical(1)}. Boolean flag (\code{TRUE}/\code{FALSE}).
-Intended to be used in combination with \code{assert()} function.
+Intended to be used in combination with \code{assert} function.
 \item \code{check*}:
 \code{TRUE} on success or \code{character(1)} on failure.
-Intended to be used in combination with \code{validate()} function.
+Intended to be used in combination with \code{validate} function.
 \item \code{assert*}:
-\code{TRUE} on success or error (\code{stop()}) on failure.
+\code{TRUE} on success or error (\code{stop}) on failure.
 }
 }
 \description{
@@ -38,7 +38,7 @@ validNames("GFP+")
 }
 \seealso{
 \itemize{
-\item \code{make.names()}.
-\item \code{basejump::makeNames()}.
+\item \code{make.names}.
+\item \code{basejump::makeNames}.
 }
 }
