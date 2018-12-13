@@ -23,7 +23,8 @@ isNotMatchingRegex(x, pattern, opts_regex = NULL,
 \arguments{
 \item{x}{Object.}
 
-\item{pattern}{\code{character(1)}. Pattern to use for matching.}
+\item{pattern}{\code{character(1)}.
+Pattern to use for matching.}
 
 \item{opts_fixed}{Passed to \code{\link[stringi]{stri_detect_fixed}}.}
 
