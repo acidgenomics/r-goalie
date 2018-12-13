@@ -6,7 +6,7 @@
 #'
 #' @return `logical`.
 #'
-#' @seealso `R.utils::isDirectory()`.
+#' @seealso `R.utils::isDirectory`.
 #'
 #' @examples
 #' isADirectory("~")
