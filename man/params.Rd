@@ -4,41 +4,52 @@
 \alias{params}
 \title{Parameters}
 \arguments{
-\item{add}{\code{AssertCollection}. Extra information to be included in the
-message for the testthat reporter. See \code{testthat::expect_that()}.}
+\item{add}{\code{AssertCollection}.
+Extra information to be included in the message for the testthat reporter.
+See \code{testthat::expect_that()}.}
 
-\item{classes}{\code{character}. Object classes.}
+\item{classes}{\code{character}.
+Object classes.}
 
-\item{envir}{\code{environment}. Environment.}
+\item{envir}{\code{environment}.
+Environment.}
 
-\item{genes}{\code{character}. Genes.}
+\item{genes}{\code{character}.
+Genes.}
 
-\item{info}{\code{character}. Extra information to be included in the message for
-the testthat reporter. See \code{testthat::expect_that()}.}
+\item{info}{\code{character}.
+Extra information to be included in the message for the testthat reporter.
+See \code{testthat::expect_that()}.}
 
-\item{inherits}{\code{logical(1)}. Should the enclosing frames of the
-\code{environment} be searched?}
+\item{inherits}{\code{logical(1)}.
+Should the enclosing frames of the \code{environment} be searched?}
 
-\item{label}{\code{character(1)}. Name of the checked object to print in messages.}
+\item{label}{\code{character(1)}.
+Name of the checked object to print in messages.}
 
-\item{name}{\code{character}. Element name.}
+\item{name}{\code{character}.
+Element name.}
 
-\item{na.ok}{\code{logical(1)}. If set to \code{TRUE}, \code{x} may also be \code{NA}.}
+\item{na.ok}{\code{logical(1)}.
+If set to \code{TRUE}, \code{x} may also be \code{NA}.}
 
-\item{names}{\code{character}. Element names (e.g. row names, column names).}
+\item{names}{\code{character}.
+Element names (e.g. row names, column names).}
 
-\item{null.ok}{\code{logical(1)}. If set to \code{TRUE}, \code{x} may also be \code{NULL}.}
+\item{null.ok}{\code{logical(1)}.
+If set to \code{TRUE}, \code{x} may also be \code{NULL}.}
 
 \item{object}{Object.}
 
-\item{pattern}{\code{character(1)}. Pattern to use for matching.}
+\item{pattern}{\code{character(1)}.
+Pattern to use for matching.}
 
 \item{x}{Object.}
 
 \item{y}{Secondary object.}
 
-\item{.var.name}{\code{character(1)}. Name of the checked object to print in
-asserions.}
+\item{.var.name}{\code{character(1)}.
+Name of the checked object to print in asserions.}
 
 \item{.xname}{\emph{Not intended to be used directly.}}
 

@@ -9,7 +9,8 @@ isAny(x, classes)
 \arguments{
 \item{x}{Object.}
 
-\item{classes}{\code{character}. Object classes.}
+\item{classes}{\code{character}.
+Object classes.}
 }
 \value{
 \itemize{

@@ -7,8 +7,9 @@
 formalCompress(compress)
 }
 \arguments{
-\item{compress}{\code{logical(1)} or \code{character(1)}. These character strings are
-currently allowed for \code{save()}: \code{"gzip"}, \code{"bzip2"``, or }"xz"`.}
+\item{compress}{\code{logical(1)} or \code{character(1)}.
+These character strings are currently allowed for \code{save()}:
+\code{"gzip"}, \code{"bzip2"}, or \code{"xz"}.}
 }
 \value{
 \itemize{

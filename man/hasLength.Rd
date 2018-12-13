@@ -9,8 +9,9 @@ hasLength(x, n = NULL)
 \arguments{
 \item{x}{Object.}
 
-\item{n}{\code{NULL} or \code{integer}. If \code{NULL} (default), the function will
-check to see if the input length is non-zero.}
+\item{n}{\code{NULL} or \code{integer}.
+If \code{NULL} (default), the function will check to see if the input length is
+non-zero.}
 }
 \value{
 \itemize{

@@ -12,7 +12,8 @@
 #' @importFrom assertive.code is_existing
 #' @inherit params
 #'
-#' @param x `character`. Variable names to check in `environment`.
+#' @param x `character`.
+#'   Variable names to check in `environment`.
 #'
 #' @examples
 #' suppressWarnings(rm(x, y))

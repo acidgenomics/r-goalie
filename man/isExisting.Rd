@@ -17,12 +17,14 @@ isNonExisting(x, ...)
 areNonExisting(x, ...)
 }
 \arguments{
-\item{x}{\code{character}. Variable names to check in \code{environment}.}
+\item{x}{\code{character}.
+Variable names to check in \code{environment}.}
 
-\item{envir}{\code{environment}. Environment.}
+\item{envir}{\code{environment}.
+Environment.}
 
-\item{inherits}{\code{logical(1)}. Should the enclosing frames of the
-\code{environment} be searched?}
+\item{inherits}{\code{logical(1)}.
+Should the enclosing frames of the \code{environment} be searched?}
 
 \item{.xname}{\emph{Not intended to be used directly.}}
 

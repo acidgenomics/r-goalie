@@ -9,7 +9,8 @@ matchesUniqueGeneNames(x, genes)
 \arguments{
 \item{x}{Object.}
 
-\item{genes}{\code{character}. Genes.}
+\item{genes}{\code{character}.
+Genes.}
 }
 \value{
 \itemize{

@@ -5,10 +5,11 @@
 #' @name isGGScale
 #' @inherit params
 #'
-#' @param scale `string`. Type of scale, either `"continuous"` or `"discrete"`.
-#' @param aes `string`. Aesthetic mapping, either `"colour"` or `"fill"`. Note
-#'   that ggplot2 prefers British spelling, so we're enforcing that convention
-#'   here.
+#' @param scale `string`.
+#'   Type of scale, either `"continuous"` or `"discrete"`.
+#' @param aes `string`.
+#'   Aesthetic mapping, either `"colour"` or `"fill"`. Note that ggplot2 prefers
+#'   British spelling, so we're enforcing that convention here.
 #'
 #' @examples
 #' library(ggplot2)
