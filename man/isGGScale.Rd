@@ -10,11 +10,12 @@ isGGScale(x, scale = c("continuous", "discrete"), aes = c("colour",
 \arguments{
 \item{x}{Object.}
 
-\item{scale}{\code{string}. Type of scale, either \code{"continuous"} or \code{"discrete"}.}
+\item{scale}{\code{string}.
+Type of scale, either \code{"continuous"} or \code{"discrete"}.}
 
-\item{aes}{\code{string}. Aesthetic mapping, either \code{"colour"} or \code{"fill"}. Note
-that ggplot2 prefers British spelling, so we're enforcing that convention
-here.}
+\item{aes}{\code{string}.
+Aesthetic mapping, either \code{"colour"} or \code{"fill"}. Note that ggplot2 prefers
+British spelling, so we're enforcing that convention here.}
 }
 \value{
 \itemize{

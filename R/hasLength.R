@@ -3,8 +3,9 @@
 #' @name hasLength
 #' @inherit params
 #'
-#' @param n `NULL` or `integer`. If `NULL` (default), the function will
-#'   check to see if the input length is non-zero.
+#' @param n `NULL` or `integer`.
+#'   If `NULL` (default), the function will check to see if the input length is
+#'   non-zero.
 #'
 #' @examples
 #' ## Pass ====
