@@ -28,5 +28,5 @@ Does the Input Contain a Directory?
 isADirectory("~")
 }
 \seealso{
-\code{R.utils::isDirectory()}.
+\code{R.utils::isDirectory}.
 }

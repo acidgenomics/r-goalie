@@ -27,7 +27,7 @@ should evaluate to \code{TRUE} on success and \code{FALSE} on failure.}
     evaluated; by default the one where \code{stopifnot()} has been called from.}
 }
 \description{
-Currently, we're reexporting \code{stopifnot()} as \code{assert()} verbatim here.
+Currently, we're reexporting \code{stopifnot} as \code{assert} verbatim here.
 }
 \examples{
 assert(
@@ -37,8 +37,8 @@ assert(
 }
 \seealso{
 \itemize{
-\item \code{stopifnot()}.
-\item \code{checkmate::assert()}.
-\item \code{assertthat::assert_that()}.
+\item \code{stopifnot}.
+\item \code{checkmate::assert}.
+\item \code{assertthat::assert_that}.
 }
 }

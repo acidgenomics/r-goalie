@@ -5,7 +5,7 @@
 #'
 #' @section SummarizedExperiment:
 #'
-#' If the object is a `SummarizedExperiment`, then the primary `assay()` matrix
+#' If the object is a `SummarizedExperiment`, then the primary `assay` matrix
 #' is checked for duplicated columns.
 #'
 #' @name hasUniqueCols
@@ -37,7 +37,7 @@ NULL
     # Ensure coercion to matrix, which can use the S3 assay method.
     x <- as(x, "matrix")
 
-    # We're using the S3 assay `duplicated()` method here, which supports
+    # We're using the S3 assay `duplicated` method here, which supports
     # MARGIN, so we can check across the columns.
     ok <- !any(duplicated(x, MARGIN = 2L))
     if (!isTRUE(ok)) {

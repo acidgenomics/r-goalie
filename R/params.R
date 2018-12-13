@@ -39,12 +39,10 @@
 #' @param ... Additional arguments.
 #'
 #' @return
-#' - `are*`/`contains*`/`has*`/`is*`:
-#'   `logical(1)`. Boolean flag (`TRUE`/`FALSE`).
-#'   Intended to be used in combination with `assert()` function.
-#' - `check*`:
-#'   `TRUE` on success or `character(1)` on failure.
-#'   Intended to be used in combination with `validate()` function.
-#' - `assert*`:
-#'   `TRUE` on success or error (`stop()`) on failure.
+#' - `are*`/`contains*`/`has*`/`is*`: `logical(1)`.
+#'   Boolean flag (`TRUE`/`FALSE`). Intended to be used in combination with
+#'   `assert` function.
+#' - `check*`: `TRUE` on success, `character(1)` on failure.
+#'   Intended to be used in combination with `validate` function.
+#' - `assert*`: `TRUE` on success, error (`stop`) on failure.
 NULL

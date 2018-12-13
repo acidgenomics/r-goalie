@@ -11,19 +11,19 @@ validateClasses(object, expected, subset = FALSE)
 
 \item{expected}{\code{list}. Named list of expected classes per slot.}
 
-\item{subset}{\code{boolean}. Only check a subset of slots in the object.}
+\item{subset}{\code{logical(1)}. Only check a subset of slots in the object.}
 }
 \value{
-\code{boolean} (\code{TRUE}) on sucess or \code{string} containing informative
+\code{logical(1)} (\code{TRUE}) on sucess or \code{character(1)} containing informative
 message on failure.
 }
 \description{
 Validity check capable of validating multiple slots in a single call.
 }
 \details{
-To be used inside S4 \code{methods::setValidity()} call or with \code{validate()}.
+To be used inside S4 \code{methods::setValidity} call or with \code{validate}.
 Particularly useful for checking multiple slotted objects inside
-\code{metadata()}.
+\code{metadata}.
 }
 \examples{
 validateClasses(
@@ -41,8 +41,8 @@ validateClasses(
 }
 \seealso{
 \itemize{
-\item \code{validate()}.
-\item \code{methods::setValidity()}.
-\item \code{methods::validObject()}.
+\item \code{validate}.
+\item \code{methods::setValidity}.
+\item \code{methods::validObject}.
 }
 }

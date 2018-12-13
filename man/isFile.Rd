@@ -32,5 +32,5 @@ isAFile(x)
 unlink(x)
 }
 \seealso{
-\code{R.utils::isFile()}.
+\code{R.utils::isFile}.
 }

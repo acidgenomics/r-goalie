@@ -43,7 +43,7 @@ isOfDimension <- is_of_dimension
 
 
 
-# TODO Somewhat redundant with `hasLength()`. Work on resolution.
+# TODO Somewhat redundant with `hasLength`. Work on resolution.
 #' @rdname hasElements
 #' @importFrom assertive.properties is_of_length
 #' @export

@@ -18,14 +18,12 @@ vector needs to be traversed and checked.}
 }
 \value{
 \itemize{
-\item \code{are*}/\code{contains*}/\code{has*}/\code{is*}:
-\code{logical(1)}. Boolean flag (\code{TRUE}/\code{FALSE}).
-Intended to be used in combination with \code{assert()} function.
-\item \code{check*}:
-\code{TRUE} on success or \code{character(1)} on failure.
-Intended to be used in combination with \code{validate()} function.
-\item \code{assert*}:
-\code{TRUE} on success or error (\code{stop()}) on failure.
+\item \code{are*}/\code{contains*}/\code{has*}/\code{is*}: \code{logical(1)}.
+Boolean flag (\code{TRUE}/\code{FALSE}). Intended to be used in combination with
+\code{assert} function.
+\item \code{check*}: \code{TRUE} on success, \code{character(1)} on failure.
+Intended to be used in combination with \code{validate} function.
+\item \code{assert*}: \code{TRUE} on success, error (\code{stop}) on failure.
 }
 }
 \description{
@@ -38,7 +36,7 @@ isIntegerish(c(1, 2))
 }
 \seealso{
 \itemize{
-\item \code{rlang::is_integerish()}.
+\item \code{rlang::is_integerish}.
 \item \code{checkmate::checkIntegerish}.
 \item \code{assertive::is_a_number}.
 }

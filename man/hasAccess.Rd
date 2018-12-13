@@ -22,5 +22,5 @@ Works for either file or directory paths.
 hasAccess("~")
 }
 \seealso{
-\code{checkmate::testAccess()}.
+\code{checkmate::testAccess}.
 }

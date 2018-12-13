@@ -10,23 +10,21 @@ isGGScale(x, scale = c("continuous", "discrete"), aes = c("colour",
 \arguments{
 \item{x}{Object.}
 
-\item{scale}{\code{string}.
+\item{scale}{\code{character(1)}.
 Type of scale, either \code{"continuous"} or \code{"discrete"}.}
 
-\item{aes}{\code{string}.
+\item{aes}{\code{character(1)}.
 Aesthetic mapping, either \code{"colour"} or \code{"fill"}. Note that ggplot2 prefers
 British spelling, so we're enforcing that convention here.}
 }
 \value{
 \itemize{
-\item \code{are*}/\code{contains*}/\code{has*}/\code{is*}:
-\code{logical(1)}. Boolean flag (\code{TRUE}/\code{FALSE}).
-Intended to be used in combination with \code{assert()} function.
-\item \code{check*}:
-\code{TRUE} on success or \code{character(1)} on failure.
-Intended to be used in combination with \code{validate()} function.
-\item \code{assert*}:
-\code{TRUE} on success or error (\code{stop()}) on failure.
+\item \code{are*}/\code{contains*}/\code{has*}/\code{is*}: \code{logical(1)}.
+Boolean flag (\code{TRUE}/\code{FALSE}). Intended to be used in combination with
+\code{assert} function.
+\item \code{check*}: \code{TRUE} on success, \code{character(1)} on failure.
+Intended to be used in combination with \code{validate} function.
+\item \code{assert*}: \code{TRUE} on success, error (\code{stop}) on failure.
 }
 }
 \description{
