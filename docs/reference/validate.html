@@ -34,7 +34,7 @@
   
 <meta property="og:title" content="Validate an S4 Class — validate" />
 
-<meta property="og:description" content="validate() is a variant of assert() that is specifically intended to be
+<meta property="og:description" content="validate is a variant of assert that is specifically intended to be
 used inside of an S4 validity method definition." />
 <meta name="twitter:card" content="summary" />
 
@@ -66,7 +66,7 @@ used inside of an S4 validity method definition." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">goalie</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.1</span>
       </span>
     </div>
 
@@ -112,7 +112,7 @@ used inside of an S4 validity method definition." />
 
     <div class="ref-description">
     
-    <p><code>validate()</code> is a variant of <code><a href='assert.html'>assert()</a></code> that is specifically intended to be
+    <p><code>validate</code> is a variant of <code>assert</code> that is specifically intended to be
 used inside of an S4 validity method definition.</p>
     
     </div>
@@ -142,20 +142,20 @@ false.</p></td>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>Currently, <code>validate()</code> reexports <code><a href='https://www.rdocumentation.org/packages/assertthat/topics/validate_that'>assertthat::validate_that()</a></code>.</p>
-<p>Like <code><a href='assert.html'>assert()</a></code>, <code>validate()</code> returns <code>TRUE</code> on success. However, on failure
-it returns a <code>character</code> instead of a <code><a href='https://www.rdocumentation.org/packages/base/topics/stop'>stop()</a></code> call. This is the current
+    <p>Currently, <code>validate</code> reexports <code><a href='https://www.rdocumentation.org/packages/assertthat/topics/validate_that'>assertthat::validate_that</a></code>.</p>
+<p>Like <code>assert</code>, <code>validate</code> returns <code>TRUE</code> on success. However, on failure
+it returns a <code>character</code> instead of a <code>stop</code> call. This is the current
 recommended practice for defining S4 validity methods inside of a
-<code>setValidity()</code> call. Refer to the documentation in the methods package,
-specifically on <code>validObject()</code> for detailed information on S4 validity
+<code>setValidity</code> call. Refer to the documentation in the methods package,
+specifically on <code>validObject</code> for detailed information on S4 validity
 methods.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><ul>
-<li><p><code><a href='https://www.rdocumentation.org/packages/methods/topics/validObject'>methods::setValidity()</a></code>.</p></li>
-<li><p><code><a href='https://www.rdocumentation.org/packages/methods/topics/validObject'>methods::validObject()</a></code>.</p></li>
-<li><p><code><a href='https://www.rdocumentation.org/packages/assertthat/topics/validate_that'>assertthat::validate_that()</a></code>.</p></li>
+<li><p><code><a href='https://www.rdocumentation.org/packages/methods/topics/validObject'>methods::setValidity</a></code>.</p></li>
+<li><p><code><a href='https://www.rdocumentation.org/packages/methods/topics/validObject'>methods::validObject</a></code>.</p></li>
+<li><p><code><a href='https://www.rdocumentation.org/packages/assertthat/topics/validate_that'>assertthat::validate_that</a></code>.</p></li>
 </ul></div>
     
 
