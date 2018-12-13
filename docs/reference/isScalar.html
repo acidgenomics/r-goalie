@@ -65,7 +65,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">goalie</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.1</span>
       </span>
     </div>
 
@@ -115,7 +115,8 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>isScalar</span>(<span class='no'>x</span>)
+    <pre class="usage"><span class='fu'>isScalar</span>(<span class='no'>x</span>, <span class='kw'>metric</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"length"</span>, <span class='st'>"elements"</span>),
+  <span class='kw'>.xname</span> <span class='kw'>=</span> <span class='fu'>get_name_in_parent</span>(<span class='no'>x</span>))
 
 <span class='fu'>isNonScalar</span>(<span class='no'>x</span>)
 
@@ -153,6 +154,15 @@
       <td><p>Object.</p></td>
     </tr>
     <tr>
+      <th>metric</th>
+      <td><p>A string. Should be length or the number of elements be used to
+determine if the object is empty/non-empty/scalar?</p></td>
+    </tr>
+    <tr>
+      <th>.xname</th>
+      <td><p><em>Not intended to be used directly.</em></p></td>
+    </tr>
+    <tr>
       <th>finite</th>
       <td><p>Whether all values of the vector are finite. The
 non-finite values are <code>NA</code>, <code>Inf</code>, <code>-Inf</code> and <code>NaN</code>. Setting this
@@ -172,12 +182,12 @@ vector. One of <code>UTF-8</code>, <code>latin1</code>, or <code>unknown</code>.
 <ul>
 <li><p><code>are*</code>/<code>contains*</code>/<code>has*</code>/<code>is*</code>:
 <code><a href='https://www.rdocumentation.org/packages/base/topics/logical'>logical(1)</a></code>. Boolean flag (<code>TRUE</code>/<code>FALSE</code>).
-Intended to be used in combination with <code><a href='assert.html'>assert()</a></code> function.</p></li>
+Intended to be used in combination with <code>assert</code> function.</p></li>
 <li><p><code>check*</code>:
 <code>TRUE</code> on success or <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code> on failure.
-Intended to be used in combination with <code><a href='validate.html'>validate()</a></code> function.</p></li>
+Intended to be used in combination with <code>validate</code> function.</p></li>
 <li><p><code>assert*</code>:
-<code>TRUE</code> on success or error (<code><a href='https://www.rdocumentation.org/packages/base/topics/stop'>stop()</a></code>) on failure.</p></li>
+<code>TRUE</code> on success or error (<code>stop</code>) on failure.</p></li>
 </ul>
 
     
@@ -199,7 +209,9 @@ Intended to be used in combination with <code><a href='validate.html'>validate()
     <pre class="examples"><div class='input'><span class='co'>## Pass ====</span>
 <span class='fu'>isScalar</span>(<span class='st'>"a"</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>isScalarInteger</span>(<span class='fl'>1L</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>isScalarIntegerish</span>(<span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
 <span class='co'>## Fail ====</span>
-<span class='fu'>isScalar</span>(<span class='kw'>NULL</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>isScalar</span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>))</div><div class='output co'>#&gt; [1] FALSE</div></pre>
+<span class='fu'>isScalar</span>(<span class='kw'>NULL</span>)</div><div class='output co'>#&gt; [1] FALSE
+#&gt; Cause of failure:  NULL has length 0, not 1. </div><div class='input'><span class='fu'>isScalar</span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>))</div><div class='output co'>#&gt; [1] FALSE
+#&gt; Cause of failure:  c("a", "b") has length 2, not 1. </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
