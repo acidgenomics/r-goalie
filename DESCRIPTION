@@ -17,19 +17,10 @@ Encoding: UTF-8
 Depends: R (>= 3.5)
 Imports:
     R.utils (>= 2.7),
-    assertive.base,
-    assertive.code,
-    assertive.data,
-    assertive.numbers,
-    assertive.properties,
-    assertive.sets,
-    assertive.strings,
     assertthat (>= 0.2),
     checkmate (>= 1.8),
     curl (>= 3.2),
     methods,
-    rlang (>= 0.3),
-    stringi,
     utils
 Suggests:
     Matrix,
