@@ -1,6 +1,9 @@
-#' Safe version of deparse
+#' Expression Deparsing
 #'
-#' A version of `deparse` that is guaranteed to always return `character(1)`.
+#' Turn unevaluated expressions into character strings.
+#'
+#' `safeDeparse` is modified version of `deparse` that is guaranteed to always
+#' return `character(1)`.
 #'
 #' @export
 #'
@@ -8,7 +11,9 @@
 #'   Any R expression.
 #' @param ... Passed to `deparse`.
 #'
-#' @seealso `assertive.base::safe_deparse`.
+#' @seealso
+#' - `assertive.base::safe_deparse`.
+#' - `deparse`.
 #'
 #' @examples
 #' safeDeparse(is.character("a"))
