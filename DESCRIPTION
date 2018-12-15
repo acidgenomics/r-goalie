@@ -16,9 +16,6 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 Depends: R (>= 3.5)
 Imports:
-    R.utils (>= 2.7),
-    assertthat (>= 0.2),
-    checkmate (>= 1.8),
     curl (>= 3.2),
     methods,
     utils
@@ -34,3 +31,55 @@ Suggests:
 biocViews: Infrastructure
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
+Collate: 
+    'assert.R'
+    'base-bapply.R'
+    'base-capitalize.R'
+    'base-cause.R'
+    'base-false.R'
+    'base-getNameInParent.R'
+    'base-is2.R'
+    'base-makeTest.R'
+    'base-setCause.R'
+    'base-typeDescription.R'
+    'base-vname.R'
+    'check-allAreAtomic.R'
+    'check-areSameLength.R'
+    'check-containsAlpha.R'
+    'check-containsHeaderLevel.R'
+    'check-containsHexColors.R'
+    'check-containsURL.R'
+    'check-formalCompress.R'
+    'check-hasAccess.R'
+    'check-hasDims.R'
+    'check-hasDuplicates.R'
+    'check-hasElements.R'
+    'check-hasInternet.R'
+    'check-hasLength.R'
+    'check-hasNames.R'
+    'check-hasNonZeroRowsAndCols.R'
+    'check-hasRownames.R'
+    'check-hasUniqueCols.R'
+    'check-hasValidNames.R'
+    'check-isAll.R'
+    'check-isAny.R'
+    'check-isCharacter.R'
+    'check-isDirectory.R'
+    'check-isEqualTo.R'
+    'check-isExisting.R'
+    'check-isFile.R'
+    'check-isGGScale.R'
+    'check-isHexColorFunction.R'
+    'check-isIntegerish.R'
+    'check-isPattern.R'
+    'check-isScalar.R'
+    'check-matchesUniqueGeneNames.R'
+    'check-ranges.R'
+    'check-sets.R'
+    'check-validNames.R'
+    'deprecated.R'
+    'package.R'
+    'params.R'
+    'se-internal.R'
+    'validate.R'
+    'validateClasses.R'
