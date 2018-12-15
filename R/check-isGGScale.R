@@ -1,4 +1,9 @@
 # TODO Consider adding `null.ok` mode here, like checkmate approach.
+# FIXME Call R.utils capitalize methods here internally instead, so we can
+# get rid of the dependency.
+
+# R.utils::capitalize
+
 
 #' Does the Input Contain a ggplot2 Scale?
 #'
