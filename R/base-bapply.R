@@ -10,8 +10,8 @@
 #' @param ... Additional arguments passed to [vapply].
 #'
 #' @seealso
-#' - `vapply`.
 #' - `assertive.base::bapply`.
+#' - `vapply`.
 #'
 #' @return `logical`.
 #' @export
