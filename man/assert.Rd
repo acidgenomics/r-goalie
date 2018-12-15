@@ -7,8 +7,8 @@
 assert(..., exprs, local = TRUE)
 }
 \arguments{
-\item{...}{Any number of expressions that return \code{logical(1)}, each of which
-should evaluate to \code{TRUE} on success and \code{FALSE} on failure.}
+\item{...}{Any number of R expressions that return \code{logical(1)}, each of
+which should evaluate to \code{TRUE}.}
 
 \item{exprs}{any number of (typically but not necessarily
     \code{\link{logical}}) \R expressions, which should each evaluate to
@@ -27,7 +27,13 @@ should evaluate to \code{TRUE} on success and \code{FALSE} on failure.}
     evaluated; by default the one where \code{stopifnot()} has been called from.}
 }
 \description{
-Currently, we're reexporting \code{stopifnot} as \code{assert} verbatim here.
+\code{assert} is a drop-in replacement for \code{stopifnot} supporting more informative
+error messages.
+}
+\note{
+Don't use \code{assertive::assert_that} as a general \code{stopifnot}
+replacement. It doesn't currently catch everything, and isn't hardened for S4
+methods.
 }
 \examples{
 assert(
@@ -38,7 +44,7 @@ assert(
 \seealso{
 \itemize{
 \item \code{stopifnot}.
-\item \code{checkmate::assert}.
 \item \code{assertthat::assert_that}.
+\item \code{checkmate::assert}.
 }
 }
