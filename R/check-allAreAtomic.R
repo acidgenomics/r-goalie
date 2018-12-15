@@ -1,7 +1,13 @@
+#' @include base-makeTest.R
+
+
+
 #' Does the Input Contain Elements That Are All Atomic?
 #'
 #' @name allAreAtomic
 #' @inherit params
+#'
+#' @seealso `is.atomic`.
 #'
 #' @examples
 #' ## Pass ====

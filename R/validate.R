@@ -1,3 +1,5 @@
+# FIXME Can we get rid of the assertthat dependency here?
+
 #' Validate an S4 Class
 #'
 #' `validate` is a variant of `assert` that is specifically intended to be
