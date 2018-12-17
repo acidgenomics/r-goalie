@@ -2,7 +2,7 @@
 #'
 #' Capitalize each character string in a vector.
 #'
-#' @export
+#' @keywords internal
 #'
 #' @param x `vector` of `character` strings to be capitalized.
 #'
