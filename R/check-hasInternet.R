@@ -1,3 +1,6 @@
+# FIXME Switch to using curl as Suggests
+# Use requireNamespace(quietly = TRUE) here...
+
 #' Does the Current Session Have an Internet Connection?
 #' @importFrom curl has_internet
 #' @inherit params
