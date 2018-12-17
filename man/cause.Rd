@@ -3,7 +3,7 @@
 \name{cause}
 \alias{cause}
 \alias{cause<-}
-\title{Get or Set the \code{cause} Attribute}
+\title{Get or set the \code{cause} attribute}
 \usage{
 cause(x)
 
@@ -13,20 +13,24 @@ cause(x) <- value
 \code{character(1)}. Cause attribute.
 }
 \description{
-Gets or sets the \code{cause} (of failure) attribute of a variable.
+Gets or sets the \code{cause} (of failure) \link[base:attributes]{attribute} of a
+variable.
 }
 \examples{
-## Scalar case
-yn <- assertive.base::is_identical_to_true(FALSE)
-cause(yn)
+## FIXME
 
-## Vector case
-yn <- assertive.base::is_true(c(TRUE, FALSE, NA))
-cause(yn)
+## ## Scalar case
+## yn <- assertive.base::is_identical_to_true(FALSE)
+## cause(yn)
+
+## ## Vector case
+## yn <- assertive.base::is_true(c(TRUE, FALSE, NA))
+## cause(yn)
 }
 \seealso{
 \itemize{
-\item \code{assertive.base::cause}.
-\item \code{attr}.
+\item \code{assertive.base::cause()}.
+\item \code{attributes()}.
+\item \code{attr()}.
 }
 }

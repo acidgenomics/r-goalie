@@ -2,23 +2,25 @@
 % Please edit documentation in R/base-assertive-bapply.R
 \name{bapply}
 \alias{bapply}
-\title{Apply a Function over a List or Vector}
+\title{Boolean apply}
 \usage{
 bapply(x, predicate, ...)
 }
 \arguments{
 \item{x}{\code{atomic} or \code{list}.}
 
-\item{predicate}{\code{function}. A predicate function that returns \code{logical(1)}
-(boolean flag) to \code{apply}.}
+\item{predicate}{\code{function}.
+A predicate function that returns \code{logical(1)} boolean flag
+(\code{TRUE}/\code{FALSE}) to \link[base:apply]{apply}.}
 
-\item{...}{Additional arguments passed to \link{vapply}.}
+\item{...}{Additional arguments passed to \link[base:vapply]{vapply()}.}
 }
 \value{
 \code{logical}.
 }
 \description{
-\code{bapply} is a wrapper to \code{vapply} for functions that return \code{logical(1)}.
+\code{\link[=bapply]{bapply()}} is a wrapper for \link[base:vapply]{vapply()} that enforces
+\code{FUN.VALUE = logical(1)}.
 }
 \note{
 \code{USE.NAMES} is always set to TRUE.
@@ -28,7 +30,7 @@ bapply(list(a = "example", b = 1), is.character)
 }
 \seealso{
 \itemize{
-\item \code{assertive.base::bapply}.
-\item \code{vapply}.
+\item \code{assertive.base::bapply()}.
+\item \code{vapply()}.
 }
 }

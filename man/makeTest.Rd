@@ -3,7 +3,7 @@
 \name{makeTest}
 \alias{makeTest}
 \alias{makeTestFunction}
-\title{Make Test Function}
+\title{Make test function}
 \usage{
 makeTest(res)
 
@@ -18,14 +18,15 @@ error message as string otherwise.}
 Check function, which returns either \code{TRUE} or \code{character(1)}.}
 
 \item{envir}{\code{environment}.
-The environment of the created function. Defaults to \code{parent.frame}.}
+The environment of the created function.
+Defaults to \link[base:parent.frame]{parent.frame()}.}
 }
 \description{
-Make Test Function
+Make test function
 }
 \seealso{
 \itemize{
-\item \code{checkmate::makeTest}.
-\item \code{checkmate::makeTestFunction}.
+\item \code{checkmate::makeTest()}.
+\item \code{checkmate::makeTestFunction()}.
 }
 }

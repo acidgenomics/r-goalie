@@ -31,5 +31,5 @@ allAreAtomic(list(a = "foo", b = "bar"))
 allAreAtomic(list(a = "x", b = list()))
 }
 \seealso{
-\code{is.atomic}.
+\code{is.atomic()}.
 }
