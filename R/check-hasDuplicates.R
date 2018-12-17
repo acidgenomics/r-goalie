@@ -1,7 +1,6 @@
-#' Does the Input Have Duplicates?
+#' Does the input have duplicates?
 #'
 #' @name hasDuplicates
-#' @importFrom assertive.properties has_duplicates has_no_duplicates
 #' @inherit params
 #'
 #' @seealso
