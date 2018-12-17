@@ -1,21 +1,19 @@
-# TODO Set either `vector_with_cause` or `scalar_with_cause`.
-
-#' Set a Cause and Return the Input
+#' Set a cause and return the input
 #'
 #' Sets the cause attribute of an object and returns that object.
 #'
 #' @export
+#' @inheritParams params
 #'
-#' @param x Variable.
 #' @param falseValue `character`.
 #'   A character vector to set the cause to, when `x` is `FALSE`.
 #' @param missingValue `character`.
 #'   A character vector to set the cause to, when `x` is `NA`.
 #'
 #' @seealso
-#' - `assertive.base::set_cause`.
-#' - `cause`.
-#' - `setNames`.
+#' - `cause()`.
+#' - `assertive.base::set_cause()`.
+#' - `stats::setNames()`.
 #'
 #' @examples
 #' setCause(FALSE, falseValue = "test")
