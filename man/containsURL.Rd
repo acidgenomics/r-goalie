@@ -3,11 +3,17 @@
 \name{containsURL}
 \alias{containsURL}
 \alias{containsAURL}
-\title{Does the Input Contain a URL?}
+\alias{isURL}
+\alias{isAURL}
+\title{Does the input contain a URL?}
 \usage{
 containsURL(x)
 
 containsAURL(x)
+
+isURL(x)
+
+isAURL(x)
 }
 \arguments{
 \item{x}{Object.}
@@ -16,7 +22,7 @@ containsAURL(x)
 \code{logical}.
 }
 \description{
-Does the Input Contain a URL?
+Does the input contain a URL?
 }
 \section{Functions}{
 \itemize{

@@ -3,11 +3,11 @@
 \name{hasDuplicates}
 \alias{hasDuplicates}
 \alias{hasNoDuplicates}
-\title{Does the Input Have Duplicates?}
+\title{Does the input have duplicates?}
 \usage{
-hasDuplicates(x, .xname = get_name_in_parent(x))
+hasDuplicates(x, .xname = getNameInParent(x))
 
-hasNoDuplicates(x, .xname = get_name_in_parent(x))
+hasNoDuplicates(x, .xname = getNameInParent(x))
 }
 \arguments{
 \item{x}{Object.}
@@ -25,9 +25,15 @@ Intended to be used in combination with \code{validate} function.
 }
 }
 \description{
-Does the Input Have Duplicates?
+Does the input have duplicates?
 }
 \examples{
 hasDuplicates(c("a", "a"))
 hasNoDuplicates(c("a", "b"))
+}
+\seealso{
+\itemize{
+\item \code{assertive.properties::has_duplicates()}.
+\item \code{assertive.properties::has_no_duplicates()}.
+}
 }

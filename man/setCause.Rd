@@ -2,12 +2,12 @@
 % Please edit documentation in R/base-assertive-setCause.R
 \name{setCause}
 \alias{setCause}
-\title{Set a Cause and Return the Input}
+\title{Set a cause and return the input}
 \usage{
 setCause(x, falseValue, missingValue = "missing")
 }
 \arguments{
-\item{x}{Variable.}
+\item{x}{Object.}
 
 \item{falseValue}{\code{character}.
 A character vector to set the cause to, when \code{x} is \code{FALSE}.}
@@ -23,8 +23,8 @@ setCause(FALSE, falseValue = "test")
 }
 \seealso{
 \itemize{
-\item \code{assertive.base::set_cause}.
-\item \code{cause}.
-\item \code{setNames}.
+\item \code{cause()}.
+\item \code{assertive.base::set_cause()}.
+\item \code{stats::setNames()}.
 }
 }

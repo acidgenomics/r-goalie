@@ -2,7 +2,7 @@
 % Please edit documentation in R/base-assertive-safeDeparse.R
 \name{safeDeparse}
 \alias{safeDeparse}
-\title{Expression Deparsing}
+\title{Expression deparsing}
 \usage{
 safeDeparse(expr, ...)
 }
@@ -10,21 +10,21 @@ safeDeparse(expr, ...)
 \item{expr}{\code{expression}.
 Any R expression.}
 
-\item{...}{Passed to \code{deparse}.}
+\item{...}{Passed to \link[base:deparse]{deparse()}.}
 }
 \description{
 Turn unevaluated expressions into character strings.
 }
 \details{
-\code{safeDeparse} is modified version of \code{deparse} that is guaranteed to always
-return \code{character(1)}.
+\code{\link[=safeDeparse]{safeDeparse()}} is modified version of \link[base:deparse]{deparse()} that always
+returns \code{character(1)}.
 }
 \examples{
 safeDeparse(is.character("a"))
 }
 \seealso{
 \itemize{
-\item \code{assertive.base::safe_deparse}.
-\item \code{deparse}.
+\item \code{assertive.base::safe_deparse()}.
+\item \code{deparse()}.
 }
 }

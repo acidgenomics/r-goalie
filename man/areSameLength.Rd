@@ -2,7 +2,7 @@
 % Please edit documentation in R/check-areSameLength.R
 \name{areSameLength}
 \alias{areSameLength}
-\title{Do the Inputs Have the Same Length?}
+\title{Do the inputs have the same length?}
 \usage{
 areSameLength(x, y)
 }
@@ -22,7 +22,7 @@ Intended to be used in combination with \code{validate} function.
 }
 }
 \description{
-Do the Inputs Have the Same Length?
+Do the inputs have the same length?
 }
 \note{
 Non-zero lengths for \code{x} and \code{y} are required, otherwise the check
