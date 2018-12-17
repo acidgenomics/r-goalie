@@ -1,10 +1,9 @@
-# FIXME Switch to using curl as Suggests
-# Use requireNamespace(quietly = TRUE) here...
-
-#' Does the Current Session Have an Internet Connection?
-#' @importFrom curl has_internet
+#' Does the current session have an internet connection?
 #' @inherit params
 #' @export
 #' @examples
 #' hasInternet()
-hasInternet <- has_internet
+hasInternet <- function() {
+    requireNamespace("curl", quietly = TRUE)
+    curl::has_internet
+}
