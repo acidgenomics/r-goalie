@@ -1,4 +1,4 @@
-#' Assert That Certain Conditions Are True
+#' Assert that certain conditions are true
 #'
 #' `assert` is a drop-in replacement for `stopifnot` supporting more informative
 #' error messages.
