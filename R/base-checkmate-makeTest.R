@@ -1,4 +1,4 @@
-#' Make Test Function
+#' Make test function
 #'
 #' @name makeTest
 #'
@@ -9,11 +9,12 @@
 #' @param fun `function`.
 #'   Check function, which returns either `TRUE` or `character(1)`.
 #' @param envir `environment`.
-#'   The environment of the created function. Defaults to `parent.frame`.
+#'   The environment of the created function.
+#'   Defaults to [parent.frame()][base::parent.frame].
 #'
 #' @seealso
-#' - `checkmate::makeTest`.
-#' - `checkmate::makeTestFunction`.
+#' - `checkmate::makeTest()`.
+#' - `checkmate::makeTestFunction()`.
 NULL
 
 

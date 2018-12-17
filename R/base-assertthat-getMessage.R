@@ -1,5 +1,5 @@
 # Consider using `safeDeparse()` here.
-# @seealso `assertthat:::fail_default`.
+# @seealso `assertthat:::fail_default()`.
 failDefault <- function(call, env) {
     out <- deparse(call, width.cutoff = 60L)
     if (length(out) > 1L) {
@@ -15,7 +15,7 @@ baseFS <- new.env(parent = emptyenv())
 
 
 
-# @seealso `assertthat:::get_message`.
+# @seealso `assertthat:::get_message()`.
 getMessage <- function(res, call, env = parent.frame()) {
     stopifnot(is.call(call), length(call) >= 1)
     if (hasAttr(res, "msg")) {

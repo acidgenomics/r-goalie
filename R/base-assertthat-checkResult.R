@@ -1,4 +1,4 @@
-# @seealso `assertthat:::check_result`.
+# @seealso `assertthat:::check_result()`.
 checkResult <- function(x) {
     if (!is.logical(x))
         stop(
