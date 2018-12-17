@@ -1,4 +1,4 @@
-#' Does the Input Contain an Alpha Level?
+#' Does the input contain an alpha level?
 #'
 #' An alpha level must be `numeric(1)` greater than 0 and less than 1.
 #'
@@ -34,3 +34,10 @@ NULL
 #' @rdname containsAlpha
 #' @export
 containsAlpha <- makeTestFunction(.containsAlpha)
+
+
+
+# Soft-deprecate?
+#' @rdname containsAlpha
+#' @export
+isAlpha <- containsAlpha
