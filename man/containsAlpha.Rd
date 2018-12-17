@@ -2,9 +2,12 @@
 % Please edit documentation in R/check-containsAlpha.R
 \name{containsAlpha}
 \alias{containsAlpha}
-\title{Does the Input Contain an Alpha Level?}
+\alias{isAlpha}
+\title{Does the input contain an alpha level?}
 \usage{
 containsAlpha(x)
+
+isAlpha(x)
 }
 \arguments{
 \item{x}{Object.}

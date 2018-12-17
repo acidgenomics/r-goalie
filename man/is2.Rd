@@ -2,12 +2,13 @@
 % Please edit documentation in R/base-assertive-is2.R
 \name{is2}
 \alias{is2}
-\title{Is an Object from a Class?}
+\title{Is an object from a class?}
 \usage{
 is2(x, class, .xname = getNameInParent(x))
 }
 \description{
-Alternate version of \code{methods::is}.
+Alternate version of \code{\link[methods:is]{methods::is()}} that supports multiple checks in a
+single call.
 }
 \details{
 If a function named \code{is.class} exists, call \code{is.class(x)}.
@@ -21,7 +22,7 @@ is2(mean, c("function", "data.frame"))
 }
 \seealso{
 \itemize{
-\item \code{assertive.base::is2}.
-\item \code{methods::is}.
+\item \code{assertive.base::is2()}.
+\item \code{methods::is()}.
 }
 }

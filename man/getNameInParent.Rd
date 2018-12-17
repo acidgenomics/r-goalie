@@ -3,7 +3,7 @@
 \name{getNameInParent}
 \alias{getNameInParent}
 \alias{vname}
-\title{Get the Name of a Variable in the Parent Frame}
+\title{Get the name of a variable defined in the parent frame}
 \usage{
 getNameInParent(x, escapePercent = TRUE)
 
@@ -15,17 +15,17 @@ Variable to get the name of.}
 
 \item{escapePercent}{\code{logical(1)}.
 If \code{TRUE}, percent signs are doubled, making the value suitable for use
-with \code{sprintf}.}
+with \link[base:sprintf]{sprintf()}.}
 }
 \description{
-Get the Name of a Variable in the Parent Frame
+Get the name of a variable defined in the parent frame
 }
 \examples{
 getNameInParent(test)
 }
 \seealso{
 \itemize{
-\item \code{assertive.base::get_name_in_parent}.
-\item \code{checkmate::vname}.
+\item \code{assertive.base::get_name_in_parent()}.
+\item \code{checkmate::vname()}.
 }
 }

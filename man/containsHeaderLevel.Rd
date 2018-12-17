@@ -2,9 +2,12 @@
 % Please edit documentation in R/check-containsHeaderLevel.R
 \name{containsHeaderLevel}
 \alias{containsHeaderLevel}
-\title{Does the Input Contain a Markdown Header Level?}
+\alias{isHeaderLevel}
+\title{Does the input contain a Markdown header level?}
 \usage{
 containsHeaderLevel(x)
+
+isHeaderLevel(x)
 }
 \arguments{
 \item{x}{Object.}
