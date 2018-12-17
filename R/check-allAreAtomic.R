@@ -2,12 +2,12 @@
 
 
 
-#' Does the Input Contain Elements That Are All Atomic?
+#' Does the input contain elements that are all atomic?
 #'
 #' @name allAreAtomic
 #' @inherit params
 #'
-#' @seealso `is.atomic`.
+#' @seealso `is.atomic()`.
 #'
 #' @examples
 #' ## Pass ====
