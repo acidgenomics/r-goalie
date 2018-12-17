@@ -1,11 +1,12 @@
 #' Assert that certain conditions are true
 #'
-#' `assert` is a drop-in replacement for `stopifnot` supporting more informative
+#' [assert()] is a drop-in replacement for [stopifnot()] supporting more
+#' informative
 #' error messages.
 #'
-#' @note Don't use `assertive::assert_that` as a general `stopifnot`
-#' replacement. It doesn't currently catch everything, and isn't hardened for S4
-#' methods.
+#' @note Don't use [assertive::assert_that()] as a general [stopifnot()]
+#'   replacement. It doesn't currently catch everything, and isn't hardened
+#'   against S4 methods.
 #'
 #' @inheritParams base::stopifnot
 #' @export
@@ -14,9 +15,9 @@
 #'   which should evaluate to `TRUE`.
 #'
 #' @seealso
-#' - `stopifnot`.
-#' - `assertthat::assert_that`.
-#' - `checkmate::assert`.
+#' - `stopifnot()`.
+#' - `assertthat::assert_that()`.
+#' - `checkmate::assert()`.
 #'
 #' @examples
 #' assert(
