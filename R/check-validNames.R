@@ -1,4 +1,4 @@
-#' Are These Valid Names?
+#' Are these valid names?
 #'
 #' @name validNames
 #' @inherit params
@@ -22,16 +22,16 @@ NULL
 
 
 
-.validNames <- function(names) {
+.validNames <- function(x) {
     if (
-        !is.character(names) ||
-        length(names) == 0L
+        !is.character(x) ||
+        length(x) == 0L
     ) {
         return("Must contain non-empty character")
     }
 
-    ok <- identical(names, make.names(names, unique = TRUE))
-    if (!ok) {
+    ok <- identical(x, make.names(x, unique = TRUE))
+    if (!isTRUE(ok)) {
         return(paste(
             "Not all names are valid in R.",
             "See make.names() documentation for details on valid names."
@@ -45,6 +45,4 @@ NULL
 
 #' @rdname validNames
 #' @export
-validNames <- function(x) {
-    isTRUE(.validNames(x))
-}
+validNames <- makeTestFunction(.validNames)
