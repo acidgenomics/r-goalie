@@ -1,14 +1,23 @@
-#' Does the Input Contain a Directory?
+#' Does the input contain a directory?
 #'
 #' @name isDirectory
-#' @importFrom R.utils isDirectory
 #' @inherit params
 #'
 #' @return `logical`.
 #'
-#' @seealso `R.utils::isDirectory`.
+#' @seealso
+#' `R.utils::isDirectory()`.
+#'
+#' ```
+#' getS3method(
+#'     f = "isDirectory",
+#'     class = "default",
+#'     envir = asNamespace("R.utils")
+#' )
+#' ```
 #'
 #' @examples
+#' isDirectory(c("~", "~"))
 #' isADirectory("~")
 NULL
 
@@ -17,7 +26,10 @@ NULL
 #' @rdname isDirectory
 #' @export
 isDirectory <- function(x) {
-    R.utils::isDirectory(x)
+    ok <- isCharacter(x)
+    if (!isTRUE(ok)) return(ok)
+
+    dir.exists(x)
 }
 
 
@@ -31,7 +43,13 @@ isDir <- isDirectory
 #' @rdname isDirectory
 #' @export
 isADirectory <- function(x) {
-    isString(x) && isDirectory(x)
+    ok <- isString(x)
+    if (!isTRUE(ok)) return(ok)
+
+    ok <- isDirectory(x)
+    if (!isTRUE(ok)) return(ok)
+
+    TRUE
 }
 
 

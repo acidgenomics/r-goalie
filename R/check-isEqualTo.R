@@ -4,9 +4,17 @@
 #'
 #' @name isEqualTo
 #' @inherit params
-#' @inheritParams assertive.numbers::is_equal_to
 #'
 #' @return `logical`.
+#'
+#' @seealso
+#' - Primitives: `==`, `>`, `>=`, `<`, `<=`.
+#' - `assertive.numbers::is_equal_to()`.
+#' - `assertive.numbers::is_not_equal_to()`.
+#' - `assertive.numbers::is_greater_than()`.
+#' - `assertive.numbers::is_greater_than_or_equal_to()`.
+#' - `assertive.numbers::is_less_than()`.
+#' - `assertive.numbers::is_less_than_or_equal_to()`.
 #'
 #' @examples
 #' ## Pass ====
@@ -24,41 +32,47 @@ NULL
 
 
 #' @rdname isEqualTo
-#' @importFrom assertive.numbers is_equal_to
 #' @export
-isEqualTo <- is_equal_to
+isEqualTo <- function(x, y) {
+    isTRUE(all.equal(target = x, current = y))
+}
 
 
 
 #' @rdname isEqualTo
-#' @importFrom assertive.numbers is_not_equal_to
 #' @export
-isNotEqualTo <- is_not_equal_to
+isNotEqualTo <- function(x, y) {
+    !isEqualTo(x, y)
+}
 
 
 
 #' @rdname isEqualTo
-#' @importFrom assertive.numbers is_greater_than
 #' @export
-isGreaterThan <- is_greater_than
+isGreaterThan <- function(x, y) {
+    x > y
+}
 
 
 
 #' @rdname isEqualTo
-#' @importFrom assertive.numbers is_greater_than_or_equal_to
 #' @export
-isGreaterThanOrEqualTo <- is_greater_than_or_equal_to
+isGreaterThanOrEqualTo <- function(x, y) {
+    x >= y
+}
 
 
 
 #' @rdname isEqualTo
-#' @importFrom assertive.numbers is_less_than
 #' @export
-isLessThan <- is_less_than
+isLessThan <- function(x, y) {
+    x < y
+}
 
 
 
 #' @rdname isEqualTo
-#' @importFrom assertive.numbers is_less_than_or_equal_to
 #' @export
-isLessThanOrEqualTo <- is_less_than_or_equal_to
+isLessThanOrEqualTo <- function(x, y) {
+    x <= y
+}
