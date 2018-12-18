@@ -21,18 +21,13 @@ areSameLength <- function(
     .xname = getNameInParent(x),
     .yname = getNameInParent(y)
 ) {
+    ok <- hasLength(x = x, .xname = .xname)
+    if (!isTRUE(ok)) return(ok)
 
-    # TODO Switch to hasLength?
-    if (length(x) == 0L) {
-        return(false("%s has length 0.", .xname))
-    }
+    ok <- hasLength(x = y, .xname = .yname)
+    if (!isTRUE(ok)) return(ok)
 
-    # TODO Switch to hasLength?
-    if (length(y) == 0L) {
-        return(false("%s has length 0.", .yname))
-    }
-
-    ok <- length(x) == length(y)
+    ok <- identical(length(x), length(y))
     if (!isTRUE(ok)) {
         return(false(
             "%s does not have the same length as %s.",
