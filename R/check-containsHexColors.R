@@ -2,9 +2,8 @@
 #'
 #' @name containsHexColors
 #' @inherit params
-#' @export
 #'
-#' @seealso `assertive::is_hex_color`.
+#' @seealso `assertive::is_hex_color()`.
 #'
 #' @examples
 #' ## Pass ====
@@ -25,14 +24,10 @@ NULL
         return("Must contain character")
     }
 
-    # NOTE `viridis` adds an extra "FF" to the end of hex color return.
+    # NOTE `viridis()` adds an extra "FF" to the end of hex color return.
     pattern <- "^(#[0-9A-F]{6})"
-    ok <- all(grepl(
-        pattern = pattern,
-        x = x,
-        ignore.case = TRUE
-    ))
-    if (!ok) {
+    ok <- all(grepl(pattern = pattern, x = x, ignore.case = TRUE))
+    if (!isTRUE(ok)) {
         return(paste0(
             "Must contain hexadecimal colors.\n",
             "For example, use #FF0000 to indicate red."
@@ -47,3 +42,10 @@ NULL
 #' @rdname containsHexColors
 #' @export
 containsHexColors <- makeTestFunction(.containsHexColors)
+
+
+
+# Soft deprecate?
+#' @rdname containsHexColors
+#' @export
+areHexColors <- containsHexColors

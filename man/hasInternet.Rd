@@ -2,7 +2,7 @@
 % Please edit documentation in R/check-hasInternet.R
 \name{hasInternet}
 \alias{hasInternet}
-\title{Does the Current Session Have an Internet Connection?}
+\title{Does the current session have an internet connection?}
 \usage{
 hasInternet()
 }
@@ -17,7 +17,7 @@ Intended to be used in combination with \code{validate} function.
 }
 }
 \description{
-Does the Current Session Have an Internet Connection?
+Does the current session have an internet connection?
 }
 \examples{
 hasInternet()

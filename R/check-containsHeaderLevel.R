@@ -1,10 +1,9 @@
-#' Does the Input Contain a Markdown Header Level?
+#' Does the input contain a Markdown header level?
 #'
 #' Markdown supports header levels `1`-`7` (`<H1>`-`<H7>`).
 #'
 #' @name containsHeaderLevel
 #' @inherit params
-#' @export
 #'
 #' @examples
 #' ## Pass ====
@@ -35,3 +34,10 @@ NULL
 #' @rdname containsHeaderLevel
 #' @export
 containsHeaderLevel <- makeTestFunction(.containsHeaderLevel)
+
+
+
+# Soft deprecate?
+#' @rdname containsHeaderLevel
+#' @export
+isHeaderLevel <- containsHeaderLevel

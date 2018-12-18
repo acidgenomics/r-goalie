@@ -2,13 +2,13 @@
 #'
 #' Validity check capable of validating multiple slots in a single call.
 #'
-#' To be used inside S4 `methods::setValidity` call or with `validate`.
+#' To be used inside S4 [methods::setValidity()] call or with [validate()].
 #' Particularly useful for checking multiple slotted objects inside
-#' `metadata`.
+#' [metadata][S4Vectors::metadata].
 #'
 #' @export
-#'
 #' @inheritParams params
+#'
 #' @param expected `list`. Named list of expected classes per slot.
 #' @param subset `logical(1)`. Only check a subset of slots in the object.
 #'
@@ -17,8 +17,8 @@
 #' - `methods::setValidity`.
 #' - `methods::validObject`.
 #'
-#' @return `logical(1)` (`TRUE`) on sucess or `character(1)` containing informative
-#'   message on failure.
+#' @return `logical(1)` (`TRUE`) on sucess or `character(1)` containing
+#'   informative message on failure.
 #'
 #' @examples
 #' validateClasses(

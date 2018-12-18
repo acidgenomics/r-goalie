@@ -16,9 +16,11 @@ Capitalize each character string in a vector.
 capitalize(c("hello", "world"))
 }
 \seealso{
-\itemize{
-\item \code{R.utils::capitalize}.
-\item \code{getS3method(f = "capitalize", class = "default", envir = asNamespace("R.utils"))}.
+\code{R.utils::capitalize()}.\preformatted{getS3method(
+    f = "capitalize",
+    class = "default",
+    envir = asNamespace("R.utils")
+)
 }
 }
 \keyword{internal}

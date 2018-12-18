@@ -14,16 +14,16 @@ validateClasses(object, expected, subset = FALSE)
 \item{subset}{\code{logical(1)}. Only check a subset of slots in the object.}
 }
 \value{
-\code{logical(1)} (\code{TRUE}) on sucess or \code{character(1)} containing informative
-message on failure.
+\code{logical(1)} (\code{TRUE}) on sucess or \code{character(1)} containing
+informative message on failure.
 }
 \description{
 Validity check capable of validating multiple slots in a single call.
 }
 \details{
-To be used inside S4 \code{methods::setValidity} call or with \code{validate}.
+To be used inside S4 \code{\link[methods:setValidity]{methods::setValidity()}} call or with \code{\link[=validate]{validate()}}.
 Particularly useful for checking multiple slotted objects inside
-\code{metadata}.
+\link[S4Vectors:metadata]{metadata}.
 }
 \examples{
 validateClasses(
