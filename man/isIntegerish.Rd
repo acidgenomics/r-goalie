@@ -4,31 +4,18 @@
 \alias{isIntegerish}
 \title{Is the Input Integerish?}
 \usage{
-isIntegerish(x, n = NULL, finite = NULL)
+isIntegerish(x)
 }
 \arguments{
 \item{x}{Object.}
-
-\item{n}{Expected length of a vector.}
-
-\item{finite}{Whether all values of the vector are finite. The
-non-finite values are \code{NA}, \code{Inf}, \code{-Inf} and \code{NaN}. Setting this
-to something other than \code{NULL} can be expensive because the whole
-vector needs to be traversed and checked.}
 }
 \value{
-\itemize{
-\item \code{are*}/\code{contains*}/\code{has*}/\code{is*}: \code{logical(1)}.
-Boolean flag (\code{TRUE}/\code{FALSE}). Intended to be used in combination with
-\code{assert} function.
-\item \code{check*}: \code{TRUE} on success, \code{character(1)} on failure.
-Intended to be used in combination with \code{validate} function.
-\item \code{assert*}: \code{TRUE} on success, error (\code{stop}) on failure.
-}
+\code{TRUE} on success;
+\code{FALSE} on failure, with \code{cause} \link[base:attributes]{attribute} set.
 }
 \description{
 Check for valid input of either explicit (e.g. \code{1L}) and/or implict
-(e.g. \code{1}) integer.
+(e.g. \code{1}) \code{integer}.
 }
 \examples{
 isIntegerish(seq_len(2L))
@@ -36,8 +23,7 @@ isIntegerish(c(1, 2))
 }
 \seealso{
 \itemize{
-\item \code{rlang::is_integerish}.
-\item \code{checkmate::checkIntegerish}.
-\item \code{assertive::is_a_number}.
+\item \code{rlang::is_integerish()}.
+\item \code{checkmate::checkIntegerish()}.
 }
 }

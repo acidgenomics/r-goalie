@@ -13,7 +13,7 @@
 \alias{isNonPositive}
 \alias{isPercentage}
 \alias{isProportion}
-\title{Is the Input in Range?}
+\title{Is the input in range?}
 \usage{
 isInRange(x, lower = -Inf, upper = Inf, lower_is_strict = FALSE,
   upper_is_strict = FALSE, .xname = get_name_in_parent(x))
@@ -47,30 +47,14 @@ isProportion(x, lower_is_strict = FALSE, upper_is_strict = FALSE,
 \arguments{
 \item{x}{Object.}
 
-\item{lower}{Lower bound for the interval.}
-
-\item{upper}{Upper bound for the interval.}
-
-\item{lower_is_strict}{If \code{TRUE}, the lower bound is open (strict) 
-otherwise it is closed.}
-
-\item{upper_is_strict}{If \code{TRUE}, the upper bound is open (strict)
-otherwise it is closed.}
-
 \item{.xname}{\emph{Not intended to be used directly.}}
 }
 \value{
-\itemize{
-\item \code{are*}/\code{contains*}/\code{has*}/\code{is*}: \code{logical(1)}.
-Boolean flag (\code{TRUE}/\code{FALSE}). Intended to be used in combination with
-\code{assert} function.
-\item \code{check*}: \code{TRUE} on success, \code{character(1)} on failure.
-Intended to be used in combination with \code{validate} function.
-\item \code{assert*}: \code{TRUE} on success, error (\code{stop}) on failure.
-}
+\code{TRUE} on success;
+\code{FALSE} on failure, with \code{cause} \link[base:attributes]{attribute} set.
 }
 \description{
-Is the Input in Range?
+Is the input in range?
 }
 \examples{
 ## Pass ====
@@ -92,4 +76,9 @@ isInOpenRange(x = 1, lower = 0, upper = 1)
 
 isInLeftOpenRange(x = 0, lower = 0, upper = 1)
 isInRightOpenRange(x = 1, lower = 0, upper = 1)
+}
+\seealso{
+\itemize{
+\item assertive.numbers::is_in_range
+}
 }

@@ -5,16 +5,19 @@
 \alias{areExisting}
 \alias{isNonExisting}
 \alias{areNonExisting}
-\title{Does the Requested Input Exist in the Environment?}
+\title{Does the requested input exist in the environment?}
 \usage{
-isExisting(x, envir = parent.frame(), inherits = TRUE,
-  .xname = get_name_in_parent(x))
+isExisting(x, envir = parent.frame(), inherits = FALSE,
+  .xname = getNameInParent(x))
 
-areExisting(x, ...)
+areExisting(x, envir = parent.frame(), inherits = FALSE,
+  .xname = getNameInParent(x))
 
-isNonExisting(x, ...)
+isNonExisting(x, envir = parent.frame(), inherits = FALSE,
+  .xname = getNameInParent(x))
 
-areNonExisting(x, ...)
+areNonExisting(x, envir = parent.frame(), inherits = FALSE,
+  .xname = getNameInParent(x))
 }
 \arguments{
 \item{x}{\code{character}.
@@ -27,21 +30,13 @@ Environment.}
 Should the enclosing frames of the \code{environment} be searched?}
 
 \item{.xname}{\emph{Not intended to be used directly.}}
-
-\item{...}{Additional arguments.}
 }
 \value{
-\itemize{
-\item \code{are*}/\code{contains*}/\code{has*}/\code{is*}: \code{logical(1)}.
-Boolean flag (\code{TRUE}/\code{FALSE}). Intended to be used in combination with
-\code{assert} function.
-\item \code{check*}: \code{TRUE} on success, \code{character(1)} on failure.
-Intended to be used in combination with \code{validate} function.
-\item \code{assert*}: \code{TRUE} on success, error (\code{stop}) on failure.
-}
+\code{TRUE} on success;
+\code{FALSE} on failure, with \code{cause} \link[base:attributes]{attribute} set.
 }
 \description{
-Does the Requested Input Exist in the Environment?
+Does the requested input exist in the environment?
 }
 \note{
 \code{exists} only supports \code{character(1)}, so we are exporting
@@ -60,4 +55,7 @@ areNonExisting(c("x", "y"))
 ## Fail ====
 isExisting(c("x", "y"))
 areNonExisting(c("a", "b"))
+}
+\seealso{
+\code{assertive.code::is_existing()}.
 }
