@@ -1,3 +1,7 @@
+# TODO Include the assert check function name in the error if possible.
+
+
+
 #' Assert that certain conditions are true
 #'
 #' [assert()] is a drop-in replacement for [stopifnot()] supporting more
