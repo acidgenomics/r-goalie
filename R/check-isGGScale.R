@@ -7,7 +7,7 @@
 
 #' Does the Input Contain a ggplot2 Scale?
 #'
-#' @name isGGScale
+#' @export
 #' @inherit params
 #'
 #' @param scale `character(1)`.
@@ -35,39 +35,42 @@
 #' isGGScale(x = colour_d, scale = "discrete", aes = "colour")
 #' isGGScale(x = fill_c, scale = "continuous", aes = "fill")
 #' isGGScale(x = fill_d, scale = "discrete", aes = "fill")
-NULL
-
-
-
-.isGGScale <- function(
+isGGScale <- function(
     x,
     scale = c("continuous", "discrete"),
-    aes = c("colour", "fill")
+    aes = c("colour", "fill"),
+    nullOK = FALSE
 ) {
     scale <- match.arg(scale)
     aes <- match.arg(aes)
+    assert(isFlag(nullOK))
 
-    classes <- c(
-        paste0("Scale", capitalize(scale)),
-        "Scale",
-        "ggproto",
-        "gg"
-    )
-    ok <- isAll(x = x, classes = classes)
-    if (!isTRUE(ok)) {
-        return(FALSE)
+    # Conditionally allow NULL.
+    if (isTRUE(nullOK) && is.null(x)) {
+        return(TRUE)
     }
 
-    # Note that this has to match the British spelling, if necessary.
+    # Check that the object inherits all of the required classes.
+    ok <- isAll(
+        x = x,
+        classes = c(
+            paste0("Scale", capitalize(scale)),
+            "Scale",
+            "ggproto",
+            "gg"
+        )
+    )
+    if (!isTRUE(ok)) return(ok)
+
+    # Note that this has to match the British spelling, if necessary
+    # (e.g colour).
     ok <- identical(x = x[["aesthetics"]], y = aes)
     if (!isTRUE(ok)) {
-        return(FALSE)
+        return(false(
+            "%s isn't identical to %. Use British spelling (e.g. colour).",
+            x[["aesthetics"]], aes
+        ))
     }
 
     TRUE
 }
-
-
-#' @rdname isGGScale
-#' @export
-isGGScale <- makeTestFunction(.isGGScale)
