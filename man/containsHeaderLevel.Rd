@@ -5,12 +5,14 @@
 \alias{isHeaderLevel}
 \title{Does the input contain a Markdown header level?}
 \usage{
-containsHeaderLevel(x)
+containsHeaderLevel(x, .xname = getNameInParent(x))
 
-isHeaderLevel(x)
+isHeaderLevel(x, .xname = getNameInParent(x))
 }
 \arguments{
 \item{x}{Object.}
+
+\item{.xname}{\emph{Not intended to be used directly.}}
 }
 \value{
 \itemize{

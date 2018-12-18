@@ -4,6 +4,7 @@
 #'
 #' @name containsAlpha
 #' @inherit params
+#' @export
 #'
 #' @examples
 #' ## Pass ====
@@ -12,28 +13,20 @@
 #' ## Fail ====
 #' containsAlpha("xxx")
 #' containsAlpha(1L)
-NULL
-
-
-
-.containsAlpha <- function(x) {
-    msg <- "An alpha level must be a scalar numeric > 0 and < 1"
+containsAlpha <- function(x, .xname = getNameInParent(x)) {
     ok <- isScalarDouble(x)
     if (!isTRUE(ok)) {
-        return(msg)
+        return(false("%s must be scalar double.", .xname))
     }
     ok <- x > 0L && x < 1L
     if (!isTRUE(ok)) {
-        return(msg)
+        return(false(paste0(
+            "%s does not contain a valid alpha.\n",
+            "Alpha level must be > 0 and < 1."
+        ), .xname))
     }
     TRUE
 }
-
-
-
-#' @rdname containsAlpha
-#' @export
-containsAlpha <- makeTestFunction(.containsAlpha)
 
 
 

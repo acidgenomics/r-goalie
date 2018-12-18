@@ -2,6 +2,7 @@
 #'
 #' @name containsHexColors
 #' @inherit params
+#' @export
 #'
 #' @seealso `assertive::is_hex_color()`.
 #'
@@ -9,39 +10,33 @@
 #' ## Pass ====
 #' x <- viridis::viridis(n = 2L)
 #' class(x)
+#' print(x)
 #' containsHexColors(x)
 #'
 #' ## Fail ====
 #' x <- ggplot2::scale_colour_manual
 #' class(x)
 #' containsHexColors(x)
-NULL
-
-
-
-.containsHexColors <- function(x) {
+containsHexColors <- function(x, .xname = getNameInParent(x)) {
     if (!is.character(x)) {
-        return("Must contain character")
+        return(false("%s is not character.", .xname))
     }
 
     # NOTE `viridis()` adds an extra "FF" to the end of hex color return.
     pattern <- "^(#[0-9A-F]{6})"
     ok <- all(grepl(pattern = pattern, x = x, ignore.case = TRUE))
     if (!isTRUE(ok)) {
-        return(paste0(
-            "Must contain hexadecimal colors.\n",
-            "For example, use #FF0000 to indicate red."
+        return(false(
+            paste0(
+                "%s does not contain hexadecimal colors.\n",
+                "For example, use #FF0000 to indicate red."
+            ),
+            .xname
         ))
     }
 
     TRUE
 }
-
-
-
-#' @rdname containsHexColors
-#' @export
-containsHexColors <- makeTestFunction(.containsHexColors)
 
 
 
