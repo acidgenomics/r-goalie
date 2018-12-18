@@ -2,7 +2,7 @@
 % Please edit documentation in R/assert.R
 \name{assert}
 \alias{assert}
-\title{Assert That Certain Conditions Are True}
+\title{Assert that certain conditions are true}
 \usage{
 assert(..., exprs, local = TRUE)
 }
