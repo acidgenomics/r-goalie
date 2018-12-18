@@ -1,7 +1,3 @@
-# TODO Consider adding `allowNULL` (`null.ok`) mode like checkmate here.
-
-
-
 #' Does the Argument Contain a Function That Returns Hexadecimal Colors?
 #'
 #' This assert check is intended primarily to check for RColorBrewer or viridis
@@ -20,38 +16,35 @@
 #' ## Fail ====
 #' x <- ggplot2::scale_colour_manual
 #' isHexColorFunction(x)
-NULL
+isHexColorFunction <- function(
+    x,
+    nullOK = FALSE,
+    .xname = getNameInParent(x)
+) {
+    # Conditionally allow NULL.
+    if (isTRUE(nullOK) && is.null(x)) {
+        return(TRUE)
+    }
 
-
-
-.isHexColorFunction <- function(x) {
-    if (!is.function(x)) {
-        return("Must contain a function")
+    # Check for function.
+    ok <- is.function(x)
+    if (!isTRUE(ok)) {
+        return(false("%s is not a function.", .xname))
     }
 
     # Check for `n` formal.
-    if (!"n" %in% formalArgs(x)) {
-        return("Hex color function must contain `n` formal")
+    ok <- "n" %in% formalArgs(x)
+    if (!isTRUE(ok)) {
+        return(false("Hex color function must contain `n` formal."))
     }
 
     colors <- x(n = 2L)
-    if (
-        !is.character(colors) ||
-        length(colors) == 0L
-    ) {
-        return("Hex color function didn't return any values")
+    if (!is.character(colors) || length(colors) == 0L) {
+        return(false("Hex color function didn't return any values."))
     }
 
-    check <- .containsHexColors(colors)
-    if (is.character(check)) {
-        return(check)
-    }
+    ok <- containsHexColors(colors)
+    if (!isTRUE(ok)) return(ok)
 
     TRUE
 }
-
-
-
-#' @rdname isHexColorFunction
-#' @export
-isHexColorFunction <- makeTestFunction(.isHexColorFunction)
