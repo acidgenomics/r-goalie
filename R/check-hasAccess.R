@@ -2,7 +2,7 @@
 #'
 #' Works for either file or directory paths.
 #'
-#' @name hasAccess
+#' @export
 #'
 #' @param x `character(1)`.
 #'   File or directory path.
@@ -19,46 +19,52 @@
 #'
 #' @examples
 #' hasAccess("~")
-NULL
+hasAccess <- function(x, access = "r") {
+    requireNamespace("checkmate", quietly = TRUE)
+    wf <- checkmate::wf
 
+    xname <- getNameInParent(x)
 
-
-.hasAccess <- function(x, access = "r") {
     access <- tolower(access)
     access <- strsplit(access, "")[[1L]]
+
+    isWin <- .Platform$OS.type == "windows"
+    isRoot <- (!isWin && Sys.info()["user"] == "root")
+
     if (
         anyDuplicated(access) > 0L ||
         !all(access %in% c("r", "w", "x"))
     ) {
-        stop("Access pattern invalid. Allowed are 'r', 'w' and 'x'.")
+        return(false(
+            paste0(
+                "%s contains an invalid access code.\n",
+                "Combinations of ‘r’, ‘w’ and ‘x’ are allowed."
+            ),
+            access
+        ))
     }
-    isWin <- .Platform$OS.type == "windows"
-    isRoot <- (!isWin && Sys.info()["user"] == "root")
+
     if ("r" %in% access || isTRUE(isRoot)) {
         w <- wf(file.access(x, 4L) != 0L)
         if (length(w) > 0L) {
-            return(sprintf("'%s' not readable", x[w]))
+            return(false("%s is not readable.", x[w]))
         }
     }
+
     if (!isTRUE(isWin)) {
         if ("w" %in% access || isTRUE(isRoot)) {
             w <- wf(file.access(x, 2L) != 0L)
             if (length(w) > 0L) {
-                return(sprintf("'%s' not writeable", x[w]))
+                return(false("%s is not writeable.", x[w]))
             }
         }
         if ("x" %in% access) {
             w <- wf(file.access(x, 1L) != 0L)
             if (length(w) > 0L) {
-                return(sprintf("'%s' not executable", x[w]))
+                return(false("%s is not executable.", x[w]))
             }
         }
     }
+
     TRUE
 }
-
-
-
-#' @rdname hasAccess
-#' @export
-hasAccess <- makeTestFunction(.hasAccess)
