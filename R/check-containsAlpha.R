@@ -14,16 +14,11 @@
 #' containsAlpha("xxx")
 #' containsAlpha(1L)
 containsAlpha <- function(x, .xname = getNameInParent(x)) {
-    # FIXME Simplify this check.
-    ok <- isScalarDouble(x)
-    if (!isTRUE(ok)) {
-        return(false("%s must be scalar double.", .xname))
-    }
+    ok <- isScalarDouble(x, .xname = .xname)
+    if (!isTRUE(ok)) return(ok)
 
-    ok <- x > 0L && x < 1L
-    if (!isTRUE(ok)) {
-        return(false("Invalid alpha. %s is not > 0 and < 1.", .xname))
-    }
+    ok <- isInClosedRange(x, lower = 0L, upper = 1L, .xname = .xname)
+    if (!isTRUE(ok)) return(ok)
 
     TRUE
 }

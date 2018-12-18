@@ -13,11 +13,8 @@
 #' containsHeaderLevel(0)
 containsHeaderLevel <- function(x, .name = getNameInParent(x)) {
     ok <- isScalarIntegerish(x)
-    if (!isTRUE(ok)) {
-        return(ok)
-    }
+    if (!isTRUE(ok)) return(ok)
 
-    # TODO Switch to inRange approach.
     ok <- x %in% seq_len(7L)
     if (!isTRUE(ok)) {
         return(false(
