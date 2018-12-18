@@ -2,7 +2,7 @@ Package: goalie
 Title: Assertions
 Description: Assertive check functions for defensive R programming.
 Version: 0.2.1
-Date: 2018-12-13
+Date: 2018-12-17
 Authors@R: person(
     "Michael", "Steinbaugh",
     email = "mike@steinbaugh.com",
@@ -15,16 +15,15 @@ BugReports: https://github.com/steinbaugh/goalie/issues/
 License: MIT + file LICENSE
 Encoding: UTF-8
 Depends: R (>= 3.5)
-Imports:
-    curl (>= 3.2),
-    methods,
-    utils
+Imports: methods, utils
 Suggests:
     Matrix,
     S4Vectors,
     SummarizedExperiment,
+    curl (>= 3.2),
     ggplot2 (>= 3.1),
     patrick,
+    reticulate (>= 1.10),
     testthat (>= 2.0),
     tibble (>= 1.4),
     viridis
@@ -34,14 +33,19 @@ RoxygenNote: 6.1.1
 Collate: 
     'assert.R'
     'base-R.utils-capitalize.R'
+    'base-assertive-DIM.R'
     'base-assertive-bapply.R'
     'base-assertive-cause.R'
+    'base-assertive-checkN.R'
     'base-assertive-false.R'
+    'base-assertive-getMetric.R'
     'base-assertive-getNameInParent.R'
     'base-assertive-is2.R'
+    'base-assertive-nElements.R'
     'base-assertive-safeDeparse.R'
     'base-assertive-setCause.R'
     'base-assertive-typeDescription.R'
+    'base-assertive-useFirst.R'
     'base-assertthat-checkResult.R'
     'base-assertthat-getMessage.R'
     'base-assertthat-hasAttr.R'
@@ -65,6 +69,7 @@ Collate:
     'check-hasNames.R'
     'check-hasNonZeroRowsAndCols.R'
     'check-hasRownames.R'
+    'check-hasUMAP.R'
     'check-hasUniqueCols.R'
     'check-hasValidNames.R'
     'check-isAll.R'

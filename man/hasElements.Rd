@@ -6,33 +6,27 @@
 \alias{isNonEmpty}
 \alias{isOfDimension}
 \alias{isOfLength}
-\title{Does the Input Have Elements?}
+\title{Does the input have elements?}
 \usage{
 isEmpty(x, metric = c("length", "elements"),
-  .xname = get_name_in_parent(x))
+  .xname = getNameInParent(x))
 
 isNonEmpty(x, metric = c("length", "elements"),
-  .xname = get_name_in_parent(x))
+  .xname = getNameInParent(x))
 
-hasElements(x, n, .xname = get_name_in_parent(x))
+hasElements(x, n, .xname = getNameInParent(x))
 
-isOfDimension(x, n, .xname = get_name_in_parent(x))
+isOfDimension(x, n, .xname = getNameInParent(x))
 
-isOfLength(x, n, .xname = get_name_in_parent(x))
+isOfLength(x, n, .xname = getNameInParent(x))
 
 isNonEmpty(x, metric = c("length", "elements"),
-  .xname = get_name_in_parent(x))
+  .xname = getNameInParent(x))
 }
 \arguments{
 \item{x}{Object.}
 
-\item{metric}{A string. Should be length or the number of elements be used to
-determine if the object is empty/non-empty/scalar?}
-
 \item{.xname}{\emph{Not intended to be used directly.}}
-
-\item{n}{Non-negative integer(s) of the expected length/number of elements/
-lengths of dimensions.  See note.}
 }
 \value{
 \itemize{
@@ -45,7 +39,7 @@ Intended to be used in combination with \code{validate} function.
 }
 }
 \description{
-Does the Input Have Elements?
+Does the input have elements?
 }
 \examples{
 ## Pass ====
@@ -54,4 +48,11 @@ hasElements(list(a = 1, b = 2), n = 2)
 
 ## Fail ====
 hasElements(list(), n = 1)
+}
+\seealso{
+\itemize{
+\item \code{assertive.properties::is_empty()}.
+\item \code{assertive.properties::is_non_empty()}.
+\item \code{assertive.properties::has_elements()}.
+}
 }

@@ -1,10 +1,10 @@
-#' Do the Inputs Have the Same Length?
+#' Do the inputs have the same length?
 #'
 #' @note Non-zero lengths for `x` and `y` are required, otherwise the check
 #'   function will intentionally error.
 #'
-#' @inherit params
 #' @export
+#' @inherit params
 #'
 #' @examples
 #' x <- list(a = 1, b = 2)

@@ -2,9 +2,12 @@
 % Please edit documentation in R/check-containsHexColors.R
 \name{containsHexColors}
 \alias{containsHexColors}
+\alias{areHexColors}
 \title{Does the Input Contain Hexadecimal Colors?}
 \usage{
 containsHexColors(x)
+
+areHexColors(x)
 }
 \arguments{
 \item{x}{Object.}
@@ -34,5 +37,5 @@ class(x)
 containsHexColors(x)
 }
 \seealso{
-\code{assertive::is_hex_color}.
+\code{assertive::is_hex_color()}.
 }

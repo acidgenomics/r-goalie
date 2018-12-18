@@ -2,7 +2,7 @@
 % Please edit documentation in R/check-formalCompress.R
 \name{formalCompress}
 \alias{formalCompress}
-\title{Check the "compress" Formal Argument}
+\title{Check the \code{compress} formal argument}
 \usage{
 formalCompress(compress)
 }
@@ -22,7 +22,7 @@ Intended to be used in combination with \code{validate} function.
 }
 }
 \description{
-Check the "compress" Formal Argument
+Check the \code{compress} formal argument
 }
 \examples{
 ## Pass ====

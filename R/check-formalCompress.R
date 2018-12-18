@@ -1,4 +1,4 @@
-#' Check the "compress" Formal Argument
+#' Check the `compress` formal argument
 #'
 #' @name formalCompress
 #' @inherit params
