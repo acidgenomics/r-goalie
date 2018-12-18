@@ -4,12 +4,17 @@
 \alias{areSameLength}
 \title{Do the inputs have the same length?}
 \usage{
-areSameLength(x, y)
+areSameLength(x, y, .xname = getNameInParent(x),
+  .yname = getNameInParent(y))
 }
 \arguments{
 \item{x}{Object.}
 
 \item{y}{Secondary object.}
+
+\item{.xname}{\emph{Not intended to be used directly.}}
+
+\item{.yname}{\emph{Not intended to be used directly.}}
 }
 \value{
 \itemize{
