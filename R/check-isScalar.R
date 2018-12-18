@@ -15,6 +15,15 @@
 #'
 #' @seealso
 #' `help(topic = "scalar-type-predicates", package = "rlang")`.
+#' - `assertive.properties::is_scalar()`.
+#' - `rlang::is_scalar_list()`.
+#' - `rlang::is_scalar_atomic()`.
+#' - `rlang::is_scalar_vector()`.
+#' - `rlang::is_scalar_integer()`.
+#' - `rlang::is_scalar_integerish()`.
+#' - `rlang::is_scalar_double()`.
+#' - `rlang::is_scalar_character()`.
+#' - `rlang::is_scalar_logical()`.
 #'
 #' @examples
 #' ## Pass ====
@@ -30,9 +39,10 @@ NULL
 
 
 #' @rdname isScalar
-#' @importFrom assertive.properties is_scalar
 #' @export
-isScalar <- is_scalar
+isScalar <- function(x) {
+    length(x) == 1L
+}
 
 
 
@@ -45,80 +55,74 @@ isNonScalar <- function(x) {
 
 
 #' @rdname isScalar
-#' @importFrom rlang is_scalar_list
 #' @export
-isScalarList <- is_scalar_list
+isScalarList <- function(x) {
+    isScalar(x) && is.list(x)
+}
 
 
 
 #' @rdname isScalar
-#' @importFrom rlang is_scalar_atomic
 #' @export
-isScalarAtomic <- is_scalar_atomic
+isScalarAtomic <- function(x) {
+    isScalar(x) && is.atomic(x)
+}
 
 
 
 #' @rdname isScalar
-#' @importFrom rlang is_scalar_vector
 #' @export
-isScalarVector <- is_scalar_vector
+isScalarVector <- function(x) {
+    isScalar(x) && is.vector(x)
+}
 
 
 
 #' @rdname isScalar
 #' @export
 isScalarNumeric <- function(x) {
-    isScalar(x) && is(x, "numeric")
+    isScalar(x) && is.numeric(x)
 }
 
 
 
 #' @rdname isScalar
-#' @importFrom rlang is_scalar_integer
 #' @export
-isScalarInteger <- is_scalar_integer
+isScalarInteger <- function(x) {
+    isScalar(x) && is.integer(x)
+}
 
 
 
 #' @rdname isScalar
-#' @importFrom rlang is_scalar_integerish
 #' @export
-isScalarIntegerish <- is_scalar_integerish
+isScalarIntegerish <- function(x) {
+    isScalar(x) && isIntegerish(x)
+}
 
 
 
 #' @rdname isScalar
-#' @importFrom rlang is_scalar_double
 #' @export
-isScalarDouble <- is_scalar_double
+isScalarDouble <- function(x) {
+    isScalar(x) && is.double(x)
+}
 
 
 
 #' @rdname isScalar
-#' @importFrom rlang is_scalar_character
 #' @export
-isScalarCharacter <- is_scalar_character
+isScalarCharacter <- function(x) {
+    isScalar(x) && is.character(x)
+}
 
 
 
 #' @rdname isScalar
-#' @importFrom rlang is_scalar_logical
 #' @export
-isScalarLogical <- is_scalar_logical
-
-
-
-# TODO Consider adding `null.ok` mode here.
-#' @describeIn isScalar Alias for `isScalarCharacter`.
-#' @importFrom rlang is_string
-#' @export
-isString <- is_string
-
-
-
-#' @describeIn isScalar Alias for `isScalarLogical`.
-#' @export
-isFlag <- isScalarLogical
+isScalarLogical <- function(x) {
+    isScalar(x) && is.logical(x)
+}
 
 
 
