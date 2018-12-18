@@ -13,6 +13,19 @@
 #'
 #' ## Fail ====
 #' isAny(x, classes = c("character", "data.frame"))
-isAny <- function(x, classes) {
-    any(is2(x, class = classes))
+isAny <- function(x, classes, .xname = getNameInParent(x)) {
+    ok <- isCharacter(classes)
+    if (!isTRUE(ok)) {
+        return(ok)
+    }
+
+    ok <- any(is2(x, class = classes))
+    if (!isTRUE(ok)) {
+        return(false(
+            "%s is not any of: %s.",
+            .xname, toString(classes)
+        ))
+    }
+
+    TRUE
 }
