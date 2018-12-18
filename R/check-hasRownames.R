@@ -7,9 +7,8 @@
 #' meaning that they return as a sequence that is identical to the number of
 #' rows.
 #'
-#' @name hasRownames
-#' @inherit params
 #' @export
+#' @inherit params
 #'
 #' @examples
 #' ## Pass ====
@@ -33,40 +32,30 @@
 #' # S4 data frame does allow NULL row names.
 #' rownames(x)
 #' hasRownames(x)
-NULL
-
-
-
-.hasRownames <- function(x) {
+hasRownames <- function(x, .xname = getNameInParent(x)) {
     # Classes that extend data.frame but intentionally don't support row names.
     if (inherits(x, "data.table")) {
-        return("data.table class objects don't support row names")
+        return(false("data.table class objects don't support row names"))
     } else if (inherits(x, "tbl_df")) {
-        return("tibble (tbl_df) class objects don't support row names")
+        return(false("tibble (tbl_df) class objects don't support row names"))
     }
 
     # Standard data frames can't return NULL row names, so check for sequence.
     if (
-        inherits(x, "data.frame") &&
+        is.data.frame(x) &&
         identical(
             x = as(rownames(x), "character"),
             y = as(seq_len(nrow(x)), "character")
         )
     ) {
-        return("Object is data.frame with sequence row names (soft NULL)")
+        return(false("%s has sequence row names (soft NULL)", .xname))
     }
 
     # Other classes (e.g. matrix, DataFrame) do support NULL row names.
     ok <- !is.null(rownames(x))
-    if (!ok) {
-        "Object has NULL row names"
+    if (!isTRUE(ok)) {
+        return(false("%s has NULL row names.", .xname))
     }
 
     TRUE
 }
-
-
-
-#' @rdname hasRownames
-#' @export
-hasRownames <- makeTestFunction(.hasRownames)
