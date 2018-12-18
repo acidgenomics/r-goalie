@@ -154,7 +154,7 @@ isOfLength <- function (x, n, .xname = getNameInParent(x)) {
 isNonEmpty <- function(
     x,
     metric = c("length", "elements"),
-    xname = getNameInParent(x)
+    .xname = getNameInParent(x)
 ) {
     metric <- match.arg(metric)
     metricFun <- getMetric(metric)

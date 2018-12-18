@@ -17,10 +17,8 @@
 allAreAtomic <- function(x, .xname = getNameInParent(x)) {
 
     # If we don't add this, the `all()` step below will return TRUE.
-    # TODO Switch to hasLength?
-    if (length(x) == 0L) {
-        return(false("%s has length 0.", .xname))
-    }
+    ok <- hasLength(x, .xname = .xname)
+    if (!isTRUE(ok)) return(ok)
 
     ok <- all(bapply(x, is.atomic))
     if (!isTRUE(ok)) {
