@@ -2,18 +2,19 @@
 
 
 
-#' Does the Requested Input Exist in the Environment?
+#' Does the requested input exist in the environment?
 #'
 #' @note `exists` only supports `character(1)`, so we are exporting
 #'   `isExisting` as a convenience function to check multiple variables in a
 #'   single call.
 #'
 #' @name isExisting
-#' @importFrom assertive.code is_existing
 #' @inherit params
 #'
 #' @param x `character`.
 #'   Variable names to check in `environment`.
+#'
+#' @seealso `assertive.code::is_existing()`.
 #'
 #' @examples
 #' suppressWarnings(rm(x, y))
@@ -33,32 +34,26 @@ NULL
 
 #' @rdname isExisting
 #' @export
-isExisting <- is_existing
+isExisting <- function(
+    x,
+    envir = parent.frame(),
+    inherits = FALSE,
+    .xname = getNameInParent(x)
+)  {
+    x <- as.character(x)
 
+    ok <- isNonEmpty(x, .xname = .xname)
+    if (!isTRUE(ok)) return(ok)
 
-
-#' @rdname isExisting
-#' @export
-areExisting <- function(x, ...) {
-    all(isExisting(x, ...))
-}
-
-
-
-#' @rdname isExisting
-#' @export
-isNonExisting <- function(x, ...) {
-    !isExisting(x, ...)
-}
-
-
-
-.areNonExisting <- function(x, ...) {
-    ok <- !isExisting(x, ...)
-    if (!all(ok)) {
-        which <- names(ok)[!ok]
-        return(paste("Exists in environment:", which))
+    # Allow parameterized return.
+    if (length(x) > 1L) {
+        return(bapply(x, isExisting, envir = envir, inherits = inherits))
     }
+
+    if (!exists(x, envir = envir, inherits = inherits)) {
+        return(false(gettext("%s does not exist."), .xname))
+    }
+
     TRUE
 }
 
@@ -66,4 +61,59 @@ isNonExisting <- function(x, ...) {
 
 #' @rdname isExisting
 #' @export
-areNonExisting <- makeTestFunction(.areNonExisting)
+areExisting <- function() {
+    if (!length(x) > 1L) {
+        stop("Use isExisting() for scalar.")
+    }
+    all(do.call(
+        what = isExisting,
+        args = list(
+            x = x,
+            envir = envir,
+            inherits = inherits,
+            .xname = .xname
+        )
+    ))
+}
+
+formals(areExisting) <- formals(isExisting)
+
+
+
+# FIXME Rethink this approach...this won't return cause currently.
+#' @rdname isExisting
+#' @export
+isNonExisting <- function() {
+    as.logical(do.call(
+        what = Negate(isExisting),
+        args = list(
+            x = x,
+            envir = envir,
+            inherits = inherits,
+            .xname = .xname
+        )
+    ))
+}
+
+formals(isNonExisting) <- formals(isExisting)
+
+
+
+#' @rdname isExisting
+#' @export
+areNonExisting <- function(x, ...) {
+    if (!length(x) > 1L) {
+        stop("Use isExisting() for scalar.")
+    }
+    all(do.call(
+        what = isNonExisting,
+        args = list(
+            x = x,
+            envir = envir,
+            inherits = inherits,
+            .xname = .xname
+        )
+    ))
+}
+
+formals(areNonExisting) <- formals(isNonExisting)
