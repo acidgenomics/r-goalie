@@ -2,12 +2,14 @@
 % Please edit documentation in R/check-allAreAtomic.R
 \name{allAreAtomic}
 \alias{allAreAtomic}
-\title{Parameters}
+\title{Does the input contain elements that are all atomic?}
 \usage{
-allAreAtomic(x)
+allAreAtomic(x, .xname = getNameInParent(x))
 }
 \arguments{
 \item{x}{Object.}
+
+\item{.xname}{\emph{Not intended to be used directly.}}
 }
 \value{
 \itemize{
@@ -20,7 +22,7 @@ Intended to be used in combination with \code{validate} function.
 }
 }
 \description{
-Parameters
+Does the input contain elements that are all atomic?
 }
 \examples{
 ## Pass ====
@@ -28,6 +30,7 @@ allAreAtomic(data.frame(a = "foo", b = "bar"))
 allAreAtomic(list(a = "foo", b = "bar"))
 
 ## Fail ====
+allAreAtomic(data.frame())
 allAreAtomic(list(a = "x", b = list()))
 }
 \seealso{
