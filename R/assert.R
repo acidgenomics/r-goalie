@@ -16,8 +16,8 @@
 #'
 #' @seealso
 #' - `stopifnot()`.
-#' - `assertive.base::assert_engine()`.
 #' - `assertthat::assert_that()`.
+#' - `assertive.base::assert_engine()`.
 #' - `checkmate::assert()`.
 #'
 #' @examples
@@ -25,34 +25,79 @@
 #'     is.atomic("example"),
 #'     is.character("example")
 #' )
-assert <- function(..., envir = parent.frame()) {
-    res <- seeIf(..., envir = envir)
-    stopifnot(is.list(res))
+assert <- function(...) {
+    mc <- match.call()[-1L]
 
-    # Invisibly return TRUE when all checks pass.
-    if (all(vapply(
-        X = res,
-        FUN = isTRUE,
-        FUN.VALUE = logical(1L)
-    ))) {
-        return(invisible(TRUE))
+    # Note that we're using `i` along with `...elt()` here to eval the call.
+    for (i in seq_along(mc)) {
+        call <- mc[[i]]
+        res <- withCallingHandlers(
+            expr = tryCatch(
+                expr = ...elt(i),
+                error = function(e) {
+                    e$call <- call
+                    stop(e)
+                }
+            ),
+            warning = function(w) {
+                w$call <- call
+                w
+            }
+        )
+
+        # Ensure that all check functions return boolean.
+        # This behavior differs from stopifnot and is more consistent.
+        if (!(is.logical(res) && length(res) == 1L)) {
+            stop("All checks must return boolean flags.")
+        }
+
+        # Stop on the first assert check failure.
+        if (!isTRUE(res)) {
+            # Check for defined cause attribute.
+            # Otherwise, generate a `stopifnot()`-like one automatically.
+            cause <- cause(res)
+            if (identical(cause, noquote(""))) {
+                msg <- sprintf("%s is not TRUE", Dparse(call))
+            } else {
+                msg <- cause
+            }
+            stop(simpleError(msg, call = sys.call(-1L)))
+        }
     }
 
-    # Otherwise display an assertion error.
-    msg <- paste(
-        "Assert check failure.",
-        paste(
-            vapply(
-                X = Filter(f = Negate(isTRUE), x = res),
-                FUN = cause,
-                FUN.VALUE = character(1L)
-            ),
-            collapse = "\n"
-        ),
-        sep = "\n"
-    )
-    simpleError(message = msg, call = sys.call(-1L))
+    invisible(TRUE)
 }
+
+
+
+# assert <- function(..., envir = parent.frame()) {
+#     res <- seeIf(..., envir = envir)
+#     stopifnot(is.list(res))
+#
+#     # Invisibly return TRUE when all checks pass.
+#     if (all(vapply(
+#         X = res,
+#         FUN = isTRUE,
+#         FUN.VALUE = logical(1L)
+#     ))) {
+#         return(invisible(TRUE))
+#     }
+#
+#     # Otherwise display an assertion error.
+#     msg <- paste(
+#         "Assert check failure.",
+#         paste(
+#             vapply(
+#                 X = Filter(f = Negate(isTRUE), x = res),
+#                 FUN = cause,
+#                 FUN.VALUE = character(1L)
+#             ),
+#             collapse = "\n"
+#         ),
+#         sep = "\n"
+#     )
+#     simpleError(message = msg, call = sys.call(-1L))
+# }
 
 
 
