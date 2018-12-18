@@ -11,6 +11,13 @@
 #'
 #' ## Fail ====
 #' isAll(x, classes = c("integer", "NULL"))
-isAll <- function(x, classes) {
-    all(is2(x, class = classes))
+isAll <- function(x, classes, .xname = getNameInParent(x)) {
+    ok <- all(is2(x, class = classes))
+    if (!isTRUE(ok)) {
+        return(false(
+            "%s is not all: %s",
+            .xname, toString(classes)
+        ))
+    }
+    TRUE
 }
