@@ -4,11 +4,10 @@
 \alias{validNames}
 \title{Are these valid names?}
 \usage{
-validNames(names)
+validNames(x)
 }
 \arguments{
-\item{names}{\code{character}.
-Element names (e.g. row names, column names).}
+\item{x}{Object.}
 }
 \value{
 \itemize{
