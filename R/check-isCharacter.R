@@ -9,6 +9,8 @@
 #' @name isCharacter
 #' @inherit params
 #'
+#' @seealso `assertive.strings::is_non_missing_nor_empty_character()`.
+#'
 #' @examples
 #' ## Pass ====
 #' isCharacter("a")
@@ -25,12 +27,33 @@ NULL
 #' @rdname isCharacter
 #' @importFrom assertive.strings is_non_missing_nor_empty_character
 #' @export
-isCharacter <- function(x) {
-    if (!is(x, "character")) {
-        return(FALSE)
+isCharacter <- function(x, .xname = getNameInParent(x)) {
+    ok <- is.character(x)
+    if (!isTRUE(ok)) {
+        return(false("%s is not character.", .xname))
     }
-    if (length(x) == 0L) {
-        return(FALSE)
+
+    # Don't allow `character(0)`.
+    ok <- hasLength(x, .xname = .xname)
+    if (!isTRUE(ok)) return(ok)
+
+    # Don't allow empty strings ("").
+    ok <- nzchar(x)
+    if (!all(ok)) {
+        return(false(
+            "%s has empty string at: %s.",
+            .xname, toString(which(!ok))
+        ))
     }
-    all(is_non_missing_nor_empty_character(x))
+
+    # Don't allow `NA_character_`.
+    ok <- !is.na(x)
+    if (!all(ok)) {
+        return(false(
+            "%s has NA at: %s.",
+            .xname, toString(which(!ok))
+        ))
+    }
+
+    TRUE
 }
