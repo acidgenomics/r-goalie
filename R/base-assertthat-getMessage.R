@@ -1,3 +1,6 @@
+# FIXME Safe to remove these?
+
+
 # Consider using `safeDeparse()` here.
 # @seealso `assertthat:::fail_default()`.
 failDefault <- function(call, env) {
