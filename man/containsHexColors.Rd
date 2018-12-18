@@ -31,6 +31,7 @@ Does the Input Contain Hexadecimal Colors?
 ## Pass ====
 x <- viridis::viridis(n = 2L)
 class(x)
+print(x)
 containsHexColors(x)
 
 ## Fail ====
