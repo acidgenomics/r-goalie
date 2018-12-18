@@ -2,12 +2,13 @@
 % Please edit documentation in R/check-validNames.R
 \name{validNames}
 \alias{validNames}
-\title{Are These Valid Names?}
+\title{Are these valid names?}
 \usage{
-validNames(x)
+validNames(names)
 }
 \arguments{
-\item{x}{Object.}
+\item{names}{\code{character}.
+Element names (e.g. row names, column names).}
 }
 \value{
 \itemize{
@@ -20,7 +21,7 @@ Intended to be used in combination with \code{validate} function.
 }
 }
 \description{
-Are These Valid Names?
+Are these valid names?
 }
 \examples{
 ## Dots (periods) and underscores are valid.
