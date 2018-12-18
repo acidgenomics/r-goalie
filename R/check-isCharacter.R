@@ -27,7 +27,18 @@ NULL
 #' @rdname isCharacter
 #' @importFrom assertive.strings is_non_missing_nor_empty_character
 #' @export
-isCharacter <- function(x, .xname = getNameInParent(x)) {
+isCharacter <- function(
+    x,
+    nullOK = FALSE,
+    .xname = getNameInParent(x)
+) {
+    assert(isFlag(nullOK))
+
+    # Conditionally allow NULL.
+    if (isTRUE(nullOK) && is.null(x)) {
+        return(TRUE)
+    }
+
     ok <- is.character(x)
     if (!isTRUE(ok)) {
         return(false("%s is not character.", .xname))
