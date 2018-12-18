@@ -1,10 +1,15 @@
 # TODO Consider droping the `is` prefix from these?
+# FIXME Remove assertive dependencies here.
 
-#' Is the Input in Range?
+
+
+#' Is the input in range?
 #'
 #' @name ranges
 #' @inherit params
-#' @inheritParams assertive.numbers::is_in_range
+#'
+#' @seealso
+#' - assertive.numbers::is_in_range
 #'
 #' @examples
 #' ## Pass ====
@@ -27,6 +32,7 @@
 #' isInLeftOpenRange(x = 0, lower = 0, upper = 1)
 #' isInRightOpenRange(x = 1, lower = 0, upper = 1)
 NULL
+
 
 
 #' @rdname ranges
@@ -54,6 +60,7 @@ isInOpenRange <- is_in_open_range
 #' @importFrom assertive.numbers is_in_left_open_range
 #' @export
 isInLeftOpenRange <- is_in_left_open_range
+
 
 
 #' @rdname ranges

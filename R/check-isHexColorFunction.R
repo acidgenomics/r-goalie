@@ -1,9 +1,9 @@
-#' Does the Argument Contain a Function That Returns Hexadecimal Colors?
+#' Does the argument contain a function that returns hexadecimal colors?
 #'
 #' This assert check is intended primarily to check for RColorBrewer or viridis
 #' hexadecimal color value return.
 #'
-#' @name isHexColorFunction
+#' @export
 #' @inherit params
 #'
 #' @seealso RColorBrewer, viridis packages.

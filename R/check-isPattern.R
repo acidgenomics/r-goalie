@@ -1,12 +1,17 @@
-# NOTE These functions explicitly call the stringi package, so be sure to
-# include that in the imports.
+# TODO Enforce scalar here?
 
 
 
-#' Does the String Match a Pattern?
+#' Does the string match a pattern?
+#'
 #' @name isPattern
 #' @inherit params
-#' @inheritParams assertive.strings::is_matching_fixed
+#'
+#' @seealso
+#' - `assertive.strings::is_matching_fixed()`.
+#' - `assertive.strings::is_not_matching_fixed()`.
+#' - `assertive.strings::is_matching_regex()`.
+#' - `assertive.strings::is_not_matching_regex()`.
 #'
 #' @return `logical`.
 #'
@@ -20,27 +25,47 @@ NULL
 
 
 #' @rdname isPattern
-#' @importFrom assertive.strings is_matching_fixed
 #' @export
-isMatchingFixed <- is_matching_fixed
+isMatchingFixed <- function(x, pattern, .xname = getNameInParent(x)) {
+    ok <- stri_detect_fixed(x, pattern)
+    if (!isTRUE(ok)) {
+        return(false("‘%s’ pattern does not match in %s.", pattern, .xname))
+    }
+    TRUE
+}
 
 
 
 #' @rdname isPattern
-#' @importFrom assertive.strings is_not_matching_fixed
 #' @export
-isNotMatchingFixed <- is_not_matching_fixed
+isNotMatchingFixed <- function(x, pattern, .xname = getNameInParent(x)) {
+    ok <- !stri_detect_fixed(x, pattern)
+    if (!isTRUE(ok)) {
+        return(false("‘%s’ pattern matches in %s.", pattern, .xname))
+    }
+    TRUE
+}
 
 
 
 #' @rdname isPattern
-#' @importFrom assertive.strings is_matching_regex
 #' @export
-isMatchingRegex <- is_matching_regex
+isMatchingRegex <- function(x, pattern, .xname = getNameInParent(x)) {
+    ok <- stri_detect_regex(x, pattern)
+    if (!isTRUE(ok)) {
+        return(false("‘%s’ pattern does not match in %s.", pattern, .xname))
+    }
+    TRUE
+}
 
 
 
 #' @rdname isPattern
-#' @importFrom assertive.strings is_not_matching_regex
 #' @export
-isNotMatchingRegex <- is_not_matching_regex
+isNotMatchingRegex <- function(x, pattern, .xname = getNameInParent(x)) {
+    ok <- !stri_detect_regex(x, pattern)
+    if (!isTRUE(ok)) {
+        return(false("‘%s’ pattern matches in %s.", pattern, .xname))
+    }
+    TRUE
+}
