@@ -23,9 +23,46 @@
 #'     is.atomic("example"),
 #'     is.character("example")
 #' )
-validate <- function(..., envir = parent.frame()) {
-    res <- seeIf(..., envir = envir)
-    stopifnot(is.list(res))
+validate <- function(...) {
+    mc <- match.call()[-1L]
+
+    # Note that here we're evaluating all of the checks instead of stopping on
+    # the first error, like the approach in `assert()`.
+    res <- lapply(
+        X = seq_along(mc),
+        FUN = function(i) {
+            call <- mc[[i]]
+            res <- withCallingHandlers(
+                expr = tryCatch(
+                    expr = ...elt(i),
+                    error = function(e) {
+                        e$call <- call
+                        stop(e)
+                    }
+                ),
+                warning = function(w) {
+                    w$call <- call
+                    w
+                }
+            )
+
+            # Ensure that all check functions return boolean.
+            # This behavior differs from stopifnot and is more consistent.
+            if (!(is.logical(res) && length(res) == 1L)) {
+                stop("All checks must return boolean flags.")
+            }
+
+            # Add automatic `stopifnot()`-like cause attribute, if necessary.
+            if (
+                !isTRUE(res) &&
+                identical(cause(res), noquote(""))
+            ) {
+                cause(res) <- sprintf("%s is not TRUE", deparse(call))
+            }
+
+            res
+        }
+    )
 
     # Return TRUE when all checks pass.
     if (all(vapply(
@@ -38,15 +75,11 @@ validate <- function(..., envir = parent.frame()) {
 
     # Otherwise, return a character string indicating what checks failed.
     paste(
-        "Validity check failure.",
-        paste(
-            vapply(
-                X = Filter(f = Negate(isTRUE), x = res),
-                FUN = cause,
-                FUN.VALUE = character(1L)
-            ),
-            collapse = "\n"
+        vapply(
+            X = Filter(f = Negate(isTRUE), x = res),
+            FUN = cause,
+            FUN.VALUE = character(1L)
         ),
-        sep = "\n"
+        collapse = "\n"
     )
 }
