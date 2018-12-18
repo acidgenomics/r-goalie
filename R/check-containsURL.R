@@ -21,20 +21,18 @@ NULL
 
 #' @describeIn containsURL Supports multiple URLs.
 #' @export
-containsURL <- function(x) {
-    xname <- getNameInParent(x)
-
-    if (!is.character(x)) {
-        return(false("% does not contain character.", xname))
+containsURL <- function(x, .xname = getNameInParent(x)) {
+    ok <- isCharacter(x)
+    if (!isTRUE(ok)) {
+        return(ok)
     }
 
-    ok <- all(vapply(
-        X = x,
-        FUN = function(x) {
+    # TODO Switch to using `isMatchingRegex()` here.
+    ok <- all(bapply(
+        x,
+        function(x) {
             grepl("^(http(s)?|ftp)\\://.+", x)
-        },
-        FUN.VALUE = logical(1L),
-        USE.NAMES = FALSE
+        }
     ))
     if (!isTRUE(ok)) {
         return(false(
@@ -42,7 +40,7 @@ containsURL <- function(x) {
                 "%s does not contain a URL.\n",
                 "URLs must begin with ‘http(s)’ or ‘ftp’ and contain ‘://’."
             ),
-            xname
+            .xname
         ))
     }
 
@@ -54,7 +52,7 @@ containsURL <- function(x) {
 #' @describeIn containsURL Requires a single URL.
 #' @export
 containsAURL <- function(x) {
-    isScalar(x) && containsURL(x)
+    isString(x) && containsURL(x)
 }
 
 

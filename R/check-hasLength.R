@@ -1,6 +1,6 @@
 #' Does the input have a non-zero or defined length?
 #'
-#' @name hasLength
+#' @export
 #' @inherit params
 #'
 #' @param n `NULL` or `integer`.
@@ -18,24 +18,23 @@
 #' hasLength(NULL)
 #' hasLength(character())
 #' hasLength(data.frame())
-NULL
-
-
-
-.hasLength <- function(x, n = NULL) {
+hasLength <- function(x, n = NULL) {
+    xname <- getNameInParent(x)
     length <- length(x)
+
     if (length == 0L) {
-        return(FALSE)
+        return(false("%s has length 0.", xname))
     }
+
     if (is.null(n)) {
         return(length > 0L)
     }
     assert(isInt(n), n > 0L)
-    length == n
+
+    ok <- length == n
+    if (!isTRUE(ok)) {
+        return(false("%s does not have a length of %d.", xname, n))
+    }
+
+    TRUE
 }
-
-
-
-#' @rdname hasLength
-#' @export
-hasLength <- makeTestFunction(.hasLength)
