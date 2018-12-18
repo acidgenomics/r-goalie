@@ -1,7 +1,7 @@
 #' Does the input contain a boolean flag?
 #'
-#' @inherit params
 #' @export
+#' @inherit params
 #'
 #' @examples
 #' ## Pass ====
