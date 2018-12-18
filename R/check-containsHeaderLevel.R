@@ -4,6 +4,7 @@
 #'
 #' @name containsHeaderLevel
 #' @inherit params
+#' @export
 #'
 #' @examples
 #' ## Pass ====
@@ -11,29 +12,25 @@
 #'
 #' ## Fail ====
 #' containsHeaderLevel(0)
-NULL
-
-
-
-.containsHeaderLevel <- function(x) {
+containsHeaderLevel <- function(x, .xname = getNameInParent(x)) {
     ok <- isScalarIntegerish(x)
-    if (!ok) {
-        return("Must be scalar integerish")
+    if (!isTRUE(ok)) {
+        return(false("%s must be scalar integerish.", .xname))
     }
 
     ok <- x %in% seq_len(7L)
-    if (!ok) {
-        return("Markdown supports header levels 1-7")
+    if (!isTRUE(ok)) {
+        return(false(
+            paste0(
+                "%s is not a valid Markdown header.\n",
+                "Markdown supports header levels 1-7."
+            ),
+            .xname
+        ))
     }
 
     TRUE
 }
-
-
-
-#' @rdname containsHeaderLevel
-#' @export
-containsHeaderLevel <- makeTestFunction(.containsHeaderLevel)
 
 
 
