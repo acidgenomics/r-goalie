@@ -1,3 +1,7 @@
+# TODO Include the assert check function name in the call if possible.
+
+
+
 #' Validate an S4 Class
 #'
 #' [validate()] is a variant of [assert()] that is specifically intended to be

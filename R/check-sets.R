@@ -1,4 +1,8 @@
-#' Set Comparisons
+# FIXME Remove assertive dependencies here.
+
+
+
+#' Set comparisons
 #'
 #' @name sets
 #' @inherit params

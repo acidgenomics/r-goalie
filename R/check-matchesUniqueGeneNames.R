@@ -1,10 +1,10 @@
-#' Do the Input Gene Names Match Unique Values in the Corresponding Object?
+#' Do the input gene names match unique values in the corresponding object?
 #'
 #' This assert check determines if a user-defined gene name query is using only
 #' unique (non-amgibuous) symbols. It is designed to be used for gene plotting
 #' particularly when performing single-cell RNA-seq marker analysis.
 #'
-#' @name matchesUniqueGeneNames
+#' @export
 #' @inherit params
 #'
 #' @examples
@@ -27,20 +27,14 @@
 #'
 #' ## Pass ====
 #' matchesUniqueGeneNames(x = x, genes = genes)
-NULL
-
-
-
-.matchesUniqueGeneNames <- function(x, genes) {
+matchesUniqueGeneNames <- function(x, genes, .xname = getNameInParent(x)) {
     ok <- isS4(x)
     if (!isTRUE(ok)) {
-        return("x is not an S4 class object")
+        return(false("Not an S4 class object."))
     }
 
-    ok <- is.character(genes)
-    if (!isTRUE(ok)) {
-        return("`genes` is not character")
-    }
+    ok <- isCharacter(genes)
+    if (!isTRUE(ok)) return(ok)
 
     # Get all of the gene names stashed in the x.
     if (is(x, "SummarizedExperiment")) {
@@ -53,14 +47,14 @@ NULL
 
     # Check for gene names (symbols).
     if (length(all) == 0L) {
-        return("Gene names are not defined in object")
+        return(false("Gene names are not defined in object."))
     }
 
     # Require that the user passed in gene names.
     ok <- all(genes %in% all)
     if (!isTRUE(ok)) {
         setdiff <- setdiff(genes, all)
-        return(paste("Genes missing in object:", setdiff))
+        return(false("Genes missing: %s", toString(setdiff)))
     }
 
     # Get a vector of all duplicated gene names in the object.
@@ -69,14 +63,8 @@ NULL
     intersect <- intersect(genes, dupes)
 
     if (length(intersect) > 0L) {
-        return(paste("Non-unique gene names:", toString(intersect)))
+        return(false("Non-unique gene names: %s", toString(intersect)))
     }
 
     TRUE
 }
-
-
-
-#' @rdname matchesUniqueGeneNames
-#' @export
-matchesUniqueGeneNames <- makeTestFunction(.matchesUniqueGeneNames)

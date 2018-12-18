@@ -9,7 +9,7 @@
 #' [assay][SummarizedExperiment::assay] matrix is checked for duplicated
 #' columns.
 #'
-#' @name hasUniqueCols
+#' @export
 #' @inherit params
 #'
 #' @examples
