@@ -1,7 +1,3 @@
-# FIXME NA is breaking this...
-
-
-
 #' Check the `compress` formal argument
 #'
 #' @name formalCompress
