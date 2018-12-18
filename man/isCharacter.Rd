@@ -4,20 +4,19 @@
 \alias{isCharacter}
 \title{Does the Input Contain a (Non-Empty) Character Vector?}
 \usage{
-isCharacter(x)
+isCharacter(x, nullOK = FALSE, .xname = getNameInParent(x))
 }
 \arguments{
 \item{x}{Object.}
+
+\item{nullOK}{\code{logical(1)}.
+If set to \code{TRUE}, \code{x} may also be \code{NULL}.}
+
+\item{.xname}{\emph{Not intended to be used directly.}}
 }
 \value{
-\itemize{
-\item \code{are*}/\code{contains*}/\code{has*}/\code{is*}: \code{logical(1)}.
-Boolean flag (\code{TRUE}/\code{FALSE}). Intended to be used in combination with
-\code{assert} function.
-\item \code{check*}: \code{TRUE} on success, \code{character(1)} on failure.
-Intended to be used in combination with \code{validate} function.
-\item \code{assert*}: \code{TRUE} on success, error (\code{stop}) on failure.
-}
+\code{TRUE} on success;
+\code{FALSE} on failure, with \code{cause} \link[base:attributes]{attribute} set.
 }
 \description{
 Does the Input Contain a (Non-Empty) Character Vector?
@@ -40,4 +39,7 @@ isCharacter(NULL)
 isCharacter(character())
 isCharacter("")
 isCharacter(NA_character_)
+}
+\seealso{
+\code{assertive.strings::is_non_missing_nor_empty_character()}.
 }

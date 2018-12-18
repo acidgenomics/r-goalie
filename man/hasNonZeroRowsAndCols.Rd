@@ -2,22 +2,19 @@
 % Please edit documentation in R/check-hasNonZeroRowsAndCols.R
 \name{hasNonZeroRowsAndCols}
 \alias{hasNonZeroRowsAndCols}
-\title{Does the Input Contain Non-Zero Rows and Columns?}
+\title{Does the input contain non-zero rows and columns?}
 \usage{
-hasNonZeroRowsAndCols(object)
+hasNonZeroRowsAndCols(x, .xname = getNameInParent(x))
 }
 \arguments{
-\item{object}{Object.}
+\item{x}{Matrix.
+Currently requires a \code{matrix} or \code{sparseMatrix} as input.}
+
+\item{.xname}{\emph{Not intended to be used directly.}}
 }
 \value{
-\itemize{
-\item \code{are*}/\code{contains*}/\code{has*}/\code{is*}: \code{logical(1)}.
-Boolean flag (\code{TRUE}/\code{FALSE}). Intended to be used in combination with
-\code{assert} function.
-\item \code{check*}: \code{TRUE} on success, \code{character(1)} on failure.
-Intended to be used in combination with \code{validate} function.
-\item \code{assert*}: \code{TRUE} on success, error (\code{stop}) on failure.
-}
+\code{TRUE} on success;
+\code{FALSE} on failure, with \code{cause} \link[base:attributes]{attribute} set.
 }
 \description{
 Useful for quickly checking to see if we have dropped rows or columns
@@ -26,8 +23,6 @@ containing all zeros.
 \details{
 This is a common check when handling RNA-seq data prior to generating a
 heatmap or applying a log transformation, for example.
-
-Currently requires a \code{matrix} or \code{sparseMatrix} as input.
 }
 \examples{
 ## Pass ====
