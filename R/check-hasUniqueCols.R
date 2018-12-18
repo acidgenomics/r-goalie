@@ -42,8 +42,8 @@ hasUniqueCols <- function(x, .xname = getNameInParent(x)) {
     ok <- !any(dupes)
     if (!isTRUE(ok)) {
         return(false(
-            "Matrix has duplicated columns at: %s",
-            toString(which(dupes))
+            "%s has duplicated columns at: %s",
+            .xname, toString(which(dupes))
         ))
     }
 
