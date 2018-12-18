@@ -20,16 +20,15 @@
 #' @examples
 #' capitalize(c("hello", "world"))
 capitalize <- function(x) {
-    x <- str
     # Using `R.utils::capitalize()` method here.
-    n <- length(str)
+    n <- length(x)
     if (n == 0L) {
-        return(str)
+        return(x)
     }
-    nas <- is.na(str)
+    nas <- is.na(x)
     idxs <- which(nas)
     if (length(idxs) == n) {
-        return(str)
+        return(x)
     }
     res <- character(length = n)
     if (length(idxs) > 0L) {
@@ -37,7 +36,7 @@ capitalize <- function(x) {
     }
     idxs <- which(!nas)
     if (length(idxs) > 0L) {
-        t <- str[idxs]
+        t <- x[idxs]
         first <- substring(t, first = 1L, last = 1L)
         tail <- substring(t, first = 2L)
         first <- toupper(first)
