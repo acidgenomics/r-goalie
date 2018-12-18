@@ -19,9 +19,13 @@ NULL
 
 
 
-.containsURL <- function(x) {
+#' @describeIn containsURL Supports multiple URLs.
+#' @export
+containsURL <- function(x) {
+    xname <- getNameInParent(x)
+
     if (!is.character(x)) {
-        return("Must contain character")
+        return(false("% does not contain character.", xname))
     }
 
     ok <- all(vapply(
@@ -33,17 +37,17 @@ NULL
         USE.NAMES = FALSE
     ))
     if (!isTRUE(ok)) {
-        return("URL must begin with `http(s)` or `ftp` and contain `://`.")
+        return(false(
+            paste0(
+                "%s does not contain a URL.\n",
+                "URLs must begin with ‘http(s)’ or ‘ftp’ and contain ‘://’."
+            ),
+            xname
+        ))
     }
 
     TRUE
 }
-
-
-
-#' @describeIn containsURL Supports multiple URLs.
-#' @export
-containsURL <- makeTestFunction(.containsURL)
 
 
 

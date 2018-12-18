@@ -1,4 +1,4 @@
-#' Does the Input Contain Hexadecimal Colors?
+#' Does the input contain hexadecimal colors?
 #'
 #' @name containsHexColors
 #' @inherit params
@@ -17,9 +17,11 @@
 #' x <- ggplot2::scale_colour_manual
 #' class(x)
 #' containsHexColors(x)
-containsHexColors <- function(x, .xname = getNameInParent(x)) {
+containsHexColors <- function(x) {
+    xname <- getNameInParent(x)
+
     if (!is.character(x)) {
-        return(false("%s is not character.", .xname))
+        return(false("%s is not character.", xname))
     }
 
     # NOTE `viridis()` adds an extra "FF" to the end of hex color return.
@@ -31,7 +33,7 @@ containsHexColors <- function(x, .xname = getNameInParent(x)) {
                 "%s does not contain hexadecimal colors.\n",
                 "For example, use #FF0000 to indicate red."
             ),
-            .xname
+            xname
         ))
     }
 

@@ -12,10 +12,12 @@
 #'
 #' ## Fail ====
 #' containsHeaderLevel(0)
-containsHeaderLevel <- function(x, .xname = getNameInParent(x)) {
+containsHeaderLevel <- function(x) {
+    xname <- getNameInParent(x)
+
     ok <- isScalarIntegerish(x)
     if (!isTRUE(ok)) {
-        return(false("%s must be scalar integerish.", .xname))
+        return(false("%s must be scalar integerish.", xname))
     }
 
     ok <- x %in% seq_len(7L)
@@ -25,7 +27,7 @@ containsHeaderLevel <- function(x, .xname = getNameInParent(x)) {
                 "%s is not a valid Markdown header.\n",
                 "Markdown supports header levels 1-7."
             ),
-            .xname
+            xname
         ))
     }
 

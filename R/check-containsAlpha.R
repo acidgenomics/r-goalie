@@ -13,18 +13,22 @@
 #' ## Fail ====
 #' containsAlpha("xxx")
 #' containsAlpha(1L)
-containsAlpha <- function(x, .xname = getNameInParent(x)) {
+containsAlpha <- function(x) {
+    xname <- getNameInParent(x)
+
     ok <- isScalarDouble(x)
     if (!isTRUE(ok)) {
-        return(false("%s must be scalar double.", .xname))
+        return(false("%s must be scalar double.", xname))
     }
+
     ok <- x > 0L && x < 1L
     if (!isTRUE(ok)) {
         return(false(paste0(
             "%s does not contain a valid alpha.\n",
             "Alpha level must be > 0 and < 1."
-        ), .xname))
+        ), xname))
     }
+
     TRUE
 }
 

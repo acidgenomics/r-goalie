@@ -1,7 +1,12 @@
+# FIXME NA is breaking this...
+
+
+
 #' Check the `compress` formal argument
 #'
 #' @name formalCompress
 #' @inherit params
+#' @export
 #'
 #' @param compress `logical(1)` or `character(1)`.
 #'   These character strings are currently allowed for `save()`:
@@ -13,34 +18,28 @@
 #' formalCompress(TRUE)
 #'
 #' ## Fail ====
+#' formalCompress(NA)
 #' formalCompress("xxx")
-NULL
-
-
-
-.formalCompress <- function(compress) {
+formalCompress <- function(compress) {
     if (!isAny(compress, classes = c("character", "logical"))) {
-        return("Must contain character or logical.")
+        return(false("%s does not contain character or logical.", compress))
     }
 
     # Allow TRUE/FALSE boolean flag.
     if (is.logical(compress)) {
         if (!isFlag(compress)) {
-            return("Logical input must contain boolean flag (TRUE/FALSE).")
+            return(false("%s is logical but not boolean.", compress))
         }
         return(compress)
     }
 
     choices <- c("bzip2", "gzip", "xz")
     if (!isSubset(compress, choices)) {
-        return(paste("Valid strings:", toString(choices)))
+        return(false(
+            "%s is not a valid format. Supported choices: %s",
+            compress, toString(choices)
+        ))
     }
 
     TRUE
 }
-
-
-
-#' @rdname formalCompress
-#' @export
-formalCompress <- makeTestFunction(.formalCompress)
