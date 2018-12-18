@@ -45,6 +45,7 @@ assert(
 \seealso{
 \itemize{
 \item \code{stopifnot()}.
+\item \code{assertive.base::assert_engine()}.
 \item \code{assertthat::assert_that()}.
 \item \code{checkmate::assert()}.
 }
