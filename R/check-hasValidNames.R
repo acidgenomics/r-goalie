@@ -1,9 +1,9 @@
-#' Does the Input Object Have Syntactically Valid Names?
+#' Does the input object have syntactically valid names?
 #'
 #' @name hasValidNames
 #' @inherit params
 #'
-#' @seealso `validNames`.
+#' @seealso `validNames()`.
 #'
 #' @examples
 #' ## Pass ====
@@ -32,16 +32,17 @@ NULL
 
 
 
-# Names ========================================================================
-.hasValidNames <- function(x) {
+#' @rdname hasValidNames
+#' @export
+hasValidNames <- function(x, .xname = getNameInParent(x)) {
     names <- names(x)
     ok <- length(names) > 0L
     if (!isTRUE(ok)) {
-        return("Object does not have names")
+        return(false("%s does not have names.", .xname))
     }
     ok <- isTRUE(validNames(names))
     if (!isTRUE(ok)) {
-        return("Object does not have valid names")
+        return(false("%s does not have valid names.", .xname))
     }
     TRUE
 }
@@ -50,19 +51,13 @@ NULL
 
 #' @rdname hasValidNames
 #' @export
-hasValidNames <- makeTestFunction(.hasValidNames)
-
-
-
-
-# Dimnames =====================================================================
-.hasValidDimnames <- function(x) {
+hasValidDimnames <- function(x, .xname = getNameInParent(x)) {
     # Row names.
     if (isTRUE(hasRownames(x))) {
         rownames <- rownames(x)
         ok <- validNames(rownames)
         if (!isTRUE(ok)) {
-            return("Row names are invalid")
+            return(false("%s has invalid row names.", .xname))
         }
     }
 
@@ -71,15 +66,9 @@ hasValidNames <- makeTestFunction(.hasValidNames)
         colnames <- colnames(x)
         ok <- validNames(colnames)
         if (!isTRUE(ok)) {
-            return("Column names are invalid")
+            return(false("%s has invalid column names.", .xname))
         }
     }
 
     TRUE
 }
-
-
-
-#' @rdname hasValidNames
-#' @export
-hasValidDimnames <- makeTestFunction(.hasValidDimnames)
