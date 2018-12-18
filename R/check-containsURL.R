@@ -1,4 +1,4 @@
-#' Does the Input Contain a URL?
+#' Does the input contain a URL?
 #'
 #' @name containsURL
 #' @inherit params
@@ -52,3 +52,17 @@ containsURL <- makeTestFunction(.containsURL)
 containsAURL <- function(x) {
     isScalar(x) && containsURL(x)
 }
+
+
+
+# Soft deprecate?
+#' @rdname containsURL
+#' @export
+isURL <- containsURL
+
+
+
+# Soft deprecate?
+#' @rdname containsURL
+#' @export
+isAURL <- containsAURL

@@ -27,13 +27,14 @@ which should evaluate to \code{TRUE}.}
     evaluated; by default the one where \code{stopifnot()} has been called from.}
 }
 \description{
-\code{assert} is a drop-in replacement for \code{stopifnot} supporting more informative
+\code{\link[=assert]{assert()}} is a drop-in replacement for \code{\link[=stopifnot]{stopifnot()}} supporting more
+informative
 error messages.
 }
 \note{
-Don't use \code{assertive::assert_that} as a general \code{stopifnot}
-replacement. It doesn't currently catch everything, and isn't hardened for S4
-methods.
+Don't use \code{\link[assertive:assert_that]{assertive::assert_that()}} as a general \code{\link[=stopifnot]{stopifnot()}}
+replacement. It doesn't currently catch everything, and isn't hardened
+against S4 methods.
 }
 \examples{
 assert(
@@ -43,8 +44,8 @@ assert(
 }
 \seealso{
 \itemize{
-\item \code{stopifnot}.
-\item \code{assertthat::assert_that}.
-\item \code{checkmate::assert}.
+\item \code{stopifnot()}.
+\item \code{assertthat::assert_that()}.
+\item \code{checkmate::assert()}.
 }
 }

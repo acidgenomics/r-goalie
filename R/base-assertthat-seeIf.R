@@ -1,4 +1,4 @@
-# @seealso `assertthat::see_if`.
+# @seealso `assertthat::see_if()`.
 seeIf <- function(..., env = parent.frame(), msg = NULL) {
     asserts <- eval(substitute(alist(...)))
     for (assertion in asserts) {

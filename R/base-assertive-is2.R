@@ -1,13 +1,14 @@
-#' Is an Object from a Class?
+#' Is an object from a class?
 #'
-#' Alternate version of `methods::is`.
+#' Alternate version of [methods::is()] that supports multiple checks in a
+#' single call.
 #'
 #' If a function named `is.class` exists, call `is.class(x)`.
 #' If not, call `is(x, class)`.
 #'
 #' @seealso
-#' - `assertive.base::is2`.
-#' - `methods::is`.
+#' - `assertive.base::is2()`.
+#' - `methods::is()`.
 #'
 #' @examples
 #' is2(1:5, "character")

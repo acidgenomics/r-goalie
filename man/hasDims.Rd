@@ -6,17 +6,17 @@
 \alias{hasCols}
 \alias{hasDimnames}
 \alias{hasColnames}
-\title{Does the Input Have Dimensions?}
+\title{Does the input have dimensions?}
 \usage{
-hasDims(x, .xname = get_name_in_parent(x))
+hasDims(x, .xname = getNameInParent(x))
 
-hasRows(x, .xname = get_name_in_parent(x))
+hasRows(x, .xname = getNameInParent(x))
 
-hasCols(x, .xname = get_name_in_parent(x))
+hasCols(x, .xname = getNameInParent(x))
 
-hasDimnames(x, .xname = get_name_in_parent(x))
+hasDimnames(x, .xname = getNameInParent(x))
 
-hasColnames(x, .xname = get_name_in_parent(x))
+hasColnames(x, .xname = getNameInParent(x))
 }
 \arguments{
 \item{x}{Object.}
@@ -34,7 +34,7 @@ Intended to be used in combination with \code{validate} function.
 }
 }
 \description{
-Does the Input Have Dimensions?
+Does the input have dimensions?
 }
 \examples{
 ## Pass ====
@@ -61,4 +61,13 @@ hasCols(x)
 hasDimnames(x)
 hasRownames(x)
 hasColnames(x)
+}
+\seealso{
+\itemize{
+\item \code{assertive.properties::has_dims()}.
+\item \code{assertive.properties::has_rows()}.
+\item \code{assertive.properties::has_cols()}.
+\item \code{assertive.properties::has_dimnames()}.
+\item \code{assertive.properties::has_colnames()}.
+}
 }
