@@ -1,12 +1,19 @@
-#' Does the Input Contain a File?
+#' Does the input contain a file?
 #'
 #' @name isFile
-#' @importFrom R.utils isFile
 #' @inherit params
 #'
 #' @return `logical`.
 #'
-#' @seealso `R.utils::isFile`.
+#' @seealso `R.utils::isFile()`.
+#'
+#' ```
+#' getS3method(
+#'     f = "isFile",
+#'     class = "default",
+#'     envir = asNamespace("R.utils")
+#' )
+#' ```
 #'
 #' @examples
 #' x <- "example.txt"
@@ -20,7 +27,10 @@ NULL
 #' @describeIn isFile Supports multiple files.
 #' @export
 isFile <- function(x) {
-    R.utils::isFile(x)
+    ok <- isCharacter(x)
+    if (!isTRUE(ok)) return(ok)
+
+    file.exists(x)
 }
 
 
@@ -28,5 +38,11 @@ isFile <- function(x) {
 #' @describeIn isFile Check for a single file.
 #' @export
 isAFile <- function(x) {
-    isString(x) && isFile(x)
+    ok <- isString(x)
+    if (!isTRUE(ok)) return(ok)
+
+    ok <- isFile(x)
+    if (!isTRUE(ok)) return(ok)
+
+    TRUE
 }
