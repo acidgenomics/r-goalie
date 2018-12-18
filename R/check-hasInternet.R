@@ -1,9 +1,11 @@
 #' Does the current session have an internet connection?
-#' @inherit params
+#'
 #' @export
+#' @inherit params
+#'
 #' @examples
 #' hasInternet()
 hasInternet <- function() {
     requireNamespace("curl", quietly = TRUE)
-    curl::has_internet
+    curl::has_internet()
 }
