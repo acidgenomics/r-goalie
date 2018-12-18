@@ -5,12 +5,14 @@
 \alias{areHexColors}
 \title{Does the Input Contain Hexadecimal Colors?}
 \usage{
-containsHexColors(x)
+containsHexColors(x, .xname = getNameInParent(x))
 
-areHexColors(x)
+areHexColors(x, .xname = getNameInParent(x))
 }
 \arguments{
 \item{x}{Object.}
+
+\item{.xname}{\emph{Not intended to be used directly.}}
 }
 \value{
 \itemize{

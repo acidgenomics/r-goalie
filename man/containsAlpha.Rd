@@ -5,12 +5,14 @@
 \alias{isAlpha}
 \title{Does the input contain an alpha level?}
 \usage{
-containsAlpha(x)
+containsAlpha(x, .xname = getNameInParent(x))
 
-isAlpha(x)
+isAlpha(x, .xname = getNameInParent(x))
 }
 \arguments{
 \item{x}{Object.}
+
+\item{.xname}{\emph{Not intended to be used directly.}}
 }
 \value{
 \itemize{
