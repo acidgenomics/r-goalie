@@ -24,11 +24,14 @@ NULL
 
 #' @rdname hasElements
 #' @export
-isEmpty <- function(x, metric = c("length", "elements")) {
-    xname <- getNameInParent(x)
+isEmpty <- function(
+    x,
+    metric = c("length", "elements"),
+    .xname = getNameInParent(x)
+) {
     metric <- match.arg(metric)
     metricFun <- getMetric(metric)
-    metricFun(x, 0L, xname)
+    metricFun(x, 0L, .xname)
 }
 
 
@@ -37,8 +40,11 @@ isEmpty <- function(x, metric = c("length", "elements")) {
 # Need to make this check stricter...
 #' @rdname hasElements
 #' @export
-isNonEmpty <- function(x, metric = c("length", "elements")) {
-    xname <- getNameInParent(x)
+isNonEmpty <- function(
+    x,
+    metric = c("length", "elements"),
+    xname = getNameInParent(x)
+) {
     metric <- match.arg(metric)
     metricFun <- getMetric(metric)
     if (metricFun(x, 0L)) {
@@ -47,7 +53,7 @@ isNonEmpty <- function(x, metric = c("length", "elements")) {
             length = gettext("%s has length 0."),
             elements = gettext("%s has 0 elements.")
         )
-        return(false(msg, xname))
+        return(false(msg, .xname))
     }
     TRUE
 }
@@ -56,8 +62,7 @@ isNonEmpty <- function(x, metric = c("length", "elements")) {
 
 #' @rdname hasElements
 #' @export
-hasElements <- function(x, n) {
-    xname <- getNameInParent(x)
+hasElements <- function(x, n, .xname = getNameInParent(x)) {
     n <- useFirst(n)
     checkN(n)
     nElementsX <- nElements(x)
@@ -68,7 +73,7 @@ hasElements <- function(x, n) {
                 "%s has %d element, not %d.",
                 "%s has %d elements, not %d."
             ),
-            xname,
+            .xname,
             nElementsX,
             n
         ))
@@ -80,8 +85,7 @@ hasElements <- function(x, n) {
 
 #' @rdname hasElements
 #' @export
-isOfDimension <- function(x, n) {
-    xname <- getNameInParent(x)
+isOfDimension <- function(x, n, xname = getNameInParent(x)) {
     dimX <- dim(x)
     if (is.null(n)) {
         if (hasDims(x)) {
@@ -91,7 +95,7 @@ isOfDimension <- function(x, n) {
                     msg1 = "%s has dimension %s, not NULL.",
                     msg2 = "%s has dimensions %s, not NULL."
                 ),
-                xname,
+                .xname,
                 deparse(dimX)
             ))
         }
@@ -105,7 +109,7 @@ isOfDimension <- function(x, n) {
                 msg1 = "%s has %d dimension, not %d.",
                 msg2 = "%s has %d dimensions, not %d."
             ),
-            xname,
+            .xname,
             length(dimX),
             length(n)
         ))
@@ -120,7 +124,7 @@ isOfDimension <- function(x, n) {
                 msg2 = "Dimensions %s of %s are incorrect."
             ),
             toString(bad),
-            xname
+            .xname
         ))
     }
     TRUE
@@ -131,13 +135,12 @@ isOfDimension <- function(x, n) {
 # TODO Somewhat redundant with `hasLength()`. Work on resolution.
 #' @rdname hasElements
 #' @export
-isOfLength <- function (x, n) {
-    xname <- getNameInParent(x)
+isOfLength <- function (x, n, .xname = getNameInParent(x)) {
     n <- useFirst(n)
     checkN(n)
     lengthX <- length(x)
     if (lengthX != n) {
-        return(false("%s has length %d, not %d.", xname, lengthX, n))
+        return(false("%s has length %d, not %d.", .xname, lengthX, n))
     }
     TRUE
 }
@@ -148,8 +151,11 @@ isOfLength <- function (x, n) {
 # Consider hardening this check.
 #' @rdname hasElements
 #' @export
-isNonEmpty <- function(x, metric = c("length", "elements")) {
-    xname <- getNameInParent(x)
+isNonEmpty <- function(
+    x,
+    metric = c("length", "elements"),
+    xname = getNameInParent(x)
+) {
     metric <- match.arg(metric)
     metricFun <- getMetric(metric)
     if (metricFun(x, 0L)) {
@@ -158,7 +164,7 @@ isNonEmpty <- function(x, metric = c("length", "elements")) {
             length = gettext("%s has length 0."),
             elements = gettext("%s has 0 elements.")
         )
-        return(false(msg, xname))
+        return(false(msg, .xname))
     }
     TRUE
 }
