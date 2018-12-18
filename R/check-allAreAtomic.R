@@ -14,21 +14,17 @@
 #' ## Fail ====
 #' allAreAtomic(data.frame())
 #' allAreAtomic(list(a = "x", b = list()))
-allAreAtomic <- function(x) {
-    xname <- getNameInParent(x)
+allAreAtomic <- function(x, .xname = getNameInParent(x)) {
 
     # If we don't add this, the `all()` step below will return TRUE.
+    # TODO Switch to hasLength?
     if (length(x) == 0L) {
-        return(false("%s has length 0.", xname))
+        return(false("%s has length 0.", .xname))
     }
 
-    ok <- all(vapply(
-        X = x,
-        FUN = is.atomic,
-        FUN.VALUE = logical(1L)
-    ))
+    ok <- all(bapply(x, is.atomic))
     if (!isTRUE(ok)) {
-        return(false("Not all elements in %s are atomic.", xname))
+        return(false("Not all elements in %s are atomic.", .xname))
     }
 
     TRUE

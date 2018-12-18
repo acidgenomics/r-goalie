@@ -1,8 +1,7 @@
 #' Check the `compress` formal argument
 #'
-#' @name formalCompress
-#' @inherit params
 #' @export
+#' @inherit params
 #'
 #' @param compress `logical(1)` or `character(1)`.
 #'   These character strings are currently allowed for `save()`:
@@ -17,24 +16,23 @@
 #' formalCompress(NA)
 #' formalCompress("xxx")
 formalCompress <- function(compress) {
-    if (!isAny(compress, classes = c("character", "logical"))) {
-        return(false("%s does not contain character or logical.", compress))
+    ok <- isAny(compress, classes = c("character", "logical"))
+    if (!isTRUE(ok)) {
+        return(ok)
     }
 
     # Allow TRUE/FALSE boolean flag.
     if (is.logical(compress)) {
-        if (!isFlag(compress)) {
-            return(false("%s is logical but not boolean.", compress))
+        ok <- isFlag(compress)
+        if (!isTRUE(ok)) {
+            return(ok)
         }
         return(compress)
     }
 
-    choices <- c("bzip2", "gzip", "xz")
-    if (!isSubset(compress, choices)) {
-        return(false(
-            "%s is not a valid format. Supported choices: %s",
-            compress, toString(choices)
-        ))
+    ok <- isSubset(compress, c("bzip2", "gzip", "xz"))
+    if (!isTRUE(ok)) {
+        return(ok)
     }
 
     TRUE

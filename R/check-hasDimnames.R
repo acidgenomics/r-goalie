@@ -20,14 +20,13 @@
 #' hasDimnames(x)
 #' hasRownames(x)
 #' hasColnames(x)
-hasDimnames <- function(x) {
-    xname = getNameInParent(x)
+hasDimnames <- function(x, .xname = getNameInParent(x)) {
     dimnamesx <- dimnames(x)
     if (is.null(dimnamesx)) {
-        return(false("The dimension names of %s are NULL.", xname))
+        return(false("The dimension names of %s are NULL.", .xname))
     }
     if (!any(nzchar(unlist(dimnamesx, use.names = FALSE)))) {
-        return(false("The dimension names of %s are all empty.", xname))
+        return(false("The dimension names of %s are all empty.", .xname))
     }
     TRUE
 }
@@ -41,14 +40,13 @@ hasDimnames <- function(x) {
 #' @rdname hasDims
 #' @importFrom assertive.properties has_colnames
 #' @export
-hasColnames <- function(x) {
-    xname = getNameInParent(x)
+hasColnames <- function(x, .xname = getNameInParent(x)) {
     colnamesx <- colnames(x)
     if (is.null(colnamesx)) {
-        return(false("The column names of %s are NULL.", xname))
+        return(false("The column names of %s are NULL.", .xname))
     }
     if (!any(nzchar(colnamesx))) {
-        return(false("The column names of %s are all empty.", xname))
+        return(false("The column names of %s are all empty.", .xname))
     }
     TRUE
 }

@@ -17,13 +17,13 @@
 #' x <- ggplot2::scale_colour_manual
 #' class(x)
 #' containsHexColors(x)
-containsHexColors <- function(x) {
-    xname <- getNameInParent(x)
-
-    if (!is.character(x)) {
-        return(false("%s is not character.", xname))
+containsHexColors <- function(x, .xname = getNameInParent(x)) {
+    ok <- isCharacter(x)
+    if (!isTRUE(ok)) {
+        return(ok)
     }
 
+    # TODO Switch to `isMatchingRegex()` here.
     # NOTE `viridis()` adds an extra "FF" to the end of hex color return.
     pattern <- "^(#[0-9A-F]{6})"
     ok <- all(grepl(pattern = pattern, x = x, ignore.case = TRUE))
@@ -33,7 +33,7 @@ containsHexColors <- function(x) {
                 "%s does not contain hexadecimal colors.\n",
                 "For example, use #FF0000 to indicate red."
             ),
-            xname
+            .xname
         ))
     }
 

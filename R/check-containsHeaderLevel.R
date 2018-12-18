@@ -2,9 +2,8 @@
 #'
 #' Markdown supports header levels `1`-`7` (`<H1>`-`<H7>`).
 #'
-#' @name containsHeaderLevel
-#' @inherit params
 #' @export
+#' @inherit params
 #'
 #' @examples
 #' ## Pass ====
@@ -12,14 +11,13 @@
 #'
 #' ## Fail ====
 #' containsHeaderLevel(0)
-containsHeaderLevel <- function(x) {
-    xname <- getNameInParent(x)
-
+containsHeaderLevel <- function(x, .name = getNameInParent(x)) {
     ok <- isScalarIntegerish(x)
     if (!isTRUE(ok)) {
-        return(false("%s must be scalar integerish.", xname))
+        return(ok)
     }
 
+    # TODO Switch to inRange approach.
     ok <- x %in% seq_len(7L)
     if (!isTRUE(ok)) {
         return(false(
@@ -27,7 +25,7 @@ containsHeaderLevel <- function(x) {
                 "%s is not a valid Markdown header.\n",
                 "Markdown supports header levels 1-7."
             ),
-            xname
+            .xname
         ))
     }
 
