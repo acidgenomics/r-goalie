@@ -4,10 +4,12 @@
 \alias{validNames}
 \title{Are these valid names?}
 \usage{
-validNames(x)
+validNames(x, .xname = getNameInParent(x))
 }
 \arguments{
 \item{x}{Object.}
+
+\item{.xname}{\emph{Not intended to be used directly.}}
 }
 \value{
 \itemize{
@@ -36,7 +38,7 @@ validNames("GFP+")
 }
 \seealso{
 \itemize{
-\item \code{make.names}.
-\item \code{basejump::makeNames}.
+\item \code{make.names()}.
+\item \code{basejump::makeNames()}.
 }
 }
