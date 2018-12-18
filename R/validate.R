@@ -1,8 +1,3 @@
-# FIXME Can we get rid of the assertthat dependency here?
-# Simplify using assertive engine approach here.
-
-
-
 #' Validate an S4 Class
 #'
 #' [validate()] is a variant of [assert()] that is specifically intended to be
@@ -15,7 +10,6 @@
 #' methods package, specifically [validObject()][methods::validObject] for
 #' detailed information on S4 validity methods.
 #'
-#' @importFrom assertthat validate_that
 #' @inheritParams assertthat::validate_that
 #' @export
 #'
@@ -29,4 +23,30 @@
 #'     is.atomic("example"),
 #'     is.character("example")
 #' )
-validate <- validate_that
+validate <- function(..., envir = parent.frame()) {
+    res <- seeIf(..., envir = envir)
+    stopifnot(is.list(res))
+
+    # Return TRUE when all checks pass.
+    if (all(vapply(
+        X = res,
+        FUN = isTRUE,
+        FUN.VALUE = logical(1L)
+    ))) {
+        return(TRUE)
+    }
+
+    # Otherwise, return a character string indicating what checks failed.
+    paste(
+        "Validity check failure.",
+        paste(
+            vapply(
+                X = Filter(f = Negate(isTRUE), x = res),
+                FUN = cause,
+                FUN.VALUE = character(1L)
+            ),
+            collapse = "\n"
+        ),
+        sep = "\n"
+    )
+}
