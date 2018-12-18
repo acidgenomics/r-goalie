@@ -1,3 +1,7 @@
+# FIXME Get rid of the rlang dependency here...this gets called a lot.
+
+
+
 #' Is the Input Integerish?
 #'
 #' Check for valid input of either explicit (e.g. `1L`) and/or implict

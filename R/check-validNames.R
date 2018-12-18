@@ -19,12 +19,8 @@
 #' validNames("cell-AAAAAAAA")
 #' validNames("GFP+")
 validNames <- function(x, .xname = getNameInParent(x)) {
-    if (
-        !is.character(x) ||
-        length(x) == 0L
-    ) {
-        return(false("%s is not a non-empty character.", .xname))
-    }
+    ok <- isCharacter(x, .xname = .xname)
+    if (!isTRUE(ok)) return(ok)
 
     ok <- identical(x, make.names(x, unique = TRUE))
     if (!isTRUE(ok)) {
