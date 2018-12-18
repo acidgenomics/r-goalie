@@ -9,34 +9,22 @@
 \alias{isLessThanOrEqualTo}
 \title{How Does the Input Relate to a Value?}
 \usage{
-isEqualTo(x, y, tol = 100 * .Machine$double.eps,
-  .xname = get_name_in_parent(x), .yname = get_name_in_parent(x))
+isEqualTo(x, y)
 
-isNotEqualTo(x, y, tol = 100 * .Machine$double.eps,
-  .xname = get_name_in_parent(x), .yname = get_name_in_parent(x))
+isNotEqualTo(x, y)
 
-isGreaterThan(x, y, .xname = get_name_in_parent(x),
-  .yname = get_name_in_parent(x))
+isGreaterThan(x, y)
 
-isGreaterThanOrEqualTo(x, y, .xname = get_name_in_parent(x),
-  .yname = get_name_in_parent(x))
+isGreaterThanOrEqualTo(x, y)
 
-isLessThan(x, y, .xname = get_name_in_parent(x),
-  .yname = get_name_in_parent(x))
+isLessThan(x, y)
 
-isLessThanOrEqualTo(x, y, .xname = get_name_in_parent(x),
-  .yname = get_name_in_parent(x))
+isLessThanOrEqualTo(x, y)
 }
 \arguments{
 \item{x}{Object.}
 
 \item{y}{Secondary object.}
-
-\item{tol}{Values within \code{tol} are considered equal.}
-
-\item{.xname}{\emph{Not intended to be used directly.}}
-
-\item{.yname}{\emph{Not intended to be used directly.}}
 }
 \value{
 \code{logical}.
@@ -58,4 +46,15 @@ isLessThanOrEqualTo(x = seq_len(2), y = 3)
 
 ## Fail ====
 isEqualTo(x = seq_len(2), y = 1)
+}
+\seealso{
+\itemize{
+\item Primitives: \code{==}, \code{>}, \code{>=}, \code{<}, \code{<=}.
+\item \code{assertive.numbers::is_equal_to()}.
+\item \code{assertive.numbers::is_not_equal_to()}.
+\item \code{assertive.numbers::is_greater_than()}.
+\item \code{assertive.numbers::is_greater_than_or_equal_to()}.
+\item \code{assertive.numbers::is_less_than()}.
+\item \code{assertive.numbers::is_less_than_or_equal_to()}.
+}
 }

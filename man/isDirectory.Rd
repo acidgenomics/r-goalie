@@ -5,7 +5,7 @@
 \alias{isDir}
 \alias{isADirectory}
 \alias{isADir}
-\title{Does the Input Contain a Directory?}
+\title{Does the input contain a directory?}
 \usage{
 isDirectory(x)
 
@@ -22,11 +22,17 @@ isADir(x)
 \code{logical}.
 }
 \description{
-Does the Input Contain a Directory?
+Does the input contain a directory?
 }
 \examples{
+isDirectory(c("~", "~"))
 isADirectory("~")
 }
 \seealso{
-\code{R.utils::isDirectory}.
+\code{R.utils::isDirectory()}.\preformatted{getS3method(
+    f = "isDirectory",
+    class = "default",
+    envir = asNamespace("R.utils")
+)
+}
 }

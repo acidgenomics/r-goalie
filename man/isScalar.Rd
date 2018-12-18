@@ -12,14 +12,11 @@
 \alias{isScalarDouble}
 \alias{isScalarCharacter}
 \alias{isScalarLogical}
-\alias{isString}
-\alias{isFlag}
 \alias{isNumber}
 \alias{isInt}
-\title{Is the Input Scalar?}
+\title{Is the input scalar?}
 \usage{
-isScalar(x, metric = c("length", "elements"),
-  .xname = get_name_in_parent(x))
+isScalar(x)
 
 isNonScalar(x)
 
@@ -33,57 +30,30 @@ isScalarNumeric(x)
 
 isScalarInteger(x)
 
-isScalarIntegerish(x, finite = NULL)
+isScalarIntegerish(x)
 
 isScalarDouble(x)
 
-isScalarCharacter(x, encoding = NULL)
+isScalarCharacter(x)
 
 isScalarLogical(x)
 
-isString(x, encoding = NULL)
-
-isFlag(x)
-
 isNumber(x)
 
-isInt(x, finite = NULL)
+isInt(x)
 }
 \arguments{
 \item{x}{Object.}
-
-\item{metric}{A string. Should be length or the number of elements be used to
-determine if the object is empty/non-empty/scalar?}
-
-\item{.xname}{\emph{Not intended to be used directly.}}
-
-\item{finite}{Whether all values of the vector are finite. The
-non-finite values are \code{NA}, \code{Inf}, \code{-Inf} and \code{NaN}. Setting this
-to something other than \code{NULL} can be expensive because the whole
-vector needs to be traversed and checked.}
-
-\item{encoding}{Expected encoding of a string or character
-vector. One of \code{UTF-8}, \code{latin1}, or \code{unknown}.}
 }
 \value{
-\itemize{
-\item \code{are*}/\code{contains*}/\code{has*}/\code{is*}: \code{logical(1)}.
-Boolean flag (\code{TRUE}/\code{FALSE}). Intended to be used in combination with
-\code{assert} function.
-\item \code{check*}: \code{TRUE} on success, \code{character(1)} on failure.
-Intended to be used in combination with \code{validate} function.
-\item \code{assert*}: \code{TRUE} on success, error (\code{stop}) on failure.
-}
+\code{TRUE} on success;
+\code{FALSE} on failure, with \code{cause} \link[base:attributes]{attribute} set.
 }
 \description{
 Scalar represents a length of 1.
 }
 \section{Functions}{
 \itemize{
-\item \code{isString}: Alias for \code{isScalarCharacter}.
-
-\item \code{isFlag}: Alias for \code{isScalarLogical}.
-
 \item \code{isNumber}: Alias for \code{isScalarNumeric}.
 
 \item \code{isInt}: Alias for \code{isScalarIntegerish}.
@@ -101,4 +71,15 @@ isScalar(c("a", "b"))
 }
 \seealso{
 \code{help(topic = "scalar-type-predicates", package = "rlang")}.
+\itemize{
+\item \code{assertive.properties::is_scalar()}.
+\item \code{rlang::is_scalar_list()}.
+\item \code{rlang::is_scalar_atomic()}.
+\item \code{rlang::is_scalar_vector()}.
+\item \code{rlang::is_scalar_integer()}.
+\item \code{rlang::is_scalar_integerish()}.
+\item \code{rlang::is_scalar_double()}.
+\item \code{rlang::is_scalar_character()}.
+\item \code{rlang::is_scalar_logical()}.
+}
 }

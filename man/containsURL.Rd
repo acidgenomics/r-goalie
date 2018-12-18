@@ -7,16 +7,18 @@
 \alias{isAURL}
 \title{Does the input contain a URL?}
 \usage{
-containsURL(x)
+containsURL(x, .xname = getNameInParent(x))
 
 containsAURL(x)
 
-isURL(x)
+isURL(x, .xname = getNameInParent(x))
 
 isAURL(x)
 }
 \arguments{
 \item{x}{Object.}
+
+\item{.xname}{\emph{Not intended to be used directly.}}
 }
 \value{
 \code{logical}.

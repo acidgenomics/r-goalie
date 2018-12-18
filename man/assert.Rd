@@ -4,27 +4,11 @@
 \alias{assert}
 \title{Assert that certain conditions are true}
 \usage{
-assert(..., exprs, local = TRUE)
+assert(...)
 }
 \arguments{
 \item{...}{Any number of R expressions that return \code{logical(1)}, each of
 which should evaluate to \code{TRUE}.}
-
-\item{exprs}{any number of (typically but not necessarily
-    \code{\link{logical}}) \R expressions, which should each evaluate to
-    (a logical vector of all)
-    \code{\link{TRUE}}.  Use \emph{either} \code{\dots} \emph{or}
-    \code{exprs}, the latter typically an unevaluated expression of the
-    form \preformatted{{
-   expr1
-   expr2
-   ....
-}}
-  }
-
-\item{local}{(only when \code{exprs} is used:) indicates the
-    \code{\link{environment}} in which the expressions should be
-    evaluated; by default the one where \code{stopifnot()} has been called from.}
 }
 \description{
 \code{\link[=assert]{assert()}} is a drop-in replacement for \code{\link[=stopifnot]{stopifnot()}} supporting more
@@ -45,8 +29,8 @@ assert(
 \seealso{
 \itemize{
 \item \code{stopifnot()}.
-\item \code{assertive.base::assert_engine()}.
 \item \code{assertthat::assert_that()}.
+\item \code{assertive.base::assert_engine()}.
 \item \code{checkmate::assert()}.
 }
 }

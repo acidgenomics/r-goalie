@@ -6,19 +6,15 @@
 \alias{isNotMatchingFixed}
 \alias{isMatchingRegex}
 \alias{isNotMatchingRegex}
-\title{Does the String Match a Pattern?}
+\title{Does the string match a pattern?}
 \usage{
-isMatchingFixed(x, pattern, opts_fixed = NULL,
-  .xname = get_name_in_parent(x))
+isMatchingFixed(x, pattern, .xname = getNameInParent(x))
 
-isNotMatchingFixed(x, pattern, opts_fixed = NULL,
-  .xname = get_name_in_parent(x))
+isNotMatchingFixed(x, pattern, .xname = getNameInParent(x))
 
-isMatchingRegex(x, pattern, opts_regex = NULL,
-  .xname = get_name_in_parent(x))
+isMatchingRegex(x, pattern, .xname = getNameInParent(x))
 
-isNotMatchingRegex(x, pattern, opts_regex = NULL,
-  .xname = get_name_in_parent(x))
+isNotMatchingRegex(x, pattern, .xname = getNameInParent(x))
 }
 \arguments{
 \item{x}{Object.}
@@ -26,21 +22,25 @@ isNotMatchingRegex(x, pattern, opts_regex = NULL,
 \item{pattern}{\code{character(1)}.
 Pattern to use for matching.}
 
-\item{opts_fixed}{Passed to \code{\link[stringi]{stri_detect_fixed}}.}
-
 \item{.xname}{\emph{Not intended to be used directly.}}
-
-\item{opts_regex}{Passed to \code{\link[stringi]{stri_detect_regex}}.}
 }
 \value{
 \code{logical}.
 }
 \description{
-Does the String Match a Pattern?
+Does the string match a pattern?
 }
 \examples{
 isMatchingFixed(x = "foobar", pattern = "bar")
 isNotMatchingFixed(x = "foo", pattern = "bar")
 isMatchingRegex(x = "foobar", pattern = "^f")
 isNotMatchingRegex(x = "foobar", pattern = "^b")
+}
+\seealso{
+\itemize{
+\item \code{assertive.strings::is_matching_fixed()}.
+\item \code{assertive.strings::is_not_matching_fixed()}.
+\item \code{assertive.strings::is_matching_regex()}.
+\item \code{assertive.strings::is_not_matching_regex()}.
+}
 }

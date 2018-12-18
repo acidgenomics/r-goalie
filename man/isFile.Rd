@@ -3,7 +3,7 @@
 \name{isFile}
 \alias{isFile}
 \alias{isAFile}
-\title{Does the Input Contain a File?}
+\title{Does the input contain a file?}
 \usage{
 isFile(x)
 
@@ -16,7 +16,7 @@ isAFile(x)
 \code{logical}.
 }
 \description{
-Does the Input Contain a File?
+Does the input contain a file?
 }
 \section{Functions}{
 \itemize{
@@ -32,5 +32,10 @@ isAFile(x)
 unlink(x)
 }
 \seealso{
-\code{R.utils::isFile}.
+\code{R.utils::isFile()}.\preformatted{getS3method(
+    f = "isFile",
+    class = "default",
+    envir = asNamespace("R.utils")
+)
+}
 }
