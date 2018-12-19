@@ -30,7 +30,7 @@ isEmpty <- function(
     .xname = getNameInParent(x)
 ) {
     metric <- match.arg(metric)
-    metricFun <- getMetric(metric)
+    metricFun <- .getMetric(metric)
     metricFun(x, 0L, .xname)
 }
 
@@ -46,7 +46,7 @@ isNonEmpty <- function(
     xname = getNameInParent(x)
 ) {
     metric <- match.arg(metric)
-    metricFun <- getMetric(metric)
+    metricFun <- .getMetric(metric)
     if (metricFun(x, 0L)) {
         msg <- switch(
             EXPR = metric,
@@ -63,9 +63,9 @@ isNonEmpty <- function(
 #' @rdname hasElements
 #' @export
 hasElements <- function(x, n, .xname = getNameInParent(x)) {
-    n <- useFirst(n)
-    checkN(n)
-    nElementsX <- nElements(x)
+    n <- .useFirst(n)
+    .checkN(n)
+    nElementsX <- .nElements(x)
     if (nElementsX != n) {
         return(false(
             ngettext(
@@ -101,7 +101,7 @@ isOfDimension <- function(x, n, xname = getNameInParent(x)) {
         }
         return(TRUE)
     }
-    checkN(n)
+    .checkN(n)
     if (!isOfLength(dimX, length(n))) {
         return(false(
             ngettext(
@@ -136,8 +136,8 @@ isOfDimension <- function(x, n, xname = getNameInParent(x)) {
 #' @rdname hasElements
 #' @export
 isOfLength <- function (x, n, .xname = getNameInParent(x)) {
-    n <- useFirst(n)
-    checkN(n)
+    n <- .useFirst(n)
+    .checkN(n)
     lengthX <- length(x)
     if (lengthX != n) {
         return(false("%s has length %d, not %d.", .xname, lengthX, n))
@@ -157,7 +157,7 @@ isNonEmpty <- function(
     .xname = getNameInParent(x)
 ) {
     metric <- match.arg(metric)
-    metricFun <- getMetric(metric)
+    metricFun <- .getMetric(metric)
     if (metricFun(x, 0L)) {
         msg <- switch(
             EXPR = metric,

@@ -7,11 +7,11 @@
 #'
 #' @examples
 #' ## Pass ====
-#' containsHeaderLevel(1)
+#' isHeaderLevel(1)
 #'
 #' ## Fail ====
-#' containsHeaderLevel(0)
-containsHeaderLevel <- function(x, .name = getNameInParent(x)) {
+#' isHeaderLevel(0)
+isHeaderLevel <- function(x, .name = getNameInParent(x)) {
     ok <- isScalarIntegerish(x)
     if (!isTRUE(ok)) return(ok)
 
@@ -31,7 +31,7 @@ containsHeaderLevel <- function(x, .name = getNameInParent(x)) {
 
 
 
-# Soft deprecate?
-#' @rdname containsHeaderLevel
+# Soft deprecated.
+#' @rdname isHeaderLevel
 #' @export
-isHeaderLevel <- containsHeaderLevel
+containsHeaderLevel <- isHeaderLevel

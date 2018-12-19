@@ -1,7 +1,3 @@
-# TODO Enforce scalar here?
-
-
-
 #' Does the string match a pattern?
 #'
 #' @name grepl
@@ -28,6 +24,7 @@ NULL
 
 
 
+# vector =======================================================================
 #' @rdname grepl
 #' @export
 isMatchingFixed <- function(x, pattern, .xname = getNameInParent(x)) {
@@ -100,4 +97,45 @@ isNotMatchingRegex <- function(x, pattern, .xname = getNameInParent(x)) {
         },
         x = x
     )
+}
+
+
+
+# scalar =======================================================================
+#' @rdname grepl
+#' @export
+allAreMatchingFixed <- function(x, pattern, .xname = getNameInParent(x)) {
+    ok <- isMatchingFixed(x = x, pattern = pattern, .xname = .xname)
+    if (!all(ok)) return(ok)
+    TRUE
+}
+
+
+
+#' @rdname grepl
+#' @export
+allAreMatchingRegex <- function(x, pattern, .xname = getNameInParent(x)) {
+    ok <- isMatchingRegex(x = x, pattern = pattern, .xname = .xname)
+    if (!all(ok)) return(ok)
+    TRUE
+}
+
+
+
+#' @rdname grepl
+#' @export
+allAreNotMatchingFixed <- function(x, pattern, .xname = getNameInParent(x)) {
+    ok <- isNotMatchingFixed(x = x, pattern = pattern, .xname = .xname)
+    if (!all(ok)) return(ok)
+    TRUE
+}
+
+
+
+#' @rdname grepl
+#' @export
+allAreNotMatchingRegex <- function(x, pattern, .xname = getNameInParent(x)) {
+    ok <- isNotMatchingRegex(x = x, pattern = pattern, .xname = .xname)
+    if (!all(ok)) return(ok)
+    TRUE
 }

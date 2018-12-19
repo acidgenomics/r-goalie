@@ -38,7 +38,6 @@ hasDimnames <- function(x, .xname = getNameInParent(x)) {
 
 
 #' @rdname hasDims
-#' @importFrom assertive.properties has_colnames
 #' @export
 hasColnames <- function(x, .xname = getNameInParent(x)) {
     colnamesx <- colnames(x)

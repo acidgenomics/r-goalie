@@ -2,8 +2,8 @@
 #'
 #' An alpha level must be `numeric(1)` greater than 0 and less than 1.
 #'
-#' @inherit params
 #' @export
+#' @inherit params
 #'
 #' @examples
 #' ## Pass ====
