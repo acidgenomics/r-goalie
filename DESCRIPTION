@@ -15,10 +15,7 @@ BugReports: https://github.com/steinbaugh/goalie/issues/
 License: MIT + file LICENSE
 Encoding: UTF-8
 Depends: R (>= 3.5)
-Imports:
-    methods,
-    tools,
-    utils
+Imports: methods, utils
 Suggests:
     Matrix,
     S4Vectors,
