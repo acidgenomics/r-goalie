@@ -6,6 +6,8 @@
 #' If a function named `is.class` exists, call `is.class(x)`.
 #' If not, call `is(x, class)`.
 #'
+#' @export
+#'
 #' @seealso
 #' - `assertive.base::is2()`.
 #' - `methods::is()`.
@@ -43,8 +45,26 @@ is2 <- function(x, class, .xname = getNameInParent(x)) {
             "%s is not of class '%s'; it has %s.",
             .xname,
             class,
-            typeDescription(x)
+            .typeDescription(x)
         ))
     }
     TRUE
+}
+
+
+
+# @seealso `assertive.base:::type_description()`.
+.typeDescription <- function(x) {
+    if (is.array(x)) {
+        sprintf(sprintf("class '%s %s'", class(x[FALSE]), toString(class(x))))
+    }
+    else if (is.function(x)) {
+        sprintf(sprintf("class '%s %s'", typeof(x), toString(class(x))))
+    }
+    else if (isS4(x)) {
+        sprintf(sprintf("S4 class '%s'", toString(class(x))))
+    }
+    else {
+        sprintf("class '%s'", toString(class(x)))
+    }
 }

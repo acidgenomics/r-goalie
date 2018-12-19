@@ -2,7 +2,7 @@
 #'
 #' Capitalize each character string in a vector.
 #'
-#' @keywords internal
+#' @export
 #'
 #' @param x `vector` of `character` strings to be capitalized.
 #'
@@ -20,7 +20,6 @@
 #' @examples
 #' capitalize(c("hello", "world"))
 capitalize <- function(x) {
-    # Using `R.utils::capitalize()` method here.
     n <- length(x)
     if (n == 0L) {
         return(x)
