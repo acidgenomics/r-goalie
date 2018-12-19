@@ -17,7 +17,21 @@
 #' @examples
 #' isIntegerish(seq_len(2L))
 #' isIntegerish(c(1, 2))
-isIntegerish <- function(x) {
-    requireNamespace("rlang", quietly = TRUE)
-    rlang::is_integerish(x)
+isIntegerish <- function(x, .xname = getNameInParent(x)) {
+    if (is.integer(x)) {
+        return(TRUE)
+    }
+    if (!is.numeric(x)) {
+        return(false("%s is not numeric.", .xname))
+    }
+    bapply(
+        x = x,
+        predicate = function(x) {
+            isTRUE(all.equal(
+                target = as.integer(x),
+                current = x,
+                tolerance = .Machine[["double.eps"]]
+            ))
+        }
+    )
 }
