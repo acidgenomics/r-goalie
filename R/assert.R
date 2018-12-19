@@ -55,11 +55,11 @@ assert <- function(...) {
         if (!isTRUE(res)) {
             msg <- "Save by goalie!"
             # Check for defined cause attribute.
-            # Alternatively, can check for "*_with_cause" class here.
+            # Alternatively, can check for "goalie" class here.
             cause <- cause(res)
-            if (identical(cause, noquote(""))) {
+            if (is.null(cause)) {
                 # Generate a `stopifnot()`-like message automatically.
-                msg <- c(msg, sprintf("%s is not TRUE", Dparse(call)))
+                msg <- c(msg, sprintf("%s is not TRUE", .Dparse(call)))
             } else {
                 # Prefix with assert check function name.
                 verb <- call[[1L]]
@@ -67,9 +67,9 @@ assert <- function(...) {
                     msg,
                     "Assert check failure detected.",
                     # Include the assert check call.
-                    Dparse(call),
+                    .Dparse(call),
                     # Capturing the S3 print method here.
-                    printString(res)
+                    .printString(res)
                 )
             }
             msg <- paste0(msg, collapse = "\n")
