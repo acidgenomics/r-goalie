@@ -1,7 +1,3 @@
-# TODO Include the assert check function name in the error if possible.
-
-
-
 #' Assert that certain conditions are true
 #'
 #' [assert()] is a drop-in replacement for [stopifnot()] supporting more
@@ -57,14 +53,26 @@ assert <- function(...) {
 
         # Stop on the first assert check failure.
         if (!isTRUE(res)) {
+            msg <- "Save by goalie!"
             # Check for defined cause attribute.
-            # Otherwise, generate a `stopifnot()`-like one automatically.
+            # Alternatively, can check for "*_with_cause" class here.
             cause <- cause(res)
             if (identical(cause, noquote(""))) {
-                msg <- sprintf("%s is not TRUE", Dparse(call))
+                # Generate a `stopifnot()`-like message automatically.
+                msg <- c(msg, sprintf("%s is not TRUE", Dparse(call)))
             } else {
-                msg <- cause
+                # Prefix with assert check function name.
+                verb <- call[[1L]]
+                msg <- c(
+                    msg,
+                    "Assert check failure detected.",
+                    # Include the assert check call.
+                    Dparse(call),
+                    # Capturing the S3 print method here.
+                    printString(res)
+                )
             }
+            msg <- paste0(msg, collapse = "\n")
             stop(simpleError(msg, call = sys.call(-1L)))
         }
     }
