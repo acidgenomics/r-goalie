@@ -25,7 +25,6 @@ NULL
 
 
 #' @rdname isCharacter
-#' @importFrom assertive.strings is_non_missing_nor_empty_character
 #' @export
 isCharacter <- function(
     x,
