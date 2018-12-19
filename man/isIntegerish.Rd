@@ -4,10 +4,12 @@
 \alias{isIntegerish}
 \title{Is the Input Integerish?}
 \usage{
-isIntegerish(x)
+isIntegerish(x, .xname = getNameInParent(x))
 }
 \arguments{
 \item{x}{Object.}
+
+\item{.xname}{\emph{Not intended to be used directly.}}
 }
 \value{
 \code{TRUE} on success;
