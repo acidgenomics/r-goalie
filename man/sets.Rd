@@ -2,25 +2,24 @@
 % Please edit documentation in R/check-sets.R
 \name{sets}
 \alias{sets}
+\alias{isSubset}
+\alias{isSuperset}
 \alias{areDisjointSets}
 \alias{areIntersectingSets}
 \alias{areSetEqual}
-\alias{isSubset}
-\alias{isSuperset}
 \title{Set comparisons}
 \usage{
-areDisjointSets(x, y, .xname = get_name_in_parent(x),
-  .yname = get_name_in_parent(y))
+isSubset(x, y)
+
+isSuperset(x, y)
+
+areDisjointSets(x, y, .xname = getNameInParent(x),
+  .yname = getNameInParent(y))
 
 areIntersectingSets(x, y, .xname = get_name_in_parent(x),
   .yname = get_name_in_parent(y))
 
 areSetEqual(x, y, .xname = get_name_in_parent(x),
-  .yname = get_name_in_parent(y))
-
-isSubset(x, y)
-
-isSuperset(x, y, strictly = FALSE, .xname = get_name_in_parent(x),
   .yname = get_name_in_parent(y))
 }
 \arguments{
@@ -31,9 +30,6 @@ isSuperset(x, y, strictly = FALSE, .xname = get_name_in_parent(x),
 \item{.xname}{\emph{Not intended to be used directly.}}
 
 \item{.yname}{\emph{Not intended to be used directly.}}
-
-\item{strictly}{Logical.  If \code{TRUE}, \code{x} and \code{y} should not
-be set equal.}
 }
 \value{
 \code{TRUE} on success;
@@ -44,9 +40,6 @@ Set comparisons
 }
 \examples{
 ## Pass ====
-areDisjointSets(x = c("a", "b"), y = c("c", "d"))
-areIntersectingSets(x = c("a", "b"), y = c("b", "c"))
-areSetEqual(x = c("a", "b"), y = c("b", "a"))
 isSubset(x = "a", y = c("a", "b"))
 
 ## This assert is particularly useful for checking required columns.
@@ -55,13 +48,27 @@ isSuperset(
     y = c("Time", "weight", "Diet")
 )
 
+areDisjointSets(x = c("a", "b"), y = c("c", "d"))
+areIntersectingSets(x = c("a", "b"), y = c("b", "c"))
+areSetEqual(x = c("a", "b"), y = c("b", "a"))
+
 ## Fail ====
-areDisjointSets(x = c("a", "b"), y = c("b", "a"))
-areIntersectingSets(x = c("a", "b"), y = c("c", "d"))
-areSetEqual(x = c("a", "b"), y = c("b", "c"))
 isSubset(x = "c", y = c("a", "b"))
 isSuperset(
     x = c("Time", "weight", "Diet"),
     y = colnames(datasets::ChickWeight)
 )
+
+areDisjointSets(x = c("a", "b"), y = c("b", "a"))
+areIntersectingSets(x = c("a", "b"), y = c("c", "d"))
+areSetEqual(x = c("a", "b"), y = c("b", "c"))
+}
+\seealso{
+\itemize{
+\item \code{assertive.sets::is_subset()}.
+\item \code{assertive.sets::is_superset()}.
+\item \code{assertive.sets::are_disjoint_sets()}.
+\item \code{assertive.sets::are_intersecting_sets()}.
+\item \code{assertive.sets::are_set_equal()}.
+}
 }
