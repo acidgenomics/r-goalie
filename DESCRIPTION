@@ -24,8 +24,6 @@ Suggests:
     curl (>= 3.2),
     ggplot2 (>= 3.1),
     patrick,
-    reticulate (>= 1.10),
-    rlang (>= 0.3.0.1),
     testthat (>= 2.0),
     tibble (>= 1.4),
     viridis
