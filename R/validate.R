@@ -4,14 +4,14 @@
 #' used inside of an S4 validity method definition.
 #'
 #' Like [assert()], [validate()] returns `TRUE` on success. However, on failure
-#' it returns a `character` instead of a [stop()][base::stop] call. This is the
-#' current recommended practice for defining S4 validity methods inside of a
-#' [setValidity()][methods::setValidity] call. Refer to the documentation in the
-#' methods package, specifically [validObject()][methods::validObject] for
+#' it returns a `character` instead of a [`stop()`][base::stop] call. This is
+#' the current recommended practice for defining S4 validity methods inside of a
+#' [`setValidity()`][methods::setValidity] call. Refer to the documentation in
+#' the methods package, specifically [`validObject()`][methods::validObject] for
 #' detailed information on S4 validity methods.
 #'
-#' @inheritParams assertthat::validate_that
 #' @export
+#' @inheritParams assert
 #'
 #' @seealso
 #' - `methods::setValidity()`.
@@ -19,9 +19,16 @@
 #' - `assertthat::validate_that()`.
 #'
 #' @examples
+#' ## Pass ====
 #' validate(
 #'     is.atomic("example"),
 #'     is.character("example")
+#' )
+#'
+#' ## Fail ====
+#' validate(
+#'     isFlag("xxx"),
+#'     isPositive(-1)
 #' )
 validate <- function(...) {
     mc <- match.call()[-1L]

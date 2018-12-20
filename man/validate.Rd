@@ -7,9 +7,10 @@
 validate(...)
 }
 \arguments{
-\item{...}{unnamed expressions that describe the conditions to be tested.
-Rather than combining expressions with \code{&&}, separate them by commas
-so that better error messages can be generated.}
+\item{...}{Any number of R expressions that return \code{logical(1)}, each of
+which should evaluate to \code{TRUE}. Rather than combining expressions with
+\code{&&}, separate them by commas so that better error messages can be
+generated.}
 }
 \description{
 \code{\link[=validate]{validate()}} is a variant of \code{\link[=assert]{assert()}} that is specifically intended to be
@@ -17,16 +18,23 @@ used inside of an S4 validity method definition.
 }
 \details{
 Like \code{\link[=assert]{assert()}}, \code{\link[=validate]{validate()}} returns \code{TRUE} on success. However, on failure
-it returns a \code{character} instead of a \link[base:stop]{stop()} call. This is the
-current recommended practice for defining S4 validity methods inside of a
-\link[methods:setValidity]{setValidity()} call. Refer to the documentation in the
-methods package, specifically \link[methods:validObject]{validObject()} for
+it returns a \code{character} instead of a \code{\link[base:stop]{stop()}} call. This is
+the current recommended practice for defining S4 validity methods inside of a
+\code{\link[methods:setValidity]{setValidity()}} call. Refer to the documentation in
+the methods package, specifically \code{\link[methods:validObject]{validObject()}} for
 detailed information on S4 validity methods.
 }
 \examples{
+## Pass ====
 validate(
     is.atomic("example"),
     is.character("example")
+)
+
+## Fail ====
+validate(
+    isFlag("xxx"),
+    isPositive(-1)
 )
 }
 \seealso{

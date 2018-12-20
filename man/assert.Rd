@@ -8,10 +8,12 @@ assert(...)
 }
 \arguments{
 \item{...}{Any number of R expressions that return \code{logical(1)}, each of
-which should evaluate to \code{TRUE}.}
+which should evaluate to \code{TRUE}. Rather than combining expressions with
+\code{&&}, separate them by commas so that better error messages can be
+generated.}
 }
 \description{
-\code{\link[=assert]{assert()}} is a drop-in replacement for \link[base:stopifnot]{stopifnot()}
+\code{\link[=assert]{assert()}} is a drop-in replacement for \code{\link[base:stopifnot]{stopifnot()}}
 supporting more informative error messages.
 }
 \examples{

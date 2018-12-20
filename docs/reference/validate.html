@@ -124,19 +124,20 @@ used inside of an S4 validity method definition.</p>
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>...</th>
-      <td><p>unnamed expressions that describe the conditions to be tested.
-Rather than combining expressions with <code>&amp;&amp;</code>, separate them by commas
-so that better error messages can be generated.</p></td>
+      <td><p>Any number of R expressions that return <code><a href='https://www.rdocumentation.org/packages/base/topics/logical'>logical(1)</a></code>, each of
+which should evaluate to <code>TRUE</code>. Rather than combining expressions with
+<code>&amp;&amp;</code>, separate them by commas so that better error messages can be
+generated.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>Like <code><a href='assert.html'>assert()</a></code>, <code>validate()</code> returns <code>TRUE</code> on success. However, on failure
-it returns a <code>character</code> instead of a <a href='https://www.rdocumentation.org/packages/base/topics/stop'>stop()</a> call. This is the
-current recommended practice for defining S4 validity methods inside of a
-<a href='https://www.rdocumentation.org/packages/methods/topics/validObject'>setValidity()</a> call. Refer to the documentation in the
-methods package, specifically <a href='https://www.rdocumentation.org/packages/methods/topics/validObject'>validObject()</a> for
+it returns a <code>character</code> instead of a <code><a href='https://www.rdocumentation.org/packages/base/topics/stop'>stop()</a></code> call. This is
+the current recommended practice for defining S4 validity methods inside of a
+<code><a href='https://www.rdocumentation.org/packages/methods/topics/validObject'>setValidity()</a></code> call. Refer to the documentation in
+the methods package, specifically <code><a href='https://www.rdocumentation.org/packages/methods/topics/validObject'>validObject()</a></code> for
 detailed information on S4 validity methods.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
@@ -149,10 +150,16 @@ detailed information on S4 validity methods.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>validate</span>(
+    <pre class="examples"><div class='input'><span class='co'>## Pass ====</span>
+<span class='fu'>validate</span>(
     <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/is.recursive'>is.atomic</a></span>(<span class='st'>"example"</span>),
     <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/character'>is.character</a></span>(<span class='st'>"example"</span>)
-)</div><div class='output co'>#&gt; [1] TRUE</div></pre>
+)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
+<span class='co'>## Fail ====</span>
+<span class='fu'>validate</span>(
+    <span class='fu'><a href='isFlag.html'>isFlag</a></span>(<span class='st'>"xxx"</span>),
+    <span class='fu'><a href='ranges.html'>isPositive</a></span>(-<span class='fl'>1</span>)
+)</div><div class='output co'>#&gt; [1] "isFlag(\"xxx\") is not TRUE.\nCause of failure:\n\"xxx\" is not a boolean flag (TRUE/FALSE).\n\nisPositive(-1) is not TRUE.\nFALSE \nCause of failure:\ntoo low"</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
