@@ -2,7 +2,7 @@
 #'
 #' Works for either file or directory paths.
 #'
-#' @export
+#' @name hasAccess
 #'
 #' @param x `character(1)`.
 #'   File or directory path(s).
@@ -13,14 +13,24 @@
 #'   - `w`: write.
 #'   - `x`: execute.
 #'
-#' Write and executable cannot be checked on Windows.
+#' Write and executable status cannot be checked on Windows.
 #'
 #' @seealso
 #' - `file.access()`.
-#' - `checkmate::checkAccess()`. Note that this uses C code internally.
+#' - `checkmate::checkAccess()`.
 #'
 #' @examples
-#' hasAccess("~")
+#' ## Pass ====
+#' hasAccess(c("~", "."))
+#'
+#' ## Fail ====
+#' hasAccess("xxx")
+NULL
+
+
+
+#' @describeIn hasAccess Vectorized.
+#' @export
 hasAccess <- function(x, access = "r") {
     # `file.access()` mode values:
     # - 0: [-] existence
@@ -32,44 +42,51 @@ hasAccess <- function(x, access = "r") {
     # Here we're converting the "rwx" flags to the file.access modes.
     access <- tolower(access)
     access <- strsplit(access, "")[[1L]]
-
-    isWindows <- .Platform[["OS.type"]] == "windows"
-
-    if (
-        anyDuplicated(access) > 0L ||
-        !all(access %in% c("r", "w", "x"))
-    ) {
+    if (anyDuplicated(access) > 0L || !all(access %in% c("r", "w", "x"))) {
         return(false(
             paste0(
-                "%s contains an invalid access code.\n",
+                "%s doesn't contain valid codes.\n",
                 "Combinations of 'r', 'w' and 'x' are allowed."
             ),
             access
         ))
     }
 
-    if ("r" %in% access) {
-        ok <- file.access(x, mode = 4L) == 0L
-        if (!all(ok)) {
-            return(false("%s is not readable.", x[!ok]))
-        }
-    }
+    isWindows <- .Platform[["OS.type"]] == "windows"
 
-    # Write/execute permissions can't be checked on Windows.
-    if (!isTRUE(isWindows)) {
-        if ("w" %in% access) {
-            ok <- file.access(x, mode = 2L) == 0L
-            if (!all(ok)) {
-                return(false("%s is not writeable.", x[!ok]))
+    # String file checker that we can loop with `bapply()` below.
+    checkAccess <- function(x, access) {
+        if ("r" %in% access) {
+            ok <- file.access(x, mode = 4L) == 0L
+            if (!isTRUE(ok)) return(FALSE)
+        }
+
+        # Write/execute permissions can't be checked on Windows.
+        if (!isTRUE(isWindows)) {
+            if ("w" %in% access) {
+                ok <- file.access(x, mode = 2L) == 0L
+                if (!isTRUE(ok)) return(FALSE)
+            }
+            if ("x" %in% access) {
+                ok <- file.access(x, mode = 1L) == 0L
+                if (!isTRUE(ok)) return(FALSE)
             }
         }
-        if ("x" %in% access) {
-            ok <- file.access(x, mode = 1L) == 0L
-            if (!all(ok)) {
-                return(false("%s is not executable.", x[!ok]))
-            }
-        }
+
+        TRUE
     }
 
+    bapply(X = x, FUN = checkAccess, access = access)
+}
+
+
+
+#' @describeIn hasAccess Scalar.
+#' @export
+allHaveAccess <- function() {
+    ok <- hasAccess(x = x, access = access)
+    if (!all(ok)) return(ok)
     TRUE
 }
+
+formals(allHaveAccess) <- formals(hasAccess)
