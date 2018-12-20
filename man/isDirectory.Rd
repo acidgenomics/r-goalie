@@ -24,6 +24,17 @@ isADir(x)
 \description{
 Does the input contain a directory?
 }
+\section{Functions}{
+\itemize{
+\item \code{isDirectory}: Vectorized.
+
+\item \code{isDir}: Short alias for \code{\link[=isDirectory]{isDirectory()}}.
+
+\item \code{isADirectory}: Scalar.
+
+\item \code{isADir}: Short alias for \code{\link[=isADirectory]{isADirectory()}}.
+}}
+
 \examples{
 isDirectory(c("~", "~"))
 isADirectory("~")

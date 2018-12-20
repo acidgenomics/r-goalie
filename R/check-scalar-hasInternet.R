@@ -6,7 +6,6 @@
 #' @examples
 #' hasInternet()
 hasInternet <- function() {
-    requireNamespace("curl", quietly = TRUE)
     ok <- tryCatch(
         expr = curl::has_internet(),
         error = function(e) FALSE,

@@ -43,7 +43,7 @@ isHexColorFunction <- function(
         return(false("Hex color function didn't return any values."))
     }
 
-    ok <- containsHexColors(colors)
+    ok <- allAreHexColors(colors)
     if (!isTRUE(ok)) return(ok)
 
     TRUE
