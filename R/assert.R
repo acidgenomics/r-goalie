@@ -47,24 +47,16 @@ assert <- function(...) {
 
         # Stop on the first assert check failure.
         if (!isTRUE(res)) {
-            msg <- "Save by goalie!"
+            # Always return a `stopifnot()`-like error.
+            msg <- c(
+                "Assert check failed.",
+                sprintf("%s is not TRUE.", .Dparse(call))
+            )
             # Check for defined cause attribute.
-            # Alternatively, can check for "goalie" class here.
             cause <- cause(res)
-            if (is.null(cause)) {
-                # Generate a `stopifnot()`-like message automatically.
-                msg <- c(msg, sprintf("%s is not TRUE", .Dparse(call)))
-            } else {
-                # Prefix with assert check function name.
-                verb <- call[[1L]]
-                msg <- c(
-                    msg,
-                    "Assert check failure detected.",
-                    # Include the assert check call.
-                    .Dparse(call),
-                    # Capturing the S3 print method here.
-                    .printString(res)
-                )
+            if (!is.null(cause)) {
+                # Capturing the S3 print method on goalie class here.
+                msg <- c(msg, capture.output(print(res))[-1L])
             }
             msg <- paste0(msg, collapse = "\n")
             stop(simpleError(msg, call = sys.call(-1L)))
