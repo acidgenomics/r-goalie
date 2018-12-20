@@ -1,12 +1,14 @@
 #' Assert that certain conditions are true
 #'
-#' [assert()] is a drop-in replacement for [stopifnot()][base::stopifnot]
+#' [assert()] is a drop-in replacement for [`stopifnot()`][base::stopifnot]
 #' supporting more informative error messages.
 #'
 #' @export
 #'
 #' @param ... Any number of R expressions that return `logical(1)`, each of
-#'   which should evaluate to `TRUE`.
+#'   which should evaluate to `TRUE`. Rather than combining expressions with
+#'   `&&`, separate them by commas so that better error messages can be
+#'   generated.
 #'
 #' @seealso
 #' - `stopifnot()`.

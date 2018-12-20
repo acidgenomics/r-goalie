@@ -112,7 +112,7 @@ supporting more informative error messages." />
 
     <div class="ref-description">
     
-    <p><code>assert()</code> is a drop-in replacement for <a href='https://www.rdocumentation.org/packages/base/topics/stopifnot'>stopifnot()</a>
+    <p><code>assert()</code> is a drop-in replacement for <code><a href='https://www.rdocumentation.org/packages/base/topics/stopifnot'>stopifnot()</a></code>
 supporting more informative error messages.</p>
     
     </div>
@@ -125,7 +125,9 @@ supporting more informative error messages.</p>
     <tr>
       <th>...</th>
       <td><p>Any number of R expressions that return <code><a href='https://www.rdocumentation.org/packages/base/topics/logical'>logical(1)</a></code>, each of
-which should evaluate to <code>TRUE</code>.</p></td>
+which should evaluate to <code>TRUE</code>. Rather than combining expressions with
+<code>&amp;&amp;</code>, separate them by commas so that better error messages can be
+generated.</p></td>
     </tr>
     </table>
     
