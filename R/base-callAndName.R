@@ -1,30 +1,17 @@
-# `assertive.base:::to_names()`.
-toNames <- function(x) {
-    if (is.double(x) && is.vector(x)) {
-        ifelse(
-            test = is.na(x),
-            yes = NA_real_,
-            no = sprintf("%.17g", x)
-        )
-    }
-    else if (is.complex(x)) {
-        ifelse(
-            test = is.na(x),
-            yes = NA_complex_,
-            no = sprintf("%.17g+%.17gi", Re(x), Im(x))
-        )
-    }
-    else {
-        as.character(x)
-    }
-}
-
-
-
-# `assertive.base::call_and_name()`.
-callAndName <- function(fn, x, ...) {
-    y <- fn(x, ...)
+#' Call a function and give the result names
+#'
+#' Calls a function and names the result with the first argument.
+#'
+#' @export
+#'
+#' @param fun `function`.
+#' @param x The first input to `fun`.
+#' @param ... Additional arguments passed to `fun`.
+#'
+#' @seealso `assertive.base::call_and_name()`.
+callAndName <- function(fun, x, ...) {
+    y <- fun(x, ...)
     dim(y) <- dim(x)
-    names(y) <- toNames(x)
+    names(y) <- .toNames(x)
     y
 }

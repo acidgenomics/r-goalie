@@ -24,18 +24,15 @@ NULL
 
 
 
-#' @describeIn isFile Supports multiple files.
+#' @describeIn isFile Vectorized.
 #' @export
 isFile <- function(x) {
-    ok <- isCharacter(x)
-    if (!isTRUE(ok)) return(ok)
-
     file.exists(x)
 }
 
 
 
-#' @describeIn isFile Check for a single file.
+#' @describeIn isFile Scalar variant.
 #' @export
 isAFile <- function(x) {
     ok <- isString(x)
