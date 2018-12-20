@@ -2,39 +2,39 @@
 % Please edit documentation in R/validate.R
 \name{validate}
 \alias{validate}
-\title{Validate an S4 Class}
+\title{Validate an S4 class}
 \usage{
-validate(..., env = parent.frame(), msg = NULL)
+validate(...)
 }
 \arguments{
-\item{...}{unnamed expressions that describe the conditions to be tested.
-Rather than combining expressions with \code{&&}, separate them by commas
-so that better error messages can be generated.}
-
-\item{env}{(advanced use only) the environment in which to evaluate the
-assertions.}
-
-\item{msg}{a custom error message to be printed if one of the conditions is
-false.}
+\item{...}{Any number of R expressions that return \code{logical(1)}, each of
+which should evaluate to \code{TRUE}. Rather than combining expressions with
+\code{&&}, separate them by commas so that better error messages can be
+generated.}
 }
 \description{
-\code{validate()} is a variant of \code{assert()} that is specifically intended to be
+\code{\link[=validate]{validate()}} is a variant of \code{\link[=assert]{assert()}} that is specifically intended to be
 used inside of an S4 validity method definition.
 }
 \details{
-Currently, \code{validate()} reexports \code{assertthat::validate_that()}.
-
-Like \code{assert()}, \code{validate()} returns \code{TRUE} on success. However, on failure
-it returns a \code{character} instead of a \code{stop()} call. This is the current
-recommended practice for defining S4 validity methods inside of a
-\code{setValidity()} call. Refer to the documentation in the methods package,
-specifically on \code{validObject()} for detailed information on S4 validity
-methods.
+Like \code{\link[=assert]{assert()}}, \code{\link[=validate]{validate()}} returns \code{TRUE} on success. However, on failure
+it returns a \code{character} instead of a \code{\link[base:stop]{stop()}} call. This is
+the current recommended practice for defining S4 validity methods inside of a
+\code{\link[methods:setValidity]{setValidity()}} call. Refer to the documentation in
+the methods package, specifically \code{\link[methods:validObject]{validObject()}} for
+detailed information on S4 validity methods.
 }
 \examples{
+## Pass ====
 validate(
     is.atomic("example"),
     is.character("example")
+)
+
+## Fail ====
+validate(
+    isFlag("xxx"),
+    isPositive(-1)
 )
 }
 \seealso{

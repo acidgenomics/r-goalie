@@ -2,9 +2,30 @@
 % Please edit documentation in R/deprecated.R
 \name{deprecated}
 \alias{deprecated}
+\alias{containsAlpha}
+\alias{containsHeaderLevel}
+\alias{containsHexColors}
+\alias{containsURL}
+\alias{containsAURL}
 \title{Deprecated Functions}
+\usage{
+containsAlpha(x, .xname = getNameInParent(x))
+
+containsHeaderLevel(x, .xname = getNameInParent(x))
+
+containsHexColors(x, .xname = getNameInParent(x))
+
+containsURL(x, .xname = getNameInParent(x))
+
+containsAURL(x)
+}
+\arguments{
+\item{x}{Object.}
+
+\item{.xname}{\emph{Not intended to be used directly.}}
+}
 \value{
-\code{.Deprecated()}.
+\code{.Deprecated}.
 }
 \description{
 Deprecated Functions

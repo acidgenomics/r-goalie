@@ -1,8 +1,8 @@
 Package: goalie
-Title: Assertions
+Title: Assertive Check Functions
 Description: Assertive check functions for defensive R programming.
-Version: 0.2.0
-Date: 2018-12-10
+Version: 0.2.1
+Date: 2018-12-19
 Authors@R: person(
     "Michael", "Steinbaugh",
     email = "mike@steinbaugh.com",
@@ -15,26 +15,13 @@ BugReports: https://github.com/steinbaugh/goalie/issues/
 License: MIT + file LICENSE
 Encoding: UTF-8
 Depends: R (>= 3.5)
-Imports:
-    R.utils (>= 2.7),
-    assertive.base,
-    assertive.code,
-    assertive.data,
-    assertive.numbers,
-    assertive.properties,
-    assertive.sets,
-    assertive.strings,
-    assertthat (>= 0.2),
-    checkmate (>= 1.8),
-    curl (>= 3.2),
-    methods,
-    rlang (>= 0.3),
-    stringi,
-    utils
+Imports: methods, utils
 Suggests:
     Matrix,
     S4Vectors,
     SummarizedExperiment,
+    checkmate (>= 1.8.5),
+    curl (>= 3.2),
     ggplot2 (>= 3.1),
     patrick,
     testthat (>= 2.0),

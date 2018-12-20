@@ -2,32 +2,19 @@
 % Please edit documentation in R/assert.R
 \name{assert}
 \alias{assert}
-\title{Assert That Certain Conditions Are True}
+\title{Assert that certain conditions are true}
 \usage{
-assert(..., exprs, local = TRUE)
+assert(...)
 }
 \arguments{
-\item{...}{Any number of expressions that return \code{logical(1)}, each of which
-should evaluate to \code{TRUE} on success and \code{FALSE} on failure.}
-
-\item{exprs}{any number of (typically but not necessarily
-    \code{\link{logical}}) \R expressions, which should each evaluate to
-    (a logical vector of all)
-    \code{\link{TRUE}}.  Use \emph{either} \code{\dots} \emph{or}
-    \code{exprs}, the latter typically an unevaluated expression of the
-    form \preformatted{{
-   expr1
-   expr2
-   ....
-}}
-  }
-
-\item{local}{(only when \code{exprs} is used:) indicates the
-    \code{\link{environment}} in which the expressions should be
-    evaluated; by default the one where \code{stopifnot()} has been called from.}
+\item{...}{Any number of R expressions that return \code{logical(1)}, each of
+which should evaluate to \code{TRUE}. Rather than combining expressions with
+\code{&&}, separate them by commas so that better error messages can be
+generated.}
 }
 \description{
-Currently, we're reexporting \code{stopifnot()} as \code{assert()} verbatim here.
+\code{\link[=assert]{assert()}} is a drop-in replacement for \code{\link[base:stopifnot]{stopifnot()}}
+supporting more informative error messages.
 }
 \examples{
 assert(
@@ -38,7 +25,8 @@ assert(
 \seealso{
 \itemize{
 \item \code{stopifnot()}.
-\item \code{checkmate::assert()}.
 \item \code{assertthat::assert_that()}.
+\item \code{assertive.base::assert_engine()}.
+\item \code{checkmate::assert()}.
 }
 }

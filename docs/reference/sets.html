@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Set Comparisons — sets • goalie</title>
+<title>Set comparisons — sets • goalie</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -32,9 +32,9 @@
 
   <link href="../extra.css" rel="stylesheet">
   
-<meta property="og:title" content="Set Comparisons — sets" />
+<meta property="og:title" content="Set comparisons — sets" />
 
-<meta property="og:description" content="Set Comparisons" />
+<meta property="og:description" content="Set comparisons" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -65,7 +65,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">goalie</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.1</span>
       </span>
     </div>
 
@@ -104,30 +104,29 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Set Comparisons</h1>
-    <small class="dont-index">Source: <a href='https://github.com/steinbaugh/goalie/blob/master/R/sets.R'><code>R/sets.R</code></a></small>
+    <h1>Set comparisons</h1>
+    <small class="dont-index">Source: <a href='https://github.com/steinbaugh/goalie/blob/master/R/check-scalar-sets.R'><code>R/check-scalar-sets.R</code></a></small>
     <div class="hidden name"><code>sets.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Set Comparisons</p>
+    <p>Set comparisons</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>areDisjointSets</span>(<span class='no'>x</span>, <span class='no'>y</span>, <span class='kw'>.xname</span> <span class='kw'>=</span> <span class='fu'>get_name_in_parent</span>(<span class='no'>x</span>),
-  <span class='kw'>.yname</span> <span class='kw'>=</span> <span class='fu'>get_name_in_parent</span>(<span class='no'>y</span>))
+    <pre class="usage"><span class='fu'>isSubset</span>(<span class='no'>x</span>, <span class='no'>y</span>)
 
-<span class='fu'>areIntersectingSets</span>(<span class='no'>x</span>, <span class='no'>y</span>, <span class='kw'>.xname</span> <span class='kw'>=</span> <span class='fu'>get_name_in_parent</span>(<span class='no'>x</span>),
-  <span class='kw'>.yname</span> <span class='kw'>=</span> <span class='fu'>get_name_in_parent</span>(<span class='no'>y</span>))
+<span class='fu'>isSuperset</span>(<span class='no'>x</span>, <span class='no'>y</span>)
 
-<span class='fu'>areSetEqual</span>(<span class='no'>x</span>, <span class='no'>y</span>, <span class='kw'>.xname</span> <span class='kw'>=</span> <span class='fu'>get_name_in_parent</span>(<span class='no'>x</span>),
-  <span class='kw'>.yname</span> <span class='kw'>=</span> <span class='fu'>get_name_in_parent</span>(<span class='no'>y</span>))
+<span class='fu'>areDisjointSets</span>(<span class='no'>x</span>, <span class='no'>y</span>, <span class='kw'>.xname</span> <span class='kw'>=</span> <span class='fu'><a href='getNameInParent.html'>getNameInParent</a></span>(<span class='no'>x</span>),
+  <span class='kw'>.yname</span> <span class='kw'>=</span> <span class='fu'><a href='getNameInParent.html'>getNameInParent</a></span>(<span class='no'>y</span>))
 
-<span class='fu'>isSubset</span>(<span class='no'>x</span>, <span class='no'>y</span>)
+<span class='fu'>areIntersectingSets</span>(<span class='no'>x</span>, <span class='no'>y</span>, <span class='kw'>.xname</span> <span class='kw'>=</span> <span class='fu'><a href='getNameInParent.html'>getNameInParent</a></span>(<span class='no'>x</span>),
+  <span class='kw'>.yname</span> <span class='kw'>=</span> <span class='fu'><a href='getNameInParent.html'>getNameInParent</a></span>(<span class='no'>y</span>))
 
-<span class='fu'>isSuperset</span>(<span class='no'>x</span>, <span class='no'>y</span>, <span class='kw'>strictly</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>.xname</span> <span class='kw'>=</span> <span class='fu'>get_name_in_parent</span>(<span class='no'>x</span>),
-  <span class='kw'>.yname</span> <span class='kw'>=</span> <span class='fu'>get_name_in_parent</span>(<span class='no'>y</span>))</pre>
+<span class='fu'>areSetEqual</span>(<span class='no'>x</span>, <span class='no'>y</span>, <span class='kw'>.xname</span> <span class='kw'>=</span> <span class='fu'><a href='getNameInParent.html'>getNameInParent</a></span>(<span class='no'>x</span>),
+  <span class='kw'>.yname</span> <span class='kw'>=</span> <span class='fu'><a href='getNameInParent.html'>getNameInParent</a></span>(<span class='no'>y</span>))</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -148,46 +147,43 @@
       <th>.yname</th>
       <td><p><em>Not intended to be used directly.</em></p></td>
     </tr>
-    <tr>
-      <th>strictly</th>
-      <td><p>Logical.  If <code>TRUE</code>, <code>x</code> and <code>y</code> should not
-be set equal.</p></td>
-    </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
+    <p><code>TRUE</code> on success;
+<code>FALSE</code> on failure, with <code>cause</code> <a href='https://www.rdocumentation.org/packages/base/topics/attributes'>attribute</a> set.</p>
     
-<ul>
-<li><p><code>are*</code>/<code>contains*</code>/<code>has*</code>/<code>is*</code>:
-<code><a href='https://www.rdocumentation.org/packages/base/topics/logical'>logical(1)</a></code>. Boolean flag (<code>TRUE</code>/<code>FALSE</code>).
-Intended to be used in combination with <code><a href='assert.html'>assert()</a></code> function.</p></li>
-<li><p><code>check*</code>:
-<code>TRUE</code> on success or <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code> on failure.
-Intended to be used in combination with <code><a href='validate.html'>validate()</a></code> function.</p></li>
-<li><p><code>assert*</code>:
-<code>TRUE</code> on success or error (<code><a href='https://www.rdocumentation.org/packages/base/topics/stop'>stop()</a></code>) on failure.</p></li>
-</ul>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
+    <div class='dont-index'><ul>
+<li><p><code><a href='https://www.rdocumentation.org/packages/assertive.sets/topics/are_set_equal'>assertive.sets::is_subset()</a></code>.</p></li>
+<li><p><code><a href='https://www.rdocumentation.org/packages/assertive.sets/topics/are_set_equal'>assertive.sets::is_superset()</a></code>.</p></li>
+<li><p><code><a href='https://www.rdocumentation.org/packages/assertive.sets/topics/are_set_equal'>assertive.sets::are_disjoint_sets()</a></code>.</p></li>
+<li><p><code><a href='https://www.rdocumentation.org/packages/assertive.sets/topics/are_set_equal'>assertive.sets::are_intersecting_sets()</a></code>.</p></li>
+<li><p><code><a href='https://www.rdocumentation.org/packages/assertive.sets/topics/are_set_equal'>assertive.sets::are_set_equal()</a></code>.</p></li>
+</ul></div>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'>## Pass ====</span>
-<span class='fu'>areDisjointSets</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>), <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"c"</span>, <span class='st'>"d"</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>areIntersectingSets</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>), <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"b"</span>, <span class='st'>"c"</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>areSetEqual</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>), <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"b"</span>, <span class='st'>"a"</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>isSubset</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='st'>"a"</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
+<span class='fu'>isSubset</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='st'>"a"</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
 <span class='co'>## This assert is particularly useful for checking required columns.</span>
 <span class='fu'>isSuperset</span>(
     <span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/colnames'>colnames</a></span>(<span class='kw pkg'>datasets</span><span class='kw ns'>::</span><span class='no'><a href='https://www.rdocumentation.org/packages/datasets/topics/ChickWeight'>ChickWeight</a></span>),
     <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"Time"</span>, <span class='st'>"weight"</span>, <span class='st'>"Diet"</span>)
 )</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
+<span class='fu'>areDisjointSets</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>), <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"c"</span>, <span class='st'>"d"</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>areIntersectingSets</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>), <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"b"</span>, <span class='st'>"c"</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>areSetEqual</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>), <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"b"</span>, <span class='st'>"a"</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
 <span class='co'>## Fail ====</span>
-<span class='fu'>areDisjointSets</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>), <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"b"</span>, <span class='st'>"a"</span>))</div><div class='output co'>#&gt; [1] FALSE
-#&gt; Cause of failure:  c("a", "b") and c("b", "a") have common elements: a, b. </div><div class='input'><span class='fu'>areIntersectingSets</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>), <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"c"</span>, <span class='st'>"d"</span>))</div><div class='output co'>#&gt; [1] FALSE
-#&gt; Cause of failure:  c("a", "b") and c("c", "d") have no common elements. </div><div class='input'><span class='fu'>areSetEqual</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>), <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"b"</span>, <span class='st'>"c"</span>))</div><div class='output co'>#&gt; [1] FALSE
-#&gt; Cause of failure:  The element ‘a’ in c("a", "b") is not in c("b", "c"). </div><div class='input'><span class='fu'>isSubset</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='st'>"c"</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>))</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>isSuperset</span>(
+<span class='fu'>isSubset</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='st'>"c"</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>))</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>isSuperset</span>(
     <span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"Time"</span>, <span class='st'>"weight"</span>, <span class='st'>"Diet"</span>),
     <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/colnames'>colnames</a></span>(<span class='kw pkg'>datasets</span><span class='kw ns'>::</span><span class='no'><a href='https://www.rdocumentation.org/packages/datasets/topics/ChickWeight'>ChickWeight</a></span>)
-)</div><div class='output co'>#&gt; [1] FALSE
-#&gt; Cause of failure:  The element ‘Chick’ in colnames(datasets::ChickWeight) is not in c("Time", "weight", "Diet"). </div></pre>
+)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'>
+<span class='fu'>areDisjointSets</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>), <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"b"</span>, <span class='st'>"a"</span>))</div><div class='output co'>#&gt; [1] FALSE
+#&gt; Cause of failure:
+#&gt; c("a", "b") and c("b", "a") have common elements: a, b.</div><div class='input'><span class='fu'>areIntersectingSets</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>), <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"c"</span>, <span class='st'>"d"</span>))</div><div class='output co'>#&gt; [1] FALSE
+#&gt; Cause of failure:
+#&gt; c("a", "b") and c("c", "d") have no common elements.</div><div class='input'><span class='fu'>areSetEqual</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>), <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"b"</span>, <span class='st'>"c"</span>))</div><div class='output co'>#&gt; [1] FALSE</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -195,6 +191,8 @@ Intended to be used in combination with <code><a href='validate.html'>validate()
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
+
+      <li><a href="#see-also">See also</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Validate Expected Classes — validateClasses • goalie</title>
+<title>Validate expected classes — validateClasses • goalie</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -32,7 +32,7 @@
 
   <link href="../extra.css" rel="stylesheet">
   
-<meta property="og:title" content="Validate Expected Classes — validateClasses" />
+<meta property="og:title" content="Validate expected classes — validateClasses" />
 
 <meta property="og:description" content="Validity check capable of validating multiple slots in a single call." />
 <meta name="twitter:card" content="summary" />
@@ -65,7 +65,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">goalie</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.1</span>
       </span>
     </div>
 
@@ -104,7 +104,7 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Validate Expected Classes</h1>
+    <h1>Validate expected classes</h1>
     <small class="dont-index">Source: <a href='https://github.com/steinbaugh/goalie/blob/master/R/validateClasses.R'><code>R/validateClasses.R</code></a></small>
     <div class="hidden name"><code>validateClasses.Rd</code></div>
     </div>
@@ -130,27 +130,27 @@
     </tr>
     <tr>
       <th>subset</th>
-      <td><p><code>boolean</code>. Only check a subset of slots in the object.</p></td>
+      <td><p><code><a href='https://www.rdocumentation.org/packages/base/topics/logical'>logical(1)</a></code>. Only check a subset of slots in the object.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><code>boolean</code> (<code>TRUE</code>) on sucess or <code>string</code> containing informative
-message on failure.</p>
+    <p><code><a href='https://www.rdocumentation.org/packages/base/topics/logical'>logical(1)</a></code> (<code>TRUE</code>) on sucess or <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code> containing
+informative message on failure.</p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>To be used inside S4 <code><a href='https://www.rdocumentation.org/packages/methods/topics/validObject'>methods::setValidity()</a></code> call or with <code><a href='validate.html'>validate()</a></code>.
 Particularly useful for checking multiple slotted objects inside
-<code>metadata()</code>.</p>
+<a href='https://www.rdocumentation.org/packages/S4Vectors/topics/Annotated-class'>metadata</a>.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><ul>
-<li><p><code><a href='validate.html'>validate()</a></code>.</p></li>
-<li><p><code><a href='https://www.rdocumentation.org/packages/methods/topics/validObject'>methods::setValidity()</a></code>.</p></li>
-<li><p><code><a href='https://www.rdocumentation.org/packages/methods/topics/validObject'>methods::validObject()</a></code>.</p></li>
+<li><p><code>validate</code>.</p></li>
+<li><p><code><a href='https://www.rdocumentation.org/packages/methods/topics/validObject'>methods::setValidity</a></code>.</p></li>
+<li><p><code><a href='https://www.rdocumentation.org/packages/methods/topics/validObject'>methods::validObject</a></code>.</p></li>
 </ul></div>
     
 

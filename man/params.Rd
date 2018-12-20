@@ -4,41 +4,44 @@
 \alias{params}
 \title{Parameters}
 \arguments{
-\item{add}{\code{AssertCollection}. Extra information to be included in the
-message for the testthat reporter. See \code{testthat::expect_that()}.}
+\item{class}{\code{character(1)}.
+Object class.}
 
-\item{classes}{\code{character}. Object classes.}
+\item{classes}{\code{character}.
+Object classes.}
 
-\item{envir}{\code{environment}. Environment.}
+\item{envir}{\code{environment}.
+Environment.}
 
-\item{genes}{\code{character}. Genes.}
+\item{genes}{\code{character}.
+Genes.}
 
-\item{info}{\code{character}. Extra information to be included in the message for
-the testthat reporter. See \code{testthat::expect_that()}.}
+\item{inherits}{\code{logical(1)}.
+Should the enclosing frames of the \code{environment} be searched?}
 
-\item{inherits}{\code{logical(1)}. Should the enclosing frames of the
-\code{environment} be searched?}
+\item{lower}{\code{numeric(1)}.
+Lower boundary.}
 
-\item{label}{\code{character(1)}. Name of the checked object to print in messages.}
+\item{metric}{XXX.}
 
-\item{name}{\code{character}. Element name.}
+\item{n}{XXX.}
 
-\item{na.ok}{\code{logical(1)}. If set to \code{TRUE}, \code{x} may also be \code{NA}.}
-
-\item{names}{\code{character}. Element names (e.g. row names, column names).}
-
-\item{null.ok}{\code{logical(1)}. If set to \code{TRUE}, \code{x} may also be \code{NULL}.}
+\item{nullOK}{\code{logical(1)}.
+If set to \code{TRUE}, \code{x} may also be \code{NULL}.}
 
 \item{object}{Object.}
 
-\item{pattern}{\code{character(1)}. Pattern to use for matching.}
+\item{pattern}{\code{character(1)}.
+Pattern to use for matching.}
+
+\item{upper}{\code{numeric(1)}.
+Upper boundary.}
+
+\item{value}{Value.}
 
 \item{x}{Object.}
 
 \item{y}{Secondary object.}
-
-\item{.var.name}{\code{character(1)}. Name of the checked object to print in
-asserions.}
 
 \item{.xname}{\emph{Not intended to be used directly.}}
 
@@ -47,16 +50,8 @@ asserions.}
 \item{...}{Additional arguments.}
 }
 \value{
-\itemize{
-\item \code{are*}/\code{contains*}/\code{has*}/\code{is*}:
-\code{logical(1)}. Boolean flag (\code{TRUE}/\code{FALSE}).
-Intended to be used in combination with \code{assert()} function.
-\item \code{check*}:
-\code{TRUE} on success or \code{character(1)} on failure.
-Intended to be used in combination with \code{validate()} function.
-\item \code{assert*}:
-\code{TRUE} on success or error (\code{stop()}) on failure.
-}
+\code{TRUE} on success;
+\code{FALSE} on failure, with \code{cause} \link[base:attributes]{attribute} set.
 }
 \description{
 Parameters

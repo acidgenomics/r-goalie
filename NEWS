@@ -1,3 +1,28 @@
+## goalie 0.2.1 (2018-12-20)
+
+- The approach to the package update is heavily influenced by the conventions
+  defined in the assertive package. In goalie, I'm attempting to create a
+  minimal assert check engine that behaves similar to `stopifnot()`, but with
+  more informative error messages. This approach is inspired by the assertthat
+  package, but neither assertive or assertthat are working quite right for my
+  needs.
+- Overhauled the `assert()` and `validate()` engines, re-writing the code from
+  scratch based on the internal code of `stopifnot()`.
+- Reworked all assertive check functions to reduce the number of dependencies.
+  Now the package is lean and mean, only importing methods and utils into the
+  NAMESPACE.
+- Assertive checks now return as `goalie` class in addition to `logical`.
+
+
+## goalie 0.2.0 (2018-12-12)
+
+- Removed all `assert*()` functions in favor of a simpler, assertthat style
+  approach using `assert()` for all checks. The package will export check
+  functions that return `logical`, typically `logical(1)` (boolean flag) for
+  most checks. These checks can then be wrapped in `assert()` or `validate()`
+  (for S4 class validity checks) calls.
+
+
 ## goalie 0.1.2 (2018-11-21)
 
 - `isDir()` and `isFile()` now import `R.utils::isDirectory()` and
