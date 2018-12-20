@@ -33,7 +33,7 @@ Additionally, goalie exports a number of assertive check functions that are inte
 
 The goalie source code incorporates elements from these excellent assert check packages:
 
-- [assertive][] by Ritchie Cotton.
+- [assertive][] by Richie Cotton.
 - [assertthat][] by Hadley Wickham.
 - [checkmate][] by Michael Lang.
 
