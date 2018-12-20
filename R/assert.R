@@ -51,7 +51,7 @@ assert <- function(...) {
         if (!isTRUE(res)) {
             # Always return a `stopifnot()`-like error.
             msg <- c(
-                "Assert check failed.",
+                "Assert failure.",
                 sprintf("%s is not TRUE.", .Dparse(call))
             )
             # Check for defined cause attribute.
