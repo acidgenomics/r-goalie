@@ -6,7 +6,6 @@
 #'
 #' @name isHexColor
 #' @inherit params
-#' @export
 #'
 #' @seealso `assertive::is_hex_color()`.
 #'
@@ -21,21 +20,25 @@
 #' x <- ggplot2::scale_colour_manual
 #' class(x)
 #' isHexColor(x)
+NULL
+
+
+
+#' @describeIn isHexColor Vectorized.
+#' @export
 isHexColor <- function(x, .xname = getNameInParent(x)) {
-    ok <- isCharacter(x)
+    ok <- isCharacter(x = x, .xname = .xname)
     if (!isTRUE(ok)) return(ok)
 
     # NOTE `viridis()` adds an extra "FF" to the end of hex color return.
     pattern <- "^(#[0-9A-F]{6})"
     ok <- isMatchingRegex(x = x, pattern = pattern, .xname = .xname)
-    if (!all(ok)) return(ok)
-
-    TRUE
+    setCause(ok, false = sprintf("doesn't match %s", pattern))
 }
 
 
 
-#' @rdname isHexColor
+#' @describeIn isHexColor Scalar.
 #' @export
 allAreHexColors <- function(x, .xname = getNameInParent(x)) {
     ok <- isHexColor(x = x, .xname = .xname)
