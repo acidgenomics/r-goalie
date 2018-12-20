@@ -2,7 +2,7 @@
 
 
 
-#' Validate an S4 Class
+#' Validate an S4 class
 #'
 #' [validate()] is a variant of [assert()] that is specifically intended to be
 #' used inside of an S4 validity method definition.

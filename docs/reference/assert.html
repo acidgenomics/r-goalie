@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Assert That Certain Conditions Are True — assert • goalie</title>
+<title>Assert that certain conditions are true — assert • goalie</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -32,9 +32,10 @@
 
   <link href="../extra.css" rel="stylesheet">
   
-<meta property="og:title" content="Assert That Certain Conditions Are True — assert" />
+<meta property="og:title" content="Assert that certain conditions are true — assert" />
 
-<meta property="og:description" content="Currently, we're reexporting stopifnot as assert verbatim here." />
+<meta property="og:description" content="assert() is a drop-in replacement for stopifnot()
+supporting more informative error messages." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -104,54 +105,37 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Assert That Certain Conditions Are True</h1>
+    <h1>Assert that certain conditions are true</h1>
     <small class="dont-index">Source: <a href='https://github.com/steinbaugh/goalie/blob/master/R/assert.R'><code>R/assert.R</code></a></small>
     <div class="hidden name"><code>assert.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Currently, we're reexporting <code>stopifnot</code> as <code>assert</code> verbatim here.</p>
+    <p><code>assert()</code> is a drop-in replacement for <a href='https://www.rdocumentation.org/packages/base/topics/stopifnot'>stopifnot()</a>
+supporting more informative error messages.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>assert</span>(<span class='no'>...</span>, <span class='no'>exprs</span>, <span class='kw'>local</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>assert</span>(<span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>...</th>
-      <td><p>Any number of expressions that return <code><a href='https://www.rdocumentation.org/packages/base/topics/logical'>logical(1)</a></code>, each of which
-should evaluate to <code>TRUE</code> on success and <code>FALSE</code> on failure.</p></td>
-    </tr>
-    <tr>
-      <th>exprs</th>
-      <td><p>any number of (typically but not necessarily
-    <code><a href='https://www.rdocumentation.org/packages/base/topics/logical'>logical</a></code>) <span style="R">R</span> expressions, which should each evaluate to
-    (a logical vector of all)
-    <code><a href='https://www.rdocumentation.org/packages/base/topics/logical'>TRUE</a></code>.  Use <em>either</em> <code>&#8230;</code> <em>or</em>
-    <code>exprs</code>, the latter typically an unevaluated expression of the
-    form</p><pre>{
-   expr1
-   expr2
-   ....
-}</pre><p></p></td>
-    </tr>
-    <tr>
-      <th>local</th>
-      <td><p>(only when <code>exprs</code> is used:) indicates the
-    <code><a href='https://www.rdocumentation.org/packages/base/topics/environment'>environment</a></code> in which the expressions should be
-    evaluated; by default the one where <code><a href='https://www.rdocumentation.org/packages/base/topics/stopifnot'>stopifnot()</a></code> has been called from.</p></td>
+      <td><p>Any number of R expressions that return <code><a href='https://www.rdocumentation.org/packages/base/topics/logical'>logical(1)</a></code>, each of
+which should evaluate to <code>TRUE</code>.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><ul>
-<li><p><code>stopifnot</code>.</p></li>
-<li><p><code><a href='https://www.rdocumentation.org/packages/checkmate/topics/assert'>checkmate::assert</a></code>.</p></li>
-<li><p><code><a href='https://www.rdocumentation.org/packages/assertthat/topics/assert_that'>assertthat::assert_that</a></code>.</p></li>
+<li><p><code><a href='https://www.rdocumentation.org/packages/base/topics/stopifnot'>stopifnot()</a></code>.</p></li>
+<li><p><code><a href='https://www.rdocumentation.org/packages/assertthat/topics/assert_that'>assertthat::assert_that()</a></code>.</p></li>
+<li><p><code><a href='https://www.rdocumentation.org/packages/assertive.base/topics/assert_engine'>assertive.base::assert_engine()</a></code>.</p></li>
+<li><p><code><a href='https://www.rdocumentation.org/packages/checkmate/topics/assert'>checkmate::assert()</a></code>.</p></li>
 </ul></div>
     
 

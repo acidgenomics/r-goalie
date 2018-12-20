@@ -2,7 +2,7 @@
 % Please edit documentation in R/check-vector-isIntegerish.R
 \name{isIntegerish}
 \alias{isIntegerish}
-\title{Is the Input Integerish?}
+\title{Is the input integer(ish)?}
 \usage{
 isIntegerish(x, .xname = getNameInParent(x))
 }

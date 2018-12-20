@@ -1,4 +1,4 @@
-#' Does the Object Belong to or Inherit Any of These Classes?
+#' Does the object belong to or inherit any of these classes?
 #'
 #' @inherit params
 #' @export

@@ -12,7 +12,7 @@ cause(x) <- value
 \arguments{
 \item{x}{Object.}
 
-\item{value}{XXX.}
+\item{value}{Value.}
 }
 \value{
 \code{character(1)}. Cause attribute.
