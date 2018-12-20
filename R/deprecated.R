@@ -22,75 +22,38 @@ NULL
 
 
 # v0.2.0 =======================================================================
-# areDirs : checkDirectoryExists
-# areFiles : checkFileExists
-# areNonExisting
+# areDirs/checkDirectoryExists
+# areFiles/checkFileExists
 # areSamplesUnique
 # areURLs
 # areUniqueGeneNames
-# assertAllAreNonExisting
-# assertAllAreValidNames
-# assertAreDirs
-# assertAreFiles
-# assertAreGeneAnnotations
-# assertAreNonExisting
-# assertAreTranscriptAnnotations
-# assertAreURLs
-# assertAreUniqueGeneNames
-# assertAreValidNames
-# assertFormalCompress
-# assertHasRownames
-# assertHasUniqueCols
-# assertHasValidDimnames
-# assertHasValidNames
-# assertIsAHeaderLevel
-# assertIsANumberOrNULL
-# assertIsAStringOrNULL
-# assertIsAlpha
-# assertIsAnImplicitInteger
-# assertIsAnImplicitIntegerOrNULL
-# assertIsAnIntegerOrNULL
-# assertIsAnnotable
-# assertIsCharacterOrNULL
-# assertIsColorScaleContinuousOrNULL
-# assertIsColorScaleDiscreteOrNULL
-# assertIsDataFrameOrNULL
-# assertIsDir
-# assertIsFile
-# assertIsFillScaleContinuousOrNULL
-# assertIsFillScaleDiscreteOrNULL
-# assertIsGFF
-# assertIsGene2symbol
-# assertIsHeaderLevel
-# assertIsHexColorFunctionOrNULL
-# assertIsImplicitInteger
-# assertIsImplicitIntegerOrNULL
-# assertIsStringOrNULL
-# assertIsTx2gene
-# assertIsURL
-# hasRownames
-# hasUniqueCols
-# isAlpha
-# isAnImplicitInteger
-# isDir
-# isFile
-# isHeaderLevel
-# isImplicitInteger
-# isURL
-# validDimnames
-# validNames
+# isAnImplicitInteger (isInt)
+# isImplicitInteger (isIntegerish)
+# validDimnames (hasValidDimnames)
+
+
+
+# v0.2.1 =======================================================================
+#' @rdname deprecated
+#' @export
+containsAlpha <- appendToBody(
+    fun = isAlpha,
+    values = quote(.Deprecated("isAlpha"))
+)
 
 #' @rdname deprecated
 #' @export
-containsAlpha <- isAlpha
+containsHeaderLevel <- appendToBody(
+    fun = isHeaderLevel,
+    values = quote(.Deprecated("isHeaderLevel"))
+)
 
 #' @rdname deprecated
 #' @export
-containsHeaderLevel <- isHeaderLevel
-
-#' @rdname deprecated
-#' @export
-containsHexColors <- allAreHexColors
+containsHexColors <- appendToBody(
+    fun = allAreHexColors,
+    values = quote(.Deprecated("allAreHexColors"))
+)
 
 #' @rdname deprecated
 #' @export
