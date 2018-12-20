@@ -31,12 +31,15 @@ NULL
 
 
 
+.tolerance <- 100L * .Machine[["double.eps"]]
+
+
+
 #' @rdname equal
 #' @export
 isEqualTo <- function(x, y) {
     diff <- abs(x - y)
-    tol <- 100L * .Machine$double.eps
-    ok <- diff <= tol
+    ok <- diff <= .tolerance
     callAndName(
         function(x) {
             setCause(ok, sprintf("not equal to %g; abs diff = %g", y, diff))
@@ -50,8 +53,7 @@ isEqualTo <- function(x, y) {
 #' @rdname equal
 #' @export
 isNotEqualTo <- function(x, y) {
-    tol <- 100L * .Machine$double.eps
-    ok <- abs(x - y) > tol
+    ok <- abs(x - y) > .tolerance
     callAndName(
         function(x) {
             setCause(ok, sprintf("equal to %g", y))

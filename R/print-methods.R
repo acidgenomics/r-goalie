@@ -32,7 +32,7 @@ NULL
     x <- as.character(x)
     ifelse(
         test = nchar(x) > width,
-        yes = paste0(substring(x, 1, width - 3), "..."),
+        yes = paste0(substring(x, 1L, width - 3L), "..."),
         no = x
     )
 }
@@ -42,7 +42,7 @@ NULL
 .print.goalie.scalar <-  # nolint
     function(x) {
         .assertHasCause(x)
-        print(x[1L])
+        print(x[[1L]])
         cat("Cause of failure:", cause(x), sep = "\n")
     }
 
@@ -61,7 +61,7 @@ NULL
         # Run this step after getting cause and names.
         x <- .stripAttributes(x)
 
-        ok <- if(isTRUE(ignoreNA)) {
+        ok <- if (isTRUE(ignoreNA)) {
             # OK can be TRUE or NA; FALSE is bad.
             x | is.na(x)
         } else {
@@ -84,7 +84,7 @@ NULL
 
         # Slightly convoluted way of creating message to ensure that ngettext
         # creates all the translation strings.
-        header <- if(nrow(failures) < n) {
+        header <- if (nrow(failures) < n) {
             paste0(" ", gettextf("(showing the first %d)", nrow(failures)))
         } else {
             ""

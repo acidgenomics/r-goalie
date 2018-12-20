@@ -178,7 +178,7 @@ isNegative <- function(x, .xname = getNameInParent(x)) {
     isInRange(
         x = x,
         lower = -Inf,
-        upper = 0,
+        upper = 0L,
         closed = c(TRUE, FALSE),
         .xname = .xname
     )

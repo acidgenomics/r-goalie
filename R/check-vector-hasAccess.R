@@ -28,8 +28,8 @@ hasAccess <- function(x, access = "r") {
     access <- tolower(access)
     access <- strsplit(access, "")[[1L]]
 
-    isWin <- .Platform$OS.type == "windows"
-    isRoot <- (!isWin && Sys.info()["user"] == "root")
+    isWindows <- .Platform[["OS.type"]] == "windows"
+    isRoot <- (!isWindows && Sys.info()[["user"]] == "root")
 
     if (
         anyDuplicated(access) > 0L ||

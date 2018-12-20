@@ -55,7 +55,7 @@ hasRows <- function(x, .xname = getNameInParent(x)) {
 
 #' @rdname hasDims
 #' @export
-hasCols <- function (x, .xname = getNameInParent(x)) {
+hasCols <- function(x, .xname = getNameInParent(x)) {
     ncolx <- ncol(x)
     if (is.null(ncolx)) {
         return(false("The number of columns in %s is NULL.", .xname))

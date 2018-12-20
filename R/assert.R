@@ -31,12 +31,12 @@ assert <- function(...) {
             expr = tryCatch(
                 expr = ...elt(i),
                 error = function(e) {
-                    e$call <- call
+                    e[["call"]] <- call
                     stop(e)
                 }
             ),
             warning = function(w) {
-                w$call <- call
+                w[["call"]] <- call
                 w
             }
         )
