@@ -23,24 +23,21 @@ NULL
 
 
 
-#' @rdname isDirectory
+#' @describeIn isDirectory Vectorized.
 #' @export
 isDirectory <- function(x) {
-    ok <- isCharacter(x)
-    if (!isTRUE(ok)) return(ok)
-
     dir.exists(x)
 }
 
 
 
-#' @rdname isDirectory
+#' @describeIn isDirectory Short alias for [isDirectory()].
 #' @export
 isDir <- isDirectory
 
 
 
-#' @rdname isDirectory
+#' @describeIn isDirectory Scalar.
 #' @export
 isADirectory <- function(x) {
     ok <- isString(x)
@@ -54,6 +51,6 @@ isADirectory <- function(x) {
 
 
 
-#' @rdname isDirectory
+#' @describeIn isDirectory Short alias for [isADirectory()].
 #' @export
 isADir <- isADirectory
