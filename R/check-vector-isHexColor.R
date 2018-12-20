@@ -1,7 +1,3 @@
-# FIXME deprecate `contains*`.
-
-
-
 #' Does the input contain hexadecimal colors?
 #'
 #' @name isHexColor
