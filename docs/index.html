@@ -78,7 +78,7 @@
 <a href="#installation" class="anchor"></a>Installation</h2>
 <div id="bioconductor-method" class="section level3">
 <h3 class="hasAnchor">
-<a href="#bioconductor-method" class="anchor"></a><a href="https://bioconductor.org">Bioconductor</a> method</h3>
+<a href="#bioconductor-method" class="anchor"></a><a href="https://bioconductor.org/">Bioconductor</a> method</h3>
 <p>We recommend installing the package with <a href="https://cran.r-project.org/package=BiocManager">BiocManager</a>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="cf">if</span> (<span class="op">!</span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">require</a></span>(<span class="st">"BiocManager"</span>)) {
     <span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/install.packages">install.packages</a></span>(<span class="st">"BiocManager"</span>)
@@ -86,6 +86,23 @@
 BiocManager<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/BiocManager/topics/install">install</a></span>(<span class="st">"remotes"</span>)
 BiocManager<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/BiocManager/topics/install">install</a></span>(<span class="st">"steinbaugh/goalie"</span>)</code></pre></div>
 </div>
+</div>
+<div id="overview" class="section level2">
+<h2 class="hasAnchor">
+<a href="#overview" class="anchor"></a>Overview</h2>
+<p><a href="https://steinbaugh.com/goalie/">goalie</a> is an attempt to incorporate elements of multiple assertive check packages into a single package with as few dependencies as possible. All assertive checks are written in the most basic <a href="https://www.r-project.org/">R</a> code possible, without reliance on compilation (e.g. C++/Rcpp). It is still a work in progress, and feature requests are welcome.</p>
+<p>R exports the <code><a href="https://www.rdocumentation.org/packages/base/topics/stopifnot">stopifnot()</a></code> function as a simple assert engine that supports multiple boolean returns (<code>TRUE</code>/<code>FALSE</code>) in a single call, separated by commas. This is a nice, flexible system for defensive programming. However, <code><a href="https://www.rdocumentation.org/packages/base/topics/stopifnot">stopifnot()</a></code> does not currently support custom error messages, and can be confusing to debug.</p>
+<p>Similar to the approach used in the <a href="https://cran.r-project.org/package=assertthat">assertthat</a> package, goalie exports the <code><a href="reference/assert.html">assert()</a></code> function, which is designed to be a drop-in replacement for <code><a href="https://www.rdocumentation.org/packages/base/topics/stopifnot">stopifnot()</a></code> with improved error message support. <code><a href="reference/validate.html">validate()</a></code> is a variation on <code><a href="reference/assert.html">assert()</a></code> that is intended to be used within S4 class validity checks, which is useful for <a href="https://bioconductor.org/">Bioconductor</a> packages.</p>
+<p>Additionally, goalie exports a number of assertive check functions that are intended to harden bioinformatics-oriented functions in R. These check functions return <code>logical</code> with an additional <code>"goalie"</code> S3 class definition, which enables us to define custom print methods that display additional useful information about the cause of the error (see <code><a href="reference/cause.html">cause()</a></code> and <code><a href="reference/print.html">print()</a></code> for details). This approach draws heavily from the <a href="https://cran.r-project.org/package=assertive">assertive</a> package.</p>
+<p>The goalie source code incorporates elements from these excellent assert check packages:</p>
+<ul>
+<li>
+<a href="https://cran.r-project.org/package=assertive">assertive</a> by Ritchie Cotton.</li>
+<li>
+<a href="https://cran.r-project.org/package=assertthat">assertthat</a> by Hadley Wickham.</li>
+<li>
+<a href="https://cran.r-project.org/package=checkmate">checkmate</a> by Michael Lang.</li>
+</ul>
 </div>
 </div>
   </div>
