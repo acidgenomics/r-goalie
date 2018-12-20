@@ -45,6 +45,10 @@ isProportion(x, .xname = getNameInParent(x))
 \arguments{
 \item{x}{Object.}
 
+\item{lower}{XXX.}
+
+\item{upper}{XXX.}
+
 \item{closed}{\code{logical(2)}.
 Should the lower (1) and upper (2) bounaries be closed?}
 

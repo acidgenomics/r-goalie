@@ -3,9 +3,7 @@
 #' @name params
 #' @keywords internal
 #'
-#' @param add `AssertCollection`.
-#'   Extra information to be included in the message for the testthat reporter.
-#'   See `testthat::expect_that()`.
+#' @param class XXX.
 #' @param classes `character`.
 #'   Object classes.
 #' @param envir `environment`.
@@ -19,6 +17,9 @@
 #'   Should the enclosing frames of the `environment` be searched?
 #' @param label `character(1)`.
 #'   Name of the checked object to print in messages.
+#' @param lower XXX.
+#' @param metric XXX.
+#' @param n XXX.
 #' @param name `character`.
 #'   Element name.
 #' @param names `character`.
@@ -28,6 +29,8 @@
 #' @param object Object.
 #' @param pattern `character(1)`.
 #'   Pattern to use for matching.
+#' @param upper XXX.
+#' @param value XXX.
 #' @param x Object.
 #' @param y Secondary object.
 #' @param .xname *Not intended to be used directly.*

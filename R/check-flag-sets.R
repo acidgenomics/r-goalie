@@ -81,8 +81,8 @@ areDisjointSets <- function(
 areIntersectingSets <- function(
     x,
     y,
-    .xname = get_name_in_parent(x),
-    .yname = get_name_in_parent(y)
+    .xname = getNameInParent(x),
+    .yname = getNameInParent(y)
 ) {
     intersect <- intersect(x, y)
     if (length(intersect) == 0L) {
@@ -101,8 +101,8 @@ areIntersectingSets <- function(
 areSetEqual <- function(
     x,
     y,
-    .xname = get_name_in_parent(x),
-    .yname = get_name_in_parent(y)
+    .xname = getNameInParent(x),
+    .yname = getNameInParent(y)
 ) {
     x <- unique(x)
     y <- unique(y)

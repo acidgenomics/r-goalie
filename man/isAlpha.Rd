@@ -2,12 +2,9 @@
 % Please edit documentation in R/check-flag-isAlpha.R
 \name{isAlpha}
 \alias{isAlpha}
-\alias{containsAlpha}
 \title{Does the input contain an alpha level?}
 \usage{
 isAlpha(x, .xname = getNameInParent(x))
-
-containsAlpha(x, .xname = getNameInParent(x))
 }
 \arguments{
 \item{x}{Object.}

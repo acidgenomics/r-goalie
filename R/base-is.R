@@ -7,6 +7,7 @@
 #' If not, call `is(x, class)`.
 #'
 #' @export
+#' @inheritParams params
 #'
 #' @seealso
 #' - `assertive.base::is2()`.
@@ -24,7 +25,7 @@ is2 <- function(x, class, .xname = getNameInParent(x)) {
     if (length(class) > 1L) {
         return(setCause(
             x = bapply(class, function(cl) is2(x, cl, "")),
-            false = sprintf("%s is not '%s'", typeDescription(x), class)
+            false = sprintf("%s is not '%s'", .typeDescription(x), class)
         ))
     }
     # Attempt to use `is.character(x)` first.

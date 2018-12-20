@@ -2,15 +2,14 @@
 % Please edit documentation in R/check-flag-isHeaderLevel.R
 \name{isHeaderLevel}
 \alias{isHeaderLevel}
-\alias{containsHeaderLevel}
 \title{Does the input contain a Markdown header level?}
 \usage{
-isHeaderLevel(x, .name = getNameInParent(x))
-
-containsHeaderLevel(x, .name = getNameInParent(x))
+isHeaderLevel(x, .xname = getNameInParent(x))
 }
 \arguments{
 \item{x}{Object.}
+
+\item{.xname}{\emph{Not intended to be used directly.}}
 }
 \value{
 \code{TRUE} on success;

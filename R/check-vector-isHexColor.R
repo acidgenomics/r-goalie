@@ -42,11 +42,3 @@ allAreHexColors <- function(x, .xname = getNameInParent(x)) {
     if (!all(ok)) return(ok)
     TRUE
 }
-
-
-
-# Soft deprecated.
-#' @rdname isHexColor
-#' @usage NULL
-#' @export
-containsHexColors <- allAreHexColors
