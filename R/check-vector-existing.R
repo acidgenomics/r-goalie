@@ -1,14 +1,10 @@
-# FIXME Set the formals using `formals` here for consistency.
-
-
-
 #' Does the requested input exist in the environment?
 #'
 #' @note `exists` only supports `character(1)`, so we are exporting
 #'   `isExisting` as a convenience function to check multiple variables in a
 #'   single call.
 #'
-#' @name isExisting
+#' @name existing
 #' @inherit params
 #'
 #' @param x `character`.
@@ -32,7 +28,7 @@ NULL
 
 
 
-#' @rdname isExisting
+#' @rdname existing
 #' @export
 isExisting <- function(
     x,
@@ -59,7 +55,7 @@ isExisting <- function(
 
 
 
-#' @rdname isExisting
+#' @rdname existing
 #' @export
 areExisting <- function() {
     if (!length(x) > 1L) {
@@ -81,7 +77,7 @@ formals(areExisting) <- formals(isExisting)
 
 
 # FIXME Rethink this approach...this won't return cause currently.
-#' @rdname isExisting
+#' @rdname existing
 #' @export
 isNonExisting <- function() {
     as.logical(do.call(
@@ -99,7 +95,7 @@ formals(isNonExisting) <- formals(isExisting)
 
 
 
-#' @rdname isExisting
+#' @rdname existing
 #' @export
 areNonExisting <- function(x, ...) {
     if (!length(x) > 1L) {
