@@ -13,7 +13,6 @@
 \alias{isScalarCharacter}
 \alias{isScalarLogical}
 \alias{isNumber}
-\alias{isInt}
 \title{Is the input scalar?}
 \usage{
 isScalar(x)
@@ -39,8 +38,6 @@ isScalarCharacter(x)
 isScalarLogical(x)
 
 isNumber(x)
-
-isInt(x)
 }
 \arguments{
 \item{x}{Object.}
@@ -54,9 +51,7 @@ Scalar represents a length of 1.
 }
 \section{Functions}{
 \itemize{
-\item \code{isNumber}: Alias for \code{isScalarNumeric}.
-
-\item \code{isInt}: Alias for \code{isScalarIntegerish}.
+\item \code{isNumber}: Alias for \code{\link[=isScalarNumeric]{isScalarNumeric()}}.
 }}
 
 \examples{
