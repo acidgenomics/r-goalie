@@ -2,9 +2,12 @@
 % Please edit documentation in R/check-vector-hasAccess.R
 \name{hasAccess}
 \alias{hasAccess}
+\alias{allHaveAccess}
 \title{Check file system access rights}
 \usage{
 hasAccess(x, access = "r")
+
+allHaveAccess(x, access = "r")
 }
 \arguments{
 \item{x}{\code{character(1)}.
@@ -18,17 +21,28 @@ String containing any of these characters, including in combination:
 \item \code{x}: execute.
 }
 
-Write and executable cannot be checked on Windows.}
+Write and executable status cannot be checked on Windows.}
 }
 \description{
 Works for either file or directory paths.
 }
+\section{Functions}{
+\itemize{
+\item \code{hasAccess}: Vectorized.
+
+\item \code{allHaveAccess}: Scalar.
+}}
+
 \examples{
-hasAccess("~")
+## Pass ====
+hasAccess(c("~", "."))
+
+## Fail ====
+hasAccess("xxx")
 }
 \seealso{
 \itemize{
 \item \code{file.access()}.
-\item \code{checkmate::checkAccess()}. Note that this uses C code internally.
+\item \code{checkmate::checkAccess()}.
 }
 }

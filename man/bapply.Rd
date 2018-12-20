@@ -4,13 +4,13 @@
 \alias{bapply}
 \title{Boolean apply}
 \usage{
-bapply(x, predicate, ...)
+bapply(X, FUN, ...)
 }
 \arguments{
-\item{x}{\code{atomic} or \code{list}.}
+\item{X}{\code{atomic} or \code{list}.}
 
-\item{predicate}{\code{function}.
-A predicate function that returns \code{logical(1)} boolean flag
+\item{FUN}{\code{function}.
+An assert check function that returns \code{logical(1)} boolean flag
 (\code{TRUE}/\code{FALSE}) to \link[base:apply]{apply}.}
 
 \item{...}{Additional arguments passed to \link[base:vapply]{vapply()}.}
@@ -23,7 +23,10 @@ A predicate function that returns \code{logical(1)} boolean flag
 \code{FUN.VALUE = logical(1)}.
 }
 \note{
-\code{USE.NAMES} is always set to TRUE.
+\itemize{
+\item \code{FUN.VALUE} is always set to \code{logical(1)}.
+\item \code{USE.NAMES} is always set to \code{TRUE}.
+}
 }
 \examples{
 bapply(list(a = "example", b = 1), is.character)
