@@ -8,12 +8,12 @@ hasAccess(x, access = "r")
 }
 \arguments{
 \item{x}{\code{character(1)}.
-File or directory path.}
+File or directory path(s).}
 
 \item{access}{\code{character(1)}.
 String containing any of these characters, including in combination:
 \itemize{
-\item \code{r} read.
+\item \code{r}: read.
 \item \code{w}: write.
 \item \code{x}: execute.
 }
@@ -27,5 +27,8 @@ Works for either file or directory paths.
 hasAccess("~")
 }
 \seealso{
-\code{checkmate::checkAccess()}.
+\itemize{
+\item \code{file.access()}.
+\item \code{checkmate::checkAccess()}. Note that this uses C code internally.
+}
 }
