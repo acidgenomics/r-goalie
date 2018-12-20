@@ -11,6 +11,7 @@
 #' ## Pass ====
 #' isURL(urls)
 #' isAURL(urls[[1L]])
+#' allAreURLs(urls)
 #'
 #' ## Fail ====
 #' isURL("xxx")
@@ -19,7 +20,8 @@ NULL
 
 
 
-#' @describeIn isURL Supports multiple URLs.
+# vector =======================================================================
+#' @describeIn isURL Vectorized.
 #' @export
 isURL <- function(x, .xname = getNameInParent(x)) {
     ok <- isCharacter(x)
@@ -27,29 +29,30 @@ isURL <- function(x, .xname = getNameInParent(x)) {
 
     pattern <- "^(http(s)?|ftp)\\://.+"
     ok <- isMatchingRegex(x = x, pattern = pattern)
-    if (!all(ok)) {
-        return(false(
-            paste0(
-                "%s does not contain a URL, ",
-                "which must begin with 'http(s)' or 'ftp' and contain '://'."
-            ),
-            .xname
-        ))
-    }
+    setCause(ok, false = "not URL")
+}
+
+
+
+# scalar =======================================================================
+#' @describeIn isURL Scalar. Requires a single URL.
+#' @export
+isAURL <- function(x, .xname = getNameInParent(x)) {
+    ok <- isString(x = x, .xname = .xname)
+    if (!isTRUE(ok)) return(ok)
+
+    ok <- isURL(x = x, .xname = .xname)
+    if (!isTRUE(ok)) return(ok)
 
     TRUE
 }
 
 
 
-#' @describeIn isURL Requires a single URL.
+#' @describeIn isURL Scalar. Checks that all strings are URLs.
 #' @export
-isAURL <- function(x) {
-    ok <- isString(x)
-    if (!isTRUE(ok)) return(ok)
-
-    ok <- isURL(x)
-    if (!isTRUE(ok)) return(ok)
-
+allAreURLs <- function(x, .xname = getNameInParent(x)) {
+    ok <- isURL(x = x, .xname = .xname)
+    if (!all(ok)) return(ok)
     TRUE
 }
