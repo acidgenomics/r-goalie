@@ -11,14 +11,8 @@ assert(...)
 which should evaluate to \code{TRUE}.}
 }
 \description{
-\code{\link[=assert]{assert()}} is a drop-in replacement for \code{\link[=stopifnot]{stopifnot()}} supporting more
-informative
-error messages.
-}
-\note{
-Don't use \code{\link[assertive:assert_that]{assertive::assert_that()}} as a general \code{\link[=stopifnot]{stopifnot()}}
-replacement. It doesn't currently catch everything, and isn't hardened
-against S4 methods.
+\code{\link[=assert]{assert()}} is a drop-in replacement for \link[base:stopifnot]{stopifnot()}
+supporting more informative error messages.
 }
 \examples{
 assert(

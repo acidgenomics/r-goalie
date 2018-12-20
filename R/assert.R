@@ -1,14 +1,8 @@
 #' Assert that certain conditions are true
 #'
-#' [assert()] is a drop-in replacement for [stopifnot()] supporting more
-#' informative
-#' error messages.
+#' [assert()] is a drop-in replacement for [stopifnot()][base::stopifnot]
+#' supporting more informative error messages.
 #'
-#' @note Don't use [assertive::assert_that()] as a general [stopifnot()]
-#'   replacement. It doesn't currently catch everything, and isn't hardened
-#'   against S4 methods.
-#'
-#' @inheritParams base::stopifnot
 #' @export
 #'
 #' @param ... Any number of R expressions that return `logical(1)`, each of

@@ -9,6 +9,11 @@ cause(x)
 
 cause(x) <- value
 }
+\arguments{
+\item{x}{Object.}
+
+\item{value}{XXX.}
+}
 \value{
 \code{character(1)}. Cause attribute.
 }
@@ -17,8 +22,6 @@ Gets or sets the \code{cause} (of failure) \link[base:attributes]{attribute} of 
 variable.
 }
 \examples{
-## FIXME
-
 ## Scalar cause.
 x <- isFlag("xxx")
 cause(x)

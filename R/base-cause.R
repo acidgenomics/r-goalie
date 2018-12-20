@@ -4,6 +4,8 @@
 #' variable.
 #'
 #' @export
+#' @inheritParams params
+#'
 #' @return `character(1)`. Cause attribute.
 #'
 #' @seealso
@@ -12,8 +14,6 @@
 #' - `attr()`.
 #'
 #' @examples
-#' ## FIXME
-#'
 #' ## Scalar cause.
 #' x <- isFlag("xxx")
 #' cause(x)

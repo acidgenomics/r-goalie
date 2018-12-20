@@ -31,7 +31,7 @@ isURL <- function(x, .xname = getNameInParent(x)) {
         return(false(
             paste0(
                 "%s does not contain a URL, ",
-                "which must begin with ‘http(s)’ or ‘ftp’ and contain ‘://’."
+                "which must begin with 'http(s)' or 'ftp' and contain '://'."
             ),
             .xname
         ))
@@ -53,19 +53,3 @@ isAURL <- function(x) {
 
     TRUE
 }
-
-
-
-# Soft deprecated.
-#' @rdname isURL
-#' @usage NULL
-#' @export
-containsURL <- isURL
-
-
-
-# Soft deprecated.
-#' @rdname isURL
-#' @usage NULL
-#' @export
-containsAURL <- isAURL

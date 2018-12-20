@@ -23,10 +23,3 @@ isAlpha <- function(x, .xname = getNameInParent(x)) {
 
     TRUE
 }
-
-
-
-# Soft deprecated.
-#' @rdname isAlpha
-#' @export
-containsAlpha <- isAlpha

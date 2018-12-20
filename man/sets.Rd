@@ -16,11 +16,11 @@ isSuperset(x, y)
 areDisjointSets(x, y, .xname = getNameInParent(x),
   .yname = getNameInParent(y))
 
-areIntersectingSets(x, y, .xname = get_name_in_parent(x),
-  .yname = get_name_in_parent(y))
+areIntersectingSets(x, y, .xname = getNameInParent(x),
+  .yname = getNameInParent(y))
 
-areSetEqual(x, y, .xname = get_name_in_parent(x),
-  .yname = get_name_in_parent(y))
+areSetEqual(x, y, .xname = getNameInParent(x),
+  .yname = getNameInParent(y))
 }
 \arguments{
 \item{x}{Object.}
