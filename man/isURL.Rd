@@ -3,11 +3,14 @@
 \name{isURL}
 \alias{isURL}
 \alias{isAURL}
+\alias{allAreURLs}
 \title{Does the input contain a URL?}
 \usage{
 isURL(x, .xname = getNameInParent(x))
 
-isAURL(x)
+isAURL(x, .xname = getNameInParent(x))
+
+allAreURLs(x, .xname = getNameInParent(x))
 }
 \arguments{
 \item{x}{Object.}
@@ -22,9 +25,11 @@ Does the input contain a URL?
 }
 \section{Functions}{
 \itemize{
-\item \code{isURL}: Supports multiple URLs.
+\item \code{isURL}: Vectorized.
 
-\item \code{isAURL}: Requires a single URL.
+\item \code{isAURL}: Scalar. Requires a single URL.
+
+\item \code{allAreURLs}: Scalar. Checks that all strings are URLs.
 }}
 
 \examples{
@@ -33,6 +38,7 @@ urls <- c("https://www.r-project.org", "ftp://r-project.org")
 ## Pass ====
 isURL(urls)
 isAURL(urls[[1L]])
+allAreURLs(urls)
 
 ## Fail ====
 isURL("xxx")
