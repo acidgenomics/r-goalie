@@ -23,10 +23,6 @@
 #' cause(x)
 cause <- function(x) {
     attr(x, "cause")
-    # FIXME
-    # if (is.null(y)) {
-    #     return(noquote(character(length(x))))
-    # }
 }
 
 
@@ -34,7 +30,10 @@ cause <- function(x) {
 #' @rdname cause
 #' @export
 `cause<-` <- function(x, value) {
-    if (length(value) != 1 && length(value) != length(x)) {
+    if (
+        length(value) != 1L &&
+        length(value) != length(x)
+    ) {
         stop(sprintf(
             paste(
                 "The length of value should be 1",
@@ -125,6 +124,6 @@ false <- function(...) {
         ""
     }
     x <- FALSE
-    cause(x) <- msg[1L]
+    cause(x) <- msg[[1L]]
     x
 }
