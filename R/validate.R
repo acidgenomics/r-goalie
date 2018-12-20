@@ -1,7 +1,3 @@
-# TODO Include the assert check function name in the call if possible.
-
-
-
 #' Validate an S4 class
 #'
 #' [validate()] is a variant of [assert()] that is specifically intended to be
@@ -56,34 +52,28 @@ validate <- function(...) {
                 stop("All checks must return boolean flags.")
             }
 
-            # Add automatic `stopifnot()`-like cause attribute, if necessary.
-            if (
-                !isTRUE(res) &&
-                identical(cause(res), noquote(""))
-            ) {
-                cause(res) <- sprintf("%s is not TRUE", deparse(call))
+            # Stop on the first assert check failure.
+            if (!isTRUE(res)) {
+                # Always return a `stopifnot()`-like message.
+                msg <- sprintf("%s is not TRUE.", .Dparse(call))
+                # Check for defined cause attribute.
+                cause <- cause(res)
+                if (!is.null(cause)) {
+                    # Capturing the S3 print method on goalie class here.
+                    msg <- c(msg, capture.output(print(res))[-1L])
+                }
+                paste0(msg, collapse = "\n")
+            } else {
+                TRUE
             }
-
-            res
         }
     )
 
-    # Return TRUE when all checks pass.
-    if (all(vapply(
-        X = res,
-        FUN = isTRUE,
-        FUN.VALUE = logical(1L)
-    ))) {
-        return(TRUE)
+    # Return TRUE boolean flag when all checks pass.
+    # Otherwise, return a character string indicating which checks failed.
+    if (all(bapply(res, isTRUE))) {
+        TRUE
+    } else {
+        paste0(unlist(res), collapse = "\n\n")
     }
-
-    # Otherwise, return a character string indicating what checks failed.
-    paste(
-        vapply(
-            X = Filter(f = Negate(isTRUE), x = res),
-            FUN = cause,
-            FUN.VALUE = character(1L)
-        ),
-        collapse = "\n"
-    )
 }

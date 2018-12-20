@@ -19,15 +19,6 @@ NULL
 
 
 
-# `basejump::printString()`.
-.printString <- function(x) {
-    x <- capture.output(print(x))
-    x <- paste(x, collapse = "\n")
-    x
-}
-
-
-
 # `assertive.base::strip_attributes().
 .stripAttributes <- function(x) {
     attributes(x) <- NULL
