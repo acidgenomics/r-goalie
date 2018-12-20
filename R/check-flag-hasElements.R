@@ -43,7 +43,7 @@ isEmpty <- function(
 isNonEmpty <- function(
     x,
     metric = c("length", "elements"),
-    xname = getNameInParent(x)
+    .xname = getNameInParent(x)
 ) {
     metric <- match.arg(metric)
     metricFun <- .getMetric(metric)
@@ -85,7 +85,7 @@ hasElements <- function(x, n, .xname = getNameInParent(x)) {
 
 #' @rdname hasElements
 #' @export
-isOfDimension <- function(x, n, xname = getNameInParent(x)) {
+isOfDimension <- function(x, n, .xname = getNameInParent(x)) {
     dimX <- dim(x)
     if (is.null(n)) {
         if (hasDims(x)) {
@@ -135,7 +135,7 @@ isOfDimension <- function(x, n, xname = getNameInParent(x)) {
 # TODO Somewhat redundant with `hasLength()`. Work on resolution.
 #' @rdname hasElements
 #' @export
-isOfLength <- function (x, n, .xname = getNameInParent(x)) {
+isOfLength <- function(x, n, .xname = getNameInParent(x)) {
     n <- .useFirst(n)
     .checkN(n)
     lengthX <- length(x)

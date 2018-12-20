@@ -33,7 +33,7 @@ hasLength <- function(x, n = NULL, .xname = getNameInParent(x)) {
 
     ok <- length == n
     if (!isTRUE(ok)) {
-        return(false("%s does not have a length of %d.", xname, n))
+        return(false("%s does not have a length of %d.", .xname, n))
     }
 
     TRUE

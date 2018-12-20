@@ -8,9 +8,9 @@
 \method{print}{goalie}(x, ...)
 }
 \arguments{
-\item{x}{an object of class \link{goalieScalar} or \link{goalieVector}.}
+\item{x}{Object.}
 
-\item{...}{\emph{Currently unused.}}
+\item{...}{Additional arguments.}
 }
 \description{
 Print methods for objects with a cause attribute

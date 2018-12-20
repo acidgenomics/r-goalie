@@ -6,6 +6,13 @@
 \usage{
 is2(x, class, .xname = getNameInParent(x))
 }
+\arguments{
+\item{x}{Object.}
+
+\item{class}{XXX.}
+
+\item{.xname}{\emph{Not intended to be used directly.}}
+}
 \description{
 Alternate version of \code{\link[methods:is]{methods::is()}} that supports multiple checks in a
 single call.

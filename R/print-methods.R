@@ -1,9 +1,7 @@
 #' Print methods for objects with a cause attribute
 #'
 #' @name print
-#'
-#' @param x an object of class [goalieScalar] or [goalieVector].
-#' @param ... *Currently unused.*
+#' @inheritParams params
 NULL
 
 

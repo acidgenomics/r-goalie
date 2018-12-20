@@ -16,7 +16,7 @@ isNonEmpty(x, metric = c("length", "elements"),
 
 hasElements(x, n, .xname = getNameInParent(x))
 
-isOfDimension(x, n, xname = getNameInParent(x))
+isOfDimension(x, n, .xname = getNameInParent(x))
 
 isOfLength(x, n, .xname = getNameInParent(x))
 
@@ -26,7 +26,11 @@ isNonEmpty(x, metric = c("length", "elements"),
 \arguments{
 \item{x}{Object.}
 
+\item{metric}{XXX.}
+
 \item{.xname}{\emph{Not intended to be used directly.}}
+
+\item{n}{XXX.}
 }
 \value{
 \code{TRUE} on success;

@@ -38,7 +38,7 @@ hasAccess <- function(x, access = "r") {
         return(false(
             paste0(
                 "%s contains an invalid access code.\n",
-                "Combinations of ‘r’, ‘w’ and ‘x’ are allowed."
+                "Combinations of 'r', 'w' and 'x' are allowed."
             ),
             access
         ))

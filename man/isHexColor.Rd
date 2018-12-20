@@ -3,7 +3,6 @@
 \name{isHexColor}
 \alias{isHexColor}
 \alias{allAreHexColors}
-\alias{containsHexColors}
 \title{Does the input contain hexadecimal colors?}
 \usage{
 isHexColor(x, .xname = getNameInParent(x))

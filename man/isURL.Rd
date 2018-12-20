@@ -3,8 +3,6 @@
 \name{isURL}
 \alias{isURL}
 \alias{isAURL}
-\alias{containsURL}
-\alias{containsAURL}
 \title{Does the input contain a URL?}
 \usage{
 isURL(x, .xname = getNameInParent(x))

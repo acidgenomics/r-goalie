@@ -11,7 +11,7 @@
 #'
 #' ## Fail ====
 #' isHeaderLevel(0)
-isHeaderLevel <- function(x, .name = getNameInParent(x)) {
+isHeaderLevel <- function(x, .xname = getNameInParent(x)) {
     ok <- isScalarIntegerish(x)
     if (!isTRUE(ok)) return(ok)
 
@@ -28,10 +28,3 @@ isHeaderLevel <- function(x, .name = getNameInParent(x)) {
 
     TRUE
 }
-
-
-
-# Soft deprecated.
-#' @rdname isHeaderLevel
-#' @export
-containsHeaderLevel <- isHeaderLevel

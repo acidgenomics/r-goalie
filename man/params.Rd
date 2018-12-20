@@ -4,9 +4,7 @@
 \alias{params}
 \title{Parameters}
 \arguments{
-\item{add}{\code{AssertCollection}.
-Extra information to be included in the message for the testthat reporter.
-See \code{testthat::expect_that()}.}
+\item{class}{XXX.}
 
 \item{classes}{\code{character}.
 Object classes.}
@@ -27,6 +25,12 @@ Should the enclosing frames of the \code{environment} be searched?}
 \item{label}{\code{character(1)}.
 Name of the checked object to print in messages.}
 
+\item{lower}{XXX.}
+
+\item{metric}{XXX.}
+
+\item{n}{XXX.}
+
 \item{name}{\code{character}.
 Element name.}
 
@@ -40,6 +44,10 @@ If set to \code{TRUE}, \code{x} may also be \code{NULL}.}
 
 \item{pattern}{\code{character(1)}.
 Pattern to use for matching.}
+
+\item{upper}{XXX.}
+
+\item{value}{XXX.}
 
 \item{x}{Object.}
 
