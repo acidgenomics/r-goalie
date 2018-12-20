@@ -1,7 +1,3 @@
-# FIXME Get rid of the rlang dependency here...this gets called a lot.
-
-
-
 #' Is the input integer(ish)?
 #'
 #' Check for valid input of either explicit (e.g. `1L`) and/or implict
@@ -11,6 +7,7 @@
 #' @inherit params
 #'
 #' @seealso
+#' - `isInt()` or `isScalarIntegerish()` for scalar.
 #' - `rlang::is_integerish()`.
 #' - `checkmate::checkIntegerish()`.
 #'
@@ -25,12 +22,12 @@ isIntegerish <- function(x, .xname = getNameInParent(x)) {
         return(false("%s is not numeric.", .xname))
     }
     bapply(
-        x = x,
-        predicate = function(x) {
+        X = x,
+        FUN = function(x) {
             isTRUE(all.equal(
                 target = as.integer(x),
                 current = x,
-                tolerance = .Machine[["double.eps"]]
+                tolerance = .tolerance
             ))
         }
     )
