@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Does the Argument Contain a Function That Returns Hexadecimal Colors? — isHexColorFunction • goalie</title>
+<title>Does the argument contain a function that returns hexadecimal colors? — isHexColorFunction • goalie</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -32,7 +32,7 @@
 
   <link href="../extra.css" rel="stylesheet">
   
-<meta property="og:title" content="Does the Argument Contain a Function That Returns Hexadecimal Colors? — isHexColorFunction" />
+<meta property="og:title" content="Does the argument contain a function that returns hexadecimal colors? — isHexColorFunction" />
 
 <meta property="og:description" content="This assert check is intended primarily to check for RColorBrewer or viridis
 hexadecimal color value return." />
@@ -105,8 +105,8 @@ hexadecimal color value return." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Does the Argument Contain a Function That Returns Hexadecimal Colors?</h1>
-    <small class="dont-index">Source: <a href='https://github.com/steinbaugh/goalie/blob/master/R/isHexColorFunction.R'><code>R/isHexColorFunction.R</code></a></small>
+    <h1>Does the argument contain a function that returns hexadecimal colors?</h1>
+    <small class="dont-index">Source: <a href='https://github.com/steinbaugh/goalie/blob/master/R/check-scalar-isHexColorFunction.R'><code>R/check-scalar-isHexColorFunction.R</code></a></small>
     <div class="hidden name"><code>isHexColorFunction.Rd</code></div>
     </div>
 
@@ -117,7 +117,7 @@ hexadecimal color value return.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>isHexColorFunction</span>(<span class='no'>x</span>)</pre>
+    <pre class="usage"><span class='fu'>isHexColorFunction</span>(<span class='no'>x</span>, <span class='kw'>nullOK</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>.xname</span> <span class='kw'>=</span> <span class='fu'><a href='getNameInParent.html'>getNameInParent</a></span>(<span class='no'>x</span>))</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -126,20 +126,21 @@ hexadecimal color value return.</p>
       <th>x</th>
       <td><p>Object.</p></td>
     </tr>
+    <tr>
+      <th>nullOK</th>
+      <td><p><code><a href='https://www.rdocumentation.org/packages/base/topics/logical'>logical(1)</a></code>.
+If set to <code>TRUE</code>, <code>x</code> may also be <code>NULL</code>.</p></td>
+    </tr>
+    <tr>
+      <th>.xname</th>
+      <td><p><em>Not intended to be used directly.</em></p></td>
+    </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    
-<ul>
-<li><p><code>are*</code>/<code>contains*</code>/<code>has*</code>/<code>is*</code>: <code><a href='https://www.rdocumentation.org/packages/base/topics/logical'>logical(1)</a></code>.
-Boolean flag (<code>TRUE</code>/<code>FALSE</code>). Intended to be used in combination with
-<code>assert</code> function.</p></li>
-<li><p><code>check*</code>: <code>TRUE</code> on success, <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code> on failure.
-Intended to be used in combination with <code>validate</code> function.</p></li>
-<li><p><code>assert*</code>: <code>TRUE</code> on success, error (<code>stop</code>) on failure.</p></li>
-</ul>
-
+    <p><code>TRUE</code> on success;
+<code>FALSE</code> on failure, with <code>cause</code> <a href='https://www.rdocumentation.org/packages/base/topics/attributes'>attribute</a> set.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
@@ -152,7 +153,9 @@ Intended to be used in combination with <code>validate</code> function.</p></li>
 <span class='fu'>isHexColorFunction</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
 <span class='co'>## Fail ====</span>
 <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>ggplot2</span><span class='kw ns'>::</span><span class='no'><a href='https://ggplot2.tidyverse.org/reference/scale_manual.html'>scale_colour_manual</a></span>
-<span class='fu'>isHexColorFunction</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] FALSE</div></pre>
+<span class='fu'>isHexColorFunction</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] FALSE
+#&gt; Cause of failure:
+#&gt; Hex color function must contain `n` formal.</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

@@ -1,4 +1,4 @@
-#' Validate Expected Classes
+#' Validate expected classes
 #'
 #' Validity check capable of validating multiple slots in a single call.
 #'

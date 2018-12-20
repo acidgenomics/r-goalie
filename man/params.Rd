@@ -4,7 +4,8 @@
 \alias{params}
 \title{Parameters}
 \arguments{
-\item{class}{XXX.}
+\item{class}{\code{character(1)}.
+Object class.}
 
 \item{classes}{\code{character}.
 Object classes.}
@@ -15,27 +16,15 @@ Environment.}
 \item{genes}{\code{character}.
 Genes.}
 
-\item{info}{\code{character}.
-Extra information to be included in the message for the testthat reporter.
-See \code{testthat::expect_that()}.}
-
 \item{inherits}{\code{logical(1)}.
 Should the enclosing frames of the \code{environment} be searched?}
 
-\item{label}{\code{character(1)}.
-Name of the checked object to print in messages.}
-
-\item{lower}{XXX.}
+\item{lower}{\code{numeric(1)}.
+Lower boundary.}
 
 \item{metric}{XXX.}
 
 \item{n}{XXX.}
-
-\item{name}{\code{character}.
-Element name.}
-
-\item{names}{\code{character}.
-Element names (e.g. row names, column names).}
 
 \item{nullOK}{\code{logical(1)}.
 If set to \code{TRUE}, \code{x} may also be \code{NULL}.}
@@ -45,9 +34,10 @@ If set to \code{TRUE}, \code{x} may also be \code{NULL}.}
 \item{pattern}{\code{character(1)}.
 Pattern to use for matching.}
 
-\item{upper}{XXX.}
+\item{upper}{\code{numeric(1)}.
+Upper boundary.}
 
-\item{value}{XXX.}
+\item{value}{Value.}
 
 \item{x}{Object.}
 

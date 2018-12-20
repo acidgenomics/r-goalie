@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Do the Inputs Have the Same Length? — areSameLength • goalie</title>
+<title>Do the inputs have the same length? — areSameLength • goalie</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -32,9 +32,9 @@
 
   <link href="../extra.css" rel="stylesheet">
   
-<meta property="og:title" content="Do the Inputs Have the Same Length? — areSameLength" />
+<meta property="og:title" content="Do the inputs have the same length? — areSameLength" />
 
-<meta property="og:description" content="Do the Inputs Have the Same Length?" />
+<meta property="og:description" content="Do the inputs have the same length?" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -104,18 +104,19 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Do the Inputs Have the Same Length?</h1>
-    <small class="dont-index">Source: <a href='https://github.com/steinbaugh/goalie/blob/master/R/areSameLength.R'><code>R/areSameLength.R</code></a></small>
+    <h1>Do the inputs have the same length?</h1>
+    <small class="dont-index">Source: <a href='https://github.com/steinbaugh/goalie/blob/master/R/check-scalar-areSameLength.R'><code>R/check-scalar-areSameLength.R</code></a></small>
     <div class="hidden name"><code>areSameLength.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Do the Inputs Have the Same Length?</p>
+    <p>Do the inputs have the same length?</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>areSameLength</span>(<span class='no'>x</span>, <span class='no'>y</span>)</pre>
+    <pre class="usage"><span class='fu'>areSameLength</span>(<span class='no'>x</span>, <span class='no'>y</span>, <span class='kw'>.xname</span> <span class='kw'>=</span> <span class='fu'><a href='getNameInParent.html'>getNameInParent</a></span>(<span class='no'>x</span>),
+  <span class='kw'>.yname</span> <span class='kw'>=</span> <span class='fu'><a href='getNameInParent.html'>getNameInParent</a></span>(<span class='no'>y</span>))</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -128,20 +129,20 @@
       <th>y</th>
       <td><p>Secondary object.</p></td>
     </tr>
+    <tr>
+      <th>.xname</th>
+      <td><p><em>Not intended to be used directly.</em></p></td>
+    </tr>
+    <tr>
+      <th>.yname</th>
+      <td><p><em>Not intended to be used directly.</em></p></td>
+    </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    
-<ul>
-<li><p><code>are*</code>/<code>contains*</code>/<code>has*</code>/<code>is*</code>: <code><a href='https://www.rdocumentation.org/packages/base/topics/logical'>logical(1)</a></code>.
-Boolean flag (<code>TRUE</code>/<code>FALSE</code>). Intended to be used in combination with
-<code>assert</code> function.</p></li>
-<li><p><code>check*</code>: <code>TRUE</code> on success, <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code> on failure.
-Intended to be used in combination with <code>validate</code> function.</p></li>
-<li><p><code>assert*</code>: <code>TRUE</code> on success, error (<code>stop</code>) on failure.</p></li>
-</ul>
-
+    <p><code>TRUE</code> on success;
+<code>FALSE</code> on failure, with <code>cause</code> <a href='https://www.rdocumentation.org/packages/base/topics/attributes'>attribute</a> set.</p>
     
     <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
@@ -150,9 +151,16 @@ function will intentionally error.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/list'>list</a></span>(<span class='kw'>a</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>b</span> <span class='kw'>=</span> <span class='fl'>2</span>)
+    <pre class="examples"><div class='input'><span class='co'>## Pass ====</span>
+<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/list'>list</a></span>(<span class='kw'>a</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>b</span> <span class='kw'>=</span> <span class='fl'>2</span>)
 <span class='no'>y</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/list'>list</a></span>(<span class='kw'>c</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>d</span> <span class='kw'>=</span> <span class='fl'>4</span>)
-<span class='fu'>areSameLength</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='no'>x</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='no'>y</span>)</div><div class='output co'>#&gt; [1] TRUE</div></pre>
+<span class='fu'>areSameLength</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='no'>x</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='no'>y</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
+<span class='co'>## Fail ====</span>
+<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/list'>list</a></span>(<span class='kw'>a</span> <span class='kw'>=</span> <span class='fl'>1</span>)
+<span class='no'>y</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/list'>list</a></span>(<span class='kw'>b</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>c</span> <span class='kw'>=</span> <span class='fl'>3</span>)
+<span class='fu'>areSameLength</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='no'>x</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='no'>y</span>)</div><div class='output co'>#&gt; [1] FALSE
+#&gt; Cause of failure:
+#&gt; x does not have the same length as y.</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

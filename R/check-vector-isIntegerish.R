@@ -2,7 +2,7 @@
 
 
 
-#' Is the Input Integerish?
+#' Is the input integer(ish)?
 #'
 #' Check for valid input of either explicit (e.g. `1L`) and/or implict
 #' (e.g. `1`) `integer`.

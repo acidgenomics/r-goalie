@@ -9,7 +9,8 @@ is2(x, class, .xname = getNameInParent(x))
 \arguments{
 \item{x}{Object.}
 
-\item{class}{XXX.}
+\item{class}{\code{character(1)}.
+Object class.}
 
 \item{.xname}{\emph{Not intended to be used directly.}}
 }
