@@ -1,8 +1,29 @@
+# @seealso `base::stopifnot()`.
+.Dparse <-  # nolint
+    function(call, cutoff = 60L) {
+        ch <- deparse(call, width.cutoff = cutoff)
+        if (length(ch) > 1L) {
+            paste(ch[[1L]], "....")
+        } else {
+            ch
+        }
+    }
+
+
+
 # `assertive.properties:::check_n()`.
 .checkN <- function(n) {
     if (n < 0L || n != round(n)) {
         stop("n should be a non-negative integer vector.")
     }
+}
+
+
+
+# Using primary assay here.
+.coerceSummarizedExperimentToMatrix <- function(object) {
+    requireNamespace("SummarizedExperiment", quietly = TRUE)
+    SummarizedExperiment::assay(object)
 }
 
 
@@ -40,6 +61,33 @@
         as.integer(prod(.dim(x)))
     }
 }
+
+
+
+# `assertive.base:::to_names()`.
+.toNames <- function(x) {
+    if (is.double(x) && is.vector(x)) {
+        ifelse(
+            test = is.na(x),
+            yes = NA_real_,
+            no = sprintf("%.17g", x)
+        )
+    }
+    else if (is.complex(x)) {
+        ifelse(
+            test = is.na(x),
+            yes = NA_complex_,
+            no = sprintf("%.17g+%.17gi", Re(x), Im(x))
+        )
+    }
+    else {
+        as.character(x)
+    }
+}
+
+
+
+.tolerance <- 100L * .Machine[["double.eps"]]
 
 
 

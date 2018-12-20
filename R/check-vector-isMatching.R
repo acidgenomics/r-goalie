@@ -1,35 +1,36 @@
 #' Does the string match a pattern?
 #'
-#' @name grepl
+#' @name isMatching
 #' @inherit params
 #'
 #' @seealso
 #' - `grepl()`.
-#' - `stringi::stri_detect_fixed()`.
 #' - `stringi::stri_detect_regex()`.
+#' - `stringi::stri_detect_fixed()`.
 #' - `stringr::str_detect()`.
-#' - `assertive.strings::is_matching_fixed()`.
 #' - `assertive.strings::is_matching_regex()`.
-#' - `assertive.strings::is_not_matching_fixed()`.
+#' - `assertive.strings::is_matching_fixed()`.
 #' - `assertive.strings::is_not_matching_regex()`.
+#' - `assertive.strings::is_not_matching_fixed()`.
 #'
 #' @return `logical`.
 #'
 #' @examples
-#' isMatchingFixed(x = "foobar", pattern = "bar")
-#' isNotMatchingFixed(x = "foo", pattern = "bar")
 #' isMatchingRegex(x = "foobar", pattern = "^f")
 #' isNotMatchingRegex(x = "foobar", pattern = "^b")
+#'
+#' isMatchingFixed(x = "foobar", pattern = "bar")
+#' isNotMatchingFixed(x = "foo", pattern = "bar")
 NULL
 
 
 
 # vector =======================================================================
-#' @rdname grepl
+#' @rdname isMatching
 #' @export
 isMatchingFixed <- function(x, pattern, .xname = getNameInParent(x)) {
     callAndName(
-        fn = function(x) {
+        fun = function(x) {
             ok <- grepl(
                 pattern = pattern,
                 x = x,
@@ -44,11 +45,11 @@ isMatchingFixed <- function(x, pattern, .xname = getNameInParent(x)) {
 
 
 
-#' @rdname grepl
+#' @rdname isMatching
 #' @export
 isMatchingRegex <- function(x, pattern, .xname = getNameInParent(x)) {
     callAndName(
-        fn = function(x) {
+        fun = function(x) {
             ok <- grepl(
                 pattern = pattern,
                 x = x,
@@ -63,11 +64,11 @@ isMatchingRegex <- function(x, pattern, .xname = getNameInParent(x)) {
 
 
 
-#' @rdname grepl
+#' @rdname isMatching
 #' @export
 isNotMatchingFixed <- function(x, pattern, .xname = getNameInParent(x)) {
     callAndName(
-        fn = function(x) {
+        fun = function(x) {
             ok <- !grepl(
                 pattern = pattern,
                 x = x,
@@ -82,11 +83,11 @@ isNotMatchingFixed <- function(x, pattern, .xname = getNameInParent(x)) {
 
 
 
-#' @rdname grepl
+#' @rdname isMatching
 #' @export
 isNotMatchingRegex <- function(x, pattern, .xname = getNameInParent(x)) {
     callAndName(
-        fn = function(x) {
+        fun = function(x) {
             ok <- !grepl(
                 pattern = pattern,
                 x = x,
@@ -102,7 +103,7 @@ isNotMatchingRegex <- function(x, pattern, .xname = getNameInParent(x)) {
 
 
 # scalar =======================================================================
-#' @rdname grepl
+#' @rdname isMatching
 #' @export
 allAreMatchingFixed <- function(x, pattern, .xname = getNameInParent(x)) {
     ok <- isMatchingFixed(x = x, pattern = pattern, .xname = .xname)
@@ -112,7 +113,7 @@ allAreMatchingFixed <- function(x, pattern, .xname = getNameInParent(x)) {
 
 
 
-#' @rdname grepl
+#' @rdname isMatching
 #' @export
 allAreMatchingRegex <- function(x, pattern, .xname = getNameInParent(x)) {
     ok <- isMatchingRegex(x = x, pattern = pattern, .xname = .xname)
@@ -122,7 +123,7 @@ allAreMatchingRegex <- function(x, pattern, .xname = getNameInParent(x)) {
 
 
 
-#' @rdname grepl
+#' @rdname isMatching
 #' @export
 allAreNotMatchingFixed <- function(x, pattern, .xname = getNameInParent(x)) {
     ok <- isNotMatchingFixed(x = x, pattern = pattern, .xname = .xname)
@@ -132,7 +133,7 @@ allAreNotMatchingFixed <- function(x, pattern, .xname = getNameInParent(x)) {
 
 
 
-#' @rdname grepl
+#' @rdname isMatching
 #' @export
 allAreNotMatchingRegex <- function(x, pattern, .xname = getNameInParent(x)) {
     ok <- isNotMatchingRegex(x = x, pattern = pattern, .xname = .xname)

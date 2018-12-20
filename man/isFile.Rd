@@ -20,9 +20,9 @@ Does the input contain a file?
 }
 \section{Functions}{
 \itemize{
-\item \code{isFile}: Supports multiple files.
+\item \code{isFile}: Vectorized.
 
-\item \code{isAFile}: Check for a single file.
+\item \code{isAFile}: Scalar variant.
 }}
 
 \examples{

@@ -1,17 +1,9 @@
-# TODO Consider allowing `isInt` to only return true for non-negative
-# or positive values.
-
-
-
 #' Is the input scalar?
 #'
 #' Scalar represents a length of 1.
 #'
 #' @name isScalar
 #' @inherit params
-#' @inheritParams assertive.properties::is_scalar
-#' @inheritParams rlang::is_scalar_character
-#' @inheritParams rlang::is_scalar_integerish
 #'
 #' @seealso
 #' `help(topic = "scalar-type-predicates", package = "rlang")`.
@@ -126,12 +118,12 @@ isScalarLogical <- function(x) {
 
 
 
-#' @describeIn isScalar Alias for `isScalarNumeric`.
+#' @describeIn isScalar Alias for [isScalarNumeric()].
 #' @export
 isNumber <- isScalarNumeric
 
 
 
-#' @describeIn isScalar Alias for `isScalarIntegerish`.
+#' @describeIn isIntegerish Alias for [isScalarIntegerish()].
 #' @export
 isInt <- isScalarIntegerish

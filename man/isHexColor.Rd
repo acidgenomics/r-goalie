@@ -21,6 +21,13 @@ allAreHexColors(x, .xname = getNameInParent(x))
 \description{
 Does the input contain hexadecimal colors?
 }
+\section{Functions}{
+\itemize{
+\item \code{isHexColor}: Vectorized.
+
+\item \code{allAreHexColors}: Scalar.
+}}
+
 \examples{
 ## Pass ====
 x <- viridis::viridis(n = 2L)

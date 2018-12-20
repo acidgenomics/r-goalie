@@ -17,7 +17,7 @@ containsHexColors(x, .xname = getNameInParent(x))
 
 containsURL(x, .xname = getNameInParent(x))
 
-containsAURL(x)
+containsAURL(x, .xname = getNameInParent(x))
 }
 \arguments{
 \item{x}{Object.}

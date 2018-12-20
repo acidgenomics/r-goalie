@@ -2,7 +2,7 @@
 #'
 #' @note These functions return `logical`, not necessarily `logical(1)`.
 #'
-#' @name equal
+#' @name isEqual
 #' @inherit params
 #'
 #' @return `logical`.
@@ -31,11 +31,8 @@ NULL
 
 
 
-.tolerance <- 100L * .Machine[["double.eps"]]
-
-
-
-#' @rdname equal
+# vector =======================================================================
+#' @describeIn isEqual Vectorized.
 #' @export
 isEqualTo <- function(x, y) {
     diff <- abs(x - y)
@@ -50,7 +47,7 @@ isEqualTo <- function(x, y) {
 
 
 
-#' @rdname equal
+#' @describeIn isEqual Vectorized.
 #' @export
 isNotEqualTo <- function(x, y) {
     ok <- abs(x - y) > .tolerance
@@ -64,7 +61,7 @@ isNotEqualTo <- function(x, y) {
 
 
 
-#' @rdname equal
+#' @describeIn isEqual Vectorized.
 #' @export
 isGreaterThan <- function(x, y) {
     ok <- x > y
@@ -78,7 +75,7 @@ isGreaterThan <- function(x, y) {
 
 
 
-#' @rdname equal
+#' @describeIn isEqual Vectorized.
 #' @export
 isGreaterThanOrEqualTo <- function(x, y) {
     ok <- x >= y
@@ -92,7 +89,7 @@ isGreaterThanOrEqualTo <- function(x, y) {
 
 
 
-#' @rdname equal
+#' @describeIn isEqual Vectorized.
 #' @export
 isLessThan <- function(x, y) {
     ok <- x < y
@@ -106,7 +103,7 @@ isLessThan <- function(x, y) {
 
 
 
-#' @rdname equal
+#' @describeIn isEqual Vectorized.
 #' @export
 isLessThanOrEqualTo <- function(x, y) {
     ok <- x <= y
@@ -116,4 +113,65 @@ isLessThanOrEqualTo <- function(x, y) {
         },
         rep_len(x, length(ok))
     )
+}
+
+
+
+# scalar =======================================================================
+#' @describeIn isEqual Scalar.
+#' @export
+allAreEqualTo <- function(x, y) {
+    ok <- isEqualTo(x, y)
+    if (!all(ok)) return(ok)
+    TRUE
+}
+
+
+
+#' @describeIn isEqual Scalar.
+#' @export
+allAreNotEqualTo <- function(x, y) {
+    ok <- isNotEqualTo(x, y)
+    if (!all(ok)) return(ok)
+    TRUE
+}
+
+
+
+#' @describeIn isEqual Scalar.
+#' @export
+allAreGreaterThan <- function(x, y) {
+    ok <- isGreaterThan(x, y)
+    if (!all(ok)) return(ok)
+    TRUE
+}
+
+
+
+#' @describeIn isEqual Scalar.
+#' @export
+allAreGreaterThanOrEqualTo <- function(x, y) {
+    ok <- isGreaterThanOrEqualTo(x, y)
+    if (!all(ok)) return(ok)
+    TRUE
+}
+
+
+
+#' @describeIn isEqual Scalar.
+#' @export
+allAreLessThan <- function(x, y) {
+    ok <- isLessThan(x, y)
+    if (!all(ok)) return(ok)
+    TRUE
+}
+
+
+
+#' @describeIn isEqual Scalar.
+#' @export
+allAreLessThanOrEqualTo <- function(x, y) {
+    ok <- isLessThanOrEqualTo(x, y)
+    if (!all(ok)) return(ok)
+    TRUE
 }
