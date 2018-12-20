@@ -16,7 +16,7 @@
 #'     "hello"
 #' }
 #' body(x)
-#' x <- appendToBody(f, quote(.Deprecated("y")))
+#' x <- appendToBody(x, quote(.Deprecated("y")))
 #' body(x)
 appendToBody <- function(fun, values, after = 1L) {
     assert(

@@ -30,7 +30,7 @@ NULL
 #' @export
 isMatchingFixed <- function(x, pattern, .xname = getNameInParent(x)) {
     callAndName(
-        fn = function(x) {
+        fun = function(x) {
             ok <- grepl(
                 pattern = pattern,
                 x = x,
@@ -49,7 +49,7 @@ isMatchingFixed <- function(x, pattern, .xname = getNameInParent(x)) {
 #' @export
 isMatchingRegex <- function(x, pattern, .xname = getNameInParent(x)) {
     callAndName(
-        fn = function(x) {
+        fun = function(x) {
             ok <- grepl(
                 pattern = pattern,
                 x = x,
@@ -68,7 +68,7 @@ isMatchingRegex <- function(x, pattern, .xname = getNameInParent(x)) {
 #' @export
 isNotMatchingFixed <- function(x, pattern, .xname = getNameInParent(x)) {
     callAndName(
-        fn = function(x) {
+        fun = function(x) {
             ok <- !grepl(
                 pattern = pattern,
                 x = x,
@@ -87,7 +87,7 @@ isNotMatchingFixed <- function(x, pattern, .xname = getNameInParent(x)) {
 #' @export
 isNotMatchingRegex <- function(x, pattern, .xname = getNameInParent(x)) {
     callAndName(
-        fn = function(x) {
+        fun = function(x) {
             ok <- !grepl(
                 pattern = pattern,
                 x = x,

@@ -7,6 +7,8 @@
 #' - `FUN.VALUE` is always set to `logical(1)`.
 #' - `USE.NAMES` is always set to `TRUE`.
 #'
+#' @export
+#'
 #' @param X `atomic` or `list`.
 #' @param FUN `function`.
 #'   An assert check function that returns `logical(1)` boolean flag
@@ -18,7 +20,6 @@
 #' - `vapply()`.
 #'
 #' @return `logical`.
-#' @export
 #'
 #' @examples
 #' bapply(list(a = "example", b = 1), is.character)
