@@ -4,7 +4,7 @@
 \alias{defunct}
 \title{Defunct Functions}
 \value{
-\code{.Defunct()}.
+\code{.Defunct}.
 }
 \description{
 Defunct Functions

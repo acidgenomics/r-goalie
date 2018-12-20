@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Is the Input Integerish? — isIntegerish • goalie</title>
+<title>Is the input integer(ish)? — isIntegerish • goalie</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -32,7 +32,7 @@
 
   <link href="../extra.css" rel="stylesheet">
   
-<meta property="og:title" content="Is the Input Integerish? — isIntegerish" />
+<meta property="og:title" content="Is the input integer(ish)? — isIntegerish" />
 
 <meta property="og:description" content="Check for valid input of either explicit (e.g. 1L) and/or implict
 (e.g. 1) integer." />
@@ -66,7 +66,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">goalie</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.1</span>
       </span>
     </div>
 
@@ -105,19 +105,19 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Is the Input Integerish?</h1>
-    <small class="dont-index">Source: <a href='https://github.com/steinbaugh/goalie/blob/master/R/isIntegerish.R'><code>R/isIntegerish.R</code></a></small>
+    <h1>Is the input integer(ish)?</h1>
+    <small class="dont-index">Source: <a href='https://github.com/steinbaugh/goalie/blob/master/R/check-vector-isIntegerish.R'><code>R/check-vector-isIntegerish.R</code></a></small>
     <div class="hidden name"><code>isIntegerish.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
     <p>Check for valid input of either explicit (e.g. <code>1L</code>) and/or implict
-(e.g. <code>1</code>) integer.</p>
+(e.g. <code>1</code>) <code>integer</code>.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>isIntegerish</span>(<span class='no'>x</span>, <span class='kw'>n</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>finite</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>isIntegerish</span>(<span class='no'>x</span>, <span class='kw'>.xname</span> <span class='kw'>=</span> <span class='fu'><a href='getNameInParent.html'>getNameInParent</a></span>(<span class='no'>x</span>))</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -127,44 +127,26 @@
       <td><p>Object.</p></td>
     </tr>
     <tr>
-      <th>n</th>
-      <td><p>Expected length of a vector.</p></td>
-    </tr>
-    <tr>
-      <th>finite</th>
-      <td><p>Whether all values of the vector are finite. The
-non-finite values are <code>NA</code>, <code>Inf</code>, <code>-Inf</code> and <code>NaN</code>. Setting this
-to something other than <code>NULL</code> can be expensive because the whole
-vector needs to be traversed and checked.</p></td>
+      <th>.xname</th>
+      <td><p><em>Not intended to be used directly.</em></p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    
-<ul>
-<li><p><code>are*</code>/<code>contains*</code>/<code>has*</code>/<code>is*</code>:
-<code><a href='https://www.rdocumentation.org/packages/base/topics/logical'>logical(1)</a></code>. Boolean flag (<code>TRUE</code>/<code>FALSE</code>).
-Intended to be used in combination with <code><a href='assert.html'>assert()</a></code> function.</p></li>
-<li><p><code>check*</code>:
-<code>TRUE</code> on success or <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code> on failure.
-Intended to be used in combination with <code><a href='validate.html'>validate()</a></code> function.</p></li>
-<li><p><code>assert*</code>:
-<code>TRUE</code> on success or error (<code><a href='https://www.rdocumentation.org/packages/base/topics/stop'>stop()</a></code>) on failure.</p></li>
-</ul>
-
+    <p><code>TRUE</code> on success;
+<code>FALSE</code> on failure, with <code>cause</code> <a href='https://www.rdocumentation.org/packages/base/topics/attributes'>attribute</a> set.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><ul>
-<li><p><code><a href='https://www.rdocumentation.org/packages/rlang/topics/is_integerish'>rlang::is_integerish()</a></code>.</p></li>
-<li><p><code><a href='https://www.rdocumentation.org/packages/checkmate/topics/checkIntegerish'>checkmate::checkIntegerish</a></code>.</p></li>
-<li><p><code><a href='https://www.rdocumentation.org/packages/assertive/topics/is_numeric'>assertive::is_a_number</a></code>.</p></li>
+<li><p><code><a href='https://rlang.r-lib.org/reference/is_integerish.html'>rlang::is_integerish()</a></code>.</p></li>
+<li><p><code><a href='https://www.rdocumentation.org/packages/checkmate/topics/checkIntegerish'>checkmate::checkIntegerish()</a></code>.</p></li>
 </ul></div>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>isIntegerish</span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/seq'>seq_len</a></span>(<span class='fl'>2L</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>isIntegerish</span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='fl'>1</span>, <span class='fl'>2</span>))</div><div class='output co'>#&gt; [1] TRUE</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>isIntegerish</span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/seq'>seq_len</a></span>(<span class='fl'>2L</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>isIntegerish</span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='fl'>1</span>, <span class='fl'>2</span>))</div><div class='output co'>#&gt; [1] TRUE TRUE</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
