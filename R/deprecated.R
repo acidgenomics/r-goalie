@@ -7,7 +7,7 @@
 #' @name deprecated
 #' @keywords internal
 #' @inheritParams params
-#' @return `.Deprecated()`.
+#' @return `.Deprecated`.
 NULL
 
 
@@ -16,7 +16,7 @@ NULL
 #' @name defunct
 #' @keywords internal
 #' @inheritParams params
-#' @return `.Defunct()`.
+#' @return `.Defunct`.
 NULL
 
 
@@ -79,6 +79,28 @@ NULL
 # isURL
 # validDimnames
 # validNames
+
+#' @rdname deprecated
+#' @export
+containsAlpha <- isAlpha
+
+#' @rdname deprecated
+#' @export
+containsHeaderLevel <- isHeaderLevel
+
+#' @rdname deprecated
+#' @export
+containsHexColors <- allAreHexColors
+
+#' @rdname deprecated
+#' @export
+containsURL <- isURL
+
+#' @rdname deprecated
+#' @export
+containsAURL <- isAURL
+
+
 
 
 

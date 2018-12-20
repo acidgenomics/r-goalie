@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Is the Input Scalar? — isScalar • goalie</title>
+<title>Is the input scalar? — isScalar • goalie</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -32,7 +32,7 @@
 
   <link href="../extra.css" rel="stylesheet">
   
-<meta property="og:title" content="Is the Input Scalar? — isScalar" />
+<meta property="og:title" content="Is the input scalar? — isScalar" />
 
 <meta property="og:description" content="Scalar represents a length of 1." />
 <meta name="twitter:card" content="summary" />
@@ -65,7 +65,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">goalie</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.1</span>
       </span>
     </div>
 
@@ -104,8 +104,8 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Is the Input Scalar?</h1>
-    <small class="dont-index">Source: <a href='https://github.com/steinbaugh/goalie/blob/master/R/isScalar.R'><code>R/isScalar.R</code></a></small>
+    <h1>Is the input scalar?</h1>
+    <small class="dont-index">Source: <a href='https://github.com/steinbaugh/goalie/blob/master/R/check-scalar-isScalar.R'><code>R/check-scalar-isScalar.R</code></a></small>
     <div class="hidden name"><code>isScalar.Rd</code></div>
     </div>
 
@@ -129,21 +129,17 @@
 
 <span class='fu'>isScalarInteger</span>(<span class='no'>x</span>)
 
-<span class='fu'>isScalarIntegerish</span>(<span class='no'>x</span>, <span class='kw'>finite</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
+<span class='fu'>isScalarIntegerish</span>(<span class='no'>x</span>)
 
 <span class='fu'>isScalarDouble</span>(<span class='no'>x</span>)
 
-<span class='fu'>isScalarCharacter</span>(<span class='no'>x</span>, <span class='kw'>encoding</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
+<span class='fu'>isScalarCharacter</span>(<span class='no'>x</span>)
 
 <span class='fu'>isScalarLogical</span>(<span class='no'>x</span>)
 
-<span class='fu'>isString</span>(<span class='no'>x</span>, <span class='kw'>encoding</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
-
-<span class='fu'>isFlag</span>(<span class='no'>x</span>)
-
 <span class='fu'>isNumber</span>(<span class='no'>x</span>)
 
-<span class='fu'>isInt</span>(<span class='no'>x</span>, <span class='kw'>finite</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+<span class='fu'>isInt</span>(<span class='no'>x</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -152,47 +148,33 @@
       <th>x</th>
       <td><p>Object.</p></td>
     </tr>
-    <tr>
-      <th>finite</th>
-      <td><p>Whether all values of the vector are finite. The
-non-finite values are <code>NA</code>, <code>Inf</code>, <code>-Inf</code> and <code>NaN</code>. Setting this
-to something other than <code>NULL</code> can be expensive because the whole
-vector needs to be traversed and checked.</p></td>
-    </tr>
-    <tr>
-      <th>encoding</th>
-      <td><p>Expected encoding of a string or character
-vector. One of <code>UTF-8</code>, <code>latin1</code>, or <code>unknown</code>.</p></td>
-    </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    
-<ul>
-<li><p><code>are*</code>/<code>contains*</code>/<code>has*</code>/<code>is*</code>:
-<code><a href='https://www.rdocumentation.org/packages/base/topics/logical'>logical(1)</a></code>. Boolean flag (<code>TRUE</code>/<code>FALSE</code>).
-Intended to be used in combination with <code><a href='assert.html'>assert()</a></code> function.</p></li>
-<li><p><code>check*</code>:
-<code>TRUE</code> on success or <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code> on failure.
-Intended to be used in combination with <code><a href='validate.html'>validate()</a></code> function.</p></li>
-<li><p><code>assert*</code>:
-<code>TRUE</code> on success or error (<code><a href='https://www.rdocumentation.org/packages/base/topics/stop'>stop()</a></code>) on failure.</p></li>
-</ul>
-
+    <p><code>TRUE</code> on success;
+<code>FALSE</code> on failure, with <code>cause</code> <a href='https://www.rdocumentation.org/packages/base/topics/attributes'>attribute</a> set.</p>
     
     <h2 class="hasAnchor" id="functions"><a class="anchor" href="#functions"></a>Functions</h2>
 
     <ul>
-<li><p><code>isString</code>: Alias for <code>isScalarCharacter</code>.</p></li>
-<li><p><code>isFlag</code>: Alias for <code>isScalarLogical</code>.</p></li>
 <li><p><code>isNumber</code>: Alias for <code>isScalarNumeric</code>.</p></li>
 <li><p><code>isInt</code>: Alias for <code>isScalarIntegerish</code>.</p></li>
 </ul>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='https://www.rdocumentation.org/packages/utils/topics/help'>help(topic = "scalar-type-predicates", package = "rlang")</a></code>.</p></div>
+    <div class='dont-index'><p><code><a href='https://www.rdocumentation.org/packages/utils/topics/help'>help(topic = "scalar-type-predicates", package = "rlang")</a></code>.</p><ul>
+<li><p><code><a href='https://www.rdocumentation.org/packages/assertive.properties/topics/is_empty'>assertive.properties::is_scalar()</a></code>.</p></li>
+<li><p><code><a href='https://rlang.r-lib.org/reference/scalar-type-predicates.html'>rlang::is_scalar_list()</a></code>.</p></li>
+<li><p><code><a href='https://rlang.r-lib.org/reference/scalar-type-predicates.html'>rlang::is_scalar_atomic()</a></code>.</p></li>
+<li><p><code><a href='https://rlang.r-lib.org/reference/scalar-type-predicates.html'>rlang::is_scalar_vector()</a></code>.</p></li>
+<li><p><code><a href='https://rlang.r-lib.org/reference/scalar-type-predicates.html'>rlang::is_scalar_integer()</a></code>.</p></li>
+<li><p><code><a href='https://rlang.r-lib.org/reference/is_integerish.html'>rlang::is_scalar_integerish()</a></code>.</p></li>
+<li><p><code><a href='https://rlang.r-lib.org/reference/scalar-type-predicates.html'>rlang::is_scalar_double()</a></code>.</p></li>
+<li><p><code><a href='https://rlang.r-lib.org/reference/scalar-type-predicates.html'>rlang::is_scalar_character()</a></code>.</p></li>
+<li><p><code><a href='https://rlang.r-lib.org/reference/scalar-type-predicates.html'>rlang::is_scalar_logical()</a></code>.</p></li>
+</ul></div>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>

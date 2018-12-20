@@ -65,7 +65,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">goalie</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.1</span>
       </span>
     </div>
 
@@ -120,51 +120,47 @@
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>add</th>
-      <td><p><code>AssertCollection</code>. Extra information to be included in the
-message for the testthat reporter. See <code><a href='https://www.rdocumentation.org/packages/testthat/topics/expect_that'>testthat::expect_that()</a></code>.</p></td>
+      <th>class</th>
+      <td><p><code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>.
+Object class.</p></td>
     </tr>
     <tr>
       <th>classes</th>
-      <td><p><code>character</code>. Object classes.</p></td>
+      <td><p><code>character</code>.
+Object classes.</p></td>
     </tr>
     <tr>
       <th>envir</th>
-      <td><p><code>environment</code>. Environment.</p></td>
+      <td><p><code>environment</code>.
+Environment.</p></td>
     </tr>
     <tr>
       <th>genes</th>
-      <td><p><code>character</code>. Genes.</p></td>
-    </tr>
-    <tr>
-      <th>info</th>
-      <td><p><code>character</code>. Extra information to be included in the message for
-the testthat reporter. See <code><a href='https://www.rdocumentation.org/packages/testthat/topics/expect_that'>testthat::expect_that()</a></code>.</p></td>
+      <td><p><code>character</code>.
+Genes.</p></td>
     </tr>
     <tr>
       <th>inherits</th>
-      <td><p><code><a href='https://www.rdocumentation.org/packages/base/topics/logical'>logical(1)</a></code>. Should the enclosing frames of the
-<code>environment</code> be searched?</p></td>
+      <td><p><code><a href='https://www.rdocumentation.org/packages/base/topics/logical'>logical(1)</a></code>.
+Should the enclosing frames of the <code>environment</code> be searched?</p></td>
     </tr>
     <tr>
-      <th>label</th>
-      <td><p><code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>. Name of the checked object to print in messages.</p></td>
+      <th>lower</th>
+      <td><p><code><a href='https://www.rdocumentation.org/packages/base/topics/numeric'>numeric(1)</a></code>.
+Lower boundary.</p></td>
     </tr>
     <tr>
-      <th>name</th>
-      <td><p><code>character</code>. Element name.</p></td>
+      <th>metric</th>
+      <td><p>XXX.</p></td>
     </tr>
     <tr>
-      <th>na.ok</th>
-      <td><p><code><a href='https://www.rdocumentation.org/packages/base/topics/logical'>logical(1)</a></code>. If set to <code>TRUE</code>, <code>x</code> may also be <code>NA</code>.</p></td>
+      <th>n</th>
+      <td><p>XXX.</p></td>
     </tr>
     <tr>
-      <th>names</th>
-      <td><p><code>character</code>. Element names (e.g. row names, column names).</p></td>
-    </tr>
-    <tr>
-      <th>null.ok</th>
-      <td><p><code><a href='https://www.rdocumentation.org/packages/base/topics/logical'>logical(1)</a></code>. If set to <code>TRUE</code>, <code>x</code> may also be <code>NULL</code>.</p></td>
+      <th>nullOK</th>
+      <td><p><code><a href='https://www.rdocumentation.org/packages/base/topics/logical'>logical(1)</a></code>.
+If set to <code>TRUE</code>, <code>x</code> may also be <code>NULL</code>.</p></td>
     </tr>
     <tr>
       <th>object</th>
@@ -172,7 +168,17 @@ the testthat reporter. See <code><a href='https://www.rdocumentation.org/package
     </tr>
     <tr>
       <th>pattern</th>
-      <td><p><code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>. Pattern to use for matching.</p></td>
+      <td><p><code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>.
+Pattern to use for matching.</p></td>
+    </tr>
+    <tr>
+      <th>upper</th>
+      <td><p><code><a href='https://www.rdocumentation.org/packages/base/topics/numeric'>numeric(1)</a></code>.
+Upper boundary.</p></td>
+    </tr>
+    <tr>
+      <th>value</th>
+      <td><p>Value.</p></td>
     </tr>
     <tr>
       <th>x</th>
@@ -181,11 +187,6 @@ the testthat reporter. See <code><a href='https://www.rdocumentation.org/package
     <tr>
       <th>y</th>
       <td><p>Secondary object.</p></td>
-    </tr>
-    <tr>
-      <th>.var.name</th>
-      <td><p><code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>. Name of the checked object to print in
-asserions.</p></td>
     </tr>
     <tr>
       <th>.xname</th>
@@ -203,18 +204,8 @@ asserions.</p></td>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    
-<ul>
-<li><p><code>are*</code>/<code>contains*</code>/<code>has*</code>/<code>is*</code>:
-<code><a href='https://www.rdocumentation.org/packages/base/topics/logical'>logical(1)</a></code>. Boolean flag (<code>TRUE</code>/<code>FALSE</code>).
-Intended to be used in combination with <code><a href='assert.html'>assert()</a></code> function.</p></li>
-<li><p><code>check*</code>:
-<code>TRUE</code> on success or <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code> on failure.
-Intended to be used in combination with <code><a href='validate.html'>validate()</a></code> function.</p></li>
-<li><p><code>assert*</code>:
-<code>TRUE</code> on success or error (<code><a href='https://www.rdocumentation.org/packages/base/topics/stop'>stop()</a></code>) on failure.</p></li>
-</ul>
-
+    <p><code>TRUE</code> on success;
+<code>FALSE</code> on failure, with <code>cause</code> <a href='https://www.rdocumentation.org/packages/base/topics/attributes'>attribute</a> set.</p>
     
 
   </div>

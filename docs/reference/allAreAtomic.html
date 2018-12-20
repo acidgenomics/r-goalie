@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Does the Input Contain Elements That Are All Atomic? — allAreAtomic • goalie</title>
+<title>Does the input contain elements that are all atomic? — allAreAtomic • goalie</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -32,9 +32,9 @@
 
   <link href="../extra.css" rel="stylesheet">
   
-<meta property="og:title" content="Does the Input Contain Elements That Are All Atomic? — allAreAtomic" />
+<meta property="og:title" content="Does the input contain elements that are all atomic? — allAreAtomic" />
 
-<meta property="og:description" content="Does the Input Contain Elements That Are All Atomic?" />
+<meta property="og:description" content="Does the input contain elements that are all atomic?" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -65,7 +65,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">goalie</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.1</span>
       </span>
     </div>
 
@@ -104,18 +104,18 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Does the Input Contain Elements That Are All Atomic?</h1>
-    <small class="dont-index">Source: <a href='https://github.com/steinbaugh/goalie/blob/master/R/allAreAtomic.R'><code>R/allAreAtomic.R</code></a></small>
+    <h1>Does the input contain elements that are all atomic?</h1>
+    <small class="dont-index">Source: <a href='https://github.com/steinbaugh/goalie/blob/master/R/check-scalar-allAreAtomic.R'><code>R/check-scalar-allAreAtomic.R</code></a></small>
     <div class="hidden name"><code>allAreAtomic.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Does the Input Contain Elements That Are All Atomic?</p>
+    <p>Does the input contain elements that are all atomic?</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>allAreAtomic</span>(<span class='no'>x</span>)</pre>
+    <pre class="usage"><span class='fu'>allAreAtomic</span>(<span class='no'>x</span>, <span class='kw'>.xname</span> <span class='kw'>=</span> <span class='fu'><a href='getNameInParent.html'>getNameInParent</a></span>(<span class='no'>x</span>))</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -124,29 +124,31 @@
       <th>x</th>
       <td><p>Object.</p></td>
     </tr>
+    <tr>
+      <th>.xname</th>
+      <td><p><em>Not intended to be used directly.</em></p></td>
+    </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
+    <p><code>TRUE</code> on success;
+<code>FALSE</code> on failure, with <code>cause</code> <a href='https://www.rdocumentation.org/packages/base/topics/attributes'>attribute</a> set.</p>
     
-<ul>
-<li><p><code>are*</code>/<code>contains*</code>/<code>has*</code>/<code>is*</code>:
-<code><a href='https://www.rdocumentation.org/packages/base/topics/logical'>logical(1)</a></code>. Boolean flag (<code>TRUE</code>/<code>FALSE</code>).
-Intended to be used in combination with <code><a href='assert.html'>assert()</a></code> function.</p></li>
-<li><p><code>check*</code>:
-<code>TRUE</code> on success or <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code> on failure.
-Intended to be used in combination with <code><a href='validate.html'>validate()</a></code> function.</p></li>
-<li><p><code>assert*</code>:
-<code>TRUE</code> on success or error (<code><a href='https://www.rdocumentation.org/packages/base/topics/stop'>stop()</a></code>) on failure.</p></li>
-</ul>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
+    <div class='dont-index'><p><code><a href='https://www.rdocumentation.org/packages/base/topics/is.recursive'>is.atomic()</a></code>.</p></div>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'>## Pass ====</span>
 <span class='fu'>allAreAtomic</span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/data.frame'>data.frame</a></span>(<span class='kw'>a</span> <span class='kw'>=</span> <span class='st'>"foo"</span>, <span class='kw'>b</span> <span class='kw'>=</span> <span class='st'>"bar"</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>allAreAtomic</span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/list'>list</a></span>(<span class='kw'>a</span> <span class='kw'>=</span> <span class='st'>"foo"</span>, <span class='kw'>b</span> <span class='kw'>=</span> <span class='st'>"bar"</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
 <span class='co'>## Fail ====</span>
-<span class='fu'>allAreAtomic</span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/list'>list</a></span>(<span class='kw'>a</span> <span class='kw'>=</span> <span class='st'>"x"</span>, <span class='kw'>b</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/list'>list</a></span>()))</div><div class='output co'>#&gt; [1] FALSE</div></pre>
+<span class='fu'>allAreAtomic</span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/data.frame'>data.frame</a></span>())</div><div class='output co'>#&gt; [1] FALSE
+#&gt; Cause of failure:
+#&gt; data.frame() has length 0.</div><div class='input'><span class='fu'>allAreAtomic</span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/list'>list</a></span>(<span class='kw'>a</span> <span class='kw'>=</span> <span class='st'>"x"</span>, <span class='kw'>b</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/list'>list</a></span>()))</div><div class='output co'>#&gt; [1] FALSE
+#&gt; Cause of failure:
+#&gt; Not all elements in list(a = "x", b = list()) are atomic.</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -154,6 +156,8 @@ Intended to be used in combination with <code><a href='validate.html'>validate()
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
+
+      <li><a href="#see-also">See also</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>
