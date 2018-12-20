@@ -61,11 +61,10 @@ b <- 2L
 
 ## Pass ====
 isExisting(c("a", "b"))
-areNonExisting(c("x", "y"))
+allAreNonExisting(c("x", "y"))
 
 ## Fail ====
 isExisting(c("x", "y"))
-areNonExisting(c("a", "b"))
 }
 \seealso{
 \code{assertive.code::is_existing()}.
