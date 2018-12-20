@@ -6,7 +6,7 @@
 #' - Cannot contain `NA` strings.
 #' - Cannot contain empty (`""`) strings.
 #'
-#' @name isCharacter
+#' @export
 #' @inherit params
 #'
 #' @seealso `assertive.strings::is_non_missing_nor_empty_character()`.
@@ -20,12 +20,6 @@
 #' isCharacter(character())
 #' isCharacter("")
 #' isCharacter(NA_character_)
-NULL
-
-
-
-#' @rdname isCharacter
-#' @export
 isCharacter <- function(
     x,
     nullOK = FALSE,
