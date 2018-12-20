@@ -6,8 +6,7 @@
 #'
 #' @param x `vector` of `character` strings to be capitalized.
 #'
-#' @seealso
-#' `R.utils::capitalize()`.
+#' @seealso `R.utils::capitalize()`.
 #'
 #' ```
 #' getS3method(
