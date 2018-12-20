@@ -21,7 +21,7 @@ NULL
 
 #' @rdname hasDuplicates
 #' @export
-hasDuplicates <- function (x, .xname = getNameInParent(x)) {
+hasDuplicates <- function(x, .xname = getNameInParent(x)) {
     if (!anyDuplicated(x)) {
         return(false(gettext("%s has no duplicates."), .xname))
     }
@@ -32,7 +32,7 @@ hasDuplicates <- function (x, .xname = getNameInParent(x)) {
 
 #' @rdname hasDuplicates
 #' @export
-hasNoDuplicates <- function (x, .xname = getNameInParent(x)) {
+hasNoDuplicates <- function(x, .xname = getNameInParent(x)) {
     if (anyDuplicated(x)) {
         dupeIndicies <- which(duplicated(x))
         return(false(
