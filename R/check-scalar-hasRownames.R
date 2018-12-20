@@ -1,4 +1,4 @@
-#' Does the Input Have Row Names?
+#' Does the input have row names?
 #'
 #' @section data.frame:
 #'

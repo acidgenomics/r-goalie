@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Does R Have File System Access Rights? — hasAccess • goalie</title>
+<title>Check file system access rights — hasAccess • goalie</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -32,7 +32,7 @@
 
   <link href="../extra.css" rel="stylesheet">
   
-<meta property="og:title" content="Does R Have File System Access Rights? — hasAccess" />
+<meta property="og:title" content="Check file system access rights — hasAccess" />
 
 <meta property="og:description" content="Works for either file or directory paths." />
 <meta name="twitter:card" content="summary" />
@@ -104,8 +104,8 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Does R Have File System Access Rights?</h1>
-    <small class="dont-index">Source: <a href='https://github.com/steinbaugh/goalie/blob/master/R/hasAccess.R'><code>R/hasAccess.R</code></a></small>
+    <h1>Check file system access rights</h1>
+    <small class="dont-index">Source: <a href='https://github.com/steinbaugh/goalie/blob/master/R/check-vector-hasAccess.R'><code>R/check-vector-hasAccess.R</code></a></small>
     <div class="hidden name"><code>hasAccess.Rd</code></div>
     </div>
 
@@ -122,21 +122,25 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>x</th>
-      <td><p>[any]<br />
-Object to check.</p></td>
+      <td><p><code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>.
+File or directory path.</p></td>
     </tr>
     <tr>
       <th>access</th>
-      <td><p>[<code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>]<br />
-Single string containing possible characters &#8216;r&#8217;, &#8216;w&#8217; and &#8216;x&#8217; to
-force a check for read, write or execute access rights, respectively.
-Write and executable rights are not checked on Windows.</p></td>
+      <td><p><code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>.
+String containing any of these characters, including in combination:</p><ul>
+<li><p><code>r</code> read.</p></li>
+<li><p><code>w</code>: write.</p></li>
+<li><p><code>x</code>: execute.</p></li>
+</ul>
+
+<p>Write and executable cannot be checked on Windows.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='https://www.rdocumentation.org/packages/checkmate/topics/checkAccess'>checkmate::testAccess</a></code>.</p></div>
+    <div class='dont-index'><p><code><a href='https://www.rdocumentation.org/packages/checkmate/topics/checkAccess'>checkmate::checkAccess()</a></code>.</p></div>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>

@@ -2,7 +2,7 @@
 % Please edit documentation in R/validate.R
 \name{validate}
 \alias{validate}
-\title{Validate an S4 Class}
+\title{Validate an S4 class}
 \usage{
 validate(...)
 }

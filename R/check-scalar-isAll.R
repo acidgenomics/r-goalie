@@ -1,4 +1,4 @@
-#' Does the Input Belong to or Inherit All of These Classes?
+#' Does the input belong to or inherit all of these classes?
 #'
 #' @inherit params
 #' @export
