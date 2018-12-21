@@ -85,7 +85,7 @@ hasAccess <- function(x, access = "r") {
 #' @export
 allHaveAccess <- function() {
     ok <- hasAccess(x = x, access = access)
-    if (!all(ok)) return(ok)
+    if (!all(ok)) return(falseFromVector(ok))
     TRUE
 }
 
