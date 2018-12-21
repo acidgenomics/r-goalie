@@ -2,9 +2,12 @@
 % Please edit documentation in R/base-false.R
 \name{false}
 \alias{false}
+\alias{falseFromVector}
 \title{Return \code{FALSE} scalar with cause of failure}
 \usage{
 false(...)
+
+falseFromVector(x)
 }
 \arguments{
 \item{...}{Passed to \link[base:gettextf]{gettextf()} to create a \link{cause} of
