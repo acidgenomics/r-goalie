@@ -14,6 +14,15 @@
 \alias{isProportion}
 \alias{allAreInRange}
 \alias{allAreInClosedRange}
+\alias{allAreInOpenRange}
+\alias{allAreInLeftOpenRange}
+\alias{allAreInRightOpenRange}
+\alias{allAreNegative}
+\alias{allArePositive}
+\alias{allAreNonNegative}
+\alias{allAreNonPositive}
+\alias{allArePercentage}
+\alias{allAreProportion}
 \title{Is the input in range?}
 \usage{
 isInRange(x, lower = -Inf, upper = Inf, closed = c(TRUE, TRUE),
@@ -48,6 +57,27 @@ allAreInRange(x, lower = -Inf, upper = Inf, closed = c(TRUE, TRUE),
 
 allAreInClosedRange(x, lower = -Inf, upper = Inf,
   .xname = getNameInParent(x))
+
+allAreInOpenRange(x, lower = -Inf, upper = Inf,
+  .xname = getNameInParent(x))
+
+allAreInLeftOpenRange(x, lower = -Inf, upper = Inf,
+  .xname = getNameInParent(x))
+
+allAreInRightOpenRange(x, lower = -Inf, upper = Inf,
+  .xname = getNameInParent(x))
+
+allAreNegative(x, .xname = getNameInParent(x))
+
+allArePositive(x, .xname = getNameInParent(x))
+
+allAreNonNegative(x, .xname = getNameInParent(x))
+
+allAreNonPositive(x, .xname = getNameInParent(x))
+
+allArePercentage(x, .xname = getNameInParent(x))
+
+allAreProportion(x, .xname = getNameInParent(x))
 }
 \arguments{
 \item{x}{Object.}
@@ -97,6 +127,24 @@ Is the input in range?
 \item \code{allAreInRange}: Scalar.
 
 \item \code{allAreInClosedRange}: Scalar.
+
+\item \code{allAreInOpenRange}: Scalar.
+
+\item \code{allAreInLeftOpenRange}: Scalar.
+
+\item \code{allAreInRightOpenRange}: Scalar.
+
+\item \code{allAreNegative}: Scalar.
+
+\item \code{allArePositive}: Scalar.
+
+\item \code{allAreNonNegative}: Scalar.
+
+\item \code{allAreNonPositive}: Scalar.
+
+\item \code{allArePercentage}: Scalar.
+
+\item \code{allAreProportion}: Scalar.
 }}
 
 \section{Intervals}{
