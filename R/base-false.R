@@ -4,6 +4,7 @@
 #' [attribute][base::attributes].
 #'
 #' @export
+#' @inheritParams params
 #'
 #' @param ... Passed to [gettextf()][base::gettextf] to create a [cause] of
 #'   failure message.
