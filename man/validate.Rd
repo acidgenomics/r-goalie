@@ -4,13 +4,16 @@
 \alias{validate}
 \title{Validate an S4 class}
 \usage{
-validate(...)
+validate(..., msg = NULL)
 }
 \arguments{
 \item{...}{Any number of R expressions that return \code{logical(1)}, each of
 which should evaluate to \code{TRUE}. Rather than combining expressions with
 \code{&&}, separate them by commas so that better error messages can be
 generated.}
+
+\item{msg}{\code{NULL} or \code{character(1)}.
+Custom message to return on the event of any check failure.}
 }
 \description{
 \code{\link[=validate]{validate()}} is a variant of \code{\link[=assert]{assert()}} that is specifically intended to be
