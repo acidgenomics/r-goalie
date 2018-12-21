@@ -26,7 +26,10 @@ false <- function(...) {
 
 .causeString <- function(x) {
     stopifnot(is(x, "goalie"))
-    paste0(capture.output(print(x))[-1L], collapse = "\n")
+    out <- capture.output(print(x))
+    # Remove the first 2 lines.
+    out <- out[3:length(out)]
+    paste0(out, collapse = "\n")
 }
 
 
