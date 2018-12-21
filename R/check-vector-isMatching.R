@@ -107,7 +107,7 @@ isNotMatchingRegex <- function(x, pattern, .xname = getNameInParent(x)) {
 #' @export
 allAreMatchingFixed <- function(x, pattern, .xname = getNameInParent(x)) {
     ok <- isMatchingFixed(x = x, pattern = pattern, .xname = .xname)
-    if (!all(ok)) return(ok)
+    if (!all(ok)) return(falseFromVector(ok))
     TRUE
 }
 
@@ -117,7 +117,7 @@ allAreMatchingFixed <- function(x, pattern, .xname = getNameInParent(x)) {
 #' @export
 allAreMatchingRegex <- function(x, pattern, .xname = getNameInParent(x)) {
     ok <- isMatchingRegex(x = x, pattern = pattern, .xname = .xname)
-    if (!all(ok)) return(ok)
+    if (!all(ok)) return(falseFromVector(ok))
     TRUE
 }
 
@@ -127,7 +127,7 @@ allAreMatchingRegex <- function(x, pattern, .xname = getNameInParent(x)) {
 #' @export
 allAreNotMatchingFixed <- function(x, pattern, .xname = getNameInParent(x)) {
     ok <- isNotMatchingFixed(x = x, pattern = pattern, .xname = .xname)
-    if (!all(ok)) return(ok)
+    if (!all(ok)) return(falseFromVector(ok))
     TRUE
 }
 
@@ -137,6 +137,6 @@ allAreNotMatchingFixed <- function(x, pattern, .xname = getNameInParent(x)) {
 #' @export
 allAreNotMatchingRegex <- function(x, pattern, .xname = getNameInParent(x)) {
     ok <- isNotMatchingRegex(x = x, pattern = pattern, .xname = .xname)
-    if (!all(ok)) return(ok)
+    if (!all(ok)) return(falseFromVector(ok))
     TRUE
 }
