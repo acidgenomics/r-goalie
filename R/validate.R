@@ -30,8 +30,13 @@
 #'     isFlag("xxx"),
 #'     isPositive(-1)
 #' )
-validate <- function(...) {
+validate <- function(..., msg = NULL) {
     mc <- match.call()[-1L]
+
+    # Remove `msg` from the call prior to evaluation, if necessary.
+    if ("msg" %in% names(mc)) {
+        mc[["msg"]] <- NULL
+    }
 
     # Note that here we're evaluating all of the checks instead of stopping on
     # the first error, like the approach in `assert()`.
@@ -95,6 +100,8 @@ validate <- function(...) {
     if (all(bapply(res, isTRUE))) {
         # Return TRUE boolean flag when all checks pass.
         TRUE
+    } else if (isString(msg)) {
+        msg
     } else {
         # Otherwise, return a character string indicating which checks failed.
         # Note that we need to remove checks that return TRUE here.
