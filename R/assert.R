@@ -42,9 +42,14 @@ assert <- function(...) {
         )
 
         # Ensure that all check functions return boolean.
-        # This behavior differs from stopifnot and is more consistent.
+        # This behavior differs from `stopifnot()` and is more consistent.
         if (!(is.logical(res) && length(res) == 1L)) {
-            stop("All checks must return boolean flags.")
+            stop(paste(
+                "Assert check failure.\n",
+                "Check did not return a boolean flag (TRUE/FALSE).",
+                .Dparse(call),
+                sep = "\n"
+            ))
         }
 
         # Stop on the first assert check failure.
