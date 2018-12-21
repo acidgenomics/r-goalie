@@ -12,6 +12,8 @@ falseFromVector(x)
 \arguments{
 \item{...}{Passed to \link[base:gettextf]{gettextf()} to create a \link{cause} of
 failure message.}
+
+\item{x}{Object.}
 }
 \value{
 \code{goalie}/\code{logical(1L)}.
