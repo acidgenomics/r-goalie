@@ -21,3 +21,18 @@ false <- function(...) {
     cause(x) <- msg[[1L]]
     x
 }
+
+
+
+.causeString <- function(x) {
+    stopifnot(is(x, "goalie"))
+    paste0(capture.output(print(x))[-1L], collapse = "\n")
+}
+
+
+
+#' @rdname false
+#' @export
+falseFromVector <- function(x) {
+    false(.causeString(x))
+}

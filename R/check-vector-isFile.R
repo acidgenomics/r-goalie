@@ -39,7 +39,7 @@ isAFile <- function(x) {
     if (!isTRUE(ok)) return(ok)
 
     ok <- isFile(x)
-    if (!isTRUE(ok)) return(ok)
+    if (!all(ok)) return(ok)
 
     TRUE
 }
