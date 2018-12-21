@@ -262,11 +262,7 @@ isProportion <- function(x, .xname = getNameInParent(x)) {
 #' @export
 allAreInRange <- function() {
     ok <- isInRange(
-        x = x,
-        lower = lower,
-        upper = upper,
-        closed = closed,
-        .xname = .xname
+        x = x, lower = lower, upper = upper, closed = closed, .xname = .xname
     )
     if (!all(ok)) return(falseFromVector(ok))
     TRUE
@@ -279,12 +275,7 @@ formals(allAreInRange) <- formals(isInRange)
 #' @describeIn isInRange Scalar.
 #' @export
 allAreInClosedRange <- function() {
-    ok <- isInClosedRange(
-        x = x,
-        lower = lower,
-        upper = upper,
-        .xname = .xname
-    )
+    ok <- isInClosedRange(x = x, lower = lower, upper = upper, .xname = .xname)
     if (!all(ok)) return(falseFromVector(ok))
     TRUE
 }
@@ -293,36 +284,112 @@ formals(allAreInClosedRange) <- formals(isInClosedRange)
 
 
 
-# allAreInOpenRange
+#' @describeIn isInRange Scalar.
+#' @export
+allAreInOpenRange <- function() {
+    ok <- isInOpenRange(x = x, lower = lower, upper = upper, .xname = .xname)
+    if (!all(ok)) return(falseFromVector(ok))
+    TRUE
+}
+
+formals(allAreInOpenRange) <- formals(isInOpenRange)
 
 
 
-# allAreInLeftOpenRange
+#' @describeIn isInRange Scalar.
+#' @export
+allAreInLeftOpenRange <- function() {
+    ok <- isInLeftOpenRange(
+        x = x, lower = lower, upper = upper, .xname = .xname
+    )
+    if (!all(ok)) return(falseFromVector(ok))
+    TRUE
+}
+
+formals(allAreInLeftOpenRange) <- formals(isInLeftOpenRange)
 
 
 
-# allAreInRightOpenRange
+#' @describeIn isInRange Scalar.
+#' @export
+allAreInRightOpenRange <- function() {
+    ok <- isInRightOpenRange(
+        x = x, lower = lower, upper = upper, .xname = .xname
+    )
+    if (!all(ok)) return(falseFromVector(ok))
+    TRUE
+}
+
+formals(allAreInRightOpenRange) <- formals(isInRightOpenRange)
 
 
 
-# allAreNegative
+#' @describeIn isInRange Scalar.
+#' @export
+allAreNegative <- function() {
+    ok <- isNegative(x = x, .xname = .xname)
+    if (!all(ok)) return(falseFromVector(ok))
+    TRUE
+}
+
+formals(allAreNegative) <- formals(isNegative)
 
 
 
-# allArePositive
+#' @describeIn isInRange Scalar.
+#' @export
+allArePositive <- function() {
+    ok <- isPositive(x = x, .xname = .xname)
+    if (!all(ok)) return(falseFromVector(ok))
+    TRUE
+}
+
+formals(allArePositive) <- formals(isPositive)
 
 
 
-# allAreNonNegative
+#' @describeIn isInRange Scalar.
+#' @export
+allAreNonNegative <- function() {
+    ok <- isNonNegative(x = x, .xname = .xname)
+    if (!all(ok)) return(falseFromVector(ok))
+    TRUE
+}
+
+formals(allAreNonNegative) <- formals(isNonNegative)
 
 
 
-# allAreNonPositive
+#' @describeIn isInRange Scalar.
+#' @export
+allAreNonPositive <- function() {
+    ok <- isNonPositive(x = x, .xname = .xname)
+    if (!all(ok)) return(falseFromVector(ok))
+    TRUE
+}
+
+formals(allAreNonPositive) <- formals(isNonPositive)
 
 
 
-# allArePercentage
+#' @describeIn isInRange Scalar.
+#' @export
+allArePercentage <- function() {
+    ok <- isPercentage(x = x, .xname = .xname)
+    if (!all(ok)) return(falseFromVector(ok))
+    TRUE
+}
+
+formals(allArePercentage) <- formals(isPercentage)
 
 
 
-# allAreProportion
+#' @describeIn isInRange Scalar.
+#' @export
+allAreProportion <- function() {
+    ok <- isProportion(x = x, .xname = .xname)
+    if (!all(ok)) return(falseFromVector(ok))
+    TRUE
+}
+
+formals(allAreProportion) <- formals(isProportion)
