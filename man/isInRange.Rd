@@ -13,6 +13,7 @@
 \alias{isPercentage}
 \alias{isProportion}
 \alias{allAreInRange}
+\alias{allAreInClosedRange}
 \title{Is the input in range?}
 \usage{
 isInRange(x, lower = -Inf, upper = Inf, closed = c(TRUE, TRUE),
@@ -43,6 +44,9 @@ isPercentage(x, .xname = getNameInParent(x))
 isProportion(x, .xname = getNameInParent(x))
 
 allAreInRange(x, lower = -Inf, upper = Inf, closed = c(TRUE, TRUE),
+  .xname = getNameInParent(x))
+
+allAreInClosedRange(x, lower = -Inf, upper = Inf,
   .xname = getNameInParent(x))
 }
 \arguments{
@@ -91,6 +95,8 @@ Is the input in range?
 \item \code{isProportion}: Vectorized.
 
 \item \code{allAreInRange}: Scalar.
+
+\item \code{allAreInClosedRange}: Scalar.
 }}
 
 \section{Intervals}{
