@@ -30,8 +30,13 @@
 #'     isFlag("xxx"),
 #'     isPositive(-1)
 #' )
-validate <- function(...) {
+validate <- function(..., msg = NULL) {
     mc <- match.call()[-1L]
+
+    # Remove `msg` from the call prior to evaluation, if necessary.
+    if ("msg" %in% names(mc)) {
+        mc[["msg"]] <- NULL
+    }
 
     # Note that here we're evaluating all of the checks instead of stopping on
     # the first error, like the approach in `assert()`.
@@ -53,14 +58,25 @@ validate <- function(...) {
                 }
             )
 
-            # Ensure that all check functions return boolean.
-            # This behavior differs from stopifnot and is more consistent.
-            if (!(is.logical(res) && length(res) == 1L)) {
-                stop("All checks must return boolean flags.")
+            # Validity checks must return logical(1) or character(1).
+            # In the event of FALSE, we'll return character(1) automatically.
+            if (!(
+                length(res) == 1L &&
+                (is.logical(res) || is.character(res))
+            )) {
+                stop(paste(
+                    "Validity check failure.",
+                    "Checks must return logical(1) or character(1).",
+                    .Dparse(call),
+                    sep = "\n"
+                ))
             }
 
-            # Stop on the first assert check failure.
-            if (!isTRUE(res)) {
+            if (isTRUE(res)) {
+                # Return TRUE if the validity check passed.
+                return(TRUE)
+            } else if (is.logical(res)) {
+                # Convert an assert check error to a character string.
                 # Always return a `stopifnot()`-like message.
                 msg <- sprintf("%s is not TRUE.", .Dparse(call))
                 # Check for defined cause attribute.
@@ -69,18 +85,32 @@ validate <- function(...) {
                     # Capturing the S3 print method on goalie class here.
                     msg <- c(msg, capture.output(print(res))[-1L])
                 }
-                paste0(msg, collapse = "\n")
-            } else {
-                TRUE
+                msg <- paste0(msg, collapse = "\n")
+            } else if (is.character(res)) {
+                # We're allowing the user to pass character(1) through here,
+                # enabling the use of other check functions (see checkmate
+                # package for examples).
+                msg <- res
             }
+
+            as.character(msg)
         }
     )
 
-    # Return TRUE boolean flag when all checks pass.
-    # Otherwise, return a character string indicating which checks failed.
     if (all(bapply(res, isTRUE))) {
+        # Return TRUE boolean flag when all checks pass.
         TRUE
+    } else if (isString(msg)) {
+        msg
     } else {
-        paste0(unlist(res), collapse = "\n\n")
+        # Otherwise, return a character string indicating which checks failed.
+        # Note that we need to remove checks that return TRUE here.
+        fail <- Filter(Negate(isTRUE), res)
+        # Convert the list to a character vector.
+        fail <- unlist(fail)
+        # Return character string indicating all of the failures.
+        # Using two line breaks here so we can visually distinguish checks
+        # with a cause attribute set.
+        paste0(fail, collapse = "\n\n")
     }
 }

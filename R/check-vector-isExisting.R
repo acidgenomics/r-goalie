@@ -76,7 +76,7 @@ allAreExisting <- function() {
         inherits = inherits,
         .xname = .xname
     )
-    if (!all(ok)) return(ok)
+    if (!all(ok)) return(falseFromVector(ok))
     TRUE
 }
 
@@ -93,7 +93,7 @@ allAreNonExisting <- function() {
         inherits = inherits,
         .xname = .xname
     )
-    if (!all(ok)) return(ok)
+    if (!all(ok)) return(falseFromVector(ok))
     TRUE
 }
 

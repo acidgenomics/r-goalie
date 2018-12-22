@@ -9,6 +9,8 @@
 #'   which should evaluate to `TRUE`. Rather than combining expressions with
 #'   `&&`, separate them by commas so that better error messages can be
 #'   generated.
+#' @param msg `NULL` or `character(1)`.
+#'   Custom message to return on the event of any check failure.
 #'
 #' @seealso
 #' - `stopifnot()`.
@@ -21,8 +23,13 @@
 #'     is.atomic("example"),
 #'     is.character("example")
 #' )
-assert <- function(...) {
+assert <- function(..., msg = NULL) {
     mc <- match.call()[-1L]
+
+    # Remove `msg` from the call prior to evaluation, if necessary.
+    if ("msg" %in% names(mc)) {
+        mc[["msg"]] <- NULL
+    }
 
     # Note that we're using `i` along with `...elt()` here to eval the call.
     for (i in seq_along(mc)) {
@@ -42,25 +49,33 @@ assert <- function(...) {
         )
 
         # Ensure that all check functions return boolean.
-        # This behavior differs from stopifnot and is more consistent.
+        # This behavior differs from `stopifnot()` and is more consistent.
         if (!(is.logical(res) && length(res) == 1L)) {
-            stop("All checks must return boolean flags.")
+            stop(paste(
+                "Assert check failure.\n",
+                "Check did not return a boolean flag (TRUE/FALSE).",
+                .Dparse(call),
+                sep = "\n"
+            ))
         }
 
         # Stop on the first assert check failure.
         if (!isTRUE(res)) {
-            # Always return a `stopifnot()`-like error.
-            msg <- c(
-                "Assert failure.",
-                sprintf("%s is not TRUE.", .Dparse(call))
-            )
-            # Check for defined cause attribute.
-            cause <- cause(res)
-            if (!is.null(cause)) {
-                # Capturing the S3 print method on goalie class here.
-                msg <- c(msg, capture.output(print(res))[-1L])
+            # Note that we're allowing the user to define the message.
+            if (!isString(msg)) {
+                # Always return a `stopifnot()`-like error.
+                msg <- c(
+                    "Assert failure.",
+                    sprintf("%s is not TRUE.", .Dparse(call))
+                )
+                # Check for defined cause attribute.
+                cause <- cause(res)
+                if (!is.null(cause)) {
+                    # Capturing the S3 print method on goalie class here.
+                    msg <- c(msg, capture.output(print(res))[-1L])
+                }
+                msg <- paste0(msg, collapse = "\n")
             }
-            msg <- paste0(msg, collapse = "\n")
             stop(simpleError(msg, call = sys.call(-1L)))
         }
     }
