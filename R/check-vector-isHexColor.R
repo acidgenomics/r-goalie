@@ -38,6 +38,6 @@ isHexColor <- function(x, .xname = getNameInParent(x)) {
 #' @export
 allAreHexColors <- function(x, .xname = getNameInParent(x)) {
     ok <- isHexColor(x = x, .xname = .xname)
-    if (!all(ok)) return(ok)
+    if (!all(ok)) return(falseFromVector(ok))
     TRUE
 }

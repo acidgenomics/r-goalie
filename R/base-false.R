@@ -4,6 +4,7 @@
 #' [attribute][base::attributes].
 #'
 #' @export
+#' @inheritParams params
 #'
 #' @param ... Passed to [gettextf()][base::gettextf] to create a [cause] of
 #'   failure message.
@@ -20,4 +21,22 @@ false <- function(...) {
     x <- FALSE
     cause(x) <- msg[[1L]]
     x
+}
+
+
+
+.causeString <- function(x) {
+    stopifnot(is(x, "goalie"))
+    out <- capture.output(print(x))
+    # Remove the first 2 lines.
+    out <- out[3L:length(out)]
+    paste0(out, collapse = "\n")
+}
+
+
+
+#' @rdname false
+#' @export
+falseFromVector <- function(x) {
+    false(.causeString(x))
 }

@@ -1,24 +1,5 @@
-#' Capitalize
-#'
-#' Capitalize each character string in a vector.
-#'
-#' @export
-#'
-#' @param x `vector` of `character` strings to be capitalized.
-#'
-#' @seealso `R.utils::capitalize()`.
-#'
-#' ```
-#' getS3method(
-#'     f = "capitalize",
-#'     class = "default",
-#'     envir = asNamespace("R.utils")
-#' )
-#' ```
-#'
-#' @examples
-#' capitalize(c("hello", "world"))
-capitalize <- function(x) {
+# @seealso `R.utils::capitalize()`.
+.capitalize <- function(x) {
     n <- length(x)
     if (n == 0L) {
         return(x)

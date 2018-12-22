@@ -66,7 +66,7 @@ used inside of an S4 validity method definition." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">goalie</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.2</span>
       </span>
     </div>
 
@@ -117,7 +117,7 @@ used inside of an S4 validity method definition.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>validate</span>(<span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>validate</span>(<span class='no'>...</span>, <span class='kw'>msg</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -128,6 +128,11 @@ used inside of an S4 validity method definition.</p>
 which should evaluate to <code>TRUE</code>. Rather than combining expressions with
 <code>&amp;&amp;</code>, separate them by commas so that better error messages can be
 generated.</p></td>
+    </tr>
+    <tr>
+      <th>msg</th>
+      <td><p><code>NULL</code> or <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>.
+Custom message to return on the event of any check failure.</p></td>
     </tr>
     </table>
     
@@ -158,7 +163,7 @@ detailed information on S4 validity methods.</p>
 <span class='co'>## Fail ====</span>
 <span class='fu'>validate</span>(
     <span class='fu'><a href='isFlag.html'>isFlag</a></span>(<span class='st'>"xxx"</span>),
-    <span class='fu'><a href='ranges.html'>isPositive</a></span>(-<span class='fl'>1</span>)
+    <span class='fu'><a href='isInRange.html'>isPositive</a></span>(-<span class='fl'>1</span>)
 )</div><div class='output co'>#&gt; [1] "isFlag(\"xxx\") is not TRUE.\nCause of failure:\n\"xxx\" is not a boolean flag (TRUE/FALSE).\n\nisPositive(-1) is not TRUE.\nCause of failure:\ntoo low"</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
