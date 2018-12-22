@@ -29,7 +29,7 @@ false <- function(...) {
     stopifnot(is(x, "goalie"))
     out <- capture.output(print(x))
     # Remove the first 2 lines.
-    out <- out[3:length(out)]
+    out <- out[3L:length(out)]
     paste0(out, collapse = "\n")
 }
 
