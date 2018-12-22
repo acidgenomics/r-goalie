@@ -15,11 +15,14 @@
 #' isIntegerish(seq_len(2L))
 #' isIntegerish(c(1, 2))
 isIntegerish <- function(x, .xname = getNameInParent(x)) {
-    if (is.integer(x)) {
-        return(TRUE)
-    }
     if (!is.numeric(x)) {
         return(false("%s is not numeric.", .xname))
+    }
+    if (any(is.na(x))) {
+        return(false("%s contains NA.", .xname))
+    }
+    if (is.integer(x) || is.infinite(x)) {
+        return(TRUE)
     }
     bapply(
         X = x,

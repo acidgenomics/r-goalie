@@ -47,7 +47,7 @@ isGGScale <- function(
     ok <- isAll(
         x = x,
         classes = c(
-            paste0("Scale", capitalize(scale)),
+            paste0("Scale", .capitalize(scale)),
             "Scale",
             "ggproto",
             "gg"

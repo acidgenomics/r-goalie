@@ -42,7 +42,7 @@ isAURL <- function(x, .xname = getNameInParent(x)) {
     if (!isTRUE(ok)) return(ok)
 
     ok <- isURL(x = x, .xname = .xname)
-    if (!isTRUE(ok)) return(ok)
+    if (!all(ok)) return(falseFromVector(ok))
 
     TRUE
 }
@@ -53,6 +53,6 @@ isAURL <- function(x, .xname = getNameInParent(x)) {
 #' @export
 allAreURLs <- function(x, .xname = getNameInParent(x)) {
     ok <- isURL(x = x, .xname = .xname)
-    if (!all(ok)) return(ok)
+    if (!all(ok)) return(falseFromVector(ok))
     TRUE
 }
