@@ -18,8 +18,8 @@ isIntegerish <- function(x, .xname = getNameInParent(x)) {
     if (!is.numeric(x)) {
         return(false("%s is not numeric.", .xname))
     }
-    if (is.na(x)) {
-        return(false("%s is NA.", .xname))
+    if (any(is.na(x))) {
+        return(false("%s contains NA.", .xname))
     }
     if (is.integer(x) || is.infinite(x)) {
         return(TRUE)
