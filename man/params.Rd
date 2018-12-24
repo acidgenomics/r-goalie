@@ -34,10 +34,18 @@ If set to \code{TRUE}, \code{x} may also be \code{NULL}.}
 \item{pattern}{\code{character(1)}.
 Pattern to use for matching.}
 
+\item{return}{\code{character(1)}.
+Return type. Uses \link[base:match.arg]{match.arg()} internally and defaults to
+the first argument in the \code{character} vector.}
+
 \item{upper}{\code{numeric(1)}.
 Upper boundary.}
 
 \item{value}{Value.}
+
+\item{verbose}{\code{logical(1)}.
+Run the function with verbose messages?
+\emph{It is only recommended to enable this when debugging.}}
 
 \item{x}{Object.}
 
