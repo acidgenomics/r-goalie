@@ -16,6 +16,10 @@ Names of formal arguments to remove from \code{args} list.}
 
 \item{which}{the frame number if non-negative, the number of frames
     to go back if negative.}
+
+\item{verbose}{\code{logical(1)}.
+Run the function with verbose messages?
+\emph{It is only recommended to enable this when debugging.}}
 }
 \value{
 \code{list}.
