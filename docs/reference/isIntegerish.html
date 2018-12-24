@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Is the input integer(ish)? — isInt • goalie</title>
+<title>Is the input integer(ish)? — isIntegerish • goalie</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -32,7 +32,7 @@
 
   <link href="../extra.css" rel="stylesheet">
   
-<meta property="og:title" content="Is the input integer(ish)? — isInt" />
+<meta property="og:title" content="Is the input integer(ish)? — isIntegerish" />
 
 <meta property="og:description" content="Check for valid input of either explicit (e.g. 1L) and/or implict
 (e.g. 1) integer." />
@@ -66,7 +66,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">goalie</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.3</span>
       </span>
     </div>
 
@@ -106,7 +106,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Is the input integer(ish)?</h1>
-    <small class="dont-index">Source: <a href='https://github.com/steinbaugh/goalie/blob/master/R/check-scalar-isScalar.R'><code>R/check-scalar-isScalar.R</code></a>, <a href='https://github.com/steinbaugh/goalie/blob/master/R/check-vector-isIntegerish.R'><code>R/check-vector-isIntegerish.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/steinbaugh/goalie/blob/master/R/check-vector-isIntegerish.R'><code>R/check-vector-isIntegerish.R</code></a></small>
     <div class="hidden name"><code>isIntegerish.Rd</code></div>
     </div>
 
@@ -117,9 +117,9 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>isInt</span>(<span class='no'>x</span>)
+    <pre class="usage"><span class='fu'>isIntegerish</span>(<span class='no'>x</span>, <span class='kw'>.xname</span> <span class='kw'>=</span> <span class='fu'><a href='getNameInParent.html'>getNameInParent</a></span>(<span class='no'>x</span>))
 
-<span class='fu'>isIntegerish</span>(<span class='no'>x</span>, <span class='kw'>.xname</span> <span class='kw'>=</span> <span class='fu'><a href='getNameInParent.html'>getNameInParent</a></span>(<span class='no'>x</span>))</pre>
+<span class='fu'>isInt</span>(<span class='no'>x</span>, <span class='kw'>nullOK</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -132,6 +132,11 @@
       <th>.xname</th>
       <td><p><em>Not intended to be used directly.</em></p></td>
     </tr>
+    <tr>
+      <th>nullOK</th>
+      <td><p><code><a href='https://www.rdocumentation.org/packages/base/topics/logical'>logical(1)</a></code>.
+If set to <code>TRUE</code>, <code>x</code> may also be <code>NULL</code>.</p></td>
+    </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
@@ -142,7 +147,8 @@
     <h2 class="hasAnchor" id="functions"><a class="anchor" href="#functions"></a>Functions</h2>
 
     <ul>
-<li><p><code>isInt</code>: Alias for <code><a href='isScalar.html'>isScalarIntegerish()</a></code>.</p></li>
+<li><p><code>isIntegerish</code>: Vectorized.</p></li>
+<li><p><code>isInt</code>: Scalar.</p></li>
 </ul>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
