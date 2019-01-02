@@ -1,4 +1,4 @@
-# @seealso `R.utils::capitalize()`.
+# @seealso `syntactic::capitalize()`.
 .capitalize <- function(x) {
     n <- length(x)
     if (n == 0L) {
