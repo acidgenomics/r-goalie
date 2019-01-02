@@ -3,7 +3,7 @@
 #' Check for valid input of either explicit (e.g. `1L`) and/or implict
 #' (e.g. `1`) `integer`.
 #'
-#' @export
+#' @name isIntegerish
 #' @inherit params
 #'
 #' @seealso
@@ -14,12 +14,18 @@
 #' @examples
 #' isIntegerish(seq_len(2L))
 #' isIntegerish(c(1, 2))
+NULL
+
+
+
+#' @describeIn isIntegerish Vectorized.
+#' @export
 isIntegerish <- function(x, .xname = getNameInParent(x)) {
     if (!is.numeric(x)) {
         return(false("%s is not numeric.", .xname))
     }
-    if (is.na(x)) {
-        return(false("%s is NA.", .xname))
+    if (any(is.na(x))) {
+        return(false("%s contains NA.", .xname))
     }
     if (is.integer(x) || is.infinite(x)) {
         return(TRUE)
@@ -34,4 +40,17 @@ isIntegerish <- function(x, .xname = getNameInParent(x)) {
             ))
         }
     )
+}
+
+
+
+#' @describeIn isIntegerish Scalar.
+#' @export
+isInt <- function(x, nullOK = FALSE) {
+    # Conditionally allow NULL.
+    if (isTRUE(nullOK) && is.null(x)) {
+        return(TRUE)
+    }
+
+    isScalarIntegerish(x)
 }
