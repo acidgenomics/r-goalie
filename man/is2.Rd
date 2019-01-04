@@ -14,6 +14,9 @@ Object class.}
 
 \item{.xname}{\emph{Not intended to be used directly.}}
 }
+\value{
+\code{logical(1)}.
+}
 \description{
 Alternate version of \code{\link[methods:is]{methods::is()}} that supports multiple checks in a
 single call.

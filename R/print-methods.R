@@ -2,6 +2,8 @@
 #'
 #' @name print
 #' @inheritParams params
+#'
+#' @return Print command and return invisibly.
 NULL
 
 

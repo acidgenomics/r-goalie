@@ -15,6 +15,9 @@ generated.}
 \item{msg}{\code{NULL} or \code{character(1)}.
 Custom message to return on the event of any check failure.}
 }
+\value{
+\code{TRUE} on success, error on failure.
+}
 \description{
 \code{\link[=assert]{assert()}} is a drop-in replacement for \code{\link[base:stopifnot]{stopifnot()}}
 supporting more informative error messages.
