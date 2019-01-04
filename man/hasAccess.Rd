@@ -23,6 +23,9 @@ String containing any of these characters, including in combination:
 
 Write and executable status cannot be checked on Windows.}
 }
+\value{
+\code{logical}.
+}
 \description{
 Works for either file or directory paths.
 }
