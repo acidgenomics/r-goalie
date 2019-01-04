@@ -9,6 +9,9 @@
 #' @param ... Additional arguments passed to `fun`.
 #'
 #' @seealso `assertive.base::call_and_name()`.
+#'
+#' @return The result of `fun(x, ...)`, with the names given by the argument
+#'   `x`.
 callAndName <- function(fun, x, ...) {
     y <- fun(x, ...)
     dim(y) <- dim(x)

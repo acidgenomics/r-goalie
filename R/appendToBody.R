@@ -11,6 +11,8 @@
 #'
 #' @seealso [Stack Overflow](https://stackoverflow.com/questions/38732663)
 #'
+#' @return `function`.
+#'
 #' @examples
 #' x <- function() {
 #'     "hello"

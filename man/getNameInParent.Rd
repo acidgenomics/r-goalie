@@ -17,6 +17,9 @@ Variable to get the name of.}
 If \code{TRUE}, percent signs are doubled, making the value suitable for use
 with \link[base:sprintf]{sprintf()}.}
 }
+\value{
+\code{character(1)}.
+}
 \description{
 Get the name of a variable defined in the parent frame
 }

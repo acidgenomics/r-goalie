@@ -13,6 +13,10 @@ callAndName(fun, x, ...)
 
 \item{...}{Additional arguments passed to \code{fun}.}
 }
+\value{
+The result of \code{fun(x, ...)}, with the names given by the argument
+\code{x}.
+}
 \description{
 Calls a function and names the result with the first argument.
 }

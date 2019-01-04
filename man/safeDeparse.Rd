@@ -12,6 +12,9 @@ Any R expression.}
 
 \item{...}{Passed to \link[base:deparse]{deparse()}.}
 }
+\value{
+\code{character(1)}.
+}
 \description{
 Turn unevaluated expressions into character strings.
 }

@@ -16,6 +16,9 @@ Quoted values (i.e. call) to slot in the function body.}
 Where to append in the \code{body}.
 The default of \code{1} places directly after the opening curly bracket.}
 }
+\value{
+\code{function}.
+}
 \description{
 Append values to function body
 }
