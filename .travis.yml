@@ -1,19 +1,12 @@
 language: r
 cache: packages
-sudo: false
-bioc_required: true
 
 matrix:
   include:
   - os: linux
     r: bioc-release
-    warnings_are_errors: true
   - os: osx
     r: bioc-release
-    fortran: false
-    latex: false
-    warnings_are_errors: true
-  fast_finish: true
 
 env:
   global:

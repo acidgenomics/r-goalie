@@ -15,6 +15,10 @@ generated.}
 \item{msg}{\code{NULL} or \code{character(1)}.
 Custom message to return on the event of any check failure.}
 }
+\value{
+\code{TRUE} on success, or \code{character(1)} on failure, containing an error
+message.
+}
 \description{
 \code{\link[=validate]{validate()}} is a variant of \code{\link[=assert]{assert()}} that is specifically intended to be
 used inside of an S4 validity method definition.

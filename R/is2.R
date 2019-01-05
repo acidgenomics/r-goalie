@@ -13,6 +13,8 @@
 #' - `assertive.base::is2()`.
 #' - `methods::is()`.
 #'
+#' @return `logical(1)`.
+#'
 #' @examples
 #' is2(1:5, "character")
 #' is2(matrix(1:5), "character")

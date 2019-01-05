@@ -19,6 +19,8 @@
 #' - `file.access()`.
 #' - `checkmate::checkAccess()`.
 #'
+#' @return `logical`.
+#'
 #' @examples
 #' ## Pass ====
 #' hasAccess(c("~", "."))
