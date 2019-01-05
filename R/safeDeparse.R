@@ -15,6 +15,8 @@
 #' - `assertive.base::safe_deparse()`.
 #' - `deparse()`.
 #'
+#' @return `character(1)`.
+#'
 #' @examples
 #' safeDeparse(is.character("a"))
 safeDeparse <- function(expr, ...) {

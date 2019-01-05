@@ -18,6 +18,8 @@
 #' - `assertive.base::assert_engine()`.
 #' - `checkmate::assert()`.
 #'
+#' @return `TRUE` on success, error on failure.
+#'
 #' @examples
 #' assert(
 #'     is.atomic("example"),
