@@ -62,7 +62,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">goalie</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.3</span>
       </span>
     </div>
 
@@ -105,6 +105,31 @@
       <small>Source: <a href='https://github.com/steinbaugh/goalie/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
+    <div id="goalie-0-2-3-2019-01-04" class="section level2">
+<h2 class="hasAnchor">
+<a href="#goalie-0-2-3-2019-01-04" class="anchor"></a>goalie 0.2.3 (2019-01-04)</h2>
+<ul>
+<li>Reorganized base engine function files, getting rid of the <code>base-</code> prefix.</li>
+<li>Added conditional <code>NULL</code> support where applicable, with <code>nullOK</code> formal. Applies to <code><a href="../reference/isIntegerish.html">isInt()</a></code>, <code><a href="../reference/isScalar.html">isNumber()</a></code>, <code><a href="../reference/isString.html">isString()</a></code>, for example.</li>
+<li>Migrated some low-level functions from <a href="https://steinbaugh.com/basejump/">basejump</a> that are useful for assertive checks: <code><a href="../reference/matchArgsToDoCall.html">matchArgsToDoCall()</a></code>, <code><a href="../reference/standardizeCall.html">standardizeCall()</a></code>, and the <code>MethodDefinition</code> family, which includes <code><a href="../reference/MethodDefinition.html">methodFunction()</a></code>, <code><a href="../reference/MethodDefinition.html">methodFormals()</a></code>, <code><a href="../reference/MethodDefinition.html">hasLocal()</a></code>, <code><a href="../reference/MethodDefinition.html">extractLocal()</a></code>. These will get re-exported in <a href="https://steinbaugh.com/basejump/">basejump</a>.</li>
+<li>General documentation improvements.</li>
+</ul>
+</div>
+    <div id="goalie-0-2-2-2018-12-12" class="section level2">
+<h2 class="hasAnchor">
+<a href="#goalie-0-2-2-2018-12-12" class="anchor"></a>goalie 0.2.2 (2018-12-12)</h2>
+<ul>
+<li>
+<code><a href="../reference/assert.html">assert()</a></code>: Added <code>msg</code> formal. Improved error message when a user inputs check functions that don’t return boolean.</li>
+<li>
+<code>capitalize()</code>: Simplified documentation, referring the user to the documentation provided in <a href="https://github.com/steinbaugh/syntactic/">syntactic</a> package.</li>
+<li>
+<code><a href="../reference/false.html">falseFromVector()</a></code>: Newly exported function.</li>
+<li>
+<code>isInRange</code> family: Added scalar variants for all vectorized functions.</li>
+<li>Improved scalar return consistency in functions where applicable, using <code><a href="../reference/false.html">falseFromVector()</a></code> internally.</li>
+</ul>
+</div>
     <div id="goalie-0-2-1-2018-12-20" class="section level2">
 <h2 class="hasAnchor">
 <a href="#goalie-0-2-1-2018-12-20" class="anchor"></a>goalie 0.2.1 (2018-12-20)</h2>
@@ -152,6 +177,8 @@
     <div id="tocnav">
       <h2>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
+        <li><a href="#goalie-0-2-3-2019-01-04">0.2.3</a></li>
+        <li><a href="#goalie-0-2-2-2018-12-12">0.2.2</a></li>
         <li><a href="#goalie-0-2-1-2018-12-20">0.2.1</a></li>
         <li><a href="#goalie-0-2-0-2018-12-12">0.2.0</a></li>
         <li><a href="#goalie-0-1-2-2018-11-21">0.1.2</a></li>

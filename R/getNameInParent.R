@@ -12,6 +12,8 @@
 #' - `assertive.base::get_name_in_parent()`.
 #' - `checkmate::vname()`.
 #'
+#' @return `character(1)`.
+#'
 #' @examples
 #' getNameInParent(test)
 getNameInParent <- function(x, escapePercent = TRUE) {

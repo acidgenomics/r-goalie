@@ -115,15 +115,3 @@ isScalarCharacter <- function(x) {
 isScalarLogical <- function(x) {
     isScalar(x) && is.logical(x)
 }
-
-
-
-#' @describeIn isScalar Alias for [isScalarNumeric()].
-#' @export
-isNumber <- isScalarNumeric
-
-
-
-#' @describeIn isIntegerish Alias for [isScalarIntegerish()].
-#' @export
-isInt <- isScalarIntegerish

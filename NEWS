@@ -1,3 +1,28 @@
+## goalie 0.2.3 (2019-01-04)
+
+- Reorganized base engine function files, getting rid of the `base-` prefix.
+- Added conditional `NULL` support where applicable, with `nullOK` formal.
+  Applies to `isInt()`, `isNumber()`, `isString()`, for example.
+- Migrated some low-level functions from [basejump][] that are useful for
+  assertive checks: `matchArgsToDoCall()`, `standardizeCall()`, and the
+  `MethodDefinition` family, which includes `methodFunction()`,
+  `methodFormals()`, `hasLocal()`, `extractLocal()`. These will get re-exported
+  in [basejump][].
+- General documentation improvements.
+
+
+## goalie 0.2.2 (2018-12-12)
+
+- `assert()`: Added `msg` formal. Improved error message when a user inputs
+  check functions that don't return boolean.
+- `capitalize()`: Simplified documentation, referring the user to the
+  documentation provided in [syntactic][] package.
+- `falseFromVector()`: Newly exported function.
+- `isInRange` family: Added scalar variants for all vectorized functions.
+- Improved scalar return consistency in functions where applicable, using
+  `falseFromVector()` internally.
+
+
 ## goalie 0.2.1 (2018-12-20)
 
 - The approach to the package update is heavily influenced by the conventions
@@ -28,14 +53,18 @@
 - `isDir()` and `isFile()` now import `R.utils::isDirectory()` and
   `R.utils::isFile()`.
 
+
 ## goalie 0.1.1 (2018-11-14)
 
 - `areUniqueGeneNames()` now returns `boolean` as expected.
 - Improved error message for `assertAreUniqueGeneNames()`.
+
 
 ## goalie 0.1.0 (2018-11-11)
 
 - Initial release, migrating assertive check functions from [basejump][]
   package.
 
+
 [basejump]: https://steinbaugh.com/basejump/
+[syntactic]: https://github.com/steinbaugh/syntactic/

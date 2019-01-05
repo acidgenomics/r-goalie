@@ -12,6 +12,9 @@
 
 \item{...}{Additional arguments.}
 }
+\value{
+Print command and return invisibly.
+}
 \description{
 Print methods for objects with a cause attribute
 }
