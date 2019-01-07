@@ -10,7 +10,7 @@ safeDeparse(expr, ...)
 \item{expr}{\code{expression}.
 Any R expression.}
 
-\item{...}{Passed to \link[base:deparse]{deparse()}.}
+\item{...}{Passed to \code{\link[base:deparse]{deparse()}}.}
 }
 \value{
 \code{character(1)}.
@@ -19,8 +19,8 @@ Any R expression.}
 Turn unevaluated expressions into character strings.
 }
 \details{
-\code{\link[=safeDeparse]{safeDeparse()}} is modified version of \link[base:deparse]{deparse()} that always
-returns \code{character(1)}.
+\code{\link[=safeDeparse]{safeDeparse()}} is modified version of \code{\link[base:deparse]{deparse()}} that
+always returns \code{character(1)}.
 }
 \examples{
 safeDeparse(is.character("a"))
