@@ -21,11 +21,9 @@ Run the function with verbose messages?
 }
 \value{
 \itemize{
-\item \code{call}: \code{call}.
-Matched call.
-\item \code{list}: \code{list}.
-Verbose list that includes additional information about how the call was
-standardized.
+\item \code{call}: \code{call}. Matched call.
+\item \code{list}: \code{list}. Verbose list that includes additional information about how
+the call was standardized.
 }
 }
 \description{

@@ -10,7 +10,7 @@ false(...)
 falseFromVector(x)
 }
 \arguments{
-\item{...}{Passed to \link[base:gettextf]{gettextf()} to create a \link{cause} of
+\item{...}{Passed to \code{\link[base:gettextf]{gettextf()}} to create a \link{cause} of
 failure message.}
 
 \item{x}{Object.}
@@ -19,7 +19,7 @@ failure message.}
 \code{goalie}/\code{logical(1L)}.
 }
 \description{
-Always returns the value \code{FALSE}, with a \code{cause}
+Always returns the value \code{FALSE}, with a \link{cause}
 \link[base:attributes]{attribute}.
 }
 \seealso{

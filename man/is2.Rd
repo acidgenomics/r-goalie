@@ -18,7 +18,7 @@ Object class.}
 \code{logical(1)}.
 }
 \description{
-Alternate version of \code{\link[methods:is]{methods::is()}} that supports multiple checks in a
+Alternate version of \code{\link[methods:is]{is()}} that supports multiple checks in a
 single call.
 }
 \details{

@@ -3,7 +3,7 @@
 
 
 
-#' Deprecated Functions
+#' Deprecated functions
 #' @name deprecated
 #' @keywords internal
 #' @inheritParams params
@@ -12,7 +12,7 @@ NULL
 
 
 
-#' Defunct Functions
+#' Defunct functions
 #' @name defunct
 #' @keywords internal
 #' @inheritParams params

@@ -8,11 +8,9 @@
 #' @inheritParams params
 #'
 #' @return
-#' - `call`: `call`.
-#'   Matched call.
-#' - `list`: `list`.
-#'   Verbose list that includes additional information about how the call was
-#'   standardized.
+#' - `call`: `call`. Matched call.
+#' - `list`: `list`. Verbose list that includes additional information about how
+#'   the call was standardized.
 #'
 #' @seealso
 #' - `match.call()`.
