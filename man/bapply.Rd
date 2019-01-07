@@ -19,7 +19,7 @@ An assert check function that returns \code{logical(1)} boolean flag
 \code{logical}.
 }
 \description{
-\code{\link[=bapply]{bapply()}} is a wrapper for \link[base:vapply]{vapply()} that enforces
+\code{\link[=bapply]{bapply()}} is a wrapper for \code{\link[base:vapply]{vapply()}} that enforces
 \code{FUN.VALUE = logical(1)}.
 }
 \note{

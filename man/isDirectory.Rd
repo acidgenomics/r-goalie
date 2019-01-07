@@ -5,6 +5,8 @@
 \alias{isDir}
 \alias{isADirectory}
 \alias{isADir}
+\alias{allAreDirectories}
+\alias{allAreDirs}
 \title{Does the input contain a directory?}
 \usage{
 isDirectory(x)
@@ -14,6 +16,10 @@ isDir(x)
 isADirectory(x)
 
 isADir(x)
+
+allAreDirectories(x)
+
+allAreDirs(x)
 }
 \arguments{
 \item{x}{Object.}
@@ -33,6 +39,10 @@ Does the input contain a directory?
 \item \code{isADirectory}: Scalar.
 
 \item \code{isADir}: Short alias for \code{\link[=isADirectory]{isADirectory()}}.
+
+\item \code{allAreDirectories}: Scalar variant.
+
+\item \code{allAreDirs}: Short alias for \code{\link[=allAreDirectories]{allAreDirectories()}}.
 }}
 
 \examples{
