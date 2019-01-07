@@ -1,12 +1,13 @@
 #' Get or set the `cause` attribute
 #'
-#' Gets or sets the `cause` (of failure) [attribute][base::attributes] of a
+#' Gets or sets the [cause] (of failure) [attribute][base::attributes] of a
 #' variable.
 #'
 #' @export
 #' @inheritParams params
 #'
-#' @return `character(1)`. Cause attribute.
+#' @return `character(1)`.
+#' Cause attribute.
 #'
 #' @seealso
 #' - `assertive.base::cause()`.

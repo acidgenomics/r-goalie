@@ -9,9 +9,11 @@ validateClasses(object, expected, subset = FALSE)
 \arguments{
 \item{object}{Object.}
 
-\item{expected}{\code{list}. Named list of expected classes per slot.}
+\item{expected}{\code{list}.
+Named list of expected classes per slot.}
 
-\item{subset}{\code{logical(1)}. Only check a subset of slots in the object.}
+\item{subset}{\code{logical(1)}.
+Only check a subset of slots in the object.}
 }
 \value{
 \code{logical(1)} (\code{TRUE}) on sucess or \code{character(1)} containing
@@ -21,9 +23,9 @@ informative message on failure.
 Validity check capable of validating multiple slots in a single call.
 }
 \details{
-To be used inside S4 \code{\link[methods:setValidity]{methods::setValidity()}} call or with \code{\link[=validate]{validate()}}.
-Particularly useful for checking multiple slotted objects inside
-\link[S4Vectors:metadata]{metadata}.
+To be used inside S4 \code{\link[methods:setValidity]{setValidity()}} call or with
+\code{\link[=validate]{validate()}}. Particularly useful for checking multiple slotted objects
+inside \code{\link[S4Vectors:metadata]{metadata()}}.
 }
 \examples{
 validateClasses(
@@ -41,8 +43,8 @@ validateClasses(
 }
 \seealso{
 \itemize{
-\item \code{validate}.
-\item \code{methods::setValidity}.
-\item \code{methods::validObject}.
+\item \code{validate()}.
+\item \code{methods::setValidity()}.
+\item \code{methods::validObject()}.
 }
 }

@@ -3,11 +3,14 @@
 \name{isFile}
 \alias{isFile}
 \alias{isAFile}
+\alias{allAreFiles}
 \title{Does the input contain a file?}
 \usage{
 isFile(x)
 
 isAFile(x)
+
+allAreFiles(x)
 }
 \arguments{
 \item{x}{Object.}
@@ -23,6 +26,8 @@ Does the input contain a file?
 \item \code{isFile}: Vectorized.
 
 \item \code{isAFile}: Scalar variant.
+
+\item \code{allAreFiles}: Scalar variant.
 }}
 
 \examples{

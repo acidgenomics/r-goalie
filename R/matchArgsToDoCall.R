@@ -2,8 +2,8 @@
 #'
 #' @inheritParams standardizeCall
 #' @inheritParams base::do.call
-#' @inheritParams params
 #' @export
+#' @inheritParams params
 #'
 #' @param removeFormals `character`.
 #'   Names of formal arguments to remove from `args` list.

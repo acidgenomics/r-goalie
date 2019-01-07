@@ -15,7 +15,7 @@ Variable to get the name of.}
 
 \item{escapePercent}{\code{logical(1)}.
 If \code{TRUE}, percent signs are doubled, making the value suitable for use
-with \link[base:sprintf]{sprintf()}.}
+with \code{\link[base:sprintf]{sprintf()}}.}
 }
 \value{
 \code{character(1)}.
