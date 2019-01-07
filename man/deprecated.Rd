@@ -7,7 +7,7 @@
 \alias{containsHexColors}
 \alias{containsURL}
 \alias{containsAURL}
-\title{Deprecated Functions}
+\title{Deprecated functions}
 \usage{
 containsAlpha(x, .xname = getNameInParent(x))
 
@@ -28,6 +28,6 @@ containsAURL(x, .xname = getNameInParent(x))
 \code{.Deprecated}.
 }
 \description{
-Deprecated Functions
+Deprecated functions
 }
 \keyword{internal}

@@ -2,11 +2,11 @@
 % Please edit documentation in R/deprecated.R
 \name{defunct}
 \alias{defunct}
-\title{Defunct Functions}
+\title{Defunct functions}
 \value{
 \code{.Defunct}.
 }
 \description{
-Defunct Functions
+Defunct functions
 }
 \keyword{internal}

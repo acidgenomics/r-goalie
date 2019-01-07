@@ -1,12 +1,12 @@
 #' Return `FALSE` scalar with cause of failure
 #'
-#' Always returns the value `FALSE`, with a `cause`
+#' Always returns the value `FALSE`, with a [cause]
 #' [attribute][base::attributes].
 #'
 #' @export
 #' @inheritParams params
 #'
-#' @param ... Passed to [gettextf()][base::gettextf] to create a [cause] of
+#' @param ... Passed to [`gettextf()`][base::gettextf] to create a [cause] of
 #'   failure message.
 #'
 #' @return `goalie`/`logical(1L)`.

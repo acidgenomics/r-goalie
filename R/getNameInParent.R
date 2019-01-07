@@ -6,7 +6,7 @@
 #'   Variable to get the name of.
 #' @param escapePercent `logical(1)`.
 #'   If `TRUE`, percent signs are doubled, making the value suitable for use
-#'   with [sprintf()][base::sprintf].
+#'   with [`sprintf()`][base::sprintf].
 #'
 #' @seealso
 #' - `assertive.base::get_name_in_parent()`.

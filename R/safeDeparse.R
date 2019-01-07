@@ -2,14 +2,14 @@
 #'
 #' Turn unevaluated expressions into character strings.
 #'
-#' [safeDeparse()] is modified version of [deparse()][base::deparse] that always
-#' returns `character(1)`.
+#' [safeDeparse()] is modified version of [`deparse()`][base::deparse] that
+#' always returns `character(1)`.
 #'
 #' @export
 #'
 #' @param expr `expression`.
 #'   Any R expression.
-#' @param ... Passed to [deparse()][base::deparse].
+#' @param ... Passed to [`deparse()`][base::deparse].
 #'
 #' @seealso
 #' - `assertive.base::safe_deparse()`.

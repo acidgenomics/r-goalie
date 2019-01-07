@@ -54,3 +54,19 @@ isADirectory <- function(x) {
 #' @describeIn isDirectory Short alias for [isADirectory()].
 #' @export
 isADir <- isADirectory
+
+
+
+#' @describeIn isDirectory Scalar variant.
+#' @export
+allAreDirectories <- function(x) {
+    ok <- isDirectory(x)
+    if (!all(ok)) return(falseFromVector(ok))
+    TRUE
+}
+
+
+
+#' @describeIn isDirectory Short alias for [allAreDirectories()].
+#' @export
+allAreDirs <- allAreDirectories
