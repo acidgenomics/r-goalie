@@ -15,10 +15,11 @@ cause(x) <- value
 \item{value}{Value.}
 }
 \value{
-\code{character(1)}. Cause attribute.
+\code{character(1)}.
+Cause attribute.
 }
 \description{
-Gets or sets the \code{cause} (of failure) \link[base:attributes]{attribute} of a
+Gets or sets the \link{cause} (of failure) \link[base:attributes]{attribute} of a
 variable.
 }
 \examples{

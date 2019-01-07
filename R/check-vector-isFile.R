@@ -43,3 +43,13 @@ isAFile <- function(x) {
 
     TRUE
 }
+
+
+
+#' @describeIn isFile Scalar variant.
+#' @export
+allAreFiles <- function(x) {
+    ok <- isFile(x)
+    if (!all(ok)) return(falseFromVector(ok))
+    TRUE
+}

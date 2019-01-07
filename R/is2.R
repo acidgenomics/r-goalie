@@ -1,6 +1,6 @@
 #' Is an object from a class?
 #'
-#' Alternate version of [methods::is()] that supports multiple checks in a
+#' Alternate version of [`is()`][methods::is] that supports multiple checks in a
 #' single call.
 #'
 #' If a function named `is.class` exists, call `is.class(x)`.

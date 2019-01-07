@@ -66,7 +66,7 @@ print(x)
 \itemize{
 \item Modified version of \href{https://goo.gl/ymX571}{John Chambers' code}.
 \item \code{help(topic = "MethodDefinition-class", package = "methods")}.
-\item \code{methods::selectMethod}.
-\item \code{methods::setMethod}.
+\item \code{methods::selectMethod()}.
+\item \code{methods::setMethod()}.
 }
 }

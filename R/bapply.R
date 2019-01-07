@@ -1,6 +1,6 @@
 #' Boolean apply
 #'
-#' [bapply()] is a wrapper for [vapply()][base::vapply] that enforces
+#' [bapply()] is a wrapper for [`vapply()`][base::vapply] that enforces
 #' `FUN.VALUE = logical(1)`.
 #'
 #' @note
