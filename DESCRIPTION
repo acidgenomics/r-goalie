@@ -2,7 +2,7 @@ Package: goalie
 Title: Assertive Check Functions
 Description: Assertive check functions for defensive R programming.
 Version: 0.2.4
-Date: 2019-01-06
+Date: 2019-01-08
 Authors@R: person(
     "Michael", "Steinbaugh",
     email = "mike@steinbaugh.com",
@@ -15,11 +15,12 @@ BugReports: https://github.com/steinbaugh/goalie/issues/
 License: MIT + file LICENSE
 Encoding: UTF-8
 Depends: R (>= 3.4)
-Imports: curl (>= 3.2), methods, utils
+Imports:
+    curl (>= 3.2),
+    methods, utils
 Suggests:
     S4Vectors, SummarizedExperiment,
-    Matrix, ggplot2 (>= 3.0), patrick, testthat (>= 2.0), tibble (>= 2.0),
-        viridis
+    Matrix, ggplot2, patrick, testthat, tibble, viridis
 biocViews: Infrastructure
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
