@@ -14,20 +14,12 @@ URL:
 BugReports: https://github.com/steinbaugh/goalie/issues/
 License: MIT + file LICENSE
 Encoding: UTF-8
-Depends: R (>= 3.5)
-Imports:
-    curl (>= 3.2),
-    methods,
-    utils
+Depends: R (>= 3.4)
+Imports: curl (>= 3.2), methods, utils
 Suggests:
-    Matrix,
-    S4Vectors,
-    SummarizedExperiment,
-    ggplot2 (>= 3.1),
-    patrick,
-    testthat (>= 2.0),
-    tibble (>= 1.4),
-    viridis
+    S4Vectors, SummarizedExperiment,
+    Matrix, ggplot2 (>= 3.0), patrick, testthat (>= 2.0), tibble (>= 2.0),
+        viridis
 biocViews: Infrastructure
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
