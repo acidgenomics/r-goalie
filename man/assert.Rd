@@ -4,7 +4,7 @@
 \alias{assert}
 \title{Assert that certain conditions are true}
 \usage{
-assert(..., msg = NULL)
+assert(..., msg = NULL, traceback = TRUE)
 }
 \arguments{
 \item{...}{Any number of R expressions that return \code{logical(1)}, each of
@@ -14,6 +14,10 @@ generated.}
 
 \item{msg}{\code{NULL} or \code{character(1)}.
 Custom message to return on the event of any check failure.}
+
+\item{traceback}{\code{logical(1)}.
+Include traceback in error message.
+See \code{\link[base:traceback]{traceback()}} for details.}
 }
 \value{
 \code{TRUE} on success, error on failure.
