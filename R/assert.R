@@ -77,8 +77,9 @@ assert <- function(..., msg = NULL, traceback = TRUE) {
             }
             # Include the traceback in error by default.
             if (isTRUE(traceback)) {
-                stack <- sys.calls()
-                # FIXME stack <- as.character(unlist(stack))
+                # Note that we're reversing the call stack here to make it
+                # easier to see the parents.
+                stack <- rev(sys.calls())
                 stack <- capture.output(print(stack))
                 stack <- paste0(stack, collapse = "\n")
                 msg <- paste(msg, "Traceback:", stack, sep = "\n")
