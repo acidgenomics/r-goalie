@@ -66,7 +66,7 @@ supporting more informative error messages." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">goalie</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.4</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.5</span>
       </span>
     </div>
 
@@ -117,7 +117,7 @@ supporting more informative error messages.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>assert</span>(<span class='no'>...</span>, <span class='kw'>msg</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>assert</span>(<span class='no'>...</span>, <span class='kw'>msg</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>traceback</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -133,6 +133,12 @@ generated.</p></td>
       <th>msg</th>
       <td><p><code>NULL</code> or <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>.
 Custom message to return on the event of any check failure.</p></td>
+    </tr>
+    <tr>
+      <th>traceback</th>
+      <td><p><code><a href='https://www.rdocumentation.org/packages/base/topics/logical'>logical(1)</a></code>.
+Include traceback in error message.
+See <code><a href='https://www.rdocumentation.org/packages/base/topics/traceback'>traceback()</a></code> for details.</p></td>
     </tr>
     </table>
     
