@@ -8,7 +8,7 @@
 \usage{
 isFile(x)
 
-isAFile(x, nullOK = TRUE)
+isAFile(x, nullOK = FALSE)
 
 allAreFiles(x)
 }
