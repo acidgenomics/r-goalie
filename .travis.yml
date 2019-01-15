@@ -8,6 +8,10 @@ matrix:
   - os: osx
     r: bioc-release
 
+branches:
+  only:
+  - master
+
 env:
   global:
     - LINTR_COMMENT_BOT=true
