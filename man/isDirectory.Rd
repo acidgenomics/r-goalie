@@ -13,9 +13,9 @@ isDirectory(x)
 
 isDir(x)
 
-isADirectory(x, nullOK = TRUE)
+isADirectory(x, nullOK = FALSE)
 
-isADir(x, nullOK = TRUE)
+isADir(x, nullOK = FALSE)
 
 allAreDirectories(x)
 
