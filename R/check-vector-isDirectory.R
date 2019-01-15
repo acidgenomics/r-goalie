@@ -39,7 +39,12 @@ isDir <- isDirectory
 
 #' @describeIn isDirectory Scalar.
 #' @export
-isADirectory <- function(x) {
+isADirectory <- function(x, nullOK = TRUE) {
+    # Conditionally allow NULL.
+    if (isTRUE(nullOK) && is.null(x)) {
+        return(TRUE)
+    }
+
     ok <- isString(x)
     if (!isTRUE(ok)) return(ok)
 
