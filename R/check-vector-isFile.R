@@ -34,7 +34,7 @@ isFile <- function(x) {
 
 #' @describeIn isFile Scalar variant.
 #' @export
-isAFile <- function(x, nullOK = TRUE) {
+isAFile <- function(x, nullOK = FALSE) {
     # Conditionally allow NULL.
     if (isTRUE(nullOK) && is.null(x)) {
         return(TRUE)

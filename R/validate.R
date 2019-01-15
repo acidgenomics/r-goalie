@@ -34,19 +34,14 @@
 #'     isPositive(-1)
 #' )
 validate <- function(..., msg = NULL) {
-    mc <- match.call()[-1L]
-
-    # Remove `msg` from the call prior to evaluation, if necessary.
-    if ("msg" %in% names(mc)) {
-        mc[["msg"]] <- NULL
-    }
+    dots <- as.call(substitute(...()))
 
     # Note that here we're evaluating all of the checks instead of stopping on
     # the first error, like the approach in `assert()`.
     res <- lapply(
-        X = seq_along(mc),
+        X = seq_along(dots),
         FUN = function(i) {
-            call <- mc[[i]]
+            call <- dots[[i]]
             res <- withCallingHandlers(
                 expr = tryCatch(
                     expr = ...elt(i),
