@@ -1,3 +1,7 @@
+# FIXME Add nullOK option.
+
+
+
 #' Does the input contain a file?
 #'
 #' @name isFile

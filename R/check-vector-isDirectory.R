@@ -1,3 +1,7 @@
+# FIXME Add nullOK option.
+
+
+
 #' Does the input contain a directory?
 #'
 #' @name isDirectory
