@@ -11,6 +11,9 @@
 #'   generated.
 #' @param msg `NULL` or `character(1)`.
 #'   Custom message to return on the event of any check failure.
+#' @param traceback `logical(1)`.
+#'   Include traceback in error message.
+#'   See [`traceback()`][base::traceback] for details.
 #'
 #' @seealso
 #' - `stopifnot()`.
@@ -25,17 +28,11 @@
 #'     is.atomic("example"),
 #'     is.character("example")
 #' )
-assert <- function(..., msg = NULL) {
-    mc <- match.call()[-1L]
-
-    # Remove `msg` from the call prior to evaluation, if necessary.
-    if ("msg" %in% names(mc)) {
-        mc[["msg"]] <- NULL
-    }
-
+assert <- function(..., msg = NULL, traceback = TRUE) {
     # Note that we're using `i` along with `...elt()` here to eval the call.
-    for (i in seq_along(mc)) {
-        call <- mc[[i]]
+    dots <- as.call(substitute(...()))
+    for (i in seq_along(dots)) {
+        call <- dots[[i]]
         res <- withCallingHandlers(
             expr = tryCatch(
                 expr = ...elt(i),
@@ -77,6 +74,15 @@ assert <- function(..., msg = NULL) {
                     msg <- c(msg, capture.output(print(res))[-1L])
                 }
                 msg <- paste0(msg, collapse = "\n")
+            }
+            # Include the traceback in error by default.
+            if (isTRUE(traceback)) {
+                # Note that we're reversing the call stack here to make it
+                # easier to see the parents.
+                stack <- rev(sys.calls())
+                stack <- capture.output(print(stack))
+                stack <- paste0(stack, collapse = "\n")
+                msg <- paste(msg, "Traceback:", stack, sep = "\n")
             }
             stop(simpleError(msg, call = sys.call(-1L)))
         }
