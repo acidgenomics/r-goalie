@@ -13,9 +13,9 @@ isDirectory(x)
 
 isDir(x)
 
-isADirectory(x)
+isADirectory(x, nullOK = TRUE)
 
-isADir(x)
+isADir(x, nullOK = TRUE)
 
 allAreDirectories(x)
 
@@ -23,6 +23,9 @@ allAreDirs(x)
 }
 \arguments{
 \item{x}{Object.}
+
+\item{nullOK}{\code{logical(1)}.
+If set to \code{TRUE}, \code{x} may also be \code{NULL}.}
 }
 \value{
 \code{logical}.

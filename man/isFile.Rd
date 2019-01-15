@@ -8,12 +8,15 @@
 \usage{
 isFile(x)
 
-isAFile(x)
+isAFile(x, nullOK = TRUE)
 
 allAreFiles(x)
 }
 \arguments{
 \item{x}{Object.}
+
+\item{nullOK}{\code{logical(1)}.
+If set to \code{TRUE}, \code{x} may also be \code{NULL}.}
 }
 \value{
 \code{logical}.

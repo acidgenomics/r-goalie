@@ -38,7 +38,12 @@ isFile <- function(x) {
 
 #' @describeIn isFile Scalar variant.
 #' @export
-isAFile <- function(x) {
+isAFile <- function(x, nullOK = TRUE) {
+    # Conditionally allow NULL.
+    if (isTRUE(nullOK) && is.null(x)) {
+        return(TRUE)
+    }
+
     ok <- isString(x)
     if (!isTRUE(ok)) return(ok)
 

@@ -1,3 +1,8 @@
+## goalie 0.2.5 (2019-01-15)
+
+- `isADirectory()`, `isAFile()`: Added `nullOK` argument support.
+
+
 ## goalie 0.2.4 (2019-01-06)
 
 - New exports: `allAreDirectories()`, `allAreFiles()`, which return scalar.
