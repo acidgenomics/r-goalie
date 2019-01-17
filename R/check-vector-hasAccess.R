@@ -1,3 +1,8 @@
+# FIXME Improve this error message.
+# Error in allHaveAccess(path) : is(x, "goalie") is not TRUE
+
+
+
 #' Check file system access rights
 #'
 #' Works for either file or directory paths.
