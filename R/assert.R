@@ -14,6 +14,7 @@
 #' @param traceback `logical(1)`.
 #'   Include traceback in error message.
 #'   See [`traceback()`][base::traceback] for details.
+#'  `rlang::entrace()` also works nicely and can be set in `.Rprofile`.
 #'
 #' @seealso
 #' - `stopifnot()`.
@@ -28,7 +29,11 @@
 #'     is.atomic("example"),
 #'     is.character("example")
 #' )
-assert <- function(..., msg = NULL, traceback = TRUE) {
+assert <- function(
+    ...,
+    msg = NULL,
+    traceback = getOption("goalie.traceback", TRUE)
+) {
     # Note that we're using `i` along with `...elt()` here to eval the call.
     dots <- as.call(substitute(...()))
     for (i in seq_along(dots)) {
@@ -80,8 +85,8 @@ assert <- function(..., msg = NULL, traceback = TRUE) {
                 # Note that we're reversing the call stack here to make it
                 # easier to see the parents.
                 stack <- rev(sys.calls())
-                stack <- capture.output(print(stack))
-                stack <- paste0(stack, collapse = "\n")
+                stack <- printString(stack)
+                # Add the traceback to the error message.
                 msg <- paste(msg, "Traceback:", stack, sep = "\n")
             }
             stop(simpleError(msg, call = sys.call(-1L)))

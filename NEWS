@@ -1,28 +1,49 @@
+## goalie 0.2.6 (2019-01-22)
+
+### New functions
+
+- Migrated `printString()` from [basejump][] package.
+
+
 ## goalie 0.2.5 (2019-01-15)
+
+### Minor changes
 
 - `isADirectory()`, `isAFile()`: Added `nullOK` argument support.
 
 
 ## goalie 0.2.4 (2019-01-06)
 
+### New functions
+
 - New exports: `allAreDirectories()`, `allAreFiles()`, which return scalar.
+
+### Minor changes
+
 - Documentation improvements.
 
 
 ## goalie 0.2.3 (2019-01-04)
 
-- Reorganized base engine function files, getting rid of the `base-` prefix.
-- Added conditional `NULL` support where applicable, with `nullOK` formal.
-  Applies to `isInt()`, `isNumber()`, `isString()`, for example.
+### New functions
+
 - Migrated some low-level functions from [basejump][] that are useful for
   assertive checks: `matchArgsToDoCall()`, `standardizeCall()`, and the
   `MethodDefinition` family, which includes `methodFunction()`,
   `methodFormals()`, `hasLocal()`, `extractLocal()`. These will get re-exported
   in [basejump][].
+
+### Minor changes
+
+- Reorganized base engine function files, getting rid of the `base-` prefix.
+- Added conditional `NULL` support where applicable, with `nullOK` formal.
+  Applies to `isInt()`, `isNumber()`, `isString()`, for example.
 - General documentation improvements.
 
 
-## goalie 0.2.2 (2018-12-12)
+## goalie 0.2.2 (2018-12-22)
+
+### Major changes
 
 - `assert()`: Added `msg` formal. Improved error message when a user inputs
   check functions that don't return boolean.
@@ -35,6 +56,8 @@
 
 
 ## goalie 0.2.1 (2018-12-20)
+
+### Major changes
 
 - The approach to the package update is heavily influenced by the conventions
   defined in the assertive package. In goalie, I'm attempting to create a
@@ -52,6 +75,8 @@
 
 ## goalie 0.2.0 (2018-12-12)
 
+### Major changes
+
 - Removed all `assert*()` functions in favor of a simpler, assertthat style
   approach using `assert()` for all checks. The package will export check
   functions that return `logical`, typically `logical(1)` (boolean flag) for
@@ -61,11 +86,15 @@
 
 ## goalie 0.1.2 (2018-11-21)
 
+### Minor changes
+
 - `isDir()` and `isFile()` now import `R.utils::isDirectory()` and
   `R.utils::isFile()`.
 
 
 ## goalie 0.1.1 (2018-11-14)
+
+### Minor changes
 
 - `areUniqueGeneNames()` now returns `boolean` as expected.
 - Improved error message for `assertAreUniqueGeneNames()`.
