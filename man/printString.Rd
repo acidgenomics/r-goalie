@@ -4,24 +4,31 @@
 \alias{printString}
 \title{Print string}
 \usage{
-printString(x, max = 100L)
+printString(x, ..., max = getOption("max.print", 100L))
 }
 \arguments{
-\item{x}{\code{atomic}.}
+\item{x}{An object used to select a \code{\link[base:print]{print()}} method.}
+
+\item{...}{Passthrough arguments to \code{\link[base:print]{print()}}.}
 
 \item{max}{\code{integer(1)}.
-Maximum length of vector. Works like \code{getOption("max.print")} without
-having to set globally.}
+Maximum length of vector. Works internally by calling
+\code{\link[base:head]{head()}} on the print capture, prior to collapse using
+\code{\link[base:paste]{paste()}}. Supports \code{getOption("max.print")} global
+variable.}
 }
 \value{
 \code{character(1)}.
 }
 \description{
-Capture \code{\link[=print]{print()}} output of an \code{atomic} vector. Useful for returning
-informative messages inside a function.
+Capture \code{\link[base:print]{print()}} output as a \code{character} string.
+}
+\details{
+Useful for returning informative messages inside a function.
 }
 \examples{
 printString(c("hello", "world"))
+printString(datasets::mtcars, max = 6L)
 }
 \seealso{
 \code{cat()}.
