@@ -28,7 +28,11 @@
 #'     is.atomic("example"),
 #'     is.character("example")
 #' )
-assert <- function(..., msg = NULL, traceback = TRUE) {
+assert <- function(
+    ...,
+    msg = NULL,
+    traceback = getOption("goalie.traceback", TRUE)
+) {
     # Note that we're using `i` along with `...elt()` here to eval the call.
     dots <- as.call(substitute(...()))
     for (i in seq_along(dots)) {
@@ -79,6 +83,7 @@ assert <- function(..., msg = NULL, traceback = TRUE) {
             if (isTRUE(traceback)) {
                 # Note that we're reversing the call stack here to make it
                 # easier to see the parents.
+                # `rlang::entrace()` also works really nicely for this.
                 stack <- rev(sys.calls())
                 stack <- capture.output(print(stack))
                 stack <- paste0(stack, collapse = "\n")
