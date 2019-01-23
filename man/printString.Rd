@@ -13,7 +13,7 @@ printString(x, ..., max = getOption("max.print", 100L))
 
 \item{max}{\code{integer(1)}.
 Maximum length of vector. Works internally by calling
-\code{\link[base:head]{head()}} on the print capture, prior to collapse using
+\code{\link[utils:head]{head()}} on the print capture, prior to collapse using
 \code{\link[base:paste]{paste()}}. Supports \code{getOption("max.print")} global
 variable.}
 }
