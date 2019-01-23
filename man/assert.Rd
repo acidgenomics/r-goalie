@@ -4,7 +4,8 @@
 \alias{assert}
 \title{Assert that certain conditions are true}
 \usage{
-assert(..., msg = NULL, traceback = TRUE)
+assert(..., msg = NULL, traceback = getOption("goalie.traceback",
+  TRUE))
 }
 \arguments{
 \item{...}{Any number of R expressions that return \code{logical(1)}, each of
@@ -17,7 +18,8 @@ Custom message to return on the event of any check failure.}
 
 \item{traceback}{\code{logical(1)}.
 Include traceback in error message.
-See \code{\link[base:traceback]{traceback()}} for details.}
+See \code{\link[base:traceback]{traceback()}} for details.
+\code{rlang::entrace()} also works nicely and can be set in \code{.Rprofile}.}
 }
 \value{
 \code{TRUE} on success, error on failure.
