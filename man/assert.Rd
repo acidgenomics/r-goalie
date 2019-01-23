@@ -18,7 +18,8 @@ Custom message to return on the event of any check failure.}
 
 \item{traceback}{\code{logical(1)}.
 Include traceback in error message.
-See \code{\link[base:traceback]{traceback()}} for details.}
+See \code{\link[base:traceback]{traceback()}} for details.
+\code{rlang::entrace()} also works nicely and can be set in \code{.Rprofile}.}
 }
 \value{
 \code{TRUE} on success, error on failure.
