@@ -82,11 +82,13 @@ assert <- function(
             # Include the traceback in error by default.
             if (isTRUE(traceback)) {
                 # Note that we're reversing the call stack here to make it
-                # easier to see the parents.
-                # `rlang::entrace()` also works really nicely for this.
+                # easier to see the parents. `rlang::entrace()` also works
+                # really nicely for this.
                 stack <- rev(sys.calls())
                 stack <- capture.output(print(stack))
+                # Collapse the call stack traceback to a string.
                 stack <- paste0(stack, collapse = "\n")
+                # Add the traceback to the error message.
                 msg <- paste(msg, "Traceback:", stack, sep = "\n")
             }
             stop(simpleError(msg, call = sys.call(-1L)))
