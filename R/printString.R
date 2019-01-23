@@ -19,7 +19,7 @@
 printString <- function(x, max = 100L) {
     assert(is.atomic(x), isInt(max))
     x <- capture.output(print(x))
-    # Limit the number of lines returned, like `max.print` option.
+    # Limit the number of lines returned, like `max.print()` option.
     x <- head(x, n = max)
     x <- paste(x, collapse = "\n")
     # Remove leading and trailing line breaks.
