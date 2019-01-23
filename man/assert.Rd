@@ -4,7 +4,8 @@
 \alias{assert}
 \title{Assert that certain conditions are true}
 \usage{
-assert(..., msg = NULL, traceback = TRUE)
+assert(..., msg = NULL, traceback = getOption("goalie.traceback",
+  TRUE))
 }
 \arguments{
 \item{...}{Any number of R expressions that return \code{logical(1)}, each of
