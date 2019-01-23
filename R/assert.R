@@ -14,6 +14,7 @@
 #' @param traceback `logical(1)`.
 #'   Include traceback in error message.
 #'   See [`traceback()`][base::traceback] for details.
+#'  `rlang::entrace()` also works nicely and can be set in `.Rprofile`.
 #'
 #' @seealso
 #' - `stopifnot()`.
@@ -82,8 +83,7 @@ assert <- function(
             # Include the traceback in error by default.
             if (isTRUE(traceback)) {
                 # Note that we're reversing the call stack here to make it
-                # easier to see the parents. `rlang::entrace()` also works
-                # really nicely for this.
+                # easier to see the parents.
                 stack <- rev(sys.calls())
                 stack <- printString(stack)
                 # Add the traceback to the error message.

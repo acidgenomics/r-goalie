@@ -10,7 +10,7 @@
 #' @param ... Passthrough arguments to [`print()`][base::print].
 #' @param max `integer(1)`.
 #'   Maximum length of vector. Works internally by calling
-#'   [`head()`][base::head] on the print capture, prior to collapse using
+#'   [`head()`][utils::head] on the print capture, prior to collapse using
 #'   [`paste()`][base::paste]. Supports `getOption("max.print")` global
 #'   variable.
 #'
