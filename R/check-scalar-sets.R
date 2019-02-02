@@ -42,7 +42,8 @@ NULL
 #' @rdname sets
 #' @export
 isSubset <- function(x, y) {
-    assert(hasLength(x), hasLength(y))
+    if (!isTRUE(ok <- hasLength(x))) return(ok)
+    if (!isTRUE(ok <- hasLength(y))) return(ok)
     all(x %in% y)
 }
 
@@ -114,7 +115,7 @@ areSetEqual <- function(
             .xname, .yname, length(x), length(y)
         ))
     }
-    if (!(ok <- isSubset(x, y))) return(ok)
-    if (!(ok <- isSubset(y, x))) return(ok)
+    if (!isTRUE(ok <- isSubset(x, y))) return(ok)
+    if (!isTRUE(ok <- isSubset(y, x))) return(ok)
     TRUE
 }
