@@ -1,10 +1,13 @@
-## goalie 0.2.7 (2019-01-31)
+## goalie 0.2.7
 
 ### Minor changes
 
-- `assert()` now has `traceback` disabled by default. Note that this can be
+- `assert()`: `traceback` argument is disabled by default. Note that this can be
   enabled globally using `options(goalie.traceback = TRUE)`, which can be useful
   for code debugging in some situations.
+- `isSubset()`: Improved cause message if user attempts to pass in `NULL` for
+  either `x` or `y` arguments.
+
 
 ## goalie 0.2.6 (2019-01-22)
 
