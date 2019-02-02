@@ -19,11 +19,11 @@ allAreAtomic(x, .xname = getNameInParent(x))
 Does the input contain elements that are all atomic?
 }
 \examples{
-## Pass ====
+## TRUE ====
 allAreAtomic(data.frame(a = "foo", b = "bar"))
 allAreAtomic(list(a = "foo", b = "bar"))
 
-## Fail ====
+## FALSE ====
 allAreAtomic(data.frame())
 allAreAtomic(list(a = "x", b = list()))
 }
