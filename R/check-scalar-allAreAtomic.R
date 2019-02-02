@@ -7,11 +7,11 @@
 #' @seealso `is.atomic()`.
 #'
 #' @examples
-#' ## Pass ====
+#' ## TRUE ====
 #' allAreAtomic(data.frame(a = "foo", b = "bar"))
 #' allAreAtomic(list(a = "foo", b = "bar"))
 #'
-#' ## Fail ====
+#' ## FALSE ====
 #' allAreAtomic(data.frame())
 #' allAreAtomic(list(a = "x", b = list()))
 allAreAtomic <- function(x, .xname = getNameInParent(x)) {
