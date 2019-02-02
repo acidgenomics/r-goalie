@@ -8,11 +8,11 @@
 #'   `"gzip"`, `"bzip2"`, or `"xz"`.
 #'
 #' @examples
-#' ## Pass ====
+#' ## TRUE ====
 #' formalCompress("gzip")
 #' formalCompress(TRUE)
 #'
-#' ## Fail ====
+#' ## FALSE ====
 #' formalCompress(NA)
 #' formalCompress("xxx")
 formalCompress <- function(compress) {
