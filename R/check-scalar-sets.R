@@ -44,7 +44,13 @@ NULL
 isSubset <- function(x, y) {
     if (!isTRUE(ok <- hasLength(x))) return(ok)
     if (!isTRUE(ok <- hasLength(y))) return(ok)
-    all(x %in% y)
+    if (!isTRUE(all(x %in% y))) {
+        return(false(
+            gettext("%s is not in %s."),
+            deparse(x), deparse(y)
+        ))
+    }
+    TRUE
 }
 
 
