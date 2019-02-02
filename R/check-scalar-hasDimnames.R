@@ -9,13 +9,13 @@
 #' - `assertive.properties::has_colnames()`.
 #'
 #' @examples
-#' ## Pass ====
+#' ## TRUE ====
 #' x <- datasets::mtcars
 #' hasDimnames(x)
 #' hasRownames(x)
 #' hasColnames(x)
 #'
-#' ## Fail ====
+#' ## FALSE ====
 #' x <- data.frame()
 #' hasDimnames(x)
 #' hasRownames(x)

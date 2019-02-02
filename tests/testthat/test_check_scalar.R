@@ -84,7 +84,54 @@ test_that("formalCompress : FALSE", {
 
 
 
-# hasDimnames
+# hasDimnames ==================================================================
+with_parameters_test_that(
+    "hasDimnames : TRUE", {
+        x <- datasets::mtcars
+        expect_true(fun(x))
+    },
+    fun = list(
+        hasDimnames,
+        hasRownames,
+        hasColnames
+    )
+)
+
+with_parameters_test_that(
+    "hasDimnames : FALSE", {
+        x <- data.frame()
+        object <- fun(x)
+        expect_false(object)
+        expect_s3_class(object, "goalie")
+    },
+    fun = list(
+        hasDimnames,
+        hasRownames,
+        hasColnames
+    )
+)
+
+with_parameters_test_that(
+    "hasRownames", {
+        data <- fun()
+        object <- hasRownames(data)
+        expect_false(object)
+        expect_s3_class(object, "goalie")
+        expect_identical(cause(object), noquote(cause))
+    },
+    fun = list(
+        data.frame,
+        S4Vectors::DataFrame,
+        data.table::data.table,
+        tibble::tibble
+    ),
+    cause = c(
+        "data has sequence row names (soft NULL).",
+        "data has NULL row names.",
+        "data.table class doesn't support row names.",
+        "tibble (tbl_df) class doesn't support row names."
+    )
+)
 
 
 

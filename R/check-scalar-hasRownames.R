@@ -35,9 +35,9 @@
 hasRownames <- function(x, .xname = getNameInParent(x)) {
     # Classes that extend data.frame but intentionally don't support row names.
     if (inherits(x, "data.table")) {
-        return(false("data.table class objects don't support row names"))
+        return(false("data.table class doesn't support row names."))
     } else if (inherits(x, "tbl_df")) {
-        return(false("tibble (tbl_df) class objects don't support row names"))
+        return(false("tibble (tbl_df) class doesn't support row names."))
     }
 
     # Standard data frames can't return NULL row names, so check for sequence.
@@ -48,7 +48,7 @@ hasRownames <- function(x, .xname = getNameInParent(x)) {
             y = as(seq_len(nrow(x)), "character")
         )
     ) {
-        return(false("%s has sequence row names (soft NULL)", .xname))
+        return(false("%s has sequence row names (soft NULL).", .xname))
     }
 
     # Other classes (e.g. matrix, DataFrame) do support NULL row names.
