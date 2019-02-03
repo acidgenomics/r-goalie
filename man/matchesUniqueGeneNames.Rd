@@ -41,6 +41,6 @@ x <- SummarizedExperiment::SummarizedExperiment(
 )
 genes <- SummarizedExperiment::rowData(x)$geneName
 
-## Pass ====
+## TRUE ====
 matchesUniqueGeneNames(x = x, genes = genes)
 }

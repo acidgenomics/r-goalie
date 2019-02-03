@@ -4,11 +4,11 @@
 #' @inherit params
 #'
 #' @examples
-#' ## Pass ====
+#' ## TRUE ====
 #' isFlag(TRUE)
 #' isFlag(FALSE)
 #'
-#' ## Fail ====
+#' ## FALSE ====
 #' isFlag(c(TRUE, TRUE))
 #' isFlag(1)
 #' isFlag(NA)

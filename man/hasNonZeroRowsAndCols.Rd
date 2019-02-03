@@ -25,12 +25,12 @@ This is a common check when handling RNA-seq data prior to generating a
 heatmap or applying a log transformation, for example.
 }
 \examples{
-## Pass ====
+## TRUE ====
 x <- matrix(data = seq_len(4), nrow = 2)
 print(x)
 hasNonZeroRowsAndCols(x)
 
-## Fail ====
+## FALSE ====
 x <- matrix(nrow = 0, ncol = 0)
 print(x)
 hasNonZeroRowsAndCols(x)

@@ -22,7 +22,7 @@ hasValidDimnames(x, .xname = getNameInParent(x))
 Does the input object have syntactically valid names?
 }
 \examples{
-## Pass ====
+## TRUE ====
 x <- list(a = 1, b = 2)
 names(x)
 hasValidNames(x)
@@ -31,7 +31,7 @@ x <- datasets::iris
 lapply(dimnames(x), head)
 hasValidDimnames(x)
 
-## Fail ====
+## FALSE ====
 x <- list(
     `1`       = 1,  # can't start with number
     `foo bar` = 2,  # no spaces

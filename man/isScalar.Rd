@@ -59,12 +59,12 @@ Scalar represents a length of 1.
 }}
 
 \examples{
-## Pass ====
+## TRUE ====
 isScalar("a")
 isScalarInteger(1L)
 isScalarIntegerish(1)
 
-## Fail ====
+## FALSE ====
 isScalar(NULL)
 isScalar(c("a", "b"))
 }

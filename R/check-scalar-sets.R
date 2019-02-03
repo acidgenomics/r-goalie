@@ -11,7 +11,7 @@
 #' - `assertive.sets::are_set_equal()`.
 #'
 #' @examples
-#' ## Pass ====
+#' ## TRUE ====
 #' isSubset(x = "a", y = c("a", "b"))
 #'
 #' ## This assert is particularly useful for checking required columns.
@@ -24,7 +24,7 @@
 #' areIntersectingSets(x = c("a", "b"), y = c("b", "c"))
 #' areSetEqual(x = c("a", "b"), y = c("b", "a"))
 #'
-#' ## Fail ====
+#' ## FALSE ====
 #' isSubset(x = "c", y = c("a", "b"))
 #' isSuperset(
 #'     x = c("Time", "weight", "Diet"),

@@ -6,13 +6,13 @@
 #' @seealso `assertive::is_hex_color()`.
 #'
 #' @examples
-#' ## Pass ====
+#' ## TRUE ====
 #' x <- viridis::viridis(n = 2L)
 #' class(x)
 #' print(x)
 #' isHexColor(x)
 #'
-#' ## Fail ====
+#' ## FALSE ====
 #' x <- ggplot2::scale_colour_manual
 #' class(x)
 #' isHexColor(x)

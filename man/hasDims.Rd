@@ -29,7 +29,7 @@ hasCols(x, .xname = getNameInParent(x))
 Does the input have dimensions?
 }
 \examples{
-## Pass ====
+## TRUE ====
 x <- datasets::mtcars
 hasDims(x)
 hasRows(x)
@@ -38,7 +38,7 @@ hasCols(x)
 ## Note that dims don't have to be non-zero, just not NULL.
 hasDims(data.frame())
 
-## Fail ====
+## FALSE ====
 x <- data.frame()
 hasDims(list())
 hasRows(x)
