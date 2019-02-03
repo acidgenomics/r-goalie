@@ -9,6 +9,7 @@
   either `x` or `y` arguments.
 - `hasNonZeroRowsAndCols()`: Fixed typo in internal code that didn't check using
   `hasCols()` properly.
+- `isFlag()`: Improved cause message if user passes in `NA`.
 
 
 ## goalie 0.2.6 (2019-01-22)

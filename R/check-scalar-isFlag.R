@@ -20,7 +20,7 @@ isFlag <- function(x, .xname = getNameInParent(x)) {
 
     # Check for NA, which is logical but not a flag.
     if (is.na(x)) {
-        return(false("%s is NA", .xname))
+        return(false("%s is not a boolean flag (TRUE/FALSE).", .xname))
     }
 
     TRUE
