@@ -442,11 +442,54 @@ test_that("isCharacter", {
 
 
 
-# isFlag
+test_that("isFlag", {
+    expect_true(isFlag(TRUE))
+    expect_true(isFlag(FALSE))
+
+    object <- isFlag(c(TRUE, TRUE))
+    expect_false(object)
+    expect_s3_class(object, "goalie")
+    expect_identical(
+        cause(object),
+        noquote("c(TRUE, TRUE) is not a boolean flag (TRUE/FALSE).")
+    )
+
+    object <- isFlag(1)
+    expect_false(object)
+    expect_s3_class(object, "goalie")
+    expect_identical(
+        cause(object),
+        noquote("1 is not a boolean flag (TRUE/FALSE).")
+    )
+
+    object <- isFlag(NA)
+    expect_false(object)
+    expect_s3_class(object, "goalie")
+    expect_identical(
+        cause(object),
+        noquote("NA is not a boolean flag (TRUE/FALSE).")
+    )
+})
 
 
 
-# isGGScale
+test_that("isGGScale", {
+    library(ggplot2)
+    colour_c <- scale_colour_gradient(low = "red", high = "blue")
+    colour_d <- scale_colour_manual(values = c("red", "blue"))
+    fill_c <- scale_fill_gradient(low = "red", high = "blue")
+    fill_d <- scale_fill_manual(values = c("red", "blue"))
+
+    expect_true(isGGScale(x = colour_c, scale = "continuous", aes = "colour"))
+    expect_true(isGGScale(x = colour_d, scale = "discrete", aes = "colour"))
+    expect_true(isGGScale(x = fill_c, scale = "continuous", aes = "fill"))
+    expect_true(isGGScale(x = fill_d, scale = "discrete", aes = "fill"))
+
+    expect_false(isGGScale(x = colour_d, scale = "continuous", aes = "colour"))
+    expect_false(isGGScale(x = colour_c, scale = "discrete", aes = "colour"))
+    expect_false(isGGScale(x = fill_d, scale = "continuous", aes = "fill"))
+    expect_false(isGGScale(x = fill_c, scale = "discrete", aes = "fill"))
+})
 
 
 
