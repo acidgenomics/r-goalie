@@ -18,33 +18,35 @@
 \usage{
 isNumber(x, nullOK = FALSE)
 
-isScalar(x)
+isScalar(x, .xname = getNameInParent(x))
 
-isNonScalar(x)
+isNonScalar(x, .xname = getNameInParent(x))
 
-isScalarList(x)
+isScalarList(x, .xname = getNameInParent(x))
 
-isScalarAtomic(x)
+isScalarAtomic(x, .xname = getNameInParent(x))
 
-isScalarVector(x)
+isScalarVector(x, .xname = getNameInParent(x))
 
-isScalarNumeric(x)
+isScalarNumeric(x, .xname = getNameInParent(x))
 
-isScalarInteger(x)
+isScalarInteger(x, .xname = getNameInParent(x))
 
 isScalarIntegerish(x)
 
-isScalarDouble(x)
+isScalarDouble(x, .xname = getNameInParent(x))
 
-isScalarCharacter(x)
+isScalarCharacter(x, .xname = getNameInParent(x))
 
-isScalarLogical(x)
+isScalarLogical(x, .xname = getNameInParent(x))
 }
 \arguments{
 \item{x}{Object.}
 
 \item{nullOK}{\code{logical(1)}.
 If set to \code{TRUE}, \code{x} may also be \code{NULL}.}
+
+\item{.xname}{\emph{Not intended to be used directly.}}
 }
 \value{
 \code{TRUE} on success;
