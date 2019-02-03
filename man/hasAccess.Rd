@@ -37,10 +37,10 @@ Works for either file or directory paths.
 }}
 
 \examples{
-## Pass ====
+## TRUE ====
 hasAccess(c("~", "."))
 
-## Fail ====
+## FALSE ====
 hasAccess("xxx")
 }
 \seealso{

@@ -19,11 +19,11 @@ isFlag(x, .xname = getNameInParent(x))
 Does the input contain a boolean flag?
 }
 \examples{
-## Pass ====
+## TRUE ====
 isFlag(TRUE)
 isFlag(FALSE)
 
-## Fail ====
+## FALSE ====
 isFlag(c(TRUE, TRUE))
 isFlag(1)
 isFlag(NA)

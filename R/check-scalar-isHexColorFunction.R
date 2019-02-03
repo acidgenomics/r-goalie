@@ -9,11 +9,11 @@
 #' @seealso RColorBrewer, viridis packages.
 #'
 #' @examples
-#' ## Pass ====
+#' ## TRUE ====
 #' x <- viridis::viridis
 #' isHexColorFunction(x)
 #'
-#' ## Fail ====
+#' ## FALSE ====
 #' x <- ggplot2::scale_colour_manual
 #' isHexColorFunction(x)
 isHexColorFunction <- function(

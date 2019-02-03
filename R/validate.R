@@ -22,13 +22,13 @@
 #' - `assertthat::validate_that()`.
 #'
 #' @examples
-#' ## Pass ====
+#' ## TRUE ====
 #' validate(
 #'     is.atomic("example"),
 #'     is.character("example")
 #' )
 #'
-#' ## Fail ====
+#' ## FALSE ====
 #' validate(
 #'     isFlag("xxx"),
 #'     isPositive(-1)
