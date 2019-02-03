@@ -7,6 +7,8 @@
   for code debugging in some situations.
 - `isSubset()`: Improved cause message if user attempts to pass in `NULL` for
   either `x` or `y` arguments.
+- `hasNonZeroRowsAndCols()`: Fixed typo in internal code that didn't check using
+  `hasCols()` properly.
 
 
 ## goalie 0.2.6 (2019-01-22)
