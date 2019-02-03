@@ -422,7 +422,23 @@ test_that("isAny", {
 
 
 
-# isCharacter
+test_that("isCharacter", {
+    expect_true(isCharacter("a"))
+    expect_true(isCharacter(letters))
+
+    object <- isCharacter(seq_len(5L))
+    expect_false(object)
+    expect_s3_class(object, "goalie")
+    expect_identical(
+        cause(object),
+        noquote("seq_len(5L) is not character.")
+    )
+
+    expect_false(isCharacter(NULL))
+    expect_false(isCharacter(character()))
+    expect_false(isCharacter(""))
+    expect_false(isCharacter(NA_character_))
+})
 
 
 
