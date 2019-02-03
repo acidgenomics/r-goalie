@@ -6,7 +6,7 @@
 #' @inherit params
 #'
 #' @seealso
-#' `help(topic = "scalar-type-predicates", package = "rlang")`.
+#' - `help(topic = "scalar-type-predicates", package = "rlang")`.
 #' - `assertive.properties::is_scalar()`.
 #' - `rlang::is_scalar_list()`.
 #' - `rlang::is_scalar_atomic()`.
