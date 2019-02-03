@@ -71,8 +71,8 @@ isScalar(NULL)
 isScalar(c("a", "b"))
 }
 \seealso{
-\code{help(topic = "scalar-type-predicates", package = "rlang")}.
 \itemize{
+\item \code{help(topic = "scalar-type-predicates", package = "rlang")}.
 \item \code{assertive.properties::is_scalar()}.
 \item \code{rlang::is_scalar_list()}.
 \item \code{rlang::is_scalar_atomic()}.
