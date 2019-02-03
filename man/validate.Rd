@@ -32,13 +32,13 @@ the methods package, specifically \code{\link[methods:validObject]{validObject()
 detailed information on S4 validity methods.
 }
 \examples{
-## Pass ====
+## TRUE ====
 validate(
     is.atomic("example"),
     is.character("example")
 )
 
-## Fail ====
+## FALSE ====
 validate(
     isFlag("xxx"),
     isPositive(-1)

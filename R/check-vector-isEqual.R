@@ -17,7 +17,7 @@
 #' - `assertive.numbers::is_less_than_or_equal_to()`.
 #'
 #' @examples
-#' ## Pass ====
+#' ## TRUE ====
 #' isEqualTo(x = 1L, y = 1)
 #' isNotEqualTo(x = 2, y = 1)
 #' isGreaterThan(x = 1, y = 0)
@@ -25,7 +25,7 @@
 #' isLessThan(x = -1, y = 0)
 #' isLessThanOrEqualTo(x = seq_len(2), y = 3)
 #'
-#' ## Fail ====
+#' ## FALSE ====
 #' isEqualTo(x = seq_len(2), y = 1)
 NULL
 

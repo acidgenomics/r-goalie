@@ -12,10 +12,10 @@
 #' @seealso `assertive.strings::is_non_missing_nor_empty_character()`.
 #'
 #' @examples
-#' ## Pass ====
+#' ## TRUE ====
 #' isCharacter("a")
 #'
-#' ## Fail ====
+#' ## FALSE ====
 #' isCharacter(NULL)
 #' isCharacter(character())
 #' isCharacter("")

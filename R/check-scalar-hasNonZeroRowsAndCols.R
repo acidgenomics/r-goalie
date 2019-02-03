@@ -13,12 +13,12 @@
 #'   Currently requires a `matrix` or `sparseMatrix` as input.
 #
 #' @examples
-#' ## Pass ====
+#' ## TRUE ====
 #' x <- matrix(data = seq_len(4), nrow = 2)
 #' print(x)
 #' hasNonZeroRowsAndCols(x)
 #'
-#' ## Fail ====
+#' ## FALSE ====
 #' x <- matrix(nrow = 0, ncol = 0)
 #' print(x)
 #' hasNonZeroRowsAndCols(x)

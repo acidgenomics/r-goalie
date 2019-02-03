@@ -31,10 +31,10 @@ Does the input contain a (non-empty) character vector?
 }
 
 \examples{
-## Pass ====
+## TRUE ====
 isCharacter("a")
 
-## Fail ====
+## FALSE ====
 isCharacter(NULL)
 isCharacter(character())
 isCharacter("")

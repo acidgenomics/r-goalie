@@ -18,12 +18,12 @@
 #' - `rlang::is_scalar_logical()`.
 #'
 #' @examples
-#' ## Pass ====
+#' ## TRUE ====
 #' isScalar("a")
 #' isScalarInteger(1L)
 #' isScalarIntegerish(1)
 #'
-#' ## Fail ====
+#' ## FALSE ====
 #' isScalar(NULL)
 #' isScalar(c("a", "b"))
 NULL

@@ -82,7 +82,7 @@ How does the input relate to a value?
 These functions return \code{logical}, not necessarily \code{logical(1)}.
 }
 \examples{
-## Pass ====
+## TRUE ====
 isEqualTo(x = 1L, y = 1)
 isNotEqualTo(x = 2, y = 1)
 isGreaterThan(x = 1, y = 0)
@@ -90,7 +90,7 @@ isGreaterThanOrEqualTo(x = seq_len(2), y = 1)
 isLessThan(x = -1, y = 0)
 isLessThanOrEqualTo(x = seq_len(2), y = 3)
 
-## Fail ====
+## FALSE ====
 isEqualTo(x = seq_len(2), y = 1)
 }
 \seealso{

@@ -6,10 +6,10 @@
 #' @inherit params
 #'
 #' @examples
-#' ## Pass ====
+#' ## TRUE ====
 #' isAlpha(0.05)
 #'
-#' ## Fail ====
+#' ## FALSE ====
 #' isAlpha("xxx")
 #' isAlpha(1L)
 isAlpha <- function(x, .xname = getNameInParent(x)) {
