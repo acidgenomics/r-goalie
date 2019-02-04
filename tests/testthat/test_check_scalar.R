@@ -61,7 +61,7 @@ test_that("formalCompress", {
     expect_s3_class(object, "goalie")
     expect_identical(
         cause(object),
-        noquote("compress is NA")
+        noquote("compress is not a boolean flag (TRUE/FALSE).")
     )
 
     object <- formalCompress("xxx")
@@ -493,19 +493,64 @@ test_that("isGGScale", {
 
 
 
-# isHeaderLevel
+test_that("isHeaderLevel", {
+    expect_true(isHeaderLevel(1))
+    expect_true(isHeaderLevel(7L))
+
+    expect_false(isHeaderLevel(seq_len(7)))
+    expect_false(isHeaderLevel(0))
+})
 
 
 
-# isHexColorFunction
+test_that("isHexColorFunction", {
+    expect_true(isHexColorFunction(viridis::viridis))
+
+    object <- isHexColorFunction(ggplot2::scale_colour_manual)
+    expect_false(object)
+    expect_s3_class(object, "goalie")
+    expect_identical(
+        cause(object),
+        noquote("Hex color function must contain an `n` formal argument.")
+    )
+})
 
 
 
-# isNumber
+test_that("isNumber", {
+    expect_true(isNumber(0))
+    expect_true(isNumber(1.1))
+    expect_false(isNumber(c(1, 2)))
+})
 
 
 
-# isScalar
+test_that("isScalar", {
+    expect_true(isScalar(1L))
+    expect_true(isScalar(""))
+    expect_false(isScalar(character()))
+    expect_false(isScalar(NULL))
+
+    # isNonScalar
+
+    # isScalarList
+
+    # isScalarAtomic
+
+    # isScalarVector
+
+    # isScalarNumeric
+
+    # isScalarInteger
+
+    # isScalarIntegerish
+
+    # isScalarDouble
+
+    # isScalarCharacter
+
+    # isScalarLogical
+})
 
 
 
