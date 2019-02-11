@@ -13,21 +13,29 @@
 #'   Currently requires a `matrix` or `sparseMatrix` as input.
 #
 #' @examples
-#' ## Pass ====
+#' ## TRUE ====
 #' x <- matrix(data = seq_len(4), nrow = 2)
 #' print(x)
 #' hasNonZeroRowsAndCols(x)
 #'
-#' ## Fail ====
+#' x <- matrix(data = rep(1, times = 2), byrow = TRUE)
+#' print(x)
+#' hasNonZeroRowsAndCols(x)
+#'
+#' x <- matrix(data = rep(1, times = 2), byrow = FALSE)
+#' print(x)
+#' hasNonZeroRowsAndCols(x)
+#'
+#' ## FALSE ====
 #' x <- matrix(nrow = 0, ncol = 0)
 #' print(x)
 #' hasNonZeroRowsAndCols(x)
 #'
-#' x <- matrix(data = rep(0L, times = 2), byrow = FALSE)
+#' x <- matrix(nrow = 1, ncol = 0)
 #' print(x)
 #' hasNonZeroRowsAndCols(x)
 #'
-#' x <- matrix(data = rep(0L, times = 2), byrow = TRUE)
+#' x <- matrix(nrow = 0, ncol = 1)
 #' print(x)
 #' hasNonZeroRowsAndCols(x)
 hasNonZeroRowsAndCols <- function(x, .xname = getNameInParent(x)) {
@@ -37,7 +45,7 @@ hasNonZeroRowsAndCols <- function(x, .xname = getNameInParent(x)) {
     ok <- hasRows(x, .xname = .xname)
     if (!isTRUE(ok)) return(ok)
 
-    ok <- hasRows(x, .xname = .xname)
+    ok <- hasCols(x, .xname = .xname)
     if (!isTRUE(x)) return(ok)
 
     # For sparse matrix, use the generic verbs from Matrix package. Note that

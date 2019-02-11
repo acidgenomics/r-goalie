@@ -19,11 +19,11 @@ These character strings are currently allowed for \code{save()}:
 Check the \code{compress} formal argument
 }
 \examples{
-## Pass ====
+## TRUE ====
 formalCompress("gzip")
 formalCompress(TRUE)
 
-## Fail ====
+## FALSE ====
 formalCompress(NA)
 formalCompress("xxx")
 }

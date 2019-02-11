@@ -19,10 +19,10 @@ hasNames(x, .xname = getNameInParent(x))
 Does the input have names?
 }
 \examples{
-## Pass ====
+## TRUE ====
 hasNames(datasets::mtcars)
 
-## Fail ====
+## FALSE ====
 hasNames(matrix())
 hasNames(data.frame())
 }

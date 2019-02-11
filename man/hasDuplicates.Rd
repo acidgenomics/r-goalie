@@ -22,11 +22,11 @@ hasNoDuplicates(x, .xname = getNameInParent(x))
 Does the input have duplicates?
 }
 \examples{
-## Pass ====
+## TRUE ====
 hasDuplicates(c("a", "a"))
 hasNoDuplicates(c("a", "b"))
 
-## Fail ====
+## FALSE ====
 hasDuplicates(c("a", "b"))
 hasNoDuplicates(c("a", "a", "b", "b"))
 }

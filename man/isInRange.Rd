@@ -159,7 +159,7 @@ For example, \code{(0,1)} means greater than 0 and less than 1.
 }
 
 \examples{
-## Pass ====
+## TRUE ====
 isInRange(0, lower = 0, upper = 1)
 isInRange(1, lower = 0, upper = 1)
 isInClosedRange(1, lower = 0, upper = 1)
@@ -177,7 +177,7 @@ isNonPositive(c(-1, 0))
 isPercentage(c(0, 25, 50, 100))
 isProportion(c(0, 0.01, 0.1, 1))
 
-## Fail ====
+## FALSE ====
 isInRange(c(2, 3), lower = 0, upper = 1)
 isInClosedRange(c(2, 3), lower = 0, upper = 1)
 

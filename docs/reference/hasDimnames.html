@@ -65,7 +65,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">goalie</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.7</span>
       </span>
     </div>
 
@@ -145,16 +145,16 @@
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'>## Pass ====</span>
+    <pre class="examples"><div class='input'><span class='co'>## TRUE ====</span>
 <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>datasets</span><span class='kw ns'>::</span><span class='no'><a href='https://www.rdocumentation.org/packages/datasets/topics/mtcars'>mtcars</a></span>
 <span class='fu'>hasDimnames</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'><a href='hasRownames.html'>hasRownames</a></span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'><a href='hasDims.html'>hasColnames</a></span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
-<span class='co'>## Fail ====</span>
+<span class='co'>## FALSE ====</span>
 <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/data.frame'>data.frame</a></span>()
 <span class='fu'>hasDimnames</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] FALSE
 #&gt; Cause of failure:
 #&gt; The dimension names of x are all empty.</div><div class='input'><span class='fu'><a href='hasRownames.html'>hasRownames</a></span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] FALSE
 #&gt; Cause of failure:
-#&gt; x has sequence row names (soft NULL)</div><div class='input'><span class='fu'><a href='hasDims.html'>hasColnames</a></span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] FALSE
+#&gt; x has sequence row names (soft NULL).</div><div class='input'><span class='fu'><a href='hasDims.html'>hasColnames</a></span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] FALSE
 #&gt; Cause of failure:
 #&gt; The column names of x are all empty.</div></pre>
   </div>
