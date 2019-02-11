@@ -8,5 +8,3 @@
         backports::import(pkgname = pkgname, obj = "...elt")
     }
 }
-
-rm(.major, .minor)
