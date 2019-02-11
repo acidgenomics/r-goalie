@@ -21,7 +21,9 @@
 #' x <- appendToBody(x, quote(.Deprecated("y")))
 #' body(x)
 appendToBody <- function(fun, values, after = 1L) {
-    assert(
+    # Don't use `assert()` here, otherwise we run into issues using onLoad
+    # and backports for `...elt()` compatibility with R 3.4.
+    stopifnot(
         is.function(fun),
         is.call(values),
         isInt(after)
@@ -29,7 +31,7 @@ appendToBody <- function(fun, values, after = 1L) {
     b <- body(fun)
     b <- as.list(b)
     # Hardening against 1 liners and/or lack of curly brackets.
-    assert(identical(b[[1L]], as.name("{")))
+    stopifnot(identical(b[[1L]], as.name("{")))
     b <- append(b, values = values, after = after)
     b <- as.call(b)
     body(fun) <- b
