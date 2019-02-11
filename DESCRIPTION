@@ -15,7 +15,9 @@ BugReports: https://github.com/steinbaugh/goalie/issues/
 License: MIT + file LICENSE
 Encoding: UTF-8
 Depends: R (>= 3.4)
-Imports: curl (>= 3.2), methods, utils
+Imports:
+    backports (>= 1.1), curl (>= 3.2),
+    methods, utils
 Suggests:
     S4Vectors, SummarizedExperiment,
     Matrix, data.table, ggplot2, patrick, testthat, tibble, viridis
