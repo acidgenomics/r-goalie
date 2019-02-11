@@ -5,7 +5,8 @@
 \title{Match arguments to \code{do.call}}
 \usage{
 matchArgsToDoCall(args = NULL, removeFormals = NULL,
-  which = sys.parent(n = 1L), verbose = FALSE)
+  which = sys.parent(n = 1L), verbose = getOption("goalie.traceback",
+  FALSE))
 }
 \arguments{
 \item{args}{a \emph{list} of arguments to the function call.  The
