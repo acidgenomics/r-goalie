@@ -46,7 +46,7 @@ isScalar <- function(x, .xname = getNameInParent(x)) {
 #' @rdname isScalar
 #' @export
 isNonScalar <- function(x, .xname = getNameInParent(x)) {
-    ok <- !isScalar(x)
+    ok <- as.logical(!isScalar(x))
     if (!isTRUE(ok)) {
         return(false("%s is scalar (has a length of 1).", .xname))
     }
