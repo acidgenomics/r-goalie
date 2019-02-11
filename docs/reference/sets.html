@@ -166,7 +166,7 @@
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'>## Pass ====</span>
+    <pre class="examples"><div class='input'><span class='co'>## TRUE ====</span>
 <span class='fu'>isSubset</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='st'>"a"</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
 <span class='co'>## This assert is particularly useful for checking required columns.</span>
 <span class='fu'>isSuperset</span>(
@@ -174,16 +174,22 @@
     <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"Time"</span>, <span class='st'>"weight"</span>, <span class='st'>"Diet"</span>)
 )</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
 <span class='fu'>areDisjointSets</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>), <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"c"</span>, <span class='st'>"d"</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>areIntersectingSets</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>), <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"b"</span>, <span class='st'>"c"</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>areSetEqual</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>), <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"b"</span>, <span class='st'>"a"</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
-<span class='co'>## Fail ====</span>
-<span class='fu'>isSubset</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='st'>"c"</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>))</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>isSuperset</span>(
+<span class='co'>## FALSE ====</span>
+<span class='fu'>isSubset</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='st'>"c"</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>))</div><div class='output co'>#&gt; [1] FALSE
+#&gt; Cause of failure:
+#&gt; "c" is not in c("a", "b").</div><div class='input'><span class='fu'>isSuperset</span>(
     <span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"Time"</span>, <span class='st'>"weight"</span>, <span class='st'>"Diet"</span>),
     <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/colnames'>colnames</a></span>(<span class='kw pkg'>datasets</span><span class='kw ns'>::</span><span class='no'><a href='https://www.rdocumentation.org/packages/datasets/topics/ChickWeight'>ChickWeight</a></span>)
-)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'>
+)</div><div class='output co'>#&gt; [1] FALSE
+#&gt; Cause of failure:
+#&gt; c("weight", "Time", "Chick", "Diet") is not in c("Time", "weight", "Diet").</div><div class='input'>
 <span class='fu'>areDisjointSets</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>), <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"b"</span>, <span class='st'>"a"</span>))</div><div class='output co'>#&gt; [1] FALSE
 #&gt; Cause of failure:
 #&gt; c("a", "b") and c("b", "a") have common elements: a, b.</div><div class='input'><span class='fu'>areIntersectingSets</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>), <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"c"</span>, <span class='st'>"d"</span>))</div><div class='output co'>#&gt; [1] FALSE
 #&gt; Cause of failure:
-#&gt; c("a", "b") and c("c", "d") have no common elements.</div><div class='input'><span class='fu'>areSetEqual</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>), <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"b"</span>, <span class='st'>"c"</span>))</div><div class='output co'>#&gt; [1] FALSE</div></pre>
+#&gt; c("a", "b") and c("c", "d") have no common elements.</div><div class='input'><span class='fu'>areSetEqual</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>), <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"b"</span>, <span class='st'>"c"</span>))</div><div class='output co'>#&gt; [1] FALSE
+#&gt; Cause of failure:
+#&gt; c("a", "b") is not in c("b", "c").</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

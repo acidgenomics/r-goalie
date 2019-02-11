@@ -105,15 +105,21 @@
       <small>Source: <a href='https://github.com/steinbaugh/goalie/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
-    <div id="goalie-0-2-7-2019-01-31" class="section level2">
+    <div id="goalie-0-2-7" class="section level2">
 <h2 class="hasAnchor">
-<a href="#goalie-0-2-7-2019-01-31" class="anchor"></a>goalie 0.2.7 (2019-01-31)</h2>
+<a href="#goalie-0-2-7" class="anchor"></a>goalie 0.2.7</h2>
 <div id="minor-changes" class="section level3">
 <h3 class="hasAnchor">
 <a href="#minor-changes" class="anchor"></a>Minor changes</h3>
 <ul>
 <li>
-<code><a href="../reference/assert.html">assert()</a></code> now has <code>traceback</code> disabled by default. Note that this can be enabled globally using <code><a href="https://www.rdocumentation.org/packages/base/topics/options">options(goalie.traceback = TRUE)</a></code>, which can be useful for code debugging in some situations.</li>
+<code><a href="../reference/assert.html">assert()</a></code>: <code>traceback</code> argument is disabled by default. Note that this can be enabled globally using <code><a href="https://www.rdocumentation.org/packages/base/topics/options">options(goalie.traceback = TRUE)</a></code>, which can be useful for code debugging in some situations.</li>
+<li>
+<code><a href="../reference/sets.html">isSubset()</a></code>: Improved cause message if user attempts to pass in <code>NULL</code> for either <code>x</code> or <code>y</code> arguments.</li>
+<li>
+<code><a href="../reference/hasNonZeroRowsAndCols.html">hasNonZeroRowsAndCols()</a></code>: Fixed typo in internal code that didn’t check using <code><a href="../reference/hasDims.html">hasCols()</a></code> properly.</li>
+<li>
+<code><a href="../reference/isFlag.html">isFlag()</a></code>: Improved cause message if user passes in <code>NA</code>.</li>
 </ul>
 </div>
 </div>
@@ -260,7 +266,7 @@
     <div id="tocnav">
       <h2>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
-        <li><a href="#goalie-0-2-7-2019-01-31">0.2.7</a></li>
+        <li><a href="#goalie-0-2-7">0.2.7</a></li>
         <li><a href="#goalie-0-2-6-2019-01-22">0.2.6</a></li>
         <li><a href="#goalie-0-2-5-2019-01-15">0.2.5</a></li>
         <li><a href="#goalie-0-2-4-2019-01-06">0.2.4</a></li>
