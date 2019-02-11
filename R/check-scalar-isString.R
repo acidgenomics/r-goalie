@@ -4,10 +4,10 @@
 #' @inherit params
 #'
 #' @examples
-#' ## Pass ====
+#' ## TRUE ====
 #' isString("hello")
 #'
-#' ## Fail ====
+#' ## FALSE ====
 #' isString(1)
 #' isString("")
 #' isString(NA_character_)

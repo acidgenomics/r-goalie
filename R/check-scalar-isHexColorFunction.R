@@ -9,11 +9,11 @@
 #' @seealso RColorBrewer, viridis packages.
 #'
 #' @examples
-#' ## Pass ====
+#' ## TRUE ====
 #' x <- viridis::viridis
 #' isHexColorFunction(x)
 #'
-#' ## Fail ====
+#' ## FALSE ====
 #' x <- ggplot2::scale_colour_manual
 #' isHexColorFunction(x)
 isHexColorFunction <- function(
@@ -35,7 +35,9 @@ isHexColorFunction <- function(
     # Check for `n` formal.
     ok <- "n" %in% formalArgs(x)
     if (!isTRUE(ok)) {
-        return(false("Hex color function must contain `n` formal."))
+        return(false(
+            "Hex color function must contain an `n` formal argument."
+        ))
     }
 
     colors <- x(n = 2L)

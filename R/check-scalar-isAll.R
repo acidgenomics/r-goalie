@@ -6,10 +6,10 @@
 #' @examples
 #' x <- 1L
 #'
-#' ## Pass ====
+#' ## TRUE ====
 #' isAll(x, classes = c("integer", "numeric"))
 #'
-#' ## Fail ====
+#' ## FALSE ====
 #' isAll(x, classes = c("integer", "NULL"))
 isAll <- function(x, classes, .xname = getNameInParent(x)) {
     ok <- all(is2(x, class = classes))

@@ -19,13 +19,13 @@ hasDimnames(x, .xname = getNameInParent(x))
 Does the input have dimnames?
 }
 \examples{
-## Pass ====
+## TRUE ====
 x <- datasets::mtcars
 hasDimnames(x)
 hasRownames(x)
 hasColnames(x)
 
-## Fail ====
+## FALSE ====
 x <- data.frame()
 hasDimnames(x)
 hasRownames(x)

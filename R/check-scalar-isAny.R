@@ -6,12 +6,12 @@
 #' @examples
 #' x <- 1L
 #'
-#' ## Pass ====
+#' ## TRUE ====
 #' isAny(x, classes = c("integer", "NULL"))
 #' isAny(x, classes = c("numeric", "NULL"))
 #' isAny(x, classes = c("atomic", "NULL"))
 #'
-#' ## Fail ====
+#' ## FALSE ====
 #' isAny(x, classes = c("character", "data.frame"))
 isAny <- function(x, classes, .xname = getNameInParent(x)) {
     ok <- isCharacter(classes)

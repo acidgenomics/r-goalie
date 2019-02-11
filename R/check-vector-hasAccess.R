@@ -27,10 +27,10 @@
 #' @return `logical`.
 #'
 #' @examples
-#' ## Pass ====
+#' ## TRUE ====
 #' hasAccess(c("~", "."))
 #'
-#' ## Fail ====
+#' ## FALSE ====
 #' hasAccess("xxx")
 NULL
 

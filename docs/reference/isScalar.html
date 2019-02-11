@@ -65,7 +65,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">goalie</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.7</span>
       </span>
     </div>
 
@@ -117,27 +117,27 @@
 
     <pre class="usage"><span class='fu'>isNumber</span>(<span class='no'>x</span>, <span class='kw'>nullOK</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
 
-<span class='fu'>isScalar</span>(<span class='no'>x</span>)
+<span class='fu'>isScalar</span>(<span class='no'>x</span>, <span class='kw'>.xname</span> <span class='kw'>=</span> <span class='fu'><a href='getNameInParent.html'>getNameInParent</a></span>(<span class='no'>x</span>))
 
-<span class='fu'>isNonScalar</span>(<span class='no'>x</span>)
+<span class='fu'>isNonScalar</span>(<span class='no'>x</span>, <span class='kw'>.xname</span> <span class='kw'>=</span> <span class='fu'><a href='getNameInParent.html'>getNameInParent</a></span>(<span class='no'>x</span>))
 
-<span class='fu'>isScalarList</span>(<span class='no'>x</span>)
+<span class='fu'>isScalarList</span>(<span class='no'>x</span>, <span class='kw'>.xname</span> <span class='kw'>=</span> <span class='fu'><a href='getNameInParent.html'>getNameInParent</a></span>(<span class='no'>x</span>))
 
-<span class='fu'>isScalarAtomic</span>(<span class='no'>x</span>)
+<span class='fu'>isScalarAtomic</span>(<span class='no'>x</span>, <span class='kw'>.xname</span> <span class='kw'>=</span> <span class='fu'><a href='getNameInParent.html'>getNameInParent</a></span>(<span class='no'>x</span>))
 
-<span class='fu'>isScalarVector</span>(<span class='no'>x</span>)
+<span class='fu'>isScalarVector</span>(<span class='no'>x</span>, <span class='kw'>.xname</span> <span class='kw'>=</span> <span class='fu'><a href='getNameInParent.html'>getNameInParent</a></span>(<span class='no'>x</span>))
 
-<span class='fu'>isScalarNumeric</span>(<span class='no'>x</span>)
+<span class='fu'>isScalarNumeric</span>(<span class='no'>x</span>, <span class='kw'>.xname</span> <span class='kw'>=</span> <span class='fu'><a href='getNameInParent.html'>getNameInParent</a></span>(<span class='no'>x</span>))
 
-<span class='fu'>isScalarInteger</span>(<span class='no'>x</span>)
+<span class='fu'>isScalarInteger</span>(<span class='no'>x</span>, <span class='kw'>.xname</span> <span class='kw'>=</span> <span class='fu'><a href='getNameInParent.html'>getNameInParent</a></span>(<span class='no'>x</span>))
 
 <span class='fu'>isScalarIntegerish</span>(<span class='no'>x</span>)
 
-<span class='fu'>isScalarDouble</span>(<span class='no'>x</span>)
+<span class='fu'>isScalarDouble</span>(<span class='no'>x</span>, <span class='kw'>.xname</span> <span class='kw'>=</span> <span class='fu'><a href='getNameInParent.html'>getNameInParent</a></span>(<span class='no'>x</span>))
 
-<span class='fu'>isScalarCharacter</span>(<span class='no'>x</span>)
+<span class='fu'>isScalarCharacter</span>(<span class='no'>x</span>, <span class='kw'>.xname</span> <span class='kw'>=</span> <span class='fu'><a href='getNameInParent.html'>getNameInParent</a></span>(<span class='no'>x</span>))
 
-<span class='fu'>isScalarLogical</span>(<span class='no'>x</span>)</pre>
+<span class='fu'>isScalarLogical</span>(<span class='no'>x</span>, <span class='kw'>.xname</span> <span class='kw'>=</span> <span class='fu'><a href='getNameInParent.html'>getNameInParent</a></span>(<span class='no'>x</span>))</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -150,6 +150,10 @@
       <th>nullOK</th>
       <td><p><code><a href='https://www.rdocumentation.org/packages/base/topics/logical'>logical(1)</a></code>.
 If set to <code>TRUE</code>, <code>x</code> may also be <code>NULL</code>.</p></td>
+    </tr>
+    <tr>
+      <th>.xname</th>
+      <td><p><em>Not intended to be used directly.</em></p></td>
     </tr>
     </table>
     
@@ -166,7 +170,8 @@ If set to <code>TRUE</code>, <code>x</code> may also be <code>NULL</code>.</p></
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='https://www.rdocumentation.org/packages/utils/topics/help'>help(topic = "scalar-type-predicates", package = "rlang")</a></code>.</p><ul>
+    <div class='dont-index'><ul>
+<li><p><code><a href='https://www.rdocumentation.org/packages/utils/topics/help'>help(topic = "scalar-type-predicates", package = "rlang")</a></code>.</p></li>
 <li><p><code><a href='https://www.rdocumentation.org/packages/assertive.properties/topics/is_empty'>assertive.properties::is_scalar()</a></code>.</p></li>
 <li><p><code><a href='https://rlang.r-lib.org/reference/scalar-type-predicates.html'>rlang::is_scalar_list()</a></code>.</p></li>
 <li><p><code><a href='https://rlang.r-lib.org/reference/scalar-type-predicates.html'>rlang::is_scalar_atomic()</a></code>.</p></li>
@@ -180,10 +185,14 @@ If set to <code>TRUE</code>, <code>x</code> may also be <code>NULL</code>.</p></
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'>## Pass ====</span>
+    <pre class="examples"><div class='input'><span class='co'>## TRUE ====</span>
 <span class='fu'>isScalar</span>(<span class='st'>"a"</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>isScalarInteger</span>(<span class='fl'>1L</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>isScalarIntegerish</span>(<span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
-<span class='co'>## Fail ====</span>
-<span class='fu'>isScalar</span>(<span class='kw'>NULL</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>isScalar</span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>))</div><div class='output co'>#&gt; [1] FALSE</div></pre>
+<span class='co'>## FALSE ====</span>
+<span class='fu'>isScalar</span>(<span class='kw'>NULL</span>)</div><div class='output co'>#&gt; [1] FALSE
+#&gt; Cause of failure:
+#&gt; NULL does not have a length of 1.</div><div class='input'><span class='fu'>isScalar</span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>))</div><div class='output co'>#&gt; [1] FALSE
+#&gt; Cause of failure:
+#&gt; c("a", "b") does not have a length of 1.</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

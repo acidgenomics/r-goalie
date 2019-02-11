@@ -28,7 +28,7 @@ rows.
 }
 
 \examples{
-## Pass ====
+## TRUE ====
 x <- data.frame(
     "sample1" = c(1L, 2L),
     "sample2" = c(3L, 4L),
@@ -37,7 +37,7 @@ x <- data.frame(
 print(x)
 hasRownames(x)
 
-## Fail ====
+## FALSE ====
 x <- data.frame(a = seq_len(2L))
 print(x)
 # Standard data frame doesn't allow NULL row names.

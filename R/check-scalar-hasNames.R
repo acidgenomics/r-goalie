@@ -6,10 +6,10 @@
 #' @seealso `assertive.properties::has_names()`.
 #'
 #' @examples
-#' ## Pass ====
+#' ## TRUE ====
 #' hasNames(datasets::mtcars)
 #'
-#' ## Fail ====
+#' ## FALSE ====
 #' hasNames(matrix())
 #' hasNames(data.frame())
 hasNames <- function(x, .xname = getNameInParent(x)) {

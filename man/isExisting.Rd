@@ -59,11 +59,11 @@ suppressWarnings(rm(x, y))
 a <- 1L
 b <- 2L
 
-## Pass ====
+## TRUE ====
 isExisting(c("a", "b"))
 allAreNonExisting(c("x", "y"))
 
-## Fail ====
+## FALSE ====
 isExisting(c("x", "y"))
 }
 \seealso{
