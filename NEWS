@@ -1,4 +1,14 @@
-## goalie 0.2.7
+## goalie 0.2.8 (2019-02-11)
+
+### Minor changes
+
+- Bioconda unit tests revealed that `...elt()` approach used in `assert()` isn't
+  backward compatible with R 3.4. The backports package was added as a
+  dependency, which provides legacy support for `...elt()` in R 3.4. This is
+  called internally inside `.onLoad()` specifically for R releases prior to 3.5.
+
+
+## goalie 0.2.7 (2019-02-11)
 
 ### Minor changes
 

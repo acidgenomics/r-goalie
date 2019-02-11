@@ -40,7 +40,7 @@ matchArgsToDoCall <- function(
     args = NULL,
     removeFormals = NULL,
     which = sys.parent(n = 1L),
-    verbose = FALSE
+    verbose = getOption("goalie.traceback", FALSE)
 ) {
     assert(
         isAny(args, classes = c("list", "NULL")),
@@ -116,7 +116,9 @@ matchArgsToDoCall <- function(
     invisible(lapply(
         X = args,
         FUN = function(x) {
-            assert(!isAny(x, classes = c("call", "name", "symbol")))
+            assert(as.logical(
+                !isAny(x, classes = c("call", "name", "symbol"))
+            ))
         }
     ))
 
