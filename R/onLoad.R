@@ -1,6 +1,5 @@
 # Using backports to maintain R 3.4 support.
 # Note that `...elt()` is used inside of `assert()`.
-# help(topic = "...elt", package = "backports")
 .onLoad <- function(libname, pkgname) {
     .major <- as.numeric(version[["major"]])
     .minor <- as.numeric(version[["minor"]])
