@@ -1,8 +1,8 @@
 Package: goalie
 Title: Assertive Check Functions
 Description: Assertive check functions for defensive R programming.
-Version: 0.2.7
-Date: 2019-02-02
+Version: 0.2.8
+Date: 2019-02-11
 Authors@R: person(
     "Michael", "Steinbaugh",
     email = "mike@steinbaugh.com",
@@ -15,10 +15,74 @@ BugReports: https://github.com/steinbaugh/goalie/issues/
 License: MIT + file LICENSE
 Encoding: UTF-8
 Depends: R (>= 3.4)
-Imports: curl (>= 3.2), methods, utils
+Imports:
+    backports (>= 1.1), curl (>= 3.2),
+    methods, utils
 Suggests:
     S4Vectors, SummarizedExperiment,
     Matrix, data.table, ggplot2, patrick, testthat, tibble, viridis
 biocViews: Infrastructure
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
+Collate: 
+    'MethodDefinition.R'
+    'appendToBody.R'
+    'onLoad.R'
+    'assert.R'
+    'bapply.R'
+    'callAndName.R'
+    'capitalize.R'
+    'cause.R'
+    'check-scalar-allAreAtomic.R'
+    'check-scalar-areSameLength.R'
+    'check-scalar-formalCompress.R'
+    'check-scalar-hasDimnames.R'
+    'check-scalar-hasDims.R'
+    'check-scalar-hasDuplicates.R'
+    'check-scalar-hasElements.R'
+    'check-scalar-hasInternet.R'
+    'check-scalar-hasLength.R'
+    'check-scalar-hasNames.R'
+    'check-scalar-hasNonZeroRowsAndCols.R'
+    'check-scalar-hasRownames.R'
+    'check-scalar-hasUniqueCols.R'
+    'check-scalar-hasValidNames.R'
+    'check-scalar-isAll.R'
+    'check-scalar-isAlpha.R'
+    'check-scalar-isAny.R'
+    'check-scalar-isCharacter.R'
+    'check-scalar-isFlag.R'
+    'check-scalar-isGGScale.R'
+    'check-scalar-isHeaderLevel.R'
+    'check-scalar-isHexColorFunction.R'
+    'check-scalar-isNumber.R'
+    'check-scalar-isScalar.R'
+    'check-scalar-isString.R'
+    'check-scalar-matchesUniqueGeneNames.R'
+    'check-scalar-sets.R'
+    'check-scalar-validNames.R'
+    'check-vector-hasAccess.R'
+    'check-vector-isDirectory.R'
+    'check-vector-isEqual.R'
+    'check-vector-isExisting.R'
+    'check-vector-isFile.R'
+    'check-vector-isHexColor.R'
+    'check-vector-isInRange.R'
+    'check-vector-isIntegerish.R'
+    'check-vector-isMatching.R'
+    'check-vector-isURL.R'
+    'deprecated.R'
+    'false.R'
+    'getNameInParent.R'
+    'internal.R'
+    'is2.R'
+    'matchArgsToDoCall.R'
+    'package.R'
+    'params.R'
+    'print-methods.R'
+    'printString.R'
+    'safeDeparse.R'
+    'setCause.R'
+    'standardizeCall.R'
+    'validate.R'
+    'validateClasses.R'
