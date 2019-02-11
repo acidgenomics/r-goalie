@@ -392,8 +392,8 @@ test_that("isAlpha", {
         noquote("0L is not scalar double.")
     )
 
-    expect_identical(cause(isAlpha(0L)), noquote("too low"))
-    expect_identical(cause(isAlpha(1L)), noquote("too high"))
+    expect_identical(cause(isAlpha(0)), noquote("too low"))  # nolint
+    expect_identical(cause(isAlpha(1)), noquote("too high"))  # nolint
 
     # Must be scalar.
     expect_identical(
@@ -459,7 +459,7 @@ test_that("isFlag", {
     expect_s3_class(object, "goalie")
     expect_identical(
         cause(object),
-        noquote("1 is not a boolean flag (TRUE/FALSE).")
+        noquote("1L is not a boolean flag (TRUE/FALSE).")
     )
 
     object <- isFlag(NA)
