@@ -150,10 +150,10 @@
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'>## Pass ====</span>
+    <pre class="examples"><div class='input'><span class='co'>## TRUE ====</span>
 <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>viridis</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/viridis/topics/reexports'>viridis</a></span>(<span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>2L</span>)
 <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/class'>class</a></span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] "character"</div><div class='input'><span class='fu'><a href='print.html'>print</a></span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] "#440154FF" "#FDE725FF"</div><div class='input'><span class='fu'>isHexColor</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] TRUE TRUE</div><div class='input'>
-<span class='co'>## Fail ====</span>
+<span class='co'>## FALSE ====</span>
 <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>ggplot2</span><span class='kw ns'>::</span><span class='no'><a href='https://ggplot2.tidyverse.org/reference/scale_manual.html'>scale_colour_manual</a></span>
 <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/class'>class</a></span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] "function"</div><div class='input'><span class='fu'>isHexColor</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] FALSE
 #&gt; Cause of failure:
