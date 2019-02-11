@@ -62,7 +62,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">goalie</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.7</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.8</span>
       </span>
     </div>
 
@@ -105,12 +105,23 @@
       <small>Source: <a href='https://github.com/steinbaugh/goalie/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
-    <div id="goalie-0-2-7" class="section level2">
+    <div id="goalie-0-2-8-2019-02-11" class="section level2">
 <h2 class="hasAnchor">
-<a href="#goalie-0-2-7" class="anchor"></a>goalie 0.2.7</h2>
+<a href="#goalie-0-2-8-2019-02-11" class="anchor"></a>goalie 0.2.8 (2019-02-11)</h2>
 <div id="minor-changes" class="section level3">
 <h3 class="hasAnchor">
 <a href="#minor-changes" class="anchor"></a>Minor changes</h3>
+<ul>
+<li>Bioconda unit tests revealed that <code><a href="https://www.rdocumentation.org/packages/base/topics/dots">...elt()</a></code> approach used in <code><a href="../reference/assert.html">assert()</a></code> isn’t backward compatible with R 3.4. The backports package was added as a dependency, which provides legacy support for <code><a href="https://www.rdocumentation.org/packages/base/topics/dots">...elt()</a></code> in R 3.4. This is called internally inside <code><a href="https://www.rdocumentation.org/packages/base/topics/ns-hooks">.onLoad()</a></code> specifically for R releases prior to 3.5.</li>
+</ul>
+</div>
+</div>
+    <div id="goalie-0-2-7-2019-02-11" class="section level2">
+<h2 class="hasAnchor">
+<a href="#goalie-0-2-7-2019-02-11" class="anchor"></a>goalie 0.2.7 (2019-02-11)</h2>
+<div id="minor-changes-1" class="section level3">
+<h3 class="hasAnchor">
+<a href="#minor-changes-1" class="anchor"></a>Minor changes</h3>
 <ul>
 <li>
 <code><a href="../reference/assert.html">assert()</a></code>: <code>traceback</code> argument is disabled by default. Note that this can be enabled globally using <code><a href="https://www.rdocumentation.org/packages/base/topics/options">options(goalie.traceback = TRUE)</a></code>, which can be useful for code debugging in some situations.</li>
@@ -137,9 +148,9 @@
     <div id="goalie-0-2-5-2019-01-15" class="section level2">
 <h2 class="hasAnchor">
 <a href="#goalie-0-2-5-2019-01-15" class="anchor"></a>goalie 0.2.5 (2019-01-15)</h2>
-<div id="minor-changes-1" class="section level3">
+<div id="minor-changes-2" class="section level3">
 <h3 class="hasAnchor">
-<a href="#minor-changes-1" class="anchor"></a>Minor changes</h3>
+<a href="#minor-changes-2" class="anchor"></a>Minor changes</h3>
 <ul>
 <li>
 <code><a href="../reference/isDirectory.html">isADirectory()</a></code>, <code><a href="../reference/isFile.html">isAFile()</a></code>: Added <code>nullOK</code> argument support.</li>
@@ -156,9 +167,9 @@
 <li>New exports: <code><a href="../reference/isDirectory.html">allAreDirectories()</a></code>, <code><a href="../reference/isFile.html">allAreFiles()</a></code>, which return scalar.</li>
 </ul>
 </div>
-<div id="minor-changes-2" class="section level3">
+<div id="minor-changes-3" class="section level3">
 <h3 class="hasAnchor">
-<a href="#minor-changes-2" class="anchor"></a>Minor changes</h3>
+<a href="#minor-changes-3" class="anchor"></a>Minor changes</h3>
 <ul>
 <li>Documentation improvements.</li>
 </ul>
@@ -174,9 +185,9 @@
 <li>Migrated some low-level functions from <a href="https://steinbaugh.com/basejump/">basejump</a> that are useful for assertive checks: <code><a href="../reference/matchArgsToDoCall.html">matchArgsToDoCall()</a></code>, <code><a href="../reference/standardizeCall.html">standardizeCall()</a></code>, and the <code>MethodDefinition</code> family, which includes <code><a href="../reference/MethodDefinition.html">methodFunction()</a></code>, <code><a href="../reference/MethodDefinition.html">methodFormals()</a></code>, <code><a href="../reference/MethodDefinition.html">hasLocal()</a></code>, <code><a href="../reference/MethodDefinition.html">extractLocal()</a></code>. These will get re-exported in <a href="https://steinbaugh.com/basejump/">basejump</a>.</li>
 </ul>
 </div>
-<div id="minor-changes-3" class="section level3">
+<div id="minor-changes-4" class="section level3">
 <h3 class="hasAnchor">
-<a href="#minor-changes-3" class="anchor"></a>Minor changes</h3>
+<a href="#minor-changes-4" class="anchor"></a>Minor changes</h3>
 <ul>
 <li>Reorganized base engine function files, getting rid of the <code>base-</code> prefix.</li>
 <li>Added conditional <code>NULL</code> support where applicable, with <code>nullOK</code> formal. Applies to <code><a href="../reference/isIntegerish.html">isInt()</a></code>, <code><a href="../reference/isScalar.html">isNumber()</a></code>, <code><a href="../reference/isString.html">isString()</a></code>, for example.</li>
@@ -231,9 +242,9 @@
     <div id="goalie-0-1-2-2018-11-21" class="section level2">
 <h2 class="hasAnchor">
 <a href="#goalie-0-1-2-2018-11-21" class="anchor"></a>goalie 0.1.2 (2018-11-21)</h2>
-<div id="minor-changes-4" class="section level3">
+<div id="minor-changes-5" class="section level3">
 <h3 class="hasAnchor">
-<a href="#minor-changes-4" class="anchor"></a>Minor changes</h3>
+<a href="#minor-changes-5" class="anchor"></a>Minor changes</h3>
 <ul>
 <li>
 <code><a href="../reference/isDirectory.html">isDir()</a></code> and <code><a href="../reference/isFile.html">isFile()</a></code> now import <code><a href="https://www.rdocumentation.org/packages/R.utils/topics/isDirectory">R.utils::isDirectory()</a></code> and <code><a href="https://www.rdocumentation.org/packages/R.utils/topics/isFile">R.utils::isFile()</a></code>.</li>
@@ -243,9 +254,9 @@
     <div id="goalie-0-1-1-2018-11-14" class="section level2">
 <h2 class="hasAnchor">
 <a href="#goalie-0-1-1-2018-11-14" class="anchor"></a>goalie 0.1.1 (2018-11-14)</h2>
-<div id="minor-changes-5" class="section level3">
+<div id="minor-changes-6" class="section level3">
 <h3 class="hasAnchor">
-<a href="#minor-changes-5" class="anchor"></a>Minor changes</h3>
+<a href="#minor-changes-6" class="anchor"></a>Minor changes</h3>
 <ul>
 <li>
 <code>areUniqueGeneNames()</code> now returns <code>boolean</code> as expected.</li>
@@ -266,7 +277,8 @@
     <div id="tocnav">
       <h2>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
-        <li><a href="#goalie-0-2-7">0.2.7</a></li>
+        <li><a href="#goalie-0-2-8-2019-02-11">0.2.8</a></li>
+        <li><a href="#goalie-0-2-7-2019-02-11">0.2.7</a></li>
         <li><a href="#goalie-0-2-6-2019-01-22">0.2.6</a></li>
         <li><a href="#goalie-0-2-5-2019-01-15">0.2.5</a></li>
         <li><a href="#goalie-0-2-4-2019-01-06">0.2.4</a></li>
