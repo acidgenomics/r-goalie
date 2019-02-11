@@ -1,3 +1,17 @@
+## goalie 0.2.7
+
+### Minor changes
+
+- `assert()`: `traceback` argument is disabled by default. Note that this can be
+  enabled globally using `options(goalie.traceback = TRUE)`, which can be useful
+  for code debugging in some situations.
+- `isSubset()`: Improved cause message if user attempts to pass in `NULL` for
+  either `x` or `y` arguments.
+- `hasNonZeroRowsAndCols()`: Fixed typo in internal code that didn't check using
+  `hasCols()` properly.
+- `isFlag()`: Improved cause message if user passes in `NA`.
+
+
 ## goalie 0.2.6 (2019-01-22)
 
 ### New functions

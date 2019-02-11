@@ -13,11 +13,11 @@
 #' @inherit params
 #'
 #' @examples
-#' ## Pass ====
+#' ## TRUE ====
 #' x <- matrix(data = seq_len(20L), ncol = 2L)
 #' hasUniqueCols(x)
 #'
-#' ## Fail ====
+#' ## FALSE ====
 #' x <- matrix(data = rep(seq_len(10L), times = 2L), ncol = 2L)
 #' hasUniqueCols(x)
 hasUniqueCols <- function(x, .xname = getNameInParent(x)) {

@@ -19,9 +19,9 @@ isHeaderLevel(x, .xname = getNameInParent(x))
 Markdown supports header levels \code{1}-\code{7} (\code{<H1>}-\code{<H7>}).
 }
 \examples{
-## Pass ====
+## TRUE ====
 isHeaderLevel(1)
 
-## Fail ====
+## FALSE ====
 isHeaderLevel(0)
 }

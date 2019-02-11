@@ -25,7 +25,7 @@
 #' )
 #' genes <- SummarizedExperiment::rowData(x)$geneName
 #'
-#' ## Pass ====
+#' ## TRUE ====
 #' matchesUniqueGeneNames(x = x, genes = genes)
 matchesUniqueGeneNames <- function(x, genes, .xname = getNameInParent(x)) {
     ok <- isS4(x)

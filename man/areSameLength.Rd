@@ -28,13 +28,13 @@ Non-zero lengths for \code{x} and \code{y} are required, otherwise the check
 function will intentionally error.
 }
 \examples{
-## Pass ====
-x <- list(a = 1, b = 2)
-y <- list(c = 3, d = 4)
+## TRUE ====
+x <- list(a = 1L, b = 2L)
+y <- list(c = 3L, d = 4L)
 areSameLength(x = x, y = y)
 
-## Fail ====
-x <- list(a = 1)
-y <- list(b = 2, c = 3)
+## FALSE ====
+x <- list(a = 1L)
+y <- list(b = 2L, c = 3L)
 areSameLength(x = x, y = y)
 }

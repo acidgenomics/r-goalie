@@ -19,9 +19,11 @@ validNames(x, .xname = getNameInParent(x))
 Are these valid names?
 }
 \examples{
+## TRUE ====
 ## Dots (periods) and underscores are valid.
 validNames(c("sample.1", "sample_1"))
 
+## FALSE ====
 ## Can't begin with a number.
 validNames("293cells")
 

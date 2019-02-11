@@ -6,10 +6,10 @@
 #' @inherit params
 #'
 #' @examples
-#' ## Pass ====
+#' ## TRUE ====
 #' isHeaderLevel(1)
 #'
-#' ## Fail ====
+#' ## FALSE ====
 #' isHeaderLevel(0)
 isHeaderLevel <- function(x, .xname = getNameInParent(x)) {
     ok <- isScalarIntegerish(x)

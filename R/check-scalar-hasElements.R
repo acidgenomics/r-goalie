@@ -12,11 +12,11 @@
 #' - `assertive.properties::is_non_empty()`.
 #'
 #' @examples
-#' ## Pass ====
+#' ## TRUE ====
 #' hasElements("hello", n = 1)
 #' hasElements(list(a = 1, b = 2), n = 2)
 #'
-#' ## Fail ====
+#' ## FALSE ====
 #' hasElements(list(), n = 1)
 NULL
 

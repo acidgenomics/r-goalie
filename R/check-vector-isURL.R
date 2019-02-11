@@ -8,12 +8,12 @@
 #' @examples
 #' urls <- c("https://www.r-project.org", "ftp://r-project.org")
 #'
-#' ## Pass ====
+#' ## TRUE ====
 #' isURL(urls)
 #' isAURL(urls[[1L]])
 #' allAreURLs(urls)
 #'
-#' ## Fail ====
+#' ## FALSE ====
 #' isURL("xxx")
 #' isAURL(urls)
 NULL

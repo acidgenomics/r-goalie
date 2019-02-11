@@ -8,13 +8,13 @@
 #'   non-zero.
 #'
 #' @examples
-#' ## Pass ====
+#' ## TRUE ====
 #' hasLength(1L)
 #' hasLength(FALSE)
 #' hasLength(datasets::mtcars)
 #' hasLength("")
 #'
-#' ## Fail ====
+#' ## FALSE ====
 #' hasLength(NULL)
 #' hasLength(character())
 #' hasLength(data.frame())

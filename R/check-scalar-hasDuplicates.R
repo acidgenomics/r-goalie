@@ -8,11 +8,11 @@
 #' - `assertive.properties::has_no_duplicates()`.
 #'
 #' @examples
-#' ## Pass ====
+#' ## TRUE ====
 #' hasDuplicates(c("a", "a"))
 #' hasNoDuplicates(c("a", "b"))
 #'
-#' ## Fail ====
+#' ## FALSE ====
 #' hasDuplicates(c("a", "b"))
 #' hasNoDuplicates(c("a", "a", "b", "b"))
 NULL

@@ -24,9 +24,9 @@ Does the input belong to or inherit all of these classes?
 \examples{
 x <- 1L
 
-## Pass ====
+## TRUE ====
 isAll(x, classes = c("integer", "numeric"))
 
-## Fail ====
+## FALSE ====
 isAll(x, classes = c("integer", "NULL"))
 }

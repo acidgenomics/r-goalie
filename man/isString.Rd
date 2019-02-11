@@ -22,10 +22,10 @@ If set to \code{TRUE}, \code{x} may also be \code{NULL}.}
 Does the input contain a (non-empty) character string?
 }
 \examples{
-## Pass ====
+## TRUE ====
 isString("hello")
 
-## Fail ====
+## FALSE ====
 isString(1)
 isString("")
 isString(NA_character_)

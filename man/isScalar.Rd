@@ -18,33 +18,35 @@
 \usage{
 isNumber(x, nullOK = FALSE)
 
-isScalar(x)
+isScalar(x, .xname = getNameInParent(x))
 
-isNonScalar(x)
+isNonScalar(x, .xname = getNameInParent(x))
 
-isScalarList(x)
+isScalarList(x, .xname = getNameInParent(x))
 
-isScalarAtomic(x)
+isScalarAtomic(x, .xname = getNameInParent(x))
 
-isScalarVector(x)
+isScalarVector(x, .xname = getNameInParent(x))
 
-isScalarNumeric(x)
+isScalarNumeric(x, .xname = getNameInParent(x))
 
-isScalarInteger(x)
+isScalarInteger(x, .xname = getNameInParent(x))
 
 isScalarIntegerish(x)
 
-isScalarDouble(x)
+isScalarDouble(x, .xname = getNameInParent(x))
 
-isScalarCharacter(x)
+isScalarCharacter(x, .xname = getNameInParent(x))
 
-isScalarLogical(x)
+isScalarLogical(x, .xname = getNameInParent(x))
 }
 \arguments{
 \item{x}{Object.}
 
 \item{nullOK}{\code{logical(1)}.
 If set to \code{TRUE}, \code{x} may also be \code{NULL}.}
+
+\item{.xname}{\emph{Not intended to be used directly.}}
 }
 \value{
 \code{TRUE} on success;
@@ -59,18 +61,18 @@ Scalar represents a length of 1.
 }}
 
 \examples{
-## Pass ====
+## TRUE ====
 isScalar("a")
 isScalarInteger(1L)
 isScalarIntegerish(1)
 
-## Fail ====
+## FALSE ====
 isScalar(NULL)
 isScalar(c("a", "b"))
 }
 \seealso{
-\code{help(topic = "scalar-type-predicates", package = "rlang")}.
 \itemize{
+\item \code{help(topic = "scalar-type-predicates", package = "rlang")}.
 \item \code{assertive.properties::is_scalar()}.
 \item \code{rlang::is_scalar_list()}.
 \item \code{rlang::is_scalar_atomic()}.

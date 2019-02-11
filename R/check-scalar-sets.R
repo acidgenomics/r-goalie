@@ -11,7 +11,7 @@
 #' - `assertive.sets::are_set_equal()`.
 #'
 #' @examples
-#' ## Pass ====
+#' ## TRUE ====
 #' isSubset(x = "a", y = c("a", "b"))
 #'
 #' ## This assert is particularly useful for checking required columns.
@@ -24,7 +24,7 @@
 #' areIntersectingSets(x = c("a", "b"), y = c("b", "c"))
 #' areSetEqual(x = c("a", "b"), y = c("b", "a"))
 #'
-#' ## Fail ====
+#' ## FALSE ====
 #' isSubset(x = "c", y = c("a", "b"))
 #' isSuperset(
 #'     x = c("Time", "weight", "Diet"),
@@ -42,8 +42,15 @@ NULL
 #' @rdname sets
 #' @export
 isSubset <- function(x, y) {
-    assert(hasLength(x), hasLength(y))
-    all(x %in% y)
+    if (!isTRUE(ok <- hasLength(x))) return(ok)
+    if (!isTRUE(ok <- hasLength(y))) return(ok)
+    if (!isTRUE(all(x %in% y))) {
+        return(false(
+            gettext("%s is not in %s."),
+            deparse(x), deparse(y)
+        ))
+    }
+    TRUE
 }
 
 
@@ -114,7 +121,7 @@ areSetEqual <- function(
             .xname, .yname, length(x), length(y)
         ))
     }
-    if (!(ok <- isSubset(x, y))) return(ok)
-    if (!(ok <- isSubset(y, x))) return(ok)
+    if (!isTRUE(ok <- isSubset(x, y))) return(ok)
+    if (!isTRUE(ok <- isSubset(y, x))) return(ok)
     TRUE
 }

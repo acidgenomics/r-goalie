@@ -66,7 +66,7 @@ hexadecimal color value return." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">goalie</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.7</span>
       </span>
     </div>
 
@@ -148,14 +148,14 @@ If set to <code>TRUE</code>, <code>x</code> may also be <code>NULL</code>.</p></
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'>## Pass ====</span>
+    <pre class="examples"><div class='input'><span class='co'>## TRUE ====</span>
 <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>viridis</span><span class='kw ns'>::</span><span class='no'><a href='https://www.rdocumentation.org/packages/viridis/topics/reexports'>viridis</a></span>
 <span class='fu'>isHexColorFunction</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
-<span class='co'>## Fail ====</span>
+<span class='co'>## FALSE ====</span>
 <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>ggplot2</span><span class='kw ns'>::</span><span class='no'><a href='https://ggplot2.tidyverse.org/reference/scale_manual.html'>scale_colour_manual</a></span>
 <span class='fu'>isHexColorFunction</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] FALSE
 #&gt; Cause of failure:
-#&gt; Hex color function must contain `n` formal.</div></pre>
+#&gt; Hex color function must contain an `n` formal argument.</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

@@ -23,13 +23,13 @@ non-zero.}
 Does the input have a non-zero or defined length?
 }
 \examples{
-## Pass ====
+## TRUE ====
 hasLength(1L)
 hasLength(FALSE)
 hasLength(datasets::mtcars)
 hasLength("")
 
-## Fail ====
+## FALSE ====
 hasLength(NULL)
 hasLength(character())
 hasLength(data.frame())

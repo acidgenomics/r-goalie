@@ -19,10 +19,10 @@ isAlpha(x, .xname = getNameInParent(x))
 An alpha level must be \code{numeric(1)} greater than 0 and less than 1.
 }
 \examples{
-## Pass ====
+## TRUE ====
 isAlpha(0.05)
 
-## Fail ====
+## FALSE ====
 isAlpha("xxx")
 isAlpha(1L)
 }

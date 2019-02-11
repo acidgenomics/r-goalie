@@ -65,7 +65,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">goalie</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.7</span>
       </span>
     </div>
 
@@ -181,9 +181,9 @@ single call.</p>
 <span class='no'>a</span> <span class='kw'>&lt;-</span> <span class='fl'>1L</span>
 <span class='no'>b</span> <span class='kw'>&lt;-</span> <span class='fl'>2L</span>
 
-<span class='co'>## Pass ====</span>
+<span class='co'>## TRUE ====</span>
 <span class='fu'>isExisting</span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>))</div><div class='output co'>#&gt; [1] TRUE TRUE</div><div class='input'><span class='fu'>allAreNonExisting</span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"x"</span>, <span class='st'>"y"</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
-<span class='co'>## Fail ====</span>
+<span class='co'>## FALSE ====</span>
 <span class='fu'>isExisting</span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"x"</span>, <span class='st'>"y"</span>))</div><div class='output co'>#&gt; There were 2 failures:
 #&gt;   pos value        cause
 #&gt; 1   1     x non-existing
