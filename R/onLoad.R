@@ -11,3 +11,5 @@ if (isTRUE(.major >= 3L) && isTRUE(.minor < 5L)) {
         backports::import(pkgname = pkgname, obj = "...elt")
     }
 }
+
+rm(.major, .minor)
