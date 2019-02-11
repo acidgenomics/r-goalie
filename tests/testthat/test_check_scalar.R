@@ -172,15 +172,15 @@ test_that("hasDuplicates", {
 
 
 test_that("hasElements", {
-    expect_true(hasElements("hello", n = 1))
-    expect_true(hasElements(list(a = 1, b = 2), n = 2))
+    expect_true(hasElements("hello", n = 1L))
+    expect_true(hasElements(list(a = 1L, b = 2L), n = 2L))
 
-    object <- hasElements(list(), n = 1)
+    object <- hasElements(list(), n = 1L)
     expect_false(object)
     expect_s3_class(object, "goalie")
     expect_identical(
         cause(object),
-        noquote('list() has 0 elements, not 1.')
+        noquote("list() has 0 elements, not 1.")
     )
 })
 
@@ -248,16 +248,16 @@ test_that("hasNames", {
 
 
 test_that("hasNonZeroRowsAndCols", {
-    x <- matrix(data = seq_len(4), nrow = 2)
+    x <- matrix(data = seq_len(4L), nrow = 2L)
     expect_true(hasNonZeroRowsAndCols(x))
 
-    x <- matrix(data = rep(1, times = 2), byrow = TRUE)
+    x <- matrix(data = rep(1L, times = 2L), byrow = TRUE)
     expect_true(hasNonZeroRowsAndCols(x))
 
-    x <- matrix(data = rep(1, times = 2), byrow = FALSE)
+    x <- matrix(data = rep(1L, times = 2L), byrow = FALSE)
     expect_true(hasNonZeroRowsAndCols(x))
 
-    x <- matrix(nrow = 0, ncol = 0)
+    x <- matrix(nrow = 0L, ncol = 0L)
     object <- hasNonZeroRowsAndCols(x)
     expect_false(object)
     expect_s3_class(object, "goalie")
@@ -266,7 +266,7 @@ test_that("hasNonZeroRowsAndCols", {
         noquote("The number of rows in x is zero.")
     )
 
-    x <- matrix(nrow = 1, ncol = 0)
+    x <- matrix(nrow = 1L, ncol = 0L)
     object <- hasNonZeroRowsAndCols(x)
     expect_false(object)
     expect_s3_class(object, "goalie")
@@ -275,7 +275,7 @@ test_that("hasNonZeroRowsAndCols", {
         noquote("The number of columns in x is zero.")
     )
 
-    x <- matrix(nrow = 0, ncol = 1)
+    x <- matrix(nrow = 0L, ncol = 1L)
     object <- hasNonZeroRowsAndCols(x)
     expect_false(object)
     expect_s3_class(object, "goalie")
@@ -333,16 +333,16 @@ test_that("hasUniqueCols", {
 
 
 test_that("hasValidNames", {
-    x <- list(a = 1, b = 2)
+    x <- list(a = 1L, b = 2L)
     expect_true(hasValidNames(x))
 
     x <- datasets::iris
     expect_true(hasValidDimnames(x))
 
     x <- list(
-        `1`       = 1,  # can't start with number
-        `foo bar` = 2,  # no spaces
-        `foo-bar` = 3   # no hyphens
+        `1`       = 1L,  # can't start with number
+        `foo bar` = 2L,  # no spaces
+        `foo-bar` = 3L   # no hyphens
     )
     object <- hasValidNames(x)
     expect_false(object)
@@ -392,8 +392,8 @@ test_that("isAlpha", {
         noquote("0L is not scalar double.")
     )
 
-    expect_identical(cause(isAlpha(0)), noquote("too low"))
-    expect_identical(cause(isAlpha(1)), noquote("too high"))
+    expect_identical(cause(isAlpha(0L)), noquote("too low"))
+    expect_identical(cause(isAlpha(1L)), noquote("too high"))
 
     # Must be scalar.
     expect_identical(
@@ -454,7 +454,7 @@ test_that("isFlag", {
         noquote("c(TRUE, TRUE) is not a boolean flag (TRUE/FALSE).")
     )
 
-    object <- isFlag(1)
+    object <- isFlag(1L)
     expect_false(object)
     expect_s3_class(object, "goalie")
     expect_identical(
@@ -475,10 +475,12 @@ test_that("isFlag", {
 
 test_that("isGGScale", {
     library(ggplot2)
+    # nolint start
     colour_c <- scale_colour_gradient(low = "red", high = "blue")
     colour_d <- scale_colour_manual(values = c("red", "blue"))
     fill_c <- scale_fill_gradient(low = "red", high = "blue")
     fill_d <- scale_fill_manual(values = c("red", "blue"))
+    # nolint end
 
     expect_true(isGGScale(x = colour_c, scale = "continuous", aes = "colour"))
     expect_true(isGGScale(x = colour_d, scale = "discrete", aes = "colour"))
@@ -494,11 +496,11 @@ test_that("isGGScale", {
 
 
 test_that("isHeaderLevel", {
-    expect_true(isHeaderLevel(1))
+    expect_true(isHeaderLevel(1))  # nolint
     expect_true(isHeaderLevel(7L))
 
-    expect_false(isHeaderLevel(seq_len(7)))
-    expect_false(isHeaderLevel(0))
+    expect_false(isHeaderLevel(seq_len(7L)))
+    expect_false(isHeaderLevel(0L))
 })
 
 
@@ -518,7 +520,7 @@ test_that("isHexColorFunction", {
 
 
 test_that("isNonScalar", {
-    expect_true(isNonScalar(seq_len(2)))
+    expect_true(isNonScalar(seq_len(2L)))
     expect_true(isNonScalar(NULL))
 
     expect_false(isNonScalar(1L))
@@ -527,10 +529,11 @@ test_that("isNonScalar", {
 
 
 test_that("isNumber", {
-    expect_true(isNumber(0))
+    expect_true(isNumber(0))  # nolint
+    expect_true(isNumber(1L))
     expect_true(isNumber(1.1))
 
-    expect_false(isNumber(c(1, 2)))
+    expect_false(isNumber(seq_len(2L)))
 })
 
 
@@ -573,7 +576,7 @@ test_that("isScalarCharacter", {
 test_that("isScalarDouble", {
     expect_true(isScalarDouble(0.1))
     expect_true(isScalarDouble(1.0))
-    expect_true(isScalarDouble(1))
+    expect_true(isScalarDouble(1))  # nolint
 
     expect_false(isScalarDouble(c(0.1, 0.2)))
     expect_false(isScalarDouble(1L))
@@ -586,18 +589,18 @@ test_that("isScalarInteger", {
     expect_true(isScalarInteger(NA_integer_))
 
     expect_false(isScalarInteger(NULL))
-    expect_false(isScalarInteger(1))
+    expect_false(isScalarInteger(1))  # nolint
     expect_false(isScalarInteger(integer()))
     expect_false(isScalarInteger(c(1L, 2L)))
 })
 
 test_that("isScalarIntegerish", {
-    expect_true(isScalarIntegerish(1))
+    expect_true(isScalarIntegerish(1))  # nolint
     expect_true(isScalarIntegerish(1L))
     expect_true(isScalarIntegerish(1.0))
 
     expect_false(isScalarIntegerish(NULL))
-    expect_false(isScalarIntegerish(c(1, 2)))
+    expect_false(isScalarIntegerish(seq_len(2L)))
     expect_false(isScalarIntegerish(1.000001))
 })
 
@@ -646,7 +649,7 @@ test_that("isString", {
 
     expect_false(isString(c("hello", "world")))
     expect_false(isString(NULL))
-    expect_false(isString(1))
+    expect_false(isString(1L))
     expect_false(isString(""))
     expect_false(isString(NA_character_))
 })
@@ -669,7 +672,7 @@ test_that("matchesUniqueGeneNames", {
             geneName = paste0("SYMBOL", seq_len(4L))
         )
     )
-    genes <- SummarizedExperiment::rowData(x)$geneName
+    genes <- SummarizedExperiment::rowData(x)[["geneName"]]
 
     expect_true(matchesUniqueGeneNames(x = x, genes = genes))
 })
