@@ -16,17 +16,18 @@
 #' - `do.call()`.
 #'
 #' @examples
-#' example <- function(object, xxx, ...) {
+#' ## Match the arguments in call.
+#' fun <- function(object, xxx, ...) {
 #'     args <- matchArgsToDoCall(
 #'         args = list(object = object, collapse = " "),
 #'         removeFormals = "xxx"
 #'     )
-#'     print(args)
-#'     do.call(what = paste, args = args)
+#'     args
 #' }
-#' example(c("hello", "world"))
+#' fun(c("hello", "world"))
 #'
-#' example <- function(object, xxx, ...) {
+#' ## Pass the arguments to `do.call()`.
+#' fun <- function(object, xxx, ...) {
 #'     do.call(
 #'         what = paste,
 #'         args = matchArgsToDoCall(
@@ -35,7 +36,7 @@
 #'         )
 #'     )
 #' }
-#' example(c("hello", "world"))
+#' fun(c("hello", "world"))
 matchArgsToDoCall <- function(
     args = NULL,
     removeFormals = NULL,
