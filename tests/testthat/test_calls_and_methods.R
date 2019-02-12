@@ -96,8 +96,8 @@ test_that("standardizeCall", {
         standardizeCall()
     }
     expect_identical(
-        testing(aaa, bbb),
-        as.call(substitute(testing(a = aaa, b = bbb)))
+        deparse(testing(aaa, bbb)),
+        "testing(a = aaa, b = bbb)"
     )
 
     # Inside S4 method.
@@ -116,7 +116,7 @@ test_that("standardizeCall", {
         }
     )
     expect_identical(
-        testing(aaa, bbb),
-        as.call(substitute(testing(a = aaa, b = bbb)))
+        deparse(testing(aaa, bbb)),
+        "testing(a = aaa, b = bbb)"
     )
 })
