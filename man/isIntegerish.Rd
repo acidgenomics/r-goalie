@@ -33,8 +33,12 @@ Check for valid input of either explicit (e.g. \code{1L}) and/or implict
 }}
 
 \examples{
+## TRUE ====
 isIntegerish(seq_len(2L))
 isIntegerish(c(1, 2))
+
+## FALSE ====
+isIntegerish(0.1)
 }
 \seealso{
 \itemize{
