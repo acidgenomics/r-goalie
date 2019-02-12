@@ -82,14 +82,64 @@ test_that("isFile", {
     unlink(x)
 
     expect_false(isFile(1L))
+
+    # Note that we're not setting a cause attribute here.
     expect_identical(
         isFile(c("~", ".")),
         c(`~` = FALSE, `.` = FALSE)
     )
 })
 
-# isHexColor
-# isInRange
+test_that("isHexColor", {
+    x <- viridis::viridis(n = 2L)
+    expect_identical(isHexColor(x), c(TRUE, TRUE))
+
+    x <- ggplot2::scale_colour_manual
+    expect_false(isHexColor(x))
+})
+
+test_that("isInRange", {
+    expect_true(isInRange(0L, lower = 0L, upper = 1L))
+    expect_true(isInRange(1L, lower = 0L, upper = 1L))
+    expect_true(isInClosedRange(1L, lower = 0L, upper = 1L))
+
+    expect_true(isInOpenRange(0.5, lower = 0L, upper = 1L))
+    expect_true(isInLeftOpenRange(1L, lower = 0L, upper = 1L))
+    expect_true(isInRightOpenRange(0L, lower = 0L, upper = 1L))
+
+    expect_identical(isNegative(c(-2L, -1L)), c(TRUE, TRUE))
+    expect_identical(isPositive(c(1L, 2L)), c(TRUE, TRUE))
+
+    expect_identical(isNonNegative(c(0L, 1L)), c(TRUE, TRUE))
+    expect_identical(isNonPositive(c(-1L, 0L)), c(TRUE, TRUE))
+
+    expect_true(all(isPercentage(c(0L, 25L, 50L, 100L))))
+    expect_true(all(isProportion(c(0L, 0.01, 0.1, 1L))))
+
+    object <- isInRange(c(2L, 3L), lower = 0, upper = 1)
+    expect_s3_class(object, "goalie")
+    expect_false(all(as.logical(object)), c(FALSE, FALSE))
+
+    object <- isInClosedRange(c(2L, 3L), lower = 0L, upper = 1L)
+    expect_s3_class(object, "goalie")
+    expect_false(all(as.logical(object)), c(FALSE, FALSE))
+
+    object <- isInOpenRange(c(1L, 2L), lower = 0L, upper = 1L)
+    expect_s3_class(object, "goalie")
+    expect_false(all(as.logical(object)), c(FALSE, FALSE))
+
+    expect_false(isInLeftOpenRange(0L, lower = 0L))
+    expect_false(isInRightOpenRange(1L, upper = 1L))
+
+    expect_false(isPositive(-1L))
+    expect_false(isNegative(1L))
+
+    expect_false(isPercentage(110L))
+    expect_false(isProportion(1.1))
+})
+
 # isIntegerish
+
 # isMatching
+
 # isURL
