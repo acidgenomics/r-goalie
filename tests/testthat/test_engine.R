@@ -1,17 +1,13 @@
-context("Engine")
+context("engine")
 
-# appendToBody
-# bapply
-# callAndName
-# capitalize
+# Already covered by checks:
+# - bapply
+# - callAndName
+# - getNameInParent
+
 # cause
 # false
-# getNameInParent
 # is2
-# matchArgsToDoCall
-# MethodDefinition
-# print
 # safeDeparse
 # setCause
-# standardizeCall
 
