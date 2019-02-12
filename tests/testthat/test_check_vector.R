@@ -1,4 +1,4 @@
-context("Vectorized checks")
+context("check: vector")
 
 # FIXME All vectorized checks need to return cause attribute on failure.
 

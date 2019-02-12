@@ -1,4 +1,6 @@
-context("Scalar checks")
+context("check: scalar")
+
+
 
 test_that("allAreAtomic", {
     expect_true(allAreAtomic(data.frame(a = "foo", b = "bar")))
@@ -21,6 +23,8 @@ test_that("allAreAtomic", {
     )
 })
 
+
+
 test_that("areSameLength", {
     x <- list(a = 1L, b = 2L)
     y <- list(c = 3L, d = 4L)
@@ -37,6 +41,8 @@ test_that("areSameLength", {
         noquote("x does not have the same length as y.")
     )
 })
+
+
 
 test_that("formalCompress", {
     expect_true(formalCompress("gzip"))
@@ -67,6 +73,8 @@ test_that("formalCompress", {
     )
 })
 
+
+
 with_parameters_test_that(
     "hasDimnames", {
         x <- datasets::mtcars
@@ -83,6 +91,8 @@ with_parameters_test_that(
         hasColnames
     )
 )
+
+
 
 with_parameters_test_that(
     "hasRownames", {
@@ -106,6 +116,8 @@ with_parameters_test_that(
     )
 )
 
+
+
 test_that("hasDims", {
     expect_true(hasDims(datasets::mtcars))
 
@@ -121,6 +133,8 @@ test_that("hasDims", {
     )
 })
 
+
+
 with_parameters_test_that(
     "hasRows, hasCols", {
         x <- datasets::mtcars
@@ -131,6 +145,8 @@ with_parameters_test_that(
     },
     fun = list(hasRows, hasCols)
 )
+
+
 
 test_that("hasDuplicates", {
     expect_true(hasDuplicates(c("a", "a")))
@@ -153,6 +169,8 @@ test_that("hasDuplicates", {
     )
 })
 
+
+
 test_that("hasElements", {
     expect_true(hasElements("hello", n = 1L))
     expect_true(hasElements(list(a = 1L, b = 2L), n = 2L))
@@ -166,9 +184,13 @@ test_that("hasElements", {
     )
 })
 
+
+
 test_that("hasInternet", {
     expect_true(hasInternet())
 })
+
+
 
 test_that("hasLength", {
     expect_true(hasLength(1L))
@@ -201,6 +223,8 @@ test_that("hasLength", {
     )
 })
 
+
+
 test_that("hasNames", {
     expect_true(hasNames(datasets::mtcars))
 
@@ -220,6 +244,8 @@ test_that("hasNames", {
         noquote("The names of data.frame() are all empty.")
     )
 })
+
+
 
 test_that("hasNonZeroRowsAndCols", {
     x <- matrix(data = seq_len(4L), nrow = 2L)
@@ -259,6 +285,8 @@ test_that("hasNonZeroRowsAndCols", {
     )
 })
 
+
+
 test_that("hasRownames", {
     x <- data.frame(
         "sample1" = c(1L, 2L),
@@ -286,6 +314,8 @@ test_that("hasRownames", {
     )
 })
 
+
+
 test_that("hasUniqueCols", {
     x <- matrix(data = seq_len(20L), ncol = 2L)
     expect_true(hasUniqueCols(x))
@@ -299,6 +329,8 @@ test_that("hasUniqueCols", {
         "has duplicated columns"
     )
 })
+
+
 
 test_that("hasValidNames", {
     x <- list(a = 1L, b = 2L)
@@ -331,6 +363,8 @@ test_that("hasValidNames", {
     )
 })
 
+
+
 test_that("isAll", {
     x <- 1L
     expect_true(isAll(x, classes = c("integer", "numeric")))
@@ -343,6 +377,8 @@ test_that("isAll", {
         noquote("x is not all: integer, NULL")
     )
 })
+
+
 
 test_that("isAlpha", {
     expect_true(isAlpha(0.05))
@@ -366,6 +402,8 @@ test_that("isAlpha", {
     )
 })
 
+
+
 test_that("isAny", {
     x <- 1L
 
@@ -381,6 +419,8 @@ test_that("isAny", {
         noquote("x is not any of: character, data.frame.")
     )
 })
+
+
 
 test_that("isCharacter", {
     expect_true(isCharacter("a"))
@@ -399,6 +439,8 @@ test_that("isCharacter", {
     expect_false(isCharacter(""))
     expect_false(isCharacter(NA_character_))
 })
+
+
 
 test_that("isFlag", {
     expect_true(isFlag(TRUE))
@@ -429,6 +471,8 @@ test_that("isFlag", {
     )
 })
 
+
+
 test_that("isGGScale", {
     library(ggplot2)
     # nolint start
@@ -449,6 +493,8 @@ test_that("isGGScale", {
     expect_false(isGGScale(x = fill_c, scale = "discrete", aes = "fill"))
 })
 
+
+
 test_that("isHeaderLevel", {
     expect_true(isHeaderLevel(1))  # nolint
     expect_true(isHeaderLevel(7L))
@@ -456,6 +502,8 @@ test_that("isHeaderLevel", {
     expect_false(isHeaderLevel(seq_len(7L)))
     expect_false(isHeaderLevel(0L))
 })
+
+
 
 test_that("isHexColorFunction", {
     expect_true(isHexColorFunction(viridis::viridis))
@@ -469,12 +517,16 @@ test_that("isHexColorFunction", {
     )
 })
 
+
+
 test_that("isNonScalar", {
     expect_true(isNonScalar(seq_len(2L)))
     expect_true(isNonScalar(NULL))
 
     expect_false(isNonScalar(1L))
 })
+
+
 
 test_that("isNumber", {
     expect_true(isNumber(0))  # nolint
@@ -483,6 +535,8 @@ test_that("isNumber", {
 
     expect_false(isNumber(seq_len(2L)))
 })
+
+
 
 test_that("isScalar", {
     expect_true(isScalar("X"))
@@ -496,6 +550,8 @@ test_that("isScalar", {
     expect_false(isScalar(character()))
 })
 
+
+
 test_that("isScalarAtomic", {
     expect_true(isScalarAtomic("X"))
     expect_true(isScalarAtomic(""))
@@ -506,6 +562,8 @@ test_that("isScalarAtomic", {
     expect_false(isScalarAtomic(NULL))
     expect_false(isScalarAtomic(character()))
 })
+
+
 
 test_that("isScalarCharacter", {
     expect_true(isScalarCharacter("X"))
@@ -519,6 +577,8 @@ test_that("isScalarCharacter", {
     expect_false(isScalarCharacter(NULL))
 })
 
+
+
 test_that("isScalarDouble", {
     expect_true(isScalarDouble(0.1))
     expect_true(isScalarDouble(1.0))
@@ -530,6 +590,8 @@ test_that("isScalarDouble", {
     expect_false(isScalarDouble(NULL))
 })
 
+
+
 test_that("isScalarInteger", {
     expect_true(isScalarInteger(1L))
     expect_true(isScalarInteger(NA_integer_))
@@ -539,6 +601,8 @@ test_that("isScalarInteger", {
     expect_false(isScalarInteger(integer()))
     expect_false(isScalarInteger(c(1L, 2L)))
 })
+
+
 
 test_that("isScalarIntegerish", {
     expect_true(isScalarIntegerish(1))  # nolint
@@ -550,6 +614,8 @@ test_that("isScalarIntegerish", {
     expect_false(isScalarIntegerish(1.000001))
 })
 
+
+
 test_that("isScalarList", {
     expect_true(isScalarList(list(a = 1L)))
 
@@ -557,6 +623,8 @@ test_that("isScalarList", {
     expect_false(isScalarList(list(a = 1L, b = 2L)))
     expect_false(isScalarList(NULL))
 })
+
+
 
 test_that("isScalarLogical", {
     expect_true(isScalarLogical(FALSE))
@@ -570,6 +638,8 @@ test_that("isScalarLogical", {
     expect_false(isScalarLogical(logical()))
 })
 
+
+
 test_that("isScalarNumeric", {
     expect_true(isScalarNumeric(0.1))
     expect_true(isScalarNumeric(1L))
@@ -578,6 +648,8 @@ test_that("isScalarNumeric", {
     expect_false(isScalarNumeric(c(0.1, 0.2)))
     expect_false(isScalarNumeric(NULL))
 })
+
+
 
 test_that("isScalarVector", {
     expect_true(isScalarVector("X"))
@@ -588,6 +660,8 @@ test_that("isScalarVector", {
     expect_false(isScalarVector(vector()))
 })
 
+
+
 test_that("isString", {
     expect_true(isString("hello world"))
 
@@ -597,6 +671,8 @@ test_that("isString", {
     expect_false(isString(""))
     expect_false(isString(NA_character_))
 })
+
+
 
 test_that("matchesUniqueGeneNames", {
     x <- SummarizedExperiment::SummarizedExperiment(
@@ -618,6 +694,8 @@ test_that("matchesUniqueGeneNames", {
 
     expect_true(matchesUniqueGeneNames(x = x, genes = genes))
 })
+
+
 
 test_that("sets", {
     expect_true(isSubset(x = "a", y = c("a", "b")))
@@ -642,6 +720,8 @@ test_that("sets", {
     expect_false(areIntersectingSets(x = c("a", "b"), y = c("c", "d")))
     expect_false(areSetEqual(x = c("a", "b"), y = c("b", "c")))
 })
+
+
 
 test_that("validNames", {
     # Dots (periods) and underscores are valid.
