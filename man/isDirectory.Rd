@@ -49,8 +49,12 @@ Does the input contain a directory?
 }}
 
 \examples{
+## TRUE ====
 isDirectory(c("~", "~"))
 isADirectory("~")
+
+## FALSE ====
+isDirectory(1L)
 }
 \seealso{
 \code{R.utils::isDirectory()}.\preformatted{getS3method(
