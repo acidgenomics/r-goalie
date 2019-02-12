@@ -175,6 +175,49 @@ test_that("isInt", {
     expect_false(isInt(0.1))
 })
 
-# isMatching
+test_that("isMatching", {
+    expect_true(isMatchingRegex(x = "foobar", pattern = "^f"))
+    expect_true(isNotMatchingRegex(x = "foobar", pattern = "^b"))
 
-# isURL
+    expect_true(isMatchingFixed(x = "foobar", pattern = "bar"))
+    expect_true(isNotMatchingFixed(x = "foo", pattern = "bar"))
+})
+
+urls <- c("https://www.r-project.org", "ftp://r-project.org")
+
+test_that("isURL", {
+    isURL(urls)
+    isAURL(urls[[1L]])
+    allAreURLs(urls)
+
+    object <- isURL("xxx")
+    expect_s3_class(object, "goalie")
+    expect_false(object)
+    expect_identical(
+        cause(object),
+        noquote("not URL")
+    )
+
+    object <- isAURL(urls)
+    expect_s3_class(object, "goalie")
+    expect_false(object)
+    expect_identical(
+        cause(object),
+        noquote("urls is not a character of length 1.")
+    )
+})
+
+test_that("isAURL", {
+    expect_true(isAURL(urls[[1L]]))
+
+    object <- isAURL(urls)
+    expect_false(object)
+    expect_identical(
+        cause(object),
+        noquote("urls is not a character of length 1.")
+    )
+})
+
+test_that("allAreURLs", {
+    expect_true(allAreURLs(urls))
+})
