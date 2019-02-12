@@ -34,10 +34,14 @@ Does the input contain a file?
 }}
 
 \examples{
+## TRUE ====
 x <- "example.txt"
 file.create(x)
 isAFile(x)
 unlink(x)
+
+## FALSE ====
+isFile(c("~", "."))
 }
 \seealso{
 \code{R.utils::isFile()}.\preformatted{getS3method(

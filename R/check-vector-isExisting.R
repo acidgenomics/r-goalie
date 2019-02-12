@@ -13,7 +13,6 @@
 #' @seealso `assertive.code::is_existing()`.
 #'
 #' @examples
-#' suppressWarnings(rm(x, y))
 #' a <- 1L
 #' b <- 2L
 #'
