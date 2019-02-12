@@ -20,7 +20,7 @@
 #'
 #' @examples
 #' printString(c("hello", "world"))
-#' printString(datasets::mtcars, max = 6L)
+#' printString(datasets::mtcars, max = 2L)
 printString <- function(
     x, ...,
     max = getOption("max.print", 100L)

@@ -22,6 +22,10 @@ NULL
 
 
 
+# TODO Improve the failure position return if we pass in a double and an NA
+# at the same time. Currently it will only return the NA failure, which is
+# evaluated first.
+
 #' @describeIn isIntegerish Vectorized.
 #' @export
 isIntegerish <- function(x, .xname = getNameInParent(x)) {
