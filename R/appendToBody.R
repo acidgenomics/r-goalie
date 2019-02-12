@@ -14,6 +14,7 @@
 #' @return `function`.
 #'
 #' @examples
+#' ## Add a deprecation call into function body.
 #' x <- function() {
 #'     "hello"
 #' }
