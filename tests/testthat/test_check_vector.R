@@ -1,5 +1,7 @@
 context("Vectorized checks")
 
+# FIXME All vectorized checks need to return cause attribute on failure.
+
 test_that("hasAccess", {
     expect_identical(
         hasAccess(c("~", ".")),
@@ -138,7 +140,40 @@ test_that("isInRange", {
     expect_false(isProportion(1.1))
 })
 
-# isIntegerish
+test_that("isIntegerish", {
+    expect_identical(isIntegerish(seq_len(2L)), c(TRUE, TRUE))
+    expect_identical(isIntegerish(c(1, 2)), c(TRUE, TRUE))  # nolint
+
+    expect_false(isIntegerish(0.1))
+
+    object <- isIntegerish(c(1, 2, NA))  # nolint
+    expect_s3_class(object, "goalie")
+    expect_identical(
+        as.logical(object),
+        c(TRUE, TRUE, FALSE)
+    )
+    expect_identical(
+        cause(object),
+        noquote(c("", "", "NA"))
+    )
+})
+
+# `isInt()` is a scalar short alias of `isIntegerish()`.
+test_that("isInt", {
+    object <- isInt(seq_len(2L))
+    expect_s3_class(object, "goalie")
+    expect_false(object)
+    expect_identical(
+        cause(object),
+        noquote("x does not have a length of 1.")
+    )
+
+    expect_true(isInt(1L))
+    expect_true(isInt(1))  # nolint
+    expect_true(isInt(1.0))  # integerish
+
+    expect_false(isInt(0.1))
+})
 
 # isMatching
 
