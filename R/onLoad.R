@@ -1,3 +1,7 @@
+# nocov start
+
+
+
 # Using backports to maintain R 3.4 support.
 # Note that `...elt()` is used inside of `assert()`.
 .onLoad <- function(libname, pkgname) {
@@ -7,3 +11,7 @@
         backports::import(pkgname = pkgname, obj = "...elt")
     }
 }
+
+
+
+# nocov end

@@ -39,6 +39,9 @@ NULL
 #' @describeIn hasAccess Vectorized.
 #' @export
 hasAccess <- function(x, access = "r") {
+    ok <- isCharacter(x)
+    if (!isTRUE(ok)) return(ok)
+
     # `file.access()` mode values:
     # - 0: [-] existence
     # - 1: [x] execute
