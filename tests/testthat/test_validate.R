@@ -1,4 +1,4 @@
-context("Validate")
+context("validate")
 
 test_that("validate", {
     expect_true(
