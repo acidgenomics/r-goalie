@@ -19,7 +19,7 @@
 #' - `methods::setMethod()`.
 #'
 #' @examples
-#' ## Function
+#' ## Function ====
 #' x <- methodFunction(
 #'     f = "as.data.frame",
 #'     signature = "ANY",
@@ -28,7 +28,7 @@
 #' class(x)
 #' formals(x)
 #'
-#' ## Formals
+#' ## Formals ====
 #' x <- methodFormals(
 #'     f = "as.data.frame",
 #'     signature = "ANY",
