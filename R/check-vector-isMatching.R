@@ -16,6 +16,7 @@
 #' @return `logical`.
 #'
 #' @examples
+#' ## TRUE ====
 #' isMatchingRegex(x = "foobar", pattern = "^f")
 #' isNotMatchingRegex(x = "foobar", pattern = "^b")
 #'
