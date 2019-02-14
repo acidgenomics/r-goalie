@@ -22,6 +22,14 @@ BiocManager::install("remotes")
 BiocManager::install("steinbaugh/goalie")
 ```
 
+### [conda][] method
+
+Configure [conda][] to use the [bioconda][] channels.
+
+```bash
+conda install -c bioconda r-goalie
+```
+
 ## Overview
 
 [goalie][] is an attempt to incorporate elements of multiple assertive check packages into a single package with as few dependencies as possible. All assertive checks are written in the most basic [R][] code possible, without reliance on compilation (e.g. C++/Rcpp). It is still a work in progress, and feature requests are welcome.
@@ -41,7 +49,9 @@ The goalie source code incorporates elements from these excellent assert check p
 [assertive]: https://cran.r-project.org/package=assertive
 [assertthat]: https://cran.r-project.org/package=assertthat
 [BiocManager]: https://cran.r-project.org/package=BiocManager
+[bioconda]: https://bioconda.github.io/
 [Bioconductor]: https://bioconductor.org/
 [checkmate]: https://cran.r-project.org/package=checkmate
+[conda]: https://conda.io/
 [goalie]: https://steinbaugh.com/goalie/
 [R]: https://www.r-project.org/
