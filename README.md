@@ -3,6 +3,7 @@
 [![Travis CI build status](https://travis-ci.com/steinbaugh/goalie.svg?branch=master)](https://travis-ci.com/steinbaugh/goalie)
 [![AppVeyor CI build status](https://ci.appveyor.com/api/projects/status/81he1lj6usgke7x2?svg=true)](https://ci.appveyor.com/project/mjsteinbaugh/goalie)
 [![Codecov percent coverage](https://codecov.io/gh/steinbaugh/goalie/branch/master/graph/badge.svg)](https://codecov.io/gh/steinbaugh/goalie)
+[![Anaconda cloud version](https://anaconda.org/bioconda/r-goalie/badges/version.svg)](https://anaconda.org/bioconda/r-goalie)
 [![Repo status: active](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 
 Assertive check functions for defensive R programming.
