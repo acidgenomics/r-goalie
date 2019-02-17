@@ -3,14 +3,14 @@ cache: packages
 
 matrix:
   include:
-  - os: linux
-    r: bioc-release
-  - os: osx
-    r: bioc-release
+    - os: linux
+      r: bioc-release
+    - os: osx
+      r: bioc-release
 
 branches:
   only:
-  - master
+    - master
 
 env:
   global:
@@ -21,7 +21,7 @@ r_packages:
 bioc_packages:
   - BiocCheck
 r_github_packages:
-  - mjsteinbaugh/lintr
+  - steinbaugh/lintr
 
 after_success:
   - Rscript -e 'lintr::lint_package()'
