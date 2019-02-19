@@ -4,6 +4,9 @@
 
 - Needed to tweak internal code in `assignToBody` to fix backports handling of
   `...elt` for R 3.4.
+- `hasAccess`: Needed to add `uname` call internally for R 3.4 backward
+  compatibility, for checks that rely upon `isTRUE` to return `TRUE`, as
+  expected. The handling of this situation has changed in R 3.5.
 
 
 
