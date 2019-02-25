@@ -14,6 +14,7 @@
 #' @return `function`.
 #'
 #' @examples
+#' ## Add a deprecation call into function body.
 #' x <- function() {
 #'     "hello"
 #' }
@@ -26,7 +27,8 @@ appendToBody <- function(fun, values, after = 1L) {
     stopifnot(
         is.function(fun),
         is.call(values),
-        isInt(after)
+        # Don't use `isInt()` here, otherwise backports will fail.
+        is.integer(after)
     )
     b <- body(fun)
     b <- as.list(b)

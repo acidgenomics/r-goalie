@@ -44,7 +44,7 @@ Package name.}
 Access the data inside an S4 method definition
 }
 \examples{
-## Function
+## Function ====
 x <- methodFunction(
     f = "as.data.frame",
     signature = "ANY",
@@ -53,7 +53,7 @@ x <- methodFunction(
 class(x)
 formals(x)
 
-## Formals
+## Formals ====
 x <- methodFormals(
     f = "as.data.frame",
     signature = "ANY",

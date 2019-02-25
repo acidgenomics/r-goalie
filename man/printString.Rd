@@ -28,7 +28,7 @@ Useful for returning informative messages inside a function.
 }
 \examples{
 printString(c("hello", "world"))
-printString(datasets::mtcars, max = 6L)
+printString(datasets::mtcars, max = 2L)
 }
 \seealso{
 \code{cat()}.

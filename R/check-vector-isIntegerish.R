@@ -12,24 +12,43 @@
 #' - `checkmate::checkIntegerish()`.
 #'
 #' @examples
+#' ## TRUE ====
 #' isIntegerish(seq_len(2L))
 #' isIntegerish(c(1, 2))
+#'
+#' ## FALSE ====
+#' isIntegerish(0.1)
 NULL
 
 
 
+# TODO Improve the failure position return if we pass in a double and an NA
+# at the same time. Currently it will only return the NA failure, which is
+# evaluated first.
+
 #' @describeIn isIntegerish Vectorized.
 #' @export
 isIntegerish <- function(x, .xname = getNameInParent(x)) {
+    # Check for numeric vector.
     if (!is.numeric(x)) {
         return(false("%s is not numeric.", .xname))
     }
-    if (any(is.na(x))) {
-        return(false("%s contains NA.", .xname))
+
+    # Require that vector does not contain NA.
+    ok <- !is.na(x)
+    if (!all(ok)) {
+        return(setCause(x = ok, false = "NA"))
     }
-    if (is.integer(x) || is.infinite(x)) {
-        return(TRUE)
-    }
+
+    # Early return without running `all.equal()` for integer or infinite (Inf).
+    ok <- bapply(
+        X = x,
+        FUN = function(x) {
+            is.integer(x) || is.infinite(x)
+        }
+    )
+    if (all(ok)) return(ok)
+
     bapply(
         X = x,
         FUN = function(x) {
