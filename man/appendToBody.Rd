@@ -23,6 +23,7 @@ The default of \code{1} places directly after the opening curly bracket.}
 Append values to function body
 }
 \examples{
+## Add a deprecation call into function body.
 x <- function() {
     "hello"
 }

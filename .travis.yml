@@ -24,11 +24,13 @@ r_github_packages:
   - steinbaugh/lintr
 
 after_success:
-  - Rscript -e 'lintr::lint_package()'
-  - Rscript -e 'covr::codecov()'
   - R CMD BiocCheck .
+  - test $TRAVIS_OS_NAME = 'linux' && $TRAVIS_R_VERSION_STRING = 'bioc-release' && Rscript -e 'lintr::lint_package()'
+  - test $TRAVIS_OS_NAME = 'linux' && $TRAVIS_R_VERSION_STRING = 'bioc-release' && Rscript -e 'covr::codecov()'
 
 notifications:
   email:
+    recipients:
+      - mike@steinbaugh.com
     on_success: change
     on_failure: change

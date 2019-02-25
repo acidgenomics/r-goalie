@@ -43,6 +43,7 @@ Pattern to use for matching.}
 Does the string match a pattern?
 }
 \examples{
+## TRUE ====
 isMatchingRegex(x = "foobar", pattern = "^f")
 isNotMatchingRegex(x = "foobar", pattern = "^b")
 

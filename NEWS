@@ -1,3 +1,15 @@
+## goalie 0.2.9 (2019-02-25)
+
+### Minor changes
+
+- Needed to tweak internal code in `assignToBody` to fix backports handling of
+  `...elt` for R 3.4.
+- `hasAccess`: Needed to add `uname` call internally for R 3.4 backward
+  compatibility, for checks that rely upon `isTRUE` to return `TRUE`, as
+  expected. The handling of this situation has changed in R 3.5.
+
+
+
 ## goalie 0.2.8 (2019-02-11)
 
 ### Minor changes
@@ -6,6 +18,7 @@
   backward compatible with R 3.4. The backports package was added as a
   dependency, which provides legacy support for `...elt()` in R 3.4. This is
   called internally inside `.onLoad()` specifically for R releases prior to 3.5.
+
 
 
 ## goalie 0.2.7 (2019-02-11)
@@ -22,6 +35,7 @@
 - `isFlag()`: Improved cause message if user passes in `NA`.
 
 
+
 ## goalie 0.2.6 (2019-01-22)
 
 ### New functions
@@ -29,11 +43,13 @@
 - Migrated `printString()` from [basejump][] package.
 
 
+
 ## goalie 0.2.5 (2019-01-15)
 
 ### Minor changes
 
 - `isADirectory()`, `isAFile()`: Added `nullOK` argument support.
+
 
 
 ## goalie 0.2.4 (2019-01-06)
@@ -45,6 +61,7 @@
 ### Minor changes
 
 - Documentation improvements.
+
 
 
 ## goalie 0.2.3 (2019-01-04)
@@ -65,6 +82,7 @@
 - General documentation improvements.
 
 
+
 ## goalie 0.2.2 (2018-12-22)
 
 ### Major changes
@@ -77,6 +95,7 @@
 - `isInRange` family: Added scalar variants for all vectorized functions.
 - Improved scalar return consistency in functions where applicable, using
   `falseFromVector()` internally.
+
 
 
 ## goalie 0.2.1 (2018-12-20)
@@ -97,6 +116,7 @@
 - Assertive checks now return as `goalie` class in addition to `logical`.
 
 
+
 ## goalie 0.2.0 (2018-12-12)
 
 ### Major changes
@@ -108,12 +128,14 @@
   (for S4 class validity checks) calls.
 
 
+
 ## goalie 0.1.2 (2018-11-21)
 
 ### Minor changes
 
 - `isDir()` and `isFile()` now import `R.utils::isDirectory()` and
   `R.utils::isFile()`.
+
 
 
 ## goalie 0.1.1 (2018-11-14)
@@ -124,10 +146,12 @@
 - Improved error message for `assertAreUniqueGeneNames()`.
 
 
+
 ## goalie 0.1.0 (2018-11-11)
 
 - Initial release, migrating assertive check functions from [basejump][]
   package.
+
 
 
 [basejump]: https://steinbaugh.com/basejump/
