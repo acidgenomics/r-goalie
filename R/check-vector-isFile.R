@@ -16,10 +16,14 @@
 #' ```
 #'
 #' @examples
+#' ## TRUE ====
 #' x <- "example.txt"
 #' file.create(x)
 #' isAFile(x)
 #' unlink(x)
+#'
+#' ## FALSE ====
+#' isFile(c("~", "."))
 NULL
 
 
@@ -27,7 +31,14 @@ NULL
 #' @describeIn isFile Vectorized.
 #' @export
 isFile <- function(x) {
-    file.exists(x)
+    ok <- isCharacter(x)
+    if (!isTRUE(ok)) return(ok)
+
+    # Note that `file.exists()` below will return TRUE on directory.
+    ok <- !isDirectory(x)
+    if (!all(ok)) return(ok)
+
+    bapply(X = x, FUN = file.exists)
 }
 
 

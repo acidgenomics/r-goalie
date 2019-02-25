@@ -17,8 +17,12 @@
 #' ```
 #'
 #' @examples
+#' ## TRUE ====
 #' isDirectory(c("~", "~"))
 #' isADirectory("~")
+#'
+#' ## FALSE ====
+#' isDirectory(1L)
 NULL
 
 
@@ -26,7 +30,10 @@ NULL
 #' @describeIn isDirectory Vectorized.
 #' @export
 isDirectory <- function(x) {
-    dir.exists(x)
+    ok <- isCharacter(x)
+    if (!isTRUE(ok)) return(ok)
+
+    bapply(X = x, FUN = dir.exists)
 }
 
 

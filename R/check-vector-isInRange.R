@@ -79,7 +79,7 @@ isInRange <- function(
         is.logical(closed) && length(closed) == 2L
     )
 
-    ok <- is.numeric(x) && !is.na(x)
+    ok <- is.numeric(x) && !any(is.na(x))
     if (!isTRUE(ok)) {
         return(false("%s is not (non-NA) numeric.", .xname))
     }

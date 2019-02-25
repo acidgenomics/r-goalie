@@ -55,7 +55,6 @@ Does the requested input exist in the environment?
 single call.
 }
 \examples{
-suppressWarnings(rm(x, y))
 a <- 1L
 b <- 2L
 

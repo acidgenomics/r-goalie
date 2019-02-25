@@ -30,17 +30,18 @@ Arguments to pass to \code{\link[base:do.call]{do.call()}}.
 Match arguments to \code{do.call}
 }
 \examples{
-example <- function(object, xxx, ...) {
+## Match the arguments in call.
+fun <- function(object, xxx, ...) {
     args <- matchArgsToDoCall(
         args = list(object = object, collapse = " "),
         removeFormals = "xxx"
     )
-    print(args)
-    do.call(what = paste, args = args)
+    args
 }
-example(c("hello", "world"))
+fun(c("hello", "world"))
 
-example <- function(object, xxx, ...) {
+## Pass the arguments to `do.call()`.
+fun <- function(object, xxx, ...) {
     do.call(
         what = paste,
         args = matchArgsToDoCall(
@@ -49,7 +50,7 @@ example <- function(object, xxx, ...) {
         )
     )
 }
-example(c("hello", "world"))
+fun(c("hello", "world"))
 }
 \seealso{
 \itemize{

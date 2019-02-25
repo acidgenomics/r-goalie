@@ -20,6 +20,9 @@ environment:
   global:
     R_ARCH: x64
     USE_RTOOLS: true
+  matrix:
+    - R_VERSION: devel
+      GCC_PATH: mingw_64
 
 build_script:
   - travis-tool.sh install_bioc_deps
