@@ -68,6 +68,8 @@ hasAccess <- function(x, access = "r") {
     checkAccess <- function(x, access) {
         if ("r" %in% access) {
             ok <- file.access(x, mode = 4L) == 0L
+            # `unname()` step needed for R 3.4 compatibility.
+            ok <- unname(ok)
             if (!isTRUE(ok)) return(FALSE)
         }
 
@@ -75,10 +77,12 @@ hasAccess <- function(x, access = "r") {
         if (!isTRUE(isWindows)) {
             if ("w" %in% access) {
                 ok <- file.access(x, mode = 2L) == 0L
+                ok <- unname(ok)
                 if (!isTRUE(ok)) return(FALSE)
             }
             if ("x" %in% access) {
                 ok <- file.access(x, mode = 1L) == 0L
+                ok <- unname(ok)
                 if (!isTRUE(ok)) return(FALSE)
             }
         }
