@@ -9,9 +9,11 @@
 \alias{areSetEqual}
 \title{Set comparisons}
 \usage{
-isSubset(x, y)
+isSubset(x, y, .xname = getNameInParent(x),
+  .yname = getNameInParent(y))
 
-isSuperset(x, y)
+isSuperset(x, y, .xname = getNameInParent(x),
+  .yname = getNameInParent(y))
 
 areDisjointSets(x, y, .xname = getNameInParent(x),
   .yname = getNameInParent(y))
