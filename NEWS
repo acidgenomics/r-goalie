@@ -1,3 +1,12 @@
+## goalie 0.2.10 (2019-03-10)
+
+### Minor changes
+
+- `isSubset`: Improved cause message, which would error using internal `deparse`
+  call on long vectors.
+
+
+
 ## goalie 0.2.9 (2019-02-25)
 
 ### Minor changes
@@ -14,10 +23,10 @@
 
 ### Minor changes
 
-- Bioconda unit tests revealed that `...elt()` approach used in `assert()` isn't
+- Bioconda unit tests revealed that `...elt` approach used in `assert` isn't
   backward compatible with R 3.4. The backports package was added as a
-  dependency, which provides legacy support for `...elt()` in R 3.4. This is
-  called internally inside `.onLoad()` specifically for R releases prior to 3.5.
+  dependency, which provides legacy support for `...elt` in R 3.4. This is
+  called internally inside `.onLoad` specifically for R releases prior to 3.5.
 
 
 
@@ -25,14 +34,14 @@
 
 ### Minor changes
 
-- `assert()`: `traceback` argument is disabled by default. Note that this can be
+- `assert`: `traceback` argument is disabled by default. Note that this can be
   enabled globally using `options(goalie.traceback = TRUE)`, which can be useful
   for code debugging in some situations.
-- `isSubset()`: Improved cause message if user attempts to pass in `NULL` for
+- `isSubset`: Improved cause message if user attempts to pass in `NULL` for
   either `x` or `y` arguments.
-- `hasNonZeroRowsAndCols()`: Fixed typo in internal code that didn't check using
-  `hasCols()` properly.
-- `isFlag()`: Improved cause message if user passes in `NA`.
+- `hasNonZeroRowsAndCols`: Fixed typo in internal code that didn't check using
+  `hasCols` properly.
+- `isFlag`: Improved cause message if user passes in `NA`.
 
 
 
@@ -40,7 +49,7 @@
 
 ### New functions
 
-- Migrated `printString()` from [basejump][] package.
+- Migrated `printString` from [basejump][] package.
 
 
 
@@ -48,7 +57,7 @@
 
 ### Minor changes
 
-- `isADirectory()`, `isAFile()`: Added `nullOK` argument support.
+- `isADirectory`, `isAFile`: Added `nullOK` argument support.
 
 
 
@@ -56,7 +65,7 @@
 
 ### New functions
 
-- New exports: `allAreDirectories()`, `allAreFiles()`, which return scalar.
+- New exports: `allAreDirectories`, `allAreFiles`, which return scalar.
 
 ### Minor changes
 
@@ -69,16 +78,16 @@
 ### New functions
 
 - Migrated some low-level functions from [basejump][] that are useful for
-  assertive checks: `matchArgsToDoCall()`, `standardizeCall()`, and the
-  `MethodDefinition` family, which includes `methodFunction()`,
-  `methodFormals()`, `hasLocal()`, `extractLocal()`. These will get re-exported
+  assertive checks: `matchArgsToDoCall`, `standardizeCall`, and the
+  `MethodDefinition` family, which includes `methodFunction`,
+  `methodFormals`, `hasLocal`, `extractLocal`. These will get re-exported
   in [basejump][].
 
 ### Minor changes
 
 - Reorganized base engine function files, getting rid of the `base-` prefix.
 - Added conditional `NULL` support where applicable, with `nullOK` formal.
-  Applies to `isInt()`, `isNumber()`, `isString()`, for example.
+  Applies to `isInt`, `isNumber`, `isString`, for example.
 - General documentation improvements.
 
 
@@ -87,14 +96,14 @@
 
 ### Major changes
 
-- `assert()`: Added `msg` formal. Improved error message when a user inputs
+- `assert`: Added `msg` formal. Improved error message when a user inputs
   check functions that don't return boolean.
-- `capitalize()`: Simplified documentation, referring the user to the
+- `capitalize`: Simplified documentation, referring the user to the
   documentation provided in [syntactic][] package.
-- `falseFromVector()`: Newly exported function.
+- `falseFromVector`: Newly exported function.
 - `isInRange` family: Added scalar variants for all vectorized functions.
 - Improved scalar return consistency in functions where applicable, using
-  `falseFromVector()` internally.
+  `falseFromVector` internally.
 
 
 
@@ -104,12 +113,12 @@
 
 - The approach to the package update is heavily influenced by the conventions
   defined in the assertive package. In goalie, I'm attempting to create a
-  minimal assert check engine that behaves similar to `stopifnot()`, but with
+  minimal assert check engine that behaves similar to `stopifnot`, but with
   more informative error messages. This approach is inspired by the assertthat
   package, but neither assertive or assertthat are working quite right for my
   needs.
-- Overhauled the `assert()` and `validate()` engines, re-writing the code from
-  scratch based on the internal code of `stopifnot()`.
+- Overhauled the `assert` and `validate` engines, re-writing the code from
+  scratch based on the internal code of `stopifnot`.
 - Reworked all assertive check functions to reduce the number of dependencies.
   Now the package is lean and mean, only importing methods and utils into the
   NAMESPACE.
@@ -121,10 +130,10 @@
 
 ### Major changes
 
-- Removed all `assert*()` functions in favor of a simpler, assertthat style
-  approach using `assert()` for all checks. The package will export check
+- Removed all `assert*` functions in favor of a simpler, assertthat style
+  approach using `assert` for all checks. The package will export check
   functions that return `logical`, typically `logical(1)` (boolean flag) for
-  most checks. These checks can then be wrapped in `assert()` or `validate()`
+  most checks. These checks can then be wrapped in `assert` or `validate`
   (for S4 class validity checks) calls.
 
 
@@ -133,8 +142,7 @@
 
 ### Minor changes
 
-- `isDir()` and `isFile()` now import `R.utils::isDirectory()` and
-  `R.utils::isFile()`.
+- `isDir` and `isFile` now import `R.utils::isDirectory` and `R.utils::isFile`.
 
 
 
@@ -142,8 +150,8 @@
 
 ### Minor changes
 
-- `areUniqueGeneNames()` now returns `boolean` as expected.
-- Improved error message for `assertAreUniqueGeneNames()`.
+- `areUniqueGeneNames` now returns `boolean` as expected.
+- Improved error message for `assertAreUniqueGeneNames`.
 
 
 

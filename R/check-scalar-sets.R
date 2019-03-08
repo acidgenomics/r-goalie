@@ -41,13 +41,19 @@ NULL
 # Assertive has `strictly` mode, which enforces that x,y are not set equal.
 #' @rdname sets
 #' @export
-isSubset <- function(x, y) {
+isSubset <- function(
+    x,
+    y,
+    .xname = getNameInParent(x),
+    .yname = getNameInParent(y)
+) {
     if (!isTRUE(ok <- hasLength(x))) return(ok)
     if (!isTRUE(ok <- hasLength(y))) return(ok)
     if (!isTRUE(all(x %in% y))) {
+        setdiff <- setdiff(x, y)
         return(false(
-            gettext("%s is not in %s."),
-            deparse(x), deparse(y)
+            gettext("%s has elements not in %s: %s"),
+            .xname, .yname, toString(setdiff, width = 100L)
         ))
     }
     TRUE
@@ -55,10 +61,16 @@ isSubset <- function(x, y) {
 
 
 
+# This is essentially an `isSubset()` call with x and y flipped.
 #' @rdname sets
 #' @export
-isSuperset <- function(x, y) {
-    isSubset(y, x)
+isSuperset <- function(
+    x,
+    y,
+    .xname = getNameInParent(x),
+    .yname = getNameInParent(y)
+) {
+    isSubset(x = y, y = x, .xname = .yname, .yname = .xname)
 }
 
 
@@ -74,7 +86,7 @@ areDisjointSets <- function(
     intersect <- intersect(x, y)
     if (length(intersect) > 0L) {
         return(false(
-            gettext("%s and %s have common elements: %s."),
+            gettext("%s and %s have common elements: %s"),
             .xname, .yname, toString(intersect, width = 100L)
         ))
     }
