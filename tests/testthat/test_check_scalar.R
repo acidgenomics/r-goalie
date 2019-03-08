@@ -69,7 +69,7 @@ test_that("formalCompress", {
     expect_s3_class(object, "goalie")
     expect_identical(
         cause(object),
-        noquote('"xxx" is not in c("bzip2", "gzip", "xz").')
+        noquote('compress has elements not in c("bzip2", "gzip", "xz"): xxx')
     )
 })
 
