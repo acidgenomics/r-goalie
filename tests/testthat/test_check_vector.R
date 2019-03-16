@@ -1,7 +1,5 @@
 context("check: vector")
 
-# FIXME All vectorized checks need to return cause attribute on failure.
-
 test_that("hasAccess", {
     expect_identical(
         hasAccess(c("~", ".")),
@@ -30,9 +28,12 @@ test_that("isDirectory", {
     )
 
     # Note that this doesn't set cause attribute on failure here.
+    x <- isDirectory(c("aaa", "bbb"))
+    expect_identical( as.logical(x), c(FALSE, FALSE))
+    expect_identical(names(x), c("aaa", "bbb"))
     expect_identical(
-        isDirectory(c("aaa", "bbb")),
-        c(aaa = FALSE, bbb = FALSE)
+        cause(x),
+        noquote(c("not dir", "not dir"))
     )
 
     expect_false(isDirectory(NULL))
