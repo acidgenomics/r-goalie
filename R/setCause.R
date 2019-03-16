@@ -27,9 +27,8 @@ setCause <- function(
 ) {
     assert(is.logical(x))
     # Early return without cause if TRUE.
+    # Consider wrapping in `unname()` call here.
     if (!anyNA(x) && all(x, na.rm = TRUE)) {
-        # Ensure names are removed.
-        names(x) <- NULL
         return(x)
     }
     isNA <- is.na(x)
