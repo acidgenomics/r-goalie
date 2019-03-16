@@ -1,3 +1,11 @@
+## goalie 0.2.11 (2019-03-16)
+
+### Minor changes
+
+- `isDirectory`, `isFile`: Now return with `cause` attribute set on failure.
+
+
+
 ## goalie 0.2.10 (2019-03-10)
 
 ### Minor changes
