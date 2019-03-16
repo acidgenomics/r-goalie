@@ -34,11 +34,8 @@ isFile <- function(x) {
     ok <- isCharacter(x)
     if (!isTRUE(ok)) return(ok)
 
-    # Note that `file.exists()` below will return TRUE on directory.
-    ok <- !isDirectory(x)
-    if (!all(ok)) return(ok)
-
-    bapply(X = x, FUN = file.exists)
+    ok <- bapply(X = x, FUN = file.exists)
+    setCause(ok, false = "not file")
 }
 
 
