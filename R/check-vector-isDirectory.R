@@ -33,7 +33,8 @@ isDirectory <- function(x) {
     ok <- isCharacter(x)
     if (!isTRUE(ok)) return(ok)
 
-    bapply(X = x, FUN = dir.exists)
+    ok <- bapply(X = x, FUN = dir.exists)
+    setCause(ok, false = "not dir")
 }
 
 
