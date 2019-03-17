@@ -131,7 +131,6 @@ isOfDimension <- function(x, n, .xname = getNameInParent(x)) {
 
 
 
-# FIXME Somewhat redundant with `hasLength()`. Work on resolution.
 #' @rdname hasElements
 #' @export
 isOfLength <- function(x, n, .xname = getNameInParent(x)) {
@@ -146,8 +145,6 @@ isOfLength <- function(x, n, .xname = getNameInParent(x)) {
 
 
 
-# FIXME Using `""` will return TRUE.
-# Consider hardening this check.
 #' @rdname hasElements
 #' @export
 isNonEmpty <- function(
