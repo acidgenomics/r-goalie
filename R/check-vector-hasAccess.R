@@ -90,7 +90,8 @@ hasAccess <- function(x, access = "r") {
         TRUE
     }
 
-    bapply(X = x, FUN = checkAccess, access = access)
+    ok <- bapply(X = x, FUN = checkAccess, access = access)
+    setCause(ok, false = "no access")
 }
 
 
