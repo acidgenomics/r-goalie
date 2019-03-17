@@ -1,24 +1,18 @@
 context("check: vector")
 
 test_that("hasAccess", {
-    expect_identical(
-        hasAccess(c("~", ".")),
-        c(`~` = TRUE, `.` = TRUE)
-    )
+    ok <- hasAccess(c("~", "."))
+    expect_identical(ok, c(`~` = TRUE, `.` = TRUE))
 
-    # Note that we're not currently setting a cause attribute here.
-    expect_identical(
-        hasAccess(c("xxx", "yyy")),
-        c(xxx = FALSE, yyy = FALSE)
-    )
+    ok <- hasAccess(c("xxx", "yyy"))
+    expect_s3_class(ok, "goalie")
+    expect_identical(nocause(ok), c(xxx = FALSE, yyy = FALSE))
+    expect_identical(cause(ok), noquote(c("no access", "no access")))
 
-    object <- hasAccess(NULL)
-    expect_s3_class(object, "goalie")
-    expect_false(object)
-    expect_identical(
-        cause(object),
-        noquote("x is not character.")
-    )
+    ok <- hasAccess(NULL)
+    expect_s3_class(ok, "goalie")
+    expect_false(ok)
+    expect_identical(cause(ok), noquote("x is not character."))
 })
 
 test_that("isDirectory", {
@@ -27,12 +21,17 @@ test_that("isDirectory", {
         c(`~` = TRUE, `.` = TRUE)
     )
 
-    # Note that this doesn't set cause attribute on failure here.
-    x <- isDirectory(c("aaa", "bbb"))
-    expect_identical( as.logical(x), c(FALSE, FALSE))
-    expect_identical(names(x), c("aaa", "bbb"))
+    object <- isDirectory(c("aaa", "bbb"))
     expect_identical(
-        cause(x),
+        as.logical(object),
+        c(FALSE, FALSE)
+    )
+    expect_identical(
+        names(object),
+        c("aaa", "bbb")
+    )
+    expect_identical(
+        cause(object),
         noquote(c("not dir", "not dir"))
     )
 
