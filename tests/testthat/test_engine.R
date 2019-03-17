@@ -1,4 +1,4 @@
-context("engine")
+context("Assert engine")
 
 # Already covered by checks:
 # - bapply

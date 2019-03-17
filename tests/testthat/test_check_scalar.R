@@ -1,4 +1,4 @@
-context("check: scalar")
+context("Assert checks : scalar")
 
 
 
