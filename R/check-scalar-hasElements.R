@@ -36,8 +36,7 @@ isEmpty <- function(
 
 
 
-# FIXME Note that `""` will return TRUE here.
-# Need to make this check stricter...
+# Note that `""` will return TRUE here. Consider checking for this.
 #' @rdname hasElements
 #' @export
 isNonEmpty <- function(
