@@ -1,4 +1,4 @@
-context("check: vector")
+context("Assert checks : vectorized")
 
 test_that("hasAccess", {
     ok <- hasAccess(c("~", "."))
