@@ -28,6 +28,7 @@ test_that("isDirectory", {
     expect_false(ok)
 })
 
+# nolint start
 test_that("isEqual", {
     expect_true(isEqualTo(x = 1L, y = 1))
     expect_true(isNotEqualTo(x = 2, y = 1))
@@ -40,13 +41,14 @@ test_that("isEqual", {
     expect_identical(nocause(ok), c(`1` = TRUE, `2` = FALSE))
     expect_identical(cause(ok), noquote(c("", "not equal to 1; abs diff = 1")))
 })
+# nolint end
 
 test_that("isExisting", {
     a <- 1L
     b <- 2L
 
     ok <- isExisting(c("a", "b"))
-    expect_identical(ok,c(a = TRUE, b = TRUE))
+    expect_identical(ok, c(a = TRUE, b = TRUE))
 
     ok <- allAreNonExisting(c("x", "y"))
     expect_true(ok)
@@ -112,7 +114,7 @@ test_that("isInRange", {
     expect_true(all(isPercentage(c(0L, 25L, 50L, 100L))))
     expect_true(all(isProportion(c(0L, 0.01, 0.1, 1L))))
 
-    ok <- isInRange(c(2L, 3L), lower = 0, upper = 1)
+    ok <- isInRange(c(2L, 3L), lower = 0L, upper = 1L)
     expect_s3_class(ok, "goalie")
     expect_false(all(as.logical(ok)), c(FALSE, FALSE))
 
