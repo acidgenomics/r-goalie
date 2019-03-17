@@ -3,11 +3,14 @@
 \name{cause}
 \alias{cause}
 \alias{cause<-}
+\alias{nocause}
 \title{Get or set the \code{cause} attribute}
 \usage{
 cause(x)
 
 cause(x) <- value
+
+nocause(x)
 }
 \arguments{
 \item{x}{Object.}
