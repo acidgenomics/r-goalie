@@ -1,4 +1,4 @@
-context("internal")
+context("Internal functions")
 
 test_that("capitalize", {
     expect_identical(
