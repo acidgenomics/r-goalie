@@ -47,3 +47,13 @@ cause <- function(x) {
     class(x) <- c("goalie", "logical")
     x
 }
+
+
+
+#' @rdname cause
+#' @export
+nocause <- function(x) {
+    attr(x, "cause") <- NULL
+    class(x) <- "logical"
+    x
+}

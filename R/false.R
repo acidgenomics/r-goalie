@@ -25,6 +25,8 @@ false <- function(...) {
 
 
 
+# Note that this will intentionally fail if you pass in a logical vector without
+# a goalie cause attribute.
 .causeString <- function(x) {
     stopifnot(is(x, "goalie"))
     out <- capture.output(print(x))
