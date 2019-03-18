@@ -1,8 +1,9 @@
-## goalie 0.2.11 (2019-03-16)
+## goalie 0.2.11 (2019-03-17)
 
 ### Minor changes
 
 - `isDirectory`, `isFile`: Now return with `cause` attribute set on failure.
+- Updated assert checks and reworked comments to pass lintr checks.
 
 
 
