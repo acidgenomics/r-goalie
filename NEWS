@@ -1,3 +1,11 @@
+## goalie 0.2.12 (2019-03-22)
+
+### Minor changes
+
+- Migrated domain to [Acid Genomics][].
+
+
+
 ## goalie 0.2.11 (2019-03-17)
 
 ### Minor changes
@@ -171,5 +179,6 @@
 
 
 
-[basejump]: https://steinbaugh.com/basejump/
-[syntactic]: https://github.com/steinbaugh/syntactic/
+[basejump]: https://basejump.acidgenomics.com/
+[Acid Genomics]: https://acidgenomics.com/
+[syntactic]: https://syntactic.acidgenomics.com/

@@ -1,8 +1,8 @@
 # goalie
 
-[![Travis CI build status](https://travis-ci.com/steinbaugh/goalie.svg?branch=master)](https://travis-ci.com/steinbaugh/goalie)
+[![Travis CI build status](https://travis-ci.com/acidgenomics/goalie.svg?branch=master)](https://travis-ci.com/acidgenomics/goalie)
 [![AppVeyor CI build status](https://ci.appveyor.com/api/projects/status/81he1lj6usgke7x2?svg=true)](https://ci.appveyor.com/project/mjsteinbaugh/goalie)
-[![Codecov percent coverage](https://codecov.io/gh/steinbaugh/goalie/branch/master/graph/badge.svg)](https://codecov.io/gh/steinbaugh/goalie)
+[![Codecov percent coverage](https://codecov.io/gh/acidgenomics/goalie/branch/master/graph/badge.svg)](https://codecov.io/gh/acidgenomics/goalie)
 [![Anaconda cloud version](https://anaconda.org/bioconda/r-goalie/badges/version.svg)](https://anaconda.org/bioconda/r-goalie)
 [![Repo status: active](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 
@@ -19,7 +19,7 @@ if (!require("BiocManager")) {
     install.packages("BiocManager")
 }
 BiocManager::install("remotes")
-BiocManager::install("steinbaugh/goalie")
+BiocManager::install("acidgenomics/goalie")
 ```
 
 ### [conda][] method
@@ -53,5 +53,5 @@ The goalie source code incorporates elements from these excellent assert check p
 [Bioconductor]: https://bioconductor.org/
 [checkmate]: https://cran.r-project.org/package=checkmate
 [conda]: https://conda.io/
-[goalie]: https://steinbaugh.com/goalie/
+[goalie]: https://goalie.acidgenomics.com/
 [R]: https://www.r-project.org/
