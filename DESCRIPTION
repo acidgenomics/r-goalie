@@ -1,17 +1,23 @@
 Package: goalie
 Title: Assertive check functions
 Description: Assertive check functions for defensive R programming.
-Version: 0.2.11
-Date: 2019-03-17
-Authors@R: person(
-    "Michael", "Steinbaugh",
-    email = "mike@steinbaugh.com",
-    role = c("aut", "cre"),
-    comment = c(ORCID = "0000-0002-2403-2221"))
+Version: 0.2.12
+Date: 2019-03-22
+Authors@R: c(
+    person(
+        "Michael", "Steinbaugh",
+        email = "mike@steinbaugh.com",
+        role = c("aut", "cre"),
+        comment = c(ORCID = "0000-0002-2403-2221")
+    ),
+    person(
+        given = "Acid Genomics",
+        role = c("cph", "fnd")
+    ))
 URL:
-    https://steinbaugh.com/goalie/,
-    https://github.com/steinbaugh/goalie/
-BugReports: https://github.com/steinbaugh/goalie/issues/
+    https://goalie.acidgenomics.com/,
+    https://github.com/acidgenomics/goalie/
+BugReports: https://github.com/acidgenomics/goalie/issues/
 License: MIT + file LICENSE
 Encoding: UTF-8
 Depends: R (>= 3.4)
