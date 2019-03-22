@@ -62,7 +62,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">goalie</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.11</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.12</span>
       </span>
     </div>
 
@@ -84,7 +84,7 @@
       
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/steinbaugh/goalie">
+  <a href="https://github.com/acidgenomics/goalie">
     <span class="fa fa-github fa-lg"></span>
      
   </a>
@@ -102,15 +102,26 @@
   <div class="col-md-9 contents">
     <div class="page-header">
       <h1>Changelog <small></small></h1>
-      <small>Source: <a href='https://github.com/steinbaugh/goalie/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
+      <small>Source: <a href='https://github.com/acidgenomics/goalie/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
-    <div id="goalie-0-2-11-2019-03-17" class="section level2">
+    <div id="goalie-0-2-12-2019-03-22" class="section level2">
 <h2 class="hasAnchor">
-<a href="#goalie-0-2-11-2019-03-17" class="anchor"></a>goalie 0.2.11 (2019-03-17)</h2>
+<a href="#goalie-0-2-12-2019-03-22" class="anchor"></a>goalie 0.2.12 (2019-03-22)</h2>
 <div id="minor-changes" class="section level3">
 <h3 class="hasAnchor">
 <a href="#minor-changes" class="anchor"></a>Minor changes</h3>
+<ul>
+<li>Migrated domain to <a href="https://acidgenomics.com/">Acid Genomics</a>.</li>
+</ul>
+</div>
+</div>
+    <div id="goalie-0-2-11-2019-03-17" class="section level2">
+<h2 class="hasAnchor">
+<a href="#goalie-0-2-11-2019-03-17" class="anchor"></a>goalie 0.2.11 (2019-03-17)</h2>
+<div id="minor-changes-1" class="section level3">
+<h3 class="hasAnchor">
+<a href="#minor-changes-1" class="anchor"></a>Minor changes</h3>
 <ul>
 <li>
 <code>isDirectory</code>, <code>isFile</code>: Now return with <code>cause</code> attribute set on failure.</li>
@@ -121,9 +132,9 @@
     <div id="goalie-0-2-10-2019-03-10" class="section level2">
 <h2 class="hasAnchor">
 <a href="#goalie-0-2-10-2019-03-10" class="anchor"></a>goalie 0.2.10 (2019-03-10)</h2>
-<div id="minor-changes-1" class="section level3">
+<div id="minor-changes-2" class="section level3">
 <h3 class="hasAnchor">
-<a href="#minor-changes-1" class="anchor"></a>Minor changes</h3>
+<a href="#minor-changes-2" class="anchor"></a>Minor changes</h3>
 <ul>
 <li>
 <code>isSubset</code>: Improved cause message, which would error using internal <code>deparse</code> call on long vectors.</li>
@@ -133,9 +144,9 @@
     <div id="goalie-0-2-9-2019-02-25" class="section level2">
 <h2 class="hasAnchor">
 <a href="#goalie-0-2-9-2019-02-25" class="anchor"></a>goalie 0.2.9 (2019-02-25)</h2>
-<div id="minor-changes-2" class="section level3">
+<div id="minor-changes-3" class="section level3">
 <h3 class="hasAnchor">
-<a href="#minor-changes-2" class="anchor"></a>Minor changes</h3>
+<a href="#minor-changes-3" class="anchor"></a>Minor changes</h3>
 <ul>
 <li>Needed to tweak internal code in <code>assignToBody</code> to fix backports handling of <code>...elt</code> for R 3.4.</li>
 <li>
@@ -146,9 +157,9 @@
     <div id="goalie-0-2-8-2019-02-11" class="section level2">
 <h2 class="hasAnchor">
 <a href="#goalie-0-2-8-2019-02-11" class="anchor"></a>goalie 0.2.8 (2019-02-11)</h2>
-<div id="minor-changes-3" class="section level3">
+<div id="minor-changes-4" class="section level3">
 <h3 class="hasAnchor">
-<a href="#minor-changes-3" class="anchor"></a>Minor changes</h3>
+<a href="#minor-changes-4" class="anchor"></a>Minor changes</h3>
 <ul>
 <li>Bioconda unit tests revealed that <code>...elt</code> approach used in <code>assert</code> isn’t backward compatible with R 3.4. The backports package was added as a dependency, which provides legacy support for <code>...elt</code> in R 3.4. This is called internally inside <code>.onLoad</code> specifically for R releases prior to 3.5.</li>
 </ul>
@@ -157,9 +168,9 @@
     <div id="goalie-0-2-7-2019-02-11" class="section level2">
 <h2 class="hasAnchor">
 <a href="#goalie-0-2-7-2019-02-11" class="anchor"></a>goalie 0.2.7 (2019-02-11)</h2>
-<div id="minor-changes-4" class="section level3">
+<div id="minor-changes-5" class="section level3">
 <h3 class="hasAnchor">
-<a href="#minor-changes-4" class="anchor"></a>Minor changes</h3>
+<a href="#minor-changes-5" class="anchor"></a>Minor changes</h3>
 <ul>
 <li>
 <code>assert</code>: <code>traceback</code> argument is disabled by default. Note that this can be enabled globally using <code><a href="https://www.rdocumentation.org/packages/base/topics/options">options(goalie.traceback = TRUE)</a></code>, which can be useful for code debugging in some situations.</li>
@@ -179,16 +190,16 @@
 <h3 class="hasAnchor">
 <a href="#new-functions" class="anchor"></a>New functions</h3>
 <ul>
-<li>Migrated <code>printString</code> from <a href="https://steinbaugh.com/basejump/">basejump</a> package.</li>
+<li>Migrated <code>printString</code> from <a href="https://basejump.acidgenomics.com/">basejump</a> package.</li>
 </ul>
 </div>
 </div>
     <div id="goalie-0-2-5-2019-01-15" class="section level2">
 <h2 class="hasAnchor">
 <a href="#goalie-0-2-5-2019-01-15" class="anchor"></a>goalie 0.2.5 (2019-01-15)</h2>
-<div id="minor-changes-5" class="section level3">
+<div id="minor-changes-6" class="section level3">
 <h3 class="hasAnchor">
-<a href="#minor-changes-5" class="anchor"></a>Minor changes</h3>
+<a href="#minor-changes-6" class="anchor"></a>Minor changes</h3>
 <ul>
 <li>
 <code>isADirectory</code>, <code>isAFile</code>: Added <code>nullOK</code> argument support.</li>
@@ -205,9 +216,9 @@
 <li>New exports: <code>allAreDirectories</code>, <code>allAreFiles</code>, which return scalar.</li>
 </ul>
 </div>
-<div id="minor-changes-6" class="section level3">
+<div id="minor-changes-7" class="section level3">
 <h3 class="hasAnchor">
-<a href="#minor-changes-6" class="anchor"></a>Minor changes</h3>
+<a href="#minor-changes-7" class="anchor"></a>Minor changes</h3>
 <ul>
 <li>Documentation improvements.</li>
 </ul>
@@ -220,12 +231,12 @@
 <h3 class="hasAnchor">
 <a href="#new-functions-2" class="anchor"></a>New functions</h3>
 <ul>
-<li>Migrated some low-level functions from <a href="https://steinbaugh.com/basejump/">basejump</a> that are useful for assertive checks: <code>matchArgsToDoCall</code>, <code>standardizeCall</code>, and the <code>MethodDefinition</code> family, which includes <code>methodFunction</code>, <code>methodFormals</code>, <code>hasLocal</code>, <code>extractLocal</code>. These will get re-exported in <a href="https://steinbaugh.com/basejump/">basejump</a>.</li>
+<li>Migrated some low-level functions from <a href="https://basejump.acidgenomics.com/">basejump</a> that are useful for assertive checks: <code>matchArgsToDoCall</code>, <code>standardizeCall</code>, and the <code>MethodDefinition</code> family, which includes <code>methodFunction</code>, <code>methodFormals</code>, <code>hasLocal</code>, <code>extractLocal</code>. These will get re-exported in <a href="https://basejump.acidgenomics.com/">basejump</a>.</li>
 </ul>
 </div>
-<div id="minor-changes-7" class="section level3">
+<div id="minor-changes-8" class="section level3">
 <h3 class="hasAnchor">
-<a href="#minor-changes-7" class="anchor"></a>Minor changes</h3>
+<a href="#minor-changes-8" class="anchor"></a>Minor changes</h3>
 <ul>
 <li>Reorganized base engine function files, getting rid of the <code>base-</code> prefix.</li>
 <li>Added conditional <code>NULL</code> support where applicable, with <code>nullOK</code> formal. Applies to <code>isInt</code>, <code>isNumber</code>, <code>isString</code>, for example.</li>
@@ -243,7 +254,7 @@
 <li>
 <code>assert</code>: Added <code>msg</code> formal. Improved error message when a user inputs check functions that don’t return boolean.</li>
 <li>
-<code>capitalize</code>: Simplified documentation, referring the user to the documentation provided in <a href="https://github.com/steinbaugh/syntactic/">syntactic</a> package.</li>
+<code>capitalize</code>: Simplified documentation, referring the user to the documentation provided in <a href="https://syntactic.acidgenomics.com/">syntactic</a> package.</li>
 <li>
 <code>falseFromVector</code>: Newly exported function.</li>
 <li>
@@ -280,9 +291,9 @@
     <div id="goalie-0-1-2-2018-11-21" class="section level2">
 <h2 class="hasAnchor">
 <a href="#goalie-0-1-2-2018-11-21" class="anchor"></a>goalie 0.1.2 (2018-11-21)</h2>
-<div id="minor-changes-8" class="section level3">
+<div id="minor-changes-9" class="section level3">
 <h3 class="hasAnchor">
-<a href="#minor-changes-8" class="anchor"></a>Minor changes</h3>
+<a href="#minor-changes-9" class="anchor"></a>Minor changes</h3>
 <ul>
 <li>
 <code>isDir</code> and <code>isFile</code> now import <code><a href="https://www.rdocumentation.org/packages/R.utils/topics/isDirectory">R.utils::isDirectory</a></code> and <code><a href="https://www.rdocumentation.org/packages/R.utils/topics/isFile">R.utils::isFile</a></code>.</li>
@@ -292,9 +303,9 @@
     <div id="goalie-0-1-1-2018-11-14" class="section level2">
 <h2 class="hasAnchor">
 <a href="#goalie-0-1-1-2018-11-14" class="anchor"></a>goalie 0.1.1 (2018-11-14)</h2>
-<div id="minor-changes-9" class="section level3">
+<div id="minor-changes-10" class="section level3">
 <h3 class="hasAnchor">
-<a href="#minor-changes-9" class="anchor"></a>Minor changes</h3>
+<a href="#minor-changes-10" class="anchor"></a>Minor changes</h3>
 <ul>
 <li>
 <code>areUniqueGeneNames</code> now returns <code>boolean</code> as expected.</li>
@@ -306,7 +317,7 @@
 <h2 class="hasAnchor">
 <a href="#goalie-0-1-0-2018-11-11" class="anchor"></a>goalie 0.1.0 (2018-11-11)</h2>
 <ul>
-<li>Initial release, migrating assertive check functions from <a href="https://steinbaugh.com/basejump/">basejump</a> package.</li>
+<li>Initial release, migrating assertive check functions from <a href="https://basejump.acidgenomics.com/">basejump</a> package.</li>
 </ul>
 </div>
   </div>
@@ -315,6 +326,7 @@
     <div id="tocnav">
       <h2>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
+        <li><a href="#goalie-0-2-12-2019-03-22">0.2.12</a></li>
         <li><a href="#goalie-0-2-11-2019-03-17">0.2.11</a></li>
         <li><a href="#goalie-0-2-10-2019-03-10">0.2.10</a></li>
         <li><a href="#goalie-0-2-9-2019-02-25">0.2.9</a></li>
@@ -338,7 +350,7 @@
 
       <footer>
       <div class="copyright">
-  <p>Developed by <a href='/'>Michael Steinbaugh</a>.</p>
+  <p>Developed by <a href='https://steinbaugh.com/'>Michael Steinbaugh</a>, <a href='https://acidgenomics.com/'>Acid Genomics</a>.</p>
 </div>
 
 <div class="pkgdown">
