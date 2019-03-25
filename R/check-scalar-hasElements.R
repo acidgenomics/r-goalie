@@ -1,3 +1,7 @@
+# FIXME Note that `isEmpty()` masks IRanges, GenomicRanges.
+
+
+
 #' Does the input have elements?
 #'
 #' @name hasElements
