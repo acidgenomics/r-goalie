@@ -9,8 +9,8 @@ install:
 
 platform: x64
 
-# cache:
-#   - C:\RLibrary
+cache:
+  - C:\RLibrary
 
 branches:
   only:
@@ -20,9 +20,9 @@ environment:
   global:
     R_ARCH: x64
     USE_RTOOLS: true
-  # matrix:
-  #   - R_VERSION: devel
-  #     GCC_PATH: mingw_64
+  matrix:
+    - R_VERSION: devel
+      GCC_PATH: mingw_64
 
 build_script:
   - travis-tool.sh install_bioc_deps
