@@ -1,4 +1,4 @@
-context("check : scalar : hasValidNames")
+context("hasValidNames")
 
 test_that("TRUE", {
     x <- list(a = 1L, b = 2L)
@@ -22,7 +22,7 @@ test_that("FALSE", {
 
 
 
-context("check : scalar : hasValidDimnames")
+context("hasValidDimnames")
 
 test_that("TRUE", {
     x <- iris

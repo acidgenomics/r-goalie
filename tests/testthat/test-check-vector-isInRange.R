@@ -1,4 +1,4 @@
-context("check : vector : isInRange")
+context("isInRange")
 
 test_that("TRUE", {
     expect_true(isInRange(0L, lower = 0L, upper = 1L))

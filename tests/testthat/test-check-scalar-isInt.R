@@ -1,4 +1,4 @@
-context("check : scalar : isInt")
+context("isInt")
 
 # `isInt()` is a scalar short alias of `isIntegerish()`.
 

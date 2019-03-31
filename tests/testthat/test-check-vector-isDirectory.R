@@ -1,4 +1,4 @@
-context("check : vector : isDirectory")
+context("isDirectory")
 
 test_that("TRUE", {
     ok <- isDirectory(c("~", "."))

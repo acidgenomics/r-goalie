@@ -1,4 +1,4 @@
-context("check : scalar : hasLength")
+context("hasLength")
 
 test_that("TRUE", {
     expect_true(hasLength(1L))
