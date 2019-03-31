@@ -11,14 +11,19 @@ Assertive check functions for defensive R programming.
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://steinbaugh.com/goalie/}
-  \item \url{https://github.com/steinbaugh/goalie/}
-  \item Report bugs at \url{https://github.com/steinbaugh/goalie/issues/}
+  \item \url{https://goalie.acidgenomics.com/}
+  \item \url{https://github.com/acidgenomics/goalie/}
+  \item Report bugs at \url{https://github.com/acidgenomics/goalie/issues/}
 }
 
 }
 \author{
 \strong{Maintainer}: Michael Steinbaugh \email{mike@steinbaugh.com} (0000-0002-2403-2221)
+
+Other contributors:
+\itemize{
+  \item Acid Genomics [copyright holder, funder]
+}
 
 }
 \keyword{internal}
