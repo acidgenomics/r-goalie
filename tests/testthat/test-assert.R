@@ -5,7 +5,7 @@ test_that("Success", {
     expect_true(assert(is.integer(1L), is.numeric(1L)))
 })
 
-test_that("Expected failure", {
+test_that("Failure", {
     expect_error(
         object = assert(is.character(1L)),
         regexp = paste(
@@ -16,7 +16,7 @@ test_that("Expected failure", {
     )
 })
 
-test_that("Custom error message", {
+test_that("Custom message", {
     expect_error(
         object = assert(is.logical("xxx"), msg = "custom error"),
         regexp = "custom error"
