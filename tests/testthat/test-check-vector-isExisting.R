@@ -1,9 +1,9 @@
 context("check : vector : isExisting")
 
-a <- 1L
-b <- 2L
-
 test_that("TRUE", {
+    a <- 1L
+    b <- 2L
+
     ok <- isExisting(c("a", "b"))
     expect_identical(ok, c(a = TRUE, b = TRUE))
 
