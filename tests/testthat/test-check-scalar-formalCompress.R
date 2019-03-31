@@ -1,4 +1,4 @@
-context("check : scalar : formalCompress")
+context("formalCompress")
 
 test_that("TRUE", {
     expect_true(formalCompress("gzip"))

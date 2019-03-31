@@ -1,4 +1,4 @@
-context("check : vector : isHexColor")
+context("isHexColor")
 
 test_that("TRUE", {
     x <- viridis::viridis(n = 2L)

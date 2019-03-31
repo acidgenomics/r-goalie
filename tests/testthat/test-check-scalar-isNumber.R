@@ -1,4 +1,4 @@
-context("check : scalar : isNumber")
+context("isNumber")
 
 test_that("TRUE", {
     expect_true(isNumber(0))  # nolint

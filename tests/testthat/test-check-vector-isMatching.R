@@ -1,4 +1,4 @@
-context("check : vector : isMatching")
+context("isMatching")
 
 test_that("TRUE", {
     expect_true(isMatchingRegex(x = "foobar", pattern = "^f"))

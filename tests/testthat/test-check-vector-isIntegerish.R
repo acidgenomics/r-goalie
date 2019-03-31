@@ -1,4 +1,4 @@
-context("check : vector : isIntegerish")
+context("isIntegerish")
 
 test_that("TRUE", {
     expect_identical(isIntegerish(seq_len(2L)), c(TRUE, TRUE))

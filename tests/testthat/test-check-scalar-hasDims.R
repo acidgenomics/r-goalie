@@ -1,4 +1,4 @@
-context("check : scalar : hasDims")
+context("hasDims")
 
 test_that("hasDims", {
     expect_true(hasDims(mtcars))

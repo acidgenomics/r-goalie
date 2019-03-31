@@ -1,4 +1,4 @@
-context("check : scalar : isAlpha")
+context("isAlpha")
 
 test_that("TRUE", {
     expect_true(isAlpha(0.05))

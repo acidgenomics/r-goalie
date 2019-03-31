@@ -1,4 +1,4 @@
-context("check : scalar : hasRownames")
+context("hasRownames")
 
 test_that("TRUE", {
     x <- data.frame(
