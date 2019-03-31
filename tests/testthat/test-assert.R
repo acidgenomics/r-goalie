@@ -16,6 +16,20 @@ test_that("Expected failure", {
     )
 })
 
+test_that("Custom error message", {
+    expect_error(
+        object = assert(is.logical("xxx"), msg = "custom error"),
+        regexp = "custom error"
+    )
+})
+
+test_that("Traceback mode", {
+    expect_error(
+        object = assert(is.logical("xxx"), traceback = TRUE),
+        regexp = "Traceback:"
+    )
+})
+
 test_that("Not boolean", {
     expect_error(
         object = assert(c(TRUE, TRUE)),
