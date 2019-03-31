@@ -1,4 +1,4 @@
-context("check : scalar : sets")
+context("sets")
 
 test_that("TRUE", {
     expect_true(isSubset(x = "a", y = c("a", "b")))

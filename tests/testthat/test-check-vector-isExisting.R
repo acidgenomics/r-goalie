@@ -1,4 +1,4 @@
-context("check : vector : isExisting")
+context("isExisting")
 
 test_that("TRUE", {
     a <- 1L

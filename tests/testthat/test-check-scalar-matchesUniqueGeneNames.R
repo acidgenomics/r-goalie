@@ -1,4 +1,4 @@
-context("check : scalar : matchesUniqueGeneNames")
+context("matchesUniqueGeneNames")
 
 se <- SummarizedExperiment(
     assays = matrix(

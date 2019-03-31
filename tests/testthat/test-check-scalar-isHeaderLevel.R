@@ -1,4 +1,4 @@
-context("check : scalar : isHeaderLevel")
+context("isHeaderLevel")
 
 test_that("TRUE", {
     expect_true(isHeaderLevel(1))  # nolint

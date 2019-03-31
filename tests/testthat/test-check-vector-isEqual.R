@@ -1,4 +1,4 @@
-context("check : vector : isEqual")
+context("isEqual")
 
 # nolint start
 

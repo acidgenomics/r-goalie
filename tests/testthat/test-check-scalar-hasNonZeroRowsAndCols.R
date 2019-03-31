@@ -1,4 +1,4 @@
-context("check : scalar : hasNonZeroRowsAndCols")
+context("hasNonZeroRowsAndCols")
 
 test_that("TRUE", {
     x <- matrix(data = seq_len(4L), nrow = 2L)

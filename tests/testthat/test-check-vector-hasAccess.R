@@ -1,4 +1,4 @@
-context("check : vector : hasAccess")
+context("hasAccess")
 
 test_that("TRUE", {
     ok <- hasAccess(c("~", "."))

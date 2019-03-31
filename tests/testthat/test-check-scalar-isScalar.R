@@ -1,4 +1,4 @@
-context("check : scalar : isScalar")
+context("isScalar")
 
 test_that("isScalar", {
     expect_true(isScalar("X"))

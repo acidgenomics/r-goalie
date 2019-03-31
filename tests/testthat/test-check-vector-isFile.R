@@ -1,4 +1,4 @@
-context("check : vector : isFile")
+context("isFile")
 
 test_that("TRUE", {
     x <- "example.txt"
