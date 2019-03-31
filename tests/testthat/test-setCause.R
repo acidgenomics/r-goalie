@@ -8,8 +8,18 @@ test_that("FALSE", {
 })
 
 test_that("NA logical (missing)", {
-    ok <- setCause(x = NA, missing = "xxx")
+    ok <- setCause(
+        x = c(a = TRUE, b = FALSE, c = NA),
+        false = "custom false",
+        missing = "custom missing"
+    )
     expect_s3_class(ok, "goalie")
-    expect_true(is.na(ok))
-    expect_identical(cause(ok), noquote("xxx"))
+    expect_identical(
+        nocause(ok),
+        c(a = TRUE, b = FALSE, c = NA)
+    )
+    expect_identical(
+        cause(ok),
+        noquote(c("", "custom false", "custom missing"))
+    )
 })
