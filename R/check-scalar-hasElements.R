@@ -1,4 +1,4 @@
-# FIXME Note that `isEmpty()` masks IRanges, GenomicRanges.
+# Note that `isEmpty()` masks IRanges, GenomicRanges.
 
 
 
@@ -40,7 +40,6 @@ isEmpty <- function(
 
 
 
-# Note that `""` will return TRUE here. Consider checking for this.
 #' @rdname hasElements
 #' @export
 isNonEmpty <- function(
