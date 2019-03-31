@@ -1,4 +1,4 @@
-context("Validity check function")
+context("validate")
 
 test_that("validate", {
     expect_true(
@@ -10,6 +10,10 @@ test_that("validate", {
     )
 
 })
+
+
+
+context("validateClasses")
 
 test_that("validateClasses", {
     expect_true(

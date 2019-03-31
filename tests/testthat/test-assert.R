@@ -1,6 +1,4 @@
-context("Assert check function")
-
-
+context("assert")
 
 test_that("assert", {
     expect_silent(assert(is.character("xxx")))
