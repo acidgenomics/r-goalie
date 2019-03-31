@@ -1,7 +1,10 @@
 # nolint start
 DataFrame <- S4Vectors::DataFrame
+SummarizedExperiment <- SummarizedExperiment::SummarizedExperiment
 data.table <- data.table::data.table
 iris <- datasets::iris
 mtcars <- datasets::mtcars
+rowData <- SummarizedExperiment::rowData
+`rowData<-` <- SummarizedExperiment::`rowData<-`
 tibble <- tibble::tibble
 # nolint end
