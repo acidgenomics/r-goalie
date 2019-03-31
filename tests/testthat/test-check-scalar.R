@@ -2,47 +2,6 @@ context("Assert checks : scalar")
 
 
 
-test_that("allAreAtomic", {
-    expect_true(allAreAtomic(data.frame(a = "foo", b = "bar")))
-    expect_true(allAreAtomic(list(a = "foo", b = "bar")))
-
-    ok <- allAreAtomic(data.frame())
-    expect_s3_class(ok, "goalie")
-    expect_false(ok)
-    expect_identical(
-        cause(ok),
-        noquote("data.frame() has length 0.")
-    )
-
-    ok <- allAreAtomic(list(a = "x", b = list()))
-    expect_s3_class(ok, "goalie")
-    expect_false(ok)
-    expect_identical(
-        cause(ok),
-        noquote('Not all elements in list(a = "x", b = list()) are atomic.')
-    )
-})
-
-
-
-test_that("areSameLength", {
-    x <- list(a = 1L, b = 2L)
-    y <- list(c = 3L, d = 4L)
-    ok <- areSameLength(x = x, y = y)
-    expect_true(ok)
-
-    x <- list(a = 1L)
-    y <- list(b = 2L, c = 3L)
-    ok <- areSameLength(x = x, y = y)
-    expect_s3_class(ok, "goalie")
-    expect_false(ok)
-    expect_identical(
-        cause(ok),
-        noquote("x does not have the same length as y.")
-    )
-})
-
-
 
 test_that("formalCompress", {
     expect_true(formalCompress("gzip"))
