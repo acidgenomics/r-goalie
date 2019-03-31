@@ -65,12 +65,12 @@ test_that("TRUE", {
 })
 
 test_that("FALSE", {
-    ok <- isOfDimension("xxx", n = 1L)
+    ok <- isOfDimension(list(a = 1L), n = 1L)
     expect_s3_class(ok, "goalie")
     expect_false(ok)
     expect_identical(
         object = cause(ok),
-        expected = noquote('"xxx" has 0 dimensions, not 1.')
+        expected = noquote("list(a = 1L) has 0 dimensions, not 1.")
     )
 })
 
@@ -79,7 +79,12 @@ test_that("FALSE", {
 context("isOfLength")
 
 test_that("TRUE", {
+    expect_true(isOfLength("xxx", n = 1L))
+    expect_true(isOfLength(NA, n = 1L))
+    expect_true(isOfLength(character(), n = 0L))
+    expect_true(isOfLength(NULL, n = 0L))
 })
 
 test_that("FALSE", {
+    expect_false(isOfLength("xxx", n = 2L))
 })

@@ -47,10 +47,3 @@ test_that("Invalid input, checking stop passthrough", {
         regexp = "XXX"
     )
 })
-
-test_that("Invalid input, checking warning passthrough", {
-    expect_error(
-        object = assert(warning("XXX")),
-        regexp = "Check did not return a boolean flag \\(TRUE/FALSE\\)."
-    )
-})
