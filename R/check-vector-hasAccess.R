@@ -50,7 +50,7 @@ hasAccess <- function(x, access = "r") {
     if (anyDuplicated(access) > 0L || !all(access %in% c("r", "w", "x"))) {
         return(false(
             paste0(
-                "%s doesn't contain valid codes.\n",
+                "%s doesn't contain valid access codes.\n",
                 "Combinations of 'r', 'w' and 'x' are allowed."
             ),
             access

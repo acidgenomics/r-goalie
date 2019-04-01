@@ -21,13 +21,17 @@
 #' is2(1:5, c("character", "list", "numeric"))
 #' is2(mean, c("function", "data.frame"))
 is2 <- function(x, class, .xname = getNameInParent(x)) {
-    if (length(class) == 0L) {
-        stop("You must provide a class.")
+    if (!is.character(class) || length(class) == 0L) {
+        stop("`class` must be non-empty character.")
     }
     if (length(class) > 1L) {
+        ok <- bapply(X = class, FUN = function(cl) is2(x, cl, ""))
         return(setCause(
-            x = bapply(class, function(cl) is2(x, cl, "")),
-            false = sprintf("%s is not '%s'", .typeDescription(x), class)
+            x = ok,
+            false = sprintf(
+                "%s is not '%s'",
+                .typeDescription(x), class
+            )
         ))
     }
     # Attempt to use `is.character(x)` first.
@@ -46,9 +50,7 @@ is2 <- function(x, class, .xname = getNameInParent(x)) {
     if (!isTRUE(ok)) {
         return(false(
             "%s is not of class '%s'; it has %s.",
-            .xname,
-            class,
-            .typeDescription(x)
+            .xname, class, .typeDescription(x)
         ))
     }
     TRUE
@@ -64,24 +66,14 @@ is2 <- function(x, class, .xname = getNameInParent(x)) {
             class(x[FALSE]),  # nolint
             toString(class(x))
         )
-    }
-    else if (is.function(x)) {
+    } else if (is.function(x)) {
         sprintf(
             fmt = "class '%s %s'",
-            typeof(x),
-            toString(class(x))
+            typeof(x), toString(class(x))
         )
-    }
-    else if (isS4(x)) {
-        sprintf(
-            fmt = "S4 class '%s'",
-            toString(class(x))
-        )
-    }
-    else {
-        sprintf(
-            fmt = "class '%s'",
-            toString(class(x))
-        )
+    } else if (isS4(x)) {
+        sprintf("S4 class '%s'", toString(class(x)))
+    } else {
+        sprintf("class '%s'", toString(class(x)))
     }
 }

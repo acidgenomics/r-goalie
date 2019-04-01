@@ -1,3 +1,12 @@
+## goalie 0.2.13 (2019-03-31)
+
+### Minor changes
+
+- Overhauled and improved assert checks.
+- Miscellaneous bug fixes for assert checks.
+
+
+
 ## goalie 0.2.12 (2019-03-22)
 
 ### Minor changes

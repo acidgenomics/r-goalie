@@ -4,7 +4,7 @@
 \alias{setCause}
 \title{Return \code{FALSE} vector with causes of failure}
 \usage{
-setCause(x, false, missing = "missing")
+setCause(x, false = "false", missing = "missing")
 }
 \arguments{
 \item{x}{Object.}
@@ -23,7 +23,7 @@ Sets the \code{cause} \link[base:attributes]{attribute} of an object and returns
 object.
 }
 \examples{
-setCause(FALSE, false = "test")
+setCause(x = FALSE, false = "test")
 }
 \seealso{
 \itemize{
