@@ -178,8 +178,8 @@ isPercentage(c(0, 25, 50, 100))
 isProportion(c(0, 0.01, 0.1, 1))
 
 ## FALSE ====
-isInRange(c(2, 3), lower = 0, upper = 1)
-isInClosedRange(c(2, 3), lower = 0, upper = 1)
+isInRange(c(-1, 2), lower = 0, upper = 1)
+isInClosedRange(c(0, 1), lower = 0, upper = 1)
 
 isInOpenRange(c(1, 2), lower = 0, upper = 1)
 isInLeftOpenRange(0, lower = 0)
