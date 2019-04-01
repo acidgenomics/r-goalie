@@ -45,7 +45,7 @@ isIntegerish <- function(x, .xname = getNameInParent(x)) {
     )
     if (all(ok)) return(ok)
 
-    bapply(
+    ok <- bapply(
         X = x,
         FUN = function(x) {
             isTRUE(all.equal(
@@ -55,6 +55,8 @@ isIntegerish <- function(x, .xname = getNameInParent(x)) {
             ))
         }
     )
+
+    setCause(ok, false = "not integer")
 }
 
 
