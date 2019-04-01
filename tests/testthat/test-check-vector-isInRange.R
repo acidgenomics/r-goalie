@@ -76,6 +76,8 @@ test_that("TRUE", {
     x <- c(0L, 0.25, 0.5)
     ok <- isInRightOpenRange(x, lower = lower, upper = upper)
     expect_true(any(ok))
+    ok <- allAreInRightOpenRange(x, lower = lower, upper = upper)
+    expect_true(ok)
 })
 
 test_that("FALSE", {
