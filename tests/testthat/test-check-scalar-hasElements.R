@@ -62,15 +62,36 @@ context("isOfDimension")
 
 test_that("TRUE", {
     expect_true(isOfDimension(mtcars, n = c(32L, 11L)))
+    expect_true(isOfDimension("xxx", n = NULL))
 })
 
-test_that("FALSE", {
+test_that("FALSE : list doesn't support dim", {
     ok <- isOfDimension(list(a = 1L), n = 1L)
     expect_s3_class(ok, "goalie")
     expect_false(ok)
     expect_identical(
         object = cause(ok),
         expected = noquote("list(a = 1L) has 0 dimensions, not 1.")
+    )
+})
+
+test_that("FALSE : dimension mismatch", {
+    ok <- isOfDimension(mtcars, n = c(1L, 1L))
+    expect_s3_class(ok, "goalie")
+    expect_false(ok)
+    expect_identical(
+        object = cause(ok),
+        expected = noquote("Dimensions 1, 2 of mtcars are incorrect.")
+    )
+})
+
+test_that("FALSE : expecting dim", {
+    ok <- isOfDimension(mtcars, n = NULL)
+    expect_s3_class(ok, "goalie")
+    expect_false(ok)
+    expect_identical(
+        object = cause(ok),
+        expected = noquote("mtcars has dimensions c(32L, 11L), not NULL.")
     )
 })
 
