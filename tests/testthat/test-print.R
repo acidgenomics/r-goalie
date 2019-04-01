@@ -1,4 +1,4 @@
-context("print : goalie")
+context("print")
 
 # Here we want to capture the print method on goalie S3 class.
 # These differ depending on whether the assert check is scalar or vectorized.

@@ -1,42 +1,196 @@
 context("isInRange")
 
+lower <- 0L
+upper <- 1L
+
 test_that("TRUE", {
-    expect_true(isInRange(0L, lower = 0L, upper = 1L))
-    expect_true(isInRange(1L, lower = 0L, upper = 1L))
-    expect_true(isInClosedRange(1L, lower = 0L, upper = 1L))
+    x <- c(0L, 0.5, 1L)
 
-    expect_true(isInOpenRange(0.5, lower = 0L, upper = 1L))
-    expect_true(isInLeftOpenRange(1L, lower = 0L, upper = 1L))
-    expect_true(isInRightOpenRange(0L, lower = 0L, upper = 1L))
+    ok <- isInRange(x, lower = lower, upper = upper)
+    expect_true(all(ok))
+    ok <- allAreInRange(x, lower = lower, upper = upper)
+    expect_true(ok)
 
-    expect_true(all(isNegative(c(-2L, -1L))))
-    expect_true(all(isPositive(c(1L, 2L))))
-    expect_true(all(isNonNegative(c(0L, 1L))))
-    expect_true(all(isNonPositive(c(-1L, 0L))))
-
-    expect_true(all(isPercentage(c(0L, 25L, 50L, 100L))))
-    expect_true(all(isProportion(c(0L, 0.01, 0.1, 1L))))
+    # `isInRange()` defaults to closed range.
+    ok <- isInClosedRange(x, lower = lower, upper = upper)
+    expect_true(all(ok))
+    ok <- allAreInClosedRange(x, lower = lower, upper = upper)
+    expect_true(ok)
 })
 
 test_that("FALSE", {
-    ok <- isInRange(c(2L, 3L), lower = 0L, upper = 1L)
+    x <- c(2L, 3L)
+
+    ok <- isInRange(x, lower = lower, upper = upper)
     expect_s3_class(ok, "goalie")
-    expect_false(all(as.logical(ok)), c(FALSE, FALSE))
+    expect_false(any(ok))
 
-    ok <- isInClosedRange(c(2L, 3L), lower = 0L, upper = 1L)
+    ok <- isInClosedRange(x, lower = lower, upper = upper)
     expect_s3_class(ok, "goalie")
-    expect_false(all(as.logical(ok)), c(FALSE, FALSE))
+    expect_false(any(ok))
+})
 
-    ok <- isInOpenRange(c(1L, 2L), lower = 0L, upper = 1L)
+
+
+context("isInOpenRange")
+
+test_that("TRUE", {
+    x <- c(0.25, 0.5, 0.75)
+    ok <- isInOpenRange(x, lower = lower, upper = upper)
+    expect_true(all(ok))
+    ok <- allAreInOpenRange(x, lower = lower, upper = upper)
+    expect_true(ok)
+})
+
+test_that("FALSE", {
+    x <- c(0L, 1L)
+    ok <- isInOpenRange(x, lower = lower, upper = upper)
     expect_s3_class(ok, "goalie")
-    expect_false(all(as.logical(ok)), c(FALSE, FALSE))
+    expect_false(any(ok))
+})
 
-    expect_false(isInLeftOpenRange(0L, lower = 0L))
-    expect_false(isInRightOpenRange(1L, upper = 1L))
 
-    expect_false(isPositive(-1L))
-    expect_false(isNegative(1L))
 
-    expect_false(isPercentage(110L))
-    expect_false(isProportion(1.1))
+context("isInLeftOpenRange")
+
+test_that("TRUE", {
+    x <- c(0.5, 0.75, 1L)
+    ok <- isInLeftOpenRange(x, lower = lower, upper = upper)
+    expect_true(all(ok))
+    ok <- allAreInLeftOpenRange(x, lower = lower, upper = upper)
+    expect_true(ok)
+})
+
+test_that("FALSE", {
+    x <- c(-1L, -0.5, 0L)
+    ok <- isInLeftOpenRange(x, lower = lower)
+    expect_s3_class(ok, "goalie")
+    expect_false(any(ok))
+})
+
+
+
+context("isInRightOpenRange")
+
+test_that("TRUE", {
+    x <- c(0L, 0.25, 0.5)
+    ok <- isInRightOpenRange(x, lower = lower, upper = upper)
+    expect_true(any(ok))
+})
+
+test_that("FALSE", {
+    x <- c(1L, 2L, 3L)
+    ok <- isInRightOpenRange(x, upper = upper)
+    expect_s3_class(ok, "goalie")
+    expect_false(any(ok))
+})
+
+
+
+context("isNegative")
+
+test_that("TRUE", {
+    x <- c(-2L, -1L)
+    ok <- isNegative(x)
+    expect_true(all(ok))
+    ok <- allAreNegative(x)
+    expect_true(ok)
+})
+
+test_that("FALSE", {
+    ok <- isNegative(1L)
+    expect_false(ok)
+    expect_s3_class(ok, "goalie")
+})
+
+
+
+context("isPositive")
+
+test_that("TRUE", {
+    x <- c(1L, 2L)
+    ok <- isPositive(x)
+    expect_true(all(ok))
+    ok <- allArePositive(x)
+    expect_true(ok)
+})
+
+test_that("FALSE", {
+    ok <- isPositive(-1L)
+    expect_false(ok)
+    expect_s3_class(ok, "goalie")
+})
+
+
+
+context("isNonNegative")
+
+test_that("TRUE", {
+    x <- c(0L, 1L)
+    ok <- isNonNegative(x)
+    expect_true(all(ok))
+    ok <- allAreNonNegative(x)
+    expect_true(ok)
+})
+
+test_that("FALSE", {
+    ok <- isNonNegative(-1L)
+    expect_false(ok)
+    expect_s3_class(ok, "goalie")
+})
+
+
+
+context("isNonPositive")
+
+test_that("TRUE", {
+    x <- c(-1L, 0L)
+    ok <- isNonPositive(x)
+    expect_true(all(ok))
+    ok <- allAreNonPositive(x)
+    expect_true(ok)
+})
+
+test_that("FALSE", {
+    ok <- isNonPositive(1L)
+    expect_false(ok)
+    expect_s3_class(ok, "goalie")
+})
+
+
+
+context("isPercentage")
+
+test_that("TRUE", {
+    x <- c(0L, 25L, 50L, 100L)
+    ok <- isPercentage(x)
+    expect_true(all(ok))
+    ok <- allArePercentage(x)
+    expect_true(ok)
+})
+
+# This may be too strict. Consider allowing 110%.
+test_that("FALSE", {
+    ok <- isPercentage(110L)
+    expect_false(ok)
+    expect_s3_class(ok, "goalie")
+})
+
+
+
+context("isProportion")
+
+test_that("TRUE", {
+    x <- c(0L, 0.01, 0.1, 1L)
+    ok <- isProportion(x)
+    expect_true(all(ok))
+    ok <- allAreProportion(x)
+    expect_true(ok)
+})
+
+# This may be strict. Consider allowing > 1.
+test_that("FALSE", {
+    ok <- isProportion(1.1)
+    expect_false(ok)
+    expect_s3_class(ok, "goalie")
 })
