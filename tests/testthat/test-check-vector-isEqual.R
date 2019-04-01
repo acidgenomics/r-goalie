@@ -1,20 +1,175 @@
 context("isEqual")
 
-# nolint start
-
 test_that("TRUE", {
-    expect_true(isEqualTo(x = 1L, y = 1))
-    expect_true(isNotEqualTo(x = 2, y = 1))
-    expect_true(isGreaterThan(x = 1, y = 0))
-    expect_true(all(isGreaterThanOrEqualTo(x = seq_len(2), y = 1)))
-    expect_true(isLessThan(x = -1, y = 0))
-    expect_true(all(isLessThanOrEqualTo(x = seq_len(2), y = 3)))
+    x <- c(1L, 1)  # nolint
+    y <- 1L
+
+    ok <- isEqualTo(x = x, y = y)
+    expect_true(all(ok))
+
+    ok <- allAreEqualTo(x = x, y = y)
+    expect_true(ok)
 })
 
 test_that("FALSE", {
-    ok <- isEqualTo(x = seq_len(2), y = 1)
-    expect_identical(nocause(ok), c(`1` = TRUE, `2` = FALSE))
-    expect_identical(cause(ok), noquote(c("", "not equal to 1; abs diff = 1")))
+    x <- seq_len(2L)
+    y <- 0L
+
+    ok <- isEqualTo(x = x, y = y)
+    expect_s3_class(ok, "goalie")
+    expect_identical(
+        nocause(ok),
+        c(`1` = FALSE, `2` = FALSE)
+    )
+    expect_identical(
+        cause(ok),
+        noquote(c(
+            "not equal to 0; abs diff = 1",
+            "not equal to 0; abs diff = 2"
+        ))
+    )
+
+    ok <- allAreEqualTo(x = x, y = y)
+    expect_s3_class(ok, "goalie")
+    expect_false(ok)
 })
 
-# nolint end
+
+
+context("isNotEqualTo")
+
+test_that("TRUE", {
+    x <- seq_len(2L)
+    y <- 0L
+
+    ok <- isNotEqualTo(x = x, y = y)
+    expect_true(all(ok))
+
+    ok <- allAreNotEqualTo(x = x, y = y)
+    expect_true(ok)
+})
+
+test_that("FALSE", {
+    x <- c(1L, 1L)
+    y <- 1L
+
+    ok <- isNotEqualTo(x = x, y = y)
+    expect_s3_class(ok, "goalie")
+    expect_false(any(ok))
+
+    ok <- allAreNotEqualTo(x = x, y = y)
+    expect_s3_class(ok, "goalie")
+    expect_false(ok)
+})
+
+
+
+context("isGreaterThan")
+
+test_that("TRUE", {
+    x <- seq_len(2L)
+    y <- 0L
+
+    ok <- isGreaterThan(x = x, y = y)
+    expect_true(all(ok))
+
+    ok <- allAreGreaterThan(x = x, y = y)
+    expect_true(ok)
+})
+
+test_that("FALSE", {
+    x <- seq_len(2L)
+    y <- 3L
+
+    ok <- isGreaterThan(x = x, y = y)
+    expect_s3_class(ok, "goalie")
+    expect_false(any(ok))
+
+    ok <- allAreGreaterThan(x = x, y = y)
+    expect_s3_class(ok, "goalie")
+    expect_false(ok)
+})
+
+
+
+context("isGreaterThanOrEqualTo")
+
+test_that("TRUE", {
+    x <- seq_len(2L)
+    y <- 1L
+
+    ok <- isGreaterThanOrEqualTo(x = x, y = y)
+    expect_true(all(ok))
+
+    ok <- allAreGreaterThanOrEqualTo(x = x, y = y)
+    expect_true(ok)
+})
+
+test_that("FALSE", {
+    x <- seq_len(2L)
+    y <- 3L
+
+    ok <- isGreaterThanOrEqualTo(x = x, y = y)
+    expect_s3_class(ok, "goalie")
+    expect_false(any(ok))
+
+    ok <- allAreGreaterThanOrEqualTo(x = x, y = y)
+    expect_s3_class(ok, "goalie")
+    expect_false(ok)
+})
+
+
+
+context("isLessThan")
+
+test_that("TRUE", {
+    x <- seq_len(2L)
+    y <- 3L
+
+    ok <- isLessThan(x = x, y = y)
+    expect_true(all(ok))
+
+    ok <- allAreLessThan(x = x, y = y)
+    expect_true(ok)
+})
+
+test_that("FALSE", {
+    x <- seq_len(2L)
+    y <- 0L
+
+    ok <- isLessThan(x = x, y = y)
+    expect_s3_class(ok, "goalie")
+    expect_false(any(ok))
+
+    ok <- allAreLessThan(x = x, y = y)
+    expect_s3_class(ok, "goalie")
+    expect_false(ok)
+})
+
+
+
+context("isLessThanOrEqualTo")
+
+test_that("TRUE", {
+    x <- seq_len(2L)
+    y <- 3L
+
+    ok <- isLessThanOrEqualTo(x = x, y = y)
+    expect_true(all(ok))
+
+    ok <- allAreLessThanOrEqualTo(x = x, y = y)
+    expect_true(ok)
+})
+
+test_that("FALSE", {
+    x <- seq_len(2L)
+    y <- 0L
+
+    ok <- isLessThanOrEqualTo(x = x, y = y)
+    expect_s3_class(ok, "goalie")
+    expect_false(any(ok))
+
+    ok <- allAreLessThanOrEqualTo(x = x, y = y)
+    expect_s3_class(ok, "goalie")
+    expect_false(ok)
+})
