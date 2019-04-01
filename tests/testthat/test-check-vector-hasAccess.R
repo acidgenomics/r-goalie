@@ -3,11 +3,11 @@ context("hasAccess")
 test_that("TRUE", {
     x <- c("~", ".")
 
-    ok <- hasAccess(x)
+    ok <- hasAccess(x, access = "rwx")
     expect_true(all(ok))
     expect_identical(ok, c(`~` = TRUE, `.` = TRUE))
 
-    ok <- allHaveAccess(x)
+    ok <- allHaveAccess(x, access = "rwx")
     expect_true(ok)
 })
 
