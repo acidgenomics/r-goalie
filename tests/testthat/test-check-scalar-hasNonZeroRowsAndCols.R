@@ -1,6 +1,6 @@
 context("hasNonZeroRowsAndCols")
 
-test_that("TRUE", {
+test_that("TRUE : matrix", {
     x <- matrix(data = seq_len(4L), nrow = 2L)
     expect_true(hasNonZeroRowsAndCols(x))
 
@@ -9,6 +9,46 @@ test_that("TRUE", {
 
     x <- matrix(data = rep(1L, times = 2L), byrow = FALSE)
     expect_true(hasNonZeroRowsAndCols(x))
+})
+
+test_that("TRUE : sparseMatrix", {
+    x <- sparseMatrix(
+        i = seq_len(4L),
+        j = seq_len(4L),
+        x = 1L
+    )
+    expect_true(hasNonZeroRowsAndCols(x))
+})
+
+test_that("FALSE : rows containing all zeros", {
+    # This example is from the sparseMatrix documentation.
+    x <- sparseMatrix(
+        i = c(1L, 3L:8L),
+        j = c(2L, 9L, 6L:10L),
+        x = 7L * (1L:7L)
+    )
+    ok <- hasNonZeroRowsAndCols(x)
+    expect_false(ok)
+    expect_s3_class(ok, "goalie")
+    expect_identical(
+        cause(ok),
+        noquote("x has 1 zero row at position 2.")
+    )
+})
+
+test_that("FALSE : columns containing all zeros", {
+    x <- matrix(
+        data = c(rep(1L, times = 8L), rep(0L, times = 8L)),
+        nrow = 4L, ncol = 4L,
+        byrow = FALSE
+    )
+    ok <- hasNonZeroRowsAndCols(x)
+    expect_false(ok)
+    expect_s3_class(ok, "goalie")
+    expect_identical(
+        cause(ok),
+        noquote("x has 2 zero columns at positions 3, 4.")
+    )
 })
 
 test_that("FALSE : no rows", {
