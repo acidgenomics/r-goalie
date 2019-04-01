@@ -46,7 +46,7 @@ hasNonZeroRowsAndCols <- function(x, .xname = getNameInParent(x)) {
     if (!isTRUE(ok)) return(ok)
 
     ok <- hasCols(x, .xname = .xname)
-    if (!isTRUE(x)) return(ok)
+    if (!isTRUE(ok)) return(ok)
 
     # For sparse matrix, use the generic verbs from Matrix package. Note that
     # sparse matrices are often highly zero-inflated, so this approach might
@@ -61,19 +61,29 @@ hasNonZeroRowsAndCols <- function(x, .xname = getNameInParent(x)) {
     # practice to remove them before attempting to plot a heatmap.
     zeroRows <- rowSums(x) == 0L
     if (any(zeroRows)) {
-        return(false(paste0(
-            sum(zeroRows, na.rm = TRUE),
-            " rows containing all zeros detected.\n",
-            toString(head(which(zeroRows)))
-        )))
+        n <- sum(zeroRows, na.rm = TRUE)
+        which <- toString(x = head(which(zeroRows)), width = 100L)
+        return(false(
+            ngettext(
+                n = n,
+                msg1 = "%s has %s zero row at position %s.",
+                msg2 = "%s has %s zero rows at positions %s."
+            ),
+            .xname, n, which
+        ))
     }
     zeroCols <- colSums(x) == 0L
     if (any(zeroCols)) {
-        return(false(paste0(
-            sum(zeroCols, na.rm = TRUE),
-            " columns containing all zeros detected.\n",
-            toString(head(which(zeroCols)))
-        )))
+        n <- sum(zeroCols, na.rm = TRUE)
+        which <- toString(head(which(zeroCols)), width = 100L)
+        return(false(
+            ngettext(
+                n = n,
+                msg1 = "%s has %s zero column at position %s.",
+                msg2 = "%s has %s zero columns at positions %s."
+            ),
+            .xname, n, which
+        ))
     }
 
     TRUE

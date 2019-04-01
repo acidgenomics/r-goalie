@@ -32,7 +32,7 @@
 assert <- function(
     ...,
     msg = NULL,
-    traceback = getOption("goalie.traceback", FALSE)
+    traceback = getOption("acid.traceback", default = FALSE)
 ) {
     # Note that we're using `i` along with `...elt()` here to eval the call.
     dots <- as.call(substitute(...()))

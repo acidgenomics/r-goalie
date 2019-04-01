@@ -19,10 +19,10 @@
 #' - `stats::setNames()`.
 #'
 #' @examples
-#' setCause(FALSE, false = "test")
+#' setCause(x = FALSE, false = "test")
 setCause <- function(
     x,
-    false,
+    false = "false",
     missing = "missing"
 ) {
     assert(is.logical(x))
@@ -36,8 +36,7 @@ setCause <- function(
     cause <- character(length)
     if (length(missing) == 1L) {
         cause[isNA] <- missing
-    }
-    else {
+    } else {
         missing <- rep_len(missing, length)
         cause[isNA] <- missing[isNA]
     }
@@ -45,8 +44,7 @@ setCause <- function(
     index <- !(x | isNA)
     if (length(false) == 1L) {
         cause[index] <- false
-    }
-    else {
+    } else {
         false <- rep_len(false, length)
         cause[index] <- false[index]
     }
