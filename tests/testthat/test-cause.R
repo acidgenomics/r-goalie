@@ -1,4 +1,4 @@
-context("cause assignment")
+context("cause")
 
 test_that("scalar", {
     x <- FALSE
