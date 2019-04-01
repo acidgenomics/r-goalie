@@ -46,7 +46,7 @@ hasNonZeroRowsAndCols <- function(x, .xname = getNameInParent(x)) {
     if (!isTRUE(ok)) return(ok)
 
     ok <- hasCols(x, .xname = .xname)
-    if (!isTRUE(x)) return(ok)
+    if (!isTRUE(ok)) return(ok)
 
     # For sparse matrix, use the generic verbs from Matrix package. Note that
     # sparse matrices are often highly zero-inflated, so this approach might
