@@ -1,10 +1,13 @@
+file <- "example.txt"
+file.create(file)
+
+
+
 context("isFile")
 
 test_that("TRUE", {
-    x <- "example.txt"
-    file.create(x)
-    expect_true(isAFile(x))
-    unlink(x)
+    expect_true(isFile(file))
+    expect_true(isAFile(file))
 })
 
 # Directories currently return TRUE, similar to base R `dir.exists()`.
@@ -27,3 +30,39 @@ test_that("FALSE : not character", {
     expect_false(ok)
     expect_identical(cause(ok), noquote("x is not character."))
 })
+
+
+
+context("isAFile")
+
+test_that("TRUE", {
+    expect_true(isAFile(file))
+    expect_true(isAFile("~"))
+})
+
+test_that("FALSE", {
+    ok <- isAFile("aaa")
+    expect_s3_class(ok, "goalie")
+    expect_false(ok)
+})
+
+test_that("nullOK", {
+    expect_true(isAFile(NULL, nullOK = TRUE))
+    expect_false(isAFile(NULL, nullOK = FALSE))
+})
+
+
+
+context("allAreFiles")
+
+test_that("TRUE", {
+    expect_true(allAreFiles(file))
+})
+
+test_that("FALSE", {
+    expect_false(allAreFiles("aaa"))
+})
+
+
+
+file.remove(file)
