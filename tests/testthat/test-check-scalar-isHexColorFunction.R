@@ -13,3 +13,8 @@ test_that("FALSE", {
         noquote("Hex color function must contain an `n` formal argument.")
     )
 })
+
+test_that("nullOK", {
+    expect_false(isHexColorFunction(NULL, nullOK = FALSE))
+    expect_true(isHexColorFunction(NULL, nullOK = TRUE))
+})
