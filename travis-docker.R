@@ -1,3 +1,3 @@
-setwd("/bioverbs")
+setwd("/goalie")
 rcmdcheck::rcmdcheck(path = ".", args = "--no-manual")
 BiocCheck::BiocCheck(package = ".")
