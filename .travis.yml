@@ -1,38 +1,14 @@
-language: r
-cache: packages
+language: general
 
-matrix:
-  include:
-    - os: linux
-      r: bioc-release
-    - os: linux
-      r: bioc-devel
-    - os: osx
-      r: bioc-release
-  allow_failures:
-    - os: osx
-    - r: bioc-devel
-  fast_finish: true
+services:
+  - docker
 
-branches:
-  only:
-    - master
+before_install:
+  - docker pull acidgenomics/bioc-release
+  - docker images
 
-env:
-  global:
-    - LINTR_COMMENT_BOT=true
-
-r_packages:
-  - covr
-bioc_packages:
-  - BiocCheck
-r_github_packages:
-  - acidgenomics/lintr
-
-after_success:
-  - R CMD BiocCheck .
-  - Rscript -e 'lintr::lint_package()'
-  - Rscript -e 'covr::codecov()'
+script:
+  - docker run -ti --user bioc -v $PWD:/bioverbs acidgenomics/bioc-release Rscript -e 'source("/bioverbs/travis-docker.R")'
 
 notifications:
   email:
