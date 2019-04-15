@@ -8,7 +8,7 @@ before_install:
   - docker images
 
 script:
-  - docker run -ti --user bioc -v $PWD:/bioverbs acidgenomics/bioc-release Rscript -e 'source("/bioverbs/travis-docker.R")'
+  - docker run -ti --user bioc -v $PWD:/goalie acidgenomics/bioc-release Rscript -e 'source("/goalie/travis-docker.R")'
 
 notifications:
   email:
