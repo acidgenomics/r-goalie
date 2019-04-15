@@ -1,2 +1,3 @@
-rcmdcheck::rcmdcheck(path = ".", args = "--no-manual")
-BiocCheck::BiocCheck(package = ".")
+rcmdcheck::rcmdcheck(args = "--no-manual")
+BiocCheck::BiocCheck()
+lintr::lint_package()
