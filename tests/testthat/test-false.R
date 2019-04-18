@@ -13,4 +13,3 @@ test_that("empty cause", {
     expect_false(ok)
     expect_identical(cause(ok), noquote(""))
 })
-
