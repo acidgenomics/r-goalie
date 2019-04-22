@@ -16,6 +16,7 @@
 #' - `match.call()`.
 #' - `sys.call()`.
 #' - `sys.parent()`.
+#' - `pryr::standardise_call()`.
 #'
 #' @examples
 #' aaa <- "AAA"
@@ -54,11 +55,12 @@ standardizeCall <- function(
         which < length(sys.calls()),
         isFlag(verbose)
     )
+    return <- match.arg(return)
 
+    # Don't allow a `which` value less than 1.
     if (which < 1L) {
         which <- 1L
     }
-    return <- match.arg(return)
 
     # Determine where the call is in the stack that we want to standardize.
     # Note that this differs for S4 methods containing a nested `.local`.
