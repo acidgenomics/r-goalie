@@ -2,6 +2,8 @@
 
 ### Minor changes
 
+- `standardizeCall`: Improved `isNonNegative` assert check by wrapping in
+  `unname` call, to keep backward compatibility with R 3.4.
 - Improved code coverage, getting closer to 100%.
 
 
