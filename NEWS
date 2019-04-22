@@ -1,3 +1,13 @@
+## goalie 0.2.14 (2019-04-02)
+
+### Minor changes
+
+- `standardizeCall`: Improved `isNonNegative` assert check by wrapping in
+  `unname` call, to keep backward compatibility with R 3.4.
+- Improved code coverage, getting closer to 100%.
+
+
+
 ## goalie 0.2.13 (2019-03-31)
 
 ### Minor changes
