@@ -68,6 +68,10 @@ validate <- function(..., msg = NULL) {
                     .Dparse(call),
                     sep = "\n"
                 ))
+            } else {
+                # Ensure we're stripping names off of logical. Otherwise, `isTRUE()`
+                # check will fail on R 3.4.
+                res <- unname(res)
             }
 
             if (isTRUE(res)) {
