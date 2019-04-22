@@ -50,7 +50,7 @@ standardizeCall <- function(
 ) {
     assert(
         isInt(which),
-        isNonNegative(which),
+        unname(isNonNegative(which)),
         which < length(sys.calls()),
         isFlag(verbose)
     )
