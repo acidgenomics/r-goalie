@@ -6,15 +6,14 @@ vignette: >
   %\VignetteIndexEntry{goalie}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
-abstract: >
-  Todo
+abstract: Assertive check functions for defensive R programming.
 ---
 
 ```{r setup, include=FALSE, message=FALSE}
 knitr::opts_chunk$set(message = FALSE)
 ```
 
-## Introduction
+# Introduction
 
 [goalie][] is an attempt to incorporate elements of multiple assertive check packages into a single package with as few dependencies as possible. All assertive checks are written in the most basic [R][] code possible, without reliance on compilation (e.g. C++/Rcpp). It is still a work in progress, and feature requests are welcome.
 
@@ -29,6 +28,22 @@ The goalie source code incorporates elements from these excellent assert check p
 - [assertive][] by Richie Cotton.
 - [assertthat][] by Hadley Wickham.
 - [checkmate][] by Michael Lang.
+
+# The assert check engine
+
+Todo
+
+# Checking function inputs
+
+Todo
+
+# Creating new assert checks
+
+Todo
+
+# S4 class validity checks
+
+Todo
 
 # R session information
 
