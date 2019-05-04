@@ -1,6 +1,7 @@
 Sys.setenv(TZ = "America/New_York")
 sessioninfo::session_info()
 rcmdcheck::rcmdcheck(
+    path = ".",
     args = c(
         "--no-build-vignettes",
         "--no-manual",
@@ -13,5 +14,8 @@ rcmdcheck::rcmdcheck(
     ),
     error_on = "error"
 )
-BiocCheck::BiocCheck(`quit-with-status` = TRUE)
+BiocCheck::BiocCheck(
+    package = ".",
+    `quit-with-status` = TRUE
+)
 lintr::lint_package()
