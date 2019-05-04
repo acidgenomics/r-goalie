@@ -11,6 +11,8 @@ Refer to the [vignette](vignettes/goalie.Rmd) for an overview of the package.
 
 ## Installation
 
+This is an [R][] package.
+
 ### [Bioconductor][] method
 
 We recommend installing the package with [BiocManager][].
@@ -30,3 +32,9 @@ Configure [conda][] to use the [bioconda][] channels.
 ```bash
 conda install -c bioconda r-goalie
 ```
+
+[BiocManager]: https://cran.r-project.org/package=BiocManager
+[bioconda]: https://bioconda.github.io/
+[Bioconductor]: https://bioconductor.org/
+[conda]: https://conda.io/
+[R]: https://www.r-project.org/
