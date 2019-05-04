@@ -19,8 +19,17 @@ jobs:
       name: "docker: bioc-3.8"
       script: tag="bioc-3.8" ./travis-docker.sh
     - stage: test
+      name: "docker: bioc-3.7"
+      script: tag="bioc-3.7" ./travis-docker.sh
+    - stage: test
       name: "docker: bioc-3.6"
       script: tag="bioc-3.6" ./travis-docker.sh
+    - stage: test
+      name: "docker: bioc-3.5"
+      script: tag="bioc-3.6" ./travis-docker.sh
+
+matrix:
+  fast_finish: true
 
 after_failure:
   - env | sort
