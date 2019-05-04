@@ -62,5 +62,6 @@ testing(aaa, bbb)
 \item \code{match.call()}.
 \item \code{sys.call()}.
 \item \code{sys.parent()}.
+\item \code{pryr::standardise_call()}.
 }
 }
