@@ -69,8 +69,8 @@ validate <- function(..., msg = NULL) {
                     sep = "\n"
                 ))
             } else {
-                # Ensure we're stripping names off of logical. Otherwise, `isTRUE()`
-                # check will fail on R 3.4.
+                # Ensure we're stripping names off of logical. Otherwise,
+                # `isTRUE()` check will fail on R 3.4.
                 res <- unname(res)
             }
 

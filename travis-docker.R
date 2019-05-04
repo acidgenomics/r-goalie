@@ -14,8 +14,11 @@ rcmdcheck::rcmdcheck(
     ),
     error_on = "error"
 )
-BiocCheck::BiocCheck(
-    package = ".",
-    `quit-with-status` = TRUE
-)
-lintr::lint_package()
+
+if (packageVersion("base") >= "3.6") {
+    BiocCheck::BiocCheck(
+        package = ".",
+        `quit-with-status` = TRUE
+    )
+    lintr::lint_package()
+}
