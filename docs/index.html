@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">goalie</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.14</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.16</span>
       </span>
     </div>
 
@@ -42,6 +42,9 @@
     <span class="fa fa-home fa-lg"></span>
      
   </a>
+</li>
+<li>
+  <a href="articles/goalie.html">Get started</a>
 </li>
 <li>
   <a href="reference/index.html">Reference</a>
@@ -73,9 +76,11 @@
 <a href="#goalie" class="anchor"></a>goalie</h1></div>
 
 <p>Assertive check functions for defensive R programming.</p>
+<p>Refer to the <a href="vignettes/goalie.Rmd">vignette</a> for an overview of the package.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
+<p>This is an <a href="https://www.r-project.org/">R</a> package.</p>
 <div id="bioconductor-method" class="section level3">
 <h3 class="hasAnchor">
 <a href="#bioconductor-method" class="anchor"></a><a href="https://bioconductor.org/">Bioconductor</a> method</h3>
@@ -83,8 +88,8 @@
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="cf">if</span> (<span class="op">!</span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">require</a></span>(<span class="st">"BiocManager"</span>)) {</a>
 <a class="sourceLine" id="cb1-2" data-line-number="2">    <span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/install.packages">install.packages</a></span>(<span class="st">"BiocManager"</span>)</a>
 <a class="sourceLine" id="cb1-3" data-line-number="3">}</a>
-<a class="sourceLine" id="cb1-4" data-line-number="4">BiocManager<span class="op">::</span><span class="kw">install</span>(<span class="st">"remotes"</span>)</a>
-<a class="sourceLine" id="cb1-5" data-line-number="5">BiocManager<span class="op">::</span><span class="kw">install</span>(<span class="st">"acidgenomics/goalie"</span>)</a></code></pre></div>
+<a class="sourceLine" id="cb1-4" data-line-number="4">BiocManager<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/BiocManager/topics/install">install</a></span>(<span class="st">"remotes"</span>)</a>
+<a class="sourceLine" id="cb1-5" data-line-number="5">BiocManager<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/BiocManager/topics/install">install</a></span>(<span class="st">"acidgenomics/goalie"</span>)</a></code></pre></div>
 </div>
 <div id="conda-method" class="section level3">
 <h3 class="hasAnchor">
@@ -92,23 +97,6 @@
 <p>Configure <a href="https://conda.io/">conda</a> to use the <a href="https://bioconda.github.io/">bioconda</a> channels.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="ex">conda</span> install -c bioconda r-goalie</a></code></pre></div>
 </div>
-</div>
-<div id="overview" class="section level2">
-<h2 class="hasAnchor">
-<a href="#overview" class="anchor"></a>Overview</h2>
-<p><a href="https://goalie.acidgenomics.com/">goalie</a> is an attempt to incorporate elements of multiple assertive check packages into a single package with as few dependencies as possible. All assertive checks are written in the most basic <a href="https://www.r-project.org/">R</a> code possible, without reliance on compilation (e.g. C++/Rcpp). It is still a work in progress, and feature requests are welcome.</p>
-<p>R exports the <code><a href="https://www.rdocumentation.org/packages/base/topics/stopifnot">stopifnot()</a></code> function as a simple assert engine that supports multiple boolean returns (<code>TRUE</code>/<code>FALSE</code>) in a single call, separated by commas. This is a nice, flexible system for defensive programming. However, <code><a href="https://www.rdocumentation.org/packages/base/topics/stopifnot">stopifnot()</a></code> does not currently support custom error messages, and can be confusing to debug.</p>
-<p>Similar to the approach used in the <a href="https://cran.r-project.org/package=assertthat">assertthat</a> package, goalie exports the <code><a href="reference/assert.html">assert()</a></code> function, which is designed to be a drop-in replacement for <code><a href="https://www.rdocumentation.org/packages/base/topics/stopifnot">stopifnot()</a></code> with improved error message support. <code><a href="reference/validate.html">validate()</a></code> is a variation on <code><a href="reference/assert.html">assert()</a></code> that is intended to be used within S4 class validity checks, which is useful for <a href="https://bioconductor.org/">Bioconductor</a> packages.</p>
-<p>Additionally, goalie exports a number of assertive check functions that are intended to harden bioinformatics-oriented functions in R. These check functions return <code>logical</code> with an additional <code>"goalie"</code> S3 class definition, which enables us to define custom print methods that display additional useful information about the cause of the error (see <code><a href="reference/cause.html">cause()</a></code> and <code><a href="reference/print.html">print()</a></code> for details). This approach draws heavily from the <a href="https://cran.r-project.org/package=assertive">assertive</a> package.</p>
-<p>The goalie source code incorporates elements from these excellent assert check packages:</p>
-<ul>
-<li>
-<a href="https://cran.r-project.org/package=assertive">assertive</a> by Richie Cotton.</li>
-<li>
-<a href="https://cran.r-project.org/package=assertthat">assertthat</a> by Hadley Wickham.</li>
-<li>
-<a href="https://cran.r-project.org/package=checkmate">checkmate</a> by Michael Lang.</li>
-</ul>
 </div>
 </div>
   </div>
