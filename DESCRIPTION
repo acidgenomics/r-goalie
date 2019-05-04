@@ -26,7 +26,7 @@ Imports:
     methods, utils
 Suggests:
     S4Vectors, SummarizedExperiment,
-    Matrix, data.table, ggplot2, patrick, testthat, tibble, viridis
+    Matrix, data.table, ggplot2, knitr, patrick, testthat, tibble, viridis
 biocViews: Infrastructure
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
