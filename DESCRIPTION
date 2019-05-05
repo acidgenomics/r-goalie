@@ -2,7 +2,7 @@ Package: goalie
 Title: Assertive check functions
 Description: Assertive check functions for defensive R programming.
 Version: 0.2.16
-Date: 2019-05-04
+Date: 2019-05-05
 Authors@R: c(
     person(
         "Michael", "Steinbaugh",
@@ -20,13 +20,23 @@ URL:
 BugReports: https://github.com/acidgenomics/goalie/issues/
 License: MIT + file LICENSE
 Encoding: UTF-8
-Depends: R (>= 3.4)
+Depends: R (>= 3.5)
 Imports:
-    backports (>= 1.1), curl (>= 3.2),
-    methods, utils
+    backports (>= 1.1),
+    curl (>= 3.2),
+    methods,
+    utils
 Suggests:
-    S4Vectors, SummarizedExperiment,
-    Matrix, data.table, ggplot2, knitr, patrick, testthat, tibble, viridis
+    Matrix,
+    S4Vectors,
+    SummarizedExperiment,
+    data.table,
+    ggplot2,
+    knitr,
+    patrick,
+    testthat,
+    tibble,
+    viridis
 biocViews: Infrastructure
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
