@@ -16,7 +16,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
@@ -73,7 +74,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -91,7 +92,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/acidgenomics/goalie">
-    <span class="fa fa-github fa-lg"></span>
+    <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -157,42 +158,42 @@
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p><code>TRUE</code> on success;
-<code>FALSE</code> on failure, with <code>cause</code> <a href='https://www.rdocumentation.org/packages/base/topics/attributes'>attribute</a> set.</p>
+<code>FALSE</code> on failure, with <code>cause</code> <a href='https://rdrr.io/r/base/attributes.html'>attribute</a> set.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><ul>
-<li><p><code><a href='https://www.rdocumentation.org/packages/assertive.sets/topics/are_set_equal'>assertive.sets::is_subset()</a></code>.</p></li>
-<li><p><code><a href='https://www.rdocumentation.org/packages/assertive.sets/topics/are_set_equal'>assertive.sets::is_superset()</a></code>.</p></li>
-<li><p><code><a href='https://www.rdocumentation.org/packages/assertive.sets/topics/are_set_equal'>assertive.sets::are_disjoint_sets()</a></code>.</p></li>
-<li><p><code><a href='https://www.rdocumentation.org/packages/assertive.sets/topics/are_set_equal'>assertive.sets::are_intersecting_sets()</a></code>.</p></li>
-<li><p><code><a href='https://www.rdocumentation.org/packages/assertive.sets/topics/are_set_equal'>assertive.sets::are_set_equal()</a></code>.</p></li>
+<li><p><code><a href='https://rdrr.io/pkg/assertive.sets/man/are_set_equal.html'>assertive.sets::is_subset()</a></code>.</p></li>
+<li><p><code><a href='https://rdrr.io/pkg/assertive.sets/man/are_set_equal.html'>assertive.sets::is_superset()</a></code>.</p></li>
+<li><p><code><a href='https://rdrr.io/pkg/assertive.sets/man/are_set_equal.html'>assertive.sets::are_disjoint_sets()</a></code>.</p></li>
+<li><p><code><a href='https://rdrr.io/pkg/assertive.sets/man/are_set_equal.html'>assertive.sets::are_intersecting_sets()</a></code>.</p></li>
+<li><p><code><a href='https://rdrr.io/pkg/assertive.sets/man/are_set_equal.html'>assertive.sets::are_set_equal()</a></code>.</p></li>
 </ul></div>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'>## TRUE ====</span>
-<span class='fu'>isSubset</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='st'>"a"</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
+<span class='fu'>isSubset</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='st'>"a"</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
 <span class='co'>## This assert is particularly useful for checking required columns.</span>
 <span class='fu'>isSuperset</span>(
-    <span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/colnames'>colnames</a></span>(<span class='kw pkg'>datasets</span><span class='kw ns'>::</span><span class='no'><a href='https://www.rdocumentation.org/packages/datasets/topics/ChickWeight'>ChickWeight</a></span>),
-    <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"Time"</span>, <span class='st'>"weight"</span>, <span class='st'>"Diet"</span>)
+    <span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span>(<span class='kw pkg'>datasets</span><span class='kw ns'>::</span><span class='no'><a href='https://rdrr.io/r/datasets/ChickWeight.html'>ChickWeight</a></span>),
+    <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"Time"</span>, <span class='st'>"weight"</span>, <span class='st'>"Diet"</span>)
 )</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
-<span class='fu'>areDisjointSets</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>), <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"c"</span>, <span class='st'>"d"</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>areIntersectingSets</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>), <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"b"</span>, <span class='st'>"c"</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>areSetEqual</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>), <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"b"</span>, <span class='st'>"a"</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
+<span class='fu'>areDisjointSets</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>), <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"c"</span>, <span class='st'>"d"</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>areIntersectingSets</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>), <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"b"</span>, <span class='st'>"c"</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>areSetEqual</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>), <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"b"</span>, <span class='st'>"a"</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
 <span class='co'>## FALSE ====</span>
-<span class='fu'>isSubset</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='st'>"c"</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>))</div><div class='output co'>#&gt; [1] FALSE
+<span class='fu'>isSubset</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='st'>"c"</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>))</div><div class='output co'>#&gt; [1] FALSE
 #&gt; Cause of failure:
 #&gt; "c" has elements not in c("a", "b"): c</div><div class='input'><span class='fu'>isSuperset</span>(
-    <span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"Time"</span>, <span class='st'>"weight"</span>, <span class='st'>"Diet"</span>),
-    <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/colnames'>colnames</a></span>(<span class='kw pkg'>datasets</span><span class='kw ns'>::</span><span class='no'><a href='https://www.rdocumentation.org/packages/datasets/topics/ChickWeight'>ChickWeight</a></span>)
+    <span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"Time"</span>, <span class='st'>"weight"</span>, <span class='st'>"Diet"</span>),
+    <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span>(<span class='kw pkg'>datasets</span><span class='kw ns'>::</span><span class='no'><a href='https://rdrr.io/r/datasets/ChickWeight.html'>ChickWeight</a></span>)
 )</div><div class='output co'>#&gt; [1] FALSE
 #&gt; Cause of failure:
 #&gt; colnames(datasets::ChickWeight) has elements not in c("Time", "weight", "Diet"): Chick</div><div class='input'>
-<span class='fu'>areDisjointSets</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>), <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"b"</span>, <span class='st'>"a"</span>))</div><div class='output co'>#&gt; [1] FALSE
+<span class='fu'>areDisjointSets</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>), <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"b"</span>, <span class='st'>"a"</span>))</div><div class='output co'>#&gt; [1] FALSE
 #&gt; Cause of failure:
-#&gt; c("a", "b") and c("b", "a") have common elements: a, b</div><div class='input'><span class='fu'>areIntersectingSets</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>), <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"c"</span>, <span class='st'>"d"</span>))</div><div class='output co'>#&gt; [1] FALSE
+#&gt; c("a", "b") and c("b", "a") have common elements: a, b</div><div class='input'><span class='fu'>areIntersectingSets</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>), <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"c"</span>, <span class='st'>"d"</span>))</div><div class='output co'>#&gt; [1] FALSE
 #&gt; Cause of failure:
-#&gt; c("a", "b") and c("c", "d") have no common elements.</div><div class='input'><span class='fu'>areSetEqual</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>), <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"b"</span>, <span class='st'>"c"</span>))</div><div class='output co'>#&gt; [1] FALSE
+#&gt; c("a", "b") and c("c", "d") have no common elements.</div><div class='input'><span class='fu'>areSetEqual</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>), <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"b"</span>, <span class='st'>"c"</span>))</div><div class='output co'>#&gt; [1] FALSE
 #&gt; Cause of failure:
 #&gt; x has elements not in y: a</div></pre>
   </div>
@@ -217,7 +218,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.9000.</p>
 </div>
       </footer>
    </div>
