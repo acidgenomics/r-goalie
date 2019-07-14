@@ -3,7 +3,7 @@
     function(call, cutoff = 60L) {
         ch <- deparse(call, width.cutoff = cutoff)
         if (length(ch) > 1L) {
-            paste(ch[[1L]], "....")
+            paste(ch[[1L]], "....")  # nocov
         } else {
             ch
         }
@@ -74,7 +74,7 @@
         EXPR = metric,
         length = isOfLength,
         elements = hasElements,
-        stop("The metric", metric, "is not valid.", domain = NA)
+        stop("The metric `", metric, "` is not valid.", domain = NA)
     )
 }
 
@@ -127,16 +127,16 @@
 ) {
     length <- length(x)
     if (length == 0L) {
-        stop(sprintf("%s has length 0.", .xname))
+        stop(sprintf("`%s` has length 0.", .xname))
+    } else if (length == 1L) {
+        x
+    } else {
+        indexer <- match.fun(match.arg(indexer))
+        x1 <- indexer(x, 1L)
+        warning(sprintf(
+            "Only the first value of `%s` (`%s`) will be used.",
+            .xname, as.character(x1)
+        ), call. = FALSE)
+        x1
     }
-    if (length == 1L) {
-        return(x)
-    }
-    indexer <- match.fun(match.arg(indexer))
-    x1 <- indexer(x, 1L)
-    warning(sprintf(
-        "Only the first value of %s (= %s) will be used.",
-        .xname, as.character(x1)
-    ), call. = FALSE)
-    x1
 }
