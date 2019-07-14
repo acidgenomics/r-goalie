@@ -13,5 +13,5 @@ pct <- covr::percent_coverage(cov)
 
 if (pct < 100L) {
     print(cov)
-    stop(paste0("Coverage is ", pct, "%."))
+    stop(paste0("Coverage is ", round(pct, digits = 2L), "%."))
 }
