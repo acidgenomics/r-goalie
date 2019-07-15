@@ -113,3 +113,25 @@
 
 
 .tolerance <- 100L * .Machine[["double.eps"]]
+
+
+
+# @seealso `assertive.base:::type_description()`.
+.typeDescription <- function(x) {
+    if (is.array(x)) {
+        sprintf(
+            fmt = "class '%s %s'",
+            class(x[FALSE]),  # nolint
+            toString(class(x))
+        )
+    } else if (is.function(x)) {
+        sprintf(
+            fmt = "class '%s %s'",
+            typeof(x), toString(class(x))
+        )
+    } else if (isS4(x)) {
+        sprintf("S4 class '%s'", toString(class(x)))
+    } else {
+        sprintf("class '%s'", toString(class(x)))
+    }
+}

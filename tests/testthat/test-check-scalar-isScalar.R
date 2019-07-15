@@ -71,6 +71,7 @@ test_that("isScalarList", {
     expect_false(isScalarList(list()))
     expect_false(isScalarList(list(a = 1L, b = 2L)))
     expect_false(isScalarList(NULL))
+    expect_false(isScalarList(FALSE))
 })
 
 test_that("isScalarLogical", {
