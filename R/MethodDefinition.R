@@ -22,8 +22,8 @@
 #' ## Function ====
 #' x <- methodFunction(
 #'     f = "as.data.frame",
-#'     signature = "ANY",
-#'     package = "S4Vectors"
+#'     signature = "DataFrame",
+#'     package = "BiocGenerics"
 #' )
 #' class(x)
 #' formals(x)
@@ -31,8 +31,8 @@
 #' ## Formals ====
 #' x <- methodFormals(
 #'     f = "as.data.frame",
-#'     signature = "ANY",
-#'     package = "S4Vectors"
+#'     signature = "DataFrame",
+#'     package = "BiocGenerics"
 #' )
 #' class(x)
 #' print(x)
@@ -88,8 +88,8 @@ methodFunction <- function(f, signature, package) {
     # S4 dispatch will nest `.local` function inside the method definition when
     # the formals aren't identical to the generic. Otherwise it will be slotted
     # in ".Data".
-    if (isTRUE(hasLocal(definition))) {
-        fun <- extractLocal(definition)
+    if (isTRUE(.hasLocal(definition))) {
+        fun <- .extractLocal(definition)
     } else {
         fun <- slot(definition, ".Data")
     }
@@ -113,9 +113,17 @@ methodFormals <- function(f, signature, package) {
 
 
 
-#' @rdname MethodDefinition
-#' @export
-hasLocal <- function(definition) {
+.extractLocal <- function(definition) {
+    assert(.hasLocal(definition))
+    body <- body(definition)
+    local <- eval(body[[2L]][[3L]])
+    assert(is.function(local))
+    local
+}
+
+
+
+.hasLocal <- function(definition) {
     assert(
         is(definition, "MethodDefinition"),
         is(definition, "function")
@@ -131,16 +139,4 @@ hasLocal <- function(definition) {
         return(FALSE)
     }
     TRUE
-}
-
-
-
-#' @rdname MethodDefinition
-#' @export
-extractLocal <- function(definition) {
-    assert(hasLocal(definition))
-    body <- body(definition)
-    local <- eval(body[[2L]][[3L]])
-    assert(is.function(local))
-    local
 }
