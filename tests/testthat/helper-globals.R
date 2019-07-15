@@ -1,6 +1,7 @@
 # nolint start
 DataFrame <- S4Vectors::DataFrame
 SummarizedExperiment <- SummarizedExperiment::SummarizedExperiment
+assay <- SummarizedExperiment::assay
 data.table <- data.table::data.table
 iris <- datasets::iris
 mtcars <- datasets::mtcars
