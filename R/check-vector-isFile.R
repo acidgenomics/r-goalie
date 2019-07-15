@@ -1,6 +1,6 @@
 #' Does the input contain a file?
 #'
-#' @name isFile
+#' @name check-vector-isFile
 #' @inherit params
 #'
 #' @return `logical`.
@@ -28,7 +28,8 @@ NULL
 
 
 
-#' @describeIn isFile Vectorized.
+# Vector =======================================================================
+#' @describeIn check-vector-isFile Vectorized.
 #' @export
 # Updated 2019-07-15.
 isFile <- function(x) {
@@ -41,7 +42,8 @@ isFile <- function(x) {
 
 
 
-#' @describeIn isFile Scalar variant.
+# Scalar =======================================================================
+#' @describeIn check-vector-isFile Scalar.
 #' @export
 # Updated 2019-07-15.
 isAFile <- function(x, nullOK = FALSE) {
@@ -61,7 +63,7 @@ isAFile <- function(x, nullOK = FALSE) {
 
 
 
-#' @describeIn isFile Scalar variant.
+#' @describeIn check-vector-isFile Scalar.
 #' @export
 # Updated 2019-07-15.
 allAreFiles <- function(x) {

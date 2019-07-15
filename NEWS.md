@@ -16,6 +16,7 @@
 - No longer exporting `extractLocal` and `hasLocal`. These are currently only
   used by MethodDefinition utility functions defined here in the goalie package.
 - Improved code coverage back up to 100%.
+- Improved the documentation file names.
 
 ## goalie 0.2.16 (2019-05-04)
 

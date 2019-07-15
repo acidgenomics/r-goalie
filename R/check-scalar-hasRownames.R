@@ -7,7 +7,7 @@
 #' meaning that they return as a sequence that is identical to the number of
 #' rows.
 #'
-#' @export
+#' @name check-scalar-hasRownames
 #' @inherit params
 #'
 #' @examples
@@ -32,7 +32,12 @@
 #' # S4 data frame does allow NULL row names.
 #' rownames(x)
 #' hasRownames(x)
+NULL
 
+
+
+#' @rdname check-scalar-hasRownames
+#' @export
 # Updated 2019-07-15.
 hasRownames <- function(x, .xname = getNameInParent(x)) {
     # Classes that extend data.frame but intentionally don't support row names.

@@ -1,6 +1,6 @@
 #' Does the input contain a ggplot2 scale?
 #'
-#' @export
+#' @name check-scalar-isGGScale
 #' @inherit params
 #'
 #' @param scale `character(1)`.
@@ -29,6 +29,10 @@
 #' isGGScale(x = fill_c, scale = "continuous", aes = "fill")
 #' isGGScale(x = fill_d, scale = "discrete", aes = "fill")
 
+
+
+#' @rdname check-scalar-isGGScale
+#' @export
 # Updated 2019-07-15.
 isGGScale <- function(
     x,

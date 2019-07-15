@@ -2,7 +2,7 @@
 #'
 #' An alpha level must be `numeric(1)` greater than 0 and less than 1.
 #'
-#' @export
+#' @name check-scalar-isAlpha
 #' @inherit params
 #'
 #' @examples
@@ -12,7 +12,12 @@
 #' ## FALSE ====
 #' isAlpha("xxx")
 #' isAlpha(1L)
+NULL
 
+
+
+#' @rdname check-scalar-isAlpha
+#' @export
 # Updated 2019-07-15.
 isAlpha <- function(x, .xname = getNameInParent(x)) {
     ok <- isScalarDouble(x)

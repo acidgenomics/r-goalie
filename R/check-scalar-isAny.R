@@ -1,7 +1,7 @@
 #' Does the object belong to or inherit any of these classes?
 #'
+#' @name check-scalar-isAny
 #' @inherit params
-#' @export
 #'
 #' @examples
 #' x <- 1L
@@ -13,7 +13,12 @@
 #'
 #' ## FALSE ====
 #' isAny(x, classes = c("character", "data.frame"))
+NULL
 
+
+
+#' @rdname check-scalar-isAny
+#' @export
 # Updated 2019-07-15.
 isAny <- function(x, classes, .xname = getNameInParent(x)) {
     ok <- isCharacter(classes)

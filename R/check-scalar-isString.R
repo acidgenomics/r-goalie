@@ -1,6 +1,6 @@
 #' Does the input contain a (non-empty) character string?
 #'
-#' @export
+#' @name check-scalar-isString
 #' @inherit params
 #'
 #' @examples
@@ -11,7 +11,12 @@
 #' isString(1)
 #' isString("")
 #' isString(NA_character_)
+NULL
 
+
+
+#' @rdname check-scalar-isString
+#' @export
 # Updated 2019-07-15.
 isString <- function(
     x,

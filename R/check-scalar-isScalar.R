@@ -2,7 +2,7 @@
 #'
 #' Scalar represents a length of 1.
 #'
-#' @name isScalar
+#' @name check-scalar-isScalar
 #' @inherit params
 #'
 #' @seealso
@@ -30,7 +30,7 @@ NULL
 
 
 
-#' @rdname isScalar
+#' @rdname check-scalar-isScalar
 #' @export
 # Updated 2019-07-15.
 isScalar <- function(x, .xname = getNameInParent(x)) {
@@ -44,7 +44,7 @@ isScalar <- function(x, .xname = getNameInParent(x)) {
 
 
 
-#' @rdname isScalar
+#' @rdname check-scalar-isScalar
 #' @export
 # Updated 2019-07-15.
 isNonScalar <- function(x, .xname = getNameInParent(x)) {
@@ -58,7 +58,7 @@ isNonScalar <- function(x, .xname = getNameInParent(x)) {
 
 
 
-#' @rdname isScalar
+#' @rdname check-scalar-isScalar
 #' @export
 # Updated 2019-07-15.
 isScalarList <- function(x, .xname = getNameInParent(x)) {
@@ -74,7 +74,7 @@ isScalarList <- function(x, .xname = getNameInParent(x)) {
 
 
 
-#' @rdname isScalar
+#' @rdname check-scalar-isScalar
 #' @export
 # Updated 2019-07-15.
 isScalarAtomic <- function(x, .xname = getNameInParent(x)) {
@@ -90,7 +90,7 @@ isScalarAtomic <- function(x, .xname = getNameInParent(x)) {
 
 
 
-#' @rdname isScalar
+#' @rdname check-scalar-isScalar
 #' @export
 # Updated 2019-07-15.
 isScalarVector <- function(x, .xname = getNameInParent(x)) {
@@ -106,7 +106,7 @@ isScalarVector <- function(x, .xname = getNameInParent(x)) {
 
 
 
-#' @rdname isScalar
+#' @rdname check-scalar-isScalar
 #' @export
 # Updated 2019-07-15.
 isScalarNumeric <- function(x, .xname = getNameInParent(x)) {
@@ -122,7 +122,7 @@ isScalarNumeric <- function(x, .xname = getNameInParent(x)) {
 
 
 
-#' @rdname isScalar
+#' @rdname check-scalar-isScalar
 #' @export
 # Updated 2019-07-15.
 isScalarInteger <- function(x, .xname = getNameInParent(x)) {
@@ -138,7 +138,7 @@ isScalarInteger <- function(x, .xname = getNameInParent(x)) {
 
 
 
-#' @rdname isScalar
+#' @rdname check-scalar-isScalar
 #' @export
 # Updated 2019-07-15.
 isScalarIntegerish <- function(x) {
@@ -149,7 +149,7 @@ isScalarIntegerish <- function(x) {
 
 
 
-#' @rdname isScalar
+#' @rdname check-scalar-isScalar
 #' @export
 # Updated 2019-07-15.
 isScalarDouble <- function(x, .xname = getNameInParent(x)) {
@@ -165,7 +165,7 @@ isScalarDouble <- function(x, .xname = getNameInParent(x)) {
 
 
 
-#' @rdname isScalar
+#' @rdname check-scalar-isScalar
 #' @export
 # Updated 2019-07-15.
 isScalarCharacter <- function(x, .xname = getNameInParent(x)) {
@@ -181,7 +181,7 @@ isScalarCharacter <- function(x, .xname = getNameInParent(x)) {
 
 
 
-#' @rdname isScalar
+#' @rdname check-scalar-isScalar
 #' @export
 # Updated 2019-07-15.
 isScalarLogical <- function(x, .xname = getNameInParent(x)) {

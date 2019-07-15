@@ -1,6 +1,6 @@
 #' Does the input contain a URL?
 #'
-#' @name isURL
+#' @name check-vector-isURL
 #' @inherit params
 #'
 #' @return `logical`.
@@ -20,8 +20,8 @@ NULL
 
 
 
-# vector =======================================================================
-#' @describeIn isURL Vectorized.
+# Vector =======================================================================
+#' @describeIn check-vector-isURL Vectorized.
 #' @export
 # Updated 2019-07-15.
 isURL <- function(x, .xname = getNameInParent(x)) {
@@ -35,8 +35,8 @@ isURL <- function(x, .xname = getNameInParent(x)) {
 
 
 
-# scalar =======================================================================
-#' @describeIn isURL Scalar. Requires a single URL.
+# Scalar =======================================================================
+#' @describeIn check-vector-isURL Scalar. Requires a single URL.
 #' @export
 # Updated 2019-07-15.
 isAURL <- function(x, .xname = getNameInParent(x)) {
@@ -51,7 +51,7 @@ isAURL <- function(x, .xname = getNameInParent(x)) {
 
 
 
-#' @describeIn isURL Scalar. Checks that all strings are URLs.
+#' @describeIn check-vector-isURL Scalar. Checks that all strings are URLs.
 #' @export
 # Updated 2019-07-15.
 allAreURLs <- function(x, .xname = getNameInParent(x)) {

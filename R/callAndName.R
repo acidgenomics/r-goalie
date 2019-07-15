@@ -12,6 +12,9 @@
 #'
 #' @return The result of `fun(x, ...)`, with the names given by the argument
 #'   `x`.
+#'
+#' @examples
+#' callAndName(is.finite, c(1, Inf, NA))
 
 # Updated 2019-07-15.
 callAndName <- function(fun, x, ...) {

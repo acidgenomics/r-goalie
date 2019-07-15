@@ -3,7 +3,7 @@
 #' @note Non-zero lengths for `x` and `y` are required, otherwise the check
 #'   function will intentionally error.
 #'
-#' @export
+#' @name check-scalar-areSameLength
 #' @inherit params
 #'
 #' @examples
@@ -16,7 +16,12 @@
 #' x <- list(a = 1L)
 #' y <- list(b = 2L, c = 3L)
 #' areSameLength(x = x, y = y)
+NULL
 
+
+
+#' @rdname check-scalar-areSameLength
+#' @export
 # Updated 2019-07-15.
 areSameLength <- function(
     x, y,

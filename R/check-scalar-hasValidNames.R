@@ -1,6 +1,6 @@
 #' Does the input object have syntactically valid names?
 #'
-#' @name hasValidNames
+#' @name check-scalar-hasValidNames
 #' @inherit params
 #'
 #' @seealso `validNames()`.
@@ -32,7 +32,7 @@ NULL
 
 
 
-#' @rdname hasValidNames
+#' @rdname check-scalar-hasValidNames
 #' @export
 # Updated 2019-07-15.
 hasValidNames <- function(x, .xname = getNameInParent(x)) {
@@ -50,7 +50,7 @@ hasValidNames <- function(x, .xname = getNameInParent(x)) {
 
 
 
-#' @rdname hasValidNames
+#' @rdname check-scalar-hasValidNames
 #' @export
 # Updated 2019-07-15.
 hasValidDimnames <- function(x, .xname = getNameInParent(x)) {

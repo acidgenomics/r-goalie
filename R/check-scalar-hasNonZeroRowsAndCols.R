@@ -6,7 +6,7 @@
 #' This is a common check when handling RNA-seq data prior to generating a
 #' heatmap or applying a log transformation, for example.
 #'
-#' @export
+#' @name check-scalar-hasNonZeroRowsAndCols
 #' @inherit params
 #'
 #' @param x Matrix.
@@ -38,7 +38,12 @@
 #' x <- matrix(nrow = 0, ncol = 1)
 #' print(x)
 #' hasNonZeroRowsAndCols(x)
+NULL
 
+
+
+#' @rdname check-scalar-hasNonZeroRowsAndCols
+#' @export
 # Updated 2019-07-15.
 hasNonZeroRowsAndCols <- function(x, .xname = getNameInParent(x)) {
     ok <- isAny(x = x, classes = c("matrix", "sparseMatrix"), .xname = .xname)

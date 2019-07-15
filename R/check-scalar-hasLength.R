@@ -1,6 +1,6 @@
 #' Does the input have a non-zero or defined length?
 #'
-#' @export
+#' @name check-scalar-hasLength
 #' @inherit params
 #'
 #' @param n `NULL` or `integer`.
@@ -18,7 +18,12 @@
 #' hasLength(NULL)
 #' hasLength(character())
 #' hasLength(data.frame())
+NULL
 
+
+
+#' @rdname check-scalar-hasLength
+#' @export
 # Updated 2019-07-15.
 hasLength <- function(x, n = NULL, .xname = getNameInParent(x)) {
     length <- length(x)
