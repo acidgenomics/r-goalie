@@ -61,7 +61,7 @@ validate <- function(..., msg = NULL) {
                         "Check did not return logical(1) or character(1).\n",
                         "[%s]: %s"
                     ),
-                    i, call,
+                    i, call
                 ))
             } else if (isTRUE(r)) {
                 return(TRUE)
