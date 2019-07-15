@@ -134,6 +134,6 @@ areSetEqual <- function(
         ))
     }
     if (!isTRUE(ok <- isSubset(x, y))) return(ok)
-    if (!isTRUE(ok <- isSubset(y, x))) return(ok)
+    if (!isTRUE(ok <- isSubset(y, x))) return(ok)  # nocov
     TRUE
 }
