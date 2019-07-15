@@ -9,7 +9,7 @@ options(
 )
 
 if (packageVersion("base") < "3.6") {
-    return(invisible())
+    exit()
 }
 
 requireNamespace("covr", quietly = TRUE)
