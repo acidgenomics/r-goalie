@@ -1,6 +1,6 @@
 #' Does the input have dimensions?
 #'
-#' @name hasDims
+#' @name check-scalar-hasDims
 #' @inherit params
 #'
 #' @seealso
@@ -27,7 +27,7 @@ NULL
 
 
 
-#' @rdname hasDims
+#' @rdname check-scalar-hasDims
 #' @export
 # Updated 2019-07-15.
 hasDims <- function(x, .xname = getNameInParent(x)) {
@@ -39,7 +39,7 @@ hasDims <- function(x, .xname = getNameInParent(x)) {
 
 
 
-#' @rdname hasDims
+#' @rdname check-scalar-hasDims
 #' @export
 # Updated 2019-07-15.
 hasRows <- function(x, .xname = getNameInParent(x)) {
@@ -55,7 +55,7 @@ hasRows <- function(x, .xname = getNameInParent(x)) {
 
 
 
-#' @rdname hasDims
+#' @rdname check-scalar-hasDims
 #' @export
 # Updated 2019-07-15.
 hasCols <- function(x, .xname = getNameInParent(x)) {

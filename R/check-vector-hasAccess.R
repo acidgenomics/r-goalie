@@ -2,7 +2,7 @@
 #'
 #' Works for either file or directory paths.
 #'
-#' @name hasAccess
+#' @name check-vector-hasAccess
 #'
 #' @param x `character(1)`.
 #'   File or directory path(s).
@@ -31,7 +31,8 @@ NULL
 
 
 
-#' @describeIn hasAccess Vectorized.
+# Vector =======================================================================
+#' @describeIn check-vector-hasAccess Vectorized.
 #' @export
 # Updated 2019-07-15.
 hasAccess <- function(x, access = "r") {
@@ -92,7 +93,8 @@ hasAccess <- function(x, access = "r") {
 
 
 
-#' @describeIn hasAccess Scalar.
+# Scalar =======================================================================
+#' @describeIn check-vector-hasAccess Scalar.
 #' @export
 # Updated 2019-07-15.
 allHaveAccess <- function() {

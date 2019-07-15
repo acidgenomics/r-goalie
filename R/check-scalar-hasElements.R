@@ -4,7 +4,7 @@
 
 #' Does the input have elements?
 #'
-#' @name hasElements
+#' @name check-scalar-hasElements
 #' @inherit params
 #'
 #' @seealso
@@ -26,7 +26,7 @@ NULL
 
 
 
-#' @rdname hasElements
+#' @rdname check-scalar-hasElements
 #' @export
 # Updated 2019-07-15.
 isEmpty <- function(
@@ -41,7 +41,7 @@ isEmpty <- function(
 
 
 
-#' @rdname hasElements
+#' @rdname check-scalar-hasElements
 #' @export
 # Updated 2019-07-15.
 isNonEmpty <- function(
@@ -64,7 +64,7 @@ isNonEmpty <- function(
 
 
 
-#' @rdname hasElements
+#' @rdname check-scalar-hasElements
 #' @export
 # Updated 2019-07-15.
 hasElements <- function(x, n, .xname = getNameInParent(x)) {
@@ -88,7 +88,7 @@ hasElements <- function(x, n, .xname = getNameInParent(x)) {
 
 
 
-#' @rdname hasElements
+#' @rdname check-scalar-hasElements
 #' @export
 # Updated 2019-07-15.
 isOfDimension <- function(x, n, .xname = getNameInParent(x)) {
@@ -129,7 +129,7 @@ isOfDimension <- function(x, n, .xname = getNameInParent(x)) {
 
 
 
-#' @rdname hasElements
+#' @rdname check-scalar-hasElements
 #' @export
 # Updated 2019-07-15.
 isOfLength <- function(x, n, .xname = getNameInParent(x)) {
@@ -143,7 +143,7 @@ isOfLength <- function(x, n, .xname = getNameInParent(x)) {
 
 
 
-#' @rdname hasElements
+#' @rdname check-scalar-hasElements
 #' @export
 # Updated 2019-07-15.
 isNonEmpty <- function(

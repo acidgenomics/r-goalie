@@ -1,6 +1,6 @@
 #' Is the input in range?
 #'
-#' @name isInRange
+#' @name check-vector-isInRange
 #' @inherit params
 #'
 #' @section Intervals:
@@ -63,8 +63,8 @@ NULL
 
 
 
-# vector =======================================================================
-#' @describeIn isInRange Vectorized.
+# Vector =======================================================================
+#' @describeIn check-vector-isInRange Vectorized.
 #' @export
 # Updated 2019-07-15.
 isInRange <- function(
@@ -98,7 +98,7 @@ isInRange <- function(
 
 
 
-#' @describeIn isInRange Vectorized.
+#' @describeIn check-vector-isInRange Vectorized.
 #' @export
 # Updated 2019-07-15.
 isInClosedRange <- function(
@@ -118,7 +118,7 @@ isInClosedRange <- function(
 
 
 
-#' @describeIn isInRange Vectorized.
+#' @describeIn check-vector-isInRange Vectorized.
 #' @export
 # Updated 2019-07-15.
 isInOpenRange <- function(
@@ -138,7 +138,7 @@ isInOpenRange <- function(
 
 
 
-#' @describeIn isInRange Vectorized.
+#' @describeIn check-vector-isInRange Vectorized.
 #' @export
 # Updated 2019-07-15.
 isInLeftOpenRange <- function(
@@ -158,7 +158,7 @@ isInLeftOpenRange <- function(
 
 
 
-#' @describeIn isInRange Vectorized.
+#' @describeIn check-vector-isInRange Vectorized.
 #' @export
 # Updated 2019-07-15.
 isInRightOpenRange <- function(
@@ -178,7 +178,7 @@ isInRightOpenRange <- function(
 
 
 
-#' @describeIn isInRange Vectorized.
+#' @describeIn check-vector-isInRange Vectorized.
 #' @export
 # Updated 2019-07-15.
 isNegative <- function(x, .xname = getNameInParent(x)) {
@@ -193,7 +193,7 @@ isNegative <- function(x, .xname = getNameInParent(x)) {
 
 
 
-#' @describeIn isInRange Vectorized.
+#' @describeIn check-vector-isInRange Vectorized.
 #' @export
 # Updated 2019-07-15.
 isPositive <- function(x, .xname = getNameInParent(x)) {
@@ -208,7 +208,7 @@ isPositive <- function(x, .xname = getNameInParent(x)) {
 
 
 
-#' @describeIn isInRange Vectorized.
+#' @describeIn check-vector-isInRange Vectorized.
 #' @export
 # Updated 2019-07-15.
 isNonNegative <- function(x, .xname = getNameInParent(x)) {
@@ -223,7 +223,7 @@ isNonNegative <- function(x, .xname = getNameInParent(x)) {
 
 
 
-#' @describeIn isInRange Vectorized.
+#' @describeIn check-vector-isInRange Vectorized.
 #' @export
 # Updated 2019-07-15.
 isNonPositive <- function(x, .xname = getNameInParent(x)) {
@@ -238,7 +238,7 @@ isNonPositive <- function(x, .xname = getNameInParent(x)) {
 
 
 
-#' @describeIn isInRange Vectorized.
+#' @describeIn check-vector-isInRange Vectorized.
 #' @export
 # Updated 2019-07-15.
 isPercentage <- function(x, .xname = getNameInParent(x)) {
@@ -253,7 +253,7 @@ isPercentage <- function(x, .xname = getNameInParent(x)) {
 
 
 
-#' @describeIn isInRange Vectorized.
+#' @describeIn check-vector-isInRange Vectorized.
 #' @export
 # Updated 2019-07-15.
 isProportion <- function(x, .xname = getNameInParent(x)) {
@@ -268,8 +268,8 @@ isProportion <- function(x, .xname = getNameInParent(x)) {
 
 
 
-# scalar =======================================================================
-#' @describeIn isInRange Scalar.
+# Scalar =======================================================================
+#' @describeIn check-vector-isInRange Scalar.
 #' @export
 # Updated 2019-07-15.
 allAreInRange <- function() {
@@ -284,7 +284,7 @@ formals(allAreInRange) <- formals(isInRange)
 
 
 
-#' @describeIn isInRange Scalar.
+#' @describeIn check-vector-isInRange Scalar.
 #' @export
 # Updated 2019-07-15.
 allAreInClosedRange <- function() {
@@ -297,7 +297,7 @@ formals(allAreInClosedRange) <- formals(isInClosedRange)
 
 
 
-#' @describeIn isInRange Scalar.
+#' @describeIn check-vector-isInRange Scalar.
 #' @export
 # Updated 2019-07-15.
 allAreInOpenRange <- function() {
@@ -310,7 +310,7 @@ formals(allAreInOpenRange) <- formals(isInOpenRange)
 
 
 
-#' @describeIn isInRange Scalar.
+#' @describeIn check-vector-isInRange Scalar.
 #' @export
 # Updated 2019-07-15.
 allAreInLeftOpenRange <- function() {
@@ -325,7 +325,7 @@ formals(allAreInLeftOpenRange) <- formals(isInLeftOpenRange)
 
 
 
-#' @describeIn isInRange Scalar.
+#' @describeIn check-vector-isInRange Scalar.
 #' @export
 # Updated 2019-07-15.
 allAreInRightOpenRange <- function() {
@@ -340,7 +340,7 @@ formals(allAreInRightOpenRange) <- formals(isInRightOpenRange)
 
 
 
-#' @describeIn isInRange Scalar.
+#' @describeIn check-vector-isInRange Scalar.
 #' @export
 # Updated 2019-07-15.
 allAreNegative <- function() {
@@ -353,7 +353,7 @@ formals(allAreNegative) <- formals(isNegative)
 
 
 
-#' @describeIn isInRange Scalar.
+#' @describeIn check-vector-isInRange Scalar.
 #' @export
 # Updated 2019-07-15.
 allArePositive <- function() {
@@ -366,7 +366,7 @@ formals(allArePositive) <- formals(isPositive)
 
 
 
-#' @describeIn isInRange Scalar.
+#' @describeIn check-vector-isInRange Scalar.
 #' @export
 # Updated 2019-07-15.
 allAreNonNegative <- function() {
@@ -379,7 +379,7 @@ formals(allAreNonNegative) <- formals(isNonNegative)
 
 
 
-#' @describeIn isInRange Scalar.
+#' @describeIn check-vector-isInRange Scalar.
 #' @export
 # Updated 2019-07-15.
 allAreNonPositive <- function() {
@@ -392,7 +392,7 @@ formals(allAreNonPositive) <- formals(isNonPositive)
 
 
 
-#' @describeIn isInRange Scalar.
+#' @describeIn check-vector-isInRange Scalar.
 #' @export
 # Updated 2019-07-15.
 allArePercentage <- function() {
@@ -405,7 +405,7 @@ formals(allArePercentage) <- formals(isPercentage)
 
 
 
-#' @describeIn isInRange Scalar.
+#' @describeIn check-vector-isInRange Scalar.
 #' @export
 # Updated 2019-07-15.
 allAreProportion <- function() {
