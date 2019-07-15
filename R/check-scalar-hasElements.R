@@ -26,7 +26,6 @@ NULL
 
 
 
-# `assertive.properties::is_empty()`
 #' @rdname hasElements
 #' @export
 # Updated 2019-07-15.
@@ -42,7 +41,6 @@ isEmpty <- function(
 
 
 
-# `assertive.properties::is_non_empty()`
 #' @rdname hasElements
 #' @export
 # Updated 2019-07-15.
@@ -66,7 +64,6 @@ isNonEmpty <- function(
 
 
 
-# `assertive.properties::has_elements()`
 #' @rdname hasElements
 #' @export
 # Updated 2019-07-15.
@@ -91,7 +88,6 @@ hasElements <- function(x, n, .xname = getNameInParent(x)) {
 
 
 
-# assertive.properties::is_of_dimension()`
 #' @rdname hasElements
 #' @export
 # Updated 2019-07-15.
@@ -133,7 +129,6 @@ isOfDimension <- function(x, n, .xname = getNameInParent(x)) {
 
 
 
-# assertive.properties::is_of_length
 #' @rdname hasElements
 #' @export
 # Updated 2019-07-15.
@@ -150,6 +145,7 @@ isOfLength <- function(x, n, .xname = getNameInParent(x)) {
 
 #' @rdname hasElements
 #' @export
+# Updated 2019-07-15.
 isNonEmpty <- function(
     x,
     metric = c("length", "elements"),

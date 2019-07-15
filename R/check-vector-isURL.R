@@ -23,6 +23,7 @@ NULL
 # vector =======================================================================
 #' @describeIn isURL Vectorized.
 #' @export
+# Updated 2019-07-15.
 isURL <- function(x, .xname = getNameInParent(x)) {
     ok <- isCharacter(x)
     if (!isTRUE(ok)) return(ok)
@@ -37,6 +38,7 @@ isURL <- function(x, .xname = getNameInParent(x)) {
 # scalar =======================================================================
 #' @describeIn isURL Scalar. Requires a single URL.
 #' @export
+# Updated 2019-07-15.
 isAURL <- function(x, .xname = getNameInParent(x)) {
     ok <- isString(x = x, .xname = .xname)
     if (!isTRUE(ok)) return(ok)
@@ -51,6 +53,7 @@ isAURL <- function(x, .xname = getNameInParent(x)) {
 
 #' @describeIn isURL Scalar. Checks that all strings are URLs.
 #' @export
+# Updated 2019-07-15.
 allAreURLs <- function(x, .xname = getNameInParent(x)) {
     ok <- isURL(x = x, .xname = .xname)
     if (!all(ok)) return(falseFromVector(ok))

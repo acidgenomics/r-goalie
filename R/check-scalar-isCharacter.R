@@ -20,6 +20,8 @@
 #' isCharacter(character())
 #' isCharacter("")
 #' isCharacter(NA_character_)
+
+# Updated 2019-07-15.
 isCharacter <- function(
     x,
     nullOK = FALSE,

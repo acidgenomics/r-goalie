@@ -20,6 +20,8 @@
 #' ## FALSE ====
 #' x <- matrix(data = rep(seq_len(10L), times = 2L), ncol = 2L)
 #' hasUniqueCols(x)
+
+# Updated 2019-07-15.
 hasUniqueCols <- function(x, .xname = getNameInParent(x)) {
     # Coerce SummarizedExperiment to (assay) matrix, if necessary.
     if (is(x, "SummarizedExperiment")) {

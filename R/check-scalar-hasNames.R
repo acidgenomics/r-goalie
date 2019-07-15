@@ -12,6 +12,8 @@
 #' ## FALSE ====
 #' hasNames(matrix())
 #' hasNames(data.frame())
+
+# Updated 2019-07-15.
 hasNames <- function(x, .xname = getNameInParent(x)) {
     namesx <- names(x)
     if (is.null(namesx)) {

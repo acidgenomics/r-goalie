@@ -24,6 +24,7 @@ NULL
 
 #' @describeIn isIntegerish Vectorized.
 #' @export
+# Updated 2019-07-15.
 isIntegerish <- function(x, .xname = getNameInParent(x)) {
     # Check for numeric vector.
     if (!is.numeric(x)) {
@@ -63,6 +64,7 @@ isIntegerish <- function(x, .xname = getNameInParent(x)) {
 
 #' @describeIn isIntegerish Scalar.
 #' @export
+# Updated 2019-07-15.
 isInt <- function(x, nullOK = FALSE) {
     if (isTRUE(nullOK) && is.null(x)) return(TRUE)
     isScalarIntegerish(x)

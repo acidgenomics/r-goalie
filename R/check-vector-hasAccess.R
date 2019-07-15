@@ -33,6 +33,7 @@ NULL
 
 #' @describeIn hasAccess Vectorized.
 #' @export
+# Updated 2019-07-15.
 hasAccess <- function(x, access = "r") {
     ok <- isCharacter(x)
     if (!isTRUE(ok)) return(ok)
@@ -93,6 +94,7 @@ hasAccess <- function(x, access = "r") {
 
 #' @describeIn hasAccess Scalar.
 #' @export
+# Updated 2019-07-15.
 allHaveAccess <- function() {
     ok <- hasAccess(x = x, access = access)
     if (!all(ok)) return(falseFromVector(ok))

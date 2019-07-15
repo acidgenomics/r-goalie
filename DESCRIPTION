@@ -21,22 +21,19 @@ BugReports: https://github.com/acidgenomics/goalie/issues/
 License: MIT + file LICENSE
 Encoding: UTF-8
 Depends: R (>= 3.5)
-Imports:
-    backports (>= 1.1),
-    curl (>= 3.2),
-    methods,
-    utils
+Imports: methods, utils
 Suggests:
-    Matrix,
     S4Vectors,
     SummarizedExperiment,
-    data.table,
-    ggplot2,
-    knitr,
-    patrick,
-    testthat,
-    tibble,
-    viridis
+    Matrix (>= 1.2),
+    curl (>= 3.2),
+    data.table (>= 1.12),
+    ggplot2 (>= 3.2),
+    knitr (>= 1.23),
+    patrick (>= 0.0.1),
+    testthat (>= 2.1),
+    tibble (>= 2.1),
+    viridis (>= 0.5)
 biocViews: Infrastructure
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1

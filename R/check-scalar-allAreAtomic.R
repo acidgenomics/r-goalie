@@ -14,8 +14,9 @@
 #' ## FALSE ====
 #' allAreAtomic(data.frame())
 #' allAreAtomic(list(a = "x", b = list()))
-allAreAtomic <- function(x, .xname = getNameInParent(x)) {
 
+# Updated 2019-07-15.
+allAreAtomic <- function(x, .xname = getNameInParent(x)) {
     # If we don't add this, the `all()` step below will return TRUE.
     ok <- hasLength(x, .xname = .xname)
     if (!isTRUE(ok)) return(ok)

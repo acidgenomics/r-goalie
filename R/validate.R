@@ -33,6 +33,7 @@
 #'     isFlag("xxx"),
 #'     isPositive(-1)
 #' )
+
 # Updated 2019-07-15.
 validate <- function(..., msg = NULL) {
     n <- ...length()
