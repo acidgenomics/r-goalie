@@ -32,3 +32,14 @@ test_that("Custom message", {
         "custom message"
     )
 })
+
+test_that("Error on empty validate call", {
+    expect_error(validate())
+})
+
+test_that("goalie cause support", {
+    expect_match(
+        validate(isFlag("XXX")),
+        "Cause of failure:"
+    )
+})

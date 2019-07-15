@@ -11,3 +11,8 @@ test_that("FALSE", {
     expect_false(isString(""))
     expect_false(isString(NA_character_))
 })
+
+test_that("nullOK", {
+    expect_false(isString(NULL, nullOK = FALSE))
+    expect_true(isString(NULL, nullOK = TRUE))
+})

@@ -27,3 +27,8 @@ test_that("FALSE : NA input", {
         noquote(c("", "", "NA"))
     )
 })
+
+test_that("nullOK", {
+    expect_false(isInt(NULL, nullOK = FALSE))
+    expect_true(isInt(NULL, nullOK = TRUE))
+})

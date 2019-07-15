@@ -17,3 +17,13 @@ test_that("FALSE", {
         noquote("x is not any of: character, data.frame.")
     )
 })
+
+test_that("Invalid classes argument", {
+    ok <- isAny("XXX", classes = NULL)
+    expect_false(ok)
+    expect_s3_class(ok, "goalie")
+    expect_identical(
+        cause(ok),
+        noquote("classes is not character.")
+    )
+})

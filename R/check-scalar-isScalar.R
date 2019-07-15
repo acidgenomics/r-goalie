@@ -68,7 +68,7 @@ isScalarAtomic <- function(x, .xname = getNameInParent(x)) {
 
     ok <- is.atomic(x)
     if (!isTRUE(ok)) {
-        return(false("%s is not atomic.", .xname))
+        return(false("%s is not atomic.", .xname))  # nocov
     }
 
     TRUE
@@ -84,7 +84,7 @@ isScalarVector <- function(x, .xname = getNameInParent(x)) {
 
     ok <- is.vector(x)
     if (!isTRUE(ok)) {
-        return(false("%s is not vector.", .xname))
+        return(false("%s is not vector.", .xname))  # nocov
     }
 
     TRUE
@@ -100,7 +100,7 @@ isScalarNumeric <- function(x, .xname = getNameInParent(x)) {
 
     ok <- is.numeric(x)
     if (!isTRUE(ok)) {
-        return(false("%s is not numeric.", .xname))
+        return(false("%s is not numeric.", .xname))  # nocov
     }
 
     TRUE
