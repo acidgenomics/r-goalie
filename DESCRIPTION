@@ -28,7 +28,7 @@ Suggests:
     Matrix (>= 1.2),
     curl (>= 3.2),
     data.table (>= 1.12),
-    ggplot2 (>= 3.2),
+    ggplot2 (>= 3.0),
     knitr (>= 1.23),
     patrick (>= 0.0.1),
     testthat (>= 2.1),
