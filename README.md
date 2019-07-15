@@ -7,8 +7,6 @@
 
 Assertive check functions for defensive R programming.
 
-Refer to the [vignette](vignettes/goalie.Rmd) for an overview of the package.
-
 ## Installation
 
 This is an [R][] package.
