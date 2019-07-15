@@ -37,7 +37,7 @@ isExisting <- function(
     .xname = getNameInParent(x)
 )  {
     ok <- isCharacter(x, .xname = .xname)
-    if (!isTRUE(ok)) return(ok)
+    if (!isTRUE(ok)) return(ok)  # nocov
 
     ok <- bapply(
         X = x,

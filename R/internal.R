@@ -12,6 +12,20 @@
 
 
 
+# Updated 2019-07-15.
+.assertHasCause <- function(x) {
+    cause <- cause(x)
+    if (
+        length(cause) != 1L &&
+        !identical(length(x), length(cause))
+    ) {
+        stop("cause error.")
+    }
+    TRUE
+}
+
+
+
 # @seealso `syntactic::capitalize()`.
 # Updated 2019-07-15.
 .capitalize <- function(x) {
@@ -22,7 +36,7 @@
     nas <- is.na(x)
     idxs <- which(nas)
     if (length(idxs) == n) {
-        return(x)
+        return(x)  # nocov
     }
     res <- character(length = n)
     if (length(idxs) > 0L) {
@@ -88,6 +102,15 @@
 
 
 
+# @seealso `assertive.base::strip_attributes().
+# Updated 2019-07-15.
+.stripAttributes <- function(x) {
+    attributes(x) <- NULL
+    x
+}
+
+
+
 # @seealso `assertive.base:::to_names()`.
 # Updated 2019-07-15.
 .toNames <- function(x) {
@@ -113,6 +136,19 @@
 
 
 .tolerance <- 100L * .Machine[["double.eps"]]
+
+
+
+# @seealso `assertive.base:::truncate()`.
+# Updated 2019-07-15.
+.truncate <- function(x, width = getOption("width")) {
+    x <- as.character(x)
+    ifelse(
+        test = nchar(x) > width,
+        yes = paste0(substring(x, 1L, width - 3L), "..."),
+        no = x
+    )
+}
 
 
 

@@ -34,9 +34,9 @@ hasUniqueCols <- function(x, .xname = getNameInParent(x)) {
     }
 
     # Check for >= 2 samples.
-    ok <- ncol(x) > 1L
+    ok <- ncol(x) >= 2L
     if (!isTRUE(ok)) {
-        return(false("%s does not have > 1 columns.", .xname))
+        return(false("%s does not have >= 2 columns.", .xname))
     }
 
     # Ensure coercion to matrix, so we can use the S3 assay method for

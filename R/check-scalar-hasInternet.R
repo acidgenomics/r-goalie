@@ -22,7 +22,7 @@ hasInternet <- function() {
         warning = function(w) FALSE
     )
     if (!isTRUE(ok)) {
-        return(false("Internet connection test failed."))
+        return(false("Internet connection test failed."))  # nocov
     }
     TRUE
 }
