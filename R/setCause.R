@@ -20,6 +20,8 @@
 #'
 #' @examples
 #' setCause(x = FALSE, false = "test")
+
+# Updated 2019-07-15.
 setCause <- function(
     x,
     false = "false",

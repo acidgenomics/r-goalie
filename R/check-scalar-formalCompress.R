@@ -15,6 +15,8 @@
 #' ## FALSE ====
 #' formalCompress(NA)
 #' formalCompress("xxx")
+
+# Updated 2019-07-15.
 formalCompress <- function(compress) {
     ok <- isAny(compress, classes = c("character", "logical"))
     if (!isTRUE(ok)) {

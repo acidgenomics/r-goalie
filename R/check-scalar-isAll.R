@@ -11,6 +11,8 @@
 #'
 #' ## FALSE ====
 #' isAll(x, classes = c("integer", "NULL"))
+
+# Updated 2019-07-15.
 isAll <- function(x, classes, .xname = getNameInParent(x)) {
     ok <- all(is2(x, class = classes))
     if (!isTRUE(ok)) {

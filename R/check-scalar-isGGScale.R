@@ -28,6 +28,8 @@
 #' isGGScale(x = colour_d, scale = "discrete", aes = "colour")
 #' isGGScale(x = fill_c, scale = "continuous", aes = "fill")
 #' isGGScale(x = fill_d, scale = "discrete", aes = "fill")
+
+# Updated 2019-07-15.
 isGGScale <- function(
     x,
     scale = c("continuous", "discrete"),

@@ -34,6 +34,7 @@ NULL
 
 #' @rdname hasValidNames
 #' @export
+# Updated 2019-07-15.
 hasValidNames <- function(x, .xname = getNameInParent(x)) {
     names <- names(x)
     ok <- length(names) > 0L
@@ -51,6 +52,7 @@ hasValidNames <- function(x, .xname = getNameInParent(x)) {
 
 #' @rdname hasValidNames
 #' @export
+# Updated 2019-07-15.
 hasValidDimnames <- function(x, .xname = getNameInParent(x)) {
     # Row names.
     if (isTRUE(hasRownames(x))) {

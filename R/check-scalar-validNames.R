@@ -20,6 +20,8 @@
 #' validNames("sample 1")
 #' validNames("cell-AAAAAAAA")
 #' validNames("GFP+")
+
+# Updated 2019-07-15.
 validNames <- function(x, .xname = getNameInParent(x)) {
     ok <- isCharacter(x, .xname = .xname)
     if (!isTRUE(ok)) return(ok)

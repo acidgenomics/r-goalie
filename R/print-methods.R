@@ -8,6 +8,7 @@ NULL
 
 
 
+# Updated 2019-07-15.
 .assertHasCause <- function(x) {
     cause <- cause(x)
     if (
@@ -21,7 +22,8 @@ NULL
 
 
 
-# `assertive.base::strip_attributes().
+# @seealso `assertive.base::strip_attributes().
+# Updated 2019-07-15.
 .stripAttributes <- function(x) {
     attributes(x) <- NULL
     x
@@ -29,7 +31,8 @@ NULL
 
 
 
-# `assertive.base:::truncate()`.
+# @seealso `assertive.base:::truncate()`.
+# Updated 2019-07-15.
 .truncate <- function(x, width = getOption("width")) {
     x <- as.character(x)
     ifelse(
@@ -41,6 +44,7 @@ NULL
 
 
 
+# Updated 2019-07-15.
 .print.goalie.scalar <-  # nolint
     function(x) {
         .assertHasCause(x)
@@ -52,6 +56,7 @@ NULL
 
 # Consider letting the user access `n` and `ignoreNA` in a future update.
 # For now keep the method support as simple as possible.
+# Updated 2019-07-15.
 .print.goalie.vector <-  # nolint
     function(x, n = 10L, ignoreNA = FALSE) {
         .assertHasCause(x)
@@ -109,6 +114,7 @@ NULL
 #' @rdname print
 #' @method print goalie
 #' @export
+# Updated 2019-07-15.
 print.goalie <- function(x, ...) {
     if (!is.logical(x)) {
         stop("x is not logical.")

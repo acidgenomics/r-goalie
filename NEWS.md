@@ -1,5 +1,16 @@
 ## goalie 0.2.17 (2019-07-15)
 
+### Major changes
+
+- Tweaked the internal code slightly for `assert` and `validate` to match the
+  new conventions used in `stopifnot` for R 3.6 release. This should be
+  completely backward compatible and transparency, but file an issue if you run
+  into any unexpected bugs with this change.
+- Improved `n` argument handling in `hasElements` checks. Previously this didn't
+  return scalar consistently and could cause some build check issues to pop up
+  in R 3.6, which are now fixed.
+- Removed support for R 3.4 and no longer need to import backports.
+
 ### Minor changes
 
 - No longer exporting `extractLocal` and `hasLocal`. These are currently only
