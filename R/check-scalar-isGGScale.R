@@ -55,14 +55,15 @@ isGGScale <- function(
     )
     if (!isTRUE(ok)) return(ok)
 
-    # Note that this has to match the British spelling, if necessary
-    # (e.g colour).
+    # Note that this has to match the British spelling (e.g colour).
     ok <- identical(x = x[["aesthetics"]], y = aes)
     if (!isTRUE(ok)) {
+        # nocov start
         return(false(
             "%s isn't identical to %. Use British spelling (e.g. colour).",
             x[["aesthetics"]], aes
         ))
+        # nocov end
     }
 
     TRUE

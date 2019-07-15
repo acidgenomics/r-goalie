@@ -11,6 +11,13 @@
 
 
 
+# @seealso `base::stopifnot()`.
+.abbrev <- function(ae, n = 3L) {
+    paste(c(.head(ae, n), if (length(ae) > n) "...."), collapse = "\n  ")
+}
+
+
+
 # @seealso `syntactic::capitalize()`.
 .capitalize <- function(x) {
     n <- length(x)
@@ -76,6 +83,13 @@
         elements = hasElements,
         stop("The metric `", metric, "` is not valid.", domain = NA)
     )
+}
+
+
+
+# @seealso `base::stopifnot()`.
+.head <- function(x, n = 6L) {
+    x[seq_len(if (n < 0L) max(length(x) + n, 0L) else min(n, length(x)))]
 }
 
 
