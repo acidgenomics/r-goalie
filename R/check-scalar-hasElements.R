@@ -26,8 +26,10 @@ NULL
 
 
 
+# `assertive.properties::is_empty()`
 #' @rdname hasElements
 #' @export
+# Updated 2019-07-15.
 isEmpty <- function(
     x,
     metric = c("length", "elements"),
@@ -40,8 +42,10 @@ isEmpty <- function(
 
 
 
+# `assertive.properties::is_non_empty()`
 #' @rdname hasElements
 #' @export
+# Updated 2019-07-15.
 isNonEmpty <- function(
     x,
     metric = c("length", "elements"),
@@ -62,13 +66,15 @@ isNonEmpty <- function(
 
 
 
+# `assertive.properties::has_elements()`
 #' @rdname hasElements
 #' @export
+# Updated 2019-07-15.
 hasElements <- function(x, n, .xname = getNameInParent(x)) {
-    n <- .useFirst(n)
-    .checkN(n)
+    assert(is.numeric(n))
     nElementsX <- .nElements(x)
-    if (nElementsX != n) {
+    nElementsN <- prod(n)
+    if (nElementsX != nElementsN) {
         return(false(
             ngettext(
                 nElementsX,
@@ -77,7 +83,7 @@ hasElements <- function(x, n, .xname = getNameInParent(x)) {
             ),
             .xname,
             nElementsX,
-            n
+            nElementsN
         ))
     }
     TRUE
@@ -85,9 +91,12 @@ hasElements <- function(x, n, .xname = getNameInParent(x)) {
 
 
 
+# assertive.properties::is_of_dimension()`
 #' @rdname hasElements
 #' @export
+# Updated 2019-07-15.
 isOfDimension <- function(x, n, .xname = getNameInParent(x)) {
+    assert((is.numeric(n) && length(n) == 2L) || is.null(n))
     dimX <- dim(x)
     if (is.null(n)) {
         if (hasDims(x)) {
@@ -103,7 +112,6 @@ isOfDimension <- function(x, n, .xname = getNameInParent(x)) {
         }
         return(TRUE)
     }
-    .checkN(n)
     if (!isOfLength(dimX, length(n))) {
         return(false(
             ngettext(
@@ -134,11 +142,12 @@ isOfDimension <- function(x, n, .xname = getNameInParent(x)) {
 
 
 
+# assertive.properties::is_of_length
 #' @rdname hasElements
 #' @export
+# Updated 2019-07-15.
 isOfLength <- function(x, n, .xname = getNameInParent(x)) {
-    n <- .useFirst(n)
-    .checkN(n)
+    assert(is.numeric(n), length(n) == 1L)
     lengthX <- length(x)
     if (lengthX != n) {
         return(false("%s has length %d, not %d.", .xname, lengthX, n))
