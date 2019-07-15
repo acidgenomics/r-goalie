@@ -34,3 +34,17 @@ test_that("Expected failure", {
         "Failed to locate"
     )
 })
+
+test_that(".local handling", {
+    md <- getMethod("aggregate", "Vector", "S4Vectors")
+    expect_true(.hasLocal(md))
+    expect_is(.extractLocal(md), "function")
+
+    md <- getMethod("as.data.frame", "ANY", "BiocGenerics")
+    expect_false(.hasLocal(md))
+    expect_error(.extractLocal(md))
+
+    md <- getMethod("as.data.frame", "DataFrame", "BiocGenerics")
+    expect_true(.hasLocal(md))
+    expect_is(.extractLocal(md), "function")
+})
