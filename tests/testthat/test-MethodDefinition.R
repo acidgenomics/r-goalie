@@ -36,15 +36,27 @@ test_that("Expected failure", {
 })
 
 test_that(".local handling", {
-    md <- getMethod("aggregate", "Vector", "S4Vectors")
+    md <- getMethod(
+        f = "aggregate",
+        signature = "Vector",
+        where = asNamespace("S4Vectors")
+    )
     expect_true(.hasLocal(md))
     expect_is(.extractLocal(md), "function")
 
-    md <- getMethod("as.data.frame", "ANY", "BiocGenerics")
+    md <- getMethod(
+        f = "as.data.frame",
+        signature = "ANY",
+        where = asNamespace("BiocGenerics")
+    )
     expect_false(.hasLocal(md))
     expect_error(.extractLocal(md))
 
-    md <- getMethod("as.data.frame", "DataFrame", "BiocGenerics")
+    md <- getMethod(
+        f = "as.data.frame",
+        signature = "DataFrame",
+        where = asNamespace("BiocGenerics")
+    )
     expect_true(.hasLocal(md))
     expect_is(.extractLocal(md), "function")
 })
