@@ -28,6 +28,11 @@ See \code{\link[base:traceback]{traceback()}} for details.
 \code{\link[=assert]{assert()}} is a drop-in replacement for \code{\link[base:stopifnot]{stopifnot()}}
 supporting more informative error messages.
 }
+\details{
+If any of the expressions defined in \code{...} are not \href{base::all}{all} \code{TRUE},
+\code{\link[base:stop]{stop}} is called, producing an error message indicating the
+first expression which was not \code{TRUE}.
+}
 \examples{
 assert(
     is.atomic("example"),
