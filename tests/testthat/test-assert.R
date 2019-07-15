@@ -10,7 +10,7 @@ test_that("Failure", {
         object = assert(is.character(1L)),
         regexp = paste(
             "Assert failure.",
-            "is.character\\(1L\\) is not TRUE.",
+            "[1] is.character\\(1L\\) is not TRUE.",
             sep = "\n"
         )
     )
