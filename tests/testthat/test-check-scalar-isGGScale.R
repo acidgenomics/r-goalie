@@ -22,3 +22,8 @@ test_that("FALSE", {
     expect_false(isGGScale(x = fill_d, scale = "continuous", aes = "fill"))
     expect_false(isGGScale(x = fill_c, scale = "discrete", aes = "fill"))
 })
+
+test_that("nullOK", {
+    expect_true(isGGScale(x = NULL, nullOK = TRUE))
+    expect_false(isGGScale(x = NULL, nullOK = FALSE))
+})
