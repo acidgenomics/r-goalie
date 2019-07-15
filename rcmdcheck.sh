@@ -18,18 +18,18 @@ PKG_NAME="$(basename "$PWD")"
 PKG_VERSION="$(grep -E "^Version:\s[.0-9a-z]+$" DESCRIPTION | sed "s/^Version:[[:space:]]//")"
 PKG_TARBALL="${PKG_NAME}_${PKG_VERSION}.tar.gz"
 
-echo "travis_fold:start:session-information"
+echo "travis_fold:start:session_information"
 Rscript -e "utils::sessionInfo()"
 Rscript -e "sessioninfo::session_info()"
-echo "travis_fold:end:session-information"
+echo "travis_fold:end:session_information"
 
-echo "travis_fold:start:rcmdcheck"
+echo "travis_fold:start:r_cmd_check"
 # Set `--as-cran` flag for extra verbose incoming package checks.
 R CMD build . --no-build-vignettes --no-manual
 R CMD check "$PKG_TARBALL" --ignore-vignettes --no-manual --timings
-echo "travis_fold:end:rcmdcheck"
+echo "travis_fold:end:r_cmd_check"
 
-echo "travis_fold:start:bioccheck"
+echo "travis_fold:start:bioc_check"
 # Note that running `R CMD BiocCheck` directly requires `script/BiocCheck` to
 # be installed at `/usr/lib64/R/bin`. Otherwise, can run directly using Rscript.
 # Set `--new-package` flag for extra verbose incoming package checks.
@@ -41,7 +41,7 @@ Rscript -e "BiocCheck::BiocCheck( \
     \`no-check-version-num\` = TRUE, \
     \`no-check-vignettes\` = TRUE, \
     \`quit-with-status\` = TRUE)"
-echo "travis_fold:end:bioccheck"
+echo "travis_fold:end:bioc_check"
 
 rm "$PKG_TARBALL"
 
