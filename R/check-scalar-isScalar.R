@@ -47,20 +47,6 @@ isScalar <- function(x, .xname = getNameInParent(x)) {
 #' @rdname check-scalar-isScalar
 #' @export
 # Updated 2019-07-15.
-isNonScalar <- function(x, .xname = getNameInParent(x)) {
-    ok <- as.logical(!isScalar(x))
-    if (!isTRUE(ok)) {
-        return(false("%s is scalar (has a length of 1).", .xname))
-    }
-
-    TRUE
-}
-
-
-
-#' @rdname check-scalar-isScalar
-#' @export
-# Updated 2019-07-15.
 isScalarList <- function(x, .xname = getNameInParent(x)) {
     if (!isTRUE(ok <- isScalar(x))) return(ok)
 
@@ -190,6 +176,20 @@ isScalarLogical <- function(x, .xname = getNameInParent(x)) {
     ok <- is.logical(x)
     if (!isTRUE(ok)) {
         return(false("%s is not logical.", .xname))
+    }
+
+    TRUE
+}
+
+
+
+#' @rdname check-scalar-isScalar
+#' @export
+# Updated 2019-07-15.
+isNonScalar <- function(x, .xname = getNameInParent(x)) {
+    ok <- as.logical(!isScalar(x))
+    if (!isTRUE(ok)) {
+        return(false("%s is scalar (has a length of 1).", .xname))
     }
 
     TRUE
