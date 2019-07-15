@@ -29,7 +29,7 @@ NULL
 isIntegerish <- function(x, .xname = getNameInParent(x)) {
     # Check for numeric vector.
     if (!is.numeric(x)) {
-        return(false("%s is not numeric.", .xname))
+        return(false("%s is not numeric.", .xname))  # nocov
     }
 
     # Require that vector does not contain NA.

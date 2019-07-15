@@ -47,3 +47,14 @@ test_that("Invalid input, checking stop passthrough", {
         regexp = "XXX"
     )
 })
+
+test_that("Error on empty assert call", {
+    expect_error(assert())
+})
+
+test_that("goalie cause support", {
+    expect_error(
+        assert(isFlag("XXX")),
+        "Cause of failure:"
+    )
+})

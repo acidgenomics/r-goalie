@@ -9,42 +9,6 @@ NULL
 
 
 # Updated 2019-07-15.
-.assertHasCause <- function(x) {
-    cause <- cause(x)
-    if (
-        length(cause) != 1L &&
-        !identical(length(x), length(cause))
-    ) {
-        stop("cause error.")
-    }
-    TRUE
-}
-
-
-
-# @seealso `assertive.base::strip_attributes().
-# Updated 2019-07-15.
-.stripAttributes <- function(x) {
-    attributes(x) <- NULL
-    x
-}
-
-
-
-# @seealso `assertive.base:::truncate()`.
-# Updated 2019-07-15.
-.truncate <- function(x, width = getOption("width")) {
-    x <- as.character(x)
-    ifelse(
-        test = nchar(x) > width,
-        yes = paste0(substring(x, 1L, width - 3L), "..."),
-        no = x
-    )
-}
-
-
-
-# Updated 2019-07-15.
 .print.goalie.scalar <-  # nolint
     function(x) {
         .assertHasCause(x)
@@ -92,7 +56,9 @@ NULL
         # Slightly convoluted way of creating message to ensure that ngettext
         # creates all the translation strings.
         header <- if (nrow(failures) < n) {
+            # nocov start
             paste0(" ", gettextf("(showing the first %d)", nrow(failures)))
+            # nocov end
         } else {
             ""
         }

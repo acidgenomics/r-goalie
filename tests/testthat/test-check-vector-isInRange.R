@@ -273,3 +273,14 @@ test_that("FALSE", {
     expect_s3_class(ok, "goalie")
     expect_false(ok)
 })
+
+
+
+context("allArePercentage")
+
+test_that("FALSE", {
+    ok <- allArePercentage(c(100L, 200L))
+    expect_false(ok)
+    expect_s3_class(ok, "goalie")
+    expect_match(cause(ok), "too high")
+})

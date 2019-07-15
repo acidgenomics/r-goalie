@@ -32,7 +32,7 @@ NULL
 hasDimnames <- function(x, .xname = getNameInParent(x)) {
     dimnamesx <- dimnames(x)
     if (is.null(dimnamesx)) {
-        return(false("The dimension names of %s are NULL.", .xname))
+        return(false("The dimension names of %s are NULL.", .xname))  # nocov
     }
     if (!any(nzchar(unlist(dimnamesx, use.names = FALSE)))) {
         return(false("The dimension names of %s are all empty.", .xname))
@@ -48,7 +48,7 @@ hasDimnames <- function(x, .xname = getNameInParent(x)) {
 hasColnames <- function(x, .xname = getNameInParent(x)) {
     colnamesx <- colnames(x)
     if (is.null(colnamesx)) {
-        return(false("The column names of %s are NULL.", .xname))
+        return(false("The column names of %s are NULL.", .xname))  # nocov
     }
     if (!any(nzchar(colnamesx))) {
         return(false("The column names of %s are all empty.", .xname))

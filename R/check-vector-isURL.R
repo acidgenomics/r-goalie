@@ -26,7 +26,7 @@ NULL
 # Updated 2019-07-15.
 isURL <- function(x, .xname = getNameInParent(x)) {
     ok <- isCharacter(x)
-    if (!isTRUE(ok)) return(ok)
+    if (!isTRUE(ok)) return(ok)  # nocov
 
     pattern <- "^(http(s)?|ftp)\\://.+"
     ok <- isMatchingRegex(x = x, pattern = pattern)
@@ -44,7 +44,7 @@ isAURL <- function(x, .xname = getNameInParent(x)) {
     if (!isTRUE(ok)) return(ok)
 
     ok <- isURL(x = x, .xname = .xname)
-    if (!all(ok)) return(falseFromVector(ok))
+    if (!all(ok)) return(falseFromVector(ok))  # nocov
 
     TRUE
 }
@@ -56,6 +56,6 @@ isAURL <- function(x, .xname = getNameInParent(x)) {
 # Updated 2019-07-15.
 allAreURLs <- function(x, .xname = getNameInParent(x)) {
     ok <- isURL(x = x, .xname = .xname)
-    if (!all(ok)) return(falseFromVector(ok))
+    if (!all(ok)) return(falseFromVector(ok))  # nocov
     TRUE
 }

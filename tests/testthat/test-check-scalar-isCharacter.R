@@ -22,3 +22,8 @@ test_that("FALSE : empty", {
     expect_false(isCharacter(""))
     expect_false(isCharacter(NA_character_))
 })
+
+test_that("nullOK", {
+    expect_false(isCharacter(NULL, nullOK = FALSE))
+    expect_true(isCharacter(NULL, nullOK = TRUE))
+})

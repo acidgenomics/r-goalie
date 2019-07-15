@@ -29,7 +29,7 @@ NULL
 # Updated 2019-07-15.
 validNames <- function(x, .xname = getNameInParent(x)) {
     ok <- isCharacter(x, .xname = .xname)
-    if (!isTRUE(ok)) return(ok)
+    if (!isTRUE(ok)) return(ok)  # nocov
 
     ok <- identical(x, make.names(x, unique = TRUE))
     if (!isTRUE(ok)) {

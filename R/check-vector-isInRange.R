@@ -82,7 +82,7 @@ isInRange <- function(
 
     ok <- is.numeric(x) && !any(is.na(x))
     if (!isTRUE(ok)) {
-        return(false("%s is not (non-NA) numeric.", .xname))
+        return(false("%s is not (non-NA) numeric.", .xname))  # nocov
     }
 
     tooLow <- (if (closed[[1L]]) `<` else `<=`)(x, lower)

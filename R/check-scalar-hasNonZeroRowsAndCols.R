@@ -47,7 +47,7 @@ NULL
 # Updated 2019-07-15.
 hasNonZeroRowsAndCols <- function(x, .xname = getNameInParent(x)) {
     ok <- isAny(x = x, classes = c("matrix", "sparseMatrix"), .xname = .xname)
-    if (!isTRUE(ok)) return(ok)
+    if (!isTRUE(ok)) return(ok)  # nocov
 
     ok <- hasRows(x, .xname = .xname)
     if (!isTRUE(ok)) return(ok)
