@@ -1,6 +1,6 @@
 #' Does the input have names?
 #'
-#' @export
+#' @name check-scalar-hasNames
 #' @inherit params
 #'
 #' @seealso `assertive.properties::has_names()`.
@@ -12,6 +12,13 @@
 #' ## FALSE ====
 #' hasNames(matrix())
 #' hasNames(data.frame())
+NULL
+
+
+
+#' @rdname check-scalar-hasNames
+#' @export
+# Updated 2019-07-15.
 hasNames <- function(x, .xname = getNameInParent(x)) {
     namesx <- names(x)
     if (is.null(namesx)) {

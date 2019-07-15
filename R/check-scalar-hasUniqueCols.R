@@ -9,7 +9,7 @@
 #' [assay][SummarizedExperiment::assay] matrix is checked for duplicated
 #' columns.
 #'
-#' @export
+#' @name check-scalar-hasUniqueCols
 #' @inherit params
 #'
 #' @examples
@@ -20,6 +20,13 @@
 #' ## FALSE ====
 #' x <- matrix(data = rep(seq_len(10L), times = 2L), ncol = 2L)
 #' hasUniqueCols(x)
+NULL
+
+
+
+#' @rdname check-scalar-hasUniqueCols
+#' @export
+# Updated 2019-07-15.
 hasUniqueCols <- function(x, .xname = getNameInParent(x)) {
     # Coerce SummarizedExperiment to (assay) matrix, if necessary.
     if (is(x, "SummarizedExperiment")) {
@@ -27,9 +34,9 @@ hasUniqueCols <- function(x, .xname = getNameInParent(x)) {
     }
 
     # Check for >= 2 samples.
-    ok <- ncol(x) > 1L
+    ok <- ncol(x) >= 2L
     if (!isTRUE(ok)) {
-        return(false("%s does not have > 1 columns.", .xname))
+        return(false("%s does not have >= 2 columns.", .xname))
     }
 
     # Ensure coercion to matrix, so we can use the S3 assay method for

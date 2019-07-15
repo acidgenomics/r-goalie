@@ -1,6 +1,6 @@
 #' Does the input contain a URL?
 #'
-#' @name isURL
+#' @name check-vector-isURL
 #' @inherit params
 #'
 #' @return `logical`.
@@ -20,12 +20,13 @@ NULL
 
 
 
-# vector =======================================================================
-#' @describeIn isURL Vectorized.
+# Vector =======================================================================
+#' @describeIn check-vector-isURL Vectorized.
 #' @export
+# Updated 2019-07-15.
 isURL <- function(x, .xname = getNameInParent(x)) {
     ok <- isCharacter(x)
-    if (!isTRUE(ok)) return(ok)
+    if (!isTRUE(ok)) return(ok)  # nocov
 
     pattern <- "^(http(s)?|ftp)\\://.+"
     ok <- isMatchingRegex(x = x, pattern = pattern)
@@ -34,25 +35,27 @@ isURL <- function(x, .xname = getNameInParent(x)) {
 
 
 
-# scalar =======================================================================
-#' @describeIn isURL Scalar. Requires a single URL.
+# Scalar =======================================================================
+#' @describeIn check-vector-isURL Scalar. Requires a single URL.
 #' @export
+# Updated 2019-07-15.
 isAURL <- function(x, .xname = getNameInParent(x)) {
     ok <- isString(x = x, .xname = .xname)
     if (!isTRUE(ok)) return(ok)
 
     ok <- isURL(x = x, .xname = .xname)
-    if (!all(ok)) return(falseFromVector(ok))
+    if (!all(ok)) return(falseFromVector(ok))  # nocov
 
     TRUE
 }
 
 
 
-#' @describeIn isURL Scalar. Checks that all strings are URLs.
+#' @describeIn check-vector-isURL Scalar. Checks that all strings are URLs.
 #' @export
+# Updated 2019-07-15.
 allAreURLs <- function(x, .xname = getNameInParent(x)) {
     ok <- isURL(x = x, .xname = .xname)
-    if (!all(ok)) return(falseFromVector(ok))
+    if (!all(ok)) return(falseFromVector(ok))  # nocov
     TRUE
 }

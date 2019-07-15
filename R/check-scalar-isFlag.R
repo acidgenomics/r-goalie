@@ -1,6 +1,6 @@
 #' Does the input contain a boolean flag?
 #'
-#' @export
+#' @name check-scalar-isFlag
 #' @inherit params
 #'
 #' @examples
@@ -12,6 +12,13 @@
 #' isFlag(c(TRUE, TRUE))
 #' isFlag(1)
 #' isFlag(NA)
+NULL
+
+
+
+#' @rdname check-scalar-isFlag
+#' @export
+# Updated 2019-07-15.
 isFlag <- function(x, .xname = getNameInParent(x)) {
     ok <- isScalarLogical(x)
     if (!isTRUE(ok)) {

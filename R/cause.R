@@ -3,7 +3,7 @@
 #' Gets or sets the [cause] (of failure) [attribute][base::attributes] of a
 #' variable.
 #'
-#' @export
+#' @name cause
 #' @inheritParams params
 #'
 #' @return `character(1)`.
@@ -22,6 +22,13 @@
 #' ## Vector cause.
 #' x <- isInRange(c(1L, 2L), lower = 3L)
 #' cause(x)
+NULL
+
+
+
+#' @rdname cause
+#' @export
+# Updated 2019-07-15.
 cause <- function(x) {
     attr(x, "cause")
 }
@@ -30,6 +37,7 @@ cause <- function(x) {
 
 #' @rdname cause
 #' @export
+# Updated 2019-07-15.
 `cause<-` <- function(x, value) {
     if (
         length(value) != 1L &&
@@ -52,6 +60,7 @@ cause <- function(x) {
 
 #' @rdname cause
 #' @export
+# Updated 2019-07-15.
 nocause <- function(x) {
     attr(x, "cause") <- NULL
     class(x) <- "logical"

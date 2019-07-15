@@ -1,6 +1,8 @@
+# Documenting `hasRownames()` in a separate Rd file because it's complicated.
+
 #' Does the input have dimnames?
 #'
-#' @export
+#' @name check-scalar-hasDimnames
 #' @inherit params
 #'
 #' @seealso
@@ -20,10 +22,17 @@
 #' hasDimnames(x)
 #' hasRownames(x)
 #' hasColnames(x)
+NULL
+
+
+
+#' @rdname check-scalar-hasDimnames
+#' @export
+# Updated 2019-07-15.
 hasDimnames <- function(x, .xname = getNameInParent(x)) {
     dimnamesx <- dimnames(x)
     if (is.null(dimnamesx)) {
-        return(false("The dimension names of %s are NULL.", .xname))
+        return(false("The dimension names of %s are NULL.", .xname))  # nocov
     }
     if (!any(nzchar(unlist(dimnamesx, use.names = FALSE)))) {
         return(false("The dimension names of %s are all empty.", .xname))
@@ -33,16 +42,13 @@ hasDimnames <- function(x, .xname = getNameInParent(x)) {
 
 
 
-# Documenting `hasRownames()` in a separate Rd file because it's complicated.
-
-
-
-#' @rdname hasDims
+#' @rdname check-scalar-hasDimnames
 #' @export
+# Updated 2019-07-15.
 hasColnames <- function(x, .xname = getNameInParent(x)) {
     colnamesx <- colnames(x)
     if (is.null(colnamesx)) {
-        return(false("The column names of %s are NULL.", .xname))
+        return(false("The column names of %s are NULL.", .xname))  # nocov
     }
     if (!any(nzchar(colnamesx))) {
         return(false("The column names of %s are all empty.", .xname))
