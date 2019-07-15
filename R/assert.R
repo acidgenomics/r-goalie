@@ -33,6 +33,7 @@
 #'     is.atomic("example"),
 #'     is.character("example")
 #' )
+# Updated 2019-07-15.
 assert <- function(
     ...,
     msg = NULL,
@@ -46,6 +47,10 @@ assert <- function(
 
     for (i in seq_len(n)) {
         r <- ...elt(i)
+        # Ensure we're stripping names off of logical. Otherwise,
+        # `isTRUE()` check will fail on R 3.4.
+        r <- unname(r)
+        call <- .Dparse(dots[[i]])
 
         if (!(is.logical(r) && length(r) == 1L)) {
             stop(sprintf(
@@ -54,19 +59,16 @@ assert <- function(
                     "Check did not return a boolean flag (TRUE/FALSE).\n",
                     "[%s]: %s"
                 ),
-                i, .Dparse(dots[[i]])
+                i, call
             ))
-        } else if (identical(r, TRUE)) {
+        } else if (isTRUE(r)) {
             next
         }
 
         # Note that we're allowing the user to define the message.
         if (!isString(msg)) {
             # Always return a `stopifnot()`-like error.
-            msg <- c(
-                "Assert failure.",
-                sprintf("[%s] %s is not TRUE.", i, .Dparse(dots[[i]]))
-            )
+            msg <- sprintf("Assert failure.\n[%s] %s is not TRUE.", i, call)
             # Check for defined cause attribute.
             cause <- cause(r)
             if (!is.null(cause)) {
