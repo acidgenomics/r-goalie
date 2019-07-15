@@ -98,6 +98,7 @@ hasElements <- function(x, n, .xname = getNameInParent(x)) {
 isOfDimension <- function(x, n, .xname = getNameInParent(x)) {
     assert((is.numeric(n) && length(n) == 2L) || is.null(n))
     dimX <- dim(x)
+
     if (is.null(n)) {
         if (hasDims(x)) {
             return(false(
@@ -112,31 +113,21 @@ isOfDimension <- function(x, n, .xname = getNameInParent(x)) {
         }
         return(TRUE)
     }
-    if (!isOfLength(dimX, length(n))) {
+
+    ok <- dimX == n
+    if (!all(ok)) {
+        notok <- which(!ok)
         return(false(
             ngettext(
-                n = length(dimX),
-                msg1 = "%s has %d dimension, not %d.",
-                msg2 = "%s has %d dimensions, not %d."
-            ),
-            .xname,
-            length(dimX),
-            length(n)
-        ))
-    }
-    differences <- dimX != n
-    if (any(differences)) {
-        bad <- which(differences)
-        return(false(
-            ngettext(
-                n = length(bad),
+                n = length(notok),
                 msg1 = "Dimension %s of %s is incorrect.",
                 msg2 = "Dimensions %s of %s are incorrect."
             ),
-            toString(bad),
+            toString(notok),
             .xname
         ))
     }
+
     TRUE
 }
 
