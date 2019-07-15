@@ -59,7 +59,7 @@ standardizeCall <- function(
 
     # Don't allow a `which` value less than 1.
     if (which < 1L) {
-        which <- 1L
+        which <- 1L  # nocov
     }
 
     # Determine where the call is in the stack that we want to standardize.
@@ -92,13 +92,13 @@ standardizeCall <- function(
         if (is(definition, "MethodDefinition")) {
             # Pull the ".local()" function out, which has the formals we need to
             # match against in `match.call` below.
-            definition <- extractLocal(definition)
+            definition <- .extractLocal(definition)
             list[["definition"]] <- definition
         }
     }
 
     if (isTRUE(verbose)) {
-        print(list)
+        print(list)  # nocov
     }
 
     # Now ready to match (expand) the call.
@@ -113,7 +113,7 @@ standardizeCall <- function(
     list[["match.call"]] <- call
 
     if (isTRUE(verbose)) {
-        print(list(match.call = call))
+        print(list(match.call = call))  # nocov
     }
 
     # Check call integrity before returning.
