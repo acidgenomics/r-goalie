@@ -1,6 +1,6 @@
 #' Does the input contain a directory?
 #'
-#' @name isDirectory
+#' @name check-vector-isDirectory
 #' @inherit params
 #'
 #' @return `logical`.
@@ -27,7 +27,8 @@ NULL
 
 
 
-#' @describeIn isDirectory Vectorized.
+# Vector =======================================================================
+#' @describeIn check-vector-isDirectory Vectorized.
 #' @export
 # Updated 2019-07-15.
 isDirectory <- function(x) {
@@ -40,13 +41,8 @@ isDirectory <- function(x) {
 
 
 
-#' @describeIn isDirectory Short alias for [isDirectory()].
-#' @export
-isDir <- isDirectory
-
-
-
-#' @describeIn isDirectory Scalar.
+# Scalar =======================================================================
+#' @describeIn check-vector-isDirectory Scalar.
 #' @export
 # Updated 2019-07-15.
 isADirectory <- function(x, nullOK = FALSE) {
@@ -64,15 +60,7 @@ isADirectory <- function(x, nullOK = FALSE) {
     TRUE
 }
 
-
-
-#' @describeIn isDirectory Short alias for [isADirectory()].
-#' @export
-isADir <- isADirectory
-
-
-
-#' @describeIn isDirectory Scalar variant.
+#' @describeIn check-vector-isDirectory Scalar.
 #' @export
 # Updated 2019-07-15.
 allAreDirectories <- function(x) {
@@ -83,6 +71,15 @@ allAreDirectories <- function(x) {
 
 
 
-#' @describeIn isDirectory Short alias for [allAreDirectories()].
+# Aliases ======================================================================
+#' @describeIn check-vector-isDirectory Short alias for [isDirectory()].
+#' @export
+isDir <- isDirectory
+
+#' @describeIn check-vector-isDirectory Short alias for [isADirectory()].
+#' @export
+isADir <- isADirectory
+
+#' @describeIn check-vector-isDirectory Short alias for [allAreDirectories()].
 #' @export
 allAreDirs <- allAreDirectories

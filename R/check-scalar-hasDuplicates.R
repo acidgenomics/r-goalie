@@ -1,6 +1,6 @@
 #' Does the input have duplicates?
 #'
-#' @name hasDuplicates
+#' @name check-scalar-hasDuplicates
 #' @inherit params
 #'
 #' @seealso
@@ -19,7 +19,7 @@ NULL
 
 
 
-#' @rdname hasDuplicates
+#' @rdname check-scalar-hasDuplicates
 #' @export
 # Updated 2019-07-15.
 hasDuplicates <- function(x, .xname = getNameInParent(x)) {
@@ -31,7 +31,7 @@ hasDuplicates <- function(x, .xname = getNameInParent(x)) {
 
 
 
-#' @rdname hasDuplicates
+#' @rdname check-scalar-hasDuplicates
 #' @export
 # Updated 2019-07-15.
 hasNoDuplicates <- function(x, .xname = getNameInParent(x)) {

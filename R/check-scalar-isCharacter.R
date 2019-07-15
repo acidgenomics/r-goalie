@@ -6,7 +6,7 @@
 #' - Cannot contain `NA` strings.
 #' - Cannot contain empty (`""`) strings.
 #'
-#' @export
+#' @name check-scalar-isCharacter
 #' @inherit params
 #'
 #' @seealso `assertive.strings::is_non_missing_nor_empty_character()`.
@@ -21,6 +21,10 @@
 #' isCharacter("")
 #' isCharacter(NA_character_)
 
+
+
+#' @rdname check-scalar-isCharacter
+#' @export
 # Updated 2019-07-15.
 isCharacter <- function(
     x,

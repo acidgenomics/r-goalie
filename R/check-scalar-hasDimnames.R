@@ -2,9 +2,7 @@
 
 #' Does the input have dimnames?
 #'
-#' @name hasDimnames
-#' @export
-#'
+#' @name check-scalar-hasDimnames
 #' @inherit params
 #'
 #' @seealso
@@ -26,7 +24,9 @@
 #' hasColnames(x)
 NULL
 
-#' @rdname hasDimnames
+
+
+#' @rdname check-scalar-hasDimnames
 #' @export
 # Updated 2019-07-15.
 hasDimnames <- function(x, .xname = getNameInParent(x)) {
@@ -42,7 +42,7 @@ hasDimnames <- function(x, .xname = getNameInParent(x)) {
 
 
 
-#' @rdname hasDimnames
+#' @rdname check-scalar-hasDimnames
 #' @export
 # Updated 2019-07-15.
 hasColnames <- function(x, .xname = getNameInParent(x)) {

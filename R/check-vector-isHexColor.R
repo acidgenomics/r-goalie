@@ -1,6 +1,6 @@
 #' Does the input contain hexadecimal colors?
 #'
-#' @name isHexColor
+#' @name check-vector-isHexColor
 #' @inherit params
 #'
 #' @seealso `assertive::is_hex_color()`.
@@ -20,7 +20,8 @@ NULL
 
 
 
-#' @describeIn isHexColor Vectorized.
+# Vector =======================================================================
+#' @describeIn check-vector-isHexColor Vectorized.
 #' @export
 # Updated 2019-07-15.
 isHexColor <- function(x, .xname = getNameInParent(x)) {
@@ -35,7 +36,8 @@ isHexColor <- function(x, .xname = getNameInParent(x)) {
 
 
 
-#' @describeIn isHexColor Scalar.
+# Scalar =======================================================================
+#' @describeIn check-vector-isHexColor Scalar.
 #' @export
 # Updated 2019-07-15.
 allAreHexColors <- function(x, .xname = getNameInParent(x)) {
