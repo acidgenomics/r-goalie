@@ -1,3 +1,28 @@
+## goalie 0.2.17 (2019-07-15)
+
+### Minor changes
+
+- No longer exporting `extractLocal` and `hasLocal`. These are currently only
+  used by MethodDefinition utility functions defined here in the goalie package.
+- Improved code coverage back up to 100%.
+
+## goalie 0.2.16 (2019-05-04)
+
+### Minor changes
+
+- Improved pkgdown NEWS configuration.
+- Improved Travis Docker configuration.
+- Initial commit of draft vignette.
+- Improved comments regarding call standardization and name handling inside
+  `assert` function.
+
+## goalie 0.2.15 (2019-04-22)
+
+### Minor changes
+
+- Bug fix for name handling in `assert` and `validate` calls. Now using `unname`
+  internally to prevent unexpected errors with named logical vectors.
+
 ## goalie 0.2.14 (2019-04-02)
 
 ### Minor changes
@@ -6,8 +31,6 @@
   `unname` call, to keep backward compatibility with R 3.4.
 - Improved code coverage, getting closer to 100%.
 
-
-
 ## goalie 0.2.13 (2019-03-31)
 
 ### Minor changes
@@ -15,15 +38,11 @@
 - Overhauled and improved assert checks.
 - Miscellaneous bug fixes for assert checks.
 
-
-
 ## goalie 0.2.12 (2019-03-22)
 
 ### Minor changes
 
 - Migrated domain to [Acid Genomics][].
-
-
 
 ## goalie 0.2.11 (2019-03-17)
 
@@ -32,16 +51,12 @@
 - `isDirectory`, `isFile`: Now return with `cause` attribute set on failure.
 - Updated assert checks and reworked comments to pass lintr checks.
 
-
-
 ## goalie 0.2.10 (2019-03-10)
 
 ### Minor changes
 
 - `isSubset`: Improved cause message, which would error using internal `deparse`
   call on long vectors.
-
-
 
 ## goalie 0.2.9 (2019-02-25)
 
@@ -53,8 +68,6 @@
   compatibility, for checks that rely upon `isTRUE` to return `TRUE`, as
   expected. The handling of this situation has changed in R 3.5.
 
-
-
 ## goalie 0.2.8 (2019-02-11)
 
 ### Minor changes
@@ -63,8 +76,6 @@
   backward compatible with R 3.4. The backports package was added as a
   dependency, which provides legacy support for `...elt` in R 3.4. This is
   called internally inside `.onLoad` specifically for R releases prior to 3.5.
-
-
 
 ## goalie 0.2.7 (2019-02-11)
 
@@ -79,23 +90,17 @@
   `hasCols` properly.
 - `isFlag`: Improved cause message if user passes in `NA`.
 
-
-
 ## goalie 0.2.6 (2019-01-22)
 
 ### New functions
 
 - Migrated `printString` from [basejump][] package.
 
-
-
 ## goalie 0.2.5 (2019-01-15)
 
 ### Minor changes
 
 - `isADirectory`, `isAFile`: Added `nullOK` argument support.
-
-
 
 ## goalie 0.2.4 (2019-01-06)
 
@@ -106,8 +111,6 @@
 ### Minor changes
 
 - Documentation improvements.
-
-
 
 ## goalie 0.2.3 (2019-01-04)
 
@@ -126,8 +129,6 @@
   Applies to `isInt`, `isNumber`, `isString`, for example.
 - General documentation improvements.
 
-
-
 ## goalie 0.2.2 (2018-12-22)
 
 ### Major changes
@@ -140,8 +141,6 @@
 - `isInRange` family: Added scalar variants for all vectorized functions.
 - Improved scalar return consistency in functions where applicable, using
   `falseFromVector` internally.
-
-
 
 ## goalie 0.2.1 (2018-12-20)
 
@@ -160,8 +159,6 @@
   NAMESPACE.
 - Assertive checks now return as `goalie` class in addition to `logical`.
 
-
-
 ## goalie 0.2.0 (2018-12-12)
 
 ### Major changes
@@ -172,15 +169,11 @@
   most checks. These checks can then be wrapped in `assert` or `validate`
   (for S4 class validity checks) calls.
 
-
-
 ## goalie 0.1.2 (2018-11-21)
 
 ### Minor changes
 
 - `isDir` and `isFile` now import `R.utils::isDirectory` and `R.utils::isFile`.
-
-
 
 ## goalie 0.1.1 (2018-11-14)
 
@@ -189,14 +182,10 @@
 - `areUniqueGeneNames` now returns `boolean` as expected.
 - Improved error message for `assertAreUniqueGeneNames`.
 
-
-
 ## goalie 0.1.0 (2018-11-11)
 
 - Initial release, migrating assertive check functions from [basejump][]
   package.
-
-
 
 [basejump]: https://basejump.acidgenomics.com/
 [Acid Genomics]: https://acidgenomics.com/
