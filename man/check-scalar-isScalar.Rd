@@ -5,7 +5,6 @@
 \alias{isNumber}
 \alias{check-scalar-isScalar}
 \alias{isScalar}
-\alias{isNonScalar}
 \alias{isScalarList}
 \alias{isScalarAtomic}
 \alias{isScalarVector}
@@ -15,13 +14,12 @@
 \alias{isScalarDouble}
 \alias{isScalarCharacter}
 \alias{isScalarLogical}
+\alias{isNonScalar}
 \title{Is the input scalar?}
 \usage{
 isNumber(x, nullOK = FALSE)
 
 isScalar(x, .xname = getNameInParent(x))
-
-isNonScalar(x, .xname = getNameInParent(x))
 
 isScalarList(x, .xname = getNameInParent(x))
 
@@ -40,6 +38,8 @@ isScalarDouble(x, .xname = getNameInParent(x))
 isScalarCharacter(x, .xname = getNameInParent(x))
 
 isScalarLogical(x, .xname = getNameInParent(x))
+
+isNonScalar(x, .xname = getNameInParent(x))
 }
 \arguments{
 \item{x}{Object.}
