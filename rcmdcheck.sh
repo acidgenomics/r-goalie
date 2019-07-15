@@ -18,10 +18,10 @@ PKG_NAME="$(basename "$PWD")"
 PKG_VERSION="$(grep -E "^Version:\s[.0-9a-z]+$" DESCRIPTION | sed "s/^Version:[[:space:]]//")"
 PKG_TARBALL="${PKG_NAME}_${PKG_VERSION}.tar.gz"
 
-echo "travis_fold:start:session_information"
+echo "travis_fold:start:session_info"
 Rscript -e "utils::sessionInfo()"
 Rscript -e "sessioninfo::session_info()"
-echo "travis_fold:end:session_information"
+echo "travis_fold:end:session_info"
 
 echo "travis_fold:start:r_cmd_check"
 # Set `--as-cran` flag for extra verbose incoming package checks.
