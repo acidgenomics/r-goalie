@@ -4,7 +4,7 @@
 #'   `isExisting` as a convenience function to check multiple variables in a
 #'   single call.
 #'
-#' @name isExisting
+#' @name check-vector-isExisting
 #' @inherit params
 #'
 #' @param x `character`.
@@ -26,9 +26,10 @@ NULL
 
 
 
-# vector =======================================================================
-#' @describeIn isExisting Vectorized.
+# Vector =======================================================================
+#' @describeIn check-vector-isExisting Vectorized.
 #' @export
+# Updated 2019-07-15.
 isExisting <- function(
     x,
     envir = parent.frame(),
@@ -36,7 +37,7 @@ isExisting <- function(
     .xname = getNameInParent(x)
 )  {
     ok <- isCharacter(x, .xname = .xname)
-    if (!isTRUE(ok)) return(ok)
+    if (!isTRUE(ok)) return(ok)  # nocov
 
     ok <- bapply(
         X = x,
@@ -49,8 +50,9 @@ isExisting <- function(
 
 
 
-#' @describeIn isExisting Vectorized.
+#' @describeIn check-vector-isExisting Vectorized.
 #' @export
+# Updated 2019-07-15.
 isNonExisting <- function() {
     ok <- !isExisting(
         x = x,
@@ -65,9 +67,10 @@ formals(isNonExisting) <- formals(isExisting)
 
 
 
-# scalar =======================================================================
-#' @describeIn isExisting Scalar.
+# Scalar =======================================================================
+#' @describeIn check-vector-isExisting Scalar.
 #' @export
+# Updated 2019-07-15.
 allAreExisting <- function() {
     ok <- isExisting(
         x = x,
@@ -83,8 +86,9 @@ formals(allAreExisting) <- formals(isExisting)
 
 
 
-#' @describeIn isExisting Scalar.
+#' @describeIn check-vector-isExisting Scalar.
 #' @export
+# Updated 2019-07-15.
 allAreNonExisting <- function() {
     ok <- isNonExisting(
         x = x,

@@ -3,7 +3,7 @@
 #' Check for valid input of either explicit (e.g. `1L`) and/or implict
 #' (e.g. `1`) `integer`.
 #'
-#' @name isIntegerish
+#' @name check-vector-isIntegerish
 #' @inherit params
 #'
 #' @seealso
@@ -22,12 +22,14 @@ NULL
 
 
 
-#' @describeIn isIntegerish Vectorized.
+# Vector =======================================================================
+#' @describeIn check-vector-isIntegerish Vectorized.
 #' @export
+# Updated 2019-07-15.
 isIntegerish <- function(x, .xname = getNameInParent(x)) {
     # Check for numeric vector.
     if (!is.numeric(x)) {
-        return(false("%s is not numeric.", .xname))
+        return(false("%s is not numeric.", .xname))  # nocov
     }
 
     # Require that vector does not contain NA.
@@ -61,8 +63,10 @@ isIntegerish <- function(x, .xname = getNameInParent(x)) {
 
 
 
-#' @describeIn isIntegerish Scalar.
+# Scalar =======================================================================
+#' @describeIn check-vector-isIntegerish Scalar.
 #' @export
+# Updated 2019-07-15.
 isInt <- function(x, nullOK = FALSE) {
     if (isTRUE(nullOK) && is.null(x)) return(TRUE)
     isScalarIntegerish(x)

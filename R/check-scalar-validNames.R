@@ -1,6 +1,6 @@
 #' Are these valid names?
 #'
-#' @export
+#' @name check-scalar-validNames
 #' @inherit params
 #'
 #' @seealso
@@ -20,9 +20,16 @@
 #' validNames("sample 1")
 #' validNames("cell-AAAAAAAA")
 #' validNames("GFP+")
+NULL
+
+
+
+#' @rdname check-scalar-validNames
+#' @export
+# Updated 2019-07-15.
 validNames <- function(x, .xname = getNameInParent(x)) {
     ok <- isCharacter(x, .xname = .xname)
-    if (!isTRUE(ok)) return(ok)
+    if (!isTRUE(ok)) return(ok)  # nocov
 
     ok <- identical(x, make.names(x, unique = TRUE))
     if (!isTRUE(ok)) {

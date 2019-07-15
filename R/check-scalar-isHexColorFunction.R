@@ -3,7 +3,7 @@
 #' This assert check is intended primarily to check for RColorBrewer or viridis
 #' hexadecimal color value return.
 #'
-#' @export
+#' @name check-scalar-isHexColorFunction
 #' @inherit params
 #'
 #' @seealso RColorBrewer, viridis packages.
@@ -16,6 +16,13 @@
 #' ## FALSE ====
 #' x <- ggplot2::scale_colour_manual
 #' isHexColorFunction(x)
+NULL
+
+
+
+#' @rdname check-scalar-isHexColorFunction
+#' @export
+# Updated 2019-07-15.
 isHexColorFunction <- function(
     x,
     nullOK = FALSE,

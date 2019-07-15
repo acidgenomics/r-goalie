@@ -8,39 +8,7 @@ NULL
 
 
 
-.assertHasCause <- function(x) {
-    cause <- cause(x)
-    if (
-        length(cause) != 1L &&
-        !identical(length(x), length(cause))
-    ) {
-        stop("cause error.")
-    }
-    TRUE
-}
-
-
-
-# `assertive.base::strip_attributes().
-.stripAttributes <- function(x) {
-    attributes(x) <- NULL
-    x
-}
-
-
-
-# `assertive.base:::truncate()`.
-.truncate <- function(x, width = getOption("width")) {
-    x <- as.character(x)
-    ifelse(
-        test = nchar(x) > width,
-        yes = paste0(substring(x, 1L, width - 3L), "..."),
-        no = x
-    )
-}
-
-
-
+# Updated 2019-07-15.
 .print.goalie.scalar <-  # nolint
     function(x) {
         .assertHasCause(x)
@@ -52,6 +20,7 @@ NULL
 
 # Consider letting the user access `n` and `ignoreNA` in a future update.
 # For now keep the method support as simple as possible.
+# Updated 2019-07-15.
 .print.goalie.vector <-  # nolint
     function(x, n = 10L, ignoreNA = FALSE) {
         .assertHasCause(x)
@@ -87,7 +56,9 @@ NULL
         # Slightly convoluted way of creating message to ensure that ngettext
         # creates all the translation strings.
         header <- if (nrow(failures) < n) {
+            # nocov start
             paste0(" ", gettextf("(showing the first %d)", nrow(failures)))
+            # nocov end
         } else {
             ""
         }
@@ -109,6 +80,7 @@ NULL
 #' @rdname print
 #' @method print goalie
 #' @export
+# Updated 2019-07-15.
 print.goalie <- function(x, ...) {
     if (!is.logical(x)) {
         stop("x is not logical.")

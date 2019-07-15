@@ -1,6 +1,6 @@
 #' Does the string match a pattern?
 #'
-#' @name isMatching
+#' @name check-vector-isMatching
 #' @inherit params
 #'
 #' @seealso
@@ -26,9 +26,10 @@ NULL
 
 
 
-# vector =======================================================================
-#' @rdname isMatching
+# Vector =======================================================================
+#' @describeIn check-vector-isMatching Vectorized.
 #' @export
+# Updated 2019-07-15.
 isMatchingFixed <- function(x, pattern, .xname = getNameInParent(x)) {
     callAndName(
         fun = function(x) {
@@ -46,8 +47,9 @@ isMatchingFixed <- function(x, pattern, .xname = getNameInParent(x)) {
 
 
 
-#' @rdname isMatching
+#' @describeIn check-vector-isMatching Vectorized.
 #' @export
+# Updated 2019-07-15.
 isMatchingRegex <- function(x, pattern, .xname = getNameInParent(x)) {
     callAndName(
         fun = function(x) {
@@ -65,8 +67,9 @@ isMatchingRegex <- function(x, pattern, .xname = getNameInParent(x)) {
 
 
 
-#' @rdname isMatching
+#' @describeIn check-vector-isMatching Vectorized.
 #' @export
+# Updated 2019-07-15.
 isNotMatchingFixed <- function(x, pattern, .xname = getNameInParent(x)) {
     callAndName(
         fun = function(x) {
@@ -84,8 +87,9 @@ isNotMatchingFixed <- function(x, pattern, .xname = getNameInParent(x)) {
 
 
 
-#' @rdname isMatching
+#' @describeIn check-vector-isMatching Vectorized.
 #' @export
+# Updated 2019-07-15.
 isNotMatchingRegex <- function(x, pattern, .xname = getNameInParent(x)) {
     callAndName(
         fun = function(x) {
@@ -103,9 +107,10 @@ isNotMatchingRegex <- function(x, pattern, .xname = getNameInParent(x)) {
 
 
 
-# scalar =======================================================================
-#' @rdname isMatching
+# Scalar =======================================================================
+#' @describeIn check-vector-isMatching Scalar.
 #' @export
+# Updated 2019-07-15.
 allAreMatchingFixed <- function(x, pattern, .xname = getNameInParent(x)) {
     ok <- isMatchingFixed(x = x, pattern = pattern, .xname = .xname)
     if (!all(ok)) return(falseFromVector(ok))
@@ -114,8 +119,9 @@ allAreMatchingFixed <- function(x, pattern, .xname = getNameInParent(x)) {
 
 
 
-#' @rdname isMatching
+#' @describeIn check-vector-isMatching Scalar.
 #' @export
+# Updated 2019-07-15.
 allAreMatchingRegex <- function(x, pattern, .xname = getNameInParent(x)) {
     ok <- isMatchingRegex(x = x, pattern = pattern, .xname = .xname)
     if (!all(ok)) return(falseFromVector(ok))
@@ -124,8 +130,9 @@ allAreMatchingRegex <- function(x, pattern, .xname = getNameInParent(x)) {
 
 
 
-#' @rdname isMatching
+#' @describeIn check-vector-isMatching Scalar.
 #' @export
+# Updated 2019-07-15.
 allAreNotMatchingFixed <- function(x, pattern, .xname = getNameInParent(x)) {
     ok <- isNotMatchingFixed(x = x, pattern = pattern, .xname = .xname)
     if (!all(ok)) return(falseFromVector(ok))
@@ -134,8 +141,9 @@ allAreNotMatchingFixed <- function(x, pattern, .xname = getNameInParent(x)) {
 
 
 
-#' @rdname isMatching
+#' @describeIn check-vector-isMatching Scalar.
 #' @export
+# Updated 2019-07-15.
 allAreNotMatchingRegex <- function(x, pattern, .xname = getNameInParent(x)) {
     ok <- isNotMatchingRegex(x = x, pattern = pattern, .xname = .xname)
     if (!all(ok)) return(falseFromVector(ok))

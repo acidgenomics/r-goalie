@@ -53,11 +53,11 @@ matchArgsToDoCall <- function(
     if (is.list(args)) {
         assert(hasLength(args), hasNames(args))
     } else {
-        args <- list()
+        args <- list()  # nocov
     }
 
     if (which < 1L) {
-        which <- 1L
+        which <- 1L  # nocov
     }
 
     list <- standardizeCall(which = which, return = "list", verbose = verbose)
@@ -80,7 +80,7 @@ matchArgsToDoCall <- function(
 
     # Show the unevaluated args, if desired.
     if (isTRUE(verbose)) {
-        print(list(args = lapply(args, class)))
+        print(list(args = lapply(args, class)))  # nocov
     }
 
     # Ensure all arguments are evaluated.
@@ -106,11 +106,13 @@ matchArgsToDoCall <- function(
 
     # Enable verbose mode, for debugging.
     if (isTRUE(verbose)) {
+        # nocov start
         print(list(
             definition = definition,
             call = call,
             args = lapply(args, class)
         ))
+        # nocov end
     }
 
     assert(hasNames(args), hasNoDuplicates(names(args)))
