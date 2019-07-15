@@ -16,6 +16,8 @@
 #' x <- list(a = 1L)
 #' y <- list(b = 2L, c = 3L)
 #' areSameLength(x = x, y = y)
+
+# Updated 2019-07-15.
 areSameLength <- function(
     x, y,
     .xname = getNameInParent(x),

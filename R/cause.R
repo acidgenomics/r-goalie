@@ -22,6 +22,8 @@
 #' ## Vector cause.
 #' x <- isInRange(c(1L, 2L), lower = 3L)
 #' cause(x)
+
+# Updated 2019-07-15.
 cause <- function(x) {
     attr(x, "cause")
 }
@@ -30,6 +32,7 @@ cause <- function(x) {
 
 #' @rdname cause
 #' @export
+# Updated 2019-07-15.
 `cause<-` <- function(x, value) {
     if (
         length(value) != 1L &&
@@ -52,6 +55,7 @@ cause <- function(x) {
 
 #' @rdname cause
 #' @export
+# Updated 2019-07-15.
 nocause <- function(x) {
     attr(x, "cause") <- NULL
     class(x) <- "logical"

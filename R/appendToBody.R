@@ -21,13 +21,12 @@
 #' body(x)
 #' x <- appendToBody(x, quote(.Deprecated("y")))
 #' body(x)
+
+# Updated 2019-07-15.
 appendToBody <- function(fun, values, after = 1L) {
-    # Don't use `assert()` here, otherwise we run into issues using onLoad
-    # and backports for `...elt()` compatibility with R 3.4.
     stopifnot(
         is.function(fun),
         is.call(values),
-        # Don't use `isInt()` here, otherwise backports will fail.
         is.integer(after)
     )
     b <- body(fun)

@@ -12,6 +12,8 @@
 #' ## FALSE ====
 #' isAlpha("xxx")
 #' isAlpha(1L)
+
+# Updated 2019-07-15.
 isAlpha <- function(x, .xname = getNameInParent(x)) {
     ok <- isScalarDouble(x)
     if (!isTRUE(ok)) {

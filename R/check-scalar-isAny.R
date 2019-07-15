@@ -13,6 +13,8 @@
 #'
 #' ## FALSE ====
 #' isAny(x, classes = c("character", "data.frame"))
+
+# Updated 2019-07-15.
 isAny <- function(x, classes, .xname = getNameInParent(x)) {
     ok <- isCharacter(classes)
     if (!isTRUE(ok)) {

@@ -18,6 +18,8 @@
 #' hasLength(NULL)
 #' hasLength(character())
 #' hasLength(data.frame())
+
+# Updated 2019-07-15.
 hasLength <- function(x, n = NULL, .xname = getNameInParent(x)) {
     length <- length(x)
 

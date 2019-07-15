@@ -29,6 +29,7 @@ NULL
 
 #' @describeIn isDirectory Vectorized.
 #' @export
+# Updated 2019-07-15.
 isDirectory <- function(x) {
     ok <- isCharacter(x)
     if (!isTRUE(ok)) return(ok)
@@ -47,6 +48,7 @@ isDir <- isDirectory
 
 #' @describeIn isDirectory Scalar.
 #' @export
+# Updated 2019-07-15.
 isADirectory <- function(x, nullOK = FALSE) {
     # Conditionally allow NULL.
     if (isTRUE(nullOK) && is.null(x)) {
@@ -72,6 +74,7 @@ isADir <- isADirectory
 
 #' @describeIn isDirectory Scalar variant.
 #' @export
+# Updated 2019-07-15.
 allAreDirectories <- function(x) {
     ok <- isDirectory(x)
     if (!all(ok)) return(falseFromVector(ok))

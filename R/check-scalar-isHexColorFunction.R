@@ -16,6 +16,8 @@
 #' ## FALSE ====
 #' x <- ggplot2::scale_colour_manual
 #' isHexColorFunction(x)
+
+# Updated 2019-07-15.
 isHexColorFunction <- function(
     x,
     nullOK = FALSE,

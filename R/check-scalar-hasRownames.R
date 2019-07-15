@@ -32,6 +32,8 @@
 #' # S4 data frame does allow NULL row names.
 #' rownames(x)
 #' hasRownames(x)
+
+# Updated 2019-07-15.
 hasRownames <- function(x, .xname = getNameInParent(x)) {
     # Classes that extend data.frame but intentionally don't support row names.
     if (inherits(x, "data.table")) {

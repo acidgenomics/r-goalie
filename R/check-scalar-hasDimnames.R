@@ -1,6 +1,10 @@
+# Documenting `hasRownames()` in a separate Rd file because it's complicated.
+
 #' Does the input have dimnames?
 #'
+#' @name hasDimnames
 #' @export
+#'
 #' @inherit params
 #'
 #' @seealso
@@ -20,6 +24,11 @@
 #' hasDimnames(x)
 #' hasRownames(x)
 #' hasColnames(x)
+NULL
+
+#' @rdname hasDimnames
+#' @export
+# Updated 2019-07-15.
 hasDimnames <- function(x, .xname = getNameInParent(x)) {
     dimnamesx <- dimnames(x)
     if (is.null(dimnamesx)) {
@@ -33,12 +42,9 @@ hasDimnames <- function(x, .xname = getNameInParent(x)) {
 
 
 
-# Documenting `hasRownames()` in a separate Rd file because it's complicated.
-
-
-
-#' @rdname hasDims
+#' @rdname hasDimnames
 #' @export
+# Updated 2019-07-15.
 hasColnames <- function(x, .xname = getNameInParent(x)) {
     colnamesx <- colnames(x)
     if (is.null(colnamesx)) {

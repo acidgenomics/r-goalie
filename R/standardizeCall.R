@@ -44,6 +44,8 @@
 #'     }
 #' )
 #' testing(aaa, bbb)
+
+# Updated 2019-07-15.
 standardizeCall <- function(
     which = sys.parent(n = 1L),
     return = c("call", "list"),

@@ -12,6 +12,8 @@
 #'
 #' @return The result of `fun(x, ...)`, with the names given by the argument
 #'   `x`.
+
+# Updated 2019-07-15.
 callAndName <- function(fun, x, ...) {
     y <- fun(x, ...)
     dim(y) <- dim(x)

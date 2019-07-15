@@ -2,9 +2,12 @@
 % Please edit documentation in R/check-scalar-hasDimnames.R
 \name{hasDimnames}
 \alias{hasDimnames}
+\alias{hasColnames}
 \title{Does the input have dimnames?}
 \usage{
 hasDimnames(x, .xname = getNameInParent(x))
+
+hasColnames(x, .xname = getNameInParent(x))
 }
 \arguments{
 \item{x}{Object.}

@@ -33,6 +33,7 @@
 #'     is.atomic("example"),
 #'     is.character("example")
 #' )
+
 # Updated 2019-07-15.
 assert <- function(
     ...,

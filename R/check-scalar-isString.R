@@ -11,6 +11,8 @@
 #' isString(1)
 #' isString("")
 #' isString(NA_character_)
+
+# Updated 2019-07-15.
 isString <- function(
     x,
     nullOK = FALSE,
