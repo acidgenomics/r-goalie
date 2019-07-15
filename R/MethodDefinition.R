@@ -43,12 +43,8 @@ NULL
 #' @rdname MethodDefinition
 #' @export
 methodFunction <- function(f, signature, package) {
-    if (missing(package) || is.null(package)) {
-        envir <- NULL
-    } else {
-        assert(isString(package))
-        envir <- asNamespace(package)
-    }
+    assert(isString(package))
+    envir <- asNamespace(package)
 
     # Locate the S4 generic. We're opting to get either the `standardGeneric` or
     # the `nonstandardGenericFunction` instead of requiring `standardGeneric`
@@ -65,7 +61,7 @@ methodFunction <- function(f, signature, package) {
     generic <- tryCatch(
         expr = do.call(what = get, args = args),
         error = function(e) {
-            stop(paste("Failed to locate", f, "generic."))
+            stop(sprintf("Failed to locate `%s` generic.\n", f))
         }
     )
     # Assert that we're getting an S4 generic.
@@ -107,15 +103,12 @@ methodFunction <- function(f, signature, package) {
 #' @rdname MethodDefinition
 #' @export
 methodFormals <- function(f, signature, package) {
-    if (missing(package)) {
-        package <- NULL
-    }
-    definition <- methodFunction(
+    def <- methodFunction(
         f = f,
         signature = signature,
         package = package
     )
-    formals(definition)
+    formals(def)
 }
 
 
