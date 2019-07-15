@@ -33,73 +33,61 @@
 #'     isFlag("xxx"),
 #'     isPositive(-1)
 #' )
+# Updated 2019-07-15.
 validate <- function(..., msg = NULL) {
+    n <- ...length()
+    if (n == 0L) {
+        stop("No assert check defined.")
+    }
     dots <- as.call(substitute(...()))
 
     # Note that here we're evaluating all of the checks instead of stopping on
     # the first error, like the approach in `assert()`.
-    res <- lapply(
+    checks <- lapply(
         X = seq_along(dots),
         FUN = function(i) {
-            call <- dots[[i]]
-            res <- withCallingHandlers(
-                expr = tryCatch(
-                    expr = ...elt(i),
-                    error = function(e) {
-                        e[["call"]] <- call
-                        stop(e)
-                    }
-                ),
-                warning = function(w) {
-                    w[["call"]] <- call
-                    w
-                }
-            )
+            r <- ...elt(i)
+            # Ensure we're stripping names off of logical. Otherwise,
+            # `isTRUE()` check will fail on R 3.4.
+            r <- unname(r)
+            call <- .Dparse(dots[[i]])
 
             # Validity checks must return logical(1) or character(1).
             # In the event of FALSE, we'll return character(1) automatically.
-            if (!(
-                length(res) == 1L &&
-                (is.logical(res) || is.character(res))
-            )) {
-                stop(paste(
-                    "Validity check failure.",
-                    "Checks must return logical(1) or character(1).",
-                    .Dparse(call),
-                    sep = "\n"
+            if (!(length(r) == 1L && (is.logical(r) || is.character(r)))) {
+                stop(sprintf(
+                    paste0(
+                        "Validity failure.\n",
+                        "Check did not return logical(1) or character(1).\n",
+                        "[%s]: %s"
+                    ),
+                    i, call,
                 ))
-            } else {
-                # Ensure we're stripping names off of logical. Otherwise,
-                # `isTRUE()` check will fail on R 3.4.
-                res <- unname(res)
-            }
-
-            if (isTRUE(res)) {
-                # Return TRUE if the validity check passed.
+            } else if (isTRUE(r)) {
                 return(TRUE)
-            } else if (is.logical(res)) {
+            } else if (is.logical(r)) {
                 # Convert an assert check error to a character string.
                 # Always return a `stopifnot()`-like message.
-                msg <- sprintf("%s is not TRUE.", .Dparse(call))
+                msg <- sprintf("%s is not TRUE.", call)
                 # Check for defined cause attribute.
-                cause <- cause(res)
+                cause <- cause(r)
                 if (!is.null(cause)) {
                     # Capturing the S3 print method on goalie class here.
-                    msg <- c(msg, capture.output(print(res))[-1L])
+                    msg <- c(msg, capture.output(print(r))[-1L])
                 }
                 msg <- paste0(msg, collapse = "\n")
-            } else if (is.character(res)) {
+            } else if (is.character(r)) {
                 # We're allowing the user to pass character(1) through here,
                 # enabling the use of other check functions (see checkmate
                 # package for examples).
-                msg <- res
+                msg <- r
             }
 
             as.character(msg)
         }
     )
 
-    if (all(bapply(res, isTRUE))) {
+    if (all(bapply(checks, isTRUE))) {
         # Return TRUE boolean flag when all checks pass.
         TRUE
     } else if (isString(msg)) {
@@ -107,7 +95,7 @@ validate <- function(..., msg = NULL) {
     } else {
         # Otherwise, return a character string indicating which checks failed.
         # Note that we need to remove checks that return TRUE here.
-        fail <- Filter(Negate(isTRUE), res)
+        fail <- Filter(Negate(isTRUE), checks)
         # Convert the list to a character vector.
         fail <- unlist(fail)
         # Return character string indicating all of the failures.
