@@ -46,15 +46,6 @@
 
 
 
-# `assertive.properties:::check_n()`.
-.checkN <- function(n) {
-    if (n < 0L || n != round(n)) {
-        stop("n should be a non-negative integer vector.")
-    }
-}
-
-
-
 # Using primary assay here.
 .coerceSummarizedExperimentToMatrix <- function(object) {
     requireNamespace("SummarizedExperiment", quietly = TRUE)
@@ -130,27 +121,3 @@
 
 
 .tolerance <- 100L * .Machine[["double.eps"]]
-
-
-
-# @seealso `assertive.base::use_first()`.
-.useFirst <- function(
-    x,
-    indexer = c("[[", "["),
-    .xname = getNameInParent(x)
-) {
-    length <- length(x)
-    if (length == 0L) {
-        stop(sprintf("`%s` has length 0.", .xname))
-    } else if (length == 1L) {
-        x
-    } else {
-        indexer <- match.fun(match.arg(indexer))
-        x1 <- indexer(x, 1L)
-        warning(sprintf(
-            "Only the first value of `%s` (`%s`) will be used.",
-            .xname, as.character(x1)
-        ), call. = FALSE)
-        x1
-    }
-}
