@@ -4,7 +4,7 @@
 
 #' Does the input have elements?
 #'
-#' @name hasElements
+#' @name check-scalar-hasElements
 #' @inherit params
 #'
 #' @seealso
@@ -26,8 +26,9 @@ NULL
 
 
 
-#' @rdname hasElements
+#' @rdname check-scalar-hasElements
 #' @export
+# Updated 2019-07-15.
 isEmpty <- function(
     x,
     metric = c("length", "elements"),
@@ -40,8 +41,9 @@ isEmpty <- function(
 
 
 
-#' @rdname hasElements
+#' @rdname check-scalar-hasElements
 #' @export
+# Updated 2019-07-15.
 isNonEmpty <- function(
     x,
     metric = c("length", "elements"),
@@ -62,13 +64,14 @@ isNonEmpty <- function(
 
 
 
-#' @rdname hasElements
+#' @rdname check-scalar-hasElements
 #' @export
+# Updated 2019-07-15.
 hasElements <- function(x, n, .xname = getNameInParent(x)) {
-    n <- .useFirst(n)
-    .checkN(n)
+    assert(is.numeric(n))
     nElementsX <- .nElements(x)
-    if (nElementsX != n) {
+    nElementsN <- prod(n)
+    if (nElementsX != nElementsN) {
         return(false(
             ngettext(
                 nElementsX,
@@ -77,7 +80,7 @@ hasElements <- function(x, n, .xname = getNameInParent(x)) {
             ),
             .xname,
             nElementsX,
-            n
+            nElementsN
         ))
     }
     TRUE
@@ -85,10 +88,13 @@ hasElements <- function(x, n, .xname = getNameInParent(x)) {
 
 
 
-#' @rdname hasElements
+#' @rdname check-scalar-hasElements
 #' @export
+# Updated 2019-07-15.
 isOfDimension <- function(x, n, .xname = getNameInParent(x)) {
+    assert((is.numeric(n) && length(n) == 2L) || is.null(n))
     dimX <- dim(x)
+
     if (is.null(n)) {
         if (hasDims(x)) {
             return(false(
@@ -103,42 +109,31 @@ isOfDimension <- function(x, n, .xname = getNameInParent(x)) {
         }
         return(TRUE)
     }
-    .checkN(n)
-    if (!isOfLength(dimX, length(n))) {
+
+    ok <- dimX == n
+    if (!all(ok)) {
+        notok <- which(!ok)
         return(false(
             ngettext(
-                n = length(dimX),
-                msg1 = "%s has %d dimension, not %d.",
-                msg2 = "%s has %d dimensions, not %d."
-            ),
-            .xname,
-            length(dimX),
-            length(n)
-        ))
-    }
-    differences <- dimX != n
-    if (any(differences)) {
-        bad <- which(differences)
-        return(false(
-            ngettext(
-                n = length(bad),
+                n = length(notok),
                 msg1 = "Dimension %s of %s is incorrect.",
                 msg2 = "Dimensions %s of %s are incorrect."
             ),
-            toString(bad),
+            toString(notok),
             .xname
         ))
     }
+
     TRUE
 }
 
 
 
-#' @rdname hasElements
+#' @rdname check-scalar-hasElements
 #' @export
+# Updated 2019-07-15.
 isOfLength <- function(x, n, .xname = getNameInParent(x)) {
-    n <- .useFirst(n)
-    .checkN(n)
+    assert(is.numeric(n), length(n) == 1L)
     lengthX <- length(x)
     if (lengthX != n) {
         return(false("%s has length %d, not %d.", .xname, lengthX, n))
@@ -148,8 +143,9 @@ isOfLength <- function(x, n, .xname = getNameInParent(x)) {
 
 
 
-#' @rdname hasElements
+#' @rdname check-scalar-hasElements
 #' @export
+# Updated 2019-07-15.
 isNonEmpty <- function(
     x,
     metric = c("length", "elements"),

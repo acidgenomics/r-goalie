@@ -4,17 +4,11 @@
 \alias{MethodDefinition}
 \alias{methodFunction}
 \alias{methodFormals}
-\alias{hasLocal}
-\alias{extractLocal}
 \title{Access the data inside an S4 method definition}
 \usage{
 methodFunction(f, signature, package)
 
 methodFormals(f, signature, package)
-
-hasLocal(definition)
-
-extractLocal(definition)
 }
 \arguments{
 \item{f}{a generic function or the character-string name of one.}
@@ -24,15 +18,6 @@ extractLocal(definition)
 
 \item{package}{\code{character(1)}.
 Package name.}
-
-\item{definition}{ A function definition, which will become the method
-    called when the arguments in a call to \code{f} match the
-    classes in \code{signature}, directly or through inheritance.
-    The definition must be a function with the same formal arguments
-    as the generic; however, \code{setMethod()} will handle methods
-    that add arguments, if \code{\dots} is a formal argument to the generic.
-  See the Details section.
-  }
 }
 \value{
 \itemize{
@@ -47,8 +32,8 @@ Access the data inside an S4 method definition
 ## Function ====
 x <- methodFunction(
     f = "as.data.frame",
-    signature = "ANY",
-    package = "S4Vectors"
+    signature = "DataFrame",
+    package = "BiocGenerics"
 )
 class(x)
 formals(x)
@@ -56,8 +41,8 @@ formals(x)
 ## Formals ====
 x <- methodFormals(
     f = "as.data.frame",
-    signature = "ANY",
-    package = "S4Vectors"
+    signature = "DataFrame",
+    package = "BiocGenerics"
 )
 class(x)
 print(x)

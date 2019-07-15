@@ -41,6 +41,7 @@ NULL
 # Assertive has `strictly` mode, which enforces that x,y are not set equal.
 #' @rdname sets
 #' @export
+# Updated 2019-07-15.
 isSubset <- function(
     x,
     y,
@@ -64,6 +65,7 @@ isSubset <- function(
 # This is essentially an `isSubset()` call with x and y flipped.
 #' @rdname sets
 #' @export
+# Updated 2019-07-15.
 isSuperset <- function(
     x,
     y,
@@ -77,6 +79,7 @@ isSuperset <- function(
 
 #' @rdname sets
 #' @export
+# Updated 2019-07-15.
 areDisjointSets <- function(
     x,
     y,
@@ -97,6 +100,7 @@ areDisjointSets <- function(
 
 #' @rdname sets
 #' @export
+# Updated 2019-07-15.
 areIntersectingSets <- function(
     x,
     y,
@@ -117,6 +121,7 @@ areIntersectingSets <- function(
 
 #' @rdname sets
 #' @export
+# Updated 2019-07-15.
 areSetEqual <- function(
     x,
     y,
@@ -134,6 +139,6 @@ areSetEqual <- function(
         ))
     }
     if (!isTRUE(ok <- isSubset(x, y))) return(ok)
-    if (!isTRUE(ok <- isSubset(y, x))) return(ok)
+    if (!isTRUE(ok <- isSubset(y, x))) return(ok)  # nocov
     TRUE
 }

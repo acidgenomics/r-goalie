@@ -2,7 +2,7 @@
 #'
 #' Markdown supports header levels `1`-`7` (`<H1>`-`<H7>`).
 #'
-#' @export
+#' @name check-scalar-isHeaderLevel
 #' @inherit params
 #'
 #' @examples
@@ -11,6 +11,12 @@
 #'
 #' ## FALSE ====
 #' isHeaderLevel(0)
+NULL
+
+
+#' @rdname check-scalar-isHeaderLevel
+#' @export
+# Updated 2019-07-15.
 isHeaderLevel <- function(x, .xname = getNameInParent(x)) {
     ok <- isScalarIntegerish(x)
     if (!isTRUE(ok)) return(ok)

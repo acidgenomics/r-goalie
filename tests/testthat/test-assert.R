@@ -10,7 +10,7 @@ test_that("Failure", {
         object = assert(is.character(1L)),
         regexp = paste(
             "Assert failure.",
-            "is.character\\(1L\\) is not TRUE.",
+            "\\[1\\] is.character\\(1L\\) is not TRUE.",
             sep = "\n"
         )
     )
@@ -45,5 +45,16 @@ test_that("Invalid input, checking stop passthrough", {
     expect_error(
         object = assert(stop("XXX")),
         regexp = "XXX"
+    )
+})
+
+test_that("Error on empty assert call", {
+    expect_error(assert())
+})
+
+test_that("goalie cause support", {
+    expect_error(
+        assert(isFlag("XXX")),
+        "Cause of failure:"
     )
 })

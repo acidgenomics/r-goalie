@@ -1,9 +1,10 @@
 # @seealso `base::stopifnot()`.
+# Updated 2019-07-15.
 .Dparse <-  # nolint
     function(call, cutoff = 60L) {
         ch <- deparse(call, width.cutoff = cutoff)
         if (length(ch) > 1L) {
-            paste(ch[[1L]], "....")
+            paste(ch[[1L]], "....")  # nocov
         } else {
             ch
         }
@@ -11,7 +12,22 @@
 
 
 
+# Updated 2019-07-15.
+.assertHasCause <- function(x) {
+    cause <- cause(x)
+    if (
+        length(cause) != 1L &&
+        !identical(length(x), length(cause))
+    ) {
+        stop("cause error.")
+    }
+    TRUE
+}
+
+
+
 # @seealso `syntactic::capitalize()`.
+# Updated 2019-07-15.
 .capitalize <- function(x) {
     n <- length(x)
     if (n == 0L) {
@@ -20,7 +36,7 @@
     nas <- is.na(x)
     idxs <- which(nas)
     if (length(idxs) == n) {
-        return(x)
+        return(x)  # nocov
     }
     res <- character(length = n)
     if (length(idxs) > 0L) {
@@ -39,15 +55,6 @@
 
 
 
-# `assertive.properties:::check_n()`.
-.checkN <- function(n) {
-    if (n < 0L || n != round(n)) {
-        stop("n should be a non-negative integer vector.")
-    }
-}
-
-
-
 # Using primary assay here.
 .coerceSummarizedExperimentToMatrix <- function(object) {
     requireNamespace("SummarizedExperiment", quietly = TRUE)
@@ -56,7 +63,8 @@
 
 
 
-# `assertive.properties::DIM()`.
+# @seealso `assertive.properties::DIM()`.
+# Updated 2019-07-15.
 .dim <- function(x) {
     dim <- dim(x)
     if (is.null(dim)) {
@@ -69,18 +77,20 @@
 
 
 # @seealso `assertive.properties:::get_metric()`.
+# Updated 2019-07-15.
 .getMetric <- function(metric) {
     switch(
         EXPR = metric,
         length = isOfLength,
         elements = hasElements,
-        stop("The metric", metric, "is not valid.", domain = NA)
+        stop("The metric `", metric, "` is not valid.", domain = NA)
     )
 }
 
 
 
-# `assertive.properties:::n_elements()`.
+# @seealso `assertive.properties:::n_elements()`.
+# Updated 2019-07-15.
 .nElements <- function(x) {
     if (is.recursive(x)) {
         sum(vapply(x, .nElements, integer(1L)))
@@ -92,7 +102,17 @@
 
 
 
-# `assertive.base:::to_names()`.
+# @seealso `assertive.base::strip_attributes().
+# Updated 2019-07-15.
+.stripAttributes <- function(x) {
+    attributes(x) <- NULL
+    x
+}
+
+
+
+# @seealso `assertive.base:::to_names()`.
+# Updated 2019-07-15.
 .toNames <- function(x) {
     if (is.double(x) && is.vector(x)) {
         ifelse(
@@ -119,24 +139,35 @@
 
 
 
-# @seealso `assertive.base::use_first()`.
-.useFirst <- function(
-    x,
-    indexer = c("[[", "["),
-    .xname = getNameInParent(x)
-) {
-    length <- length(x)
-    if (length == 0L) {
-        stop(sprintf("%s has length 0.", .xname))
+# @seealso `assertive.base:::truncate()`.
+# Updated 2019-07-15.
+.truncate <- function(x, width = getOption("width")) {
+    x <- as.character(x)
+    ifelse(
+        test = nchar(x) > width,
+        yes = paste0(substring(x, 1L, width - 3L), "..."),
+        no = x
+    )
+}
+
+
+
+# @seealso `assertive.base:::type_description()`.
+.typeDescription <- function(x) {
+    if (is.array(x)) {
+        sprintf(
+            fmt = "class '%s %s'",
+            class(x[FALSE]),  # nolint
+            toString(class(x))
+        )
+    } else if (is.function(x)) {
+        sprintf(
+            fmt = "class '%s %s'",
+            typeof(x), toString(class(x))
+        )
+    } else if (isS4(x)) {
+        sprintf("S4 class '%s'", toString(class(x)))
+    } else {
+        sprintf("class '%s'", toString(class(x)))
     }
-    if (length == 1L) {
-        return(x)
-    }
-    indexer <- match.fun(match.arg(indexer))
-    x1 <- indexer(x, 1L)
-    warning(sprintf(
-        "Only the first value of %s (= %s) will be used.",
-        .xname, as.character(x1)
-    ), call. = FALSE)
-    x1
 }

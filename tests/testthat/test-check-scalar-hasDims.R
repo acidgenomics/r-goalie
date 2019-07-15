@@ -16,33 +16,15 @@ test_that("hasDims", {
 })
 
 with_parameters_test_that(
-    "hasRownames", {
-        data <- fun()
-        ok <- hasRownames(data)
-        expect_false(ok)
-        expect_s3_class(ok, "goalie")
-        expect_identical(cause(ok), noquote(cause))
-    },
-    fun = list(
-        data.frame,
-        DataFrame,
-        data.table,
-        tibble
-    ),
-    cause = c(
-        "data has sequence row names (soft NULL).",
-        "data has NULL row names.",
-        "data.table class doesn't support row names.",
-        "tibble (tbl_df) class doesn't support row names."
-    )
-)
-
-with_parameters_test_that(
     "hasRows, hasCols", {
         x <- mtcars
         expect_true(fun(x))
 
         x <- data.frame()
+        expect_false(fun(x))
+
+        # Support NULL.
+        x <- list()
         expect_false(fun(x))
     },
     fun = list(hasRows, hasCols)

@@ -42,6 +42,11 @@ test_that("FALSE : not scalar", {
     expect_identical(cause(ok), noquote("x is not a character of length 1."))
 })
 
+test_that("nullOK", {
+    expect_false(isADirectory(NULL, nullOK = FALSE))
+    expect_true(isADirectory(NULL, nullOK = TRUE))
+})
+
 
 
 context("allAreDirectories")

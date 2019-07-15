@@ -2,7 +2,7 @@
 #'
 #' Works for either file or directory paths.
 #'
-#' @name hasAccess
+#' @name check-vector-hasAccess
 #'
 #' @param x `character(1)`.
 #'   File or directory path(s).
@@ -31,8 +31,10 @@ NULL
 
 
 
-#' @describeIn hasAccess Vectorized.
+# Vector =======================================================================
+#' @describeIn check-vector-hasAccess Vectorized.
 #' @export
+# Updated 2019-07-15.
 hasAccess <- function(x, access = "r") {
     ok <- isCharacter(x)
     if (!isTRUE(ok)) return(ok)
@@ -73,12 +75,12 @@ hasAccess <- function(x, access = "r") {
             if ("w" %in% access) {
                 ok <- file.access(x, mode = 2L) == 0L
                 ok <- unname(ok)
-                if (!isTRUE(ok)) return(FALSE)
+                if (!isTRUE(ok)) return(FALSE)  # nocov
             }
             if ("x" %in% access) {
                 ok <- file.access(x, mode = 1L) == 0L
                 ok <- unname(ok)
-                if (!isTRUE(ok)) return(FALSE)
+                if (!isTRUE(ok)) return(FALSE)  # nocov
             }
         }
 
@@ -91,8 +93,10 @@ hasAccess <- function(x, access = "r") {
 
 
 
-#' @describeIn hasAccess Scalar.
+# Scalar =======================================================================
+#' @describeIn check-vector-hasAccess Scalar.
 #' @export
+# Updated 2019-07-15.
 allHaveAccess <- function() {
     ok <- hasAccess(x = x, access = access)
     if (!all(ok)) return(falseFromVector(ok))

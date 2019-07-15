@@ -20,6 +20,8 @@
 #'
 #' @examples
 #' setCause(x = FALSE, false = "test")
+
+# Updated 2019-07-15.
 setCause <- function(
     x,
     false = "false",
@@ -37,8 +39,10 @@ setCause <- function(
     if (length(missing) == 1L) {
         cause[isNA] <- missing
     } else {
+        # nocov start
         missing <- rep_len(missing, length)
         cause[isNA] <- missing[isNA]
+        # nocov end
     }
     # Define the FALSE index.
     index <- !(x | isNA)

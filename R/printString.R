@@ -21,6 +21,8 @@
 #' @examples
 #' printString(c("hello", "world"))
 #' printString(datasets::mtcars, max = 2L)
+
+# Updated 2019-07-15.
 printString <- function(
     x, ...,
     max = getOption("max.print", 100L)

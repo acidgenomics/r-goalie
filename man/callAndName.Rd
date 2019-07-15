@@ -20,6 +20,9 @@ The result of \code{fun(x, ...)}, with the names given by the argument
 \description{
 Calls a function and names the result with the first argument.
 }
+\examples{
+callAndName(is.finite, c(1, Inf, NA))
+}
 \seealso{
 \code{assertive.base::call_and_name()}.
 }

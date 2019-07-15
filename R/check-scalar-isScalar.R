@@ -2,7 +2,7 @@
 #'
 #' Scalar represents a length of 1.
 #'
-#' @name isScalar
+#' @name check-scalar-isScalar
 #' @inherit params
 #'
 #' @seealso
@@ -30,8 +30,9 @@ NULL
 
 
 
-#' @rdname isScalar
+#' @rdname check-scalar-isScalar
 #' @export
+# Updated 2019-07-15.
 isScalar <- function(x, .xname = getNameInParent(x)) {
     ok <- length(x) == 1L
     if (!isTRUE(ok)) {
@@ -43,21 +44,9 @@ isScalar <- function(x, .xname = getNameInParent(x)) {
 
 
 
-#' @rdname isScalar
+#' @rdname check-scalar-isScalar
 #' @export
-isNonScalar <- function(x, .xname = getNameInParent(x)) {
-    ok <- as.logical(!isScalar(x))
-    if (!isTRUE(ok)) {
-        return(false("%s is scalar (has a length of 1).", .xname))
-    }
-
-    TRUE
-}
-
-
-
-#' @rdname isScalar
-#' @export
+# Updated 2019-07-15.
 isScalarList <- function(x, .xname = getNameInParent(x)) {
     if (!isTRUE(ok <- isScalar(x))) return(ok)
 
@@ -71,14 +60,15 @@ isScalarList <- function(x, .xname = getNameInParent(x)) {
 
 
 
-#' @rdname isScalar
+#' @rdname check-scalar-isScalar
 #' @export
+# Updated 2019-07-15.
 isScalarAtomic <- function(x, .xname = getNameInParent(x)) {
     if (!isTRUE(ok <- isScalar(x))) return(ok)
 
     ok <- is.atomic(x)
     if (!isTRUE(ok)) {
-        return(false("%s is not atomic.", .xname))
+        return(false("%s is not atomic.", .xname))  # nocov
     }
 
     TRUE
@@ -86,14 +76,15 @@ isScalarAtomic <- function(x, .xname = getNameInParent(x)) {
 
 
 
-#' @rdname isScalar
+#' @rdname check-scalar-isScalar
 #' @export
+# Updated 2019-07-15.
 isScalarVector <- function(x, .xname = getNameInParent(x)) {
     if (!isTRUE(ok <- isScalar(x))) return(ok)
 
     ok <- is.vector(x)
     if (!isTRUE(ok)) {
-        return(false("%s is not vector.", .xname))
+        return(false("%s is not vector.", .xname))  # nocov
     }
 
     TRUE
@@ -101,14 +92,15 @@ isScalarVector <- function(x, .xname = getNameInParent(x)) {
 
 
 
-#' @rdname isScalar
+#' @rdname check-scalar-isScalar
 #' @export
+# Updated 2019-07-15.
 isScalarNumeric <- function(x, .xname = getNameInParent(x)) {
     if (!isTRUE(ok <- isScalar(x))) return(ok)
 
     ok <- is.numeric(x)
     if (!isTRUE(ok)) {
-        return(false("%s is not numeric.", .xname))
+        return(false("%s is not numeric.", .xname))  # nocov
     }
 
     TRUE
@@ -116,8 +108,9 @@ isScalarNumeric <- function(x, .xname = getNameInParent(x)) {
 
 
 
-#' @rdname isScalar
+#' @rdname check-scalar-isScalar
 #' @export
+# Updated 2019-07-15.
 isScalarInteger <- function(x, .xname = getNameInParent(x)) {
     if (!isTRUE(ok <- isScalar(x))) return(ok)
 
@@ -131,8 +124,9 @@ isScalarInteger <- function(x, .xname = getNameInParent(x)) {
 
 
 
-#' @rdname isScalar
+#' @rdname check-scalar-isScalar
 #' @export
+# Updated 2019-07-15.
 isScalarIntegerish <- function(x) {
     if (!isTRUE(ok <- isScalar(x))) return(ok)
     if (!isTRUE(ok <- isIntegerish(x))) return(ok)
@@ -141,8 +135,9 @@ isScalarIntegerish <- function(x) {
 
 
 
-#' @rdname isScalar
+#' @rdname check-scalar-isScalar
 #' @export
+# Updated 2019-07-15.
 isScalarDouble <- function(x, .xname = getNameInParent(x)) {
     if (!isTRUE(ok <- isScalar(x))) return(ok)
 
@@ -156,8 +151,9 @@ isScalarDouble <- function(x, .xname = getNameInParent(x)) {
 
 
 
-#' @rdname isScalar
+#' @rdname check-scalar-isScalar
 #' @export
+# Updated 2019-07-15.
 isScalarCharacter <- function(x, .xname = getNameInParent(x)) {
     if (!isTRUE(ok <- isScalar(x))) return(ok)
 
@@ -171,14 +167,29 @@ isScalarCharacter <- function(x, .xname = getNameInParent(x)) {
 
 
 
-#' @rdname isScalar
+#' @rdname check-scalar-isScalar
 #' @export
+# Updated 2019-07-15.
 isScalarLogical <- function(x, .xname = getNameInParent(x)) {
     if (!isTRUE(ok <- isScalar(x))) return(ok)
 
     ok <- is.logical(x)
     if (!isTRUE(ok)) {
         return(false("%s is not logical.", .xname))
+    }
+
+    TRUE
+}
+
+
+
+#' @rdname check-scalar-isScalar
+#' @export
+# Updated 2019-07-15.
+isNonScalar <- function(x, .xname = getNameInParent(x)) {
+    ok <- as.logical(!isScalar(x))
+    if (!isTRUE(ok)) {
+        return(false("%s is scalar (has a length of 1).", .xname))
     }
 
     TRUE

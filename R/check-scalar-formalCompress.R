@@ -1,6 +1,6 @@
 #' Check the `compress` formal argument
 #'
-#' @export
+#' @name check-scalar-formalCompress
 #' @inherit params
 #'
 #' @param compress `logical(1)` or `character(1)`.
@@ -15,6 +15,13 @@
 #' ## FALSE ====
 #' formalCompress(NA)
 #' formalCompress("xxx")
+NULL
+
+
+
+#' @rdname check-scalar-formalCompress
+#' @export
+# Updated 2019-07-15.
 formalCompress <- function(compress) {
     ok <- isAny(compress, classes = c("character", "logical"))
     if (!isTRUE(ok)) {
