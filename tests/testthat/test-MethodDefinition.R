@@ -51,12 +51,4 @@ test_that(".local handling", {
     )
     expect_false(.hasLocal(md))
     expect_error(.extractLocal(md))
-
-    md <- getMethod(
-        f = "as.data.frame",
-        signature = "DataFrame",
-        where = asNamespace("BiocGenerics")
-    )
-    expect_true(.hasLocal(md))
-    expect_is(.extractLocal(md), "function")
 })
