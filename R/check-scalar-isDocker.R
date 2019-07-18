@@ -1,3 +1,7 @@
+# nocov start
+
+
+
 #' Is the R session running inside Docker?
 #'
 #' @name check-scalar-isDocker
@@ -25,7 +29,7 @@ isDocker <- function() {
 
 
 
-# nocov start
+
 
 #' @describeIn check-scalar-isDocker Utility function for testthat.
 #' @export
@@ -37,5 +41,7 @@ skip_on_docker <-  # nolint
         }
         testthat::skip("On Docker")
     }
+
+
 
 # nocov end
