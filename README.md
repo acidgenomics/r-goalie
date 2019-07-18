@@ -11,9 +11,7 @@ Assertive check functions for defensive R programming.
 
 This is an [R][] package.
 
-### [Bioconductor][] method
-
-We recommend installing the package with [BiocManager][].
+### [R][] method
 
 ```r
 if (!require("BiocManager")) {
