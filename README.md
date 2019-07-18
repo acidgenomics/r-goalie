@@ -14,7 +14,7 @@ This is an [R][] package.
 ### [R][] method
 
 ```r
-if (!require("remotes")) {
+if (!requireNamespace("remotes", quietly = TRUE)) {
     install.packages("remotes")
 }
 remotes::install_github("acidgenomics/goalie")
