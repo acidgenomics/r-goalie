@@ -20,7 +20,7 @@ if (!require("BiocManager")) {
     install.packages("BiocManager")
 }
 BiocManager::install("remotes")
-BiocManager::install("acidgenomics/goalie")
+remotes::install_github("acidgenomics/goalie")
 ```
 
 ### [conda][] method
