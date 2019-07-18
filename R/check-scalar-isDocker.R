@@ -19,7 +19,7 @@ isDocker <- function() {
     ) {
         TRUE
     } else {
-        FALSE
+        false("Docker image not detected.")
     }
 }
 
@@ -29,12 +29,13 @@ isDocker <- function() {
 
 #' @describeIn check-scalar-isDocker Utility function for testthat.
 #' @export
-skip_on_docker <- function() {
-    requireNamespace("testthat", quietly = TRUE)
-    if (!isTRUE(isDocker())) {
-        return()
+skip_on_docker <-  # nolint
+    function() {
+        requireNamespace("testthat", quietly = TRUE)
+        if (!isTRUE(isDocker())) {
+            return()
+        }
+        testthat::skip("On Docker")
     }
-    testthat::skip("On Docker")
-}
 
 # nocov end
