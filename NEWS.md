@@ -1,3 +1,10 @@
+## goalie 0.2.18 (2019-07-18)
+
+### New functions
+
+- Added `isDocker` and `skip_on_docker` functions for improved conditional
+  testing inside Docker R images.
+
 ## goalie 0.2.17 (2019-07-15)
 
 ### Major changes
