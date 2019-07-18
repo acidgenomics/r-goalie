@@ -14,10 +14,9 @@ This is an [R][] package.
 ### [R][] method
 
 ```r
-if (!require("BiocManager")) {
-    install.packages("BiocManager")
+if (!require("remotes")) {
+    install.packages("remotes")
 }
-BiocManager::install("remotes")
 remotes::install_github("acidgenomics/goalie")
 ```
 
