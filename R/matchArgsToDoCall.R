@@ -67,7 +67,7 @@ matchArgsToDoCall <- function(
     call <- list[["match.call"]]
     assert(is.call(call))
 
-    # Prepare the `args` list.
+    ## Prepare the `args` list.
     callArgs <- as.list(call)[-1L]
     callArgs <- callArgs[setdiff(names(callArgs), names(args))]
     args <- c(args, callArgs)
@@ -75,17 +75,17 @@ matchArgsToDoCall <- function(
     formalArgs <- formalArgs[setdiff(names(formalArgs), "...")]
     formalArgs <- formalArgs[setdiff(names(formalArgs), names(args))]
     args <- c(args, formalArgs)
-    # Remove formals we want to exclude.
+    ## Remove formals we want to exclude.
     args <- args[setdiff(names(args), removeFormals)]
 
-    # Show the unevaluated args, if desired.
+    ## Show the unevaluated args, if desired.
     if (isTRUE(verbose)) {
         print(list(args = lapply(args, class)))  # nocov
     }
 
-    # Ensure all arguments are evaluated.
-    # Missing or NULL arguments will be stripped.
-    # https://stackoverflow.com/questions/16740307
+    ## Ensure all arguments are evaluated.
+    ## Missing or NULL arguments will be stripped.
+    ## https://stackoverflow.com/questions/16740307
     envir <- sys.frame(which = which)
     args <- lapply(
         X = args,
@@ -100,19 +100,19 @@ matchArgsToDoCall <- function(
             }
         }
     )
-    # Remove any `NULL` arguments. We may want to consider changing this
-    # approach in the future, in case passing `NULL` through is important.
+    ## Remove any `NULL` arguments. We may want to consider changing this
+    ## approach in the future, in case passing `NULL` through is important.
     args <- Filter(f = Negate(is.null), x = args)
 
-    # Enable verbose mode, for debugging.
+    ## Enable verbose mode, for debugging.
     if (isTRUE(verbose)) {
-        # nocov start
+        ## nocov start
         print(list(
             definition = definition,
             call = call,
             args = lapply(args, class)
         ))
-        # nocov end
+        ## nocov end
     }
 
     assert(hasNames(args), hasNoDuplicates(names(args)))

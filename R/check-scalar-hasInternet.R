@@ -13,7 +13,7 @@ NULL
 
 #' @rdname check-scalar-hasInternet
 #' @export
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 hasInternet <- function() {
     requireNamespace("curl", quietly = TRUE)
     ok <- tryCatch(

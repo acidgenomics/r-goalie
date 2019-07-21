@@ -26,7 +26,7 @@ NULL
 
 #' @rdname check-scalar-validNames
 #' @export
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 validNames <- function(x, .xname = getNameInParent(x)) {
     ok <- isCharacter(x, .xname = .xname)
     if (!isTRUE(ok)) return(ok)  # nocov

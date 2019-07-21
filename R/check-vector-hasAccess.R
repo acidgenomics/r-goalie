@@ -31,22 +31,22 @@ NULL
 
 
 
-# Vector =======================================================================
+## Vector ======================================================================
 #' @describeIn check-vector-hasAccess Vectorized.
 #' @export
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 hasAccess <- function(x, access = "r") {
     ok <- isCharacter(x)
     if (!isTRUE(ok)) return(ok)
 
-    # `file.access()` mode values:
-    # - 0: [-] existence
-    # - 1: [x] execute
-    # - 2: [w] write
-    # - 4: [r] read
-    # Note that `file.access()` will return 0 on success, -1 on failure.
+    ## `file.access()` mode values:
+    ## - 0: [-] existence
+    ## - 1: [x] execute
+    ## - 2: [w] write
+    ## - 4: [r] read
+    ## Note that `file.access()` will return 0 on success, -1 on failure.
 
-    # Here we're converting the "rwx" flags to the file.access modes.
+    ## Here we're converting the "rwx" flags to the file.access modes.
     access <- tolower(access)
     access <- strsplit(access, "")[[1L]]
     if (anyDuplicated(access) > 0L || !all(access %in% c("r", "w", "x"))) {
@@ -61,16 +61,16 @@ hasAccess <- function(x, access = "r") {
 
     isWindows <- .Platform[["OS.type"]] == "windows"
 
-    # String file checker that we can loop with `bapply()` below.
+    ## String file checker that we can loop with `bapply()` below.
     checkAccess <- function(x, access) {
         if ("r" %in% access) {
             ok <- file.access(x, mode = 4L) == 0L
-            # `unname()` step needed for R 3.4 compatibility.
+            ## `unname()` step needed for R 3.4 compatibility.
             ok <- unname(ok)
             if (!isTRUE(ok)) return(FALSE)
         }
 
-        # Write/execute permissions can't be checked on Windows.
+        ## Write/execute permissions can't be checked on Windows.
         if (!isTRUE(isWindows)) {
             if ("w" %in% access) {
                 ok <- file.access(x, mode = 2L) == 0L
@@ -93,10 +93,10 @@ hasAccess <- function(x, access = "r") {
 
 
 
-# Scalar =======================================================================
+## Scalar ======================================================================
 #' @describeIn check-vector-hasAccess Scalar.
 #' @export
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 allHaveAccess <- function() {
     ok <- hasAccess(x = x, access = access)
     if (!all(ok)) return(falseFromVector(ok))

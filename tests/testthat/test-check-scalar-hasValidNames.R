@@ -41,7 +41,7 @@ test_that("TRUE", {
 })
 
 test_that("FALSE", {
-    # Note the spaces in the row names here.
+    ## Note the spaces in the row names here.
     x <- mtcars
     ok <- hasValidDimnames(x)
     expect_false(ok)

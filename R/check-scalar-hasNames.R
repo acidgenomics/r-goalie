@@ -18,7 +18,7 @@ NULL
 
 #' @rdname check-scalar-hasNames
 #' @export
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 hasNames <- function(x, .xname = getNameInParent(x)) {
     namesx <- names(x)
     if (is.null(namesx)) {

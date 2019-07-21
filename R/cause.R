@@ -28,7 +28,7 @@ NULL
 
 #' @rdname cause
 #' @export
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 cause <- function(x) {
     attr(x, "cause")
 }
@@ -37,7 +37,7 @@ cause <- function(x) {
 
 #' @rdname cause
 #' @export
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 `cause<-` <- function(x, value) {
     if (
         length(value) != 1L &&
@@ -60,7 +60,7 @@ cause <- function(x) {
 
 #' @rdname cause
 #' @export
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 nocause <- function(x) {
     attr(x, "cause") <- NULL
     class(x) <- "logical"

@@ -2,12 +2,12 @@ context("isGGScale")
 
 library(ggplot2)
 
-# nolint start
+## nolint start
 colour_c <- scale_colour_gradient(low = "red", high = "blue")
 colour_d <- scale_colour_manual(values = c("red", "blue"))
 fill_c <- scale_fill_gradient(low = "red", high = "blue")
 fill_d <- scale_fill_manual(values = c("red", "blue"))
-# nolint end
+## nolint end
 
 test_that("TRUE", {
     expect_true(isGGScale(x = colour_c, scale = "continuous", aes = "colour"))
