@@ -1,14 +1,14 @@
 context("validNames")
 
 test_that("TRUE", {
-    # Dots (periods) and underscores are valid.
+    ## Dots (periods) and underscores are valid.
     expect_true(validNames(c("sample.1", "sample_1")))
-    # Can't begin with a number.
+    ## Can't begin with a number.
     expect_false(validNames("293cells"))
 })
 
 test_that("FALSE", {
-    # Spaces, dashes (hyphens), and other non-alphanumerics aren't valid.
+    ## Spaces, dashes (hyphens), and other non-alphanumerics aren't valid.
     expect_false(validNames("sample 1"))
     expect_false(validNames("cell-AAAAAAAA"))
     expect_false(validNames("GFP+"))

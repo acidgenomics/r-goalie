@@ -1,5 +1,5 @@
-# Note that these checks don't inherit by default, so place the variables to
-# check inside the `test_that()` call.
+## Note that these checks don't inherit by default, so place the variables to
+## check inside the `test_that()` call.
 
 
 

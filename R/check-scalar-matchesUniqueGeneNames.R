@@ -28,7 +28,7 @@
 #' ## TRUE ====
 #' matchesUniqueGeneNames(x = x, genes = genes)
 
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 matchesUniqueGeneNames <- function(x, genes, .xname = getNameInParent(x)) {
     ok <- isS4(x)
     if (!isTRUE(ok)) {
@@ -38,30 +38,30 @@ matchesUniqueGeneNames <- function(x, genes, .xname = getNameInParent(x)) {
     ok <- isCharacter(genes)
     if (!isTRUE(ok)) return(ok)
 
-    # Get all of the gene names stashed in the x.
+    ## Get all of the gene names stashed in the x.
     if (is(x, "SummarizedExperiment")) {
         requireNamespace("SummarizedExperiment", quietly = TRUE)
         x <- SummarizedExperiment::rowData(x)
     }
 
-    # Coercing to character here to handle Rle/factor matching.
+    ## Coercing to character here to handle Rle/factor matching.
     all <- as.character(x[["geneName"]])
 
-    # Check for gene names (symbols).
+    ## Check for gene names (symbols).
     if (length(all) == 0L) {
         return(false("Gene names are not defined in object."))
     }
 
-    # Require that the user passed in gene names.
+    ## Require that the user passed in gene names.
     ok <- all(genes %in% all)
     if (!isTRUE(ok)) {
         setdiff <- setdiff(genes, all)
         return(false("Genes missing: %s", toString(setdiff)))
     }
 
-    # Get a vector of all duplicated gene names in the object.
+    ## Get a vector of all duplicated gene names in the object.
     dupes <- all[which(duplicated(all))]
-    # Now check for intersection with the user-defined genes vector.
+    ## Now check for intersection with the user-defined genes vector.
     intersect <- intersect(genes, dupes)
 
     if (length(intersect) > 0L) {

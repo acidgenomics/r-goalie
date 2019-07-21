@@ -20,10 +20,10 @@ NULL
 
 
 
-# Vector =======================================================================
+## Vector ======================================================================
 #' @describeIn check-vector-isURL Vectorized.
 #' @export
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 isURL <- function(x, .xname = getNameInParent(x)) {
     ok <- isCharacter(x)
     if (!isTRUE(ok)) return(ok)  # nocov
@@ -35,10 +35,10 @@ isURL <- function(x, .xname = getNameInParent(x)) {
 
 
 
-# Scalar =======================================================================
+## Scalar ======================================================================
 #' @describeIn check-vector-isURL Scalar. Requires a single URL.
 #' @export
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 isAURL <- function(x, .xname = getNameInParent(x)) {
     ok <- isString(x = x, .xname = .xname)
     if (!isTRUE(ok)) return(ok)
@@ -53,7 +53,7 @@ isAURL <- function(x, .xname = getNameInParent(x)) {
 
 #' @describeIn check-vector-isURL Scalar. Checks that all strings are URLs.
 #' @export
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 allAreURLs <- function(x, .xname = getNameInParent(x)) {
     ok <- isURL(x = x, .xname = .xname)
     if (!all(ok)) return(falseFromVector(ok))  # nocov

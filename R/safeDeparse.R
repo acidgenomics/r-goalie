@@ -20,7 +20,7 @@
 #' @examples
 #' safeDeparse(is.character("a"))
 
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 safeDeparse <- function(expr, ...) {
     paste0(deparse(expr, width.cutoff = 500L, ...), collapse = "")
 }

@@ -46,10 +46,10 @@ methodFunction <- function(f, signature, package) {
     assert(isString(package))
     envir <- asNamespace(package)
 
-    # Locate the S4 generic. We're opting to get either the `standardGeneric` or
-    # the `nonstandardGenericFunction` instead of requiring `standardGeneric`
-    # via `getGeneric` here, since it's more flexible with re-exported generic
-    # functions.
+    ## Locate the S4 generic. We're opting to get either the `standardGeneric`
+    ## or the `nonstandardGenericFunction` instead of requiring
+    ## `standardGeneric` via `getGeneric` here, since it's more flexible with
+    ## re-exported generic functions.
     args <- Filter(
         f = Negate(is.null),
         x = list(
@@ -64,7 +64,7 @@ methodFunction <- function(f, signature, package) {
             stop(sprintf("Failed to locate `%s` generic.\n", f))
         }
     )
-    # Assert that we're getting an S4 generic.
+    ## Assert that we're getting an S4 generic.
     assert(isS4(generic))
     args <- Filter(
         f = Negate(is.null),
@@ -76,7 +76,7 @@ methodFunction <- function(f, signature, package) {
     )
     assert(do.call(what = isGeneric, args = args))
 
-    # Now select the method from the generic.
+    ## Now select the method from the generic.
     definition <- selectMethod(
         f = generic,
         signature = signature,
@@ -85,9 +85,9 @@ methodFunction <- function(f, signature, package) {
     )
     assert(is(definition, "MethodDefinition"))
 
-    # S4 dispatch will nest `.local` function inside the method definition when
-    # the formals aren't identical to the generic. Otherwise it will be slotted
-    # in ".Data".
+    ## S4 dispatch will nest `.local` function inside the method definition when
+    ## the formals aren't identical to the generic. Otherwise it will be slotted
+    ## in ".Data".
     if (isTRUE(.hasLocal(definition))) {
         fun <- .extractLocal(definition)  # nocov
     } else {
