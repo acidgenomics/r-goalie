@@ -33,7 +33,7 @@
 
 #' @rdname check-scalar-isGGScale
 #' @export
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 isGGScale <- function(
     x,
     scale = c("continuous", "discrete"),
@@ -44,12 +44,12 @@ isGGScale <- function(
     aes <- match.arg(aes)
     assert(isFlag(nullOK))
 
-    # Conditionally allow NULL.
+    ## Conditionally allow NULL.
     if (isTRUE(nullOK) && is.null(x)) {
         return(TRUE)
     }
 
-    # Check that the object inherits all of the required classes.
+    ## Check that the object inherits all of the required classes.
     ok <- isAll(
         x = x,
         classes = c(
@@ -61,15 +61,15 @@ isGGScale <- function(
     )
     if (!isTRUE(ok)) return(ok)
 
-    # Note that this has to match the British spelling (e.g colour).
+    ## Note that this has to match the British spelling (e.g colour).
     ok <- identical(x = x[["aesthetics"]], y = aes)
     if (!isTRUE(ok)) {
-        # nocov start
+        ## nocov start
         return(false(
             "%s isn't identical to %. Use British spelling (e.g. colour).",
             x[["aesthetics"]], aes
         ))
-        # nocov end
+        ## nocov end
     }
 
     TRUE

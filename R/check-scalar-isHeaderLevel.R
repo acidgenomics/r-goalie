@@ -16,7 +16,7 @@ NULL
 
 #' @rdname check-scalar-isHeaderLevel
 #' @export
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 isHeaderLevel <- function(x, .xname = getNameInParent(x)) {
     ok <- isScalarIntegerish(x)
     if (!isTRUE(ok)) return(ok)

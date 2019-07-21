@@ -25,12 +25,12 @@ false <- function(...) {
 
 
 
-# Note that this will intentionally fail if you pass in a logical vector without
-# a goalie cause attribute.
+## Note that this will intentionally fail if you pass in a logical vector
+## without a goalie cause attribute.
 .causeString <- function(x) {
     stopifnot(is(x, "goalie"))
     out <- capture.output(print(x))
-    # Remove the first 2 lines.
+    ## Remove the first 2 lines.
     out <- out[3L:length(out)]
     paste0(out, collapse = "\n")
 }

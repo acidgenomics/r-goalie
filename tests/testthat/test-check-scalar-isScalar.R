@@ -30,7 +30,7 @@ test_that("isScalarAtomic", {
 test_that("isScalarCharacter", {
     expect_true(isScalarCharacter("X"))
     expect_true(isScalarCharacter(NA_character_))
-    # Note that `isCharacter()` is stricter and returns false for this one.
+    ## Note that `isCharacter()` is stricter and returns false for this one.
     expect_true(isScalarCharacter(""))
     expect_false(isScalarCharacter(c("A", "B")))
     expect_false(isScalarCharacter(1L))
@@ -77,7 +77,7 @@ test_that("isScalarList", {
 test_that("isScalarLogical", {
     expect_true(isScalarLogical(FALSE))
     expect_true(isScalarLogical(TRUE))
-    # Note that `isFlag()` is stricter and will return false for this.
+    ## Note that `isFlag()` is stricter and will return false for this.
     expect_true(isScalarLogical(NA))
     expect_false(isScalarLogical(c(FALSE, TRUE)))
     expect_false(isScalarLogical(NaN))

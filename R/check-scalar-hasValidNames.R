@@ -34,7 +34,7 @@ NULL
 
 #' @rdname check-scalar-hasValidNames
 #' @export
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 hasValidNames <- function(x, .xname = getNameInParent(x)) {
     names <- names(x)
     ok <- length(names) > 0L
@@ -52,9 +52,9 @@ hasValidNames <- function(x, .xname = getNameInParent(x)) {
 
 #' @rdname check-scalar-hasValidNames
 #' @export
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 hasValidDimnames <- function(x, .xname = getNameInParent(x)) {
-    # Row names.
+    ## Row names.
     if (isTRUE(hasRownames(x))) {
         rownames <- rownames(x)
         ok <- validNames(rownames)
@@ -63,7 +63,7 @@ hasValidDimnames <- function(x, .xname = getNameInParent(x)) {
         }
     }
 
-    # Column names.
+    ## Column names.
     if (isTRUE(hasColnames(x))) {
         colnames <- colnames(x)
         ok <- validNames(colnames)

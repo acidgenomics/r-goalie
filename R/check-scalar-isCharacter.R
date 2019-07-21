@@ -25,7 +25,7 @@
 
 #' @rdname check-scalar-isCharacter
 #' @export
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 isCharacter <- function(
     x,
     nullOK = FALSE,
@@ -33,7 +33,7 @@ isCharacter <- function(
 ) {
     assert(isFlag(nullOK))
 
-    # Conditionally allow NULL.
+    ## Conditionally allow NULL.
     if (isTRUE(nullOK) && is.null(x)) {
         return(TRUE)
     }
@@ -43,11 +43,11 @@ isCharacter <- function(
         return(false("%s is not character.", .xname))
     }
 
-    # Don't allow `character(0)`.
+    ## Don't allow `character(0)`.
     ok <- hasLength(x, .xname = .xname)
     if (!isTRUE(ok)) return(ok)
 
-    # Don't allow empty strings ("").
+    ## Don't allow empty strings ("").
     ok <- nzchar(x)
     if (!all(ok)) {
         return(false(
@@ -56,7 +56,7 @@ isCharacter <- function(
         ))
     }
 
-    # Don't allow `NA_character_`.
+    ## Don't allow `NA_character_`.
     ok <- !is.na(x)
     if (!all(ok)) {
         return(false(

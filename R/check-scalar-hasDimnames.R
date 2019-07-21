@@ -1,4 +1,4 @@
-# Documenting `hasRownames()` in a separate Rd file because it's complicated.
+## Documenting `hasRownames()` in a separate Rd file because it's complicated.
 
 #' Does the input have dimnames?
 #'
@@ -28,7 +28,7 @@ NULL
 
 #' @rdname check-scalar-hasDimnames
 #' @export
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 hasDimnames <- function(x, .xname = getNameInParent(x)) {
     dimnamesx <- dimnames(x)
     if (is.null(dimnamesx)) {
@@ -44,7 +44,7 @@ hasDimnames <- function(x, .xname = getNameInParent(x)) {
 
 #' @rdname check-scalar-hasDimnames
 #' @export
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 hasColnames <- function(x, .xname = getNameInParent(x)) {
     colnamesx <- colnames(x)
     if (is.null(colnamesx)) {

@@ -15,7 +15,7 @@ test_that("FALSE : numeric sequence", {
     )
 })
 
-# Note that `isCharacter()` is intentionally more strict than `is.character()`.
+## Note that `isCharacter()` is intentionally more strict than `is.character()`.
 test_that("FALSE : empty", {
     expect_false(isCharacter(NULL))
     expect_false(isCharacter(character()))

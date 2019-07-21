@@ -36,7 +36,7 @@
 #'     )
 #' )
 
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 validateClasses <- function(object, expected, subset = FALSE) {
     assert(
         is(expected, "list"),

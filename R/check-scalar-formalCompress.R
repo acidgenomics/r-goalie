@@ -21,14 +21,14 @@ NULL
 
 #' @rdname check-scalar-formalCompress
 #' @export
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 formalCompress <- function(compress) {
     ok <- isAny(compress, classes = c("character", "logical"))
     if (!isTRUE(ok)) {
         return(ok)
     }
 
-    # Allow TRUE/FALSE boolean flag.
+    ## Allow TRUE/FALSE boolean flag.
     if (is.logical(compress)) {
         ok <- isFlag(compress)
         if (!isTRUE(ok)) {

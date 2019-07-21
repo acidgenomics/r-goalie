@@ -8,7 +8,7 @@ NULL
 
 
 
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 .print.goalie.scalar <-  # nolint
     function(x) {
         .assertHasCause(x)
@@ -18,9 +18,9 @@ NULL
 
 
 
-# Consider letting the user access `n` and `ignoreNA` in a future update.
-# For now keep the method support as simple as possible.
-# Updated 2019-07-15.
+## Consider letting the user access `n` and `ignoreNA` in a future update.
+## For now keep the method support as simple as possible.
+## Updated 2019-07-15.
 .print.goalie.vector <-  # nolint
     function(x, n = 10L, ignoreNA = FALSE) {
         .assertHasCause(x)
@@ -29,36 +29,36 @@ NULL
         if (is.null(names)) {
             names <- character(length(x))
         }
-        # Run this step after getting cause and names.
+        ## Run this step after getting cause and names.
         x <- .stripAttributes(x)
 
         ok <- if (isTRUE(ignoreNA)) {
-            # OK can be TRUE or NA; FALSE is bad.
+            ## OK can be TRUE or NA; FALSE is bad.
             x | is.na(x)
         } else {
-            # OK can be TRUE; FALSE or NA is bad.
+            ## OK can be TRUE; FALSE or NA is bad.
             x & !is.na(x)
         }
 
-        # Here we're creating a failure index.
+        ## Here we're creating a failure index.
         index <- head(which(!ok), n = n)
         n <- length(index)
 
-        # Create the corresponding data frame, which we'll print below.
+        ## Create the corresponding data frame, which we'll print below.
         failures <- data.frame(
             pos = index,
             value = .truncate(names[index]),
-            # See assertive bug 15997.
+            ## See assertive bug 15997.
             cause = unclass(cause[index]),
             row.names = seq_along(index)
         )
 
-        # Slightly convoluted way of creating message to ensure that ngettext
-        # creates all the translation strings.
+        ## Slightly convoluted way of creating message to ensure that ngettext
+        ## creates all the translation strings.
         header <- if (nrow(failures) < n) {
-            # nocov start
+            ## nocov start
             paste0(" ", gettextf("(showing the first %d)", nrow(failures)))
-            # nocov end
+            ## nocov end
         } else {
             ""
         }
@@ -80,7 +80,7 @@ NULL
 #' @rdname print
 #' @method print goalie
 #' @export
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 print.goalie <- function(x, ...) {
     if (!is.logical(x)) {
         stop("x is not logical.")

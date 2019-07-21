@@ -34,7 +34,7 @@
 #'     is.character("example")
 #' )
 
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 assert <- function(
     ...,
     msg = NULL,
@@ -48,8 +48,8 @@ assert <- function(
 
     for (i in seq_len(n)) {
         r <- ...elt(i)
-        # Ensure we're stripping names off of logical. Otherwise,
-        # `isTRUE()` check will fail on R 3.4.
+        ## Ensure we're stripping names off of logical. Otherwise,
+        ## `isTRUE()` check will fail on R 3.4.
         r <- unname(r)
         call <- .Dparse(dots[[i]])
 
@@ -66,26 +66,26 @@ assert <- function(
             next
         }
 
-        # Note that we're allowing the user to define the message.
+        ## Note that we're allowing the user to define the message.
         if (!isString(msg)) {
-            # Always return a `stopifnot()`-like error.
+            ## Always return a `stopifnot()`-like error.
             msg <- sprintf("Assert failure.\n[%s] %s is not TRUE.", i, call)
-            # Check for defined cause attribute.
+            ## Check for defined cause attribute.
             cause <- cause(r)
             if (!is.null(cause)) {
-                # Capturing the S3 print method on goalie class here.
+                ## Capturing the S3 print method on goalie class here.
                 msg <- c(msg, capture.output(print(r))[-1L])
             }
             msg <- paste0(msg, collapse = "\n")
         }
 
-        # Include the traceback in error.
+        ## Include the traceback in error.
         if (isTRUE(traceback)) {
-            # Note that we're reversing the call stack here to make it
-            # easier to see the parents.
+            ## Note that we're reversing the call stack here to make it
+            ## easier to see the parents.
             stack <- rev(sys.calls())
             stack <- printString(stack)
-            # Add the traceback to the error message.
+            ## Add the traceback to the error message.
             msg <- paste(msg, "Traceback:", stack, sep = "\n")
         }
 

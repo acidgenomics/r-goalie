@@ -22,7 +22,7 @@ NULL
 
 #' @rdname check-scalar-areSameLength
 #' @export
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 areSameLength <- function(
     x, y,
     .xname = getNameInParent(x),

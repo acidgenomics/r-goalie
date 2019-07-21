@@ -1,8 +1,8 @@
 context("MethodDefinition")
 
 test_that("as.data.frame", {
-    # Use `substitute()` to put a missing argument in pairlist.
-    # https://stackoverflow.com/questions/3892580
+    ## Use `substitute()` to put a missing argument in pairlist.
+    ## https://stackoverflow.com/questions/3892580
     formals <- pairlist(
         "x" = substitute(),
         row.names = NULL,
@@ -10,7 +10,7 @@ test_that("as.data.frame", {
         "..." = substitute()
     )
 
-    # Function
+    ## Function
     x <- methodFunction(
         f = "as.data.frame",
         signature = "ANY",
@@ -19,7 +19,7 @@ test_that("as.data.frame", {
     expect_is(x, "function")
     expect_identical(formals(x), formals)
 
-    # Formals
+    ## Formals
     x <- methodFormals(
         f = "as.data.frame",
         signature = "ANY",
