@@ -1,3 +1,10 @@
+## goalie 0.2.19 (2019-07-21)
+
+### Minor changes
+
+- Improved full line comments to use "##" instead of "#", as recommended by
+  current Bioconductor coding style.
+
 ## goalie 0.2.18 (2019-07-18)
 
 ### New functions
