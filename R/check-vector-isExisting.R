@@ -26,10 +26,10 @@ NULL
 
 
 
-# Vector =======================================================================
+## Vector ======================================================================
 #' @describeIn check-vector-isExisting Vectorized.
 #' @export
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 isExisting <- function(
     x,
     envir = parent.frame(),
@@ -52,7 +52,7 @@ isExisting <- function(
 
 #' @describeIn check-vector-isExisting Vectorized.
 #' @export
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 isNonExisting <- function() {
     ok <- !isExisting(
         x = x,
@@ -67,10 +67,10 @@ formals(isNonExisting) <- formals(isExisting)
 
 
 
-# Scalar =======================================================================
+## Scalar ======================================================================
 #' @describeIn check-vector-isExisting Scalar.
 #' @export
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 allAreExisting <- function() {
     ok <- isExisting(
         x = x,
@@ -88,7 +88,7 @@ formals(allAreExisting) <- formals(isExisting)
 
 #' @describeIn check-vector-isExisting Scalar.
 #' @export
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 allAreNonExisting <- function() {
     ok <- isNonExisting(
         x = x,

@@ -45,7 +45,7 @@
 #' )
 #' testing(aaa, bbb)
 
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 standardizeCall <- function(
     which = sys.parent(n = 1L),
     return = c("call", "list"),
@@ -59,19 +59,19 @@ standardizeCall <- function(
     )
     return <- match.arg(return)
 
-    # Don't allow a `which` value less than 1.
+    ## Don't allow a `which` value less than 1.
     if (which < 1L) {
         which <- 1L  # nocov
     }
 
-    # Determine where the call is in the stack that we want to standardize.
-    # Note that this differs for S4 methods containing a nested `.local`.
+    ## Determine where the call is in the stack that we want to standardize.
+    ## Note that this differs for S4 methods containing a nested `.local`.
     .local <- .isLocalCall(sys.call(which = which))
     if (isTRUE(.local) && which > 1L) {
         which <- which - 1L
     }
 
-    # Local the parameters we need to sanitize call.
+    ## Local the parameters we need to sanitize call.
     definition <- sys.function(which = which)
     call <- sys.call(which = which)
     envir <- sys.frame(which = which)
@@ -87,13 +87,13 @@ standardizeCall <- function(
         envir = envir
     )
 
-    # Extract the definition from `.local`, if necessary.
+    ## Extract the definition from `.local`, if necessary.
     if (isTRUE(.local)) {
         assert(!isTRUE(.isLocalCall(call)))
-        # Update definition.
+        ## Update definition.
         if (is(definition, "MethodDefinition")) {
-            # Pull the ".local()" function out, which has the formals we need to
-            # match against in `match.call` below.
+            ## Pull the ".local()" function out, which has the formals we need
+            ## to match against in `match.call` below.
             definition <- .extractLocal(definition)
             list[["definition"]] <- definition
         }
@@ -103,9 +103,9 @@ standardizeCall <- function(
         print(list)  # nocov
     }
 
-    # Now ready to match (expand) the call.
-    # @seealso `pryr::standardise_call`.
-    # Note that we need to use the `envir` argument to properly match.
+    ## Now ready to match (expand) the call.
+    ## @seealso `pryr::standardise_call`.
+    ## Note that we need to use the `envir` argument to properly match.
     call <- match.call(
         definition = definition,
         call = call,
@@ -118,11 +118,11 @@ standardizeCall <- function(
         print(list(match.call = call))  # nocov
     }
 
-    # Check call integrity before returning.
+    ## Check call integrity before returning.
     assert(is.call(call))
 
-    # Require that all arguments are named before returning.
-    # This check is especially important for S4 methods containing `.local`.
+    ## Require that all arguments are named before returning.
+    ## This check is especially important for S4 methods containing `.local`.
     assert(isCharacter(names(as.list(call)[-1L])))
 
     switch(EXPR = return, call = call, list = list)
@@ -130,7 +130,7 @@ standardizeCall <- function(
 
 
 
-# Detect `.local()` inside an S4 method.
+## Detect `.local()` inside an S4 method.
 .isLocalCall <- function(call) {
     assert(is.call(call))
     identical(call[[1L]], as.symbol(".local"))

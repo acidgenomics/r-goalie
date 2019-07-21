@@ -22,23 +22,23 @@ NULL
 
 
 
-# Vector =======================================================================
+## Vector ======================================================================
 #' @describeIn check-vector-isIntegerish Vectorized.
 #' @export
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 isIntegerish <- function(x, .xname = getNameInParent(x)) {
-    # Check for numeric vector.
+    ## Check for numeric vector.
     if (!is.numeric(x)) {
         return(false("%s is not numeric.", .xname))  # nocov
     }
 
-    # Require that vector does not contain NA.
+    ## Require that vector does not contain NA.
     ok <- !is.na(x)
     if (!all(ok)) {
         return(setCause(x = ok, false = "NA"))
     }
 
-    # Early return without running `all.equal()` for integer or infinite (Inf).
+    ## Early return without running `all.equal()` for integer or infinite (Inf).
     ok <- bapply(
         X = x,
         FUN = function(x) {
@@ -63,10 +63,10 @@ isIntegerish <- function(x, .xname = getNameInParent(x)) {
 
 
 
-# Scalar =======================================================================
+## Scalar ======================================================================
 #' @describeIn check-vector-isIntegerish Scalar.
 #' @export
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 isInt <- function(x, nullOK = FALSE) {
     if (isTRUE(nullOK) && is.null(x)) return(TRUE)
     isScalarIntegerish(x)

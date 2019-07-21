@@ -26,25 +26,25 @@ NULL
 
 #' @rdname check-scalar-hasUniqueCols
 #' @export
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 hasUniqueCols <- function(x, .xname = getNameInParent(x)) {
-    # Coerce SummarizedExperiment to (assay) matrix, if necessary.
+    ## Coerce SummarizedExperiment to (assay) matrix, if necessary.
     if (is(x, "SummarizedExperiment")) {
         x <- .coerceSummarizedExperimentToMatrix(x)
     }
 
-    # Check for >= 2 samples.
+    ## Check for >= 2 samples.
     ok <- ncol(x) >= 2L
     if (!isTRUE(ok)) {
         return(false("%s does not have >= 2 columns.", .xname))
     }
 
-    # Ensure coercion to matrix, so we can use the S3 assay method for
-    # `duplicated()` below.
+    ## Ensure coercion to matrix, so we can use the S3 assay method for
+    ## `duplicated()` below.
     x <- as(x, "matrix")
 
-    # We're using the S3 assay `duplicated` method here, which supports
-    # MARGIN, so we can check across the columns.
+    ## We're using the S3 assay `duplicated` method here, which supports
+    ## MARGIN, so we can check across the columns.
     dupes <- duplicated(x, MARGIN = 2L)
     ok <- !any(dupes)
     if (!isTRUE(ok)) {

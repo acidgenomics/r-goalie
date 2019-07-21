@@ -3,7 +3,7 @@ context("hasDims")
 test_that("hasDims", {
     expect_true(hasDims(mtcars))
 
-    # Note that dims don't have to be non-zero, just not NULL.
+    ## Note that dims don't have to be non-zero, just not NULL.
     expect_true(hasDims(data.frame()))
 
     ok <- hasDims(list())
@@ -23,7 +23,7 @@ with_parameters_test_that(
         x <- data.frame()
         expect_false(fun(x))
 
-        # Support NULL.
+        ## Support NULL.
         x <- list()
         expect_false(fun(x))
     },

@@ -21,15 +21,15 @@
 #' @examples
 #' setCause(x = FALSE, false = "test")
 
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 setCause <- function(
     x,
     false = "false",
     missing = "missing"
 ) {
     assert(is.logical(x))
-    # Early return without cause if TRUE.
-    # Consider wrapping in `unname()` call here.
+    ## Early return without cause if TRUE.
+    ## Consider wrapping in `unname()` call here.
     if (!anyNA(x) && all(x, na.rm = TRUE)) {
         return(x)
     }
@@ -39,12 +39,12 @@ setCause <- function(
     if (length(missing) == 1L) {
         cause[isNA] <- missing
     } else {
-        # nocov start
+        ## nocov start
         missing <- rep_len(missing, length)
         cause[isNA] <- missing[isNA]
-        # nocov end
+        ## nocov end
     }
-    # Define the FALSE index.
+    ## Define the FALSE index.
     index <- !(x | isNA)
     if (length(false) == 1L) {
         cause[index] <- false

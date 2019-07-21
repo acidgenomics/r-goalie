@@ -22,7 +22,7 @@ test_that(".getMetric", {
 })
 
 test_that(".toNames", {
-    # Complex number
+    ## Complex number.
     expect_identical(
         object = .toNames(complex(length.out = 1L)),
         expected = "0+0i"

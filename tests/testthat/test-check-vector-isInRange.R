@@ -11,7 +11,7 @@ test_that("TRUE", {
     ok <- allAreInRange(x, lower = lower, upper = upper)
     expect_true(ok)
 
-    # `isInRange()` defaults to closed range.
+    ## `isInRange()` defaults to closed range.
     ok <- isInClosedRange(x, lower = lower, upper = upper)
     expect_true(all(ok))
     ok <- allAreInClosedRange(x, lower = lower, upper = upper)
@@ -234,7 +234,7 @@ test_that("TRUE", {
     expect_true(ok)
 })
 
-# This may be too strict. Consider allowing 110%.
+## This may be too strict. Consider allowing 110%.
 test_that("FALSE", {
     x <- c(-10L, 110L)
 
@@ -261,7 +261,7 @@ test_that("TRUE", {
     expect_true(ok)
 })
 
-# This may be strict. Consider allowing > 1.
+## This may be strict. Consider allowing > 1.
 test_that("FALSE", {
     x <- c(-0.1, 1.1)
 
