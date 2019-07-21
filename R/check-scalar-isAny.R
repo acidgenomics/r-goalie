@@ -19,7 +19,7 @@ NULL
 
 #' @rdname check-scalar-isAny
 #' @export
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 isAny <- function(x, classes, .xname = getNameInParent(x)) {
     ok <- isCharacter(classes)
     if (!isTRUE(ok)) {

@@ -18,7 +18,7 @@ NULL
 
 #' @rdname check-scalar-isAlpha
 #' @export
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 isAlpha <- function(x, .xname = getNameInParent(x)) {
     ok <- isScalarDouble(x)
     if (!isTRUE(ok)) {

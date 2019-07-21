@@ -17,13 +17,13 @@ NULL
 
 #' @rdname check-scalar-isString
 #' @export
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 isString <- function(
     x,
     nullOK = FALSE,
     .xname = getNameInParent(x)
 ) {
-    # Conditionally allow NULL.
+    ## Conditionally allow NULL.
     if (isTRUE(nullOK) && is.null(x)) {
         return(TRUE)
     }
@@ -33,7 +33,7 @@ isString <- function(
         return(false("%s is not a character of length 1.", .xname))
     }
 
-    # Return FALSE on NA character or empty string.
+    ## Return FALSE on NA character or empty string.
     if (is.na(x)) {
         return(false("%s is NA.", .xname))
     }

@@ -1,4 +1,4 @@
-# nolint start
+## nolint start
 DataFrame <- S4Vectors::DataFrame
 SummarizedExperiment <- SummarizedExperiment::SummarizedExperiment
 assay <- SummarizedExperiment::assay
@@ -9,7 +9,7 @@ rowData <- SummarizedExperiment::rowData
 `rowData<-` <- SummarizedExperiment::`rowData<-`
 sparseMatrix <- Matrix::sparseMatrix
 tibble <- tibble::tibble
-# nolint end
+## nolint end
 
 se <- SummarizedExperiment(
     assays = matrix(

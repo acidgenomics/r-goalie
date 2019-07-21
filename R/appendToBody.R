@@ -22,7 +22,7 @@
 #' x <- appendToBody(x, quote(.Deprecated("y")))
 #' body(x)
 
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 appendToBody <- function(fun, values, after = 1L) {
     stopifnot(
         is.function(fun),
@@ -31,7 +31,7 @@ appendToBody <- function(fun, values, after = 1L) {
     )
     b <- body(fun)
     b <- as.list(b)
-    # Hardening against 1 liners and/or lack of curly brackets.
+    ## Hardening against 1 liners and/or lack of curly brackets.
     stopifnot(identical(b[[1L]], as.name("{")))
     b <- append(b, values = values, after = after)
     b <- as.call(b)

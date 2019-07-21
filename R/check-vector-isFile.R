@@ -28,10 +28,10 @@ NULL
 
 
 
-# Vector =======================================================================
+## Vector ======================================================================
 #' @describeIn check-vector-isFile Vectorized.
 #' @export
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 isFile <- function(x) {
     ok <- isCharacter(x)
     if (!isTRUE(ok)) return(ok)
@@ -42,12 +42,12 @@ isFile <- function(x) {
 
 
 
-# Scalar =======================================================================
+## Scalar ======================================================================
 #' @describeIn check-vector-isFile Scalar.
 #' @export
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 isAFile <- function(x, nullOK = FALSE) {
-    # Conditionally allow NULL.
+    ## Conditionally allow NULL.
     if (isTRUE(nullOK) && is.null(x)) {
         return(TRUE)
     }
@@ -65,7 +65,7 @@ isAFile <- function(x, nullOK = FALSE) {
 
 #' @describeIn check-vector-isFile Scalar.
 #' @export
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 allAreFiles <- function(x) {
     ok <- isFile(x)
     if (!all(ok)) return(falseFromVector(ok))

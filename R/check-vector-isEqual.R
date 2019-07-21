@@ -31,10 +31,10 @@ NULL
 
 
 
-# Vector =======================================================================
+## Vector ======================================================================
 #' @describeIn check-vector-isEqual Vectorized.
 #' @export
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 isEqualTo <- function(x, y) {
     diff <- abs(x - y)
     ok <- diff <= .tolerance
@@ -50,7 +50,7 @@ isEqualTo <- function(x, y) {
 
 #' @describeIn check-vector-isEqual Vectorized.
 #' @export
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 isNotEqualTo <- function(x, y) {
     ok <- abs(x - y) > .tolerance
     callAndName(
@@ -65,7 +65,7 @@ isNotEqualTo <- function(x, y) {
 
 #' @describeIn check-vector-isEqual Vectorized.
 #' @export
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 isGreaterThan <- function(x, y) {
     ok <- x > y
     callAndName(
@@ -80,7 +80,7 @@ isGreaterThan <- function(x, y) {
 
 #' @describeIn check-vector-isEqual Vectorized.
 #' @export
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 isGreaterThanOrEqualTo <- function(x, y) {
     ok <- x >= y
     callAndName(
@@ -95,7 +95,7 @@ isGreaterThanOrEqualTo <- function(x, y) {
 
 #' @describeIn check-vector-isEqual Vectorized.
 #' @export
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 isLessThan <- function(x, y) {
     ok <- x < y
     callAndName(
@@ -110,7 +110,7 @@ isLessThan <- function(x, y) {
 
 #' @describeIn check-vector-isEqual Vectorized.
 #' @export
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 isLessThanOrEqualTo <- function(x, y) {
     ok <- x <= y
     callAndName(
@@ -123,10 +123,10 @@ isLessThanOrEqualTo <- function(x, y) {
 
 
 
-# Scalar =======================================================================
+## Scalar ======================================================================
 #' @describeIn check-vector-isEqual Scalar.
 #' @export
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 allAreEqualTo <- function(x, y) {
     ok <- isEqualTo(x, y)
     if (!all(ok)) return(falseFromVector(ok))
@@ -137,7 +137,7 @@ allAreEqualTo <- function(x, y) {
 
 #' @describeIn check-vector-isEqual Scalar.
 #' @export
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 allAreNotEqualTo <- function(x, y) {
     ok <- isNotEqualTo(x, y)
     if (!all(ok)) return(falseFromVector(ok))
@@ -148,7 +148,7 @@ allAreNotEqualTo <- function(x, y) {
 
 #' @describeIn check-vector-isEqual Scalar.
 #' @export
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 allAreGreaterThan <- function(x, y) {
     ok <- isGreaterThan(x, y)
     if (!all(ok)) return(falseFromVector(ok))
@@ -159,7 +159,7 @@ allAreGreaterThan <- function(x, y) {
 
 #' @describeIn check-vector-isEqual Scalar.
 #' @export
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 allAreGreaterThanOrEqualTo <- function(x, y) {
     ok <- isGreaterThanOrEqualTo(x, y)
     if (!all(ok)) return(falseFromVector(ok))
@@ -170,7 +170,7 @@ allAreGreaterThanOrEqualTo <- function(x, y) {
 
 #' @describeIn check-vector-isEqual Scalar.
 #' @export
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 allAreLessThan <- function(x, y) {
     ok <- isLessThan(x, y)
     if (!all(ok)) return(falseFromVector(ok))
@@ -181,7 +181,7 @@ allAreLessThan <- function(x, y) {
 
 #' @describeIn check-vector-isEqual Scalar.
 #' @export
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 allAreLessThanOrEqualTo <- function(x, y) {
     ok <- isLessThanOrEqualTo(x, y)
     if (!all(ok)) return(falseFromVector(ok))

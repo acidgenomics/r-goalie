@@ -27,10 +27,10 @@ NULL
 
 
 
-# Vector =======================================================================
+## Vector ======================================================================
 #' @describeIn check-vector-isDirectory Vectorized.
 #' @export
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 isDirectory <- function(x) {
     ok <- isCharacter(x)
     if (!isTRUE(ok)) return(ok)
@@ -41,12 +41,12 @@ isDirectory <- function(x) {
 
 
 
-# Scalar =======================================================================
+## Scalar ======================================================================
 #' @describeIn check-vector-isDirectory Scalar.
 #' @export
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 isADirectory <- function(x, nullOK = FALSE) {
-    # Conditionally allow NULL.
+    ## Conditionally allow NULL.
     if (isTRUE(nullOK) && is.null(x)) {
         return(TRUE)
     }
@@ -62,7 +62,7 @@ isADirectory <- function(x, nullOK = FALSE) {
 
 #' @describeIn check-vector-isDirectory Scalar.
 #' @export
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 allAreDirectories <- function(x) {
     ok <- isDirectory(x)
     if (!all(ok)) return(falseFromVector(ok))
@@ -71,7 +71,7 @@ allAreDirectories <- function(x) {
 
 
 
-# Aliases ======================================================================
+## Aliases =====================================================================
 #' @describeIn check-vector-isDirectory Short alias for [isDirectory()].
 #' @export
 isDir <- isDirectory

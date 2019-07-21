@@ -1,5 +1,5 @@
-# nocov start
-# nolint start
+## nocov start
+## nolint start
 
 
 
@@ -58,7 +58,7 @@ NULL
 
 
 
-# v0.2.1 =======================================================================
+## v0.2.1 =======================================================================
 #' @rdname deprecated
 #' @export
 containsAlpha <- appendToBody(
@@ -92,5 +92,5 @@ containsAURL <- isAURL
 
 
 
-# nolint end
-# nocov end
+## nolint end
+## nocov end

@@ -27,7 +27,7 @@ context("isNonEmpty")
 test_that("TRUE", {
     expect_true(isNonEmpty(1L, metric = "length"))
     expect_true(isNonEmpty(1L, metric = "elements"))
-    # Note that `""` returns TRUE, which may not be desirable.
+    ## Note that `""` returns TRUE, which may not be desirable.
     expect_true(isNonEmpty("", metric = "length"))
     expect_true(isNonEmpty("", metric = "elements"))
 })

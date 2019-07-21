@@ -34,10 +34,10 @@ is2 <- function(x, class, .xname = getNameInParent(x)) {
             )
         ))
     }
-    # Attempt to use `is.character(x)` first.
-    # Otherwise, fall back to `is(x, "character)`.
-    # Alternatively, can take a look at `inherits()` but it doesn't always
-    # return the same TRUE/FALSE as an `is()` call.
+    ## Attempt to use `is.character(x)` first.
+    ## Otherwise, fall back to `is(x, "character)`.
+    ## Alternatively, can take a look at `inherits()` but it doesn't always
+    ## return the same TRUE/FALSE as an `is()` call.
     ok <- tryCatch(
         expr = {
             is.class <- match.fun(paste0("is.", class))

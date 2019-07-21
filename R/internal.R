@@ -1,5 +1,5 @@
-# @seealso `base::stopifnot()`.
-# Updated 2019-07-15.
+## @seealso `base::stopifnot()`.
+## Updated 2019-07-15.
 .Dparse <-  # nolint
     function(call, cutoff = 60L) {
         ch <- deparse(call, width.cutoff = cutoff)
@@ -12,7 +12,7 @@
 
 
 
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 .assertHasCause <- function(x) {
     cause <- cause(x)
     if (
@@ -26,8 +26,8 @@
 
 
 
-# @seealso `syntactic::capitalize()`.
-# Updated 2019-07-15.
+## @seealso `syntactic::capitalize()`.
+## Updated 2019-07-15.
 .capitalize <- function(x) {
     n <- length(x)
     if (n == 0L) {
@@ -55,7 +55,7 @@
 
 
 
-# Using primary assay here.
+## Using primary assay here.
 .coerceSummarizedExperimentToMatrix <- function(object) {
     requireNamespace("SummarizedExperiment", quietly = TRUE)
     SummarizedExperiment::assay(object)
@@ -63,8 +63,8 @@
 
 
 
-# @seealso `assertive.properties::DIM()`.
-# Updated 2019-07-15.
+## @seealso `assertive.properties::DIM()`.
+## Updated 2019-07-15.
 .dim <- function(x) {
     dim <- dim(x)
     if (is.null(dim)) {
@@ -76,8 +76,8 @@
 
 
 
-# @seealso `assertive.properties:::get_metric()`.
-# Updated 2019-07-15.
+## @seealso `assertive.properties:::get_metric()`.
+## Updated 2019-07-15.
 .getMetric <- function(metric) {
     switch(
         EXPR = metric,
@@ -89,8 +89,8 @@
 
 
 
-# @seealso `assertive.properties:::n_elements()`.
-# Updated 2019-07-15.
+## @seealso `assertive.properties:::n_elements()`.
+## Updated 2019-07-15.
 .nElements <- function(x) {
     if (is.recursive(x)) {
         sum(vapply(x, .nElements, integer(1L)))
@@ -102,8 +102,8 @@
 
 
 
-# @seealso `assertive.base::strip_attributes().
-# Updated 2019-07-15.
+## @seealso `assertive.base::strip_attributes().
+## Updated 2019-07-15.
 .stripAttributes <- function(x) {
     attributes(x) <- NULL
     x
@@ -111,8 +111,8 @@
 
 
 
-# @seealso `assertive.base:::to_names()`.
-# Updated 2019-07-15.
+## @seealso `assertive.base:::to_names()`.
+## Updated 2019-07-15.
 .toNames <- function(x) {
     if (is.double(x) && is.vector(x)) {
         ifelse(
@@ -139,8 +139,8 @@
 
 
 
-# @seealso `assertive.base:::truncate()`.
-# Updated 2019-07-15.
+## @seealso `assertive.base:::truncate()`.
+## Updated 2019-07-15.
 .truncate <- function(x, width = getOption("width")) {
     x <- as.character(x)
     ifelse(
@@ -152,7 +152,7 @@
 
 
 
-# @seealso `assertive.base:::type_description()`.
+## @seealso `assertive.base:::type_description()`.
 .typeDescription <- function(x) {
     if (is.array(x)) {
         sprintf(
