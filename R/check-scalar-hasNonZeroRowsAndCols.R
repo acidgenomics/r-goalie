@@ -11,8 +11,7 @@
 #'
 #' @param x Matrix.
 #'   Currently requires a `matrix` or `sparseMatrix` as input.
-#
-#' @examples
+## #' @examples
 #' ## TRUE ====
 #' x <- matrix(data = seq_len(4), nrow = 2)
 #' print(x)
@@ -44,7 +43,7 @@ NULL
 
 #' @rdname check-scalar-hasNonZeroRowsAndCols
 #' @export
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 hasNonZeroRowsAndCols <- function(x, .xname = getNameInParent(x)) {
     ok <- isAny(x = x, classes = c("matrix", "sparseMatrix"), .xname = .xname)
     if (!isTRUE(ok)) return(ok)  # nocov
@@ -55,17 +54,17 @@ hasNonZeroRowsAndCols <- function(x, .xname = getNameInParent(x)) {
     ok <- hasCols(x, .xname = .xname)
     if (!isTRUE(ok)) return(ok)
 
-    # For sparse matrix, use the generic verbs from Matrix package. Note that
-    # sparse matrices are often highly zero-inflated, so this approach might
-    # not be generally recommended for this data class.
+    ## For sparse matrix, use the generic verbs from Matrix package. Note that
+    ## sparse matrices are often highly zero-inflated, so this approach might
+    ## not be generally recommended for this data class.
     if (is(x, "sparseMatrix")) {
         requireNamespace("Matrix", quietly = TRUE)
         colSums <- Matrix::colSums
         rowSums <- Matrix::rowSums
     }
 
-    # Inform the user if any rows or columns contain all zeros. It's good
-    # practice to remove them before attempting to plot a heatmap.
+    ## Inform the user if any rows or columns contain all zeros. It's good
+    ## practice to remove them before attempting to plot a heatmap.
     zeroRows <- rowSums(x) == 0L
     if (any(zeroRows)) {
         n <- sum(zeroRows, na.rm = TRUE)

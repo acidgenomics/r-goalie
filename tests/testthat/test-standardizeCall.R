@@ -33,7 +33,7 @@ test_that("Inside S4 method", {
     )
 })
 
-# Note that the method contains formals that aren't in the generic here.
+## Note that the method contains formals that aren't in the generic here.
 test_that("Inside S4 method with .local", {
     setGeneric(
         name = "testing",

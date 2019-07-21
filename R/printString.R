@@ -22,18 +22,18 @@
 #' printString(c("hello", "world"))
 #' printString(datasets::mtcars, max = 2L)
 
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 printString <- function(
     x, ...,
     max = getOption("max.print", 100L)
 ) {
-    # Note that this is called inside `assert()` for traceback support.
+    ## Note that this is called inside `assert()` for traceback support.
     stopifnot(isInt(max))
     x <- capture.output(print(x, ...))
-    # Limit the number of lines returned, like `max.print` option.
+    ## Limit the number of lines returned, like `max.print` option.
     x <- head(x, n = max)
     x <- paste(x, collapse = "\n")
-    # Remove leading and trailing line breaks.
+    ## Remove leading and trailing line breaks.
     x <- gsub("^[\n]+|[\n]+$", "", x)
     x
 }

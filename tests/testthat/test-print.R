@@ -1,7 +1,7 @@
 context("print")
 
-# Here we want to capture the print method on goalie S3 class.
-# These differ depending on whether the assert check is scalar or vectorized.
+## Here we want to capture the print method on goalie S3 class.
+## These differ depending on whether the assert check is scalar or vectorized.
 
 test_that("scalar", {
     expect_identical(

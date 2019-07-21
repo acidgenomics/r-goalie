@@ -21,7 +21,7 @@ NULL
 
 #' @rdname check-scalar-hasDuplicates
 #' @export
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 hasDuplicates <- function(x, .xname = getNameInParent(x)) {
     if (!anyDuplicated(x)) {
         return(false(gettext("%s has no duplicates."), .xname))
@@ -33,7 +33,7 @@ hasDuplicates <- function(x, .xname = getNameInParent(x)) {
 
 #' @rdname check-scalar-hasDuplicates
 #' @export
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 hasNoDuplicates <- function(x, .xname = getNameInParent(x)) {
     if (anyDuplicated(x)) {
         dupeIndicies <- which(duplicated(x))

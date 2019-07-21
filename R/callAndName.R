@@ -16,7 +16,7 @@
 #' @examples
 #' callAndName(is.finite, c(1, Inf, NA))
 
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 callAndName <- function(fun, x, ...) {
     y <- fun(x, ...)
     dim(y) <- dim(x)

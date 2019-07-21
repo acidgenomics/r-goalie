@@ -24,7 +24,7 @@ NULL
 
 #' @rdname check-scalar-hasLength
 #' @export
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 hasLength <- function(x, n = NULL, .xname = getNameInParent(x)) {
     length <- length(x)
 

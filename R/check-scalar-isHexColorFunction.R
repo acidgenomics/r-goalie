@@ -22,24 +22,24 @@ NULL
 
 #' @rdname check-scalar-isHexColorFunction
 #' @export
-# Updated 2019-07-15.
+## Updated 2019-07-15.
 isHexColorFunction <- function(
     x,
     nullOK = FALSE,
     .xname = getNameInParent(x)
 ) {
-    # Conditionally allow NULL.
+    ## Conditionally allow NULL.
     if (isTRUE(nullOK) && is.null(x)) {
         return(TRUE)
     }
 
-    # Check for function.
+    ## Check for function.
     ok <- is.function(x)
     if (!isTRUE(ok)) {
         return(false("%s is not a function.", .xname))
     }
 
-    # Check for `n` formal.
+    ## Check for `n` formal.
     ok <- "n" %in% formalArgs(x)
     if (!isTRUE(ok)) {
         return(false(

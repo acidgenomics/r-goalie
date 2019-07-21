@@ -1,6 +1,6 @@
 context("isInt")
 
-# `isInt()` is a scalar short alias of `isIntegerish()`.
+## `isInt()` is a scalar short alias of `isIntegerish()`.
 
 test_that("TRUE", {
     expect_true(isInt(1L))

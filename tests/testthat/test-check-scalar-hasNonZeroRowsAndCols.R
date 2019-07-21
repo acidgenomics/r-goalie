@@ -21,7 +21,7 @@ test_that("TRUE : sparseMatrix", {
 })
 
 test_that("FALSE : rows containing all zeros", {
-    # This example is from the sparseMatrix documentation.
+    ## This example is from the sparseMatrix documentation.
     x <- sparseMatrix(
         i = c(1L, 3L:8L),
         j = c(2L, 9L, 6L:10L),
