@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Print string — printString • goalie</title>
+<title>Is the R session running inside Docker? — check-scalar-isDocker • goalie</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -34,9 +34,9 @@
 
   <link href="../extra.css" rel="stylesheet">
   
-<meta property="og:title" content="Print string — printString" />
+<meta property="og:title" content="Is the R session running inside Docker? — check-scalar-isDocker" />
 
-<meta property="og:description" content="Capture print() output as a character string." />
+<meta property="og:description" content="Is the R session running inside Docker?" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -111,66 +111,46 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Print string</h1>
-    <small class="dont-index">Source: <a href='https://github.com/acidgenomics/goalie/blob/master/R/printString.R'><code>R/printString.R</code></a></small>
-    <div class="hidden name"><code>printString.Rd</code></div>
+    <h1>Is the R session running inside Docker?</h1>
+    <small class="dont-index">Source: <a href='https://github.com/acidgenomics/goalie/blob/master/R/check-scalar-isDocker.R'><code>R/check-scalar-isDocker.R</code></a></small>
+    <div class="hidden name"><code>check-scalar-isDocker.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Capture <code><a href='https://rdrr.io/r/base/print.html'>print()</a></code> output as a <code>character</code> string.</p>
+    <p>Is the R session running inside Docker?</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>printString</span>(<span class='no'>x</span>, <span class='no'>...</span>, <span class='kw'>max</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span>(<span class='st'>"max.print"</span>, <span class='fl'>100L</span>))</pre>
-    
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>x</th>
-      <td><p>An object used to select a <code><a href='https://rdrr.io/r/base/print.html'>print()</a></code> method.</p></td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td><p>Passthrough arguments to <code><a href='https://rdrr.io/r/base/print.html'>print()</a></code>.</p></td>
-    </tr>
-    <tr>
-      <th>max</th>
-      <td><p><code><a href='https://rdrr.io/r/base/integer.html'>integer(1)</a></code>.
-Maximum length of vector. Works internally by calling
-<code><a href='https://rdrr.io/r/utils/head.html'>head()</a></code> on the print capture, prior to collapse using
-<code><a href='https://rdrr.io/r/base/paste.html'>paste()</a></code>. Supports <code><a href='https://rdrr.io/r/base/options.html'>getOption("max.print")</a></code> global
-variable.</p></td>
-    </tr>
-    </table>
-    
+    <pre class="usage"><span class='fu'>isDocker</span>()
+
+<span class='fu'>skip_on_docker</span>()</pre>
+        
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code>.</p>
+    <p><code>TRUE</code> on success;
+<code>FALSE</code> on failure, with <code>cause</code> <a href='https://rdrr.io/r/base/attributes.html'>attribute</a> set.</p>
     
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+    <h2 class="hasAnchor" id="functions"><a class="anchor" href="#functions"></a>Functions</h2>
 
-    <p>Useful for returning informative messages inside a function.</p>
     
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
-
-    <div class='dont-index'><p><code><a href='https://rdrr.io/r/base/cat.html'>cat()</a></code>.</p></div>
+<ul>
+<li><p><code>skip_on_docker</code>: Utility function for testthat.</p></li>
+</ul>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>printString</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"hello"</span>, <span class='st'>"world"</span>))</div><div class='output co'>#&gt; [1] "[1] \"hello\" \"world\""</div><div class='input'><span class='fu'>printString</span>(<span class='kw pkg'>datasets</span><span class='kw ns'>::</span><span class='no'><a href='https://rdrr.io/r/datasets/mtcars.html'>mtcars</a></span>, <span class='kw'>max</span> <span class='kw'>=</span> <span class='fl'>2L</span>)</div><div class='output co'>#&gt; [1] "                     mpg cyl  disp  hp drat    wt  qsec vs am gear carb\nMazda RX4           21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4"</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>isDocker</span>()</div><div class='output co'>#&gt; [1] FALSE
+#&gt; Cause of failure:
+#&gt; Docker image not detected.</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
 
-      <li><a href="#details">Details</a></li>
-
-      <li><a href="#see-also">See also</a></li>
+      <li><a href="#functions">Functions</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>

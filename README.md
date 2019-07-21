@@ -17,7 +17,10 @@ This is an [R][] package.
 if (!requireNamespace("remotes", quietly = TRUE)) {
     install.packages("remotes")
 }
+Sys.setenv(R_REMOTES_UPGRADE = "always")
+# Set `GITHUB_PAT` in `~/.Renviron` if you get a rate limit error.
 remotes::install_github("acidgenomics/goalie")
+remotes::update_packages()
 ```
 
 ### [conda][] method
