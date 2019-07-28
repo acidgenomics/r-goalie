@@ -11,14 +11,6 @@ Assertive check functions for defensive R programming.
 
 This is an [R][] package.
 
-### [conda][] method
-
-Configure [conda][] to use the [bioconda][] channels.
-
-```bash
-conda install -c bioconda r-goalie
-```
-
 ### [R][] method
 
 ```r
@@ -29,6 +21,14 @@ Sys.setenv(R_REMOTES_UPGRADE = "always")
 ## Set `GITHUB_PAT` in `~/.Renviron` if you get a rate limit error.
 remotes::install_github("acidgenomics/goalie")
 remotes::update_packages()
+```
+
+### [conda][] method
+
+Configure [conda][] to use the [bioconda][] channels.
+
+```bash
+conda install -c bioconda r-goalie
 ```
 
 [BiocManager]: https://cran.r-project.org/package=BiocManager
