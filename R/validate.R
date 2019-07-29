@@ -10,7 +10,9 @@
 #' the methods package, specifically [`validObject()`][methods::validObject] for
 #' detailed information on S4 validity methods.
 #'
+#' @note Updated 2019-07-29.
 #' @export
+#'
 #' @inheritParams assert
 #'
 #' @return `TRUE` on success, or `character(1)` on failure, containing an error
@@ -33,8 +35,6 @@
 #'     isFlag("xxx"),
 #'     isPositive(-1)
 #' )
-
-## Updated 2019-07-15.
 validate <- function(..., msg = NULL) {
     n <- ...length()
     if (n == 0L) {

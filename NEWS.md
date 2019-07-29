@@ -1,4 +1,6 @@
-## goalie 0.2.20 (2019-07-29)
+## goalie 0.3.0 (2019-07-29)
+
+Version bump, reflecting start of a new release series.
 
 ### Minor changes
 

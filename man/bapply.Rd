@@ -27,6 +27,8 @@ An assert check function that returns \code{logical(1)} boolean flag
 \item \code{FUN.VALUE} is always set to \code{logical(1)}.
 \item \code{USE.NAMES} is always set to \code{TRUE}.
 }
+
+Updated 2019-07-29.
 }
 \examples{
 bapply(list(a = "example", b = 1), is.character)

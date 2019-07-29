@@ -20,6 +20,9 @@ The result of \code{fun(x, ...)}, with the names given by the argument
 \description{
 Calls a function and names the result with the first argument.
 }
+\note{
+Updated 2019-07-29.
+}
 \examples{
 callAndName(is.finite, c(1, Inf, NA))
 }

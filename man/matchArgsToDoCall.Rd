@@ -29,6 +29,9 @@ Arguments to pass to \code{\link[base:do.call]{do.call()}}.
 \description{
 Match arguments to \code{do.call}
 }
+\note{
+Updated 2019-07-29.
+}
 \examples{
 ## Match the arguments in call.
 fun <- function(object, xxx, ...) {

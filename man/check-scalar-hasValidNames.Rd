@@ -22,6 +22,9 @@ hasValidDimnames(x, .xname = getNameInParent(x))
 \description{
 Does the input object have syntactically valid names?
 }
+\note{
+Updated 2019-07-29.
+}
 \examples{
 ## TRUE ====
 x <- list(a = 1, b = 2)

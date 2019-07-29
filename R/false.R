@@ -3,15 +3,23 @@
 #' Always returns the value `FALSE`, with a [cause]
 #' [attribute][base::attributes].
 #'
-#' @export
-#' @inheritParams params
+#' @name false
+#' @note Updated 2019-07-29.
 #'
+#' @inheritParams params
 #' @param ... Passed to [`gettextf()`][base::gettextf] to create a [cause] of
 #'   failure message.
 #'
 #' @return `goalie`/`logical(1L)`.
 #'
 #' @seealso `assertive.base::false()`.
+NULL
+
+
+
+#' @rdname false
+#' @export
+## Updated 2019-07-29.
 false <- function(...) {
     msg <- if (nargs() > 0L) {
         sprintf(...)
@@ -27,6 +35,7 @@ false <- function(...) {
 
 ## Note that this will intentionally fail if you pass in a logical vector
 ## without a goalie cause attribute.
+## Updated 2019-07-29.
 .causeString <- function(x) {
     stopifnot(is(x, "goalie"))
     out <- capture.output(print(x))
@@ -39,6 +48,7 @@ false <- function(...) {
 
 #' @rdname false
 #' @export
+## Updated 2019-07-29.
 falseFromVector <- function(x) {
     false(.causeString(x))
 }

@@ -80,6 +80,8 @@ How does the input relate to a value?
 
 \note{
 These functions return \code{logical}, not necessarily \code{logical(1)}.
+
+Updated 2019-07-29.
 }
 \examples{
 ## TRUE ====

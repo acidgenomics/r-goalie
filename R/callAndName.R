@@ -2,6 +2,7 @@
 #'
 #' Calls a function and names the result with the first argument.
 #'
+#' @note Updated 2019-07-29.
 #' @export
 #'
 #' @param fun `function`.
@@ -15,8 +16,6 @@
 #'
 #' @examples
 #' callAndName(is.finite, c(1, Inf, NA))
-
-## Updated 2019-07-15.
 callAndName <- function(fun, x, ...) {
     y <- fun(x, ...)
     dim(y) <- dim(x)

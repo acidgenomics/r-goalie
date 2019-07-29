@@ -19,6 +19,9 @@ validNames(x, .xname = getNameInParent(x))
 \description{
 Are these valid names?
 }
+\note{
+Updated 2019-07-29.
+}
 \examples{
 ## TRUE ====
 ## Dots (periods) and underscores are valid.

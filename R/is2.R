@@ -6,7 +6,9 @@
 #' If a function named `is.class` exists, call `is.class(x)`.
 #' If not, call `is(x, class)`.
 #'
+#' @note Updated 2019-07-29.
 #' @export
+#'
 #' @inheritParams params
 #'
 #' @seealso
