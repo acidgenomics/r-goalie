@@ -26,6 +26,9 @@ Capture \code{\link[base:print]{print()}} output as a \code{character} string.
 \details{
 Useful for returning informative messages inside a function.
 }
+\note{
+Updated 2019-07-29.
+}
 \examples{
 printString(c("hello", "world"))
 printString(datasets::mtcars, max = 2L)

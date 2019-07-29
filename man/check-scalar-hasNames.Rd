@@ -19,6 +19,9 @@ hasNames(x, .xname = getNameInParent(x))
 \description{
 Does the input have names?
 }
+\note{
+Updated 2019-07-29.
+}
 \examples{
 ## TRUE ====
 hasNames(datasets::mtcars)

@@ -9,6 +9,7 @@
 #'
 #' @name check-scalar-hasRownames
 #' @inherit params
+#' @note Updated 2019-07-29.
 #'
 #' @examples
 #' ## TRUE ====
@@ -47,11 +48,20 @@ hasRownames <- function(x, .xname = getNameInParent(x)) {
         return(false("tibble (tbl_df) class doesn't support row names."))
     }
 
+    ## Early return if `rownames()` function fails.
+    rownames <- tryCatch(
+        expr = rownames(x),
+        error = function(e) e
+    )
+    if (is(rownames, "error")) {
+        return(false("`rownames()` command on %s failed.", .xname))  # nocov
+    }
+
     ## Standard data frames can't return NULL row names, so check for sequence.
     if (
         is.data.frame(x) &&
         identical(
-            x = as(rownames(x), "character"),
+            x = as(rownames, "character"),
             y = as(seq_len(nrow(x)), "character")
         )
     ) {
@@ -59,7 +69,7 @@ hasRownames <- function(x, .xname = getNameInParent(x)) {
     }
 
     ## Other classes (e.g. matrix, DataFrame) do support NULL row names.
-    ok <- !is.null(rownames(x))
+    ok <- !is.null(rownames)
     if (!isTRUE(ok)) {
         return(false("%s has NULL row names.", .xname))
     }

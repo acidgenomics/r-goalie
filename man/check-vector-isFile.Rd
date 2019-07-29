@@ -34,6 +34,9 @@ Does the input contain a file?
 \item \code{allAreFiles}: Scalar.
 }}
 
+\note{
+Updated 2019-07-29.
+}
 \examples{
 ## TRUE ====
 x <- "example.txt"

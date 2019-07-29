@@ -6,9 +6,10 @@
 #' [validate()]. Particularly useful for checking multiple slotted objects
 #' inside [`metadata()`][S4Vectors::metadata].
 #'
+#' @note Updated 2019-07-29.
 #' @export
-#' @inheritParams params
 #'
+#' @inheritParams params
 #' @param expected `list`.
 #'   Named list of expected classes per slot.
 #' @param subset `logical(1)`.
@@ -35,8 +36,6 @@
 #'         c = "factor"
 #'     )
 #' )
-
-## Updated 2019-07-15.
 validateClasses <- function(object, expected, subset = FALSE) {
     assert(
         is(expected, "list"),

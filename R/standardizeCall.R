@@ -3,7 +3,9 @@
 #' This function adds matching support for S4 methods with formals that aren't
 #' identical to the generic, and use a nested `.local` call.
 #'
+#' @note Updated 2019-07-29.
 #' @export
+#'
 #' @inheritParams base::sys.call
 #' @inheritParams params
 #'
@@ -44,8 +46,6 @@
 #'     }
 #' )
 #' testing(aaa, bbb)
-
-## Updated 2019-07-15.
 standardizeCall <- function(
     which = sys.parent(n = 1L),
     return = c("call", "list"),

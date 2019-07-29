@@ -5,6 +5,7 @@
 #' [safeDeparse()] is modified version of [`deparse()`][base::deparse] that
 #' always returns `character(1)`.
 #'
+#' @note Updated 2019-07-29.
 #' @export
 #'
 #' @param expr `expression`.
@@ -19,8 +20,6 @@
 #'
 #' @examples
 #' safeDeparse(is.character("a"))
-
-## Updated 2019-07-15.
 safeDeparse <- function(expr, ...) {
     paste0(deparse(expr, width.cutoff = 500L, ...), collapse = "")
 }

@@ -2,6 +2,7 @@
 #'
 #' @name check-scalar-hasValidNames
 #' @inherit params
+#' @note Updated 2019-07-29.
 #'
 #' @seealso `validNames()`.
 #'
@@ -34,9 +35,15 @@ NULL
 
 #' @rdname check-scalar-hasValidNames
 #' @export
-## Updated 2019-07-15.
+## Updated 2019-07-29.
 hasValidNames <- function(x, .xname = getNameInParent(x)) {
-    names <- names(x)
+    names <- tryCatch(
+        expr = names(x),
+        error = function(e) e
+    )
+    if (is(names, "error")) {
+        return(false("`names()` command on %s failed.", .xname))  # nocov
+    }
     ok <- length(names) > 0L
     if (!isTRUE(ok)) {
         return(false("%s does not have names.", .xname))
@@ -52,8 +59,17 @@ hasValidNames <- function(x, .xname = getNameInParent(x)) {
 
 #' @rdname check-scalar-hasValidNames
 #' @export
-## Updated 2019-07-15.
+## Updated 2019-07-29.
 hasValidDimnames <- function(x, .xname = getNameInParent(x)) {
+    ## Check for `dimnames()` failure.
+    dimnames <- tryCatch(
+        expr = dimnames(x),
+        error = function(e) e
+    )
+    if (is(dimnames, "error")) {
+        return(false("`dimnames()` command on %s failed.", .xname))  # nocov
+    }
+
     ## Row names.
     if (isTRUE(hasRownames(x))) {
         rownames <- rownames(x)
