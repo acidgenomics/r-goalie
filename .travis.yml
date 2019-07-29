@@ -13,21 +13,27 @@ before_script:
 jobs:
   include:
     - stage: test
-      name: "bioc-3.9"
+      name: "linux bioc-3.9"
       script: image="basejump" tag="bioc-3.9" ./docker.sh
     - stage: test
-      name: "bioc-3.8"
+      name: "linux bioc-3.8"
       script: image="basejump" tag="bioc-3.8" ./docker.sh
     - stage: test
-      name: "bioc-3.7"
+      name: "linux bioc-3.7"
       script: image="basejump" tag="bioc-3.7" ./docker.sh
     - stage: test
-      name: "bioc-devel"
+      name: "linux bioc-devel"
       script: image="basejump" tag="bioc-devel" ./docker.sh
+    - stage: test
+      name: "macos bioc-release"
+      os: osx
+      language: r
+      r: bioc-release
 
 matrix:
   allow_failures:
-    - name: "bioc-devel"
+    - name: "linux bioc-devel"
+    - name: "macos bioc-release"
   fast_finish: true
 
 after_failure:
