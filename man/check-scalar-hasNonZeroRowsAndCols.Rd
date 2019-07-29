@@ -9,7 +9,31 @@ hasNonZeroRowsAndCols(x, .xname = getNameInParent(x))
 }
 \arguments{
 \item{x}{Matrix.
-Currently requires a \code{matrix} or \code{sparseMatrix} as input.}
+Currently requires a \code{matrix} or \code{sparseMatrix} as input.TRUE ====
+
+x <- matrix(data = seq_len(4), nrow = 2)
+print(x)
+hasNonZeroRowsAndCols(x)
+
+x <- matrix(data = rep(1, times = 2), byrow = TRUE)
+print(x)
+hasNonZeroRowsAndCols(x)
+
+x <- matrix(data = rep(1, times = 2), byrow = FALSE)
+print(x)
+hasNonZeroRowsAndCols(x)FALSE ====
+
+x <- matrix(nrow = 0, ncol = 0)
+print(x)
+hasNonZeroRowsAndCols(x)
+
+x <- matrix(nrow = 1, ncol = 0)
+print(x)
+hasNonZeroRowsAndCols(x)
+
+x <- matrix(nrow = 0, ncol = 1)
+print(x)
+hasNonZeroRowsAndCols(x)}
 
 \item{.xname}{\emph{Not intended to be used directly.}}
 }
@@ -24,31 +48,4 @@ containing all zeros.
 \details{
 This is a common check when handling RNA-seq data prior to generating a
 heatmap or applying a log transformation, for example.
-}
-\examples{
-## TRUE ====
-x <- matrix(data = seq_len(4), nrow = 2)
-print(x)
-hasNonZeroRowsAndCols(x)
-
-x <- matrix(data = rep(1, times = 2), byrow = TRUE)
-print(x)
-hasNonZeroRowsAndCols(x)
-
-x <- matrix(data = rep(1, times = 2), byrow = FALSE)
-print(x)
-hasNonZeroRowsAndCols(x)
-
-## FALSE ====
-x <- matrix(nrow = 0, ncol = 0)
-print(x)
-hasNonZeroRowsAndCols(x)
-
-x <- matrix(nrow = 1, ncol = 0)
-print(x)
-hasNonZeroRowsAndCols(x)
-
-x <- matrix(nrow = 0, ncol = 1)
-print(x)
-hasNonZeroRowsAndCols(x)
 }
