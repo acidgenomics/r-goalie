@@ -4,6 +4,7 @@
 #'
 #' @name check-scalar-isScalar
 #' @inherit params
+#' @note Updated 2019-07-29.
 #'
 #' @seealso
 #' - `help(topic = "scalar-type-predicates", package = "rlang")`.

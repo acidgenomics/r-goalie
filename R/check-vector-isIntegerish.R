@@ -5,6 +5,7 @@
 #'
 #' @name check-vector-isIntegerish
 #' @inherit params
+#' @note Updated 2019-07-29.
 #'
 #' @seealso
 #' - `isInt()` or `isScalarIntegerish()` for scalar.

@@ -1,3 +1,14 @@
+## goalie 0.3.0 (2019-07-29)
+
+Version bump, reflecting start of a new release series.
+
+### Minor changes
+
+- Hardened `hasColnames`, `hasDimnames`, `hasNames`, `hasRownames`,
+  `hasValidDimnames`, and `hasValidNames` against invalid objects that don't
+  return either a value or `NULL`. This can happen in rare cases with invalid
+  SummarizedExperiment objects (e.g. `bcb_invalid` object in bcbioRNASeq tests).
+
 ## goalie 0.2.19 (2019-07-21)
 
 ### Minor changes

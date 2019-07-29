@@ -1,10 +1,11 @@
 #' Match arguments to `do.call`
 #'
+#' @note Updated 2019-07-29.
+#' @export
+#'
 #' @inheritParams standardizeCall
 #' @inheritParams base::do.call
-#' @export
 #' @inheritParams params
-#'
 #' @param removeFormals `character`.
 #'   Names of formal arguments to remove from `args` list.
 #'

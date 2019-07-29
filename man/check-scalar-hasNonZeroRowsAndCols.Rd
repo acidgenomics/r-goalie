@@ -25,6 +25,9 @@ containing all zeros.
 This is a common check when handling RNA-seq data prior to generating a
 heatmap or applying a log transformation, for example.
 }
+\note{
+Updated 2019-07-29.
+}
 \examples{
 ## TRUE ====
 x <- matrix(data = seq_len(4), nrow = 2)

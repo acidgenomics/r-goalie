@@ -2,6 +2,7 @@
 #'
 #' @name check-vector-isInRange
 #' @inherit params
+#' @note Updated 2019-07-29.
 #'
 #' @section Intervals:
 #'

@@ -1,5 +1,6 @@
 #' Get the name of a variable defined in the parent frame
 #'
+#' @note Updated 2019-07-29.
 #' @export
 #'
 #' @param x `symbol`.

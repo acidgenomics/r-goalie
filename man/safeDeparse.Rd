@@ -22,6 +22,9 @@ Turn unevaluated expressions into character strings.
 \code{\link[=safeDeparse]{safeDeparse()}} is modified version of \code{\link[base:deparse]{deparse()}} that
 always returns \code{character(1)}.
 }
+\note{
+Updated 2019-07-29.
+}
 \examples{
 safeDeparse(is.character("a"))
 }

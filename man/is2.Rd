@@ -25,6 +25,9 @@ single call.
 If a function named \code{is.class} exists, call \code{is.class(x)}.
 If not, call \code{is(x, class)}.
 }
+\note{
+Updated 2019-07-29.
+}
 \examples{
 is2(1:5, "character")
 is2(matrix(1:5), "character")

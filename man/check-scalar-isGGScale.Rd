@@ -28,6 +28,9 @@ If set to \code{TRUE}, \code{x} may also be \code{NULL}.}
 \description{
 Does the input contain a ggplot2 scale?
 }
+\note{
+Updated 2019-07-29.
+}
 \examples{
 library(ggplot2)
 

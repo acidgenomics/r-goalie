@@ -2,6 +2,7 @@
 #'
 #' @name check-scalar-allAreAtomic
 #' @inherit params
+#' @note Updated 2019-07-29.
 #'
 #' @seealso `is.atomic()`.
 #'

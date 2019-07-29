@@ -16,6 +16,8 @@ Does the current session have an internet connection?
 }
 \note{
 Requires curl package to be installed.
+
+Updated 2019-07-29.
 }
 \examples{
 hasInternet()

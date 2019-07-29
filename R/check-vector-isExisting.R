@@ -1,11 +1,12 @@
 #' Does the requested input exist in the environment?
 #'
-#' @note `exists` only supports `character(1)`, so we are exporting
-#'   `isExisting` as a convenience function to check multiple variables in a
-#'   single call.
+#' @note [`exists()`][base::exists] only supports `character(1)`, so we are
+#'   exporting [isExisting()] as a convenience function to check multiple
+#'   variables in a single call.
 #'
 #' @name check-vector-isExisting
 #' @inherit params
+#' @note Updated 2019-07-29.
 #'
 #' @param x `character`.
 #'   Variable names to check in `environment`.

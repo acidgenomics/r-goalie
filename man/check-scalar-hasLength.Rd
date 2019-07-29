@@ -23,6 +23,9 @@ non-zero.}
 \description{
 Does the input have a non-zero or defined length?
 }
+\note{
+Updated 2019-07-29.
+}
 \examples{
 ## TRUE ====
 hasLength(1L)

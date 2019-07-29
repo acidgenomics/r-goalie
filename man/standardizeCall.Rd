@@ -30,6 +30,9 @@ the call was standardized.
 This function adds matching support for S4 methods with formals that aren't
 identical to the generic, and use a nested \code{.local} call.
 }
+\note{
+Updated 2019-07-29.
+}
 \examples{
 aaa <- "AAA"
 bbb <- "BBB"

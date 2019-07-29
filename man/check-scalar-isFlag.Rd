@@ -19,6 +19,9 @@ isFlag(x, .xname = getNameInParent(x))
 \description{
 Does the input contain a boolean flag?
 }
+\note{
+Updated 2019-07-29.
+}
 \examples{
 ## TRUE ====
 isFlag(TRUE)

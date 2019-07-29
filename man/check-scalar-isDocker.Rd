@@ -22,6 +22,9 @@ Is the R session running inside Docker?
 \item \code{skip_on_docker}: Utility function for testthat.
 }}
 
+\note{
+Updated 2019-07-29.
+}
 \examples{
 isDocker()
 }
