@@ -7,6 +7,7 @@
 #' - `FUN.VALUE` is always set to `logical(1)`.
 #' - `USE.NAMES` is always set to `TRUE`.
 #'
+#' @note Updated 2019-07-29.
 #' @export
 #'
 #' @param X `atomic` or `list`.
@@ -23,8 +24,6 @@
 #'
 #' @examples
 #' bapply(list(a = "example", b = 1), is.character)
-
-## Updated 2019-07-15.
 bapply <- function(X, FUN, ...) {  # nolint
     ## Error on FUN.VALUE and/or USE.NAMES input.
     dots <- list(...)

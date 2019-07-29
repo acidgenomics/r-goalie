@@ -40,6 +40,9 @@ areSetEqual(x, y, .xname = getNameInParent(x),
 \description{
 Set comparisons
 }
+\note{
+Updated 2019-07-29.
+}
 \examples{
 ## TRUE ====
 isSubset(x = "a", y = c("a", "b"))

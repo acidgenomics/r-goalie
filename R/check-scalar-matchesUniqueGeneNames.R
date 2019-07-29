@@ -6,6 +6,7 @@
 #'
 #' @export
 #' @inherit params
+#' @note Updated 2019-07-29.
 #'
 #' @examples
 #' x <- SummarizedExperiment::SummarizedExperiment(
@@ -27,8 +28,6 @@
 #'
 #' ## TRUE ====
 #' matchesUniqueGeneNames(x = x, genes = genes)
-
-## Updated 2019-07-15.
 matchesUniqueGeneNames <- function(x, genes, .xname = getNameInParent(x)) {
     ok <- isS4(x)
     if (!isTRUE(ok)) {

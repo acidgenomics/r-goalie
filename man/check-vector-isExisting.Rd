@@ -51,9 +51,11 @@ Does the requested input exist in the environment?
 }}
 
 \note{
-\code{exists} only supports \code{character(1)}, so we are exporting
-\code{isExisting} as a convenience function to check multiple variables in a
-single call.
+\code{\link[base:exists]{exists()}} only supports \code{character(1)}, so we are
+exporting \code{\link[=isExisting]{isExisting()}} as a convenience function to check multiple
+variables in a single call.
+
+Updated 2019-07-29.
 }
 \examples{
 a <- 1L

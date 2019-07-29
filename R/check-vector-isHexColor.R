@@ -2,6 +2,7 @@
 #'
 #' @name check-vector-isHexColor
 #' @inherit params
+#' @note Updated 2019-07-29.
 #'
 #' @seealso `assertive::is_hex_color()`.
 #'

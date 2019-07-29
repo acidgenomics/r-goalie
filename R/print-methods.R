@@ -1,8 +1,7 @@
 #' Print methods for objects with a cause attribute
-#'
 #' @name print
+#' @note Updated 2019-07-29.
 #' @inheritParams params
-#'
 #' @return Print command and return invisibly.
 NULL
 
