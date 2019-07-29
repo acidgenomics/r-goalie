@@ -1,5 +1,6 @@
 #' Append values to function body
 #'
+#' @note Updated 2019-07-15.
 #' @export
 #'
 #' @param fun `function`.
@@ -21,8 +22,6 @@
 #' body(x)
 #' x <- appendToBody(x, quote(.Deprecated("y")))
 #' body(x)
-
-## Updated 2019-07-15.
 appendToBody <- function(fun, values, after = 1L) {
     stopifnot(
         is.function(fun),

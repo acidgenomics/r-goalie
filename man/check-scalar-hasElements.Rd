@@ -40,6 +40,9 @@ isNonEmpty(x, metric = c("length", "elements"),
 \description{
 Does the input have elements?
 }
+\note{
+Updated 2019-07-29.
+}
 \examples{
 ## TRUE ====
 hasElements("hello", n = 1)

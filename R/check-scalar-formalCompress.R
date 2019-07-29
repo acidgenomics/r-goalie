@@ -2,6 +2,7 @@
 #'
 #' @name check-scalar-formalCompress
 #' @inherit params
+#' @note Updated 2019-07-29.
 #'
 #' @param compress `logical(1)` or `character(1)`.
 #'   These character strings are currently allowed for `save()`:

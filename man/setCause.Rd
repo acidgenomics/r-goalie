@@ -22,6 +22,9 @@ A character vector to set the cause to, when \code{x} is \code{NA}.}
 Sets the \code{cause} \link[base:attributes]{attribute} of an object and returns that
 object.
 }
+\note{
+Updated 2019-07-29.
+}
 \examples{
 setCause(x = FALSE, false = "test")
 }

@@ -25,6 +25,9 @@ hasCols(x, .xname = getNameInParent(x))
 \description{
 Does the input have dimensions?
 }
+\note{
+Updated 2019-07-29.
+}
 \examples{
 ## TRUE ====
 x <- datasets::mtcars

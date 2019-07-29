@@ -19,6 +19,9 @@ allAreAtomic(x, .xname = getNameInParent(x))
 \description{
 Does the input contain elements that are all atomic?
 }
+\note{
+Updated 2019-07-29.
+}
 \examples{
 ## TRUE ====
 allAreAtomic(data.frame(a = "foo", b = "bar"))

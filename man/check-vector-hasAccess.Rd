@@ -37,6 +37,9 @@ Works for either file or directory paths.
 \item \code{allHaveAccess}: Scalar.
 }}
 
+\note{
+Updated 2019-07-29.
+}
 \examples{
 ## TRUE ====
 hasAccess(c("~", "."))

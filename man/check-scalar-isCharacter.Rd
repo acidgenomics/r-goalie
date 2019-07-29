@@ -22,6 +22,9 @@ If set to \code{TRUE}, \code{x} may also be \code{NULL}.}
 \description{
 Does the input contain a (non-empty) character vector?
 }
+\note{
+Updated 2019-07-29.
+}
 \section{Enforced parameters}{
 
 \itemize{

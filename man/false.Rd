@@ -22,6 +22,9 @@ failure message.}
 Always returns the value \code{FALSE}, with a \link{cause}
 \link[base:attributes]{attribute}.
 }
+\note{
+Updated 2019-07-29.
+}
 \seealso{
 \code{assertive.base::false()}.
 }

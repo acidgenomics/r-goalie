@@ -2,6 +2,7 @@
 #'
 #' @name check-scalar-isGGScale
 #' @inherit params
+#' @note Updated 2019-07-29.
 #'
 #' @param scale `character(1)`.
 #'   Type of scale, either `"continuous"` or `"discrete"`.

@@ -28,6 +28,9 @@ Package name.}
 \description{
 Access the data inside an S4 method definition
 }
+\note{
+Updated 2019-07-29.
+}
 \examples{
 ## Function ====
 x <- methodFunction(

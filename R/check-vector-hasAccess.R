@@ -3,6 +3,7 @@
 #' Works for either file or directory paths.
 #'
 #' @name check-vector-hasAccess
+#' @note Updated 2019-07-29.
 #'
 #' @param x `character(1)`.
 #'   File or directory path(s).

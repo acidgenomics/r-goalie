@@ -22,6 +22,9 @@ Object classes.}
 \description{
 Does the input belong to or inherit all of these classes?
 }
+\note{
+Updated 2019-07-29.
+}
 \examples{
 x <- 1L
 

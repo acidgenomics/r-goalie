@@ -33,6 +33,9 @@ Does the input contain a URL?
 \item \code{allAreURLs}: Scalar. Checks that all strings are URLs.
 }}
 
+\note{
+Updated 2019-07-29.
+}
 \examples{
 urls <- c("https://www.r-project.org", "ftp://r-project.org")
 

@@ -8,10 +8,12 @@
 #'
 #' @name check-scalar-hasNonZeroRowsAndCols
 #' @inherit params
+#' @note Updated 2019-07-29.
 #'
 #' @param x Matrix.
 #'   Currently requires a `matrix` or `sparseMatrix` as input.
-## #' @examples
+#'
+#' @examples
 #' ## TRUE ====
 #' x <- matrix(data = seq_len(4), nrow = 2)
 #' print(x)
@@ -43,7 +45,6 @@ NULL
 
 #' @rdname check-scalar-hasNonZeroRowsAndCols
 #' @export
-## Updated 2019-07-15.
 hasNonZeroRowsAndCols <- function(x, .xname = getNameInParent(x)) {
     ok <- isAny(x = x, classes = c("matrix", "sparseMatrix"), .xname = .xname)
     if (!isTRUE(ok)) return(ok)  # nocov

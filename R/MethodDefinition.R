@@ -1,10 +1,10 @@
 #' Access the data inside an S4 method definition
 #'
 #' @name MethodDefinition
+#' @note Updated 2019-07-29.
 #'
 #' @inheritParams methods::selectMethod
 #' @inheritParams methods::setMethod
-#'
 #' @param package `character(1)`.
 #'   Package name.
 #'
@@ -42,6 +42,7 @@ NULL
 
 #' @rdname MethodDefinition
 #' @export
+## Updated 2019-07-29.
 methodFunction <- function(f, signature, package) {
     assert(isString(package))
     envir <- asNamespace(package)
@@ -102,6 +103,7 @@ methodFunction <- function(f, signature, package) {
 
 #' @rdname MethodDefinition
 #' @export
+## Updated 2019-07-29.
 methodFormals <- function(f, signature, package) {
     def <- methodFunction(
         f = f,
@@ -113,6 +115,7 @@ methodFormals <- function(f, signature, package) {
 
 
 
+## Updated 2019-07-29.
 .extractLocal <- function(definition) {
     assert(.hasLocal(definition))
     body <- body(definition)
@@ -123,6 +126,7 @@ methodFormals <- function(f, signature, package) {
 
 
 
+## Updated 2019-07-29.
 .hasLocal <- function(definition) {
     assert(
         is(definition, "MethodDefinition"),

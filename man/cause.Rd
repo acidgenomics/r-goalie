@@ -25,6 +25,9 @@ Cause attribute.
 Gets or sets the \link{cause} (of failure) \link[base:attributes]{attribute} of a
 variable.
 }
+\note{
+Updated 2019-07-29.
+}
 \examples{
 ## Scalar cause.
 x <- isFlag("xxx")

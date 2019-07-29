@@ -4,6 +4,8 @@
 #' variable.
 #'
 #' @name cause
+#' @note Updated 2019-07-29.
+#'
 #' @inheritParams params
 #'
 #' @return `character(1)`.
