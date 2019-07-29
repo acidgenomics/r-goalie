@@ -33,6 +33,9 @@ Check for valid input of either explicit (e.g. \code{1L}) and/or implict
 \item \code{isInt}: Scalar.
 }}
 
+\note{
+Updated 2019-07-29.
+}
 \examples{
 ## TRUE ====
 isIntegerish(seq_len(2L))

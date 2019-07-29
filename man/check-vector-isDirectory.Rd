@@ -49,6 +49,9 @@ Does the input contain a directory?
 \item \code{allAreDirs}: Short alias for \code{\link[=allAreDirectories]{allAreDirectories()}}.
 }}
 
+\note{
+Updated 2019-07-29.
+}
 \examples{
 ## TRUE ====
 isDirectory(c("~", "~"))

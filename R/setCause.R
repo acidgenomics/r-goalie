@@ -3,9 +3,10 @@
 #' Sets the `cause` [attribute][base::attributes] of an object and returns that
 #' object.
 #'
+#' @note Updated 2019-07-29.
 #' @export
-#' @inheritParams params
 #'
+#' @inheritParams params
 #' @param false `character`.
 #'   A character vector to set the cause to, when `x` is `FALSE`.
 #' @param missing `character`.
@@ -20,8 +21,6 @@
 #'
 #' @examples
 #' setCause(x = FALSE, false = "test")
-
-## Updated 2019-07-15.
 setCause <- function(
     x,
     false = "false",

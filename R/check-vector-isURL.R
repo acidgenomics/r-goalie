@@ -2,6 +2,7 @@
 #'
 #' @name check-vector-isURL
 #' @inherit params
+#' @note Updated 2019-07-29.
 #'
 #' @return `logical`.
 #'

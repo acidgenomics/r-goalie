@@ -33,6 +33,9 @@ If any of the expressions defined in \code{...} are not \href{base::all}{all} \c
 \code{\link[base:stop]{stop}} is called, producing an error message indicating the
 first expression which was not \code{TRUE}.
 }
+\note{
+Updated 2019-07-29.
+}
 \examples{
 assert(
     is.atomic("example"),

@@ -31,6 +31,9 @@ the current recommended practice for defining S4 validity methods inside of a
 the methods package, specifically \code{\link[methods:validObject]{validObject()}} for
 detailed information on S4 validity methods.
 }
+\note{
+Updated 2019-07-29.
+}
 \examples{
 ## TRUE ====
 validate(

@@ -19,6 +19,9 @@ These character strings are currently allowed for \code{save()}:
 \description{
 Check the \code{compress} formal argument
 }
+\note{
+Updated 2019-07-29.
+}
 \examples{
 ## TRUE ====
 formalCompress("gzip")

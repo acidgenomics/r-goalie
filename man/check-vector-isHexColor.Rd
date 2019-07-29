@@ -29,6 +29,9 @@ Does the input contain hexadecimal colors?
 \item \code{allAreHexColors}: Scalar.
 }}
 
+\note{
+Updated 2019-07-29.
+}
 \examples{
 ## TRUE ====
 x <- viridis::viridis(n = 2L)

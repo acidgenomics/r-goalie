@@ -61,6 +61,9 @@ Does the string match a pattern?
 \item \code{allAreNotMatchingRegex}: Scalar.
 }}
 
+\note{
+Updated 2019-07-29.
+}
 \examples{
 ## TRUE ====
 isMatchingRegex(x = "foobar", pattern = "^f")

@@ -148,6 +148,9 @@ Is the input in range?
 \item \code{allAreProportion}: Scalar.
 }}
 
+\note{
+Updated 2019-07-29.
+}
 \section{Intervals}{
 
 \itemize{

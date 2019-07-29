@@ -2,6 +2,7 @@
 #'
 #' @name check-scalar-hasLength
 #' @inherit params
+#' @note Updated 2019-07-29.
 #'
 #' @param n `NULL` or `integer`.
 #'   If `NULL` (default), the function will check to see if the input length is

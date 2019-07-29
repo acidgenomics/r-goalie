@@ -23,6 +23,9 @@ If set to \code{TRUE}, \code{x} may also be \code{NULL}.}
 This assert check is intended primarily to check for RColorBrewer or viridis
 hexadecimal color value return.
 }
+\note{
+Updated 2019-07-29.
+}
 \examples{
 ## TRUE ====
 x <- viridis::viridis

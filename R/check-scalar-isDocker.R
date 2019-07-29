@@ -6,6 +6,7 @@
 #'
 #' @name check-scalar-isDocker
 #' @inherit params
+#' @note Updated 2019-07-29.
 #'
 #' @examples
 #' isDocker()
