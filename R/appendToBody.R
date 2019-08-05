@@ -3,12 +3,12 @@
 #' @note Updated 2019-07-15.
 #' @export
 #'
-#' @param fun `function`.
+#' @inheritParams acidroxygen::params
 #' @param values `call`.
 #'   Quoted values (i.e. call) to slot in the function body.
 #' @param after `integer(1)`.
 #'   Where to append in the `body`.
-#'   The default of `1` places directly after the opening curly bracket.
+#'   The default of `1L` places directly after the opening curly bracket.
 #'
 #' @seealso [Stack Overflow](https://stackoverflow.com/questions/38732663)
 #'
