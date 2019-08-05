@@ -8,8 +8,10 @@
 #' rows.
 #'
 #' @name check-scalar-hasRownames
-#' @inherit params
 #' @note Updated 2019-07-29.
+#'
+#' @inherit check
+#' @inheritParams acidroxygen::params
 #'
 #' @examples
 #' ## TRUE ====
@@ -39,7 +41,6 @@ NULL
 
 #' @rdname check-scalar-hasRownames
 #' @export
-## Updated 2019-07-15.
 hasRownames <- function(x, .xname = getNameInParent(x)) {
     ## Classes that extend data.frame but intentionally don't support row names.
     if (inherits(x, "data.table")) {
