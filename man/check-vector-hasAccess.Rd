@@ -26,7 +26,7 @@ Write and executable status cannot be checked on Windows.}
 }
 \value{
 \code{TRUE} on success;
-\code{FALSE} on failure, with \code{cause} \link[base:attributes]{attribute} set.
+\code{FALSE} on failure, with cause set.
 }
 \description{
 Works for either file or directory paths.

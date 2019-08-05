@@ -5,5 +5,5 @@
 #'
 #' @return
 #' `TRUE` on success;
-#' `FALSE` on failure, with `cause` [attribute][base::attributes] set.
+#' `FALSE` on failure, with cause set.
 NULL
