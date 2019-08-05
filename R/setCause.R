@@ -6,7 +6,7 @@
 #' @note Updated 2019-07-29.
 #' @export
 #'
-#' @inheritParams params
+#' @inheritParams acidroxygen::params
 #' @param false `character`.
 #'   A character vector to set the cause to, when `x` is `FALSE`.
 #' @param missing `character`.
