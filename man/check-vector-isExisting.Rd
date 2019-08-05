@@ -25,12 +25,13 @@ allAreNonExisting(x, envir = parent.frame(), inherits = FALSE,
 Variable names to check in \code{environment}.}
 
 \item{envir}{\code{environment}.
-Environment.}
+Environment to use for assignment.}
 
 \item{inherits}{\code{logical(1)}.
 Should the enclosing frames of the \code{environment} be searched?}
 
-\item{.xname}{\emph{Not intended to be used directly.}}
+\item{.xname}{Name of object defined in \code{x}.
+\emph{Not intended to be used directly.}}
 }
 \value{
 \code{TRUE} on success;

@@ -9,7 +9,7 @@ formalCompress(compress)
 }
 \arguments{
 \item{compress}{\code{logical(1)} or \code{character(1)}.
-These character strings are currently allowed for \code{save()}:
+These character strings are currently allowed for \code{\link[base:save]{save()}}:
 \code{"gzip"}, \code{"bzip2"}, or \code{"xz"}.}
 }
 \value{

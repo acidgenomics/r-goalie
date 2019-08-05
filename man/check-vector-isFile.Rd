@@ -20,7 +20,8 @@ allAreFiles(x)
 If set to \code{TRUE}, \code{x} may also be \code{NULL}.}
 }
 \value{
-\code{logical}.
+\code{TRUE} on success;
+\code{FALSE} on failure, with \code{cause} \link[base:attributes]{attribute} set.
 }
 \description{
 Does the input contain a file?
@@ -48,10 +49,8 @@ unlink(x)
 isFile(c("~", "."))
 }
 \seealso{
-\code{R.utils::isFile()}.\preformatted{getS3method(
-    f = "isFile",
-    class = "default",
-    envir = asNamespace("R.utils")
-)
+\itemize{
+\item \code{file.exists()}.
+\item \code{R.utils::isFile()}.
 }
 }
