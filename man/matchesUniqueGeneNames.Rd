@@ -19,7 +19,7 @@ symbols (e.g. "TSPN6"), if possible.}
 }
 \value{
 \code{TRUE} on success;
-\code{FALSE} on failure, with \code{cause} \link[base:attributes]{attribute} set.
+\code{FALSE} on failure, with cause set.
 }
 \description{
 This assert check determines if a user-defined gene name query is using only

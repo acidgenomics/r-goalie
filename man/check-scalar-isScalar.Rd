@@ -52,7 +52,7 @@ If set to \code{TRUE}, \code{x} may also be \code{NULL}.}
 }
 \value{
 \code{TRUE} on success;
-\code{FALSE} on failure, with \code{cause} \link[base:attributes]{attribute} set.
+\code{FALSE} on failure, with cause set.
 }
 \description{
 Scalar represents a length of 1.
