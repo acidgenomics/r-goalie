@@ -5,8 +5,10 @@
 #' particularly when performing single-cell RNA-seq marker analysis.
 #'
 #' @export
-#' @inherit params
 #' @note Updated 2019-07-29.
+#'
+#' @inherit check
+#' @inheritParams acidroxygen::params
 #'
 #' @examples
 #' x <- SummarizedExperiment::SummarizedExperiment(

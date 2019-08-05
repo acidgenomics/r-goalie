@@ -7,11 +7,10 @@
 #' heatmap or applying a log transformation, for example.
 #'
 #' @name check-scalar-hasNonZeroRowsAndCols
-#' @inherit params
 #' @note Updated 2019-07-29.
 #'
-#' @param x Matrix.
-#'   Currently requires a `matrix` or `sparseMatrix` as input.
+#' @inherit check
+#' @inheritParams acidroxygen::params
 #'
 #' @examples
 #' ## TRUE ====
@@ -46,7 +45,7 @@ NULL
 #' @rdname check-scalar-hasNonZeroRowsAndCols
 #' @export
 hasNonZeroRowsAndCols <- function(x, .xname = getNameInParent(x)) {
-    ok <- isAny(x = x, classes = c("matrix", "sparseMatrix"), .xname = .xname)
+    ok <- isAny(x = x, classes = c("matrix", "Matrix"), .xname = .xname)
     if (!isTRUE(ok)) return(ok)  # nocov
 
     ok <- hasRows(x, .xname = .xname)

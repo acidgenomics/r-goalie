@@ -3,8 +3,10 @@
 #' @note Requires curl package to be installed.
 #'
 #' @name check-scalar-hasInternet
-#' @inherit params
 #' @note Updated 2019-07-29.
+#'
+#' @inherit check
+#' @inheritParams acidroxygen::params
 #'
 #' @examples
 #' hasInternet()
@@ -14,7 +16,6 @@ NULL
 
 #' @rdname check-scalar-hasInternet
 #' @export
-## Updated 2019-07-15.
 hasInternet <- function() {
     requireNamespace("curl", quietly = TRUE)
     ok <- tryCatch(

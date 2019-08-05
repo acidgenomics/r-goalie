@@ -14,7 +14,7 @@ Quoted values (i.e. call) to slot in the function body.}
 
 \item{after}{\code{integer(1)}.
 Where to append in the \code{body}.
-The default of \code{1} places directly after the opening curly bracket.}
+The default of \code{1L} places directly after the opening curly bracket.}
 }
 \value{
 \code{function}.

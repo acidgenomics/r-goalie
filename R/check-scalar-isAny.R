@@ -1,8 +1,10 @@
 #' Does the object belong to or inherit any of these classes?
 #'
 #' @name check-scalar-isAny
-#' @inherit params
 #' @note Updated 2019-07-29.
+#'
+#' @inherit check
+#' @inheritParams acidroxygen::params
 #'
 #' @examples
 #' x <- 1L
@@ -20,7 +22,6 @@ NULL
 
 #' @rdname check-scalar-isAny
 #' @export
-## Updated 2019-07-15.
 isAny <- function(x, classes, .xname = getNameInParent(x)) {
     ok <- isCharacter(classes)
     if (!isTRUE(ok)) {

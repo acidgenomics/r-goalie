@@ -14,7 +14,8 @@ hasLength(x, n = NULL, .xname = getNameInParent(x))
 If \code{NULL} (default), the function will check to see if the input length is
 non-zero.}
 
-\item{.xname}{\emph{Not intended to be used directly.}}
+\item{.xname}{Name of object defined in \code{x}.
+\emph{Not intended to be used directly.}}
 }
 \value{
 \code{TRUE} on success;

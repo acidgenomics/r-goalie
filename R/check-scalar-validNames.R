@@ -1,8 +1,10 @@
 #' Are these valid names?
 #'
 #' @name check-scalar-validNames
-#' @inherit params
 #' @note Updated 2019-07-29.
+#'
+#' @inherit check
+#' @inheritParams acidroxygen::params
 #'
 #' @seealso
 #' - `make.names()`.
@@ -27,7 +29,6 @@ NULL
 
 #' @rdname check-scalar-validNames
 #' @export
-## Updated 2019-07-15.
 validNames <- function(x, .xname = getNameInParent(x)) {
     ok <- isCharacter(x, .xname = .xname)
     if (!isTRUE(ok)) return(ok)  # nocov

@@ -10,8 +10,10 @@
 #' columns.
 #'
 #' @name check-scalar-hasUniqueCols
-#' @inherit params
 #' @note Updated 2019-07-29.
+#'
+#' @inherit check
+#' @inheritParams acidroxygen::params
 #'
 #' @examples
 #' ## TRUE ====
@@ -27,7 +29,6 @@ NULL
 
 #' @rdname check-scalar-hasUniqueCols
 #' @export
-## Updated 2019-07-15.
 hasUniqueCols <- function(x, .xname = getNameInParent(x)) {
     ## Coerce SummarizedExperiment to (assay) matrix, if necessary.
     if (is(x, "SummarizedExperiment")) {

@@ -34,7 +34,7 @@ test_that("Require logical input", {
 
 test_that("cause error check", {
     expect_error(
-        object = .print.goalie.vector("XXX"),
+        object = .printGoalieVector("XXX"),
         regexp = "cause error."
     )
 })
@@ -43,11 +43,11 @@ test_that("ignoreNA argument", {
     x <- NA
     cause(x) <- "XXX"
     expect_identical(
-        capture.output(.print.goalie.vector(x, ignoreNA = FALSE))[[1L]],
+        capture.output(.printGoalieVector(x, ignoreNA = FALSE))[[1L]],
         "There was 1 failure:"
     )
     expect_identical(
-        capture.output(.print.goalie.vector(x, ignoreNA = TRUE))[[1L]],
+        capture.output(.printGoalieVector(x, ignoreNA = TRUE))[[1L]],
         "There were 0 failures:"
     )
 })

@@ -4,8 +4,10 @@
 #' (e.g. `1`) `integer`.
 #'
 #' @name check-vector-isIntegerish
-#' @inherit params
 #' @note Updated 2019-07-29.
+#'
+#' @inherit check
+#' @inheritParams acidroxygen::params
 #'
 #' @seealso
 #' - `isInt()` or `isScalarIntegerish()` for scalar.
@@ -26,7 +28,6 @@ NULL
 ## Vector ======================================================================
 #' @describeIn check-vector-isIntegerish Vectorized.
 #' @export
-## Updated 2019-07-15.
 isIntegerish <- function(x, .xname = getNameInParent(x)) {
     ## Check for numeric vector.
     if (!is.numeric(x)) {
@@ -67,7 +68,6 @@ isIntegerish <- function(x, .xname = getNameInParent(x)) {
 ## Scalar ======================================================================
 #' @describeIn check-vector-isIntegerish Scalar.
 #' @export
-## Updated 2019-07-15.
 isInt <- function(x, nullOK = FALSE) {
     if (isTRUE(nullOK) && is.null(x)) return(TRUE)
     isScalarIntegerish(x)

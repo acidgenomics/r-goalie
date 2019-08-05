@@ -27,11 +27,14 @@ isNonEmpty(x, metric = c("length", "elements"),
 \arguments{
 \item{x}{Object.}
 
-\item{metric}{XXX.}
+\item{metric}{\code{character(1)}.
+Metric type, either \code{length} or \code{elements}.}
 
-\item{.xname}{\emph{Not intended to be used directly.}}
+\item{.xname}{Name of object defined in \code{x}.
+\emph{Not intended to be used directly.}}
 
-\item{n}{XXX.}
+\item{n}{\code{integer(1)}.
+Number to include.}
 }
 \value{
 \code{TRUE} on success;

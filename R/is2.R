@@ -9,7 +9,7 @@
 #' @note Updated 2019-07-29.
 #' @export
 #'
-#' @inheritParams params
+#' @inheritParams acidroxygen::params
 #'
 #' @seealso
 #' - `assertive.base::is2()`.

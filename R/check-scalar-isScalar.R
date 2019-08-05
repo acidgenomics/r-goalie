@@ -3,8 +3,10 @@
 #' Scalar represents a length of 1.
 #'
 #' @name check-scalar-isScalar
-#' @inherit params
 #' @note Updated 2019-07-29.
+#'
+#' @inherit check
+#' @inheritParams acidroxygen::params
 #'
 #' @seealso
 #' - `help(topic = "scalar-type-predicates", package = "rlang")`.
@@ -33,7 +35,6 @@ NULL
 
 #' @rdname check-scalar-isScalar
 #' @export
-## Updated 2019-07-15.
 isScalar <- function(x, .xname = getNameInParent(x)) {
     ok <- length(x) == 1L
     if (!isTRUE(ok)) {
@@ -47,7 +48,6 @@ isScalar <- function(x, .xname = getNameInParent(x)) {
 
 #' @rdname check-scalar-isScalar
 #' @export
-## Updated 2019-07-15.
 isScalarList <- function(x, .xname = getNameInParent(x)) {
     if (!isTRUE(ok <- isScalar(x))) return(ok)
 
@@ -63,7 +63,6 @@ isScalarList <- function(x, .xname = getNameInParent(x)) {
 
 #' @rdname check-scalar-isScalar
 #' @export
-## Updated 2019-07-15.
 isScalarAtomic <- function(x, .xname = getNameInParent(x)) {
     if (!isTRUE(ok <- isScalar(x))) return(ok)
 
@@ -79,7 +78,6 @@ isScalarAtomic <- function(x, .xname = getNameInParent(x)) {
 
 #' @rdname check-scalar-isScalar
 #' @export
-## Updated 2019-07-15.
 isScalarVector <- function(x, .xname = getNameInParent(x)) {
     if (!isTRUE(ok <- isScalar(x))) return(ok)
 
@@ -95,7 +93,6 @@ isScalarVector <- function(x, .xname = getNameInParent(x)) {
 
 #' @rdname check-scalar-isScalar
 #' @export
-## Updated 2019-07-15.
 isScalarNumeric <- function(x, .xname = getNameInParent(x)) {
     if (!isTRUE(ok <- isScalar(x))) return(ok)
 
@@ -111,7 +108,6 @@ isScalarNumeric <- function(x, .xname = getNameInParent(x)) {
 
 #' @rdname check-scalar-isScalar
 #' @export
-## Updated 2019-07-15.
 isScalarInteger <- function(x, .xname = getNameInParent(x)) {
     if (!isTRUE(ok <- isScalar(x))) return(ok)
 
@@ -127,7 +123,6 @@ isScalarInteger <- function(x, .xname = getNameInParent(x)) {
 
 #' @rdname check-scalar-isScalar
 #' @export
-## Updated 2019-07-15.
 isScalarIntegerish <- function(x) {
     if (!isTRUE(ok <- isScalar(x))) return(ok)
     if (!isTRUE(ok <- isIntegerish(x))) return(ok)
@@ -138,7 +133,6 @@ isScalarIntegerish <- function(x) {
 
 #' @rdname check-scalar-isScalar
 #' @export
-## Updated 2019-07-15.
 isScalarDouble <- function(x, .xname = getNameInParent(x)) {
     if (!isTRUE(ok <- isScalar(x))) return(ok)
 
@@ -154,7 +148,6 @@ isScalarDouble <- function(x, .xname = getNameInParent(x)) {
 
 #' @rdname check-scalar-isScalar
 #' @export
-## Updated 2019-07-15.
 isScalarCharacter <- function(x, .xname = getNameInParent(x)) {
     if (!isTRUE(ok <- isScalar(x))) return(ok)
 
@@ -170,7 +163,6 @@ isScalarCharacter <- function(x, .xname = getNameInParent(x)) {
 
 #' @rdname check-scalar-isScalar
 #' @export
-## Updated 2019-07-15.
 isScalarLogical <- function(x, .xname = getNameInParent(x)) {
     if (!isTRUE(ok <- isScalar(x))) return(ok)
 
@@ -186,7 +178,6 @@ isScalarLogical <- function(x, .xname = getNameInParent(x)) {
 
 #' @rdname check-scalar-isScalar
 #' @export
-## Updated 2019-07-15.
 isNonScalar <- function(x, .xname = getNameInParent(x)) {
     ok <- as.logical(!isScalar(x))
     if (!isTRUE(ok)) {

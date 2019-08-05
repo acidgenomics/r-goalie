@@ -1,9 +1,10 @@
 #' Does the input have a non-zero or defined length?
 #'
 #' @name check-scalar-hasLength
-#' @inherit params
 #' @note Updated 2019-07-29.
 #'
+#' @inherit check
+#' @inheritParams acidroxygen::params
 #' @param n `NULL` or `integer`.
 #'   If `NULL` (default), the function will check to see if the input length is
 #'   non-zero.
@@ -25,7 +26,6 @@ NULL
 
 #' @rdname check-scalar-hasLength
 #' @export
-## Updated 2019-07-15.
 hasLength <- function(x, n = NULL, .xname = getNameInParent(x)) {
     length <- length(x)
 
