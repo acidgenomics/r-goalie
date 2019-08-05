@@ -10,16 +10,11 @@
 #' @note Updated 2019-07-29.
 #' @export
 #'
+#' @inheritParams acidroxygen::params
 #' @param ... Any number of R expressions that return `logical(1)`, each of
 #'   which should evaluate to `TRUE`. Rather than combining expressions with
 #'   `&&`, separate them by commas so that better error messages can be
 #'   generated.
-#' @param msg `NULL` or `character(1)`.
-#'   Custom message to return on the event of any check failure.
-#' @param traceback `logical(1)`.
-#'   Include traceback in error message.
-#'   See [`traceback()`][base::traceback] for details.
-#'  `rlang::entrace()` also works nicely and can be set in `.Rprofile`.
 #'
 #' @seealso
 #' - `stopifnot()`.

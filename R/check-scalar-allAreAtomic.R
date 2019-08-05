@@ -1,8 +1,10 @@
 #' Does the input contain elements that are all atomic?
 #'
 #' @name check-scalar-allAreAtomic
-#' @inherit params
+#' @inherit check
 #' @note Updated 2019-07-29.
+#'
+#' @inheritParams acidroxygen::params
 #'
 #' @seealso `is.atomic()`.
 #'
