@@ -1,8 +1,10 @@
 #' Does the input contain hexadecimal colors?
 #'
 #' @name check-vector-isHexColor
-#' @inherit params
 #' @note Updated 2019-07-29.
+#'
+#' @inherit check
+#' @inheritParams acidroxygen::params
 #'
 #' @seealso `assertive::is_hex_color()`.
 #'
@@ -24,7 +26,6 @@ NULL
 ## Vector ======================================================================
 #' @describeIn check-vector-isHexColor Vectorized.
 #' @export
-## Updated 2019-07-15.
 isHexColor <- function(x, .xname = getNameInParent(x)) {
     ok <- isCharacter(x = x, .xname = .xname)
     if (!isTRUE(ok)) return(ok)
@@ -40,7 +41,6 @@ isHexColor <- function(x, .xname = getNameInParent(x)) {
 ## Scalar ======================================================================
 #' @describeIn check-vector-isHexColor Scalar.
 #' @export
-## Updated 2019-07-15.
 allAreHexColors <- function(x, .xname = getNameInParent(x)) {
     ok <- isHexColor(x = x, .xname = .xname)
     if (!all(ok)) return(falseFromVector(ok))

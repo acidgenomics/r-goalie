@@ -1,8 +1,10 @@
 #' Does the input contain a (non-empty) character string?
 #'
 #' @name check-scalar-isString
-#' @inherit params
 #' @note Updated 2019-07-29.
+#'
+#' @inherit check
+#' @inheritParams acidroxygen::params
 #'
 #' @examples
 #' ## TRUE ====
@@ -18,7 +20,6 @@ NULL
 
 #' @rdname check-scalar-isString
 #' @export
-## Updated 2019-07-15.
 isString <- function(
     x,
     nullOK = FALSE,

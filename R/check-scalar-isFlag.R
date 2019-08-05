@@ -1,8 +1,10 @@
 #' Does the input contain a boolean flag?
 #'
 #' @name check-scalar-isFlag
-#' @inherit params
 #' @note Updated 2019-07-29.
+#'
+#' @inherit check
+#' @inheritParams acidroxygen::params
 #'
 #' @examples
 #' ## TRUE ====
@@ -19,7 +21,6 @@ NULL
 
 #' @rdname check-scalar-isFlag
 #' @export
-## Updated 2019-07-15.
 isFlag <- function(x, .xname = getNameInParent(x)) {
     ok <- isScalarLogical(x)
     if (!isTRUE(ok)) {

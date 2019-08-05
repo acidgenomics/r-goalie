@@ -1,21 +1,14 @@
 #' Does the input contain a directory?
 #'
 #' @name check-vector-isDirectory
-#' @inherit params
-#' @note Updated 2019-07-29.
+#' @note Updated 2019-08-05.
 #'
-#' @return `logical`.
+#' @inherit check
+#' @inheritParams acidroxygen::params
 #'
 #' @seealso
-#' `R.utils::isDirectory()`.
-#'
-#' ```
-#' getS3method(
-#'     f = "isDirectory",
-#'     class = "default",
-#'     envir = asNamespace("R.utils")
-#' )
-#' ```
+#' - `dir.exists()`.
+#' - `R.utils::isDirectory()`.
 #'
 #' @examples
 #' ## TRUE ====
@@ -31,7 +24,6 @@ NULL
 ## Vector ======================================================================
 #' @describeIn check-vector-isDirectory Vectorized.
 #' @export
-## Updated 2019-07-15.
 isDirectory <- function(x) {
     ok <- isCharacter(x)
     if (!isTRUE(ok)) return(ok)
@@ -45,7 +37,6 @@ isDirectory <- function(x) {
 ## Scalar ======================================================================
 #' @describeIn check-vector-isDirectory Scalar.
 #' @export
-## Updated 2019-07-15.
 isADirectory <- function(x, nullOK = FALSE) {
     ## Conditionally allow NULL.
     if (isTRUE(nullOK) && is.null(x)) {
@@ -63,7 +54,6 @@ isADirectory <- function(x, nullOK = FALSE) {
 
 #' @describeIn check-vector-isDirectory Scalar.
 #' @export
-## Updated 2019-07-15.
 allAreDirectories <- function(x) {
     ok <- isDirectory(x)
     if (!all(ok)) return(falseFromVector(ok))
