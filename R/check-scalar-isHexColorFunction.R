@@ -4,8 +4,10 @@
 #' hexadecimal color value return.
 #'
 #' @name check-scalar-isHexColorFunction
-#' @inherit params
 #' @note Updated 2019-07-29.
+#'
+#' @inherit check
+#' @inheritParams acidroxygen::params
 #'
 #' @seealso RColorBrewer, viridis packages.
 #'
@@ -23,7 +25,6 @@ NULL
 
 #' @rdname check-scalar-isHexColorFunction
 #' @export
-## Updated 2019-07-15.
 isHexColorFunction <- function(
     x,
     nullOK = FALSE,

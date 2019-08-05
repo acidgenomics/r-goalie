@@ -5,6 +5,9 @@
 #' @name check-vector-hasAccess
 #' @note Updated 2019-07-29.
 #'
+#' @inherit check
+#' @inheritParams acidroxygen::params
+#'
 #' @param x `character(1)`.
 #'   File or directory path(s).
 #' @param access `character(1)`.
@@ -19,8 +22,6 @@
 #' @seealso
 #' - `file.access()`.
 #' - `checkmate::checkAccess()`.
-#'
-#' @return `logical`.
 #'
 #' @examples
 #' ## TRUE ====

@@ -5,8 +5,10 @@
 #' Is the R session running inside Docker?
 #'
 #' @name check-scalar-isDocker
-#' @inherit params
 #' @note Updated 2019-07-29.
+#'
+#' @inherit check
+#' @inheritParams acidroxygen::params
 #'
 #' @examples
 #' isDocker()
@@ -27,8 +29,6 @@ isDocker <- function() {
         false("Docker image not detected.")
     }
 }
-
-
 
 
 
