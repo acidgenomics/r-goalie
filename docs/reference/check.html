@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Parameters — params • goalie</title>
+<title>Assert check — check • goalie</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -34,9 +34,9 @@
 
   <link href="../extra.css" rel="stylesheet">
   
-<meta property="og:title" content="Parameters — params" />
+<meta property="og:title" content="Assert check — check" />
 
-<meta property="og:description" content="Parameters" />
+<meta property="og:description" content="Assert check" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -68,7 +68,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">goalie</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.1</span>
       </span>
     </div>
 
@@ -111,116 +111,18 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Parameters</h1>
-    <small class="dont-index">Source: <a href='https://github.com/acidgenomics/goalie/blob/master/R/params.R'><code>R/params.R</code></a></small>
-    <div class="hidden name"><code>params.Rd</code></div>
+    <h1>Assert check</h1>
+    <small class="dont-index">Source: <a href='https://github.com/acidgenomics/goalie/blob/master/R/check.R'><code>R/check.R</code></a></small>
+    <div class="hidden name"><code>check.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Parameters</p>
+    <p>Assert check</p>
     
     </div>
 
-    
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>class</th>
-      <td><p><code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code>.
-Object class.</p></td>
-    </tr>
-    <tr>
-      <th>classes</th>
-      <td><p><code>character</code>.
-Object classes.</p></td>
-    </tr>
-    <tr>
-      <th>envir</th>
-      <td><p><code>environment</code>.
-Environment.</p></td>
-    </tr>
-    <tr>
-      <th>genes</th>
-      <td><p><code>character</code>.
-Genes.</p></td>
-    </tr>
-    <tr>
-      <th>inherits</th>
-      <td><p><code><a href='https://rdrr.io/r/base/logical.html'>logical(1)</a></code>.
-Should the enclosing frames of the <code>environment</code> be searched?</p></td>
-    </tr>
-    <tr>
-      <th>lower</th>
-      <td><p><code><a href='https://rdrr.io/r/base/numeric.html'>numeric(1)</a></code>.
-Lower boundary.</p></td>
-    </tr>
-    <tr>
-      <th>metric</th>
-      <td><p>XXX.</p></td>
-    </tr>
-    <tr>
-      <th>n</th>
-      <td><p>XXX.</p></td>
-    </tr>
-    <tr>
-      <th>nullOK</th>
-      <td><p><code><a href='https://rdrr.io/r/base/logical.html'>logical(1)</a></code>.
-If set to <code>TRUE</code>, <code>x</code> may also be <code>NULL</code>.</p></td>
-    </tr>
-    <tr>
-      <th>object</th>
-      <td><p>Object.</p></td>
-    </tr>
-    <tr>
-      <th>pattern</th>
-      <td><p><code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code>.
-Pattern to use for matching.</p></td>
-    </tr>
-    <tr>
-      <th>return</th>
-      <td><p><code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code>.
-Return type. Uses <a href='https://rdrr.io/r/base/match.arg.html'>match.arg()</a> internally and defaults to
-the first argument in the <code>character</code> vector.</p></td>
-    </tr>
-    <tr>
-      <th>upper</th>
-      <td><p><code><a href='https://rdrr.io/r/base/numeric.html'>numeric(1)</a></code>.
-Upper boundary.</p></td>
-    </tr>
-    <tr>
-      <th>value</th>
-      <td><p>Value.</p></td>
-    </tr>
-    <tr>
-      <th>verbose</th>
-      <td><p><code><a href='https://rdrr.io/r/base/logical.html'>logical(1)</a></code>.
-Run the function with verbose messages?
-<em>It is only recommended to enable this when debugging.</em></p></td>
-    </tr>
-    <tr>
-      <th>x</th>
-      <td><p>Object.</p></td>
-    </tr>
-    <tr>
-      <th>y</th>
-      <td><p>Secondary object.</p></td>
-    </tr>
-    <tr>
-      <th>.xname</th>
-      <td><p><em>Not intended to be used directly.</em></p></td>
-    </tr>
-    <tr>
-      <th>.yname</th>
-      <td><p><em>Not intended to be used directly.</em></p></td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td><p>Additional arguments.</p></td>
-    </tr>
-    </table>
-    
+        
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p><code>TRUE</code> on success;
@@ -231,7 +133,6 @@ Run the function with verbose messages?
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
           </ul>
