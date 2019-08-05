@@ -1,8 +1,10 @@
 #' Does the input have names?
 #'
 #' @name check-scalar-hasNames
-#' @inherit params
 #' @note Updated 2019-07-29.
+#'
+#' @inherit check
+#' @inheritParams acidroxygen::params
 #'
 #' @seealso `assertive.properties::has_names()`.
 #'
