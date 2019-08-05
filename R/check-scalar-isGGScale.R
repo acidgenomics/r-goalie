@@ -1,14 +1,17 @@
 #' Does the input contain a ggplot2 scale?
 #'
 #' @name check-scalar-isGGScale
-#' @inherit params
 #' @note Updated 2019-07-29.
+#'
+#' @inherit check
+#' @inheritParams acidroxygen::params
 #'
 #' @param scale `character(1)`.
 #'   Type of scale, either `"continuous"` or `"discrete"`.
 #' @param aes `character(1)`.
-#'   Aesthetic mapping, either `"colour"` or `"fill"`. Note that ggplot2 prefers
-#'   British spelling, so we're enforcing that convention here.
+#'   Aesthetic mapping, either `"colour"` or `"fill"`.
+#'   Note that ggplot2 prefers British spelling, so we're enforcing that
+#'   convention here.
 #'
 #' @examples
 #' library(ggplot2)
@@ -29,6 +32,7 @@
 #' isGGScale(x = colour_d, scale = "discrete", aes = "colour")
 #' isGGScale(x = fill_c, scale = "continuous", aes = "fill")
 #' isGGScale(x = fill_d, scale = "discrete", aes = "fill")
+NULL
 
 
 

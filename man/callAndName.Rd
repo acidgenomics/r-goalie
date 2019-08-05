@@ -11,7 +11,7 @@ callAndName(fun, x, ...)
 
 \item{x}{The first input to \code{fun}.}
 
-\item{...}{Additional arguments passed to \code{fun}.}
+\item{...}{Additional arguments passed to function defined in \code{fun}.}
 }
 \value{
 The result of \code{fun(x, ...)}, with the names given by the argument

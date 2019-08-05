@@ -7,7 +7,7 @@
 #' @export
 #'
 #' @inheritParams base::sys.call
-#' @inheritParams params
+#' @inheritParams acidroxygen::params
 #'
 #' @return
 #' - `call`: `call`. Matched call.

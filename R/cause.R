@@ -6,7 +6,7 @@
 #' @name cause
 #' @note Updated 2019-07-29.
 #'
-#' @inheritParams params
+#' @inheritParams acidroxygen::params
 #'
 #' @return `character(1)`.
 #' Cause attribute.

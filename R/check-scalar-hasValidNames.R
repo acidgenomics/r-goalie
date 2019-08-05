@@ -1,8 +1,10 @@
 #' Does the input object have syntactically valid names?
 #'
 #' @name check-scalar-hasValidNames
-#' @inherit params
 #' @note Updated 2019-07-29.
+#'
+#' @inherit check
+#' @inheritParams acidroxygen::params
 #'
 #' @seealso `validNames()`.
 #'
@@ -35,7 +37,6 @@ NULL
 
 #' @rdname check-scalar-hasValidNames
 #' @export
-## Updated 2019-07-29.
 hasValidNames <- function(x, .xname = getNameInParent(x)) {
     names <- tryCatch(
         expr = names(x),
@@ -59,7 +60,6 @@ hasValidNames <- function(x, .xname = getNameInParent(x)) {
 
 #' @rdname check-scalar-hasValidNames
 #' @export
-## Updated 2019-07-29.
 hasValidDimnames <- function(x, .xname = getNameInParent(x)) {
     ## Check for `dimnames()` failure.
     dimnames <- tryCatch(

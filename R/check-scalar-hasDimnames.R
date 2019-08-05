@@ -5,8 +5,10 @@
 #' Does the input have dimnames?
 #'
 #' @name check-scalar-hasDimnames
-#' @inherit params
 #' @note Updated 2019-07-29.
+#'
+#' @inherit check
+#' @inheritParams acidroxygen::params
 #'
 #' @seealso
 #' - `hasRownames()`.
@@ -31,7 +33,6 @@ NULL
 
 #' @rdname check-scalar-hasDimnames
 #' @export
-## Updated 2019-07-15.
 hasDimnames <- function(x, .xname = getNameInParent(x)) {
     dimnames <- tryCatch(
         expr = dimnames(x),
@@ -52,7 +53,6 @@ hasDimnames <- function(x, .xname = getNameInParent(x)) {
 
 #' @rdname check-scalar-hasDimnames
 #' @export
-## Updated 2019-07-15.
 hasColnames <- function(x, .xname = getNameInParent(x)) {
     colnames <- tryCatch(
         expr = colnames(x),

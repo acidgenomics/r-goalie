@@ -1,8 +1,10 @@
 #' Does the input have duplicates?
 #'
 #' @name check-scalar-hasDuplicates
-#' @inherit params
 #' @note Updated 2019-07-29.
+#'
+#' @inherit check
+#' @inheritParams acidroxygen::params
 #'
 #' @seealso
 #' - `assertive.properties::has_duplicates()`.
@@ -22,7 +24,6 @@ NULL
 
 #' @rdname check-scalar-hasDuplicates
 #' @export
-## Updated 2019-07-15.
 hasDuplicates <- function(x, .xname = getNameInParent(x)) {
     if (!anyDuplicated(x)) {
         return(false(gettext("%s has no duplicates."), .xname))
@@ -34,7 +35,6 @@ hasDuplicates <- function(x, .xname = getNameInParent(x)) {
 
 #' @rdname check-scalar-hasDuplicates
 #' @export
-## Updated 2019-07-15.
 hasNoDuplicates <- function(x, .xname = getNameInParent(x)) {
     if (anyDuplicated(x)) {
         dupeIndicies <- which(duplicated(x))

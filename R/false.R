@@ -6,7 +6,7 @@
 #' @name false
 #' @note Updated 2019-07-29.
 #'
-#' @inheritParams params
+#' @inheritParams acidroxygen::params
 #' @param ... Passed to [`gettextf()`][base::gettextf] to create a [cause] of
 #'   failure message.
 #'

@@ -1,8 +1,10 @@
 #' Does the input contain elements that are all atomic?
 #'
 #' @name check-scalar-allAreAtomic
-#' @inherit params
 #' @note Updated 2019-07-29.
+#'
+#' @inherit check
+#' @inheritParams acidroxygen::params
 #'
 #' @seealso `is.atomic()`.
 #'
@@ -20,7 +22,6 @@ NULL
 
 #' @rdname check-scalar-allAreAtomic
 #' @export
-## Updated 2019-07-15.
 allAreAtomic <- function(x, .xname = getNameInParent(x)) {
     ## If we don't add this, the `all()` step below will return TRUE.
     ok <- hasLength(x, .xname = .xname)

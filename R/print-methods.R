@@ -1,14 +1,13 @@
 #' Print methods for objects with a cause attribute
 #' @name print
-#' @note Updated 2019-07-29.
-#' @inheritParams params
+#' @note Updated 2019-08-05.
+#' @inheritParams acidroxygen::params
 #' @return Print command and return invisibly.
 NULL
 
 
 
-## Updated 2019-07-15.
-.print.goalie.scalar <-  # nolint
+.printGoalieScalar <-  # nolint
     function(x) {
         .assertHasCause(x)
         print(x[[1L]])
@@ -19,8 +18,7 @@ NULL
 
 ## Consider letting the user access `n` and `ignoreNA` in a future update.
 ## For now keep the method support as simple as possible.
-## Updated 2019-07-15.
-.print.goalie.vector <-  # nolint
+.printGoalieVector <-  # nolint
     function(x, n = 10L, ignoreNA = FALSE) {
         .assertHasCause(x)
         cause <- cause(x)
@@ -79,14 +77,13 @@ NULL
 #' @rdname print
 #' @method print goalie
 #' @export
-## Updated 2019-07-15.
 print.goalie <- function(x, ...) {
     if (!is.logical(x)) {
         stop("x is not logical.")
     }
     if (length(x) == 1L) {
-        .print.goalie.scalar(x)
+        .printGoalieScalar(x)
     } else {
-        .print.goalie.vector(x)
+        .printGoalieVector(x)
     }
 }
