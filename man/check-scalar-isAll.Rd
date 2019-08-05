@@ -13,7 +13,8 @@ isAll(x, classes, .xname = getNameInParent(x))
 \item{classes}{\code{character}.
 Object classes.}
 
-\item{.xname}{\emph{Not intended to be used directly.}}
+\item{.xname}{Name of object defined in \code{x}.
+\emph{Not intended to be used directly.}}
 }
 \value{
 \code{TRUE} on success;

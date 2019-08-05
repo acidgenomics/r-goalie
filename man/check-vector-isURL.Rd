@@ -16,10 +16,12 @@ allAreURLs(x, .xname = getNameInParent(x))
 \arguments{
 \item{x}{Object.}
 
-\item{.xname}{\emph{Not intended to be used directly.}}
+\item{.xname}{Name of object defined in \code{x}.
+\emph{Not intended to be used directly.}}
 }
 \value{
-\code{logical}.
+\code{TRUE} on success;
+\code{FALSE} on failure, with \code{cause} \link[base:attributes]{attribute} set.
 }
 \description{
 Does the input contain a URL?

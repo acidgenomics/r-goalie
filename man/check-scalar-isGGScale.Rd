@@ -15,8 +15,9 @@ isGGScale(x, scale = c("continuous", "discrete"), aes = c("colour",
 Type of scale, either \code{"continuous"} or \code{"discrete"}.}
 
 \item{aes}{\code{character(1)}.
-Aesthetic mapping, either \code{"colour"} or \code{"fill"}. Note that ggplot2 prefers
-British spelling, so we're enforcing that convention here.}
+Aesthetic mapping, either \code{"colour"} or \code{"fill"}.
+Note that ggplot2 prefers British spelling, so we're enforcing that
+convention here.}
 
 \item{nullOK}{\code{logical(1)}.
 If set to \code{TRUE}, \code{x} may also be \code{NULL}.}
