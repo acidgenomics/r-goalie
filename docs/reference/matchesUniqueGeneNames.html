@@ -70,7 +70,7 @@ particularly when performing single-cell RNA-seq marker analysis." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">goalie</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.1</span>
       </span>
     </div>
 
@@ -138,11 +138,14 @@ particularly when performing single-cell RNA-seq marker analysis.</p>
     <tr>
       <th>genes</th>
       <td><p><code>character</code>.
-Genes.</p></td>
+Gene identifiers. It is considered better practice to input the stable gene
+identifiers from Ensembl (e.g. "ENSG00000000003") and not the (HGNC) gene
+symbols (e.g. "TSPN6"), if possible.</p></td>
     </tr>
     <tr>
       <th>.xname</th>
-      <td><p><em>Not intended to be used directly.</em></p></td>
+      <td><p>Name of object defined in <code>x</code>.
+<em>Not intended to be used directly.</em></p></td>
     </tr>
     </table>
     
