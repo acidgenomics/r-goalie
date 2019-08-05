@@ -19,8 +19,7 @@ Names of formal arguments to remove from \code{args} list.}
     to go back if negative.}
 
 \item{verbose}{\code{logical(1)}.
-Run the function with verbose messages?
-\emph{It is only recommended to enable this when debugging.}}
+Run the function with verbose output.}
 }
 \value{
 \code{list}.

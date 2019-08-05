@@ -47,7 +47,8 @@ isNonScalar(x, .xname = getNameInParent(x))
 \item{nullOK}{\code{logical(1)}.
 If set to \code{TRUE}, \code{x} may also be \code{NULL}.}
 
-\item{.xname}{\emph{Not intended to be used directly.}}
+\item{.xname}{Name of object defined in \code{x}.
+\emph{Not intended to be used directly.}}
 }
 \value{
 \code{TRUE} on success;

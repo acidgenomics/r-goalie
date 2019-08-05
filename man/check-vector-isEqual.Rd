@@ -43,10 +43,11 @@ allAreLessThanOrEqualTo(x, y)
 \arguments{
 \item{x}{Object.}
 
-\item{y}{Secondary object.}
+\item{y}{Object.}
 }
 \value{
-\code{logical}.
+\code{TRUE} on success;
+\code{FALSE} on failure, with \code{cause} \link[base:attributes]{attribute} set.
 }
 \description{
 How does the input relate to a value?
@@ -79,9 +80,7 @@ How does the input relate to a value?
 }}
 
 \note{
-These functions return \code{logical}, not necessarily \code{logical(1)}.
-
-Updated 2019-07-29.
+Updated 2019-08-05.
 }
 \examples{
 ## TRUE ====

@@ -8,10 +8,10 @@
 hasNonZeroRowsAndCols(x, .xname = getNameInParent(x))
 }
 \arguments{
-\item{x}{Matrix.
-Currently requires a \code{matrix} or \code{sparseMatrix} as input.}
+\item{x}{Object.}
 
-\item{.xname}{\emph{Not intended to be used directly.}}
+\item{.xname}{Name of object defined in \code{x}.
+\emph{Not intended to be used directly.}}
 }
 \value{
 \code{TRUE} on success;

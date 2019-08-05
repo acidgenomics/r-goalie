@@ -34,7 +34,8 @@ allAreNotMatchingRegex(x, pattern, .xname = getNameInParent(x))
 \item{pattern}{\code{character(1)}.
 Pattern to use for matching.}
 
-\item{.xname}{\emph{Not intended to be used directly.}}
+\item{.xname}{Name of object defined in \code{x}.
+\emph{Not intended to be used directly.}}
 }
 \value{
 \code{logical}.

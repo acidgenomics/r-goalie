@@ -12,7 +12,8 @@ is2(x, class, .xname = getNameInParent(x))
 \item{class}{\code{character(1)}.
 Object class.}
 
-\item{.xname}{\emph{Not intended to be used directly.}}
+\item{.xname}{Name of object defined in \code{x}.
+\emph{Not intended to be used directly.}}
 }
 \value{
 \code{logical(1)}.

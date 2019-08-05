@@ -10,9 +10,12 @@ matchesUniqueGeneNames(x, genes, .xname = getNameInParent(x))
 \item{x}{Object.}
 
 \item{genes}{\code{character}.
-Genes.}
+Gene identifiers. It is considered better practice to input the stable gene
+identifiers from Ensembl (e.g. "ENSG00000000003") and not the (HGNC) gene
+symbols (e.g. "TSPN6"), if possible.}
 
-\item{.xname}{\emph{Not intended to be used directly.}}
+\item{.xname}{Name of object defined in \code{x}.
+\emph{Not intended to be used directly.}}
 }
 \value{
 \code{TRUE} on success;

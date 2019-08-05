@@ -29,7 +29,8 @@ allAreDirs(x)
 If set to \code{TRUE}, \code{x} may also be \code{NULL}.}
 }
 \value{
-\code{logical}.
+\code{TRUE} on success;
+\code{FALSE} on failure, with \code{cause} \link[base:attributes]{attribute} set.
 }
 \description{
 Does the input contain a directory?
@@ -50,7 +51,7 @@ Does the input contain a directory?
 }}
 
 \note{
-Updated 2019-07-29.
+Updated 2019-08-05.
 }
 \examples{
 ## TRUE ====
@@ -61,10 +62,8 @@ isADirectory("~")
 isDirectory(1L)
 }
 \seealso{
-\code{R.utils::isDirectory()}.\preformatted{getS3method(
-    f = "isDirectory",
-    class = "default",
-    envir = asNamespace("R.utils")
-)
+\itemize{
+\item \code{dir.exists()}.
+\item \code{R.utils::isDirectory()}.
 }
 }

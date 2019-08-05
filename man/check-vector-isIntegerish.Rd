@@ -13,7 +13,8 @@ isInt(x, nullOK = FALSE)
 \arguments{
 \item{x}{Object.}
 
-\item{.xname}{\emph{Not intended to be used directly.}}
+\item{.xname}{Name of object defined in \code{x}.
+\emph{Not intended to be used directly.}}
 
 \item{nullOK}{\code{logical(1)}.
 If set to \code{TRUE}, \code{x} may also be \code{NULL}.}
