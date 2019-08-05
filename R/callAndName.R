@@ -5,9 +5,9 @@
 #' @note Updated 2019-07-29.
 #' @export
 #'
-#' @param fun `function`.
+#' @inheritParams acidroxygen::params
 #' @param x The first input to `fun`.
-#' @param ... Additional arguments passed to `fun`.
+#' @param ... Additional arguments passed to function defined in `fun`.
 #'
 #' @seealso `assertive.base::call_and_name()`.
 #'

@@ -14,7 +14,7 @@ which should evaluate to \code{TRUE}. Rather than combining expressions with
 generated.}
 
 \item{msg}{\code{NULL} or \code{character(1)}.
-Custom message to return on the event of any check failure.}
+Custom message to return.}
 
 \item{traceback}{\code{logical(1)}.
 Include traceback in error message.

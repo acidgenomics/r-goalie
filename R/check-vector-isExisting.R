@@ -5,8 +5,10 @@
 #'   variables in a single call.
 #'
 #' @name check-vector-isExisting
-#' @inherit params
 #' @note Updated 2019-07-29.
+#'
+#' @inherit check
+#' @inheritParams acidroxygen::params
 #'
 #' @param x `character`.
 #'   Variable names to check in `environment`.

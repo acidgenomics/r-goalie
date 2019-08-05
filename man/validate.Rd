@@ -13,7 +13,7 @@ which should evaluate to \code{TRUE}. Rather than combining expressions with
 generated.}
 
 \item{msg}{\code{NULL} or \code{character(1)}.
-Custom message to return on the event of any check failure.}
+Custom message to return.}
 }
 \value{
 \code{TRUE} on success, or \code{character(1)} on failure, containing an error

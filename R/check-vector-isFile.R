@@ -1,20 +1,14 @@
 #' Does the input contain a file?
 #'
 #' @name check-vector-isFile
-#' @inherit params
 #' @note Updated 2019-07-29.
 #'
-#' @return `logical`.
+#' @inherit check
+#' @inheritParams acidroxygen::params
 #'
-#' @seealso `R.utils::isFile()`.
-#'
-#' ```
-#' getS3method(
-#'     f = "isFile",
-#'     class = "default",
-#'     envir = asNamespace("R.utils")
-#' )
-#' ```
+#' @seealso
+#' - `file.exists()`.
+#' - `R.utils::isFile()`.
 #'
 #' @examples
 #' ## TRUE ====
@@ -32,7 +26,6 @@ NULL
 ## Vector ======================================================================
 #' @describeIn check-vector-isFile Vectorized.
 #' @export
-## Updated 2019-07-15.
 isFile <- function(x) {
     ok <- isCharacter(x)
     if (!isTRUE(ok)) return(ok)
@@ -46,7 +39,6 @@ isFile <- function(x) {
 ## Scalar ======================================================================
 #' @describeIn check-vector-isFile Scalar.
 #' @export
-## Updated 2019-07-15.
 isAFile <- function(x, nullOK = FALSE) {
     ## Conditionally allow NULL.
     if (isTRUE(nullOK) && is.null(x)) {
@@ -66,7 +58,6 @@ isAFile <- function(x, nullOK = FALSE) {
 
 #' @describeIn check-vector-isFile Scalar.
 #' @export
-## Updated 2019-07-15.
 allAreFiles <- function(x) {
     ok <- isFile(x)
     if (!all(ok)) return(falseFromVector(ok))

@@ -15,7 +15,7 @@ nocause(x)
 \arguments{
 \item{x}{Object.}
 
-\item{value}{Value.}
+\item{value}{Value to assign.}
 }
 \value{
 \code{character(1)}.
