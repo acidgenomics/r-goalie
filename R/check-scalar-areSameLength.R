@@ -4,8 +4,10 @@
 #'   function will intentionally error.
 #'
 #' @name check-scalar-areSameLength
-#' @inherit params
 #' @note Updated 2019-07-29.
+#'
+#' @inherit check
+#' @inheritParams acidroxygen::params
 #'
 #' @examples
 #' ## TRUE ====
@@ -23,7 +25,6 @@ NULL
 
 #' @rdname check-scalar-areSameLength
 #' @export
-## Updated 2019-07-15.
 areSameLength <- function(
     x, y,
     .xname = getNameInParent(x),

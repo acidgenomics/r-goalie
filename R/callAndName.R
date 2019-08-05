@@ -5,7 +5,7 @@
 #' @note Updated 2019-07-29.
 #' @export
 #'
-#' @inheritParams acidroxygen::params.
+#' @inheritParams acidroxygen::params
 #' @param x The first input to `fun`.
 #' @param ... Additional arguments passed to function defined in `fun`.
 #'

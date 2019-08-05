@@ -5,8 +5,10 @@
 #' Does the input have elements?
 #'
 #' @name check-scalar-hasElements
-#' @inherit params
 #' @note Updated 2019-07-29.
+#'
+#' @inherit check
+#' @inheritParams acidroxygen::params
 #'
 #' @seealso
 #' - `assertive.properties::is_empty()`.
@@ -29,7 +31,6 @@ NULL
 
 #' @rdname check-scalar-hasElements
 #' @export
-## Updated 2019-07-15.
 isEmpty <- function(
     x,
     metric = c("length", "elements"),
@@ -44,7 +45,6 @@ isEmpty <- function(
 
 #' @rdname check-scalar-hasElements
 #' @export
-## Updated 2019-07-15.
 isNonEmpty <- function(
     x,
     metric = c("length", "elements"),
@@ -67,7 +67,6 @@ isNonEmpty <- function(
 
 #' @rdname check-scalar-hasElements
 #' @export
-## Updated 2019-07-15.
 hasElements <- function(x, n, .xname = getNameInParent(x)) {
     assert(is.numeric(n))
     nElementsX <- .nElements(x)
@@ -91,7 +90,6 @@ hasElements <- function(x, n, .xname = getNameInParent(x)) {
 
 #' @rdname check-scalar-hasElements
 #' @export
-## Updated 2019-07-15.
 isOfDimension <- function(x, n, .xname = getNameInParent(x)) {
     assert((is.numeric(n) && length(n) == 2L) || is.null(n))
     dimX <- dim(x)
@@ -132,7 +130,6 @@ isOfDimension <- function(x, n, .xname = getNameInParent(x)) {
 
 #' @rdname check-scalar-hasElements
 #' @export
-## Updated 2019-07-15.
 isOfLength <- function(x, n, .xname = getNameInParent(x)) {
     assert(is.numeric(n), length(n) == 1L)
     lengthX <- length(x)
@@ -146,7 +143,6 @@ isOfLength <- function(x, n, .xname = getNameInParent(x)) {
 
 #' @rdname check-scalar-hasElements
 #' @export
-## Updated 2019-07-15.
 isNonEmpty <- function(
     x,
     metric = c("length", "elements"),
