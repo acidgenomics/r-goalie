@@ -1,3 +1,7 @@
+## FIXME Include directory path in failure message.
+
+
+
 #' Does the input contain a directory?
 #'
 #' @name check-vector-isDirectory
