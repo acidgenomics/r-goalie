@@ -1,3 +1,7 @@
+## FIXME Inform the user about which ones are invalid.
+
+
+
 #' Are these valid names?
 #'
 #' @name check-scalar-validNames

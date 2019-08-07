@@ -1,3 +1,7 @@
+## FIXME Inform the user about which ones are invalid.
+
+
+
 #' Does the input object have syntactically valid names?
 #'
 #' @name check-scalar-hasValidNames
