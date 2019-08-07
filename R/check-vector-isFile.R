@@ -1,3 +1,7 @@
+## FIXME Include file path in failure message.
+
+
+
 #' Does the input contain a file?
 #'
 #' @name check-vector-isFile
