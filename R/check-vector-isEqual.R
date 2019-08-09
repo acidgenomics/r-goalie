@@ -1,7 +1,7 @@
 #' How does the input relate to a value?
 #'
 #' @name check-vector-isEqual
-#' @note Updated 2019-08-05.
+#' @note Updated 2019-08-08.
 #'
 #' @inherit check
 #' @inheritParams acidroxygen::params
@@ -36,12 +36,8 @@ NULL
 isEqualTo <- function(x, y) {
     diff <- abs(x - y)
     ok <- diff <= .tolerance
-    callAndName(
-        function(x) {
-            setCause(ok, sprintf("not equal to %g; abs diff = %g", y, diff))
-        },
-        rep_len(x, length(ok))
-    )
+    names(ok) <- as.character(x)
+    setCause(ok, sprintf("not equal to %g; abs diff = %g", y, diff))
 }
 
 
@@ -50,12 +46,8 @@ isEqualTo <- function(x, y) {
 #' @export
 isNotEqualTo <- function(x, y) {
     ok <- abs(x - y) > .tolerance
-    callAndName(
-        function(x) {
-            setCause(ok, sprintf("equal to %g", y))
-        },
-        rep_len(x, length(ok))
-    )
+    names(ok) <- as.character(x)
+    setCause(ok, sprintf("equal to %g", y))
 }
 
 
@@ -64,12 +56,8 @@ isNotEqualTo <- function(x, y) {
 #' @export
 isGreaterThan <- function(x, y) {
     ok <- x > y
-    callAndName(
-        function(x) {
-            setCause(ok, false = paste("less than or equal to", y))
-        },
-        rep_len(x, length(ok))
-    )
+    names(ok) <- as.character(x)
+    setCause(ok, false = paste("less than or equal to", y))
 }
 
 
@@ -78,12 +66,8 @@ isGreaterThan <- function(x, y) {
 #' @export
 isGreaterThanOrEqualTo <- function(x, y) {
     ok <- x >= y
-    callAndName(
-        function(x) {
-            setCause(ok, false = paste("less than", y))
-        },
-        rep_len(x, length(ok))
-    )
+    names(ok) <- as.character(x)
+    setCause(ok, false = paste("less than", y))
 }
 
 
@@ -92,12 +76,8 @@ isGreaterThanOrEqualTo <- function(x, y) {
 #' @export
 isLessThan <- function(x, y) {
     ok <- x < y
-    callAndName(
-        function(x) {
-            setCause(ok, false = paste("greater than or equal to", y))
-        },
-        rep_len(x, length(ok))
-    )
+    names(ok) <- as.character(x)
+    setCause(ok, false = paste("greater than or equal to", y))
 }
 
 
@@ -106,12 +86,8 @@ isLessThan <- function(x, y) {
 #' @export
 isLessThanOrEqualTo <- function(x, y) {
     ok <- x <= y
-    callAndName(
-        function(x) {
-            setCause(ok, false = paste("greater than", y))
-        },
-        rep_len(x, length(ok))
-    )
+    names(ok) <- as.character(x)
+    setCause(ok, false = paste("greater than", y))
 }
 
 
