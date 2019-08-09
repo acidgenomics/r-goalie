@@ -37,6 +37,7 @@ isIntegerish <- function(x, .xname = getNameInParent(x)) {
     ## Require that vector does not contain NA.
     ok <- !is.na(x)
     if (!all(ok)) {
+        names(ok) <- as.character(x)
         return(setCause(x = ok, false = "NA"))
     }
 
@@ -59,8 +60,8 @@ isIntegerish <- function(x, .xname = getNameInParent(x)) {
             ))
         }
     )
-
-    setCause(ok, false = "not integer")
+    names(ok) <- as.character(x)
+    setCause(ok, false = "not integer (.tolerance)")
 }
 
 
