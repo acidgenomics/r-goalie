@@ -27,7 +27,7 @@ test_that("cause assignment mismatch", {
     expect_error(
         cause(x) <- c("aaa", "bbb", "ccc"),
         paste(
-            "The length of value should be 1 or the length of x \\(2\\),",
+            "The length of 'value' should be 1 or the length of 'x' \\(2\\),",
             "but is 3."
         )
     )

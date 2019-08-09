@@ -6,8 +6,14 @@ test_that("TRUE", {
 })
 
 test_that("FALSE : out of bounds", {
-    expect_identical(cause(isAlpha(0)), noquote("too low"))  # nolint
-    expect_identical(cause(isAlpha(1)), noquote("too high"))  # nolint
+    expect_identical(
+        unname(cause(isAlpha(0))),  # nolint
+        noquote("too low")
+    )
+    expect_identical(
+        unname(cause(isAlpha(1))),  # nolint
+        noquote("too high")
+    )
 })
 
 test_that("FALSE : not scalar double", {

@@ -17,7 +17,9 @@ test_that("FALSE : no access", {
     ok <- hasAccess(x)
     expect_s3_class(ok, "goalie")
     expect_identical(nocause(ok), c(xxx = FALSE, yyy = FALSE))
-    expect_identical(cause(ok), noquote(c("no access", "no access")))
+    expected <- noquote(c("no access", "no access"))
+    names(expected) <- x
+    expect_identical(cause(ok), expected)
 
     ok <- allHaveAccess(x)
     expect_s3_class(ok, "goalie")

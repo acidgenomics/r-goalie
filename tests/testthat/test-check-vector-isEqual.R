@@ -21,13 +21,12 @@ test_that("FALSE", {
         nocause(ok),
         c(`1` = FALSE, `2` = FALSE)
     )
-    expect_identical(
-        cause(ok),
-        noquote(c(
-            "not equal to 0; abs diff = 1",
-            "not equal to 0; abs diff = 2"
-        ))
-    )
+    expected <- noquote(c(
+        "not equal to 0; abs diff = 1",
+        "not equal to 0; abs diff = 2"
+    ))
+    names(expected) <- x
+    expect_identical(cause(ok), expected)
 
     ok <- allAreEqualTo(x = x, y = y)
     expect_s3_class(ok, "goalie")
