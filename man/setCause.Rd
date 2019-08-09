@@ -23,7 +23,7 @@ Sets the \code{cause} \link[base:attributes]{attribute} of an object and returns
 object.
 }
 \note{
-Updated 2019-07-29.
+Updated 2019-08-08.
 }
 \examples{
 setCause(x = FALSE, false = "test")
