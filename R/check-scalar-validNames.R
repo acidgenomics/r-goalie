@@ -1,11 +1,7 @@
-## FIXME Inform the user about which ones are invalid.
-
-
-
 #' Are these valid names?
 #'
 #' @name check-scalar-validNames
-#' @note Updated 2019-07-29.
+#' @note Updated 2019-08-09.
 #'
 #' @inherit check
 #' @inheritParams acidroxygen::params
@@ -37,14 +33,16 @@ validNames <- function(x, .xname = getNameInParent(x)) {
     ok <- isCharacter(x, .xname = .xname)
     if (!isTRUE(ok)) return(ok)  # nocov
 
-    ok <- identical(x, make.names(x, unique = TRUE))
-    if (!isTRUE(ok)) {
+    setdiff <- setdiff(x, make.names(x, unique = TRUE))
+    if (hasLength(setdiff)) {
         return(false(
             paste0(
-                "%s does not contain valid names.\n",
-                "See make.names() for details."
+                "'%s' does not contain valid names.\n",
+                "See 'make.names()' for details.\n",
+                "Invalid: %s"
             ),
-            .xname
+            .xname,
+            toString(setdiff, width = 200L)
         ))
     }
 
