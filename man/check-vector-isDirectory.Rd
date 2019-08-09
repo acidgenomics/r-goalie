@@ -51,7 +51,7 @@ Does the input contain a directory?
 }}
 
 \note{
-Updated 2019-08-05.
+Updated 2019-08-08.
 }
 \examples{
 ## TRUE ====

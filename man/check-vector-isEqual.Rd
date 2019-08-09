@@ -80,7 +80,7 @@ How does the input relate to a value?
 }}
 
 \note{
-Updated 2019-08-05.
+Updated 2019-08-08.
 }
 \examples{
 ## TRUE ====
