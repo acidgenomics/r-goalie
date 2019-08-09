@@ -25,7 +25,7 @@ allAreNonExisting(x, envir = parent.frame(), inherits = FALSE,
 Variable names to check in \code{environment}.}
 
 \item{envir}{\code{environment}.
-Environment to use for assignment.}
+Environment.}
 
 \item{inherits}{\code{logical(1)}.
 Should the enclosing frames of the \code{environment} be searched?}

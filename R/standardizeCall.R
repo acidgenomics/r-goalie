@@ -3,22 +3,28 @@
 #' This function adds matching support for S4 methods with formals that aren't
 #' identical to the generic, and use a nested `.local` call.
 #'
-#' @note Updated 2019-07-29.
+#' @note Updated 2019-08-08.
 #' @export
 #'
 #' @inheritParams base::sys.call
 #' @inheritParams acidroxygen::params
+#' @param defaults `logical(1)`.
+#'   Include default arguments in the call.
+#' @param expandDots `logical(1)`.
+#'   Should arguments matching `...` in the call be included or left as a
+#'   `...` argument?
 #'
 #' @return
-#' - `call`: `call`. Matched call.
-#' - `list`: `list`. Verbose list that includes additional information about how
-#'   the call was standardized.
+#' - `call`: Matched call.
+#' - `list`: Verbose list that includes additional information about how the
+#'   call was standardized. Recommended for debugging purposes only.
 #'
 #' @seealso
 #' - `match.call()`.
 #' - `sys.call()`.
 #' - `sys.parent()`.
 #' - `pryr::standardise_call()`.
+#' - `stackoverflow::match.call.defaults()`.
 #'
 #' @examples
 #' aaa <- "AAA"
@@ -48,6 +54,8 @@
 #' testing(aaa, bbb)
 standardizeCall <- function(
     which = sys.parent(n = 1L),
+    defaults = FALSE,
+    expandDots = TRUE,
     return = c("call", "list"),
     verbose = FALSE
 ) {
@@ -55,6 +63,8 @@ standardizeCall <- function(
         isInt(which),
         unname(isNonNegative(which)),
         which < length(sys.calls()),
+        isFlag(defaults),
+        isFlag(expandDots),
         isFlag(verbose)
     )
     return <- match.arg(return)
@@ -103,15 +113,32 @@ standardizeCall <- function(
         print(list)  # nocov
     }
 
-    ## Now ready to match (expand) the call.
-    ## @seealso `pryr::standardise_call`.
-    ## Note that we need to use the `envir` argument to properly match.
+    ## Now ready to match the call.
     call <- match.call(
         definition = definition,
         call = call,
-        expand.dots = TRUE,
+        expand.dots = expandDots,
         envir = envir
     )
+
+    ## Expand the call to include default arguments, if desired.
+    ## Inspired by `stackoverflow::match.call.defaults()`.
+    if (isTRUE(defaults)) {
+        formals <- formals(definition)
+        if (isTRUE(expandDots) && "..." %in% names(formals)) {
+            formals[["..."]] <- NULL
+        }
+        for (i in setdiff(names(formals), names(call))) {
+            call[i] <- list(formals[[i]])
+        }
+        call <- match.call(
+            definition = definition,
+            call = call,
+            expand.dots = TRUE,
+            envir = envir
+        )
+    }
+
     list[["match.call"]] <- call
 
     if (isTRUE(verbose)) {
