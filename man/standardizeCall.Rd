@@ -4,7 +4,7 @@
 \alias{standardizeCall}
 \title{Standardize call}
 \usage{
-standardizeCall(which = sys.parent(n = 1L), defaults = FALSE,
+standardizeCall(which = sys.parent(n = 1L), defaults = TRUE,
   expandDots = TRUE, return = c("call", "list"), verbose = FALSE)
 }
 \arguments{
