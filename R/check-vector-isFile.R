@@ -1,11 +1,7 @@
-## FIXME Include file path in failure message.
-
-
-
 #' Does the input contain a file?
 #'
 #' @name check-vector-isFile
-#' @note Updated 2019-07-29.
+#' @note Updated 2019-08-08.
 #'
 #' @inherit check
 #' @inheritParams acidroxygen::params
@@ -33,7 +29,11 @@ NULL
 isFile <- function(x) {
     ok <- isCharacter(x)
     if (!isTRUE(ok)) return(ok)
-
+    ## Error on directories.
+    ok <- !bapply(X = x, FUN = dir.exists)
+    if (!all(ok)) {
+        return(setCause(ok, false = "dir"))
+    }
     ok <- bapply(X = x, FUN = file.exists)
     setCause(ok, false = "not file")
 }
@@ -48,13 +48,10 @@ isAFile <- function(x, nullOK = FALSE) {
     if (isTRUE(nullOK) && is.null(x)) {
         return(TRUE)
     }
-
     ok <- isString(x)
     if (!isTRUE(ok)) return(ok)
-
     ok <- isFile(x)
     if (!all(ok)) return(ok)
-
     TRUE
 }
 

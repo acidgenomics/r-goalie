@@ -1,11 +1,7 @@
-## FIXME Include directory path in failure message.
-
-
-
 #' Does the input contain a directory?
 #'
 #' @name check-vector-isDirectory
-#' @note Updated 2019-08-05.
+#' @note Updated 2019-08-08.
 #'
 #' @inherit check
 #' @inheritParams acidroxygen::params
@@ -31,7 +27,6 @@ NULL
 isDirectory <- function(x) {
     ok <- isCharacter(x)
     if (!isTRUE(ok)) return(ok)
-
     ok <- bapply(X = x, FUN = dir.exists)
     setCause(ok, false = "not dir")
 }
@@ -46,13 +41,10 @@ isADirectory <- function(x, nullOK = FALSE) {
     if (isTRUE(nullOK) && is.null(x)) {
         return(TRUE)
     }
-
     ok <- isString(x)
     if (!isTRUE(ok)) return(ok)
-
     ok <- isDirectory(x)
     if (!isTRUE(ok)) return(ok)
-
     TRUE
 }
 
