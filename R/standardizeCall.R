@@ -54,7 +54,7 @@
 #' testing(aaa, bbb)
 standardizeCall <- function(
     which = sys.parent(n = 1L),
-    defaults = FALSE,
+    defaults = TRUE,
     expandDots = TRUE,
     return = c("call", "list"),
     verbose = FALSE
