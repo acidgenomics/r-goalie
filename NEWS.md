@@ -1,6 +1,15 @@
+## goalie 0.3.2 (2019-08-09)
+
+### Minor changes
+
+- `standardizeCall`: Now returns with default arguments included. Can disable
+  using `defaults = FALSE`.
+- `matchArgsToDoCall`: Tweaked internal code slightly based on `standardizeCall`
+  update.
+
 ## goalie 0.3.1 (2019-08-05)
 
-## Minor changes
+### Minor changes
 
 - Improved documentation consistency, using shared params defined in new
   acidroxygen package. This will be used across the basejump packages in a
