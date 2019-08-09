@@ -3,7 +3,7 @@
 #' Sets the `cause` [attribute][base::attributes] of an object and returns that
 #' object.
 #'
-#' @note Updated 2019-07-29.
+#' @note Updated 2019-08-08.
 #' @export
 #'
 #' @inheritParams acidroxygen::params
@@ -34,7 +34,7 @@ setCause <- function(
     }
     isNA <- is.na(x)
     length <- length(x)
-    cause <- character(length)
+    cause <- character(length = length)
     if (length(missing) == 1L) {
         cause[isNA] <- missing
     } else {
@@ -51,6 +51,7 @@ setCause <- function(
         false <- rep_len(false, length)
         cause[index] <- false[index]
     }
+    names(cause) <- names(x)
     cause(x) <- cause
     x
 }
