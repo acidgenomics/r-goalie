@@ -10,10 +10,16 @@ test_that("scalar", {
 
 test_that("vector", {
     x <- c(FALSE, TRUE)
-    cause(x) <- "xxx"
+    expect_error(
+        object = cause(x) <- "xxx",
+        regexp = "'value' containing multiple elements must be named."
+    )
+    cause <- rep("XXX", length(x))
+    names(cause) <- LETTERS[seq_along(cause)]
+    cause(x) <- cause
     expect_s3_class(x, "goalie")
     expect_is(x, "logical")
-    expect_identical(cause(x), noquote("xxx"))
+    expect_identical(unname(cause(x)), noquote(unname(cause)))
 })
 
 test_that("cause assignment mismatch", {
