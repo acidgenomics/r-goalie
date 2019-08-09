@@ -61,21 +61,32 @@ matchArgsToDoCall <- function(
         which <- 1L  # nocov
     }
 
-    list <- standardizeCall(which = which, return = "list", verbose = verbose)
-    assert(is.list(list))
-    definition <- list[["definition"]]
-    assert(is.function(definition))
-    call <- list[["match.call"]]
-    assert(is.call(call))
+    list <- standardizeCall(
+        which = which,
+        defaults = TRUE,
+        expandDots = TRUE,
+        return = "list",
+        verbose = verbose
+    )
 
-    ## Prepare the `args` list.
+    definition <- list[["definition"]]
+    call <- list[["match.call"]]
+    assert(
+        is.function(definition),
+        is.call(call)
+    )
+
+    ## Prepare the args list.
     callArgs <- as.list(call)[-1L]
     callArgs <- callArgs[setdiff(names(callArgs), names(args))]
     args <- c(args, callArgs)
+
+    ## This step shouldn't be necessary when using `defaults = TRUE` above.
     formalArgs <- formals(definition)
     formalArgs <- formalArgs[setdiff(names(formalArgs), "...")]
     formalArgs <- formalArgs[setdiff(names(formalArgs), names(args))]
     args <- c(args, formalArgs)
+
     ## Remove formals we want to exclude.
     args <- args[setdiff(names(args), removeFormals)]
 
