@@ -24,7 +24,7 @@ hasValidDimnames(x, .xname = getNameInParent(x))
 Does the input object have syntactically valid names?
 }
 \note{
-Updated 2019-07-29.
+Updated 2019-08-08.
 }
 \examples{
 ## TRUE ====

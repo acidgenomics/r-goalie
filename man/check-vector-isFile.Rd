@@ -36,7 +36,7 @@ Does the input contain a file?
 }}
 
 \note{
-Updated 2019-07-29.
+Updated 2019-08-08.
 }
 \examples{
 ## TRUE ====
