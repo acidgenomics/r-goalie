@@ -14,7 +14,7 @@ test_that("TRUE", {
 ## May want to tighten this in a future update to actual files only.
 test_that("TRUE : directory input", {
     ok <- isFile(c("~", "."))
-    expect_identical(ok, c(`~` = TRUE, `.` = TRUE))
+    expect_identical(nocause(ok), c(`~` = FALSE, `.` = FALSE))
 })
 
 test_that("FALSE : not file", {

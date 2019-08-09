@@ -5,7 +5,7 @@
 #'   variables in a single call.
 #'
 #' @name check-vector-isExisting
-#' @note Updated 2019-07-29.
+#' @note Updated 2019-08-08.
 #'
 #' @inherit check
 #' @inheritParams acidroxygen::params

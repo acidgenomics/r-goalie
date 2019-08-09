@@ -61,7 +61,7 @@ isIntegerish <- function(x, .xname = getNameInParent(x)) {
         }
     )
     names(ok) <- as.character(x)
-    setCause(ok, false = "not integer (.tolerance)")
+    setCause(ok, false = "not integer")
 }
 
 
