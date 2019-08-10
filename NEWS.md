@@ -1,4 +1,4 @@
-## goalie 0.3.2 (2019-08-09)
+## goalie 0.3.2 (2019-08-10)
 
 ### Minor changes
 
@@ -6,6 +6,7 @@
   using `defaults = FALSE`.
 - `matchArgsToDoCall`: Tweaked internal code slightly based on `standardizeCall`
   update.
+- Updated messages to use quotes more consistently.
 
 ## goalie 0.3.1 (2019-08-05)
 
