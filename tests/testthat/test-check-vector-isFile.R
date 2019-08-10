@@ -14,21 +14,30 @@ test_that("TRUE", {
 ## May want to tighten this in a future update to actual files only.
 test_that("TRUE : directory input", {
     ok <- isFile(c("~", "."))
-    expect_identical(ok, c(`~` = TRUE, `.` = TRUE))
+    expect_identical(nocause(ok), c(`~` = FALSE, `.` = FALSE))
 })
 
 test_that("FALSE : not file", {
     ok <- isFile(c("aaa", "bbb"))
     expect_s3_class(ok, "goalie")
-    expect_identical(nocause(ok), c(aaa = FALSE, bbb = FALSE))
-    expect_identical(cause(ok), noquote(c("not file", "not file")))
+    expect_identical(
+        nocause(ok),
+        c(aaa = FALSE, bbb = FALSE)
+    )
+    expect_identical(
+        cause(ok),
+        noquote(c(aaa = "not file", bbb = "not file"))
+    )
 })
 
 test_that("FALSE : not character", {
     ok <- isFile(1L)
     expect_s3_class(ok, "goalie")
     expect_false(ok)
-    expect_identical(cause(ok), noquote("x is not character."))
+    expect_identical(
+        cause(ok),
+        noquote("'x' is not character.")
+    )
 })
 
 
@@ -37,10 +46,10 @@ context("isAFile")
 
 test_that("TRUE", {
     expect_true(isAFile(file))
-    expect_true(isAFile("~"))
 })
 
 test_that("FALSE", {
+    expect_false(isAFile("~"))
     ok <- isAFile("aaa")
     expect_s3_class(ok, "goalie")
     expect_false(ok)

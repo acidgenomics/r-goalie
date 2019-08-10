@@ -30,7 +30,7 @@ Do the inputs have the same length?
 Non-zero lengths for \code{x} and \code{y} are required, otherwise the check
 function will intentionally error.
 
-Updated 2019-07-29.
+Updated 2019-08-10.
 }
 \examples{
 ## TRUE ====

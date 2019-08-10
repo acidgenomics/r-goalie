@@ -80,7 +80,7 @@ How does the input relate to a value?
 }}
 
 \note{
-Updated 2019-08-05.
+Updated 2019-08-10.
 }
 \examples{
 ## TRUE ====
@@ -96,7 +96,7 @@ isEqualTo(x = seq_len(2), y = 1)
 }
 \seealso{
 \itemize{
-\item Primitives: \code{==}, \code{>}, \code{>=}, \code{<}, \code{<=}.
+\item Primitive operators: \code{==}, \code{>}, \code{>=}, \code{<}, \code{<=}.
 \item \code{assertive.numbers::is_equal_to()}.
 \item \code{assertive.numbers::is_not_equal_to()}.
 \item \code{assertive.numbers::is_greater_than()}.

@@ -33,6 +33,15 @@ NULL
 
 
 
+## `file.access()` mode values:
+## - 0: [-] existence
+## - 1: [x] execute
+## - 2: [w] write
+## - 4: [r] read
+## Function returns `0` on success, `-1` on failure.
+
+
+
 ## Vector ======================================================================
 #' @describeIn check-vector-hasAccess Vectorized.
 #' @export
@@ -40,29 +49,19 @@ NULL
 hasAccess <- function(x, access = "r") {
     ok <- isCharacter(x)
     if (!isTRUE(ok)) return(ok)
-
-    ## `file.access()` mode values:
-    ## - 0: [-] existence
-    ## - 1: [x] execute
-    ## - 2: [w] write
-    ## - 4: [r] read
-    ## Note that `file.access()` will return 0 on success, -1 on failure.
-
-    ## Here we're converting the "rwx" flags to the file.access modes.
+    ## Here we're converting the "rwx" flags to the `file.access()` modes.
     access <- tolower(access)
     access <- strsplit(access, "")[[1L]]
     if (anyDuplicated(access) > 0L || !all(access %in% c("r", "w", "x"))) {
         return(false(
             paste0(
-                "%s doesn't contain valid access codes.\n",
+                "'%s' doesn't contain valid access codes.\n",
                 "Combinations of 'r', 'w' and 'x' are allowed."
             ),
             access
         ))
     }
-
     isWindows <- .Platform[["OS.type"]] == "windows"
-
     ## String file checker that we can loop with `bapply()` below.
     checkAccess <- function(x, access) {
         if ("r" %in% access) {
@@ -71,7 +70,6 @@ hasAccess <- function(x, access = "r") {
             ok <- unname(ok)
             if (!isTRUE(ok)) return(FALSE)
         }
-
         ## Write/execute permissions can't be checked on Windows.
         if (!isTRUE(isWindows)) {
             if ("w" %in% access) {
@@ -85,10 +83,8 @@ hasAccess <- function(x, access = "r") {
                 if (!isTRUE(ok)) return(FALSE)  # nocov
             }
         }
-
         TRUE
     }
-
     ok <- bapply(X = x, FUN = checkAccess, access = access)
     setCause(ok, false = "no access")
 }

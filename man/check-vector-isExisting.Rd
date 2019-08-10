@@ -25,7 +25,7 @@ allAreNonExisting(x, envir = parent.frame(), inherits = FALSE,
 Variable names to check in \code{environment}.}
 
 \item{envir}{\code{environment}.
-Environment to use for assignment.}
+Environment.}
 
 \item{inherits}{\code{logical(1)}.
 Should the enclosing frames of the \code{environment} be searched?}
@@ -56,7 +56,7 @@ Does the requested input exist in the environment?
 exporting \code{\link[=isExisting]{isExisting()}} as a convenience function to check multiple
 variables in a single call.
 
-Updated 2019-07-29.
+Updated 2019-08-08.
 }
 \examples{
 a <- 1L
