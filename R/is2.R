@@ -30,7 +30,7 @@ is2 <- function(x, class, .xname = getNameInParent(x)) {
         ok <- bapply(X = class, FUN = function(cl) is2(x, cl, ""))
         return(setCause(
             x = ok,
-            false = sprintf("'%s' is not '%s'", .typeDescription(x), class)
+            false = sprintf("%s is not '%s'", .typeDescription(x), class)
         ))
     }
     ## Attempt to use `is.character(x)` first.
