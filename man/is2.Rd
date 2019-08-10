@@ -27,7 +27,7 @@ If a function named \code{is.class} exists, call \code{is.class(x)}.
 If not, call \code{is(x, class)}.
 }
 \note{
-Updated 2019-07-29.
+Updated 2019-08-10.
 }
 \examples{
 is2(1:5, "character")

@@ -21,7 +21,7 @@ isAlpha(x, .xname = getNameInParent(x))
 An alpha level must be \code{numeric(1)} greater than 0 and less than 1.
 }
 \note{
-Updated 2019-07-29.
+Updated 2019-08-10.
 }
 \examples{
 ## TRUE ====

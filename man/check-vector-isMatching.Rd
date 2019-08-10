@@ -63,7 +63,7 @@ Does the string match a pattern?
 }}
 
 \note{
-Updated 2019-08-08.
+Updated 2019-08-10.
 }
 \examples{
 ## TRUE ====
