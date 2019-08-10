@@ -5,7 +5,7 @@
 #' particularly when performing single-cell RNA-seq marker analysis.
 #'
 #' @export
-#' @note Updated 2019-07-29.
+#' @note Updated 2019-08-10.
 #'
 #' @inherit check
 #' @inheritParams acidroxygen::params
@@ -33,41 +33,39 @@
 matchesUniqueGeneNames <- function(x, genes, .xname = getNameInParent(x)) {
     ok <- isS4(x)
     if (!isTRUE(ok)) {
-        return(false("Not an S4 class object."))
+        return(false("'%s' is not an S4 class object.", .xname))
     }
-
     ok <- isCharacter(genes)
     if (!isTRUE(ok)) return(ok)
-
     ## Get all of the gene names stashed in the x.
     if (is(x, "SummarizedExperiment")) {
         requireNamespace("SummarizedExperiment", quietly = TRUE)
         x <- SummarizedExperiment::rowData(x)
     }
-
     ## Coercing to character here to handle Rle/factor matching.
     all <- as.character(x[["geneName"]])
-
     ## Check for gene names (symbols).
     if (length(all) == 0L) {
-        return(false("Gene names are not defined in object."))
+        return(false("Gene names are not defined in '%s'.", .xname))
     }
-
     ## Require that the user passed in gene names.
     ok <- all(genes %in% all)
     if (!isTRUE(ok)) {
         setdiff <- setdiff(genes, all)
-        return(false("Genes missing: %s", toString(setdiff)))
+        return(false(
+            "Gene names missing in '%s': %s",
+            .xname, toString(setdiff, width = 200L)
+        ))
     }
-
     ## Get a vector of all duplicated gene names in the object.
     dupes <- all[which(duplicated(all))]
     ## Now check for intersection with the user-defined genes vector.
     intersect <- intersect(genes, dupes)
-
     if (length(intersect) > 0L) {
-        return(false("Non-unique gene names: %s", toString(intersect)))
+        return(false(
+            "Non-unique gene names in '%s': %s",
+            .xname, toString(intersect, width = 200L)
+        ))
     }
-
     TRUE
 }

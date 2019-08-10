@@ -1,7 +1,7 @@
 #' Does the input contain a ggplot2 scale?
 #'
 #' @name check-scalar-isGGScale
-#' @note Updated 2019-07-29.
+#' @note Updated 2019-08-10.
 #'
 #' @inherit check
 #' @inheritParams acidroxygen::params
@@ -48,12 +48,10 @@ isGGScale <- function(
     scale <- match.arg(scale)
     aes <- match.arg(aes)
     assert(isFlag(nullOK))
-
     ## Conditionally allow NULL.
     if (isTRUE(nullOK) && is.null(x)) {
         return(TRUE)
     }
-
     ## Check that the object inherits all of the required classes.
     ok <- isAll(
         x = x,
@@ -65,17 +63,18 @@ isGGScale <- function(
         )
     )
     if (!isTRUE(ok)) return(ok)
-
     ## Note that this has to match the British spelling (e.g colour).
     ok <- identical(x = x[["aesthetics"]], y = aes)
     if (!isTRUE(ok)) {
         ## nocov start
         return(false(
-            "%s isn't identical to %. Use British spelling (e.g. colour).",
+            paste0(
+                "'%s' isn't identical to '%s'. ",
+                "Use British spelling (e.g. colour)."
+            ),
             x[["aesthetics"]], aes
         ))
         ## nocov end
     }
-
     TRUE
 }

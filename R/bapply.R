@@ -25,7 +25,6 @@
 #' @examples
 #' bapply(list(a = "example", b = 1), is.character)
 bapply <- function(X, FUN, ...) {  # nolint
-    ## Error on FUN.VALUE and/or USE.NAMES input.
     dots <- list(...)
     assert(areDisjointSets(names(dots), c("FUN.VALUE", "USE.NAMES")))
     vapply(

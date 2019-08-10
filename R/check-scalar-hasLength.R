@@ -1,7 +1,7 @@
 #' Does the input have a non-zero or defined length?
 #'
 #' @name check-scalar-hasLength
-#' @note Updated 2019-07-29.
+#' @note Updated 2019-08-10.
 #'
 #' @inherit check
 #' @inheritParams acidroxygen::params
@@ -28,21 +28,17 @@ NULL
 #' @export
 hasLength <- function(x, n = NULL, .xname = getNameInParent(x)) {
     length <- length(x)
-
     if (length == 0L) {
-        return(false("%s has length 0.", .xname))
+        return(false("'%s' has length 0.", .xname))
     }
-
     if (is.null(n)) {
         return(TRUE)
     } else {
         assert(isInt(n), n > 0L)
     }
-
     ok <- length == n
     if (!isTRUE(ok)) {
-        return(false("%s does not have a length of %d.", .xname, n))
+        return(false("'%s' does not have a length of %d.", .xname, n))
     }
-
     TRUE
 }

@@ -34,38 +34,32 @@ isCharacter <- function(
     .xname = getNameInParent(x)
 ) {
     assert(isFlag(nullOK))
-
     ## Conditionally allow NULL.
     if (isTRUE(nullOK) && is.null(x)) {
         return(TRUE)
     }
-
     ok <- is.character(x)
     if (!isTRUE(ok)) {
-        return(false("%s is not character.", .xname))
+        return(false("'%s' is not character.", .xname))
     }
-
     ## Don't allow `character(0)`.
     ok <- hasLength(x, .xname = .xname)
     if (!isTRUE(ok)) return(ok)
-
     ## Don't allow empty strings ("").
     ok <- nzchar(x)
     if (!all(ok)) {
         return(false(
-            "%s has empty string at: %s.",
-            .xname, toString(which(!ok))
+            "'%s' has empty string at: %s.",
+            .xname, toString(which(!ok), width = 100L)
         ))
     }
-
     ## Don't allow `NA_character_`.
     ok <- !is.na(x)
     if (!all(ok)) {
         return(false(
-            "%s has NA at: %s.",
-            .xname, toString(which(!ok))
+            "'%s' has NA at: %s.",
+            .xname, toString(which(!ok), width = 100L)
         ))
     }
-
     TRUE
 }

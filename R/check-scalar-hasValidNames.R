@@ -1,7 +1,7 @@
 #' Does the input object have syntactically valid names?
 #'
 #' @name check-scalar-hasValidNames
-#' @note Updated 2019-08-08.
+#' @note Updated 2019-08-10.
 #'
 #' @inherit check
 #' @inheritParams acidroxygen::params
@@ -20,9 +20,9 @@
 #'
 #' ## FALSE ====
 #' x <- list(
-#'     `1`       = 1,  # can't start with number
-#'     `foo bar` = 2,  # no spaces
-#'     `foo-bar` = 3   # no hyphens
+#'     "1"       = 1,  # can't start with number
+#'     "foo bar" = 2,  # no spaces
+#'     "foo-bar" = 3   # no hyphens
 #' )
 #' print(x)
 #' hasValidNames(x)
