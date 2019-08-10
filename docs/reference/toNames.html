@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Does the input have names? — check-scalar-hasNames • goalie</title>
+<title>Sanitize vector input to names — toNames • goalie</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -34,9 +34,9 @@
 
   <link href="../extra.css" rel="stylesheet">
   
-<meta property="og:title" content="Does the input have names? — check-scalar-hasNames" />
+<meta property="og:title" content="Sanitize vector input to names — toNames" />
 
-<meta property="og:description" content="Does the input have names?" />
+<meta property="og:description" content="Sanitize vector input to names" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -111,18 +111,18 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Does the input have names?</h1>
-    <small class="dont-index">Source: <a href='https://github.com/acidgenomics/goalie/blob/master/R/check-scalar-hasNames.R'><code>R/check-scalar-hasNames.R</code></a></small>
-    <div class="hidden name"><code>check-scalar-hasNames.Rd</code></div>
+    <h1>Sanitize vector input to names</h1>
+    <small class="dont-index">Source: <a href='https://github.com/acidgenomics/goalie/blob/master/R/toNames.R'><code>R/toNames.R</code></a></small>
+    <div class="hidden name"><code>toNames.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Does the input have names?</p>
+    <p>Sanitize vector input to names</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>hasNames</span>(<span class='no'>x</span>, <span class='kw'>.xname</span> <span class='kw'>=</span> <span class='fu'><a href='getNameInParent.html'>getNameInParent</a></span>(<span class='no'>x</span>))</pre>
+    <pre class="usage"><span class='fu'>toNames</span>(<span class='no'>x</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -131,36 +131,34 @@
       <th>x</th>
       <td><p>Object.</p></td>
     </tr>
-    <tr>
-      <th>.xname</th>
-      <td><p>Name of object defined in <code>x</code>.
-<em>Not intended to be used directly.</em></p></td>
-    </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><code>TRUE</code> on success;
-<code>FALSE</code> on failure, with cause set.</p>
+    <p><code>character</code>.</p>
     
     <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
-    <p>Updated 2019-08-10.</p>
+    <p>Names resulting from this function do not necessarily return valid, and
+will not be identical to output from <code><a href='https://rdrr.io/r/base/make.names.html'>make.names()</a></code>.
+The output is intended for downstream use with the <code><a href='cause.html'>cause()</a></code> function.</p>
+<p>Updated 2019-08-10.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='https://rdrr.io/pkg/assertive.properties/man/has_names.html'>assertive.properties::has_names()</a></code>.</p></div>
+    <div class='dont-index'>
+<ul>
+<li><p><code>assertive.base:::to_names()</code>.</p></li>
+<li><p>https://stackoverflow.com/questions/26183735</p></li>
+</ul>
+</div>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'>## TRUE ====</span>
-<span class='fu'>hasNames</span>(<span class='kw pkg'>datasets</span><span class='kw ns'>::</span><span class='no'><a href='https://rdrr.io/r/datasets/mtcars.html'>mtcars</a></span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
-<span class='co'>## FALSE ====</span>
-<span class='fu'>hasNames</span>(<span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span>())</div><div class='output co'>#&gt; [1] FALSE
-#&gt; Cause of failure:
-#&gt; The names of matrix() are NULL.</div><div class='input'><span class='fu'>hasNames</span>(<span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>())</div><div class='output co'>#&gt; [1] FALSE
-#&gt; Cause of failure:
-#&gt; The names of data.frame() are all empty.</div></pre>
+    <pre class="examples"><div class='input'><span class='co'>## Non-character vectors are supported.</span>
+<span class='fu'>toNames</span>(<span class='fl'>1</span>)</div><div class='output co'>#&gt; <span class='error'>Error in toNames(1): could not find function "toNames"</span></div><div class='input'><span class='fu'>toNames</span>(<span class='fu'><a href='https://rdrr.io/r/base/complex.html'>complex</a></span>(<span class='fl'>1L</span>))</div><div class='output co'>#&gt; <span class='error'>Error in toNames(complex(1L)): could not find function "toNames"</span></div><div class='input'><span class='fu'>toNames</span>(<span class='fl'>NA</span>)</div><div class='output co'>#&gt; <span class='error'>Error in toNames(NA): could not find function "toNames"</span></div><div class='input'><span class='fu'>toNames</span>(<span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; <span class='error'>Error in toNames(TRUE): could not find function "toNames"</span></div><div class='input'>
+<span class='co'>## Doesn't use `make.names()` to sanitize.</span>
+<span class='fu'>toNames</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"sample-1"</span>, <span class='st'>"hello world"</span>))</div><div class='output co'>#&gt; <span class='error'>Error in toNames(c("sample-1", "hello world")): could not find function "toNames"</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
