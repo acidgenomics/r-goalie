@@ -69,8 +69,5 @@ test_that("FALSE", {
     ok <- allAreDirectories(c(".", "bbb"))
     expect_s3_class(ok, "goalie")
     expect_false(ok)
-    expect_identical(
-        cause(ok),
-        noquote("1   2   bbb not dir")
-    )
+    expect_match(cause(ok), "bbb")
 })
