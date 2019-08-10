@@ -19,7 +19,7 @@ test_that("NA logical (missing)", {
         c(a = TRUE, b = FALSE, c = NA)
     )
     expect_identical(
-        unname(cause(ok)),
-        noquote(c("", "custom false", "custom missing"))
+        cause(ok),
+        noquote(c(a = "", b = "custom false", c = "custom missing"))
     )
 })
