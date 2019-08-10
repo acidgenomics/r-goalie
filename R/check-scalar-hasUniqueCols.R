@@ -10,7 +10,7 @@
 #' columns.
 #'
 #' @name check-scalar-hasUniqueCols
-#' @note Updated 2019-07-29.
+#' @note Updated 2019-08-10.
 #'
 #' @inherit check
 #' @inheritParams acidroxygen::params
@@ -34,27 +34,23 @@ hasUniqueCols <- function(x, .xname = getNameInParent(x)) {
     if (is(x, "SummarizedExperiment")) {
         x <- .coerceSummarizedExperimentToMatrix(x)
     }
-
     ## Check for >= 2 samples.
     ok <- ncol(x) >= 2L
     if (!isTRUE(ok)) {
-        return(false("%s does not have >= 2 columns.", .xname))
+        return(false("'%s' does not have >= 2 columns.", .xname))
     }
-
     ## Ensure coercion to matrix, so we can use the S3 assay method for
     ## `duplicated()` below.
     x <- as(x, "matrix")
-
     ## We're using the S3 assay `duplicated` method here, which supports
     ## MARGIN, so we can check across the columns.
     dupes <- duplicated(x, MARGIN = 2L)
     ok <- !any(dupes)
     if (!isTRUE(ok)) {
         return(false(
-            "%s has duplicated columns at: %s",
-            .xname, toString(which(dupes))
+            "'%s' has duplicated columns at: %s",
+            .xname, toString(which(dupes), width = 200L)
         ))
     }
-
     TRUE
 }

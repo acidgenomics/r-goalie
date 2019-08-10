@@ -1,8 +1,14 @@
 context("isIntegerish")
 
 test_that("TRUE", {
-    expect_identical(isIntegerish(seq_len(2L)), c(TRUE, TRUE))
-    expect_identical(isIntegerish(c(1, 2)), c(TRUE, TRUE))  # nolint
+    expect_identical(
+        isIntegerish(seq_len(2L)),
+        c("1" = TRUE, "2" = TRUE)
+    )
+    expect_identical(
+        isIntegerish(c(1, 2)),  # nolint
+        c("1.000000000000000e+00" = TRUE, "2.000000000000000e+00" = TRUE)
+    )
 })
 
 test_that("FALSE", {
@@ -11,7 +17,7 @@ test_that("FALSE", {
     expect_false(ok)
     expect_identical(
         cause(ok),
-        noquote("not integer")
+        c("1.000000000000000e-01" = noquote("not integer"))
     )
 })
 
@@ -19,12 +25,20 @@ test_that("FALSE : NA input", {
     ok <- isIntegerish(c(1, 2, NA))  # nolint
     expect_s3_class(ok, "goalie")
     expect_identical(
-        as.logical(ok),
-        c(TRUE, TRUE, FALSE)
+        nocause(ok),
+        c(
+            "1.000000000000000e+00" = TRUE,
+            "2.000000000000000e+00" = TRUE,
+            "NA" = FALSE
+        )
     )
     expect_identical(
         cause(ok),
-        noquote(c("", "", "NA"))
+        noquote(c(
+            "1.000000000000000e+00" = "",
+            "2.000000000000000e+00" = "",
+            "NA" = "NA"
+        ))
     )
 })
 

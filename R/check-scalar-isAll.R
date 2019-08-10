@@ -1,7 +1,7 @@
 #' Does the input belong to or inherit all of these classes?
 #'
 #' @name check-scalar-isAll
-#' @note Updated 2019-07-29.
+#' @note Updated 2019-08-10.
 #'
 #' @inherit check
 #' @inheritParams acidroxygen::params
@@ -24,7 +24,7 @@ isAll <- function(x, classes, .xname = getNameInParent(x)) {
     ok <- all(is2(x, class = classes))
     if (!isTRUE(ok)) {
         return(false(
-            "%s is not all: %s",
+            "'%s' is not all of: %s.",
             .xname, toString(classes)
         ))
     }

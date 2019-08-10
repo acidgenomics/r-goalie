@@ -25,7 +25,7 @@ This assert check is intended primarily to check for RColorBrewer or viridis
 hexadecimal color value return.
 }
 \note{
-Updated 2019-07-29.
+Updated 2019-08-10.
 }
 \examples{
 ## TRUE ====

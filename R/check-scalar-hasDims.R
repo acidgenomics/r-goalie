@@ -1,7 +1,7 @@
 #' Does the input have dimensions?
 #'
 #' @name check-scalar-hasDims
-#' @note Updated 2019-07-29.
+#' @note Updated 2019-08-10.
 #'
 #' @inherit check
 #' @inheritParams acidroxygen::params
@@ -34,7 +34,7 @@ NULL
 #' @export
 hasDims <- function(x, .xname = getNameInParent(x)) {
     if (is.null(dim(x))) {
-        return(false("The dimensions of %s are NULL.", .xname))
+        return(false("The dimensions of '%s' are NULL.", .xname))
     }
     TRUE
 }
@@ -46,10 +46,10 @@ hasDims <- function(x, .xname = getNameInParent(x)) {
 hasRows <- function(x, .xname = getNameInParent(x)) {
     nrowx <- nrow(x)
     if (is.null(nrowx)) {
-        return(false("The number of rows in %s is NULL.", .xname))
+        return(false("The number of rows in '%s' is NULL.", .xname))
     }
     if (nrowx == 0L) {
-        return(false("The number of rows in %s is zero.", .xname))
+        return(false("The number of rows in '%s' is zero.", .xname))
     }
     TRUE
 }
@@ -61,10 +61,10 @@ hasRows <- function(x, .xname = getNameInParent(x)) {
 hasCols <- function(x, .xname = getNameInParent(x)) {
     ncolx <- ncol(x)
     if (is.null(ncolx)) {
-        return(false("The number of columns in %s is NULL.", .xname))
+        return(false("The number of columns in '%s' is NULL.", .xname))
     }
     if (ncolx == 0L) {
-        return(false("The number of columns in %s is zero.", .xname))
+        return(false("The number of columns in '%s' is zero.", .xname))
     }
     TRUE
 }

@@ -12,20 +12,6 @@
 
 
 
-## Updated 2019-07-15.
-.assertHasCause <- function(x) {
-    cause <- cause(x)
-    if (
-        length(cause) != 1L &&
-        !identical(length(x), length(cause))
-    ) {
-        stop("cause error.")
-    }
-    TRUE
-}
-
-
-
 ## @seealso `syntactic::capitalize()`.
 ## Updated 2019-07-15.
 .capitalize <- function(x) {
@@ -89,6 +75,21 @@
 
 
 
+## Updated 2019-08-10.
+.hasCause <- function(x) {
+    cause <- cause(x)
+    if (
+        length(cause) != 1L &&
+        !identical(length(x), length(cause))
+    ) {
+        FALSE
+    } else {
+        TRUE
+    }
+}
+
+
+
 ## @seealso `assertive.properties:::n_elements()`.
 ## Updated 2019-07-15.
 .nElements <- function(x) {
@@ -111,30 +112,6 @@
 
 
 
-## @seealso `assertive.base:::to_names()`.
-## Updated 2019-07-15.
-.toNames <- function(x) {
-    if (is.double(x) && is.vector(x)) {
-        ifelse(
-            test = is.na(x),
-            yes = NA_real_,
-            no = sprintf("%.17g", x)
-        )
-    }
-    else if (is.complex(x)) {
-        ifelse(
-            test = is.na(x),
-            yes = NA_complex_,
-            no = sprintf("%.17g+%.17gi", Re(x), Im(x))
-        )
-    }
-    else {
-        as.character(x)
-    }
-}
-
-
-
 .tolerance <- 100L * .Machine[["double.eps"]]
 
 
@@ -153,6 +130,7 @@
 
 
 ## @seealso `assertive.base:::type_description()`.
+## Updated 2019-08-10.
 .typeDescription <- function(x) {
     if (is.array(x)) {
         sprintf(

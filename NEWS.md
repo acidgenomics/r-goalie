@@ -1,6 +1,23 @@
+## goalie 0.3.2 (2019-08-10)
+
+### New functions
+
+- Now exporting `toNames`, which was previously used internally by the package.
+  Improved handling in this function for floating points. Also now using
+  `toNames` more consistently internally to sanitize names for `cause` return.
+
+### Minor changes
+
+- `standardizeCall`: Now returns with default arguments included. Can disable
+  using `defaults = FALSE`.
+- `matchArgsToDoCall`: Tweaked internal code slightly based on `standardizeCall`
+  update.
+- Updated messages to use quotes more consistently.
+- Improved vector name handling for `cause` return.
+
 ## goalie 0.3.1 (2019-08-05)
 
-## Minor changes
+### Minor changes
 
 - Improved documentation consistency, using shared params defined in new
   acidroxygen package. This will be used across the basejump packages in a

@@ -4,12 +4,19 @@
 \alias{standardizeCall}
 \title{Standardize call}
 \usage{
-standardizeCall(which = sys.parent(n = 1L), return = c("call", "list"),
-  verbose = FALSE)
+standardizeCall(which = sys.parent(n = 1L), defaults = TRUE,
+  expandDots = TRUE, return = c("call", "list"), verbose = FALSE)
 }
 \arguments{
 \item{which}{the frame number if non-negative, the number of frames
     to go back if negative.}
+
+\item{defaults}{\code{logical(1)}.
+Include default arguments in the call.}
+
+\item{expandDots}{\code{logical(1)}.
+Should arguments matching \code{...} in the call be included or left as a
+\code{...} argument?}
 
 \item{return}{\code{character(1)}.
 Return type. Uses \code{\link[base:match.arg]{match.arg()}} internally and defaults
@@ -20,9 +27,9 @@ Run the function with verbose output.}
 }
 \value{
 \itemize{
-\item \code{call}: \code{call}. Matched call.
-\item \code{list}: \code{list}. Verbose list that includes additional information about how
-the call was standardized.
+\item \code{call}: Matched call.
+\item \code{list}: Verbose list that includes additional information about how the
+call was standardized. Recommended for debugging purposes only.
 }
 }
 \description{
@@ -30,7 +37,7 @@ This function adds matching support for S4 methods with formals that aren't
 identical to the generic, and use a nested \code{.local} call.
 }
 \note{
-Updated 2019-07-29.
+Updated 2019-08-08.
 }
 \examples{
 aaa <- "AAA"
@@ -65,5 +72,6 @@ testing(aaa, bbb)
 \item \code{sys.call()}.
 \item \code{sys.parent()}.
 \item \code{pryr::standardise_call()}.
+\item \code{stackoverflow::match.call.defaults()}.
 }
 }

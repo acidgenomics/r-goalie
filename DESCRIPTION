@@ -1,8 +1,8 @@
 Package: goalie
 Title: Assertive check functions
 Description: Assertive check functions for defensive R programming.
-Version: 0.3.1
-Date: 2019-08-05
+Version: 0.3.2
+Date: 2019-08-09
 Authors@R: c(
     person(
         "Michael", "Steinbaugh",

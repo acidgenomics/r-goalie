@@ -24,7 +24,7 @@ hasValidDimnames(x, .xname = getNameInParent(x))
 Does the input object have syntactically valid names?
 }
 \note{
-Updated 2019-07-29.
+Updated 2019-08-10.
 }
 \examples{
 ## TRUE ====
@@ -38,9 +38,9 @@ hasValidDimnames(x)
 
 ## FALSE ====
 x <- list(
-    `1`       = 1,  # can't start with number
-    `foo bar` = 2,  # no spaces
-    `foo-bar` = 3   # no hyphens
+    "1"       = 1,  # can't start with number
+    "foo bar" = 2,  # no spaces
+    "foo-bar" = 3   # no hyphens
 )
 print(x)
 hasValidNames(x)
