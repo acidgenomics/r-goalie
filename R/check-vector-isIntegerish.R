@@ -48,6 +48,7 @@ isIntegerish <- function(x, .xname = getNameInParent(x)) {
             is.integer(x) || is.infinite(x)
         }
     )
+    names(ok) <- as.character(x)
     if (all(ok)) return(ok)
 
     ok <- bapply(
