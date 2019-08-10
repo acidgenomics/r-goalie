@@ -19,6 +19,6 @@
 callAndName <- function(fun, x, ...) {
     y <- fun(x, ...)
     dim(y) <- dim(x)
-    names(y) <- .toNames(x)
+    names(y) <- toNames(x)
     y
 }

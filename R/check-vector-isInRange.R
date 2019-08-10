@@ -1,7 +1,7 @@
 #' Is the input in range?
 #'
 #' @name check-vector-isInRange
-#' @note Updated 2019-08-08.
+#' @note Updated 2019-08-10.
 #'
 #' @section Intervals:
 #'
@@ -80,14 +80,14 @@ isInRange <- function(
     )
     ok <- is.numeric(x) && !any(is.na(x))
     if (!isTRUE(ok)) {
-        return(false("%s is not (non-NA) numeric.", .xname))  # nocov
+        return(false("'%s' is not (non-NA) numeric.", .xname))  # nocov
     }
     tooLow <- (if (closed[[1L]]) `<` else `<=`)(x, lower)
     tooHigh <- (if (closed[[2L]]) `>` else `>=`)(x, upper)
     ok <- rep.int(TRUE, length(x))
     ok[tooLow] <- FALSE
     ok[tooHigh] <- FALSE
-    names(ok) <- as.character(x)
+    names(ok) <- toNames(x)
     setCause(ok, false = ifelse(tooLow, "too low", "too high"))
 }
 

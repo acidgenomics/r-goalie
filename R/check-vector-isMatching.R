@@ -1,7 +1,7 @@
 #' Does the string match a pattern?
 #'
 #' @name check-vector-isMatching
-#' @note Updated 2019-08-08.
+#' @note Updated 2019-08-10.
 #'
 #' @inherit check
 #' @inheritParams acidroxygen::params
@@ -39,7 +39,7 @@ isMatchingFixed <- function(x, pattern, .xname = getNameInParent(x)) {
         ignore.case = FALSE,
         fixed = TRUE
     )
-    names(ok) <- as.character(x)
+    names(ok) <- toNames(x)
     setCause(ok, false = gettextf("does not match '%s'", pattern))
 }
 
@@ -54,7 +54,7 @@ isMatchingRegex <- function(x, pattern, .xname = getNameInParent(x)) {
         ignore.case = FALSE,
         fixed = FALSE
     )
-    names(ok) <- as.character(x)
+    names(ok) <- toNames(x)
     setCause(ok, false = gettextf("does not match '%s'", pattern))
 }
 
@@ -69,7 +69,7 @@ isNotMatchingFixed <- function(x, pattern, .xname = getNameInParent(x)) {
         ignore.case = FALSE,
         fixed = TRUE
     )
-    names(ok) <- as.character(x)
+    names(ok) <- toNames(x)
     setCause(ok, false = gettextf("matches '%s'", pattern))
 }
 
@@ -84,7 +84,7 @@ isNotMatchingRegex <- function(x, pattern, .xname = getNameInParent(x)) {
         ignore.case = FALSE,
         fixed = FALSE
     )
-    names(ok) <- as.character(x)
+    names(ok) <- toNames(x)
     setCause(ok, false = gettextf("matches '%s'", pattern))
 }
 

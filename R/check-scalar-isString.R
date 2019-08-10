@@ -1,7 +1,7 @@
 #' Does the input contain a (non-empty) character string?
 #'
 #' @name check-scalar-isString
-#' @note Updated 2019-07-29.
+#' @note Updated 2019-08-10.
 #'
 #' @inherit check
 #' @inheritParams acidroxygen::params
@@ -29,19 +29,16 @@ isString <- function(
     if (isTRUE(nullOK) && is.null(x)) {
         return(TRUE)
     }
-
     ok <- is.character(x) && length(x) == 1L
     if (!isTRUE(ok)) {
-        return(false("%s is not a character of length 1.", .xname))
+        return(false("'%s' is not a character of length 1.", .xname))
     }
-
     ## Return FALSE on NA character or empty string.
     if (is.na(x)) {
-        return(false("%s is NA.", .xname))
+        return(false("'%s' is NA.", .xname))
     }
     if (identical(x, "")) {
-        return(false("%s contains empty string.", .xname))
+        return(false("'%s' contains empty string.", .xname))
     }
-
     TRUE
 }

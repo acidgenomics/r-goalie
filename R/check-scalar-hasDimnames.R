@@ -5,7 +5,7 @@
 #' Does the input have dimnames?
 #'
 #' @name check-scalar-hasDimnames
-#' @note Updated 2019-07-29.
+#' @note Updated 2019-08-10.
 #'
 #' @inherit check
 #' @inheritParams acidroxygen::params
@@ -39,11 +39,11 @@ hasDimnames <- function(x, .xname = getNameInParent(x)) {
         error = function(e) e
     )
     if (is(dimnames, "error")) {
-        false("`dimnames()` command on %s failed.", .xname)  # nocov
+        false("`dimnames()` command on '%s' failed.", .xname)  # nocov
     } else if (is.null(dimnames)) {
-        false("The dimension names of %s are NULL.", .xname)  # nocov
+        false("The dimension names of '%s' are NULL.", .xname)  # nocov
     } else if (!any(nzchar(unlist(dimnames, use.names = FALSE)))) {
-        false("The dimension names of %s are all empty.", .xname)
+        false("The dimension names of '%s' are all empty.", .xname)
     } else {
         TRUE
     }
@@ -59,11 +59,11 @@ hasColnames <- function(x, .xname = getNameInParent(x)) {
         error = function(e) e
     )
     if (is(colnames, "error")) {
-        false("`colnames()` command on %s failed.", .xname)  # nocov
+        false("'colnames()' command on '%s' failed.", .xname)  # nocov
     } else if (is.null(colnames)) {
-        false("The column names of %s are NULL.", .xname)  # nocov
+        false("The column names of '%s' are NULL.", .xname)  # nocov
     } else if (!any(nzchar(colnames))) {
-        false("The column names of %s are all empty.", .xname)
+        false("The column names of '%s' are all empty.", .xname)
     } else {
         TRUE
     }

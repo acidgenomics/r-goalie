@@ -4,7 +4,7 @@
 #'   function will intentionally error.
 #'
 #' @name check-scalar-areSameLength
-#' @note Updated 2019-07-29.
+#' @note Updated 2019-08-10.
 #'
 #' @inherit check
 #' @inheritParams acidroxygen::params
@@ -39,7 +39,7 @@ areSameLength <- function(
     ok <- identical(length(x), length(y))
     if (!isTRUE(ok)) {
         return(false(
-            "%s does not have the same length as %s.",
+            "'%s' does not have the same length as '%s'.",
             .xname, .yname
         ))
     }

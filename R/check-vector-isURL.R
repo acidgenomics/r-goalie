@@ -1,7 +1,7 @@
 #' Does the input contain a URL?
 #'
 #' @name check-vector-isURL
-#' @note Updated 2019-07-29.
+#' @note Updated 2019-08-10.
 #'
 #' @inherit check
 #' @inheritParams acidroxygen::params
@@ -27,7 +27,6 @@ NULL
 isURL <- function(x, .xname = getNameInParent(x)) {
     ok <- isCharacter(x)
     if (!isTRUE(ok)) return(ok)  # nocov
-
     pattern <- "^(http(s)?|ftp)\\://.+"
     ok <- isMatchingRegex(x = x, pattern = pattern)
     setCause(ok, false = "not URL")
@@ -41,10 +40,8 @@ isURL <- function(x, .xname = getNameInParent(x)) {
 isAURL <- function(x, .xname = getNameInParent(x)) {
     ok <- isString(x = x, .xname = .xname)
     if (!isTRUE(ok)) return(ok)
-
     ok <- isURL(x = x, .xname = .xname)
     if (!all(ok)) return(falseFromVector(ok))  # nocov
-
     TRUE
 }
 

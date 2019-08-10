@@ -1,7 +1,7 @@
 #' Are these valid names?
 #'
 #' @name check-scalar-validNames
-#' @note Updated 2019-08-09.
+#' @note Updated 2019-08-10.
 #'
 #' @inherit check
 #' @inheritParams acidroxygen::params
@@ -32,7 +32,6 @@ NULL
 validNames <- function(x, .xname = getNameInParent(x)) {
     ok <- isCharacter(x, .xname = .xname)
     if (!isTRUE(ok)) return(ok)  # nocov
-
     setdiff <- setdiff(x, make.names(x, unique = TRUE))
     if (hasLength(setdiff)) {
         return(false(
@@ -45,6 +44,5 @@ validNames <- function(x, .xname = getNameInParent(x)) {
             toString(setdiff, width = 200L)
         ))
     }
-
     TRUE
 }
