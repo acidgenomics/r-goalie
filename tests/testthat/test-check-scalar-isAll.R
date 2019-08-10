@@ -12,6 +12,6 @@ test_that("FALSE", {
     expect_s3_class(ok, "goalie")
     expect_identical(
         cause(ok),
-        noquote("x is not all: integer, NULL")
+        noquote("'x' is not all of: integer, NULL.")
     )
 })

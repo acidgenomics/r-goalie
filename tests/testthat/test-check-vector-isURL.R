@@ -12,7 +12,7 @@ test_that("isURL", {
     expect_false(ok)
     expect_identical(
         cause(ok),
-        noquote("not URL")
+        noquote(c(xxx = "not URL"))
     )
 
     ok <- isAURL(urls)
@@ -20,7 +20,7 @@ test_that("isURL", {
     expect_false(ok)
     expect_identical(
         cause(ok),
-        noquote("urls is not a character of length 1.")
+        noquote("'urls' is not a character of length 1.")
     )
 })
 
@@ -31,7 +31,7 @@ test_that("isAURL", {
     expect_false(ok)
     expect_identical(
         cause(ok),
-        noquote("urls is not a character of length 1.")
+        noquote("'urls' is not a character of length 1.")
     )
 })
 

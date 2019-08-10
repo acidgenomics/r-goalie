@@ -19,7 +19,7 @@ test_that("scalar failure", {
     expect_identical(
         cause(ok),
         noquote(paste(
-            "data.frame() is not of class 'DataFrame';",
+            "'data.frame()' is not of class 'DataFrame';",
             "it has class 'data.frame'."
         ))
     )
@@ -34,7 +34,10 @@ test_that("vector failure", {
     )
     expect_identical(
         cause(ok),
-        noquote(c("", "class 'data.frame' is not 'DataFrame'"))
+        noquote(c(
+            "data.frame" = "",
+            "DataFrame" = "class 'data.frame' is not 'DataFrame'"
+        ))
     )
 })
 

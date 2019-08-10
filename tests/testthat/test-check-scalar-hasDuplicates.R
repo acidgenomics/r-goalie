@@ -10,7 +10,7 @@ test_that("FALSE", {
     expect_s3_class(ok, "goalie")
     expect_identical(
         cause(ok),
-        noquote('c("a", "b") has no duplicates.')
+        noquote("'c(\"a\", \"b\")' has no duplicates.")
     )
 })
 
@@ -28,6 +28,8 @@ test_that("FALSE", {
     expect_s3_class(ok, "goalie")
     expect_identical(
         cause(ok),
-        noquote('c("a", "a", "b", "b") has duplicates at positions 2, 4.')
+        noquote(paste0(
+            "'c(\"a\", \"a\", \"b\", \"b\")' has duplicates at positions 2, 4."
+        ))
     )
 })
