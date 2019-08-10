@@ -4,7 +4,7 @@ test_that("Non character", {
     expect_identical(toNames(1L), "1")
     ## Return numerics in scientific notation.
     expect_identical(
-        object = toNames(c(1, 1.1E-4)),
+        object = toNames(c(1, 1.1E-4)),  # nolint
         expected = c(
             "1.000000000000000e+00",
             "1.100000000000000e-04"
