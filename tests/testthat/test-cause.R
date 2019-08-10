@@ -19,7 +19,7 @@ test_that("vector", {
     cause(x) <- cause
     expect_s3_class(x, "goalie")
     expect_is(x, "logical")
-    expect_identical(unname(cause(x)), noquote(unname(cause)))
+    expect_identical(cause(x), noquote(cause))
 })
 
 test_that("cause assignment mismatch", {
