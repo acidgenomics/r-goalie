@@ -9,12 +9,12 @@ test_that("FALSE : out of bounds", {
     ok <- isAlpha(0)  # nolint
     expect_identical(
         cause(ok),
-        c("0.000000000000000e+00" = noquote("too low"))
+        noquote(c("0.000000000000000e+00" = "too low"))
     )
     ok <- isAlpha(1)  # nolint
     expect_identical(
         cause(ok),
-        c("1.000000000000000e+00" = noquote("too high"))
+        noquote(c("1.000000000000000e+00" = "too high"))
     )
 })
 
