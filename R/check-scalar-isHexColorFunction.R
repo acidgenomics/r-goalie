@@ -4,7 +4,7 @@
 #' hexadecimal color value return.
 #'
 #' @name check-scalar-isHexColorFunction
-#' @note Updated 2019-07-29.
+#' @note Updated 2019-08-10.
 #'
 #' @inherit check
 #' @inheritParams acidroxygen::params
@@ -34,28 +34,22 @@ isHexColorFunction <- function(
     if (isTRUE(nullOK) && is.null(x)) {
         return(TRUE)
     }
-
     ## Check for function.
     ok <- is.function(x)
     if (!isTRUE(ok)) {
-        return(false("%s is not a function.", .xname))
+        return(false("'%s' is not a function.", .xname))
     }
-
     ## Check for `n` formal.
     ok <- "n" %in% formalArgs(x)
     if (!isTRUE(ok)) {
-        return(false(
-            "Hex color function must contain an `n` formal argument."
-        ))
+        return(false("'%s' function must contain an `n` argument.", .xname))
     }
-
+    ## Check for hex value return.
     colors <- x(n = 2L)
     if (!is.character(colors) || length(colors) == 0L) {
-        return(false("Hex color function didn't return any values."))
+        return(false("'%s' function didn't return any hex colors.", .xname))
     }
-
     ok <- allAreHexColors(colors)
     if (!isTRUE(ok)) return(ok)
-
     TRUE
 }

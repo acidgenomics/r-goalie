@@ -1,7 +1,7 @@
 #' Check the `compress` formal argument
 #'
 #' @name check-scalar-formalCompress
-#' @note Updated 2019-07-29.
+#' @note Updated 2019-08-10.
 #'
 #' @inherit check
 #' @inheritParams acidroxygen::params
@@ -25,7 +25,6 @@ formalCompress <- function(compress) {
     if (!isTRUE(ok)) {
         return(ok)
     }
-
     ## Allow TRUE/FALSE boolean flag.
     if (is.logical(compress)) {
         ok <- isFlag(compress)
@@ -34,11 +33,9 @@ formalCompress <- function(compress) {
         }
         return(compress)
     }
-
     ok <- isSubset(compress, c("bzip2", "gzip", "xz"))
     if (!isTRUE(ok)) {
         return(ok)
     }
-
     TRUE
 }

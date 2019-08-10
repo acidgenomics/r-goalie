@@ -4,7 +4,7 @@
 #' (e.g. `1`) `integer`.
 #'
 #' @name check-vector-isIntegerish
-#' @note Updated 2019-07-29.
+#' @note Updated 2019-08-10.
 #'
 #' @inherit check
 #' @inheritParams acidroxygen::params
@@ -31,16 +31,14 @@ NULL
 isIntegerish <- function(x, .xname = getNameInParent(x)) {
     ## Check for numeric vector.
     if (!is.numeric(x)) {
-        return(false("%s is not numeric.", .xname))  # nocov
+        return(false("'%s' is not numeric.", .xname))  # nocov
     }
-
     ## Require that vector does not contain NA.
     ok <- !is.na(x)
     if (!all(ok)) {
-        names(ok) <- as.character(x)
+        names(ok) <- toNames(x)
         return(setCause(x = ok, false = "NA"))
     }
-
     ## Early return without running `all.equal()` for integer or infinite (Inf).
     ok <- bapply(
         X = x,
@@ -48,9 +46,9 @@ isIntegerish <- function(x, .xname = getNameInParent(x)) {
             is.integer(x) || is.infinite(x)
         }
     )
-    names(ok) <- as.character(x)
+    names(ok) <- toNames(x)
+    ## Check if numeric is equal to integer, based on tolerance.
     if (all(ok)) return(ok)
-
     ok <- bapply(
         X = x,
         FUN = function(x) {
@@ -61,7 +59,7 @@ isIntegerish <- function(x, .xname = getNameInParent(x)) {
             ))
         }
     )
-    names(ok) <- as.character(x)
+    names(ok) <- toNames(x)
     setCause(ok, false = "not integer")
 }
 

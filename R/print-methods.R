@@ -9,7 +9,7 @@ NULL
 
 .printGoalieScalar <-  # nolint
     function(x) {
-        .assertHasCause(x)
+        stopifnot(.hasCause(x))
         print(x[[1L]])
         cat("Cause of failure:", cause(x), sep = "\n")
     }
@@ -20,7 +20,7 @@ NULL
 ## For now keep the method support as simple as possible.
 .printGoalieVector <-  # nolint
     function(x, n = 10L, ignoreNA = FALSE) {
-        .assertHasCause(x)
+        stopifnot(.hasCause(x))
         cause <- cause(x)
         names <- names(x)
         if (is.null(names)) {

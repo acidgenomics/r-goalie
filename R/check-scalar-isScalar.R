@@ -3,7 +3,7 @@
 #' Scalar represents a length of 1.
 #'
 #' @name check-scalar-isScalar
-#' @note Updated 2019-07-29.
+#' @note Updated 2019-08-10.
 #'
 #' @inherit check
 #' @inheritParams acidroxygen::params
@@ -38,9 +38,8 @@ NULL
 isScalar <- function(x, .xname = getNameInParent(x)) {
     ok <- length(x) == 1L
     if (!isTRUE(ok)) {
-        return(false("%s does not have a length of 1.", .xname))
+        return(false("'%s' does not have a length of 1.", .xname))
     }
-
     TRUE
 }
 
@@ -50,12 +49,10 @@ isScalar <- function(x, .xname = getNameInParent(x)) {
 #' @export
 isScalarList <- function(x, .xname = getNameInParent(x)) {
     if (!isTRUE(ok <- isScalar(x))) return(ok)
-
     ok <- is.list(x)
     if (!isTRUE(ok)) {
-        return(false("%s is not list.", .xname))
+        return(false("'%s' is not list.", .xname))
     }
-
     TRUE
 }
 
@@ -65,12 +62,10 @@ isScalarList <- function(x, .xname = getNameInParent(x)) {
 #' @export
 isScalarAtomic <- function(x, .xname = getNameInParent(x)) {
     if (!isTRUE(ok <- isScalar(x))) return(ok)
-
     ok <- is.atomic(x)
     if (!isTRUE(ok)) {
-        return(false("%s is not atomic.", .xname))  # nocov
+        return(false("'%s' is not atomic.", .xname))  # nocov
     }
-
     TRUE
 }
 
@@ -80,12 +75,10 @@ isScalarAtomic <- function(x, .xname = getNameInParent(x)) {
 #' @export
 isScalarVector <- function(x, .xname = getNameInParent(x)) {
     if (!isTRUE(ok <- isScalar(x))) return(ok)
-
     ok <- is.vector(x)
     if (!isTRUE(ok)) {
-        return(false("%s is not vector.", .xname))  # nocov
+        return(false("'%s' is not vector.", .xname))  # nocov
     }
-
     TRUE
 }
 
@@ -95,12 +88,10 @@ isScalarVector <- function(x, .xname = getNameInParent(x)) {
 #' @export
 isScalarNumeric <- function(x, .xname = getNameInParent(x)) {
     if (!isTRUE(ok <- isScalar(x))) return(ok)
-
     ok <- is.numeric(x)
     if (!isTRUE(ok)) {
-        return(false("%s is not numeric.", .xname))  # nocov
+        return(false("'%s' is not numeric.", .xname))  # nocov
     }
-
     TRUE
 }
 
@@ -110,12 +101,10 @@ isScalarNumeric <- function(x, .xname = getNameInParent(x)) {
 #' @export
 isScalarInteger <- function(x, .xname = getNameInParent(x)) {
     if (!isTRUE(ok <- isScalar(x))) return(ok)
-
     ok <- is.integer(x)
     if (!isTRUE(ok)) {
-        return(false("%s is not integer.", .xname))
+        return(false("'%s' is not integer.", .xname))
     }
-
     TRUE
 }
 
@@ -135,12 +124,10 @@ isScalarIntegerish <- function(x) {
 #' @export
 isScalarDouble <- function(x, .xname = getNameInParent(x)) {
     if (!isTRUE(ok <- isScalar(x))) return(ok)
-
     ok <- is.double(x)
     if (!isTRUE(ok)) {
-        return(false("%s is not double.", .xname))
+        return(false("'%s' is not double.", .xname))
     }
-
     TRUE
 }
 
@@ -150,12 +137,10 @@ isScalarDouble <- function(x, .xname = getNameInParent(x)) {
 #' @export
 isScalarCharacter <- function(x, .xname = getNameInParent(x)) {
     if (!isTRUE(ok <- isScalar(x))) return(ok)
-
     ok <- is.character(x)
     if (!isTRUE(ok)) {
-        return(false("%s is not character.", .xname))
+        return(false("'%s' is not character.", .xname))
     }
-
     TRUE
 }
 
@@ -165,12 +150,10 @@ isScalarCharacter <- function(x, .xname = getNameInParent(x)) {
 #' @export
 isScalarLogical <- function(x, .xname = getNameInParent(x)) {
     if (!isTRUE(ok <- isScalar(x))) return(ok)
-
     ok <- is.logical(x)
     if (!isTRUE(ok)) {
-        return(false("%s is not logical.", .xname))
+        return(false("'%s' is not logical.", .xname))
     }
-
     TRUE
 }
 
@@ -181,8 +164,7 @@ isScalarLogical <- function(x, .xname = getNameInParent(x)) {
 isNonScalar <- function(x, .xname = getNameInParent(x)) {
     ok <- as.logical(!isScalar(x))
     if (!isTRUE(ok)) {
-        return(false("%s is scalar (has a length of 1).", .xname))
+        return(false("'%s' is scalar (has a length of 1).", .xname))
     }
-
     TRUE
 }

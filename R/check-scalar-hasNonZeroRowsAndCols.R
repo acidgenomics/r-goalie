@@ -7,7 +7,7 @@
 #' heatmap or applying a log transformation, for example.
 #'
 #' @name check-scalar-hasNonZeroRowsAndCols
-#' @note Updated 2019-07-29.
+#' @note Updated 2019-08-10.
 #'
 #' @inherit check
 #' @inheritParams acidroxygen::params
@@ -47,13 +47,10 @@ NULL
 hasNonZeroRowsAndCols <- function(x, .xname = getNameInParent(x)) {
     ok <- isAny(x = x, classes = c("matrix", "Matrix"), .xname = .xname)
     if (!isTRUE(ok)) return(ok)  # nocov
-
     ok <- hasRows(x, .xname = .xname)
     if (!isTRUE(ok)) return(ok)
-
     ok <- hasCols(x, .xname = .xname)
     if (!isTRUE(ok)) return(ok)
-
     ## For sparse matrix, use the generic verbs from Matrix package. Note that
     ## sparse matrices are often highly zero-inflated, so this approach might
     ## not be generally recommended for this data class.
@@ -62,7 +59,6 @@ hasNonZeroRowsAndCols <- function(x, .xname = getNameInParent(x)) {
         colSums <- Matrix::colSums
         rowSums <- Matrix::rowSums
     }
-
     ## Inform the user if any rows or columns contain all zeros. It's good
     ## practice to remove them before attempting to plot a heatmap.
     zeroRows <- rowSums(x) == 0L
@@ -72,8 +68,8 @@ hasNonZeroRowsAndCols <- function(x, .xname = getNameInParent(x)) {
         return(false(
             ngettext(
                 n = n,
-                msg1 = "%s has %s zero row at position %s.",
-                msg2 = "%s has %s zero rows at positions %s."
+                msg1 = "'%s' has %s zero row at position %s.",
+                msg2 = "'%s' has %s zero rows at positions %s."
             ),
             .xname, n, which
         ))
@@ -85,12 +81,11 @@ hasNonZeroRowsAndCols <- function(x, .xname = getNameInParent(x)) {
         return(false(
             ngettext(
                 n = n,
-                msg1 = "%s has %s zero column at position %s.",
-                msg2 = "%s has %s zero columns at positions %s."
+                msg1 = "'%s' has %s zero column at position %s.",
+                msg2 = "'%s' has %s zero columns at positions %s."
             ),
             .xname, n, which
         ))
     }
-
     TRUE
 }
