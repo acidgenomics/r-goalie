@@ -14,7 +14,7 @@ test_that("FALSE : not integer", {
     expect_false(ok)
     expect_identical(
         cause(ok),
-        c("1.000000000000000e-01" = noquote("not integer"))
+        noquote(c("1.000000000000000e-01" = "not integer"))
     )
 })
 
