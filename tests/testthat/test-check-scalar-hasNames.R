@@ -10,7 +10,7 @@ test_that("FALSE : matrix", {
     expect_s3_class(ok, "goalie")
     expect_identical(
         cause(ok),
-        noquote("The names of matrix() are NULL.")
+        noquote("The names of 'matrix()' are NULL.")
     )
 })
 
@@ -20,6 +20,6 @@ test_that("FALSE : data frame", {
     expect_s3_class(ok, "goalie")
     expect_identical(
         cause(ok),
-        noquote("The names of data.frame() are all empty.")
+        noquote("The names of 'data.frame()' are all empty.")
     )
 })

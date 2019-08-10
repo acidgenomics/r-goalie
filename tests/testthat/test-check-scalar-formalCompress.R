@@ -11,7 +11,10 @@ test_that("FALSE : unsupported string", {
     expect_s3_class(ok, "goalie")
     expect_identical(
         cause(ok),
-        noquote('compress has elements not in c("bzip2", "gzip", "xz"): xxx')
+        noquote(paste0(
+            "'compress' has elements not in ",
+            "'c(\"bzip2\", \"gzip\", \"xz\")': xxx"
+        ))
     )
 })
 
@@ -21,7 +24,7 @@ test_that("FALSE : not character", {
     expect_s3_class(ok, "goalie")
     expect_identical(
         cause(ok),
-        noquote("compress is not any of: character, logical.")
+        noquote("'compress' is not any of: character, logical.")
     )
 })
 
@@ -31,6 +34,6 @@ test_that("FALSE : logical NA is not boolean", {
     expect_s3_class(ok, "goalie")
     expect_identical(
         cause(ok),
-        noquote("compress is not a boolean flag (TRUE/FALSE).")
+        noquote("'compress' is NA.")
     )
 })

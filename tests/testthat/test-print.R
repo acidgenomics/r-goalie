@@ -4,24 +4,16 @@ context("print")
 ## These differ depending on whether the assert check is scalar or vectorized.
 
 test_that("scalar", {
-    expect_identical(
-        object = capture.output(print(isFlag(1L))),
-        expected = c(
-            "[1] FALSE",
-            "Cause of failure:",
-            "1L is not a boolean flag (TRUE/FALSE)."
-        )
+    expect_output(
+        object = print(isFlag(1L)),
+        regexp = "'1L' is not a boolean flag"
     )
 })
 
 test_that("vector", {
-    expect_identical(
-        object = capture.output(print(isIntegerish(c(1L, NA)))),
-        expected = c(
-            "There was 1 failure:",
-            "  pos value cause",
-            "1   2          NA"
-        )
+    expect_output(
+        object = print(isIntegerish(c(1L, NA))),
+        regexp = "1   2    NA    NA"
     )
 })
 
@@ -33,10 +25,7 @@ test_that("Require logical input", {
 })
 
 test_that("cause error check", {
-    expect_error(
-        object = .printGoalieVector("XXX"),
-        regexp = "cause error."
-    )
+    expect_error(.printGoalieVector("XXX"))
 })
 
 test_that("ignoreNA argument", {

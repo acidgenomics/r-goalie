@@ -17,8 +17,8 @@ test_that("FALSE", {
     expect_s3_class(ok, "goalie")
     expect_identical(nocause(ok), c(x = FALSE, y = FALSE))
     expect_identical(
-        unname(cause(ok)),
-        noquote(c("non-existing", "non-existing"))
+        cause(ok),
+        noquote(c(x = "non-existing", y = "non-existing"))
     )
 })
 

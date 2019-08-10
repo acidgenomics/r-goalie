@@ -32,7 +32,7 @@ test_that("FALSE : NULL input", {
     expect_false(ok)
     expect_identical(
         cause(ok),
-        noquote("x is not character.")
+        noquote("'x' is not character.")
     )
 })
 
@@ -43,7 +43,7 @@ test_that("FALSE : Invalid access codes", {
     expect_identical(
         cause(ok),
         noquote(paste0(
-            "x doesn't contain valid access codes.", "\n",
+            "'x' doesn't contain valid access codes.", "\n",
             "Combinations of 'r', 'w' and 'x' are allowed."
         ))
     )

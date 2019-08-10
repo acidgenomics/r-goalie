@@ -4,8 +4,8 @@ context("isInt")
 
 test_that("TRUE", {
     expect_true(isInt(1L))
+    expect_true(isInt(1.0))
     expect_true(isInt(1))  # nolint
-    expect_true(isInt(1.0))  # integerish
 })
 
 test_that("FALSE : not integer", {
@@ -14,7 +14,7 @@ test_that("FALSE : not integer", {
     expect_false(ok)
     expect_identical(
         cause(ok),
-        noquote("not integer")
+        c("1.000000000000000e-01" = noquote("not integer"))
     )
 })
 
@@ -24,6 +24,6 @@ test_that("FALSE : not scalar", {
     expect_false(ok)
     expect_identical(
         cause(ok),
-        noquote("x does not have a length of 1.")
+        noquote("'x' does not have a length of 1.")
     )
 })

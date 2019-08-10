@@ -13,26 +13,35 @@ test_that("FALSE : not expected length", {
     expect_s3_class(ok, "goalie")
     expect_false(ok)
     cause(ok)
-    expect_identical(cause(ok), noquote('"xxx" does not have a length of 2.'))
+    expect_identical(
+        cause(ok),
+        noquote("'\"xxx\"' does not have a length of 2.")
+    )
 })
 
 test_that("FALSE : NULL", {
     ok <- hasLength(NULL)
     expect_s3_class(ok, "goalie")
     expect_false(ok)
-    expect_identical(cause(ok), noquote("NULL has length 0."))
+    expect_identical(cause(ok), noquote("'NULL' has length 0."))
 })
 
 test_that("FALSE : empty character", {
     ok <- hasLength(character())
     expect_s3_class(ok, "goalie")
     expect_false(ok)
-    expect_identical(cause(ok), noquote("character() has length 0."))
+    expect_identical(
+        cause(ok),
+        noquote("'character()' has length 0.")
+    )
 })
 
 test_that("FALSE : empty data frame", {
     ok <- hasLength(data.frame())
     expect_s3_class(ok, "goalie")
     expect_false(ok)
-    expect_identical(cause(ok), noquote("data.frame() has length 0."))
+    expect_identical(
+        cause(ok),
+        noquote("'data.frame()' has length 0.")
+    )
 })
