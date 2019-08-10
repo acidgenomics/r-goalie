@@ -6,7 +6,7 @@
 #' If a function named `is.class` exists, call `is.class(x)`.
 #' If not, call `is(x, class)`.
 #'
-#' @note Updated 2019-07-29.
+#' @note Updated 2019-08-10.
 #' @export
 #'
 #' @inheritParams acidroxygen::params
@@ -24,16 +24,13 @@
 #' is2(mean, c("function", "data.frame"))
 is2 <- function(x, class, .xname = getNameInParent(x)) {
     if (!is.character(class) || length(class) == 0L) {
-        stop("`class` must be non-empty character.")
+        stop("'class' must be non-empty character.")
     }
     if (length(class) > 1L) {
         ok <- bapply(X = class, FUN = function(cl) is2(x, cl, ""))
         return(setCause(
             x = ok,
-            false = sprintf(
-                "%s is not '%s'",
-                .typeDescription(x), class
-            )
+            false = sprintf("%s is not '%s'", .typeDescription(x), class)
         ))
     }
     ## Attempt to use `is.character(x)` first.
@@ -51,7 +48,7 @@ is2 <- function(x, class, .xname = getNameInParent(x)) {
     )
     if (!isTRUE(ok)) {
         return(false(
-            "%s is not of class '%s'; it has %s.",
+            "'%s' is not of class '%s'; it has %s.",
             .xname, class, .typeDescription(x)
         ))
     }

@@ -15,6 +15,6 @@ test_that("FALSE", {
     expect_false(ok)
     expect_identical(
         cause(ok),
-        noquote("x does not have the same length as y.")
+        noquote("'x' does not have the same length as 'y'.")
     )
 })

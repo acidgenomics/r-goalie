@@ -1,7 +1,7 @@
 #' Does the string match a pattern?
 #'
 #' @name check-vector-isMatching
-#' @note Updated 2019-07-29.
+#' @note Updated 2019-08-10.
 #'
 #' @inherit check
 #' @inheritParams acidroxygen::params
@@ -33,18 +33,14 @@ NULL
 #' @describeIn check-vector-isMatching Vectorized.
 #' @export
 isMatchingFixed <- function(x, pattern, .xname = getNameInParent(x)) {
-    callAndName(
-        fun = function(x) {
-            ok <- grepl(
-                pattern = pattern,
-                x = x,
-                ignore.case = FALSE,
-                fixed = TRUE
-            )
-            setCause(ok, false = gettextf("does not match '%s'", pattern))
-        },
-        x = x
+    ok <- grepl(
+        pattern = pattern,
+        x = x,
+        ignore.case = FALSE,
+        fixed = TRUE
     )
+    names(ok) <- toNames(x)
+    setCause(ok, false = gettextf("does not match '%s'", pattern))
 }
 
 
@@ -52,18 +48,14 @@ isMatchingFixed <- function(x, pattern, .xname = getNameInParent(x)) {
 #' @describeIn check-vector-isMatching Vectorized.
 #' @export
 isMatchingRegex <- function(x, pattern, .xname = getNameInParent(x)) {
-    callAndName(
-        fun = function(x) {
-            ok <- grepl(
-                pattern = pattern,
-                x = x,
-                ignore.case = FALSE,
-                fixed = FALSE
-            )
-            setCause(ok, false = gettextf("does not match '%s'", pattern))
-        },
-        x = x
+    ok <- grepl(
+        pattern = pattern,
+        x = x,
+        ignore.case = FALSE,
+        fixed = FALSE
     )
+    names(ok) <- toNames(x)
+    setCause(ok, false = gettextf("does not match '%s'", pattern))
 }
 
 
@@ -71,18 +63,14 @@ isMatchingRegex <- function(x, pattern, .xname = getNameInParent(x)) {
 #' @describeIn check-vector-isMatching Vectorized.
 #' @export
 isNotMatchingFixed <- function(x, pattern, .xname = getNameInParent(x)) {
-    callAndName(
-        fun = function(x) {
-            ok <- !grepl(
-                pattern = pattern,
-                x = x,
-                ignore.case = FALSE,
-                fixed = TRUE
-            )
-            setCause(ok, false = gettextf("matches '%s'", pattern))
-        },
-        x = x
+    ok <- !grepl(
+        pattern = pattern,
+        x = x,
+        ignore.case = FALSE,
+        fixed = TRUE
     )
+    names(ok) <- toNames(x)
+    setCause(ok, false = gettextf("matches '%s'", pattern))
 }
 
 
@@ -90,18 +78,14 @@ isNotMatchingFixed <- function(x, pattern, .xname = getNameInParent(x)) {
 #' @describeIn check-vector-isMatching Vectorized.
 #' @export
 isNotMatchingRegex <- function(x, pattern, .xname = getNameInParent(x)) {
-    callAndName(
-        fun = function(x) {
-            ok <- !grepl(
-                pattern = pattern,
-                x = x,
-                ignore.case = FALSE,
-                fixed = FALSE
-            )
-            setCause(ok, false = gettextf("matches '%s'", pattern))
-        },
-        x = x
+    ok <- !grepl(
+        pattern = pattern,
+        x = x,
+        ignore.case = FALSE,
+        fixed = FALSE
     )
+    names(ok) <- toNames(x)
+    setCause(ok, false = gettextf("matches '%s'", pattern))
 }
 
 

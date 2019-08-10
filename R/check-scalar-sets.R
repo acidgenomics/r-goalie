@@ -1,7 +1,7 @@
 #' Set comparisons
 #'
 #' @name sets
-#' @note Updated 2019-07-29.
+#' @note Updated 2019-08-10.
 #'
 #' @inherit check
 #' @inheritParams acidroxygen::params
@@ -56,7 +56,7 @@ isSubset <- function(
     if (!isTRUE(all(x %in% y))) {
         setdiff <- setdiff(x, y)
         return(false(
-            gettext("%s has elements not in %s: %s"),
+            gettext("'%s' has elements not in '%s': %s"),
             .xname, .yname, toString(setdiff, width = 100L)
         ))
     }
@@ -91,7 +91,7 @@ areDisjointSets <- function(
     intersect <- intersect(x, y)
     if (length(intersect) > 0L) {
         return(false(
-            gettext("%s and %s have common elements: %s"),
+            gettext("'%s' and '%s' have common elements: %s"),
             .xname, .yname, toString(intersect, width = 100L)
         ))
     }
@@ -111,7 +111,7 @@ areIntersectingSets <- function(
     intersect <- intersect(x, y)
     if (length(intersect) == 0L) {
         return(false(
-            gettext("%s and %s have no common elements."),
+            gettext("'%s' and '%s' have no common elements."),
             .xname, .yname
         ))
     }
@@ -132,9 +132,10 @@ areSetEqual <- function(
     y <- unique(y)
     if (length(x) != length(y)) {
         return(false(
-            gettext(
-                "%s and %s have different numbers of elements (%d versus %d)."
-            ),
+            gettext(paste0(
+                "'%s' and '%s' have different numbers of elements ",
+                "(%d versus %d)."
+            )),
             .xname, .yname, length(x), length(y)
         ))
     }

@@ -3,7 +3,7 @@
 #' An alpha level must be `numeric(1)` greater than 0 and less than 1.
 #'
 #' @name check-scalar-isAlpha
-#' @note Updated 2019-07-29.
+#' @note Updated 2019-08-10.
 #'
 #' @inherit check
 #' @inheritParams acidroxygen::params
@@ -24,11 +24,9 @@ NULL
 isAlpha <- function(x, .xname = getNameInParent(x)) {
     ok <- isScalarDouble(x)
     if (!isTRUE(ok)) {
-        return(false("%s is not scalar double.", .xname))
+        return(false("'%s' is not scalar double.", .xname))
     }
-
     ok <- isInOpenRange(x, lower = 0L, upper = 1L, .xname = .xname)
     if (!isTRUE(ok)) return(ok)
-
     TRUE
 }

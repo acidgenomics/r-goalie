@@ -20,7 +20,7 @@ These character strings are currently allowed for \code{\link[base:save]{save()}
 Check the \code{compress} formal argument
 }
 \note{
-Updated 2019-07-29.
+Updated 2019-08-10.
 }
 \examples{
 ## TRUE ====

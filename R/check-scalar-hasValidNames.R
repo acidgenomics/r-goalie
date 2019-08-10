@@ -1,7 +1,7 @@
 #' Does the input object have syntactically valid names?
 #'
 #' @name check-scalar-hasValidNames
-#' @note Updated 2019-07-29.
+#' @note Updated 2019-08-10.
 #'
 #' @inherit check
 #' @inheritParams acidroxygen::params
@@ -20,9 +20,9 @@
 #'
 #' ## FALSE ====
 #' x <- list(
-#'     `1`       = 1,  # can't start with number
-#'     `foo bar` = 2,  # no spaces
-#'     `foo-bar` = 3   # no hyphens
+#'     "1"       = 1,  # can't start with number
+#'     "foo bar" = 2,  # no spaces
+#'     "foo-bar" = 3   # no hyphens
 #' )
 #' print(x)
 #' hasValidNames(x)
@@ -43,16 +43,14 @@ hasValidNames <- function(x, .xname = getNameInParent(x)) {
         error = function(e) e
     )
     if (is(names, "error")) {
-        return(false("`names()` command on %s failed.", .xname))  # nocov
+        return(false("'names()' command on '%s' failed.", .xname))  # nocov
     }
     ok <- length(names) > 0L
     if (!isTRUE(ok)) {
-        return(false("%s does not have names.", .xname))
+        return(false("'%s' does not have names.", .xname))
     }
-    ok <- isTRUE(validNames(names))
-    if (!isTRUE(ok)) {
-        return(false("%s does not have valid names.", .xname))
-    }
+    ok <- validNames(names, .xname = .xname)
+    if (!isTRUE(ok)) return(ok)
     TRUE
 }
 
@@ -67,26 +65,19 @@ hasValidDimnames <- function(x, .xname = getNameInParent(x)) {
         error = function(e) e
     )
     if (is(dimnames, "error")) {
-        return(false("`dimnames()` command on %s failed.", .xname))  # nocov
+        return(false("'dimnames()' command on '%s' failed.", .xname))  # nocov
     }
-
     ## Row names.
     if (isTRUE(hasRownames(x))) {
         rownames <- rownames(x)
-        ok <- validNames(rownames)
-        if (!isTRUE(ok)) {
-            return(false("%s has invalid row names.", .xname))
-        }
+        ok <- validNames(rownames, .xname = .xname)
+        if (!isTRUE(ok)) return(ok)
     }
-
     ## Column names.
     if (isTRUE(hasColnames(x))) {
         colnames <- colnames(x)
-        ok <- validNames(colnames)
-        if (!isTRUE(ok)) {
-            return(false("%s has invalid column names.", .xname))
-        }
+        ok <- validNames(colnames, .xname = .xname)
+        if (!isTRUE(ok)) return(ok)
     }
-
     TRUE
 }

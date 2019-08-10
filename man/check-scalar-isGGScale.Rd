@@ -30,7 +30,7 @@ If set to \code{TRUE}, \code{x} may also be \code{NULL}.}
 Does the input contain a ggplot2 scale?
 }
 \note{
-Updated 2019-07-29.
+Updated 2019-08-10.
 }
 \examples{
 library(ggplot2)

@@ -68,7 +68,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">goalie</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.2</span>
       </span>
     </div>
 
@@ -122,9 +122,9 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>getNameInParent</span>(<span class='no'>x</span>, <span class='kw'>escapePercent</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+    <pre class="usage"><span class='fu'>getNameInParent</span>(<span class='no'>x</span>, <span class='kw'>escapePercent</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>100L</span>)
 
-<span class='fu'>vname</span>(<span class='no'>x</span>, <span class='kw'>escapePercent</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+<span class='fu'>vname</span>(<span class='no'>x</span>, <span class='kw'>escapePercent</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>100L</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -139,6 +139,11 @@ Variable to get the name of.</p></td>
       <td><p><code><a href='https://rdrr.io/r/base/logical.html'>logical(1)</a></code>.
 If <code>TRUE</code>, percent signs are doubled, making the value suitable for use
 with <code><a href='https://rdrr.io/r/base/sprintf.html'>sprintf()</a></code>.</p></td>
+    </tr>
+    <tr>
+      <th>width</th>
+      <td><p><code><a href='https://rdrr.io/r/base/integer.html'>integer(1)</a></code>.
+Maximum width of the name.</p></td>
     </tr>
     </table>
     

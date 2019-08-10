@@ -13,7 +13,7 @@ test_that("FALSE", {
     expect_false(ok)
     expect_identical(
         object = cause(ok),
-        expected = noquote('"" has length 1, not 0.')
+        expected = noquote("'\"\"' has length 1, not 0.")
     )
 
     expect_false(isEmpty(1L, metric = "length"))
@@ -52,7 +52,7 @@ test_that("FALSE", {
     expect_s3_class(ok, "goalie")
     expect_identical(
         object = cause(ok),
-        expected = noquote("list() has 0 elements, not 1.")
+        expected = noquote("'list()' has 0 elements, not 1.")
     )
 })
 
@@ -72,7 +72,7 @@ test_that("FALSE : dimension mismatch", {
     expect_false(ok)
     expect_identical(
         object = cause(ok),
-        expected = noquote("Dimensions 1, 2 of mtcars are incorrect.")
+        expected = noquote("Dimensions 1, 2 of 'mtcars' are incorrect.")
     )
 })
 
@@ -82,7 +82,7 @@ test_that("FALSE : expecting dim", {
     expect_false(ok)
     expect_identical(
         object = cause(ok),
-        expected = noquote("mtcars has dimensions c(32L, 11L), not NULL.")
+        expected = noquote("'mtcars' has dimensions c(32L, 11L), not NULL.")
     )
 })
 

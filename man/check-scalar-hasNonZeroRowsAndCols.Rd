@@ -26,7 +26,7 @@ This is a common check when handling RNA-seq data prior to generating a
 heatmap or applying a log transformation, for example.
 }
 \note{
-Updated 2019-07-29.
+Updated 2019-08-10.
 }
 \examples{
 ## TRUE ====

@@ -11,7 +11,7 @@ test_that("FALSE : numeric sequence", {
     expect_s3_class(ok, "goalie")
     expect_identical(
         cause(ok),
-        noquote("seq_len(5L) is not character.")
+        noquote("'seq_len(5L)' is not character.")
     )
 })
 

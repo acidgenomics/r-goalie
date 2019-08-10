@@ -11,7 +11,7 @@ test_that("FALSE : logical but not boolean", {
     expect_s3_class(ok, "goalie")
     expect_identical(
         cause(ok),
-        noquote("c(TRUE, TRUE) is not a boolean flag (TRUE/FALSE).")
+        noquote("'c(TRUE, TRUE)' is not a boolean flag (TRUE/FALSE).")
     )
 })
 
@@ -21,7 +21,7 @@ test_that("FALSE : integer", {
     expect_s3_class(ok, "goalie")
     expect_identical(
         cause(ok),
-        noquote("1L is not a boolean flag (TRUE/FALSE).")
+        noquote("'1L' is not a boolean flag (TRUE/FALSE).")
     )
 })
 
@@ -31,6 +31,6 @@ test_that("FALSE : NA is logical but not boolean", {
     expect_s3_class(ok, "goalie")
     expect_identical(
         cause(ok),
-        noquote("NA is not a boolean flag (TRUE/FALSE).")
+        noquote("'NA' is NA.")
     )
 })

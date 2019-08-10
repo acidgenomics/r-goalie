@@ -5,9 +5,9 @@
 \alias{vname}
 \title{Get the name of a variable defined in the parent frame}
 \usage{
-getNameInParent(x, escapePercent = TRUE)
+getNameInParent(x, escapePercent = TRUE, width = 100L)
 
-vname(x, escapePercent = TRUE)
+vname(x, escapePercent = TRUE, width = 100L)
 }
 \arguments{
 \item{x}{\code{symbol}.
@@ -16,6 +16,9 @@ Variable to get the name of.}
 \item{escapePercent}{\code{logical(1)}.
 If \code{TRUE}, percent signs are doubled, making the value suitable for use
 with \code{\link[base:sprintf]{sprintf()}}.}
+
+\item{width}{\code{integer(1)}.
+Maximum width of the name.}
 }
 \value{
 \code{character(1)}.
