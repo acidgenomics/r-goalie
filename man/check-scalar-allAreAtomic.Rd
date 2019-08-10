@@ -21,7 +21,7 @@ allAreAtomic(x, .xname = getNameInParent(x))
 Does the input contain elements that are all atomic?
 }
 \note{
-Updated 2019-07-29.
+Updated 2019-08-10.
 }
 \examples{
 ## TRUE ====

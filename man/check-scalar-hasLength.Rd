@@ -25,7 +25,7 @@ non-zero.}
 Does the input have a non-zero or defined length?
 }
 \note{
-Updated 2019-07-29.
+Updated 2019-08-10.
 }
 \examples{
 ## TRUE ====

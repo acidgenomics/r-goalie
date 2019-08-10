@@ -22,7 +22,7 @@ Checks a matrix for duplicated columns, which reprent samples. Duplicate
 rows are allowed here, because many genes (rows) can contain all zeros.
 }
 \note{
-Updated 2019-07-29.
+Updated 2019-08-10.
 }
 \section{SummarizedExperiment}{
 

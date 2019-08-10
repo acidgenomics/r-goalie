@@ -21,7 +21,7 @@ validNames(x, .xname = getNameInParent(x))
 Are these valid names?
 }
 \note{
-Updated 2019-08-09.
+Updated 2019-08-10.
 }
 \examples{
 ## TRUE ====
