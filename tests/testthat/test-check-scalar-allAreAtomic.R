@@ -11,7 +11,7 @@ test_that("FALSE : non-atomic", {
     expect_false(ok)
     expect_identical(
         cause(ok),
-        noquote('Not all elements in list(a = "x", b = list()) are atomic.')
+        noquote("Not all elements in 'list(a = \"x\", b = list())' are atomic.")
     )
 })
 
@@ -21,6 +21,6 @@ test_that("FALSE : length 0", {
     expect_false(ok)
     expect_identical(
         cause(ok),
-        noquote("data.frame() has length 0.")
+        noquote("'data.frame()' has length 0.")
     )
 })

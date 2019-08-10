@@ -6,20 +6,23 @@ test_that("TRUE", {
 })
 
 test_that("FALSE : out of bounds", {
+    ok <- isAlpha(0)  # nolint
     expect_identical(
-        unname(cause(isAlpha(0))),  # nolint
-        noquote("too low")
+        cause(ok),
+        c("0.000000000000000e+00" = noquote("too low"))
     )
+    ok <- isAlpha(1)  # nolint
     expect_identical(
-        unname(cause(isAlpha(1))),  # nolint
-        noquote("too high")
+        cause(ok),
+        c("1.000000000000000e+00" = noquote("too high"))
     )
 })
 
 test_that("FALSE : not scalar double", {
+    ok <- isAlpha(c(0.1, 0.1))
     expect_identical(
-        cause(isAlpha(c(0.1, 0.1))),
-        noquote("c(0.1, 0.1) is not scalar double.")
+        cause(ok),
+        noquote("'c(0.1, 0.1)' is not scalar double.")
     )
 })
 
@@ -29,6 +32,6 @@ test_that("FALSE : zero integer", {
     expect_s3_class(ok, "goalie")
     expect_identical(
         cause(ok),
-        noquote("0L is not scalar double.")
+        noquote("'0L' is not scalar double.")
     )
 })
