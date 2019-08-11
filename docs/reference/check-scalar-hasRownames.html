@@ -68,7 +68,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">goalie</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.3</span>
       </span>
     </div>
 
@@ -175,7 +175,7 @@ rows.</p>
 #&gt; 2 2</div><div class='input'><span class='co'># Standard data frame doesn't allow NULL row names.</span>
 <span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] "1" "2"</div><div class='input'><span class='fu'>hasRownames</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] FALSE
 #&gt; Cause of failure:
-#&gt; x has sequence row names (soft NULL).</div><div class='input'>
+#&gt; 'x' has sequence row names (soft NULL).</div><div class='input'>
 <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>S4Vectors</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/pkg/S4Vectors/man/DataFrame-class.html'>DataFrame</a></span>(<span class='kw'>a</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq_len</a></span>(<span class='fl'>2L</span>))
 <span class='fu'><a href='print.html'>print</a></span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; DataFrame with 2 rows and 1 column
 #&gt;           a
@@ -184,7 +184,7 @@ rows.</p>
 #&gt; 2         2</div><div class='input'><span class='co'># S4 data frame does allow NULL row names.</span>
 <span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; NULL</div><div class='input'><span class='fu'>hasRownames</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] FALSE
 #&gt; Cause of failure:
-#&gt; x has NULL row names.</div></pre>
+#&gt; 'x' has NULL row names.</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

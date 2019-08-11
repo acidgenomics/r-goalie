@@ -69,7 +69,7 @@ variable." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">goalie</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.3</span>
       </span>
     </div>
 
@@ -166,10 +166,11 @@ Cause attribute.</p>
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'>## Scalar cause.</span>
 <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='check-scalar-isFlag.html'>isFlag</a></span>(<span class='st'>"xxx"</span>)
-<span class='fu'>cause</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] "xxx" is not a boolean flag (TRUE/FALSE).</div><div class='input'>
+<span class='fu'>cause</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] '"xxx"' is not a boolean flag (TRUE/FALSE).</div><div class='input'>
 <span class='co'>## Vector cause.</span>
 <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='check-vector-isInRange.html'>isInRange</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1L</span>, <span class='fl'>2L</span>), <span class='kw'>lower</span> <span class='kw'>=</span> <span class='fl'>3L</span>)
-<span class='fu'>cause</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] too low too low</div></pre>
+<span class='fu'>cause</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt;       1       2 
+#&gt; too low too low </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

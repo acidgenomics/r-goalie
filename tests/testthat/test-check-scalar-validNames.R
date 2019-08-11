@@ -12,4 +12,5 @@ test_that("FALSE", {
     expect_false(validNames("sample 1"))
     expect_false(validNames("cell-AAAAAAAA"))
     expect_false(validNames("GFP+"))
+    expect_false(validNames(c("gene1", "gene1", "gene2", "gene2")))
 })

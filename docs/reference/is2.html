@@ -69,7 +69,7 @@ single call." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">goalie</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.3</span>
       </span>
     </div>
 
@@ -171,9 +171,9 @@ If not, call <code>is(x, class)</code>.</p>
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>is2</span>(<span class='fl'>1</span>:<span class='fl'>5</span>, <span class='st'>"character"</span>)</div><div class='output co'>#&gt; [1] FALSE
 #&gt; Cause of failure:
-#&gt; 1:5 is not of class 'character'; it has class 'integer'.</div><div class='input'><span class='fu'>is2</span>(<span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span>(<span class='fl'>1</span>:<span class='fl'>5</span>), <span class='st'>"character"</span>)</div><div class='output co'>#&gt; [1] FALSE
+#&gt; '1:5' is not of class 'character'; it has class 'integer'.</div><div class='input'><span class='fu'>is2</span>(<span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span>(<span class='fl'>1</span>:<span class='fl'>5</span>), <span class='st'>"character"</span>)</div><div class='output co'>#&gt; [1] FALSE
 #&gt; Cause of failure:
-#&gt; matrix(1:5) is not of class 'character'; it has class 'integer matrix'.</div><div class='input'><span class='fu'>is2</span>(<span class='fl'>1</span>:<span class='fl'>5</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"character"</span>, <span class='st'>"list"</span>, <span class='st'>"numeric"</span>))</div><div class='output co'>#&gt; There were 2 failures:
+#&gt; 'matrix(1:5)' is not of class 'character'; it has class 'integer matrix'.</div><div class='input'><span class='fu'>is2</span>(<span class='fl'>1</span>:<span class='fl'>5</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"character"</span>, <span class='st'>"list"</span>, <span class='st'>"numeric"</span>))</div><div class='output co'>#&gt; There were 2 failures:
 #&gt;   pos     value                              cause
 #&gt; 1   1 character class 'integer' is not 'character'
 #&gt; 2   2      list      class 'integer' is not 'list'</div><div class='input'><span class='fu'>is2</span>(<span class='no'>mean</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"function"</span>, <span class='st'>"data.frame"</span>))</div><div class='output co'>#&gt; There was 1 failure:
