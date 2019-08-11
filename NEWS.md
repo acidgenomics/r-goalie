@@ -1,3 +1,10 @@
+## goalie 0.3.3 (2019-08-11)
+
+### Minor changes
+
+- `validNames`: Bug fix and improvement for function, clearly showing position
+  where names are invalid.
+
 ## goalie 0.3.2 (2019-08-10)
 
 ### New functions
