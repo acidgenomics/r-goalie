@@ -68,7 +68,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">goalie</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.3</span>
       </span>
     </div>
 
@@ -145,7 +145,7 @@
     
     <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
-    <p>Updated 2019-08-10.</p>
+    <p>Updated 2019-08-11.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
@@ -165,19 +165,23 @@
 <span class='co'>## Can't begin with a number.</span>
 <span class='fu'>validNames</span>(<span class='st'>"293cells"</span>)</div><div class='output co'>#&gt; [1] FALSE
 #&gt; Cause of failure:
-#&gt; "293cells" does not contain valid names.
-#&gt; See make.names() for details.</div><div class='input'>
+#&gt; '"293cells"' does not contain valid names.
+#&gt; See 'make.names()' for details.
+#&gt; Invalid: 293cells</div><div class='input'>
 <span class='co'>## Spaces, dashes (hyphens), and other non-alphanumerics aren't valid.</span>
 <span class='fu'>validNames</span>(<span class='st'>"sample 1"</span>)</div><div class='output co'>#&gt; [1] FALSE
 #&gt; Cause of failure:
-#&gt; "sample 1" does not contain valid names.
-#&gt; See make.names() for details.</div><div class='input'><span class='fu'>validNames</span>(<span class='st'>"cell-AAAAAAAA"</span>)</div><div class='output co'>#&gt; [1] FALSE
+#&gt; '"sample 1"' does not contain valid names.
+#&gt; See 'make.names()' for details.
+#&gt; Invalid: sample 1</div><div class='input'><span class='fu'>validNames</span>(<span class='st'>"cell-AAAAAAAA"</span>)</div><div class='output co'>#&gt; [1] FALSE
 #&gt; Cause of failure:
-#&gt; "cell-AAAAAAAA" does not contain valid names.
-#&gt; See make.names() for details.</div><div class='input'><span class='fu'>validNames</span>(<span class='st'>"GFP+"</span>)</div><div class='output co'>#&gt; [1] FALSE
+#&gt; '"cell-AAAAAAAA"' does not contain valid names.
+#&gt; See 'make.names()' for details.
+#&gt; Invalid: cell-AAAAAAAA</div><div class='input'><span class='fu'>validNames</span>(<span class='st'>"GFP+"</span>)</div><div class='output co'>#&gt; [1] FALSE
 #&gt; Cause of failure:
-#&gt; "GFP+" does not contain valid names.
-#&gt; See make.names() for details.</div></pre>
+#&gt; '"GFP+"' does not contain valid names.
+#&gt; See 'make.names()' for details.
+#&gt; Invalid: GFP+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
