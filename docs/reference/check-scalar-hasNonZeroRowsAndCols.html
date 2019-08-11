@@ -69,7 +69,7 @@ containing all zeros." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">goalie</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.3</span>
       </span>
     </div>
 
@@ -173,16 +173,16 @@ heatmap or applying a log transformation, for example.</p>
 <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span>(<span class='kw'>nrow</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fl'>0</span>)
 <span class='fu'><a href='print.html'>print</a></span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; &lt;0 x 0 matrix&gt;</div><div class='input'><span class='fu'>hasNonZeroRowsAndCols</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] FALSE
 #&gt; Cause of failure:
-#&gt; The number of rows in x is zero.</div><div class='input'>
+#&gt; The number of rows in 'x' is zero.</div><div class='input'>
 <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span>(<span class='kw'>nrow</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fl'>0</span>)
 <span class='fu'><a href='print.html'>print</a></span>(<span class='no'>x</span>)</div><div class='output co'>#&gt;     
 #&gt; [1,]</div><div class='input'><span class='fu'>hasNonZeroRowsAndCols</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] FALSE
 #&gt; Cause of failure:
-#&gt; The number of columns in x is zero.</div><div class='input'>
+#&gt; The number of columns in 'x' is zero.</div><div class='input'>
 <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span>(<span class='kw'>nrow</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fl'>1</span>)
 <span class='fu'><a href='print.html'>print</a></span>(<span class='no'>x</span>)</div><div class='output co'>#&gt;      [,1]</div><div class='input'><span class='fu'>hasNonZeroRowsAndCols</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] FALSE
 #&gt; Cause of failure:
-#&gt; The number of rows in x is zero.</div></pre>
+#&gt; The number of rows in 'x' is zero.</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
