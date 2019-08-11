@@ -69,7 +69,7 @@ rows are allowed here, because many genes (rows) can contain all zeros." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">goalie</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.3</span>
       </span>
     </div>
 
@@ -167,7 +167,7 @@ columns.</p>
 <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq_len</a></span>(<span class='fl'>10L</span>), <span class='kw'>times</span> <span class='kw'>=</span> <span class='fl'>2L</span>), <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fl'>2L</span>)
 <span class='fu'>hasUniqueCols</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] FALSE
 #&gt; Cause of failure:
-#&gt; structure(c(1L, 2L, 3L, 4L, 5L, 6L, 7L, 8L, 9L, 10L, 1L, 2L, 3L, 4L, 5L, 6L, 7L, 8L, 9L, 10L), .Dim = c(10L, 2L)) has duplicated columns at: 2</div></pre>
+#&gt; 'structure(c(1L, 2L, 3L, 4L, 5L, 6L, 7L, 8L, 9L, 10L, 1L, 2L, 3L, 4L, 5L, 6L, 7L, 8L, 9L, 10L), .....' has duplicated columns at: 2</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
