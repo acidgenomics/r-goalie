@@ -2,11 +2,21 @@
 % Please edit documentation in R/check-scalar-hasMetrics.R
 \name{check-scalar-hasMetrics}
 \alias{check-scalar-hasMetrics}
+\alias{hasMetrics}
 \title{Does the object contain quality control metrics?}
+\usage{
+hasMetrics(x, colData = c("nCount", "nFeature"),
+  .xname = getNameInParent(x))
+}
 \arguments{
-\item{colnames}{\code{character}.
+\item{x}{\code{SummarizedExperiment}.}
+
+\item{colData}{\code{character}.
 Column names in \code{\link[SummarizedExperiment:colData]{colData()}} containing
 expected quality control metrics.}
+
+\item{.xname}{Name of object defined in \code{x}.
+\emph{Not intended to be used directly.}}
 }
 \value{
 \code{TRUE} on success;

@@ -5,7 +5,8 @@
 #'
 #' @inherit check
 #' @inheritParams acidroxygen::params
-#' @param colnames `character`.
+#' @param x `SummarizedExperiment`.
+#' @param colData `character`.
 #'   Column names in [`colData()`][SummarizedExperiment::colData] containing
 #'   expected quality control metrics.
 #'
@@ -19,25 +20,27 @@ NULL
 
 
 
+#' @rdname check-scalar-hasMetrics
+#' @export
 hasMetrics <-
     function(
         x,
-        colnames = c("nCount", "nFeature"),
+        colData = c("nCount", "nFeature"),
         .xname = getNameInParent(x)
     ) {
         requireNamespace("SummarizedExperiment", quietly = TRUE)
         assert(
             is(x, "SummarizedExperiment"),
-            isCharacter(colnames)
+            isCharacter(colData)
         )
-        colData <- SummarizedExperiment::colData(x)
-        ok <- isSubset(x = colnames, y = colnames(colData))
+        c1 <- colData
+        c2 <- colnames(SummarizedExperiment::colData(x))
+        ok <- isSubset(c1, c2)
         if (!isTRUE(ok)) {
-            setdiff <- setdiff(colnames, colnames(colData))
             return(false(
                 "'%s' does not contain metrics in 'colData()': %s.",
                 .xname,
-                toString(setdiff, width = 100L)
+                toString(setdiff(c1, c2), width = 100L)
             ))
         }
         TRUE
