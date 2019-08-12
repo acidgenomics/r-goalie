@@ -3,7 +3,7 @@ file.create(file)
 
 
 
-context("isFile")
+context("check : vector : isFile")
 
 test_that("TRUE", {
     expect_true(isFile(file))
@@ -42,7 +42,7 @@ test_that("FALSE : not character", {
 
 
 
-context("isAFile")
+context("check : scalar : isAFile")
 
 test_that("TRUE", {
     expect_true(isAFile(file))
@@ -62,7 +62,7 @@ test_that("nullOK", {
 
 
 
-context("allAreFiles")
+context("check : scalar : allAreFiles")
 
 test_that("TRUE", {
     expect_true(allAreFiles(file))

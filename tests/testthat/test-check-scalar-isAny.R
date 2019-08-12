@@ -1,4 +1,4 @@
-context("isAny")
+context("check : scalar : isAny")
 
 x <- 1L
 
