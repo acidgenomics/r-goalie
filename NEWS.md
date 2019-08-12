@@ -1,3 +1,10 @@
+## goalie 0.3.4 (2019-08-12)
+
+### New functions
+
+- `hasMetrics`, `hasSubset`: New functions that were previously used internally
+  in basejump. Requires S4Vectors / SummarizedExperiment.
+
 ## goalie 0.3.3 (2019-08-11)
 
 ### Minor changes

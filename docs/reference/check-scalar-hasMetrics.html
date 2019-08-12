@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Validate an S4 class — validate • goalie</title>
+<title>Does the object contain quality control metrics? — check-scalar-hasMetrics • goalie</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -34,10 +34,9 @@
 
   <link href="../extra.css" rel="stylesheet">
   
-<meta property="og:title" content="Validate an S4 class — validate" />
+<meta property="og:title" content="Does the object contain quality control metrics? — check-scalar-hasMetrics" />
 
-<meta property="og:description" content="validate() is a variant of assert() that is specifically intended to be
-used inside of an S4 validity method definition." />
+<meta property="og:description" content="Does the object contain quality control metrics?" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -112,77 +111,56 @@ used inside of an S4 validity method definition." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Validate an S4 class</h1>
-    <small class="dont-index">Source: <a href='https://github.com/acidgenomics/goalie/blob/master/R/validate.R'><code>R/validate.R</code></a></small>
-    <div class="hidden name"><code>validate.Rd</code></div>
+    <h1>Does the object contain quality control metrics?</h1>
+    <small class="dont-index">Source: <a href='https://github.com/acidgenomics/goalie/blob/master/R/check-scalar-hasMetrics.R'><code>R/check-scalar-hasMetrics.R</code></a></small>
+    <div class="hidden name"><code>check-scalar-hasMetrics.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p><code>validate()</code> is a variant of <code><a href='assert.html'>assert()</a></code> that is specifically intended to be
-used inside of an S4 validity method definition.</p>
+    <p>Does the object contain quality control metrics?</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>validate</span>(<span class='no'>...</span>, <span class='kw'>msg</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>hasMetrics</span>(<span class='no'>x</span>, <span class='kw'>colData</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"nCount"</span>, <span class='st'>"nFeature"</span>),
+  <span class='kw'>.xname</span> <span class='kw'>=</span> <span class='fu'><a href='getNameInParent.html'>getNameInParent</a></span>(<span class='no'>x</span>))</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>...</th>
-      <td><p>Any number of R expressions that return <code><a href='https://rdrr.io/r/base/logical.html'>logical(1)</a></code>, each of
-which should evaluate to <code>TRUE</code>. Rather than combining expressions with
-<code>&amp;&amp;</code>, separate them by commas so that better error messages can be
-generated.</p></td>
+      <th>x</th>
+      <td><p><code>SummarizedExperiment</code>.</p></td>
     </tr>
     <tr>
-      <th>msg</th>
-      <td><p><code>NULL</code> or <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code>.
-Custom message to return.</p></td>
+      <th>colData</th>
+      <td><p><code>character</code>.
+Column names in <code><a href='https://rdrr.io/pkg/SummarizedExperiment/man/SummarizedExperiment-class.html'>colData()</a></code> containing
+expected quality control metrics.</p></td>
+    </tr>
+    <tr>
+      <th>.xname</th>
+      <td><p>Name of object defined in <code>x</code>.
+<em>Not intended to be used directly.</em></p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><code>TRUE</code> on success, or <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code> on failure, containing an error
-message.</p>
-    
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p>Like <code><a href='assert.html'>assert()</a></code>, <code>validate()</code> returns <code>TRUE</code> on success. However, on failure
-it returns a <code>character</code> instead of a <code><a href='https://rdrr.io/r/base/stop.html'>stop()</a></code> call. This is
-the current recommended practice for defining S4 validity methods inside of a
-<code><a href='https://rdrr.io/r/methods/validObject.html'>setValidity()</a></code> call. Refer to the documentation in
-the methods package, specifically <code><a href='https://rdrr.io/r/methods/validObject.html'>validObject()</a></code> for
-detailed information on S4 validity methods.</p>
+    <p><code>TRUE</code> on success;
+<code>FALSE</code> on failure, with cause set.</p>
     
     <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
-    <p>Updated 2019-07-29.</p>
-    
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
-
-    <div class='dont-index'>
-<ul>
-<li><p><code><a href='https://rdrr.io/r/methods/validObject.html'>methods::setValidity()</a></code>.</p></li>
-<li><p><code><a href='https://rdrr.io/r/methods/validObject.html'>methods::validObject()</a></code>.</p></li>
-<li><p><code><a href='https://rdrr.io/pkg/assertthat/man/validate_that.html'>assertthat::validate_that()</a></code>.</p></li>
-</ul>
-</div>
+    <p>Updated 2019-08-12.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'>## TRUE ====</span>
-<span class='fu'>validate</span>(
-    <span class='fu'><a href='https://rdrr.io/r/base/is.recursive.html'>is.atomic</a></span>(<span class='st'>"example"</span>),
-    <span class='fu'><a href='https://rdrr.io/r/base/character.html'>is.character</a></span>(<span class='st'>"example"</span>)
-)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
-<span class='co'>## FALSE ====</span>
-<span class='fu'>validate</span>(
-    <span class='fu'><a href='check-scalar-isFlag.html'>isFlag</a></span>(<span class='st'>"xxx"</span>),
-    <span class='fu'><a href='check-vector-isInRange.html'>isPositive</a></span>(-<span class='fl'>1</span>)
-)</div><div class='output co'>#&gt; [1] "isFlag(\"xxx\") is not TRUE.\nCause of failure:\n'\"xxx\"' is not a boolean flag (TRUE/FALSE).\n\nisPositive(-1) is not TRUE.\nCause of failure:\ntoo low"</div></pre>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fu'><a href='https://rdrr.io/r/base/ns-load.html'>requireNamespace</a></span>(<span class='st'>"SummarizedExperiment"</span>, <span class='kw'>quietly</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)) {
+    <span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>RangedSummarizedExperiment</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"acidtest"</span>)
+    <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='no'>RangedSummarizedExperiment</span>
+    <span class='fu'>hasMetrics</span>(<span class='no'>x</span>)
+}</div><div class='output co'>#&gt; <span class='error'>Error in hasMetrics(x): could not find function "hasMetrics"</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -191,11 +169,7 @@ detailed information on S4 validity methods.</p>
       
       <li><a href="#value">Value</a></li>
 
-      <li><a href="#details">Details</a></li>
-
       <li><a href="#note">Note</a></li>
-
-      <li><a href="#see-also">See also</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>
