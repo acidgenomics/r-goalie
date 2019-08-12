@@ -1,4 +1,4 @@
-context("isCharacter")
+context("check : scalar : isCharacter")
 
 test_that("TRUE", {
     expect_true(isCharacter("a"))

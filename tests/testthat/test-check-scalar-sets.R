@@ -1,4 +1,4 @@
-context("sets")
+context("check : scalar : sets")
 
 test_that("areDisjointSets", {
     expect_true(areDisjointSets(x = c("a", "b"), y = c("c", "d")))

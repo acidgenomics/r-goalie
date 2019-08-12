@@ -1,4 +1,4 @@
-context("hasDimnames")
+context("check : scalar : hasDimnames")
 
 with_parameters_test_that(
     "hasDimnames", {

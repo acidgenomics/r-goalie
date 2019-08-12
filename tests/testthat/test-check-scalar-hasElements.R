@@ -1,4 +1,4 @@
-context("isEmpty")
+context("check : scalar : isEmpty")
 
 test_that("TRUE", {
     expect_true(isEmpty(NULL, metric = "length"))
@@ -22,7 +22,7 @@ test_that("FALSE", {
 
 
 
-context("isNonEmpty")
+context("check : scalar : isNonEmpty")
 
 test_that("TRUE", {
     expect_true(isNonEmpty(1L, metric = "length"))
@@ -39,7 +39,7 @@ test_that("FALSE", {
 
 
 
-context("hasElements")
+context("check : scalar : hasElements")
 
 test_that("TRUE", {
     expect_true(hasElements("hello", n = 1L))
@@ -58,7 +58,7 @@ test_that("FALSE", {
 
 
 
-context("isOfDimension")
+context("check : scalar : isOfDimension")
 
 test_that("TRUE", {
     expect_true(isOfDimension(mtcars, n = c(32L, 11L)))
@@ -88,7 +88,7 @@ test_that("FALSE : expecting dim", {
 
 
 
-context("isOfLength")
+context("check : scalar : isOfLength")
 
 test_that("TRUE", {
     expect_true(isOfLength("xxx", n = 1L))
