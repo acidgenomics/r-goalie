@@ -1,4 +1,4 @@
-context("hasRownames")
+context("check : scalar : hasRownames")
 
 with_parameters_test_that(
     "hasRownames", {

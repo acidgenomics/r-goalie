@@ -1,4 +1,4 @@
-context("matchesUniqueGeneNames")
+context("check : scalar : matchesUniqueGeneNames")
 
 test_that("TRUE", {
     ok <- matchesUniqueGeneNames(x = se, genes = genes)
