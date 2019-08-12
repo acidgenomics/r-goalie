@@ -1,4 +1,4 @@
-context("isIntegerish")
+context("check : vector : isIntegerish")
 
 test_that("TRUE", {
     expect_identical(

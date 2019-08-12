@@ -1,8 +1,8 @@
 Package: goalie
 Title: Assertive check functions
 Description: Assertive check functions for defensive R programming.
-Version: 0.3.3
-Date: 2019-08-11
+Version: 0.3.4
+Date: 2019-08-12
 Authors@R: c(
     person(
         "Michael", "Steinbaugh",
@@ -23,7 +23,8 @@ Encoding: UTF-8
 Depends: R (>= 3.5)
 Imports: methods, utils
 Suggests:
-    acidroxygen (>= 0.0.1),
+    acidroxygen (>= 0.1),
+    acidtest (>= 0.2.3),
     S4Vectors,
     SummarizedExperiment,
     Matrix (>= 1.2),
@@ -36,7 +37,8 @@ Suggests:
     tibble (>= 2.1),
     viridis (>= 0.5)
 Remotes:
-    acidgenomics/acidroxygen
+    acidgenomics/acidroxygen,
+    acidgenomics/acidtest
 biocViews: Infrastructure
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1

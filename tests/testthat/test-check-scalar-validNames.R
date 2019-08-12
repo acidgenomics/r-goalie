@@ -1,4 +1,4 @@
-context("validNames")
+context("check : scalar : validNames")
 
 test_that("TRUE", {
     ## Dots (periods) and underscores are valid.
