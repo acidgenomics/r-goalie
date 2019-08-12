@@ -1,4 +1,4 @@
-context("isGGScale")
+context("check : scalar : isGGScale")
 
 library(ggplot2)
 

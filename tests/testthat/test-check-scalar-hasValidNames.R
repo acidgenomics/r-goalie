@@ -1,4 +1,4 @@
-context("hasValidNames")
+context("check : scalar : hasValidNames")
 
 test_that("TRUE", {
     x <- list(a = 1L, b = 2L)
@@ -33,7 +33,7 @@ test_that("Unset names", {
 
 
 
-context("hasValidDimnames")
+context("check : scalar : hasValidDimnames")
 
 test_that("TRUE", {
     x <- iris

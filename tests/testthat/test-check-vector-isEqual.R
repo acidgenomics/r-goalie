@@ -1,4 +1,4 @@
-context("isEqual")
+context("check : vector : isEqual")
 
 test_that("TRUE", {
     x <- c(1L, 1)  # nolint
@@ -35,7 +35,7 @@ test_that("FALSE", {
 
 
 
-context("isNotEqualTo")
+context("check : vector : isNotEqualTo")
 
 test_that("TRUE", {
     x <- seq_len(2L)
@@ -63,7 +63,7 @@ test_that("FALSE", {
 
 
 
-context("isGreaterThan")
+context("check : vector : isGreaterThan")
 
 test_that("TRUE", {
     x <- seq_len(2L)
@@ -91,7 +91,7 @@ test_that("FALSE", {
 
 
 
-context("isGreaterThanOrEqualTo")
+context("check : vector : isGreaterThanOrEqualTo")
 
 test_that("TRUE", {
     x <- seq_len(2L)
@@ -119,7 +119,7 @@ test_that("FALSE", {
 
 
 
-context("isLessThan")
+context("check : vector : isLessThan")
 
 test_that("TRUE", {
     x <- seq_len(2L)
@@ -147,7 +147,7 @@ test_that("FALSE", {
 
 
 
-context("isLessThanOrEqualTo")
+context("check : vector : isLessThanOrEqualTo")
 
 test_that("TRUE", {
     x <- seq_len(2L)
