@@ -1,4 +1,4 @@
-context("hasNames")
+context("check : scalar : hasNames")
 
 test_that("TRUE", {
     expect_true(hasNames(mtcars))

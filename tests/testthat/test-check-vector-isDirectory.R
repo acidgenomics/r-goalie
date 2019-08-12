@@ -1,4 +1,4 @@
-context("isDirectory")
+context("check : vector : isDirectory")
 
 test_that("TRUE", {
     ok <- isDirectory(c("~", "."))
@@ -24,7 +24,7 @@ test_that("FALSE : NULL input", {
 
 
 
-context("isADirectory")
+context("check : scalar : isADirectory")
 
 test_that("TRUE", {
     ok <- isADirectory(".")
@@ -58,7 +58,7 @@ test_that("nullOK", {
 
 
 
-context("allAreDirectories")
+context("check : scalar : allAreDirectories")
 
 test_that("TRUE", {
     ok <- allAreDirectories(c("~", "."))

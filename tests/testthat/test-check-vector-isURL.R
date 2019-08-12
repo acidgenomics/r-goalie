@@ -1,4 +1,4 @@
-context("isURL")
+context("check : vector : isURL")
 
 urls <- c("https://www.r-project.org", "ftp://r-project.org")
 

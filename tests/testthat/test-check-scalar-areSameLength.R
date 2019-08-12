@@ -1,4 +1,4 @@
-context("areSameLength")
+context("check : scalar : areSameLength")
 
 test_that("TRUE", {
     x <- list(a = 1L, b = 2L)
