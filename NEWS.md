@@ -1,3 +1,9 @@
+## goalie 0.3.5 (2019-08-13)
+
+### Minor changes
+
+- `isURL` now returns true on `url` class input.
+
 ## goalie 0.3.4 (2019-08-12)
 
 ### New functions
