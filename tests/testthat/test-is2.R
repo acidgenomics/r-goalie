@@ -44,6 +44,6 @@ test_that("vector failure", {
 test_that("no class", {
     expect_error(
         object = is2(1L, class = character()),
-        expected = "`class` must be non-empty character."
+        expected = "'class' must be non-empty character."
     )
 })
