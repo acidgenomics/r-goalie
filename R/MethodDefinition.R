@@ -62,7 +62,7 @@ methodFunction <- function(f, signature, package) {
     generic <- tryCatch(
         expr = do.call(what = get, args = args),
         error = function(e) {
-            stop(sprintf("Failed to locate `%s` generic.\n", f))
+            stop(sprintf("Failed to locate '%s' generic.", f))
         }
     )
     ## Assert that we're getting an S4 generic.
