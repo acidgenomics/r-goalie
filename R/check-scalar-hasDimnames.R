@@ -39,7 +39,7 @@ hasDimnames <- function(x, .xname = getNameInParent(x)) {
         error = function(e) e
     )
     if (is(dimnames, "error")) {
-        false("`dimnames()` command on '%s' failed.", .xname)  # nocov
+        false("'dimnames()' command on '%s' failed.", .xname)  # nocov
     } else if (is.null(dimnames)) {
         false("The dimension names of '%s' are NULL.", .xname)  # nocov
     } else if (!any(nzchar(unlist(dimnames, use.names = FALSE)))) {
