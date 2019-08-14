@@ -17,7 +17,7 @@ test_that("Match the arguments in call.", {
     )
 })
 
-test_that("Pass the arguments to `do.call()`.", {
+test_that("Pass the arguments to 'do.call()'.", {
     fun <- function(object, xxx, ...) {
         do.call(
             what = paste,

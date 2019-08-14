@@ -68,7 +68,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">goalie</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.4</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.5</span>
       </span>
     </div>
 
@@ -158,7 +158,9 @@ Names in <code><a href='https://rdrr.io/pkg/S4Vectors/man/Annotated-class.html'>
     <span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>RangedSummarizedExperiment</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"acidtest"</span>)
     <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='no'>RangedSummarizedExperiment</span>
     <span class='fu'>hasSubset</span>(<span class='no'>x</span>)
-}</div><div class='output co'>#&gt; <span class='error'>Error in hasSubset(x): could not find function "hasSubset"</span></div></pre>
+}</div><div class='output co'>#&gt; [1] FALSE
+#&gt; Cause of failure:
+#&gt; 'x' does not contain slots in 'metadata()': subset.</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
