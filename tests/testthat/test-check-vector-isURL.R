@@ -14,24 +14,23 @@ test_that("isURL", {
         cause(ok),
         noquote(c(xxx = "not URL"))
     )
+})
 
-    ok <- isAURL(urls)
-    expect_s3_class(ok, "goalie")
-    expect_false(ok)
-    expect_identical(
-        cause(ok),
-        noquote("'urls' is not a character of length 1.")
-    )
+test_that("URL connection support", {
+    x <- url(urls[[1L]])
+    expect_s3_class(x, "url")
+    expect_true(isAURL(x))
 })
 
 test_that("isAURL", {
     expect_true(isAURL(urls[[1L]]))
 
     ok <- isAURL(urls)
+    expect_s3_class(ok, "goalie")
     expect_false(ok)
     expect_identical(
         cause(ok),
-        noquote("'urls' is not a character of length 1.")
+        noquote("'urls' does not have a length of 1.")
     )
 })
 

@@ -25,6 +25,8 @@ NULL
 #' @describeIn check-vector-isURL Vectorized.
 #' @export
 isURL <- function(x, .xname = getNameInParent(x)) {
+    ok <- is(x, "url")
+    if (isTRUE(ok)) return(ok)
     ok <- isCharacter(x)
     if (!isTRUE(ok)) return(ok)  # nocov
     pattern <- "^(http(s)?|ftp)\\://.+"
@@ -38,7 +40,7 @@ isURL <- function(x, .xname = getNameInParent(x)) {
 #' @describeIn check-vector-isURL Scalar. Requires a single URL.
 #' @export
 isAURL <- function(x, .xname = getNameInParent(x)) {
-    ok <- isString(x = x, .xname = .xname)
+    ok <- isScalar(x = x, .xname = .xname)
     if (!isTRUE(ok)) return(ok)
     ok <- isURL(x = x, .xname = .xname)
     if (!all(ok)) return(falseFromVector(ok))  # nocov
