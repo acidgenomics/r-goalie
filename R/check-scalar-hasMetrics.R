@@ -28,8 +28,8 @@ hasMetrics <-
         colData = c("nCount", "nFeature"),
         .xname = getNameInParent(x)
     ) {
-        requireNamespace("SummarizedExperiment", quietly = TRUE)
         assert(
+            requireNamespace("SummarizedExperiment", quietly = TRUE),
             is(x, "SummarizedExperiment"),
             isCharacter(colData)
         )
