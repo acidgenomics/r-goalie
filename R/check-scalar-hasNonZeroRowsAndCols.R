@@ -55,7 +55,7 @@ hasNonZeroRowsAndCols <- function(x, .xname = getNameInParent(x)) {
     ## sparse matrices are often highly zero-inflated, so this approach might
     ## not be generally recommended for this data class.
     if (is(x, "sparseMatrix")) {
-        requireNamespace("Matrix", quietly = TRUE)
+        assert(requireNamespace("Matrix", quietly = TRUE))
         colSums <- Matrix::colSums
         rowSums <- Matrix::rowSums
     }

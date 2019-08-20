@@ -17,7 +17,7 @@ NULL
 #' @rdname check-scalar-hasInternet
 #' @export
 hasInternet <- function() {
-    requireNamespace("curl", quietly = TRUE)
+    assert(requireNamespace("curl", quietly = TRUE))
     ok <- tryCatch(
         expr = curl::has_internet(),
         error = function(e) FALSE,

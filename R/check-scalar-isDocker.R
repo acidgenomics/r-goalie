@@ -36,7 +36,7 @@ isDocker <- function() {
 #' @export
 skip_on_docker <-  # nolint
     function() {
-        requireNamespace("testthat", quietly = TRUE)
+        assert(requireNamespace("testthat", quietly = TRUE))
         if (!isTRUE(isDocker())) {
             return()
         }
