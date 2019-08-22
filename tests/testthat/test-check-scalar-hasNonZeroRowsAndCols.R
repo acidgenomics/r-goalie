@@ -25,7 +25,7 @@ test_that("FALSE : rows containing all zeros", {
     x <- sparseMatrix(
         i = c(1L, 3L:8L),
         j = c(2L, 9L, 6L:10L),
-        x = 7L * (1L:7L)
+        x = 7L * (seq_len(7L))
     )
     ok <- hasNonZeroRowsAndCols(x)
     expect_false(ok)
