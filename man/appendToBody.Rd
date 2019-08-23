@@ -23,15 +23,24 @@ The default of \code{1L} places directly after the opening curly bracket.}
 Append values to function body
 }
 \note{
-Updated 2019-07-15.
+Updated 2019-08-23.
 }
 \examples{
 ## Add a deprecation call into function body.
-x <- function() {
-    "hello"
-}
+fun <- function() { print("hello world") }
+body(fun)
+
+## values: call ====
+values <- as.call(quote(.Deprecated("XXX")))
+x <- appendToBody(fun = fun, values = values)
 body(x)
-x <- appendToBody(x, quote(.Deprecated("y")))
+
+## values: list ====
+values <- list(
+    quote(print("AAA")),
+    quote(print("BBB"))
+)
+x <- appendToBody(fun = fun, values = values)
 body(x)
 }
 \seealso{

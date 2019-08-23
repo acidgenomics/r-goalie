@@ -1,12 +1,6 @@
-## FIXME Improve support for multiple values.
-## Allow user to pass in character (or list?).
-## Need to improve this function for calculateMetrics.
-
-
-
 #' Append values to function body
 #'
-#' @note Updated 2019-07-15.
+#' @note Updated 2019-08-23.
 #' @export
 #'
 #' @inheritParams acidroxygen::params
@@ -22,18 +16,34 @@
 #'
 #' @examples
 #' ## Add a deprecation call into function body.
-#' x <- function() {
-#'     "hello"
-#' }
+#' fun <- function() { print("hello world") }
+#' body(fun)
+#'
+#' ## values: call ====
+#' values <- as.call(quote(.Deprecated("XXX")))
+#' x <- appendToBody(fun = fun, values = values)
 #' body(x)
-#' x <- appendToBody(x, quote(.Deprecated("y")))
+#'
+#' ## values: list ====
+#' values <- list(
+#'     quote(print("AAA")),
+#'     quote(print("BBB"))
+#' )
+#' x <- appendToBody(fun = fun, values = values)
 #' body(x)
 appendToBody <- function(fun, values, after = 1L) {
     stopifnot(
         is.function(fun),
-        is.call(values),
+        is.call(values) || is.list(values),
         is.integer(after)
     )
+    if (is.list(values)) {
+        stopifnot(all(vapply(
+            X = values,
+            FUN = is.call,
+            FUN.VALUE = logical(1L)
+        )))
+    }
     b <- body(fun)
     b <- as.list(b)
     ## Hardening against 1 liners and/or lack of curly brackets.
