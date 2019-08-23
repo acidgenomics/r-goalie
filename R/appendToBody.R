@@ -1,3 +1,8 @@
+## FIXME Improve support for multiple values.
+## Allow user to pass in character (or list?).
+
+
+
 #' Append values to function body
 #'
 #' @note Updated 2019-07-15.
