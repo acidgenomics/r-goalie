@@ -1,5 +1,6 @@
 ## FIXME Improve support for multiple values.
 ## Allow user to pass in character (or list?).
+## Need to improve this function for calculateMetrics.
 
 
 
