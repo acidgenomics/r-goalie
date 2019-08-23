@@ -68,7 +68,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">goalie</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.6</span>
       </span>
     </div>
 
@@ -150,7 +150,7 @@ The default of <code>1L</code> places directly after the opening curly bracket.<
     
     <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
-    <p>Updated 2019-07-15.</p>
+    <p>Updated 2019-08-23.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
@@ -159,15 +159,25 @@ The default of <code>1L</code> places directly after the opening curly bracket.<
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'>## Add a deprecation call into function body.</span>
-<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='kw'>function</span>() {
-    <span class='st'>"hello"</span>
-}
+<span class='no'>fun</span> <span class='kw'>&lt;-</span> <span class='kw'>function</span>() { <span class='fu'><a href='print.html'>print</a></span>(<span class='st'>"hello world"</span>) }
+<span class='fu'><a href='https://rdrr.io/r/base/body.html'>body</a></span>(<span class='no'>fun</span>)</div><div class='output co'>#&gt; {
+#&gt;     print("hello world")
+#&gt; }</div><div class='input'>
+<span class='co'>## values: call ====</span>
+<span class='no'>values</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/call.html'>as.call</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/substitute.html'>quote</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/Deprecated.html'>.Deprecated</a></span>(<span class='st'>"XXX"</span>)))
+<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>appendToBody</span>(<span class='kw'>fun</span> <span class='kw'>=</span> <span class='no'>fun</span>, <span class='kw'>values</span> <span class='kw'>=</span> <span class='no'>values</span>)
 <span class='fu'><a href='https://rdrr.io/r/base/body.html'>body</a></span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; {
-#&gt;     "hello"
-#&gt; }</div><div class='input'><span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>appendToBody</span>(<span class='no'>x</span>, <span class='fu'><a href='https://rdrr.io/r/base/substitute.html'>quote</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/Deprecated.html'>.Deprecated</a></span>(<span class='st'>"y"</span>)))
-<span class='fu'><a href='https://rdrr.io/r/base/body.html'>body</a></span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; {
-#&gt;     .Deprecated("y")
-#&gt;     "hello"
+#&gt;     .Deprecated("XXX")
+#&gt;     print("hello world")
+#&gt; }</div><div class='input'>
+<span class='co'>## values: list ====</span>
+<span class='no'>values</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(
+    <span class='fu'><a href='https://rdrr.io/r/base/substitute.html'>quote</a></span>(<span class='fu'><a href='print.html'>print</a></span>(<span class='st'>"AAA"</span>)),
+    <span class='fu'><a href='https://rdrr.io/r/base/substitute.html'>quote</a></span>(<span class='fu'><a href='print.html'>print</a></span>(<span class='st'>"BBB"</span>))
+)
+<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>appendToBody</span>(<span class='kw'>fun</span> <span class='kw'>=</span> <span class='no'>fun</span>, <span class='kw'>values</span> <span class='kw'>=</span> <span class='no'>values</span>)</div><div class='output co'>#&gt; <span class='error'>Error in appendToBody(fun = fun, values = values): is.call(values) is not TRUE</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/body.html'>body</a></span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; {
+#&gt;     .Deprecated("XXX")
+#&gt;     print("hello world")
 #&gt; }</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

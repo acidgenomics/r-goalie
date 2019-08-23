@@ -1,3 +1,10 @@
+## goalie 0.3.6 (2019-08-23)
+
+### Minor changes
+
+- `appendToBody`: Now allowing pass-in of multiple values as a `list`. The list
+  must contains `call` elements.
+
 ## goalie 0.3.5 (2019-08-13)
 
 ### Minor changes
