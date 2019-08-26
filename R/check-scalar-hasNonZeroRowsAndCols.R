@@ -1,3 +1,7 @@
+## FIXME Add DelayedArray support here.
+
+
+
 #' Does the input contain non-zero rows and columns?
 #'
 #' Useful for quickly checking to see if we have dropped rows or columns
