@@ -175,8 +175,10 @@ The default of <code>1L</code> places directly after the opening curly bracket.<
     <span class='fu'><a href='https://rdrr.io/r/base/substitute.html'>quote</a></span>(<span class='fu'><a href='print.html'>print</a></span>(<span class='st'>"AAA"</span>)),
     <span class='fu'><a href='https://rdrr.io/r/base/substitute.html'>quote</a></span>(<span class='fu'><a href='print.html'>print</a></span>(<span class='st'>"BBB"</span>))
 )
-<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>appendToBody</span>(<span class='kw'>fun</span> <span class='kw'>=</span> <span class='no'>fun</span>, <span class='kw'>values</span> <span class='kw'>=</span> <span class='no'>values</span>)</div><div class='output co'>#&gt; <span class='error'>Error in appendToBody(fun = fun, values = values): is.call(values) is not TRUE</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/body.html'>body</a></span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; {
-#&gt;     .Deprecated("XXX")
+<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>appendToBody</span>(<span class='kw'>fun</span> <span class='kw'>=</span> <span class='no'>fun</span>, <span class='kw'>values</span> <span class='kw'>=</span> <span class='no'>values</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/body.html'>body</a></span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; {
+#&gt;     print("AAA")
+#&gt;     print("BBB")
 #&gt;     print("hello world")
 #&gt; }</div></pre>
   </div>
