@@ -65,7 +65,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">goalie</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.6</span>
       </span>
     </div>
 
@@ -116,9 +116,9 @@
 <h2 class="hasAnchor">
 <a href="#goalie-0-3-0-2019-07-29" class="anchor"></a>goalie 0.3.0 (2019-07-29)</h2>
 <p>Version bump, reflecting start of a new release series.</p>
-<div id="minor-changes-4" class="section level3">
+<div id="minor-changes-5" class="section level3">
 <h3 class="hasAnchor">
-<a href="#minor-changes-4" class="anchor"></a>Minor changes</h3>
+<a href="#minor-changes-5" class="anchor"></a>Minor changes</h3>
 <ul>
 <li>Hardened <code>hasColnames</code>, <code>hasDimnames</code>, <code>hasNames</code>, <code>hasRownames</code>, <code>hasValidDimnames</code>, and <code>hasValidNames</code> against invalid objects that don’t return either a value or <code>NULL</code>. This can happen in rare cases with invalid SummarizedExperiment objects (e.g. <code>bcb_invalid</code> object in bcbioRNASeq tests).</li>
 </ul>
@@ -127,9 +127,9 @@
     <div id="goalie-0-3-1-2019-08-05" class="section level2">
 <h2 class="hasAnchor">
 <a href="#goalie-0-3-1-2019-08-05" class="anchor"></a>goalie 0.3.1 (2019-08-05)</h2>
-<div id="minor-changes-3" class="section level3">
+<div id="minor-changes-4" class="section level3">
 <h3 class="hasAnchor">
-<a href="#minor-changes-3" class="anchor"></a>Minor changes</h3>
+<a href="#minor-changes-4" class="anchor"></a>Minor changes</h3>
 <ul>
 <li>Improved documentation consistency, using shared params defined in new acidroxygen package. This will be used across the basejump packages in a forthcoming update.</li>
 </ul>
@@ -145,9 +145,9 @@
 <li>Now exporting <code>toNames</code>, which was previously used internally by the package. Improved handling in this function for floating points. Also now using <code>toNames</code> more consistently internally to sanitize names for <code>cause</code> return.</li>
 </ul>
 </div>
-<div id="minor-changes-2" class="section level3">
+<div id="minor-changes-3" class="section level3">
 <h3 class="hasAnchor">
-<a href="#minor-changes-2" class="anchor"></a>Minor changes</h3>
+<a href="#minor-changes-3" class="anchor"></a>Minor changes</h3>
 <ul>
 <li>
 <code>standardizeCall</code>: Now returns with default arguments included. Can disable using <code>defaults = FALSE</code>.</li>
@@ -161,9 +161,9 @@
     <div id="goalie-0-3-3-2019-08-11" class="section level2">
 <h2 class="hasAnchor">
 <a href="#goalie-0-3-3-2019-08-11" class="anchor"></a>goalie 0.3.3 (2019-08-11)</h2>
-<div id="minor-changes-1" class="section level3">
+<div id="minor-changes-2" class="section level3">
 <h3 class="hasAnchor">
-<a href="#minor-changes-1" class="anchor"></a>Minor changes</h3>
+<a href="#minor-changes-2" class="anchor"></a>Minor changes</h3>
 <ul>
 <li>
 <code>validNames</code>: Bug fix and improvement for function, clearly showing position where names are invalid.</li>
@@ -185,13 +185,28 @@
     <div id="goalie-0-3-5-2019-08-13" class="section level2">
 <h2 class="hasAnchor">
 <a href="#goalie-0-3-5-2019-08-13" class="anchor"></a>goalie 0.3.5 (2019-08-13)</h2>
+<div id="minor-changes-1" class="section level3">
+<h3 class="hasAnchor">
+<a href="#minor-changes-1" class="anchor"></a>Minor changes</h3>
+<ul>
+<li>
+<code>isURL</code> now returns true on <code>url</code> class input.</li>
+<li>Improved message consistency.</li>
+</ul>
+</div>
+</div>
+    <div id="goalie-0-3-6-2019-08-27" class="section level2">
+<h2 class="hasAnchor">
+<a href="#goalie-0-3-6-2019-08-27" class="anchor"></a>goalie 0.3.6 (2019-08-27)</h2>
+<p>Updated R dependency to 3.6.</p>
 <div id="minor-changes" class="section level3">
 <h3 class="hasAnchor">
 <a href="#minor-changes" class="anchor"></a>Minor changes</h3>
 <ul>
 <li>
-<code>isURL</code> now returns true on <code>url</code> class input.</li>
-<li>Improved message consistency.</li>
+<code>appendToBody</code>: Now allowing pass-in of multiple values as a <code>list</code>. The list must contains <code>call</code> elements.</li>
+<li>
+<code>hasNonzeroRowsAndCols</code>: Renamed function, improving consistency with generic defined in bioverbs. Also added support for <code>DelayedMatrix</code>, improving consistency with basejump <code>nonzeroRowsAndCols</code> function.</li>
 </ul>
 </div>
 </div>
@@ -207,6 +222,7 @@
         <li><a href="#goalie-0-3-3-2019-08-11">0.3.3</a></li>
         <li><a href="#goalie-0-3-4-2019-08-12">0.3.4</a></li>
         <li><a href="#goalie-0-3-5-2019-08-13">0.3.5</a></li>
+        <li><a href="#goalie-0-3-6-2019-08-27">0.3.6</a></li>
       </ul>
     </div>
   </div>

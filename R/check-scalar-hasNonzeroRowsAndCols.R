@@ -6,58 +6,51 @@
 #' This is a common check when handling RNA-seq data prior to generating a
 #' heatmap or applying a log transformation, for example.
 #'
-#' @name check-scalar-hasNonZeroRowsAndCols
-#' @note Updated 2019-08-10.
+#' @name check-scalar-hasNonzeroRowsAndCols
+#' @note Updated 2019-08-27.
 #'
 #' @inherit check
 #' @inheritParams acidroxygen::params
 #'
 #' @examples
 #' ## TRUE ====
-#' x <- matrix(data = seq_len(4), nrow = 2)
+#' x <- matrix(data = seq_len(4L), nrow = 2L)
 #' print(x)
-#' hasNonZeroRowsAndCols(x)
-#'
-#' x <- matrix(data = rep(1, times = 2), byrow = TRUE)
-#' print(x)
-#' hasNonZeroRowsAndCols(x)
-#'
-#' x <- matrix(data = rep(1, times = 2), byrow = FALSE)
-#' print(x)
-#' hasNonZeroRowsAndCols(x)
+#' hasNonzeroRowsAndCols(x)
 #'
 #' ## FALSE ====
-#' x <- matrix(nrow = 0, ncol = 0)
+#' x <- matrix(data = rep(c(0L, 1L), times = 2L), nrow = 2L, byrow = FALSE)
 #' print(x)
-#' hasNonZeroRowsAndCols(x)
+#' hasNonzeroRowsAndCols(x)
 #'
-#' x <- matrix(nrow = 1, ncol = 0)
+#' x <- matrix(data = rep(c(0L, 1L), times = 2L), nrow = 2L, byrow = TRUE)
 #' print(x)
-#' hasNonZeroRowsAndCols(x)
-#'
-#' x <- matrix(nrow = 0, ncol = 1)
-#' print(x)
-#' hasNonZeroRowsAndCols(x)
+#' hasNonzeroRowsAndCols(x)
 NULL
 
 
 
-#' @rdname check-scalar-hasNonZeroRowsAndCols
+#' @rdname check-scalar-hasNonzeroRowsAndCols
 #' @export
-hasNonZeroRowsAndCols <- function(x, .xname = getNameInParent(x)) {
-    ok <- isAny(x = x, classes = c("matrix", "Matrix"), .xname = .xname)
+hasNonzeroRowsAndCols <- function(x, .xname = getNameInParent(x)) {
+    ok <- isAny(
+        x = x,
+        classes = c("matrix", "Matrix", "DelayedMatrix"),
+        .xname = .xname
+    )
     if (!isTRUE(ok)) return(ok)  # nocov
     ok <- hasRows(x, .xname = .xname)
     if (!isTRUE(ok)) return(ok)
     ok <- hasCols(x, .xname = .xname)
     if (!isTRUE(ok)) return(ok)
-    ## For sparse matrix, use the generic verbs from Matrix package. Note that
-    ## sparse matrices are often highly zero-inflated, so this approach might
-    ## not be generally recommended for this data class.
-    if (is(x, "sparseMatrix")) {
+    if (is(x, "Matrix")) {
         assert(requireNamespace("Matrix", quietly = TRUE))
         colSums <- Matrix::colSums
         rowSums <- Matrix::rowSums
+    } else if (is(x, "DelayedMatrix")) {
+        assert(requireNamespace("DelayedMatrixStats", quietly = TRUE))
+        colSums <- DelayedMatrixStats::colSums2
+        rowSums <- DelayedMatrixStats::rowSums2
     }
     ## Inform the user if any rows or columns contain all zeros. It's good
     ## practice to remove them before attempting to plot a heatmap.
