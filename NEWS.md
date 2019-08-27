@@ -1,5 +1,7 @@
 ## goalie 0.3.6 (2019-08-27)
 
+Updated R dependency to 3.6.
+
 ### Minor changes
 
 - `appendToBody`: Now allowing pass-in of multiple values as a `list`. The list
