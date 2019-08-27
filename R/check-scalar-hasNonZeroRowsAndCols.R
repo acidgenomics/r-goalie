@@ -1,7 +1,3 @@
-## FIXME Add DelayedArray support here.
-
-
-
 #' Does the input contain non-zero rows and columns?
 #'
 #' Useful for quickly checking to see if we have dropped rows or columns
@@ -55,13 +51,14 @@ hasNonZeroRowsAndCols <- function(x, .xname = getNameInParent(x)) {
     if (!isTRUE(ok)) return(ok)
     ok <- hasCols(x, .xname = .xname)
     if (!isTRUE(ok)) return(ok)
-    ## For sparse matrix, use the generic verbs from Matrix package. Note that
-    ## sparse matrices are often highly zero-inflated, so this approach might
-    ## not be generally recommended for this data class.
-    if (is(x, "sparseMatrix")) {
+    if (is(x, "Matrix")) {
         assert(requireNamespace("Matrix", quietly = TRUE))
         colSums <- Matrix::colSums
         rowSums <- Matrix::rowSums
+    } else if (is(x, "DelayedMatrix")) {
+        assert(requireNamespace("DelayedMatrixStats", quietly = TRUE))
+        colSums <- DelayedMatrixStats::colSums2
+        rowSums <- DelayedMatrixStats::rowSums2
     }
     ## Inform the user if any rows or columns contain all zeros. It's good
     ## practice to remove them before attempting to plot a heatmap.
