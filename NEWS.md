@@ -1,3 +1,15 @@
+## goalie 0.3.6 (2019-08-27)
+
+Updated R dependency to 3.6.
+
+### Minor changes
+
+- `appendToBody`: Now allowing pass-in of multiple values as a `list`. The list
+  must contains `call` elements.
+- `hasNonzeroRowsAndCols`: Renamed function, improving consistency with generic
+  defined in bioverbs. Also added support for `DelayedMatrix`, improving
+  consistency with basejump `nonzeroRowsAndCols` function.
+
 ## goalie 0.3.5 (2019-08-13)
 
 ### Minor changes
