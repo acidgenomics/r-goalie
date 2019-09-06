@@ -1,12 +1,17 @@
 #' Does the current session have an internet connection?
 #'
-#' @note Requires curl package to be installed.
-#'
 #' @name check-scalar-hasInternet
-#' @note Updated 2019-07-29.
+#' @note Updated 2019-09-06.
 #'
 #' @inherit check
 #' @inheritParams acidroxygen::params
+#'
+#' @seealso
+#' - `Biobase::testBioCConnection()`.
+#' - `curl::has_internet()`.
+#' - `curl::nslookup()`.
+#' - `RCurl::getURL()`.
+#' - https://stackoverflow.com/a/17620732/3911732
 #'
 #' @examples
 #' hasInternet()
@@ -16,15 +21,21 @@ NULL
 
 #' @rdname check-scalar-hasInternet
 #' @export
-hasInternet <- function() {
-    assert(requireNamespace("curl", quietly = TRUE))
-    ok <- tryCatch(
-        expr = curl::has_internet(),
-        error = function(e) FALSE,
-        warning = function(w) FALSE
-    )
+hasInternet <- function(url = "http://www.bioconductor.org") {
+    fail <- false("Internet connection test failed.")
+    ok <- as.logical(capabilities(what = "http/ftp"))
     if (!isTRUE(ok)) {
-        return(false("Internet connection test failed."))  # nocov
+        return(fail)
+    }
+    url <- url(url)
+    test <- try(
+        expr = suppressWarnings(readLines(url, n = 1L)),
+        silent = TRUE
+    )
+    if (inherits(test, "try-error")) {
+        return(fail)
+    } else {
+        close(url)
     }
     TRUE
 }

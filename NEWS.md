@@ -1,3 +1,10 @@
+## goalie 0.3.7 (2019-09-06)
+
+### Minor changes
+
+- `hasInternet`: Now allowing a user to check a specific URL, using the `url`
+  argument. Currently defaults to Bioconductor.
+
 ## goalie 0.3.6 (2019-08-27)
 
 Updated R dependency to 3.6.
