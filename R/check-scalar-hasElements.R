@@ -11,12 +11,10 @@
 #' @inheritParams acidroxygen::params
 #'
 #' @seealso
+#' - `assertive.properties::has_elements()`.
 #' - `assertive.properties::is_empty()`.
 #' - `assertive.properties::is_non_empty()`.
-#' - `assertive.properties::has_elements()`.
 #' - `assertive.properties::is_of_dimension()`.
-#' - `assertive.properties::is_of_length()`.
-#' - `assertive.properties::is_non_empty()`.
 #'
 #' @examples
 #' ## TRUE ====
@@ -26,6 +24,29 @@
 #' ## FALSE ====
 #' hasElements(list(), n = 1)
 NULL
+
+
+
+#' @rdname check-scalar-hasElements
+#' @export
+hasElements <- function(x, n, .xname = getNameInParent(x)) {
+    assert(is.numeric(n))
+    nElementsX <- .nElements(x)
+    nElementsN <- prod(n)
+    if (nElementsX != nElementsN) {
+        return(false(
+            ngettext(
+                nElementsX,
+                "'%s' has %d element, not %d.",
+                "'%s' has %d elements, not %d."
+            ),
+            .xname,
+            nElementsX,
+            nElementsN
+        ))
+    }
+    TRUE
+}
 
 
 
@@ -67,29 +88,6 @@ isNonEmpty <- function(
 
 #' @rdname check-scalar-hasElements
 #' @export
-hasElements <- function(x, n, .xname = getNameInParent(x)) {
-    assert(is.numeric(n))
-    nElementsX <- .nElements(x)
-    nElementsN <- prod(n)
-    if (nElementsX != nElementsN) {
-        return(false(
-            ngettext(
-                nElementsX,
-                "'%s' has %d element, not %d.",
-                "'%s' has %d elements, not %d."
-            ),
-            .xname,
-            nElementsX,
-            nElementsN
-        ))
-    }
-    TRUE
-}
-
-
-
-#' @rdname check-scalar-hasElements
-#' @export
 isOfDimension <- function(x, n, .xname = getNameInParent(x)) {
     assert((is.numeric(n) && length(n) == 2L) || is.null(n))
     dimX <- dim(x)
@@ -119,41 +117,6 @@ isOfDimension <- function(x, n, .xname = getNameInParent(x)) {
             toString(notok),
             .xname
         ))
-    }
-    TRUE
-}
-
-
-
-#' @rdname check-scalar-hasElements
-#' @export
-isOfLength <- function(x, n, .xname = getNameInParent(x)) {
-    assert(is.numeric(n), length(n) == 1L)
-    lengthX <- length(x)
-    if (lengthX != n) {
-        return(false("'%s' has length %d, not %d.", .xname, lengthX, n))
-    }
-    TRUE
-}
-
-
-
-#' @rdname check-scalar-hasElements
-#' @export
-isNonEmpty <- function(
-    x,
-    metric = c("length", "elements"),
-    .xname = getNameInParent(x)
-) {
-    metric <- match.arg(metric)
-    metricFun <- .getMetric(metric)
-    if (metricFun(x, 0L)) {
-        msg <- switch(
-            EXPR = metric,
-            length = gettext("'%s' has length 0."),
-            elements = gettext("'%s' has 0 elements.")
-        )
-        return(false(msg, .xname))
     }
     TRUE
 }
