@@ -5,7 +5,11 @@
 \alias{hasInternet}
 \title{Does the current session have an internet connection?}
 \usage{
-hasInternet()
+hasInternet(url = "http://www.bioconductor.org")
+}
+\arguments{
+\item{url}{\code{character(1)}.
+Uniform Resource Locator (URL).}
 }
 \value{
 \code{TRUE} on success;
@@ -15,10 +19,17 @@ hasInternet()
 Does the current session have an internet connection?
 }
 \note{
-Requires curl package to be installed.
-
-Updated 2019-07-29.
+Updated 2019-09-06.
 }
 \examples{
 hasInternet()
+}
+\seealso{
+\itemize{
+\item \code{Biobase::testBioCConnection()}.
+\item \code{curl::has_internet()}.
+\item \code{curl::nslookup()}.
+\item \code{RCurl::getURL()}.
+\item https://stackoverflow.com/a/17620732/3911732
+}
 }

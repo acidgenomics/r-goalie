@@ -1,8 +1,8 @@
 Package: goalie
 Title: Assertive check functions
 Description: Assertive check functions for defensive R programming.
-Version: 0.3.6
-Date: 2019-08-27
+Version: 0.3.7
+Date: 2019-09-06
 Authors@R: c(
     person(
         "Michael", "Steinbaugh",
@@ -30,7 +30,6 @@ Suggests:
     S4Vectors (>= 0.22),
     SummarizedExperiment (>= 1.14),
     Matrix (>= 1.2),
-    curl (>= 3.2),
     data.table (>= 1.12),
     ggplot2 (>= 3.0),
     knitr (>= 1.23),
