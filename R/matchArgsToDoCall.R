@@ -50,17 +50,14 @@ matchArgsToDoCall <- function(
         isInt(which),
         isFlag(verbose)
     )
-
     if (is.list(args)) {
         assert(hasLength(args), hasNames(args))
     } else {
         args <- list()  # nocov
     }
-
     if (which < 1L) {
         which <- 1L  # nocov
     }
-
     list <- standardizeCall(
         which = which,
         defaults = TRUE,
@@ -68,33 +65,27 @@ matchArgsToDoCall <- function(
         return = "list",
         verbose = verbose
     )
-
     definition <- list[["definition"]]
     call <- list[["match.call"]]
     assert(
         is.function(definition),
         is.call(call)
     )
-
     ## Prepare the args list.
     callArgs <- as.list(call)[-1L]
     callArgs <- callArgs[setdiff(names(callArgs), names(args))]
     args <- c(args, callArgs)
-
     ## This step shouldn't be necessary when using `defaults = TRUE` above.
     formalArgs <- formals(definition)
     formalArgs <- formalArgs[setdiff(names(formalArgs), "...")]
     formalArgs <- formalArgs[setdiff(names(formalArgs), names(args))]
     args <- c(args, formalArgs)
-
     ## Remove formals we want to exclude.
     args <- args[setdiff(names(args), removeFormals)]
-
     ## Show the unevaluated args, if desired.
     if (isTRUE(verbose)) {
         print(list(args = lapply(args, class)))  # nocov
     }
-
     ## Ensure all arguments are evaluated.
     ## Missing or NULL arguments will be stripped.
     ## https://stackoverflow.com/questions/16740307
@@ -115,7 +106,6 @@ matchArgsToDoCall <- function(
     ## Remove any `NULL` arguments. We may want to consider changing this
     ## approach in the future, in case passing `NULL` through is important.
     args <- Filter(f = Negate(is.null), x = args)
-
     ## Enable verbose mode, for debugging.
     if (isTRUE(verbose)) {
         ## nocov start
@@ -126,7 +116,6 @@ matchArgsToDoCall <- function(
         ))
         ## nocov end
     }
-
     assert(hasNames(args), hasNoDuplicates(names(args)))
     invisible(lapply(
         X = args,
@@ -136,6 +125,5 @@ matchArgsToDoCall <- function(
             ))
         }
     ))
-
     args
 }

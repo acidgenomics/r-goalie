@@ -7,7 +7,7 @@
 #' [`stop`][base::stop] is called, producing an error message indicating the
 #' first expression which was not `TRUE`.
 #'
-#' @note Updated 2019-08-10.
+#' @note Updated 2019-09-06.
 #' @export
 #'
 #' @inheritParams acidroxygen::params
@@ -39,14 +39,10 @@ assert <- function(
         stop("No assert check defined.")
     }
     dots <- as.call(substitute(...()))
-
     for (i in seq_len(n)) {
         r <- ...elt(i)
-        ## Ensure we're stripping names off of logical. Otherwise,
-        ## `isTRUE()` check will fail on R 3.4.
         r <- unname(r)
         call <- .Dparse(dots[[i]])
-
         if (!(is.logical(r) && length(r) == 1L)) {
             stop(sprintf(
                 paste0(
@@ -59,7 +55,6 @@ assert <- function(
         } else if (isTRUE(r)) {
             next
         }
-
         ## Note that we're allowing the user to define the message.
         if (!isString(msg)) {
             ## Always return a `stopifnot()`-like error.
@@ -72,19 +67,16 @@ assert <- function(
             }
             msg <- paste0(msg, collapse = "\n")
         }
-
         ## Include the traceback in error.
         if (isTRUE(traceback)) {
-            ## Note that we're reversing the call stack here to make it
-            ## easier to see the parents.
+            ## Note that we're reversing the call stack here to make it easier
+            ## to see the parents.
             stack <- rev(sys.calls())
             stack <- printString(stack)
             ## Add the traceback to the error message.
             msg <- paste(msg, "Traceback:", stack, sep = "\n")
         }
-
         stop(simpleError(msg, call = if (p <- sys.parent(1L)) sys.call(p)))
     }
-
     invisible(TRUE)
 }

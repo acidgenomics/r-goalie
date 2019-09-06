@@ -41,7 +41,6 @@ validate <- function(..., msg = NULL) {
         stop("No assert check defined.")
     }
     dots <- as.call(substitute(...()))
-
     ## Note that here we're evaluating all of the checks instead of stopping on
     ## the first error, like the approach in `assert()`.
     checks <- lapply(
@@ -52,7 +51,6 @@ validate <- function(..., msg = NULL) {
             ## `isTRUE()` check will fail on R 3.4.
             r <- unname(r)
             call <- .Dparse(dots[[i]])
-
             ## Validity checks must return logical(1) or character(1).
             ## In the event of FALSE, we'll return character(1) automatically.
             if (!(length(r) == 1L && (is.logical(r) || is.character(r)))) {
@@ -83,11 +81,10 @@ validate <- function(..., msg = NULL) {
                 ## package for examples).
                 msg <- r
             }
-
             as.character(msg)
         }
     )
-
+    ## Return.
     if (all(bapply(checks, isTRUE))) {
         ## Return TRUE boolean flag when all checks pass.
         TRUE

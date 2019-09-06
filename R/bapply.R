@@ -7,7 +7,7 @@
 #' - `FUN.VALUE` is always set to `logical(1)`.
 #' - `USE.NAMES` is always set to `TRUE`.
 #'
-#' @note Updated 2019-07-29.
+#' @note Updated 2019-09-06.
 #' @export
 #'
 #' @param X `atomic` or `list`.
@@ -25,8 +25,7 @@
 #' @examples
 #' bapply(list(a = "example", b = 1), is.character)
 bapply <- function(X, FUN, ...) {  # nolint
-    dots <- list(...)
-    assert(areDisjointSets(names(dots), c("FUN.VALUE", "USE.NAMES")))
+    assert(areDisjointSets(names(list(...)), c("FUN.VALUE", "USE.NAMES")))
     vapply(
         X = X,
         FUN = FUN,
