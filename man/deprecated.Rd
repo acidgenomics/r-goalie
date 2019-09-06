@@ -7,6 +7,7 @@
 \alias{containsHexColors}
 \alias{containsURL}
 \alias{containsAURL}
+\alias{isOfLength}
 \title{Deprecated functions}
 \usage{
 containsAlpha(x, .xname = getNameInParent(x))
@@ -18,12 +19,16 @@ containsHexColors(x, .xname = getNameInParent(x))
 containsURL(x, .xname = getNameInParent(x))
 
 containsAURL(x, .xname = getNameInParent(x))
+
+isOfLength(...)
 }
 \arguments{
 \item{x}{Object.}
 
 \item{.xname}{Name of object defined in \code{x}.
 \emph{Not intended to be used directly.}}
+
+\item{...}{Additional arguments.}
 }
 \value{
 \code{.Deprecated}.

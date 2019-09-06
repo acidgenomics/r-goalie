@@ -28,7 +28,7 @@ An assert check function that returns \code{logical(1)} boolean flag
 \item \code{USE.NAMES} is always set to \code{TRUE}.
 }
 
-Updated 2019-07-29.
+Updated 2019-09-06.
 }
 \examples{
 bapply(list(a = "example", b = 1), is.character)

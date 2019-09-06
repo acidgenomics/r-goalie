@@ -61,7 +61,6 @@ validateClasses <- function(object, expected, subset = FALSE) {
         SIMPLIFY = TRUE,
         USE.NAMES = TRUE
     )
-
     if (!all(valid)) {
         return(paste(
             "Class checks failed:",

@@ -51,6 +51,14 @@ containsAURL <- isAURL
 
 
 
+## v0.3.8 ======================================================================
+#' @rdname deprecated
+#' @export
+isOfLength <- function(...) {
+    .Deprecated("hasLength")
+    hasLength(...)
+}
+
 
 
 ## nolint end

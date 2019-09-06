@@ -46,7 +46,6 @@ NULL
 methodFunction <- function(f, signature, package) {
     assert(isString(package))
     envir <- asNamespace(package)
-
     ## Locate the S4 generic. We're opting to get either the `standardGeneric`
     ## or the `nonstandardGenericFunction` instead of requiring
     ## `standardGeneric` via `getGeneric` here, since it's more flexible with
@@ -76,7 +75,6 @@ methodFunction <- function(f, signature, package) {
         )
     )
     assert(do.call(what = isGeneric, args = args))
-
     ## Now select the method from the generic.
     definition <- selectMethod(
         f = generic,
@@ -85,7 +83,6 @@ methodFunction <- function(f, signature, package) {
         doCache = FALSE
     )
     assert(is(definition, "MethodDefinition"))
-
     ## S4 dispatch will nest `.local` function inside the method definition when
     ## the formals aren't identical to the generic. Otherwise it will be slotted
     ## in ".Data".
@@ -95,7 +92,6 @@ methodFunction <- function(f, signature, package) {
         fun <- slot(definition, ".Data")
     }
     assert(is.function(fun))
-
     fun
 }
 
