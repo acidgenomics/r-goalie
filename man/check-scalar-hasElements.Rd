@@ -2,39 +2,33 @@
 % Please edit documentation in R/check-scalar-hasElements.R
 \name{check-scalar-hasElements}
 \alias{check-scalar-hasElements}
+\alias{hasElements}
 \alias{isEmpty}
 \alias{isNonEmpty}
-\alias{hasElements}
 \alias{isOfDimension}
-\alias{isOfLength}
 \title{Does the input have elements?}
 \usage{
+hasElements(x, n, .xname = getNameInParent(x))
+
 isEmpty(x, metric = c("length", "elements"),
   .xname = getNameInParent(x))
 
 isNonEmpty(x, metric = c("length", "elements"),
   .xname = getNameInParent(x))
 
-hasElements(x, n, .xname = getNameInParent(x))
-
 isOfDimension(x, n, .xname = getNameInParent(x))
-
-isOfLength(x, n, .xname = getNameInParent(x))
-
-isNonEmpty(x, metric = c("length", "elements"),
-  .xname = getNameInParent(x))
 }
 \arguments{
 \item{x}{Object.}
 
-\item{metric}{\code{character(1)}.
-Metric type, either \code{length} or \code{elements}.}
+\item{n}{\code{integer(1)}.
+Number to include.}
 
 \item{.xname}{Name of object defined in \code{x}.
 \emph{Not intended to be used directly.}}
 
-\item{n}{\code{integer(1)}.
-Number to include.}
+\item{metric}{\code{character(1)}.
+Metric type, either \code{length} or \code{elements}.}
 }
 \value{
 \code{TRUE} on success;
@@ -56,11 +50,9 @@ hasElements(list(), n = 1)
 }
 \seealso{
 \itemize{
+\item \code{assertive.properties::has_elements()}.
 \item \code{assertive.properties::is_empty()}.
 \item \code{assertive.properties::is_non_empty()}.
-\item \code{assertive.properties::has_elements()}.
 \item \code{assertive.properties::is_of_dimension()}.
-\item \code{assertive.properties::is_of_length()}.
-\item \code{assertive.properties::is_non_empty()}.
 }
 }
