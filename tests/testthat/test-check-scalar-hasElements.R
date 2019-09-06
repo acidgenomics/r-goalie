@@ -13,7 +13,7 @@ test_that("FALSE", {
     expect_false(ok)
     expect_identical(
         object = cause(ok),
-        expected = noquote("'\"\"' has length 1, not 0.")
+        expected = noquote("'\"\"' does not have a length of 0.")
     )
 
     expect_false(isEmpty(1L, metric = "length"))
@@ -84,19 +84,4 @@ test_that("FALSE : expecting dim", {
         object = cause(ok),
         expected = noquote("'mtcars' has dimensions c(32L, 11L), not NULL.")
     )
-})
-
-
-
-context("check : scalar : isOfLength")
-
-test_that("TRUE", {
-    expect_true(isOfLength("xxx", n = 1L))
-    expect_true(isOfLength(NA, n = 1L))
-    expect_true(isOfLength(character(), n = 0L))
-    expect_true(isOfLength(NULL, n = 0L))
-})
-
-test_that("FALSE", {
-    expect_false(isOfLength("xxx", n = 2L))
 })
