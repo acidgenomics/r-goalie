@@ -48,9 +48,11 @@ hasNonzeroRowsAndCols <- function(x, .xname = getNameInParent(x)) {
         colSums <- Matrix::colSums
         rowSums <- Matrix::rowSums
     } else if (is(x, "DelayedMatrix")) {
+        ## nocov start
         assert(requireNamespace("DelayedMatrixStats", quietly = TRUE))
         colSums <- DelayedMatrixStats::colSums2
         rowSums <- DelayedMatrixStats::rowSums2
+        ## nocov end
     }
     ## Inform the user if any rows or columns contain all zeros. It's good
     ## practice to remove them before attempting to plot a heatmap.

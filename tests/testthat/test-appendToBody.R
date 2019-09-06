@@ -5,14 +5,21 @@ test_that("appendToBody", {
     x <- function() {
         "hello"
     }
-    x <- appendToBody(x, quote(.Deprecated("y")))
+    x <- appendToBody(
+        fun = x,
+        values = list(
+            quote(a <- "aaa"),
+            quote(b <- "bbb")
+        )
+    )
     expect_is(x, "function")
     ## This check approach using `subsitute()` is recommended in `body()`
     ## working example documentation.
     expect_identical(
         body(x),
         substitute({
-            .Deprecated("y")
+            a <- "aaa"
+            b <- "bbb"
             "hello"
         })
     )

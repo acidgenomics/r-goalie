@@ -25,7 +25,7 @@ hasInternet <- function(url = "http://www.bioconductor.org") {
     fail <- false("Internet connection test failed.")
     ok <- as.logical(capabilities(what = "http/ftp"))
     if (!isTRUE(ok)) {
-        return(fail)
+        return(fail)  # nocov
     }
     url <- url(url)
     test <- try(
@@ -33,7 +33,7 @@ hasInternet <- function(url = "http://www.bioconductor.org") {
         silent = TRUE
     )
     if (inherits(test, "try-error")) {
-        return(fail)
+        return(fail)  # nocov
     } else {
         close(url)
     }
