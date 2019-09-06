@@ -68,24 +68,20 @@ standardizeCall <- function(
         isFlag(verbose)
     )
     return <- match.arg(return)
-
     ## Don't allow a `which` value less than 1.
     if (which < 1L) {
         which <- 1L  # nocov
     }
-
     ## Determine where the call is in the stack that we want to standardize.
     ## Note that this differs for S4 methods containing a nested `.local`.
     .local <- .isLocalCall(sys.call(which = which))
     if (isTRUE(.local) && which > 1L) {
         which <- which - 1L
     }
-
     ## Local the parameters we need to sanitize call.
     definition <- sys.function(which = which)
     call <- sys.call(which = which)
     envir <- sys.frame(which = which)
-
     list <- list(
         sys.status = sys.status(),
         sys.nframe = sys.nframe(),
@@ -96,7 +92,6 @@ standardizeCall <- function(
         call = call,
         envir = envir
     )
-
     ## Extract the definition from `.local`, if necessary.
     if (isTRUE(.local)) {
         assert(!isTRUE(.isLocalCall(call)))
@@ -108,11 +103,9 @@ standardizeCall <- function(
             list[["definition"]] <- definition
         }
     }
-
     if (isTRUE(verbose)) {
         print(list)  # nocov
     }
-
     ## Now ready to match the call.
     call <- match.call(
         definition = definition,
@@ -120,7 +113,6 @@ standardizeCall <- function(
         expand.dots = expandDots,
         envir = envir
     )
-
     ## Expand the call to include default arguments, if desired.
     ## Inspired by `stackoverflow::match.call.defaults()`.
     if (isTRUE(defaults)) {
@@ -138,20 +130,15 @@ standardizeCall <- function(
             envir = envir
         )
     }
-
     list[["match.call"]] <- call
-
     if (isTRUE(verbose)) {
         print(list(match.call = call))  # nocov
     }
-
     ## Check call integrity before returning.
     assert(is.call(call))
-
     ## Require that all arguments are named before returning.
     ## This check is especially important for S4 methods containing `.local`.
     assert(isCharacter(names(as.list(call)[-1L])))
-
     switch(EXPR = return, call = call, list = list)
 }
 

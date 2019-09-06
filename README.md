@@ -31,8 +31,19 @@ Configure [conda][] to use the [bioconda][] channels.
 conda install -c bioconda r-goalie
 ```
 
+## Related packages
+
+The goalie source code incorporates elements from these excellent assert check packages:
+
+- [assertive][] by Richie Cotton.
+- [assertthat][] by Hadley Wickham.
+- [checkmate][] by Michael Lang.
+
 [BiocManager]: https://cran.r-project.org/package=BiocManager
-[bioconda]: https://bioconda.github.io/
 [Bioconductor]: https://bioconductor.org/
-[conda]: https://conda.io/
 [R]: https://www.r-project.org/
+[assertive]: https://cran.r-project.org/package=assertive
+[assertthat]: https://cran.r-project.org/package=assertthat
+[bioconda]: https://bioconda.github.io/
+[checkmate]: https://cran.r-project.org/package=checkmate
+[conda]: https://conda.io/
