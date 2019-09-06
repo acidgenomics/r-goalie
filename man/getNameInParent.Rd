@@ -2,12 +2,9 @@
 % Please edit documentation in R/getNameInParent.R
 \name{getNameInParent}
 \alias{getNameInParent}
-\alias{vname}
 \title{Get the name of a variable defined in the parent frame}
 \usage{
 getNameInParent(x, escapePercent = TRUE, width = 100L)
-
-vname(x, escapePercent = TRUE, width = 100L)
 }
 \arguments{
 \item{x}{\code{symbol}.
@@ -27,7 +24,7 @@ Maximum width of the name.}
 Get the name of a variable defined in the parent frame
 }
 \note{
-Updated 2019-07-29.
+Updated 2019-09-06.
 }
 \examples{
 getNameInParent(test)
