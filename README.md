@@ -40,10 +40,10 @@ The goalie source code incorporates elements from these excellent assert check p
 - [checkmate][] by Michael Lang.
 
 [BiocManager]: https://cran.r-project.org/package=BiocManager
+[Bioconductor]: https://bioconductor.org/
+[R]: https://www.r-project.org/
 [assertive]: https://cran.r-project.org/package=assertive
 [assertthat]: https://cran.r-project.org/package=assertthat
 [bioconda]: https://bioconda.github.io/
-[Bioconductor]: https://bioconductor.org/
 [checkmate]: https://cran.r-project.org/package=checkmate
 [conda]: https://conda.io/
-[R]: https://www.r-project.org/
