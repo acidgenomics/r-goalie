@@ -28,7 +28,6 @@ NULL
         }
         ## Run this step after getting cause and names.
         x <- .stripAttributes(x)
-
         ok <- if (isTRUE(ignoreNA)) {
             ## OK can be TRUE or NA; FALSE is bad.
             x | is.na(x)
@@ -36,11 +35,9 @@ NULL
             ## OK can be TRUE; FALSE or NA is bad.
             x & !is.na(x)
         }
-
         ## Here we're creating a failure index.
         index <- head(which(!ok), n = n)
         n <- length(index)
-
         ## Create the corresponding data frame, which we'll print below.
         failures <- data.frame(
             pos = index,
@@ -49,7 +46,6 @@ NULL
             cause = unclass(cause[index]),
             row.names = seq_along(index)
         )
-
         ## Slightly convoluted way of creating message to ensure that ngettext
         ## creates all the translation strings.
         header <- if (nrow(failures) < n) {
@@ -59,7 +55,6 @@ NULL
         } else {
             ""
         }
-
         cat(enc2utf8(sprintf(
             fmt = ngettext(
                 n = n,
@@ -68,7 +63,6 @@ NULL
             ),
             n, header
         )))
-
         print(failures)
     }
 

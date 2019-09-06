@@ -1,6 +1,6 @@
 #' Get the name of a variable defined in the parent frame
 #'
-#' @note Updated 2019-07-29.
+#' @note Updated 2019-09-06.
 #' @export
 #'
 #' @param x `symbol`.
@@ -29,9 +29,3 @@ getNameInParent <- function(x, escapePercent = TRUE, width = 100L) {
     }
     toString(xname, width = width)
 }
-
-
-
-#' @rdname getNameInParent
-#' @export
-vname <- getNameInParent
