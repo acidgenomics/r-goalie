@@ -63,11 +63,11 @@
 
 
 ## @seealso `assertive.properties:::get_metric()`.
-## Updated 2019-07-15.
+## Updated 2019-09-06.
 .getMetric <- function(metric) {
     switch(
         EXPR = metric,
-        length = isOfLength,
+        length = hasLength,
         elements = hasElements,
         stop(sprintf("The metric '%s' is not valid.", metric))
     )
