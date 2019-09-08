@@ -9,8 +9,6 @@ Assertive check functions for defensive R programming.
 
 ## Installation
 
-This is an [R][] package.
-
 ### [R][] method
 
 ```r
@@ -20,7 +18,6 @@ if (!requireNamespace("remotes", quietly = TRUE)) {
 Sys.setenv(R_REMOTES_UPGRADE = "always")
 ## Set `GITHUB_PAT` in `~/.Renviron` if you get a rate limit error.
 remotes::install_github("acidgenomics/goalie")
-remotes::update_packages()
 ```
 
 ### [conda][] method
