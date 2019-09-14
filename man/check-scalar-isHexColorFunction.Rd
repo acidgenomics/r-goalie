@@ -33,7 +33,7 @@ x <- viridis::viridis
 isHexColorFunction(x)
 
 ## FALSE ====
-x <- ggplot2::scale_colour_manual
+x <- ggplot2::scale_color_manual
 isHexColorFunction(x)
 }
 \seealso{
