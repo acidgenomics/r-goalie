@@ -5,8 +5,8 @@
 \alias{isGGScale}
 \title{Does the input contain a ggplot2 scale?}
 \usage{
-isGGScale(x, scale = c("continuous", "discrete"), aes = c("colour",
-  "fill"), nullOK = FALSE)
+isGGScale(x, scale = c("continuous", "discrete"), aes = c("color",
+  "colour", "fill"), nullOK = FALSE)
 }
 \arguments{
 \item{x}{Object.}
@@ -15,9 +15,8 @@ isGGScale(x, scale = c("continuous", "discrete"), aes = c("colour",
 Type of scale, either \code{"continuous"} or \code{"discrete"}.}
 
 \item{aes}{\code{character(1)}.
-Aesthetic mapping, either \code{"colour"} or \code{"fill"}.
-Note that ggplot2 prefers British spelling, so we're enforcing that
-convention here.}
+Aesthetic mapping, either  \code{"color"}/\code{"colour"} or \code{"fill"}.
+Note that ggplot2 prefers British spelling.}
 
 \item{nullOK}{\code{logical(1)}.
 If set to \code{TRUE}, \code{x} may also be \code{NULL}.}
@@ -30,7 +29,7 @@ If set to \code{TRUE}, \code{x} may also be \code{NULL}.}
 Does the input contain a ggplot2 scale?
 }
 \note{
-Updated 2019-08-10.
+Updated 2019-09-14.
 }
 \examples{
 library(ggplot2)
