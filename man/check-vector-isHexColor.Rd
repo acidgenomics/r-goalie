@@ -41,7 +41,7 @@ print(x)
 isHexColor(x)
 
 ## FALSE ====
-x <- ggplot2::scale_colour_manual
+x <- ggplot2::scale_color_manual
 class(x)
 isHexColor(x)
 }

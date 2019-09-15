@@ -71,7 +71,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">goalie</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.7</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.8</span>
       </span>
     </div>
 
@@ -122,8 +122,8 @@
     <p>Does the input contain a ggplot2 scale?</p>
     </div>
 
-    <pre class="usage"><span class='fu'>isGGScale</span>(<span class='no'>x</span>, <span class='kw'>scale</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"continuous"</span>, <span class='st'>"discrete"</span>), <span class='kw'>aes</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"colour"</span>,
-  <span class='st'>"fill"</span>), <span class='kw'>nullOK</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    <pre class="usage"><span class='fu'>isGGScale</span>(<span class='no'>x</span>, <span class='kw'>scale</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"continuous"</span>, <span class='st'>"discrete"</span>), <span class='kw'>aes</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"color"</span>,
+  <span class='st'>"colour"</span>, <span class='st'>"fill"</span>), <span class='kw'>nullOK</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -140,9 +140,8 @@ Type of scale, either <code>"continuous"</code> or <code>"discrete"</code>.</p><
     <tr>
       <th>aes</th>
       <td><p><code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code>.
-Aesthetic mapping, either <code>"colour"</code> or <code>"fill"</code>.
-Note that ggplot2 prefers British spelling, so we're enforcing that
-convention here.</p></td>
+Aesthetic mapping, either  <code>"color"</code>/<code>"colour"</code> or <code>"fill"</code>.
+Note that ggplot2 prefers British spelling.</p></td>
     </tr>
     <tr>
       <th>nullOK</th>
@@ -157,20 +156,20 @@ If set to <code>TRUE</code>, <code>x</code> may also be <code>NULL</code>.</p></
 <code>FALSE</code> on failure, with cause set.</p>
     <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
-    <p>Updated 2019-08-10.</p>
+    <p>Updated 2019-09-14.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>ggplot2</span>)
 
-<span class='no'>colour_c</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_gradient.html'>scale_colour_gradient</a></span>(<span class='kw'>low</span> <span class='kw'>=</span> <span class='st'>"red"</span>, <span class='kw'>high</span> <span class='kw'>=</span> <span class='st'>"blue"</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/class.html'>class</a></span>(<span class='no'>colour_c</span>)</div><div class='output co'>#&gt; [1] "ScaleContinuous" "Scale"           "ggproto"         "gg"             </div><div class='input'>
-<span class='no'>colour_d</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_manual.html'>scale_colour_manual</a></span>(<span class='kw'>values</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"red"</span>, <span class='st'>"blue"</span>))
-<span class='fu'><a href='https://rdrr.io/r/base/class.html'>class</a></span>(<span class='no'>colour_d</span>)</div><div class='output co'>#&gt; [1] "ScaleDiscrete" "Scale"         "ggproto"       "gg"           </div><div class='input'>
+<span class='no'>color_c</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_gradient.html'>scale_color_gradient</a></span>(<span class='kw'>low</span> <span class='kw'>=</span> <span class='st'>"red"</span>, <span class='kw'>high</span> <span class='kw'>=</span> <span class='st'>"blue"</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/class.html'>class</a></span>(<span class='no'>color_c</span>)</div><div class='output co'>#&gt; [1] "ScaleContinuous" "Scale"           "ggproto"         "gg"             </div><div class='input'>
+<span class='no'>color_d</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_manual.html'>scale_color_manual</a></span>(<span class='kw'>values</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"red"</span>, <span class='st'>"blue"</span>))
+<span class='fu'><a href='https://rdrr.io/r/base/class.html'>class</a></span>(<span class='no'>color_d</span>)</div><div class='output co'>#&gt; [1] "ScaleDiscrete" "Scale"         "ggproto"       "gg"           </div><div class='input'>
 <span class='no'>fill_c</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_gradient.html'>scale_fill_gradient</a></span>(<span class='kw'>low</span> <span class='kw'>=</span> <span class='st'>"red"</span>, <span class='kw'>high</span> <span class='kw'>=</span> <span class='st'>"blue"</span>)
 <span class='fu'><a href='https://rdrr.io/r/base/class.html'>class</a></span>(<span class='no'>fill_c</span>)</div><div class='output co'>#&gt; [1] "ScaleContinuous" "Scale"           "ggproto"         "gg"             </div><div class='input'>
 <span class='no'>fill_d</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_manual.html'>scale_fill_manual</a></span>(<span class='kw'>values</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"red"</span>, <span class='st'>"blue"</span>))
 <span class='fu'><a href='https://rdrr.io/r/base/class.html'>class</a></span>(<span class='no'>fill_d</span>)</div><div class='output co'>#&gt; [1] "ScaleDiscrete" "Scale"         "ggproto"       "gg"           </div><div class='input'>
-<span class='fu'>isGGScale</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='no'>colour_c</span>, <span class='kw'>scale</span> <span class='kw'>=</span> <span class='st'>"continuous"</span>, <span class='kw'>aes</span> <span class='kw'>=</span> <span class='st'>"colour"</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>isGGScale</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='no'>colour_d</span>, <span class='kw'>scale</span> <span class='kw'>=</span> <span class='st'>"discrete"</span>, <span class='kw'>aes</span> <span class='kw'>=</span> <span class='st'>"colour"</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>isGGScale</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='no'>fill_c</span>, <span class='kw'>scale</span> <span class='kw'>=</span> <span class='st'>"continuous"</span>, <span class='kw'>aes</span> <span class='kw'>=</span> <span class='st'>"fill"</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>isGGScale</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='no'>fill_d</span>, <span class='kw'>scale</span> <span class='kw'>=</span> <span class='st'>"discrete"</span>, <span class='kw'>aes</span> <span class='kw'>=</span> <span class='st'>"fill"</span>)</div><div class='output co'>#&gt; [1] TRUE</div></pre>
+<span class='fu'>isGGScale</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='no'>color_c</span>, <span class='kw'>scale</span> <span class='kw'>=</span> <span class='st'>"continuous"</span>, <span class='kw'>aes</span> <span class='kw'>=</span> <span class='st'>"color"</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>isGGScale</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='no'>color_d</span>, <span class='kw'>scale</span> <span class='kw'>=</span> <span class='st'>"discrete"</span>, <span class='kw'>aes</span> <span class='kw'>=</span> <span class='st'>"color"</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>isGGScale</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='no'>fill_c</span>, <span class='kw'>scale</span> <span class='kw'>=</span> <span class='st'>"continuous"</span>, <span class='kw'>aes</span> <span class='kw'>=</span> <span class='st'>"fill"</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>isGGScale</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='no'>fill_d</span>, <span class='kw'>scale</span> <span class='kw'>=</span> <span class='st'>"discrete"</span>, <span class='kw'>aes</span> <span class='kw'>=</span> <span class='st'>"fill"</span>)</div><div class='output co'>#&gt; [1] TRUE</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -191,7 +190,7 @@ If set to <code>TRUE</code>, <code>x</code> may also be <code>NULL</code>.</p></
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
 </div>
 
       </footer>

@@ -1,7 +1,7 @@
 #' Does the input contain a ggplot2 scale?
 #'
 #' @name check-scalar-isGGScale
-#' @note Updated 2019-08-10.
+#' @note Updated 2019-09-14.
 #'
 #' @inherit check
 #' @inheritParams acidroxygen::params
@@ -9,18 +9,17 @@
 #' @param scale `character(1)`.
 #'   Type of scale, either `"continuous"` or `"discrete"`.
 #' @param aes `character(1)`.
-#'   Aesthetic mapping, either `"colour"` or `"fill"`.
-#'   Note that ggplot2 prefers British spelling, so we're enforcing that
-#'   convention here.
+#'   Aesthetic mapping, either  `"color"`/`"colour"` or `"fill"`.
+#'   Note that ggplot2 prefers British spelling.
 #'
 #' @examples
 #' library(ggplot2)
 #'
-#' colour_c <- scale_colour_gradient(low = "red", high = "blue")
-#' class(colour_c)
+#' color_c <- scale_color_gradient(low = "red", high = "blue")
+#' class(color_c)
 #'
-#' colour_d <- scale_colour_manual(values = c("red", "blue"))
-#' class(colour_d)
+#' color_d <- scale_color_manual(values = c("red", "blue"))
+#' class(color_d)
 #'
 #' fill_c <- scale_fill_gradient(low = "red", high = "blue")
 #' class(fill_c)
@@ -28,8 +27,8 @@
 #' fill_d <- scale_fill_manual(values = c("red", "blue"))
 #' class(fill_d)
 #'
-#' isGGScale(x = colour_c, scale = "continuous", aes = "colour")
-#' isGGScale(x = colour_d, scale = "discrete", aes = "colour")
+#' isGGScale(x = color_c, scale = "continuous", aes = "color")
+#' isGGScale(x = color_d, scale = "discrete", aes = "color")
 #' isGGScale(x = fill_c, scale = "continuous", aes = "fill")
 #' isGGScale(x = fill_d, scale = "discrete", aes = "fill")
 NULL
@@ -42,7 +41,7 @@ NULL
 isGGScale <- function(
     x,
     scale = c("continuous", "discrete"),
-    aes = c("colour", "fill"),
+    aes = c("color", "colour", "fill"),
     nullOK = FALSE
 ) {
     scale <- match.arg(scale)
@@ -64,17 +63,10 @@ isGGScale <- function(
     )
     if (!isTRUE(ok)) return(ok)
     ## Note that this has to match the British spelling (e.g colour).
-    ok <- identical(x = x[["aesthetics"]], y = aes)
-    if (!isTRUE(ok)) {
-        ## nocov start
-        return(false(
-            paste0(
-                "'%s' isn't identical to '%s'. ",
-                "Use British spelling (e.g. colour)."
-            ),
-            x[["aesthetics"]], aes
-        ))
-        ## nocov end
+    if (identical(aes, "color")) {
+        aes <- "colour"
     }
+    ok <- identical(x = x[["aesthetics"]], y = aes)
+    if (!isTRUE(ok)) return(ok)
     TRUE
 }
