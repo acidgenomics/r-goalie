@@ -1,3 +1,10 @@
+## goalie 0.3.8 (2019-09-13)
+
+### Minor changes
+
+- `isGGScale`: Update `aes` argument to support American "color" pass-in in
+  addition to British "colour" spelling.
+
 ## goalie 0.3.7 (2019-09-06)
 
 ### Minor changes
