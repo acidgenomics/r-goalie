@@ -71,7 +71,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">goalie</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.7</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.8</span>
       </span>
     </div>
 
@@ -122,20 +122,15 @@
     <p>Does the input have elements?</p>
     </div>
 
-    <pre class="usage"><span class='fu'>isEmpty</span>(<span class='no'>x</span>, <span class='kw'>metric</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"length"</span>, <span class='st'>"elements"</span>),
+    <pre class="usage"><span class='fu'>hasElements</span>(<span class='no'>x</span>, <span class='no'>n</span>, <span class='kw'>.xname</span> <span class='kw'>=</span> <span class='fu'><a href='getNameInParent.html'>getNameInParent</a></span>(<span class='no'>x</span>))
+
+<span class='fu'>isEmpty</span>(<span class='no'>x</span>, <span class='kw'>metric</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"length"</span>, <span class='st'>"elements"</span>),
   <span class='kw'>.xname</span> <span class='kw'>=</span> <span class='fu'><a href='getNameInParent.html'>getNameInParent</a></span>(<span class='no'>x</span>))
 
 <span class='fu'>isNonEmpty</span>(<span class='no'>x</span>, <span class='kw'>metric</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"length"</span>, <span class='st'>"elements"</span>),
   <span class='kw'>.xname</span> <span class='kw'>=</span> <span class='fu'><a href='getNameInParent.html'>getNameInParent</a></span>(<span class='no'>x</span>))
 
-<span class='fu'>hasElements</span>(<span class='no'>x</span>, <span class='no'>n</span>, <span class='kw'>.xname</span> <span class='kw'>=</span> <span class='fu'><a href='getNameInParent.html'>getNameInParent</a></span>(<span class='no'>x</span>))
-
-<span class='fu'>isOfDimension</span>(<span class='no'>x</span>, <span class='no'>n</span>, <span class='kw'>.xname</span> <span class='kw'>=</span> <span class='fu'><a href='getNameInParent.html'>getNameInParent</a></span>(<span class='no'>x</span>))
-
-<span class='fu'>isOfLength</span>(<span class='no'>x</span>, <span class='no'>n</span>, <span class='kw'>.xname</span> <span class='kw'>=</span> <span class='fu'><a href='getNameInParent.html'>getNameInParent</a></span>(<span class='no'>x</span>))
-
-<span class='fu'>isNonEmpty</span>(<span class='no'>x</span>, <span class='kw'>metric</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"length"</span>, <span class='st'>"elements"</span>),
-  <span class='kw'>.xname</span> <span class='kw'>=</span> <span class='fu'><a href='getNameInParent.html'>getNameInParent</a></span>(<span class='no'>x</span>))</pre>
+<span class='fu'>isOfDimension</span>(<span class='no'>x</span>, <span class='no'>n</span>, <span class='kw'>.xname</span> <span class='kw'>=</span> <span class='fu'><a href='getNameInParent.html'>getNameInParent</a></span>(<span class='no'>x</span>))</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -145,9 +140,9 @@
       <td><p>Object.</p></td>
     </tr>
     <tr>
-      <th>metric</th>
-      <td><p><code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code>.
-Metric type, either <code>length</code> or <code>elements</code>.</p></td>
+      <th>n</th>
+      <td><p><code><a href='https://rdrr.io/r/base/integer.html'>integer(1)</a></code>.
+Number to include.</p></td>
     </tr>
     <tr>
       <th>.xname</th>
@@ -155,9 +150,9 @@ Metric type, either <code>length</code> or <code>elements</code>.</p></td>
 <em>Not intended to be used directly.</em></p></td>
     </tr>
     <tr>
-      <th>n</th>
-      <td><p><code><a href='https://rdrr.io/r/base/integer.html'>integer(1)</a></code>.
-Number to include.</p></td>
+      <th>metric</th>
+      <td><p><code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code>.
+Metric type, either <code>length</code> or <code>elements</code>.</p></td>
     </tr>
     </table>
 
@@ -172,12 +167,10 @@ Number to include.</p></td>
 
     <div class='dont-index'>
 <ul>
+<li><p><code><a href='https://rdrr.io/pkg/assertive.properties/man/is_empty.html'>assertive.properties::has_elements()</a></code>.</p></li>
 <li><p><code><a href='https://rdrr.io/pkg/assertive.properties/man/is_empty.html'>assertive.properties::is_empty()</a></code>.</p></li>
 <li><p><code><a href='https://rdrr.io/pkg/assertive.properties/man/is_empty.html'>assertive.properties::is_non_empty()</a></code>.</p></li>
-<li><p><code><a href='https://rdrr.io/pkg/assertive.properties/man/is_empty.html'>assertive.properties::has_elements()</a></code>.</p></li>
 <li><p><code><a href='https://rdrr.io/pkg/assertive.properties/man/is_empty.html'>assertive.properties::is_of_dimension()</a></code>.</p></li>
-<li><p><code><a href='https://rdrr.io/pkg/assertive.properties/man/is_empty.html'>assertive.properties::is_of_length()</a></code>.</p></li>
-<li><p><code><a href='https://rdrr.io/pkg/assertive.properties/man/is_empty.html'>assertive.properties::is_non_empty()</a></code>.</p></li>
 </ul>
 </div>
 
@@ -209,7 +202,7 @@ Number to include.</p></td>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
 </div>
 
       </footer>
