@@ -7,7 +7,7 @@ test_that("TRUE", {
 })
 
 test_that("FALSE", {
-    x <- ggplot2::scale_colour_manual
+    x <- ggplot2::scale_color_manual
     ok <- isHexColor(x)
     expect_s3_class(ok, "goalie")
     expect_identical(cause(ok), noquote("'x' is not character."))
