@@ -34,11 +34,11 @@ Updated 2019-09-14.
 \examples{
 library(ggplot2)
 
-colour_c <- scale_colour_gradient(low = "red", high = "blue")
-class(colour_c)
+color_c <- scale_color_gradient(low = "red", high = "blue")
+class(color_c)
 
-colour_d <- scale_colour_manual(values = c("red", "blue"))
-class(colour_d)
+color_d <- scale_color_manual(values = c("red", "blue"))
+class(color_d)
 
 fill_c <- scale_fill_gradient(low = "red", high = "blue")
 class(fill_c)
@@ -46,8 +46,8 @@ class(fill_c)
 fill_d <- scale_fill_manual(values = c("red", "blue"))
 class(fill_d)
 
-isGGScale(x = colour_c, scale = "continuous", aes = "colour")
-isGGScale(x = colour_d, scale = "discrete", aes = "colour")
+isGGScale(x = color_c, scale = "continuous", aes = "color")
+isGGScale(x = color_d, scale = "discrete", aes = "color")
 isGGScale(x = fill_c, scale = "continuous", aes = "fill")
 isGGScale(x = fill_d, scale = "discrete", aes = "fill")
 }
