@@ -40,24 +40,25 @@ cause <- function(x) {
 #' @rdname cause
 #' @export
 ## Updated 2019-08-08.
-`cause<-` <- function(x, value) {
-    stopifnot(is.character(value))
-    if (length(value) != 1L && length(value) != length(x)) {
-        stop(sprintf(
-            fmt = paste0(
-                "The length of 'value' should be 1 ",
-                "or the length of 'x' (%d), but is %d."
-            ),
-            length(x),
-            length(value)
-        ))
-    } else if (length(x) > 1L && !is.character(names(value))) {
-        stop("'value' containing multiple elements must be named.")
+`cause<-` <-  # nolint
+    function(x, value) {
+        stopifnot(is.character(value))
+        if (length(value) != 1L && length(value) != length(x)) {
+            stop(sprintf(
+                fmt = paste0(
+                    "The length of 'value' should be 1 ",
+                    "or the length of 'x' (%d), but is %d."
+                ),
+                length(x),
+                length(value)
+            ))
+        } else if (length(x) > 1L && !is.character(names(value))) {
+            stop("'value' containing multiple elements must be named.")
+        }
+        attr(x, "cause") <- noquote(value)
+        class(x) <- c("goalie", "logical")
+        x
     }
-    attr(x, "cause") <- noquote(value)
-    class(x) <- c("goalie", "logical")
-    x
-}
 
 
 
