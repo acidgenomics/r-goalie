@@ -15,13 +15,13 @@ test_that("FALSE : not a function", {
 })
 
 test_that("FALSE : no 'n' formal", {
-    ok <- isHexColorFunction(ggplot2::scale_colour_manual)
+    ok <- isHexColorFunction(ggplot2::scale_color_manual)
     expect_false(ok)
     expect_s3_class(ok, "goalie")
     expect_identical(
         cause(ok),
         noquote(
-            "'ggplot2::scale_colour_manual' does not contain an 'n' argument."
+            "'ggplot2::scale_color_manual' does not contain an 'n' argument."
         )
     )
 })
