@@ -90,19 +90,6 @@
 
 
 
-## @seealso `assertive.properties:::n_elements()`.
-## Updated 2019-07-15.
-.nElements <- function(x) {
-    if (is.recursive(x)) {
-        sum(vapply(x, .nElements, integer(1L)))
-    }
-    else {
-        as.integer(prod(.dim(x)))
-    }
-}
-
-
-
 ## @seealso `assertive.base::strip_attributes().
 ## Updated 2019-07-15.
 .stripAttributes <- function(x) {
