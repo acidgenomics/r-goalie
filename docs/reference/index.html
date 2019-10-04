@@ -125,23 +125,11 @@
     <tbody>
       <tr>
         <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
+          <h2 id="section-assert-engines" class="hasAnchor"><a href="#section-assert-engines" class="anchor"></a>Assert engines</h2>
           <p class="section-desc"></p>
         </th>
       </tr>
       <tr>
-        
-        <td>
-          <p><code><a href="MethodDefinition.html">methodFunction()</a></code> <code><a href="MethodDefinition.html">methodFormals()</a></code> </p>
-        </td>
-        <td><p>Access the data inside an S4 method definition</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="appendToBody.html">appendToBody()</a></code> </p>
-        </td>
-        <td><p>Append values to function body</p></td>
-      </tr><tr>
         
         <td>
           <p><code><a href="assert.html">assert()</a></code> </p>
@@ -150,22 +138,18 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="bapply.html">bapply()</a></code> </p>
+          <p><code><a href="validate.html">validate()</a></code> </p>
         </td>
-        <td><p>Boolean apply</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="callAndName.html">callAndName()</a></code> </p>
-        </td>
-        <td><p>Call a function and give the result names</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="cause.html">cause()</a></code> <code><a href="cause.html">`cause<-`()</a></code> <code><a href="cause.html">nocause()</a></code> </p>
-        </td>
-        <td><p>Get or set the <code>cause</code> attribute</p></td>
-      </tr><tr>
+        <td><p>Validate an S4 class</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-scalar-checks" class="hasAnchor"><a href="#section-scalar-checks" class="anchor"></a>Scalar checks</h2>
+          <p class="section-desc"></p>
+        </th>
+      </tr>
+      <tr>
         
         <td>
           <p><code><a href="check-scalar-allAreAtomic.html">allAreAtomic()</a></code> </p>
@@ -204,7 +188,7 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="check-scalar-hasElements.html">hasElements()</a></code> <code><a href="check-scalar-hasElements.html">nElements()</a></code> <code><a href="check-scalar-hasElements.html">isOfDimension()</a></code> </p>
+          <p><code><a href="check-scalar-hasElements.html">hasElements()</a></code> <code><a href="check-scalar-hasElements.html">nElements()</a></code> </p>
         </td>
         <td><p>Does the input have elements?</p></td>
       </tr><tr>
@@ -318,7 +302,7 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="check-scalar-isOfDimension.html">check-scalar-isOfDimension</a></code> </p>
+          <p><code><a href="check-scalar-isOfDimension.html">isOfDimension()</a></code> </p>
         </td>
         <td><p>Does the input contain specific dimensions?</p></td>
       </tr><tr>
@@ -336,10 +320,24 @@
       </tr><tr>
         
         <td>
+          <p><code><a href="check-scalar-sets.html">isSubset()</a></code> <code><a href="check-scalar-sets.html">isSuperset()</a></code> <code><a href="check-scalar-sets.html">areDisjointSets()</a></code> <code><a href="check-scalar-sets.html">areIntersectingSets()</a></code> <code><a href="check-scalar-sets.html">areSetEqual()</a></code> </p>
+        </td>
+        <td><p>Set comparisons</p></td>
+      </tr><tr>
+        
+        <td>
           <p><code><a href="check-scalar-validNames.html">validNames()</a></code> </p>
         </td>
         <td><p>Are these valid names?</p></td>
-      </tr><tr>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-vectorized-checks" class="hasAnchor"><a href="#section-vectorized-checks" class="anchor"></a>Vectorized checks</h2>
+          <p class="section-desc"></p>
+        </th>
+      </tr>
+      <tr>
         
         <td>
           <p><code><a href="check-vector-hasAccess.html">hasAccess()</a></code> <code><a href="check-vector-hasAccess.html">allHaveAccess()</a></code> </p>
@@ -399,6 +397,58 @@
           <p><code><a href="check-vector-isURL.html">isURL()</a></code> <code><a href="check-vector-isURL.html">isAURL()</a></code> <code><a href="check-vector-isURL.html">allAreURLs()</a></code> </p>
         </td>
         <td><p>Does the input contain a URL?</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-s-methods" class="hasAnchor"><a href="#section-s-methods" class="anchor"></a>S3 methods</h2>
+          <p class="section-desc"></p>
+        </th>
+      </tr>
+      <tr>
+        
+        <td>
+          <p><code><a href="print.html">print(<i>&lt;goalie&gt;</i>)</a></code> </p>
+        </td>
+        <td><p>Print methods for objects with a cause attribute</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-system" class="hasAnchor"><a href="#section-system" class="anchor"></a>System</h2>
+          <p class="section-desc"></p>
+        </th>
+      </tr>
+      <tr>
+        
+        <td>
+          <p><code><a href="MethodDefinition.html">methodFunction()</a></code> <code><a href="MethodDefinition.html">methodFormals()</a></code> </p>
+        </td>
+        <td><p>Access the data inside an S4 method definition</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="appendToBody.html">appendToBody()</a></code> </p>
+        </td>
+        <td><p>Append values to function body</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="bapply.html">bapply()</a></code> </p>
+        </td>
+        <td><p>Boolean apply</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="callAndName.html">callAndName()</a></code> </p>
+        </td>
+        <td><p>Call a function and give the result names</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="cause.html">cause()</a></code> <code><a href="cause.html">`cause<-`()</a></code> <code><a href="cause.html">nocause()</a></code> </p>
+        </td>
+        <td><p>Get or set the <code>cause</code> attribute</p></td>
       </tr><tr>
         
         <td>
@@ -426,12 +476,6 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="print.html">print(<i>&lt;goalie&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Print methods for objects with a cause attribute</p></td>
-      </tr><tr>
-        
-        <td>
           <p><code><a href="printString.html">printString()</a></code> </p>
         </td>
         <td><p>Print string</p></td>
@@ -450,12 +494,6 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="sets.html">isSubset()</a></code> <code><a href="sets.html">isSuperset()</a></code> <code><a href="sets.html">areDisjointSets()</a></code> <code><a href="sets.html">areIntersectingSets()</a></code> <code><a href="sets.html">areSetEqual()</a></code> </p>
-        </td>
-        <td><p>Set comparisons</p></td>
-      </tr><tr>
-        
-        <td>
           <p><code><a href="standardizeCall.html">standardizeCall()</a></code> </p>
         </td>
         <td><p>Standardize call</p></td>
@@ -465,12 +503,6 @@
           <p><code><a href="toNames.html">toNames()</a></code> </p>
         </td>
         <td><p>Sanitize vector input to names</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="validate.html">validate()</a></code> </p>
-        </td>
-        <td><p>Validate an S4 class</p></td>
       </tr><tr>
         
         <td>
@@ -485,7 +517,11 @@
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-all-functions">All functions</a></li>
+      <li><a href="#section-assert-engines">Assert engines</a></li>
+      <li><a href="#section-scalar-checks">Scalar checks</a></li>
+      <li><a href="#section-vectorized-checks">Vectorized checks</a></li>
+      <li><a href="#section-s-methods">S3 methods</a></li>
+      <li><a href="#section-system">System</a></li>
     </ul>
   </div>
 </div>
