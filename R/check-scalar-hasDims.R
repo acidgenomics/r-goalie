@@ -48,7 +48,7 @@ hasRows <- function(x, .xname = getNameInParent(x)) {
     if (is.null(nrowx)) {
         return(false("The number of rows in '%s' is NULL.", .xname))
     }
-    if (nrowx == 0L) {
+    if (identical(nrowx, 0L)) {
         return(false("The number of rows in '%s' is zero.", .xname))
     }
     TRUE
@@ -63,7 +63,7 @@ hasCols <- function(x, .xname = getNameInParent(x)) {
     if (is.null(ncolx)) {
         return(false("The number of columns in '%s' is NULL.", .xname))
     }
-    if (ncolx == 0L) {
+    if (identical(ncolx, 0L)) {
         return(false("The number of columns in '%s' is zero.", .xname))
     }
     TRUE
