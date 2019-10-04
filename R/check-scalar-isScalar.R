@@ -36,7 +36,7 @@ NULL
 #' @rdname check-scalar-isScalar
 #' @export
 isScalar <- function(x, .xname = getNameInParent(x)) {
-    ok <- length(x) == 1L
+    ok <- identical(length(x), 1L)
     if (!isTRUE(ok)) {
         return(false("'%s' does not have a length of 1.", .xname))
     }

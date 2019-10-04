@@ -75,7 +75,7 @@ print.goalie <- function(x, ...) {
     if (!is.logical(x)) {
         stop("x is not logical.")
     }
-    if (length(x) == 1L) {
+    if (identical(length(x), 1L)) {
         .printGoalieScalar(x)
     } else {
         .printGoalieVector(x)

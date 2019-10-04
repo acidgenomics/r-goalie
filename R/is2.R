@@ -23,7 +23,7 @@
 #' is2(1:5, c("character", "list", "numeric"))
 #' is2(mean, c("function", "data.frame"))
 is2 <- function(x, class, .xname = getNameInParent(x)) {
-    if (!is.character(class) || length(class) == 0L) {
+    if (!is.character(class) || identical(length(class), 0L)) {
         stop("'class' must be non-empty character.")
     }
     if (length(class) > 1L) {

@@ -45,7 +45,7 @@ matchesUniqueGeneNames <- function(x, genes, .xname = getNameInParent(x)) {
     ## Coercing to character here to handle Rle/factor matching.
     all <- as.character(x[["geneName"]])
     ## Check for gene names (symbols).
-    if (length(all) == 0L) {
+    if (identical(length(all), 0L)) {
         return(false("Gene names are not defined in '%s'.", .xname))
     }
     ## Require that the user passed in gene names.

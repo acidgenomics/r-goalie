@@ -35,7 +35,7 @@ setCause <- function(
     isNA <- is.na(x)
     length <- length(x)
     cause <- character(length = length)
-    if (length(missing) == 1L) {
+    if (identical(length(missing), 1L)) {
         cause[isNA] <- missing
     } else {
         ## nocov start
@@ -45,7 +45,7 @@ setCause <- function(
     }
     ## Define the FALSE index.
     index <- !(x | isNA)
-    if (length(false) == 1L) {
+    if (identical(length(false), 1L)) {
         cause[index] <- false
     } else {
         false <- rep_len(false, length)

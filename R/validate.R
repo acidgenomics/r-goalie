@@ -37,7 +37,7 @@
 #' )
 validate <- function(..., msg = NULL) {
     n <- ...length()
-    if (n == 0L) {
+    if (identical(n, 0L)) {
         stop("No assert check defined.")
     }
     dots <- as.call(substitute(...()))

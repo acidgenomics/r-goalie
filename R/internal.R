@@ -16,12 +16,12 @@
 ## Updated 2019-07-15.
 .capitalize <- function(x) {
     n <- length(x)
-    if (n == 0L) {
+    if (identical(n, 0L)) {
         return(x)
     }
     nas <- is.na(x)
     idxs <- which(nas)
-    if (length(idxs) == n) {
+    if (identical(length(idxs), n)) {
         return(x)  # nocov
     }
     res <- character(length = n)
