@@ -29,7 +29,7 @@ isString <- function(
     if (isTRUE(nullOK) && is.null(x)) {
         return(TRUE)
     }
-    ok <- is.character(x) && length(x) == 1L
+    ok <- is.character(x) && identical(length(x), 1L)
     if (!isTRUE(ok)) {
         return(false("'%s' is not a character of length 1.", .xname))
     }

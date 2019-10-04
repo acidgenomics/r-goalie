@@ -109,9 +109,9 @@ areIntersectingSets <- function(
     .yname = getNameInParent(y)
 ) {
     intersect <- intersect(x, y)
-    if (length(intersect) == 0L) {
+    if (identical(length(intersect), 0L)) {
         return(false(
-            gettext("'%s' and '%s' have no common elements."),
+            gettext("'%s' and '%s' have 0 common elements."),
             .xname, .yname
         ))
     }
