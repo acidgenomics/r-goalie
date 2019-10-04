@@ -60,7 +60,7 @@ hasElements <- function(x, n = NULL, .xname = getNameInParent(x)) {
 #' @export
 nElements <- function(x) {
     if (is.recursive(x)) {
-        sum(vapply(x, .nElements, integer(1L)))
+        sum(vapply(x, nElements, integer(1L)))
     }
     else {
         as.integer(prod(.dim(x)))
