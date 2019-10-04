@@ -6,3 +6,35 @@ authors:
 
 news:
   - one_page: false
+
+reference:
+  - title: Assert engines
+    contents:
+      - assert
+      - validate
+  - title: Scalar checks
+    contents:
+      - starts_with("check-scalar-")
+  - title: Vectorized checks
+    contents:
+      - starts_with("check-vector-")
+  - title: S3 methods
+    contents:
+      - print
+  - title: System
+    contents:
+      - MethodDefinition
+      - appendToBody
+      - bapply
+      - callAndName
+      - cause
+      - "false"
+      - getNameInParent
+      - matchArgsToDoCall
+      - matchesUniqueGeneNames
+      - printString
+      - safeDeparse
+      - setCause
+      - standardizeCall
+      - toNames
+      - validateClasses
