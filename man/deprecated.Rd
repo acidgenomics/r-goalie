@@ -24,11 +24,9 @@ containsAURL(x, .xname = getNameInParent(x))
 
 isOfLength(...)
 
-isEmpty(x, metric = c("length", "elements"),
-  .xname = getNameInParent(x))
+isEmpty(x, .xname = getNameInParent(x))
 
-isNonEmpty(x, metric = c("length", "elements"),
-  .xname = getNameInParent(x))
+isNonEmpty(x, .xname = getNameInParent(x))
 }
 \arguments{
 \item{x}{Object.}
@@ -37,9 +35,6 @@ isNonEmpty(x, metric = c("length", "elements"),
 \emph{Not intended to be used directly.}}
 
 \item{...}{Additional arguments.}
-
-\item{metric}{\code{character(1)}.
-Metric type, either \code{length} or \code{elements}.}
 }
 \value{
 \code{.Deprecated}.
