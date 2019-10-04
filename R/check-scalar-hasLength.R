@@ -29,14 +29,14 @@ NULL
 hasLength <- function(x, n = NULL, .xname = getNameInParent(x)) {
     length <- length(x)
     if (is.null(n)) {
-        if (length == 0L) {
+        if (identical(length, 0L)) {
             return(false("'%s' has length 0.", .xname))
         } else {
             return(TRUE)
         }
     }
-    assert(isInt(n), n >= 0L)
-    ok <- length == n
+    assert(isInt(n), isTRUE(n >= 0L))
+    ok <- identical(length, n)
     if (!isTRUE(ok)) {
         return(false("'%s' does not have a length of %d.", .xname, n))
     }
