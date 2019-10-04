@@ -12,6 +12,8 @@
 - `isEmpty` and `isNonEmpty` are now soft deprecated. `isEmpty` is defined in
   the Bioconductor S4Vectors package, and we don't want to mask in interactive
   scripting sessions.
+- `is2`: No longer exported, since this function isn't really intended for use
+  outside of the package. Refer to `isAll` or `isAny` checks instead.
 
 ## goalie 0.3.8 (2019-09-15)
 
