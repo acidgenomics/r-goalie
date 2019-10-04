@@ -71,7 +71,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">goalie</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.8</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.9</span>
       </span>
     </div>
 
@@ -114,7 +114,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Does the input have elements?</h1>
-    <small class="dont-index">Source: <a href='https://github.com/acidgenomics/goalie/blob/master/R/check-scalar-hasElements.R'><code>R/check-scalar-hasElements.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/acidgenomics/goalie/blob/master/R/check-scalar-hasElements.R'><code>R/check-scalar-hasElements.R</code></a>, <a href='https://github.com/acidgenomics/goalie/blob/master/R/check-scalar-isOfDimension.R'><code>R/check-scalar-isOfDimension.R</code></a></small>
     <div class="hidden name"><code>check-scalar-hasElements.Rd</code></div>
     </div>
 
@@ -122,13 +122,9 @@
     <p>Does the input have elements?</p>
     </div>
 
-    <pre class="usage"><span class='fu'>hasElements</span>(<span class='no'>x</span>, <span class='no'>n</span>, <span class='kw'>.xname</span> <span class='kw'>=</span> <span class='fu'><a href='getNameInParent.html'>getNameInParent</a></span>(<span class='no'>x</span>))
+    <pre class="usage"><span class='fu'>hasElements</span>(<span class='no'>x</span>, <span class='kw'>n</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>.xname</span> <span class='kw'>=</span> <span class='fu'><a href='getNameInParent.html'>getNameInParent</a></span>(<span class='no'>x</span>))
 
-<span class='fu'>isEmpty</span>(<span class='no'>x</span>, <span class='kw'>metric</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"length"</span>, <span class='st'>"elements"</span>),
-  <span class='kw'>.xname</span> <span class='kw'>=</span> <span class='fu'><a href='getNameInParent.html'>getNameInParent</a></span>(<span class='no'>x</span>))
-
-<span class='fu'>isNonEmpty</span>(<span class='no'>x</span>, <span class='kw'>metric</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"length"</span>, <span class='st'>"elements"</span>),
-  <span class='kw'>.xname</span> <span class='kw'>=</span> <span class='fu'><a href='getNameInParent.html'>getNameInParent</a></span>(<span class='no'>x</span>))
+<span class='fu'>nElements</span>(<span class='no'>x</span>)
 
 <span class='fu'>isOfDimension</span>(<span class='no'>x</span>, <span class='no'>n</span>, <span class='kw'>.xname</span> <span class='kw'>=</span> <span class='fu'><a href='getNameInParent.html'>getNameInParent</a></span>(<span class='no'>x</span>))</pre>
 
@@ -149,36 +145,40 @@ Number to include.</p></td>
       <td><p>Name of object defined in <code>x</code>.
 <em>Not intended to be used directly.</em></p></td>
     </tr>
-    <tr>
-      <th>metric</th>
-      <td><p><code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code>.
-Metric type, either <code>length</code> or <code>elements</code>.</p></td>
-    </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p><code>TRUE</code> on success;
 <code>FALSE</code> on failure, with cause set.</p>
+    <h2 class="hasAnchor" id="functions"><a class="anchor" href="#functions"></a>Functions</h2>
+
+    
+<ul>
+<li><p><code>nElements</code>: Return the number of elements in object.</p></li>
+</ul>
     <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
-    <p>Updated 2019-08-10.</p>
+    <p>Updated 2019-10-04.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'>
 <ul>
+<li><p><code><a href='https://rdrr.io/r/base/prod.html'>prod()</a></code>, which returns the product of all values in its arguments. This
+is called internally to check the number of elements.</p></li>
 <li><p><code><a href='https://rdrr.io/pkg/assertive.properties/man/is_empty.html'>assertive.properties::has_elements()</a></code>.</p></li>
-<li><p><code><a href='https://rdrr.io/pkg/assertive.properties/man/is_empty.html'>assertive.properties::is_empty()</a></code>.</p></li>
-<li><p><code><a href='https://rdrr.io/pkg/assertive.properties/man/is_empty.html'>assertive.properties::is_non_empty()</a></code>.</p></li>
 <li><p><code><a href='https://rdrr.io/pkg/assertive.properties/man/is_empty.html'>assertive.properties::is_of_dimension()</a></code>.</p></li>
+<li><p><code>assertive.properties:::n_elements()</code>.</p></li>
 </ul>
 </div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'>## TRUE ====</span>
-<span class='fu'>hasElements</span>(<span class='st'>"hello"</span>, <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>hasElements</span>(<span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>a</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>b</span> <span class='kw'>=</span> <span class='fl'>2</span>), <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>2</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
+<span class='fu'>hasElements</span>(<span class='st'>"hello"</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>hasElements</span>(<span class='st'>"hello"</span>, <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>hasElements</span>(<span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>a</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>b</span> <span class='kw'>=</span> <span class='fl'>2</span>), <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>2</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
 <span class='co'>## FALSE ====</span>
-<span class='fu'>hasElements</span>(<span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(), <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] FALSE
+<span class='fu'>hasElements</span>(<span class='kw'>NULL</span>)</div><div class='output co'>#&gt; [1] FALSE
+#&gt; Cause of failure:
+#&gt; 'NULL' has 0 elements.</div><div class='input'><span class='fu'>hasElements</span>(<span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(), <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] FALSE
 #&gt; Cause of failure:
 #&gt; 'list()' has 0 elements, not 1.</div></pre>
   </div>
@@ -187,6 +187,7 @@ Metric type, either <code>length</code> or <code>elements</code>.</p></td>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       <li><a href="#value">Value</a></li>
+      <li><a href="#functions">Functions</a></li>
       <li><a href="#note">Note</a></li>
       <li><a href="#see-also">See also</a></li>
       <li><a href="#examples">Examples</a></li>
