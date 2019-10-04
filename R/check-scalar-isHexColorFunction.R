@@ -46,7 +46,7 @@ isHexColorFunction <- function(
     }
     ## Check for hex value return.
     colors <- x(n = 2L)
-    if (!is.character(colors) || length(colors) == 0L) {
+    if (!is.character(colors) || identical(length(colors), 0L)) {
         return(false("'%s' function didn't return any hex colors.", .xname))
     }
     ok <- allAreHexColors(colors)
