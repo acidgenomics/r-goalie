@@ -40,10 +40,12 @@ Updated 2019-10-04.
 }
 \examples{
 ## TRUE ====
+hasElements("hello")
 hasElements("hello", n = 1)
 hasElements(list(a = 1, b = 2), n = 2)
 
 ## FALSE ====
+hasElements(NULL)
 hasElements(list(), n = 1)
 }
 \seealso{
