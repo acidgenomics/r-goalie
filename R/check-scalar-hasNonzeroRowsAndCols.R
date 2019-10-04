@@ -7,7 +7,7 @@
 #' heatmap or applying a log transformation, for example.
 #'
 #' @name check-scalar-hasNonzeroRowsAndCols
-#' @note Updated 2019-08-27.
+#' @note Updated 2019-10-04.
 #'
 #' @inherit check
 #' @inheritParams acidroxygen::params
