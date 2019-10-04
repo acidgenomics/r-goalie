@@ -1,7 +1,7 @@
 #' Does the object belong to or inherit any of these classes?
 #'
 #' @name check-scalar-isAny
-#' @note Updated 2019-08-10.
+#' @note Updated 2019-10-04.
 #'
 #' @inherit check
 #' @inheritParams acidroxygen::params
@@ -27,7 +27,7 @@ isAny <- function(x, classes, .xname = getNameInParent(x)) {
     if (!isTRUE(ok)) {
         return(ok)
     }
-    ok <- any(is2(x, class = classes))
+    ok <- any(.is2(x, class = classes))
     if (!isTRUE(ok)) {
         return(false(
             "'%s' is not any of: %s.",

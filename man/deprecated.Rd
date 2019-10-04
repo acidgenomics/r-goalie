@@ -8,6 +8,8 @@
 \alias{containsURL}
 \alias{containsAURL}
 \alias{isOfLength}
+\alias{isEmpty}
+\alias{isNonEmpty}
 \title{Deprecated functions}
 \usage{
 containsAlpha(x, .xname = getNameInParent(x))
@@ -21,6 +23,10 @@ containsURL(x, .xname = getNameInParent(x))
 containsAURL(x, .xname = getNameInParent(x))
 
 isOfLength(...)
+
+isEmpty(x, .xname = getNameInParent(x))
+
+isNonEmpty(x, .xname = getNameInParent(x))
 }
 \arguments{
 \item{x}{Object.}

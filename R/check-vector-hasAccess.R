@@ -61,25 +61,21 @@ hasAccess <- function(x, access = "r") {
             access
         ))
     }
-    isWindows <- .Platform[["OS.type"]] == "windows"
+    isWindows <- identical(.Platform[["OS.type"]], "windows")
     ## String file checker that we can loop with `bapply()` below.
     checkAccess <- function(x, access) {
         if ("r" %in% access) {
-            ok <- file.access(x, mode = 4L) == 0L
-            ## `unname()` step needed for R 3.4 compatibility.
-            ok <- unname(ok)
+            ok <- identical(unname(file.access(x, mode = 4L)), 0L)
             if (!isTRUE(ok)) return(FALSE)
         }
         ## Write/execute permissions can't be checked on Windows.
         if (!isTRUE(isWindows)) {
             if ("w" %in% access) {
-                ok <- file.access(x, mode = 2L) == 0L
-                ok <- unname(ok)
+                ok <- identical(unname(file.access(x, mode = 2L)), 0L)
                 if (!isTRUE(ok)) return(FALSE)  # nocov
             }
             if ("x" %in% access) {
-                ok <- file.access(x, mode = 1L) == 0L
-                ok <- unname(ok)
+                ok <- identical(unname(file.access(x, mode = 1L)), 0L)
                 if (!isTRUE(ok)) return(FALSE)  # nocov
             }
         }

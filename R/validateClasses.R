@@ -52,7 +52,7 @@ validateClasses <- function(object, expected, subset = FALSE) {
         MoreArgs = list(object = object),
         FUN = function(slot, classes, object) {
             intersect <- intersect(classes, class(object[[slot]]))
-            if (length(intersect) == 0L) {
+            if (identical(length(intersect), 0L)) {
                 FALSE
             } else {
                 TRUE
