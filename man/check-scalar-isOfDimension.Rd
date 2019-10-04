@@ -2,7 +2,20 @@
 % Please edit documentation in R/check-scalar-isOfDimension.R
 \name{check-scalar-isOfDimension}
 \alias{check-scalar-isOfDimension}
+\alias{isOfDimension}
 \title{Does the input contain specific dimensions?}
+\usage{
+isOfDimension(x, n, .xname = getNameInParent(x))
+}
+\arguments{
+\item{x}{Object.}
+
+\item{n}{\code{integer(1)}.
+Number to include.}
+
+\item{.xname}{Name of object defined in \code{x}.
+\emph{Not intended to be used directly.}}
+}
 \value{
 \code{TRUE} on success;
 \code{FALSE} on failure, with cause set.
