@@ -61,5 +61,42 @@ isOfLength <- function(...) {
 
 
 
+## v0.3.9 ======================================================================
+## Soft deprecated. Defined in S4Vectors.
+#' @rdname deprecated
+#' @export
+isEmpty <- function(
+    x,
+    metric = c("length", "elements"),
+    .xname = getNameInParent(x)
+) {
+    metric <- match.arg(metric)
+    metricFun <- .getMetric(metric)
+    metricFun(x, 0L, .xname)
+}
+
+## Soft deprecated in favor of `hasLength()` or `hasElements()` instead.
+#' @rdname deprecated
+#' @export
+isNonEmpty <- function(
+    x,
+    metric = c("length", "elements"),
+    .xname = getNameInParent(x)
+) {
+    metric <- match.arg(metric)
+    metricFun <- .getMetric(metric)
+    if (metricFun(x, 0L)) {
+        msg <- switch(
+            EXPR = metric,
+            length = gettext("'%s' has length 0."),
+            elements = gettext("'%s' has 0 elements.")
+        )
+        return(false(msg, .xname))
+    }
+    TRUE
+}
+
+
+
 ## nolint end
 ## nocov end
