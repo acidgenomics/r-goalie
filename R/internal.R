@@ -62,19 +62,6 @@
 
 
 
-## @seealso `assertive.properties:::get_metric()`.
-## Updated 2019-09-06.
-.getMetric <- function(metric) {
-    switch(
-        EXPR = metric,
-        length = hasLength,
-        elements = hasElements,
-        stop(sprintf("The metric '%s' is not valid.", metric))
-    )
-}
-
-
-
 ## Updated 2019-08-10.
 .hasCause <- function(x) {
     cause <- cause(x)
