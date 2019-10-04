@@ -1,6 +1,6 @@
 #' Set comparisons
 #'
-#' @name sets
+#' @name check-scalar-sets
 #' @note Updated 2019-08-10.
 #'
 #' @inherit check
@@ -43,7 +43,7 @@ NULL
 
 ## Assertive has `strictly` mode, which enforces that x, y are not set equal.
 
-#' @rdname sets
+#' @rdname check-scalar-sets
 #' @export
 isSubset <- function(
     x,
@@ -67,7 +67,7 @@ isSubset <- function(
 
 ## This is essentially an `isSubset()` call with x and y flipped.
 
-#' @rdname sets
+#' @rdname check-scalar-sets
 #' @export
 isSuperset <- function(
     x,
@@ -80,7 +80,7 @@ isSuperset <- function(
 
 
 
-#' @rdname sets
+#' @rdname check-scalar-sets
 #' @export
 areDisjointSets <- function(
     x,
@@ -100,7 +100,7 @@ areDisjointSets <- function(
 
 
 
-#' @rdname sets
+#' @rdname check-scalar-sets
 #' @export
 areIntersectingSets <- function(
     x,
@@ -120,7 +120,7 @@ areIntersectingSets <- function(
 
 
 
-#' @rdname sets
+#' @rdname check-scalar-sets
 #' @export
 areSetEqual <- function(
     x,
