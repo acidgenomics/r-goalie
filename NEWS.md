@@ -1,3 +1,18 @@
+## goalie 0.3.9 (2019-10-04)
+
+### New functions
+
+- `nElements`: Return the number of elements in an object. Previously this was
+  defined internally in the package but is generally useful.
+
+### Minor changes
+
+- `hasElements`: No longer requiring the `n` argument. The function now performs
+  similarly to `hasLength`.
+- `isEmpty` and `isNonEmpty` are now soft deprecated. `isEmpty` is defined in
+  the Bioconductor S4Vectors package, and we don't want to mask in interactive
+  scripting sessions.
+
 ## goalie 0.3.8 (2019-09-15)
 
 ### Minor changes
