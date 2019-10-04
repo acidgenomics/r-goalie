@@ -35,7 +35,7 @@ assert <- function(
     traceback = getOption("acid.traceback", default = FALSE)
 ) {
     n <- ...length()
-    if (n == 0L) {
+    if (identical(n, 0L)) {
         stop("No assert check defined.")
     }
     dots <- as.call(substitute(...()))
@@ -43,7 +43,10 @@ assert <- function(
         r <- ...elt(i)
         r <- unname(r)
         call <- .Dparse(dots[[i]])
-        if (!(is.logical(r) && length(r) == 1L)) {
+        if (!(
+            is.logical(r) &&
+            identical(length(r), 1L)
+        )) {
             stop(sprintf(
                 paste0(
                     "Assert failure.\n",

@@ -53,7 +53,10 @@ validate <- function(..., msg = NULL) {
             call <- .Dparse(dots[[i]])
             ## Validity checks must return logical(1) or character(1).
             ## In the event of FALSE, we'll return character(1) automatically.
-            if (!(length(r) == 1L && (is.logical(r) || is.character(r)))) {
+            if (!(
+                (is.logical(r) || is.character(r)) &&
+                identical(length(r), 1L)
+            )) {
                 stop(sprintf(
                     paste0(
                         "Validity failure.\n",
