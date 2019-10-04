@@ -1,27 +1,26 @@
-## Note that `isEmpty()` masks IRanges, GenomicRanges.
-
-
-
 #' Does the input have elements?
 #'
 #' @name check-scalar-hasElements
-#' @note Updated 2019-08-10.
+#' @note Updated 2019-10-04.
 #'
 #' @inherit check
 #' @inheritParams acidroxygen::params
 #'
 #' @seealso
+#' - `prod()`, which returns the product of all values in its arguments. This
+#'   is called internally to check the number of elements.
 #' - `assertive.properties::has_elements()`.
-#' - `assertive.properties::is_empty()`.
-#' - `assertive.properties::is_non_empty()`.
 #' - `assertive.properties::is_of_dimension()`.
+#' - `assertive.properties:::n_elements()`.
 #'
 #' @examples
 #' ## TRUE ====
+#' hasElements("hello")
 #' hasElements("hello", n = 1)
 #' hasElements(list(a = 1, b = 2), n = 2)
 #'
 #' ## FALSE ====
+#' hasElements(NULL)
 #' hasElements(list(), n = 1)
 NULL
 
@@ -29,9 +28,16 @@ NULL
 
 #' @rdname check-scalar-hasElements
 #' @export
-hasElements <- function(x, n, .xname = getNameInParent(x)) {
-    assert(is.numeric(n))
-    nElementsX <- .nElements(x)
+hasElements <- function(x, n = NULL, .xname = getNameInParent(x)) {
+    nElementsX <- nElements(x)
+    if (is.null(n)) {
+        if (identical(nElementsX, 0L)) {
+            return(false("'%s' has 0 elements.", .xname))
+        } else {
+            return(TRUE)
+        }
+    }
+    ## We're using `prod()` here to check vector n input (e.g. `c(nrow, ncol)`).
     nElementsN <- prod(n)
     if (nElementsX != nElementsN) {
         return(false(
@@ -50,73 +56,13 @@ hasElements <- function(x, n, .xname = getNameInParent(x)) {
 
 
 
-#' @rdname check-scalar-hasElements
+#' @describeIn check-scalar-hasElements Return the number of elements in object.
 #' @export
-isEmpty <- function(
-    x,
-    metric = c("length", "elements"),
-    .xname = getNameInParent(x)
-) {
-    metric <- match.arg(metric)
-    metricFun <- .getMetric(metric)
-    metricFun(x, 0L, .xname)
-}
-
-
-
-#' @rdname check-scalar-hasElements
-#' @export
-isNonEmpty <- function(
-    x,
-    metric = c("length", "elements"),
-    .xname = getNameInParent(x)
-) {
-    metric <- match.arg(metric)
-    metricFun <- .getMetric(metric)
-    if (metricFun(x, 0L)) {
-        msg <- switch(
-            EXPR = metric,
-            length = gettext("'%s' has length 0."),
-            elements = gettext("'%s' has 0 elements.")
-        )
-        return(false(msg, .xname))
+nElements <- function(x) {
+    if (is.recursive(x)) {
+        sum(vapply(x, .nElements, integer(1L)))
     }
-    TRUE
-}
-
-
-
-#' @rdname check-scalar-hasElements
-#' @export
-isOfDimension <- function(x, n, .xname = getNameInParent(x)) {
-    assert((is.numeric(n) && length(n) == 2L) || is.null(n))
-    dimX <- dim(x)
-    if (is.null(n)) {
-        if (hasDims(x)) {
-            return(false(
-                ngettext(
-                    n = length(dimX),
-                    msg1 = "'%s' has dimension %s, not NULL.",
-                    msg2 = "'%s' has dimensions %s, not NULL."
-                ),
-                .xname,
-                deparse(dimX)
-            ))
-        }
-        return(TRUE)
+    else {
+        as.integer(prod(.dim(x)))
     }
-    ok <- dimX == n
-    if (!all(ok)) {
-        notok <- which(!ok)
-        return(false(
-            ngettext(
-                n = length(notok),
-                msg1 = "Dimension %s of '%s' is incorrect.",
-                msg2 = "Dimensions %s of '%s' are incorrect."
-            ),
-            toString(notok),
-            .xname
-        ))
-    }
-    TRUE
 }
