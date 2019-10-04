@@ -76,7 +76,7 @@ isInRange <- function(
     assert(
         is.numeric(lower) && !is.na(lower),
         is.numeric(upper) && !is.na(upper),
-        is.logical(closed) && length(closed) == 2L
+        is.logical(closed) && identical(length(closed), 2L)
     )
     ok <- is.numeric(x) && !any(is.na(x))
     if (!isTRUE(ok)) {

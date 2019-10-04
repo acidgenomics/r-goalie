@@ -24,7 +24,7 @@ Object classes.}
 Does the object belong to or inherit any of these classes?
 }
 \note{
-Updated 2019-08-10.
+Updated 2019-10-04.
 }
 \examples{
 x <- 1L
