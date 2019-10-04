@@ -23,7 +23,7 @@ NULL
 
 
 
-#' @rdname check-scalar-hasElements
+#' @rdname check-scalar-isOfDimension
 #' @export
 isOfDimension <- function(x, n, .xname = getNameInParent(x)) {
     assert(
