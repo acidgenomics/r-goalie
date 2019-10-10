@@ -1,3 +1,12 @@
+## goalie 0.3.10 (2019-10-10)
+
+### Minor changes
+
+- `toNames`: Bug fix for `na.omit` return causing assert check to fail because
+  class returns `FALSE` for `is.vector` check but `TRUE` for `is.atomic`.
+- `isIntegerish` now returns logical vector for `na.omit` return. This supports
+  `isScalarIntegerish` and `isInt` check functions.
+
 ## goalie 0.3.9 (2019-10-04)
 
 ### New functions
