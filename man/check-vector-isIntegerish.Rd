@@ -35,7 +35,7 @@ Check for valid input of either explicit (e.g. \code{1L}) and/or implict
 }}
 
 \note{
-Updated 2019-08-10.
+Updated 2019-10-09.
 }
 \examples{
 ## TRUE ====

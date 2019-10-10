@@ -4,7 +4,7 @@
 #' (e.g. `1`) `integer`.
 #'
 #' @name check-vector-isIntegerish
-#' @note Updated 2019-08-10.
+#' @note Updated 2019-10-09.
 #'
 #' @inherit check
 #' @inheritParams acidroxygen::params
