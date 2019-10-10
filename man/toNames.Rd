@@ -20,7 +20,7 @@ Names resulting from this function do not necessarily return valid, and
 will not be identical to output from \code{\link[base:make.names]{make.names()}}.
 The output is intended for downstream use with the \code{\link[=cause]{cause()}} function.
 
-Updated 2019-08-10.
+Updated 2019-10-09.
 }
 \examples{
 ## Non-character vectors are supported.

@@ -4,7 +4,7 @@
 #' @note Names resulting from this function do not necessarily return valid, and
 #'   will not be identical to output from [`make.names()`][base::make.names()].
 #'   The output is intended for downstream use with the [cause()] function.
-#' @note Updated 2019-08-10.
+#' @note Updated 2019-10-09.
 #'
 #' @inheritParams acidroxygen::params
 #'
@@ -24,7 +24,9 @@
 #' ## Doesn't use `make.names()` to sanitize.
 #' toNames(c("sample-1", "hello world"))
 toNames <- function(x) {
-    stopifnot(is.vector(x))
+    ## Assert check for `is.vector()` instead of `is.atomic()` here will error
+    ## out for `na.omit()` return.
+    stopifnot(is.atomic(x))
     if (is.double(x)) {
         ifelse(
             test = is.na(x),
