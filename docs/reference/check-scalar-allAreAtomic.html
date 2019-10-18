@@ -154,10 +154,8 @@
 <span class='fu'>allAreAtomic</span>(<span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(<span class='kw'>a</span> <span class='kw'>=</span> <span class='st'>"foo"</span>, <span class='kw'>b</span> <span class='kw'>=</span> <span class='st'>"bar"</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>allAreAtomic</span>(<span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>a</span> <span class='kw'>=</span> <span class='st'>"foo"</span>, <span class='kw'>b</span> <span class='kw'>=</span> <span class='st'>"bar"</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
 <span class='co'>## FALSE ====</span>
 <span class='fu'>allAreAtomic</span>(<span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>())</div><div class='output co'>#&gt; [1] FALSE
-#&gt; Cause of failure:
-#&gt; 'data.frame()' has length 0.</div><div class='input'><span class='fu'>allAreAtomic</span>(<span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>a</span> <span class='kw'>=</span> <span class='st'>"x"</span>, <span class='kw'>b</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>()))</div><div class='output co'>#&gt; [1] FALSE
-#&gt; Cause of failure:
-#&gt; Not all elements in 'list(a = "x", b = list())' are atomic.</div></pre>
+#&gt; Cause: 'data.frame()' has length 0.</div><div class='input'><span class='fu'>allAreAtomic</span>(<span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>a</span> <span class='kw'>=</span> <span class='st'>"x"</span>, <span class='kw'>b</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>()))</div><div class='output co'>#&gt; [1] FALSE
+#&gt; Cause: Not all elements in 'list(a = "x", b = list())' are atomic.</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

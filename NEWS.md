@@ -1,3 +1,9 @@
+## goalie 0.3.11 (2019-10-18)
+
+### Minor changes
+
+- Improved consistency of scalar and vector print messages.
+
 ## goalie 0.3.10 (2019-10-10)
 
 ### Minor changes

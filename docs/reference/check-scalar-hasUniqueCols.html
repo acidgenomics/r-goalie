@@ -163,8 +163,7 @@ columns.</p>
 <span class='co'>## FALSE ====</span>
 <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq_len</a></span>(<span class='fl'>10L</span>), <span class='kw'>times</span> <span class='kw'>=</span> <span class='fl'>2L</span>), <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='fl'>2L</span>)
 <span class='fu'>hasUniqueCols</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] FALSE
-#&gt; Cause of failure:
-#&gt; 'structure(c(1L, 2L, 3L, 4L, 5L, 6L, 7L, 8L, 9L, 10L, 1L, 2L, 3L, 4L, 5L, 6L, 7L, 8L, 9L, 10L), .....' has duplicated columns at: 2</div></pre>
+#&gt; Cause: 'structure(c(1L, 2L, 3L, 4L, 5L, 6L, 7L, 8L, 9L, 10L, 1L, 2L, 3L, 4L, 5L, 6L, 7L, 8L, 9L, 10L), .....' has duplicated columns at: 2</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
