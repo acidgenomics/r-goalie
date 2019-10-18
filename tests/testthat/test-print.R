@@ -17,26 +17,24 @@ test_that("vector", {
     )
 })
 
-test_that("Require logical input", {
-    expect_error(
-        object = print.goalie(NULL),
-        regexp = "x is not logical."
+test_that("n arg", {
+    out <- capture.output(print(isFile(c("AAA", "BBB", "CCC")), n = 2L))
+    expect_identical(
+        object = out[[1L]],
+        expected = "[1] FALSE FALSE"
     )
 })
 
-test_that("cause error check", {
-    expect_error(.printGoalieVector("XXX"))
-})
+test_that("ignoreNA arg", {
+    x <- c(a = TRUE, b = FALSE, c = NA)
+    cause(x) <- c(a = "TRUE", b = "FALSE", c = "NA")
 
-test_that("ignoreNA argument", {
-    x <- NA
-    cause(x) <- "XXX"
-    expect_identical(
-        capture.output(.printGoalieVector(x, ignoreNA = FALSE))[[1L]],
-        "There was 1 failure:"
-    )
-    expect_identical(
-        capture.output(.printGoalieVector(x, ignoreNA = TRUE))[[1L]],
-        "There were 0 failures:"
-    )
+    out <- capture.output(print(x, ignoreNA = FALSE))
+    expect_length(out, n = 5L)
+    expect_match(out[[4L]], "FALSE")
+    expect_match(out[[5L]], "NA")
+
+    out <- capture.output(print(x, ignoreNA = TRUE))
+    expect_length(out, n = 4L)
+    expect_match(out[[4L]], "FALSE")
 })
