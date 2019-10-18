@@ -41,12 +41,11 @@ assert <- function(
     dots <- as.call(substitute(...()))
     for (i in seq_len(n)) {
         r <- ...elt(i)
-        r <- unname(r)
+        if (!is(r, "goalie")) {
+            r <- unname(r)
+        }
         call <- .Dparse(dots[[i]])
-        if (!(
-            is.logical(r) &&
-            identical(length(r), 1L)
-        )) {
+        if (!(is.logical(r) && identical(length(r), 1L))) {
             stop(sprintf(
                 paste0(
                     "Assert failure.\n",
