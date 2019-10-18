@@ -163,14 +163,12 @@ heatmap or applying a log transformation, for example.</p>
 <span class='fu'><a href='print.html'>print</a></span>(<span class='no'>x</span>)</div><div class='output co'>#&gt;      [,1] [,2]
 #&gt; [1,]    0    0
 #&gt; [2,]    1    1</div><div class='input'><span class='fu'>hasNonzeroRowsAndCols</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] FALSE
-#&gt; Cause of failure:
-#&gt; 'x' has 1 zero row at position 1.</div><div class='input'>
+#&gt; Cause: 'x' has 1 zero row at position 1.</div><div class='input'>
 <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0L</span>, <span class='fl'>1L</span>), <span class='kw'>times</span> <span class='kw'>=</span> <span class='fl'>2L</span>), <span class='kw'>nrow</span> <span class='kw'>=</span> <span class='fl'>2L</span>, <span class='kw'>byrow</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
 <span class='fu'><a href='print.html'>print</a></span>(<span class='no'>x</span>)</div><div class='output co'>#&gt;      [,1] [,2]
 #&gt; [1,]    0    1
 #&gt; [2,]    0    1</div><div class='input'><span class='fu'>hasNonzeroRowsAndCols</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] FALSE
-#&gt; Cause of failure:
-#&gt; 'x' has 1 zero column at position 1.</div></pre>
+#&gt; Cause: 'x' has 1 zero column at position 1.</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

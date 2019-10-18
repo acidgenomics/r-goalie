@@ -161,19 +161,15 @@
 <span class='co'>## FALSE ====</span>
 <span class='co'>## Can't begin with a number.</span>
 <span class='fu'>validNames</span>(<span class='st'>"293cells"</span>)</div><div class='output co'>#&gt; [1] FALSE
-#&gt; Cause of failure:
-#&gt; '"293cells"' does not contain valid names: [1] 293cells
+#&gt; Cause: '"293cells"' does not contain valid names: [1] 293cells
 #&gt; See 'make.names()' for details.</div><div class='input'>
 <span class='co'>## Spaces, dashes (hyphens), and other non-alphanumerics aren't valid.</span>
 <span class='fu'>validNames</span>(<span class='st'>"sample 1"</span>)</div><div class='output co'>#&gt; [1] FALSE
-#&gt; Cause of failure:
-#&gt; '"sample 1"' does not contain valid names: [1] sample 1
+#&gt; Cause: '"sample 1"' does not contain valid names: [1] sample 1
 #&gt; See 'make.names()' for details.</div><div class='input'><span class='fu'>validNames</span>(<span class='st'>"cell-AAAAAAAA"</span>)</div><div class='output co'>#&gt; [1] FALSE
-#&gt; Cause of failure:
-#&gt; '"cell-AAAAAAAA"' does not contain valid names: [1] cell-AAAAAAAA
+#&gt; Cause: '"cell-AAAAAAAA"' does not contain valid names: [1] cell-AAAAAAAA
 #&gt; See 'make.names()' for details.</div><div class='input'><span class='fu'>validNames</span>(<span class='st'>"GFP+"</span>)</div><div class='output co'>#&gt; [1] FALSE
-#&gt; Cause of failure:
-#&gt; '"GFP+"' does not contain valid names: [1] GFP+
+#&gt; Cause: '"GFP+"' does not contain valid names: [1] GFP+
 #&gt; See 'make.names()' for details.</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

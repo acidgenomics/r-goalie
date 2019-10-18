@@ -178,7 +178,7 @@ detailed information on S4 validity methods.</p>
 <span class='fu'>validate</span>(
     <span class='fu'><a href='check-scalar-isFlag.html'>isFlag</a></span>(<span class='st'>"xxx"</span>),
     <span class='fu'><a href='check-vector-isInRange.html'>isPositive</a></span>(-<span class='fl'>1</span>)
-)</div><div class='output co'>#&gt; [1] "isFlag(\"xxx\") is not TRUE.\nCause of failure:\n'\"xxx\"' is not a boolean flag (TRUE/FALSE).\n\nisPositive(-1) is not TRUE.\nCause of failure:\ntoo low"</div></pre>
+)</div><div class='output co'>#&gt; [1] "isFlag(\"xxx\") is not TRUE.\nCause: '\"xxx\"' is not a boolean flag (TRUE/FALSE).\n\nisPositive(-1) is not TRUE.\nCause: 1 failure\n  pos                  value   cause\n1   1 -1.000000000000000e+00 too low"</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
