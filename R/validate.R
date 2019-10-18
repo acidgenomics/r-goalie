@@ -75,7 +75,7 @@ validate <- function(..., msg = NULL) {
                 cause <- cause(r)
                 if (!is.null(cause)) {
                     ## Capturing the S3 print method on goalie class here.
-                    msg <- c(msg, capture.output(print(r)))
+                    msg <- c(msg, capture.output(print(r))[-1L])
                 }
                 msg <- paste0(msg, collapse = "\n")
             } else if (is.character(r)) {
