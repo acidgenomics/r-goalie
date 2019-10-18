@@ -6,8 +6,8 @@ test_that("Success", {
 
 test_that("Expected failure", {
     expect_identical(
-        validate(is.character(1L)),
-        "is.character(1L) is not TRUE."
+        object = validate(is.character(1L)),
+        expected = "is.character(1L) is not TRUE."
     )
 })
 
@@ -17,7 +17,7 @@ test_that("Character passthrough", {
 
 test_that("Invalid input", {
     expect_error(
-        validate(c(TRUE, FALSE)),
+        object = validate(c(TRUE, FALSE)),
         regexp = "logical\\(1\\)"
     )
     expect_error(
@@ -28,8 +28,8 @@ test_that("Invalid input", {
 
 test_that("Custom message", {
     expect_identical(
-        validate(is.character(1L), msg = "custom message"),
-        "custom message"
+        object = validate(is.character(1L), msg = "custom message"),
+        expected = "custom message"
     )
 })
 
@@ -39,7 +39,7 @@ test_that("Error on empty validate call", {
 
 test_that("goalie cause support", {
     expect_match(
-        validate(isFlag("XXX")),
-        "Cause of failure:"
+        object = validate(isFlag("XXX")),
+        regexp = "Cause:"
     )
 })
