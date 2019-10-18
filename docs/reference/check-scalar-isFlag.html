@@ -151,12 +151,9 @@
 <span class='fu'>isFlag</span>(<span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>isFlag</span>(<span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
 <span class='co'>## FALSE ====</span>
 <span class='fu'>isFlag</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>TRUE</span>, <span class='fl'>TRUE</span>))</div><div class='output co'>#&gt; [1] FALSE
-#&gt; Cause of failure:
-#&gt; 'c(TRUE, TRUE)' is not a boolean flag (TRUE/FALSE).</div><div class='input'><span class='fu'>isFlag</span>(<span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] FALSE
-#&gt; Cause of failure:
-#&gt; '1' is not a boolean flag (TRUE/FALSE).</div><div class='input'><span class='fu'>isFlag</span>(<span class='fl'>NA</span>)</div><div class='output co'>#&gt; [1] FALSE
-#&gt; Cause of failure:
-#&gt; 'NA' is NA.</div></pre>
+#&gt; Cause: 'c(TRUE, TRUE)' is not a boolean flag (TRUE/FALSE).</div><div class='input'><span class='fu'>isFlag</span>(<span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] FALSE
+#&gt; Cause: '1' is not a boolean flag (TRUE/FALSE).</div><div class='input'><span class='fu'>isFlag</span>(<span class='fl'>NA</span>)</div><div class='output co'>#&gt; [1] FALSE
+#&gt; Cause: 'NA' is NA.</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
