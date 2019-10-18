@@ -66,7 +66,7 @@ assert <- function(
             cause <- cause(r)
             if (!is.null(cause)) {
                 ## Capturing the S3 print method on goalie class here.
-                msg <- c(msg, capture.output(print(r))[-1L])
+                msg <- c(msg, capture.output(print(r)))
             }
             msg <- paste0(msg, collapse = "\n")
         }

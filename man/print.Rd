@@ -5,10 +5,20 @@
 \alias{print.goalie}
 \title{Print methods for objects with a cause attribute}
 \usage{
-\method{print}{goalie}(x, ...)
+\method{print}{goalie}(x, n = 10L, ignoreNA = FALSE, ...)
 }
 \arguments{
 \item{x}{Object.}
+
+\item{n}{\code{integer(1)}.
+Number to include.}
+
+\item{ignoreNA}{\code{logical(1)}.
+Should NA values pass (\code{TRUE}) or fail (\code{FALSE})?
+\itemize{
+\item \code{TRUE}: OK can be \code{TRUE} or \code{NA}; \code{FALSE} is bad.
+\item \code{FALSE}: OK can be \code{TRUE}; \code{FALSE} or \code{NA} is bad.
+}}
 
 \item{...}{Additional arguments.}
 }
