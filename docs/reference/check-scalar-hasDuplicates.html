@@ -161,10 +161,8 @@
 <span class='fu'>hasDuplicates</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"a"</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>hasNoDuplicates</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
 <span class='co'>## FALSE ====</span>
 <span class='fu'>hasDuplicates</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>))</div><div class='output co'>#&gt; [1] FALSE
-#&gt; Cause of failure:
-#&gt; 'c("a", "b")' has no duplicates.</div><div class='input'><span class='fu'>hasNoDuplicates</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"a"</span>, <span class='st'>"b"</span>, <span class='st'>"b"</span>))</div><div class='output co'>#&gt; [1] FALSE
-#&gt; Cause of failure:
-#&gt; 'c("a", "a", "b", "b")' has duplicates at positions 2, 4.</div></pre>
+#&gt; Cause: 'c("a", "b")' has no duplicates.</div><div class='input'><span class='fu'>hasNoDuplicates</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"a"</span>, <span class='st'>"b"</span>, <span class='st'>"b"</span>))</div><div class='output co'>#&gt; [1] FALSE
+#&gt; Cause: 'c("a", "a", "b", "b")' has duplicates at positions 2, 4.</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

@@ -34,7 +34,7 @@ If any of the expressions defined in \code{...} are not \href{base::all}{all} \c
 first expression which was not \code{TRUE}.
 }
 \note{
-Updated 2019-09-06.
+Updated 2019-10-18.
 }
 \examples{
 assert(

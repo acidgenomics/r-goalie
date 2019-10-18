@@ -123,7 +123,7 @@
     </div>
 
     <pre class="usage"><span class='co'># S3 method for goalie</span>
-<span class='fu'>print</span>(<span class='no'>x</span>, <span class='no'>...</span>)</pre>
+<span class='fu'>print</span>(<span class='no'>x</span>, <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>10L</span>, <span class='kw'>ignoreNA</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -131,6 +131,19 @@
     <tr>
       <th>x</th>
       <td><p>Object.</p></td>
+    </tr>
+    <tr>
+      <th>n</th>
+      <td><p><code><a href='https://rdrr.io/r/base/integer.html'>integer(1)</a></code>.
+Number to include.</p></td>
+    </tr>
+    <tr>
+      <th>ignoreNA</th>
+      <td><p><code><a href='https://rdrr.io/r/base/logical.html'>logical(1)</a></code>.
+Should NA values pass (<code>TRUE</code>) or fail (<code>FALSE</code>)?</p><ul>
+<li><p><code>TRUE</code>: OK can be <code>TRUE</code> or <code>NA</code>; <code>FALSE</code> is bad.</p></li>
+<li><p><code>FALSE</code>: OK can be <code>TRUE</code>; <code>FALSE</code> or <code>NA</code> is bad.</p></li>
+</ul></td>
     </tr>
     <tr>
       <th>...</th>
@@ -143,7 +156,7 @@
     <p>Print command and return invisibly.</p>
     <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
-    <p>Updated 2019-08-05.</p>
+    <p>Updated 2019-10-18.</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

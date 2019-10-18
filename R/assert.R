@@ -7,7 +7,7 @@
 #' [`stop`][base::stop] is called, producing an error message indicating the
 #' first expression which was not `TRUE`.
 #'
-#' @note Updated 2019-09-06.
+#' @note Updated 2019-10-18.
 #' @export
 #'
 #' @inheritParams acidroxygen::params
@@ -41,12 +41,11 @@ assert <- function(
     dots <- as.call(substitute(...()))
     for (i in seq_len(n)) {
         r <- ...elt(i)
-        r <- unname(r)
+        if (!is(r, "goalie")) {
+            r <- unname(r)
+        }
         call <- .Dparse(dots[[i]])
-        if (!(
-            is.logical(r) &&
-            identical(length(r), 1L)
-        )) {
+        if (!(is.logical(r) && identical(length(r), 1L))) {
             stop(sprintf(
                 paste0(
                     "Assert failure.\n",
