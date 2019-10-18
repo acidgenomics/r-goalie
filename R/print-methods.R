@@ -26,7 +26,7 @@ print.goalie <- function(x, n = 10L, ignoreNA = FALSE, ...) {
     cause <- cause(x)
     names <- names(x)
     if (is.null(names) && identical(length(x), 1L)) {
-        return(cat("cause:", cause(x), sep = " "))
+        return(cat("Cause:", cause(x)))
     }
     if (is.null(names)) {
         names <- character(length(x))
@@ -52,12 +52,14 @@ print.goalie <- function(x, n = 10L, ignoreNA = FALSE, ...) {
         ""
     }
     cat(sprintf(
-        fmt = ngettext(
+        fmt = "Cause: %d %s%s\n",
+        nfail,
+        ngettext(
             n = nfail,
-            msg1 = "cause: %d failure%s\n",
-            msg2 = "cause: %d failures%s\n"
+            msg1 = "failure",
+            msg2 = "failures"
         ),
-        nfail, header
+        header
     ))
     print(failures)
 }
