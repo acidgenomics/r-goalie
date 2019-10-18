@@ -177,8 +177,7 @@
 #&gt; $`foo-bar`
 #&gt; [1] 3
 #&gt; </div><div class='input'><span class='fu'>hasValidNames</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] FALSE
-#&gt; Cause of failure:
-#&gt; 'x' does not contain valid names: [1] 1, [2] foo bar, [3] foo-bar
+#&gt; Cause: 'x' does not contain valid names: [1] 1, [2] foo bar, [3] foo-bar
 #&gt; See 'make.names()' for details.</div><div class='input'>
 <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>datasets</span><span class='kw ns'>::</span><span class='no'><a href='https://rdrr.io/r/datasets/mtcars.html'>mtcars</a></span>
 <span class='co'># Note the spaces in the row names here.</span>
@@ -189,8 +188,7 @@
 #&gt; [[2]]
 #&gt; [1] "mpg"  "cyl"  "disp" "hp"   "drat" "wt"  
 #&gt; </div><div class='input'><span class='fu'>hasValidDimnames</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] FALSE
-#&gt; Cause of failure:
-#&gt; 'x' does not contain valid names: [1] Mazda RX4, [2] Mazda RX4 Wag, [3] Datsun 710, [4] Hornet 4 Drive, [5] Hornet Sportabout, [7]....
+#&gt; Cause: 'x' does not contain valid names: [1] Mazda RX4, [2] Mazda RX4 Wag, [3] Datsun 710, [4] Hornet 4 Drive, [5] Hornet Sportabout, [7]....
 #&gt; See 'make.names()' for details.</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
