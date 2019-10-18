@@ -20,8 +20,14 @@ NULL
 #' @export
 print.goalie <- function(x, n = 10L, ignoreNA = FALSE, ...) {
     stopifnot(is.logical(x), .hasCause(x))
+    lgl <- unclass(x)
+    attributes(lgl) <- NULL
+    print(head(lgl, n = n))
     cause <- cause(x)
     names <- names(x)
+    if (is.null(names) && identical(length(x), 1L)) {
+        return(cat("cause:", cause(x), sep = " "))
+    }
     if (is.null(names)) {
         names <- character(length(x))
     }
@@ -48,8 +54,8 @@ print.goalie <- function(x, n = 10L, ignoreNA = FALSE, ...) {
     cat(sprintf(
         fmt = ngettext(
             n = nfail,
-            msg1 = "There was %d failure%s:\n",
-            msg2 = "There were %d failures%s:\n"
+            msg1 = "cause: %d failure%s\n",
+            msg2 = "cause: %d failures%s\n"
         ),
         nfail, header
     ))
