@@ -54,7 +54,7 @@ test_that("Error on empty assert call", {
 
 test_that("goalie cause support", {
     expect_error(
-        assert(isFlag("XXX")),
-        "Cause of failure:"
+        object = assert(isFlag("XXX")),
+        regexp = "Cause:"
     )
 })
