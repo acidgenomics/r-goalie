@@ -7,7 +7,7 @@
 #' [`stop`][base::stop] is called, producing an error message indicating the
 #' first expression which was not `TRUE`.
 #'
-#' @note Updated 2019-09-06.
+#' @note Updated 2019-10-18.
 #' @export
 #'
 #' @inheritParams acidroxygen::params

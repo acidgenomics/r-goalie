@@ -1,7 +1,7 @@
 #' Print methods for objects with a cause attribute
 #'
 #' @name print
-#' @note Updated 2019-08-05.
+#' @note Updated 2019-10-18.
 #'
 #' @inheritParams acidroxygen::params
 #' @param ignoreNA `logical(1)`.

@@ -29,5 +29,5 @@ Print command and return invisibly.
 Print methods for objects with a cause attribute
 }
 \note{
-Updated 2019-08-05.
+Updated 2019-10-18.
 }
