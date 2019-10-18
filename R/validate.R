@@ -47,9 +47,9 @@ validate <- function(..., msg = NULL) {
         X = seq_along(dots),
         FUN = function(i) {
             r <- ...elt(i)
-            ## Ensure we're stripping names off of logical. Otherwise,
-            ## `isTRUE()` check will fail on R 3.4.
-            r <- unname(r)
+            if (!is(r, "goalie")) {
+                r <- unname(r)
+            }
             call <- .Dparse(dots[[i]])
             ## Validity checks must return logical(1) or character(1).
             ## In the event of FALSE, we'll return character(1) automatically.
