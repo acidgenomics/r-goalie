@@ -28,6 +28,7 @@ reference:
       - bapply
       - callAndName
       - cause
+      - extPattern
       - "false"
       - getNameInParent
       - matchArgsToDoCall
