@@ -12,6 +12,7 @@
 #' @name check-scalar-isFileSystemCaseSensitive
 #' @note Updated 2019-10-21.
 #'
+#' @inherit check
 #' @inheritParams acidroxygen::params
 #'
 #' @seealso
