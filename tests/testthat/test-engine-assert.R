@@ -1,4 +1,4 @@
-context("assert")
+context("engine : assert")
 
 test_that("Success", {
     expect_true(assert(is.character("xxx")))
