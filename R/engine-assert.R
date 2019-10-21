@@ -44,7 +44,7 @@ assert <- function(
         if (!is(r, "goalie")) {
             r <- unname(r)
         }
-        call <- .Dparse(dots[[i]])
+        call <- .deparse(dots[[i]])
         if (!(is.logical(r) && identical(length(r), 1L))) {
             stop(sprintf(
                 paste0(
