@@ -6,8 +6,8 @@
 #' [validate()]. Particularly useful for checking multiple slotted objects
 #' inside [`metadata()`][S4Vectors::metadata].
 #'
-#' @note Updated 2019-07-29.
 #' @export
+#' @note Updated 2019-07-29.
 #'
 #' @inheritParams acidroxygen::params
 #' @param expected `list`.

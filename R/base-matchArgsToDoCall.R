@@ -1,7 +1,7 @@
 #' Match arguments to `do.call`
 #'
-#' @note Updated 2019-07-29.
 #' @export
+#' @note Updated 2019-07-29.
 #'
 #' @inheritParams standardizeCall
 #' @inheritParams base::do.call

@@ -1,7 +1,7 @@
 #' Append values to function body
 #'
-#' @note Updated 2019-08-23.
 #' @export
+#' @note Updated 2019-08-23.
 #'
 #' @inheritParams acidroxygen::params
 #' @param values `call`.

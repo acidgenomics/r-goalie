@@ -1,7 +1,7 @@
 #' Access the data inside an S4 method definition
 #'
-#' @name MethodDefinition
-#' @note Updated 2019-07-29.
+#' @name methodDefinition
+#' @note Updated 2019-10-21.
 #'
 #' @inheritParams methods::selectMethod
 #' @inheritParams methods::setMethod
@@ -40,7 +40,7 @@ NULL
 
 
 
-#' @rdname MethodDefinition
+#' @rdname methodDefinition
 #' @export
 ## Updated 2019-07-29.
 methodFunction <- function(f, signature, package) {
@@ -97,7 +97,7 @@ methodFunction <- function(f, signature, package) {
 
 
 
-#' @rdname MethodDefinition
+#' @rdname methodDefinition
 #' @export
 ## Updated 2019-07-29.
 methodFormals <- function(f, signature, package) {

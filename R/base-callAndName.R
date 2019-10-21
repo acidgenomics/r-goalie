@@ -2,8 +2,8 @@
 #'
 #' Calls a function and names the result with the first argument.
 #'
-#' @note Updated 2019-07-29.
 #' @export
+#' @note Updated 2019-07-29.
 #'
 #' @inheritParams acidroxygen::params
 #' @param x The first input to `fun`.

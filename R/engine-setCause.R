@@ -3,8 +3,9 @@
 #' Sets the `cause` [attribute][base::attributes] of an object and returns that
 #' object.
 #'
-#' @note Updated 2019-08-08.
 #' @export
+#' @keywords internal
+#' @note Updated 2019-08-08.
 #'
 #' @inheritParams acidroxygen::params
 #' @param false `character`.

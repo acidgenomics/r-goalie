@@ -4,8 +4,8 @@
 #'
 #' Useful for returning informative messages inside a function.
 #'
-#' @note Updated 2019-07-29.
 #' @export
+#' @note Updated 2019-07-29.
 #'
 #' @param x An object used to select a [`print()`][base::print] method.
 #' @param ... Passthrough arguments to [`print()`][base::print].

@@ -125,7 +125,7 @@
     <tbody>
       <tr>
         <th colspan="2">
-          <h2 id="section-assert-engines" class="hasAnchor"><a href="#section-assert-engines" class="anchor"></a>Assert engines</h2>
+          <h2 id="section-engine" class="hasAnchor"><a href="#section-engine" class="anchor"></a>Engine</h2>
           <p class="section-desc"></p>
         </th>
       </tr>
@@ -138,9 +138,21 @@
       </tr><tr>
         
         <td>
+          <p><code><a href="cause.html">cause()</a></code> <code><a href="cause.html">`cause<-`()</a></code> <code><a href="cause.html">nocause()</a></code> </p>
+        </td>
+        <td><p>Get or set the <code>cause</code> attribute</p></td>
+      </tr><tr>
+        
+        <td>
           <p><code><a href="validate.html">validate()</a></code> </p>
         </td>
         <td><p>Validate an S4 class</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="validateClasses.html">validateClasses()</a></code> </p>
+        </td>
+        <td><p>Validate expected classes</p></td>
       </tr>
     </tbody><tbody>
       <tr>
@@ -326,6 +338,12 @@
       </tr><tr>
         
         <td>
+          <p><code><a href="check-scalar-matchesUniqueGeneNames.html">matchesUniqueGeneNames()</a></code> </p>
+        </td>
+        <td><p>Do the input gene names match unique values in the corresponding object?</p></td>
+      </tr><tr>
+        
+        <td>
           <p><code><a href="check-scalar-sets.html">isSubset()</a></code> <code><a href="check-scalar-sets.html">isSuperset()</a></code> <code><a href="check-scalar-sets.html">areDisjointSets()</a></code> <code><a href="check-scalar-sets.html">areIntersectingSets()</a></code> <code><a href="check-scalar-sets.html">areSetEqual()</a></code> </p>
         </td>
         <td><p>Set comparisons</p></td>
@@ -427,17 +445,11 @@
     </tbody><tbody>
       <tr>
         <th colspan="2">
-          <h2 id="section-system" class="hasAnchor"><a href="#section-system" class="anchor"></a>System</h2>
+          <h2 id="section-base-functions" class="hasAnchor"><a href="#section-base-functions" class="anchor"></a>Base functions</h2>
           <p class="section-desc"></p>
         </th>
       </tr>
       <tr>
-        
-        <td>
-          <p><code><a href="MethodDefinition.html">methodFunction()</a></code> <code><a href="MethodDefinition.html">methodFormals()</a></code> </p>
-        </td>
-        <td><p>Access the data inside an S4 method definition</p></td>
-      </tr><tr>
         
         <td>
           <p><code><a href="appendToBody.html">appendToBody()</a></code> </p>
@@ -452,15 +464,15 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="callAndName.html">callAndName()</a></code> </p>
+          <p><code><a href="basenameSansExt.html">basenameSansExt()</a></code> </p>
         </td>
-        <td><p>Call a function and give the result names</p></td>
+        <td><p>Base name without the file extension</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="cause.html">cause()</a></code> <code><a href="cause.html">`cause<-`()</a></code> <code><a href="cause.html">nocause()</a></code> </p>
+          <p><code><a href="callAndName.html">callAndName()</a></code> </p>
         </td>
-        <td><p>Get or set the <code>cause</code> attribute</p></td>
+        <td><p>Call a function and give the result names</p></td>
       </tr><tr>
         
         <td>
@@ -470,9 +482,9 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="false.html">false()</a></code> <code><a href="false.html">falseFromVector()</a></code> </p>
+          <p><code><a href="fileExt.html">fileExt()</a></code> </p>
         </td>
-        <td><p>Return <code>FALSE</code> scalar with cause of failure</p></td>
+        <td><p>File extension</p></td>
       </tr><tr>
         
         <td>
@@ -488,9 +500,9 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="matchesUniqueGeneNames.html">matchesUniqueGeneNames()</a></code> </p>
+          <p><code><a href="methodDefinition.html">methodFunction()</a></code> <code><a href="methodDefinition.html">methodFormals()</a></code> </p>
         </td>
-        <td><p>Do the input gene names match unique values in the corresponding object?</p></td>
+        <td><p>Access the data inside an S4 method definition</p></td>
       </tr><tr>
         
         <td>
@@ -506,12 +518,6 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="setCause.html">setCause()</a></code> </p>
-        </td>
-        <td><p>Return <code>FALSE</code> vector with causes of failure</p></td>
-      </tr><tr>
-        
-        <td>
           <p><code><a href="standardizeCall.html">standardizeCall()</a></code> </p>
         </td>
         <td><p>Standardize call</p></td>
@@ -521,12 +527,6 @@
           <p><code><a href="toNames.html">toNames()</a></code> </p>
         </td>
         <td><p>Sanitize vector input to names</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="validateClasses.html">validateClasses()</a></code> </p>
-        </td>
-        <td><p>Validate expected classes</p></td>
       </tr>
     </tbody>
     </table>
@@ -535,11 +535,11 @@
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-assert-engines">Assert engines</a></li>
+      <li><a href="#section-engine">Engine</a></li>
       <li><a href="#section-scalar-checks">Scalar checks</a></li>
       <li><a href="#section-vectorized-checks">Vectorized checks</a></li>
       <li><a href="#section-s-methods">S3 methods</a></li>
-      <li><a href="#section-system">System</a></li>
+      <li><a href="#section-base-functions">Base functions</a></li>
     </ul>
   </div>
 </div>
