@@ -4,7 +4,7 @@
 #' unique (non-amgibuous) symbols. It is designed to be used for gene plotting
 #' particularly when performing single-cell RNA-seq marker analysis.
 #'
-#' @export
+#' @name check-scalar-matchesUniqueGeneNames
 #' @note Updated 2019-08-10.
 #'
 #' @inherit check
@@ -30,6 +30,12 @@
 #'
 #' ## TRUE ====
 #' matchesUniqueGeneNames(x = x, genes = genes)
+NULL
+
+
+
+#' @rdname check-scalar-matchesUniqueGeneNames
+#' @export
 matchesUniqueGeneNames <- function(x, genes, .xname = getNameInParent(x)) {
     ok <- isS4(x)
     if (!isTRUE(ok)) {

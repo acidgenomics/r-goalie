@@ -4,6 +4,7 @@
 #' [attribute][base::attributes].
 #'
 #' @name false
+#' @keywords internal
 #' @note Updated 2019-07-29.
 #'
 #' @inheritParams acidroxygen::params

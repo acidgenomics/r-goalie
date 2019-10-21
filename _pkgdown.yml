@@ -8,10 +8,12 @@ news:
   - one_page: false
 
 reference:
-  - title: Assert engines
+  - title: Engine
     contents:
       - assert
+      - cause
       - validate
+      - validateClasses
   - title: Scalar checks
     contents:
       - starts_with("check-scalar-")
@@ -21,21 +23,18 @@ reference:
   - title: S3 methods
     contents:
       - print
-  - title: System
+  - title: Base functions
     contents:
-      - MethodDefinition
       - appendToBody
       - bapply
+      - basenameSansExt
       - callAndName
-      - cause
       - extPattern
-      - "false"
+      - fileExt
       - getNameInParent
       - matchArgsToDoCall
-      - matchesUniqueGeneNames
+      - methodDefinition
       - printString
       - safeDeparse
-      - setCause
       - standardizeCall
       - toNames
-      - validateClasses

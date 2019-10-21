@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Is the file system case sensitive? — isFileSystemCaseSensitive • goalie</title>
+<title>File extension — fileExt • goalie</title>
 
 
 <!-- jquery -->
@@ -37,8 +37,8 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="Is the file system case sensitive? — isFileSystemCaseSensitive" />
-<meta property="og:description" content="Is the file system case sensitive?" />
+<meta property="og:title" content="File extension — fileExt" />
+<meta property="og:description" content="File extension" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -71,7 +71,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">goalie</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.12</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.13</span>
       </span>
     </div>
 
@@ -113,50 +113,54 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Is the file system case sensitive?</h1>
-    <small class="dont-index">Source: <a href='https://github.com/acidgenomics/goalie/blob/master/R/check-scalar-isFileSystemCaseSensitive.R'><code>R/check-scalar-isFileSystemCaseSensitive.R</code></a></small>
-    <div class="hidden name"><code>isFileSystemCaseSensitive.Rd</code></div>
+    <h1>File extension</h1>
+    <small class="dont-index">Source: <a href='https://github.com/acidgenomics/goalie/blob/master/R/base-fileExt.R'><code>R/base-fileExt.R</code></a></small>
+    <div class="hidden name"><code>fileExt.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Is the file system case sensitive?</p>
+    <p>File extension</p>
     </div>
 
-    <pre class="usage"><span class='fu'>isFileSystemCaseSensitive</span>(<span class='kw'>dir</span> <span class='kw'>=</span> <span class='st'>"."</span>)</pre>
+    <pre class="usage"><span class='fu'>fileExt</span>(<span class='no'>path</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>dir</th>
-      <td><p><code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code>.
-Directory path.</p></td>
+      <th>path</th>
+      <td><p><code>character</code>.
+File path(s).
+This function is vectorized and supports multiple files.</p></td>
     </tr>
     </table>
 
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>Linux partitions in general are case sensitive by default.
-macOS APFS and HFS partitions still default to case insensitive.
-Windows partitions default to case insensitive.</p>
-<p>This function checks for case sensitivity internally by creating (touching)
-two invisible files with names that only differ by case. If 2 files are
-detected, the file system is case sensitive.</p>
+    <p><code>character</code>.
+Character vector of same length as <code>path</code> input, with file extension removed.
+Returns <code>NA</code> if no extension is detected.</p>
     <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
-    <p>Updated 2019-10-21.</p>
+    <p>This function intentionally doesn't check whether a file exists.</p>
+<p>Updated 2019-10-12.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code>_koopa_is_file_system_case_sensitive</code> shell function in koopa.</p></div>
+    <div class='dont-index'>
+<ul>
+<li><p><code><a href='https://rdrr.io/r/tools/fileutils.html'>tools::file_ext()</a></code>. Note that this returns <code><a href='https://rdrr.io/r/base/character.html'>character()</a></code> instead of <code>NA</code>
+on extension match failure.</p></li>
+</ul>
+</div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>isFileSystemCaseSensitive</span>()</div><div class='output co'>#&gt; [1] TRUE</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>fileExt</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"dir/foo.txt"</span>, <span class='st'>"dir/bar.tar.gz"</span>, <span class='st'>"dir/"</span>))</div><div class='output co'>#&gt; [1] "txt"    "tar.gz" NA      </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#details">Details</a></li>
+      <li><a href="#value">Value</a></li>
       <li><a href="#note">Note</a></li>
       <li><a href="#see-also">See also</a></li>
       <li><a href="#examples">Examples</a></li>

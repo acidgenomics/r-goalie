@@ -10,8 +10,8 @@
 #' the methods package, specifically [`validObject()`][methods::validObject] for
 #' detailed information on S4 validity methods.
 #'
-#' @note Updated 2019-07-29.
 #' @export
+#' @note Updated 2019-07-29.
 #'
 #' @inheritParams assert
 #'

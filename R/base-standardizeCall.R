@@ -3,8 +3,8 @@
 #' This function adds matching support for S4 methods with formals that aren't
 #' identical to the generic, and use a nested `.local` call.
 #'
-#' @note Updated 2019-08-08.
 #' @export
+#' @note Updated 2019-08-08.
 #'
 #' @inheritParams base::sys.call
 #' @inheritParams acidroxygen::params

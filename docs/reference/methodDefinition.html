@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Does the input contain a Markdown header level? — check-scalar-isHeaderLevel • goalie</title>
+<title>Access the data inside an S4 method definition — methodDefinition • goalie</title>
 
 
 <!-- jquery -->
@@ -37,8 +37,8 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="Does the input contain a Markdown header level? — check-scalar-isHeaderLevel" />
-<meta property="og:description" content="Markdown supports header levels 1-7 (&amp;lt;H1&amp;gt;-&amp;lt;H7&amp;gt;)." />
+<meta property="og:title" content="Access the data inside an S4 method definition — methodDefinition" />
+<meta property="og:description" content="Access the data inside an S4 method definition" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -113,46 +113,103 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Does the input contain a Markdown header level?</h1>
-    <small class="dont-index">Source: <a href='https://github.com/acidgenomics/goalie/blob/master/R/check-scalar-isHeaderLevel.R'><code>R/check-scalar-isHeaderLevel.R</code></a></small>
-    <div class="hidden name"><code>check-scalar-isHeaderLevel.Rd</code></div>
+    <h1>Access the data inside an S4 method definition</h1>
+    <small class="dont-index">Source: <a href='https://github.com/acidgenomics/goalie/blob/master/R/base-methodDefinition.R'><code>R/base-methodDefinition.R</code></a></small>
+    <div class="hidden name"><code>methodDefinition.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Markdown supports header levels <code>1</code>-<code>7</code> (<code>&lt;H1&gt;</code>-<code>&lt;H7&gt;</code>).</p>
+    <p>Access the data inside an S4 method definition</p>
     </div>
 
-    <pre class="usage"><span class='fu'>isHeaderLevel</span>(<span class='no'>x</span>, <span class='kw'>.xname</span> <span class='kw'>=</span> <span class='fu'><a href='getNameInParent.html'>getNameInParent</a></span>(<span class='no'>x</span>))</pre>
+    <pre class="usage"><span class='fu'>methodFunction</span>(<span class='no'>f</span>, <span class='no'>signature</span>, <span class='no'>package</span>)
+
+<span class='fu'>methodFormals</span>(<span class='no'>f</span>, <span class='no'>signature</span>, <span class='no'>package</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>x</th>
-      <td><p>Object.</p></td>
+      <th>f</th>
+      <td><p>a generic function or the character-string name of one.</p></td>
     </tr>
     <tr>
-      <th>.xname</th>
-      <td><p>Name of object defined in <code>x</code>.
-<em>Not intended to be used directly.</em></p></td>
+      <th>signature</th>
+      <td><p>the signature of classes to match to the arguments
+    of <code>f</code>.  See the details below.</p></td>
+    </tr>
+    <tr>
+      <th>package</th>
+      <td><p><code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code>.
+Package name.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><code>TRUE</code> on success;
-<code>FALSE</code> on failure, with cause set.</p>
+    
+<ul>
+<li><p><code>methodFormals</code>: <code>list</code>. Extract the sealed formal arguments.</p></li>
+<li><p><code>methodFunction</code>: <code>function</code>. Extract the sealed function.</p></li>
+</ul>
+
     <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
-    <p>Updated 2019-08-10.</p>
+    <p>Updated 2019-10-21.</p>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'>
+<ul>
+<li><p>Modified version of <a href='https://goo.gl/ymX571'>John Chambers' code</a>.</p></li>
+<li><p><code><a href='https://rdrr.io/r/utils/help.html'>help(topic = "MethodDefinition-class", package = "methods")</a></code>.</p></li>
+<li><p><code><a href='https://rdrr.io/r/methods/getMethod.html'>methods::selectMethod()</a></code>.</p></li>
+<li><p><code><a href='https://rdrr.io/r/methods/setMethod.html'>methods::setMethod()</a></code>.</p></li>
+</ul>
+</div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'>## TRUE ====</span>
-<span class='fu'>isHeaderLevel</span>(<span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
-<span class='co'>## FALSE ====</span>
-<span class='fu'>isHeaderLevel</span>(<span class='fl'>0</span>)</div><div class='output co'>#&gt; [1] FALSE
-#&gt; Cause: '0' is not a valid Markdown header.
-#&gt; Markdown supports header levels 1-7.</div></pre>
+    <pre class="examples"><div class='input'><span class='co'>## Function ====</span>
+<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>methodFunction</span>(
+    <span class='kw'>f</span> <span class='kw'>=</span> <span class='st'>"as.data.frame"</span>,
+    <span class='kw'>signature</span> <span class='kw'>=</span> <span class='st'>"DataFrame"</span>,
+    <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"BiocGenerics"</span>
+)
+<span class='fu'><a href='https://rdrr.io/r/base/class.html'>class</a></span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] "function"</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/formals.html'>formals</a></span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; $x
+#&gt; 
+#&gt; 
+#&gt; $row.names
+#&gt; NULL
+#&gt; 
+#&gt; $optional
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $stringsAsFactors
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $...
+#&gt; 
+#&gt; </div><div class='input'>
+<span class='co'>## Formals ====</span>
+<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>methodFormals</span>(
+    <span class='kw'>f</span> <span class='kw'>=</span> <span class='st'>"as.data.frame"</span>,
+    <span class='kw'>signature</span> <span class='kw'>=</span> <span class='st'>"DataFrame"</span>,
+    <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"BiocGenerics"</span>
+)
+<span class='fu'><a href='https://rdrr.io/r/base/class.html'>class</a></span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] "pairlist"</div><div class='input'><span class='fu'><a href='print.html'>print</a></span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; $x
+#&gt; 
+#&gt; 
+#&gt; $row.names
+#&gt; NULL
+#&gt; 
+#&gt; $optional
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $stringsAsFactors
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $...
+#&gt; 
+#&gt; </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -160,6 +217,7 @@
       <li><a href="#arguments">Arguments</a></li>
       <li><a href="#value">Value</a></li>
       <li><a href="#note">Note</a></li>
+      <li><a href="#see-also">See also</a></li>
       <li><a href="#examples">Examples</a></li>
     </ul>
 

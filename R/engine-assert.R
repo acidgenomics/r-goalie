@@ -7,8 +7,8 @@
 #' [`stop`][base::stop] is called, producing an error message indicating the
 #' first expression which was not `TRUE`.
 #'
-#' @note Updated 2019-10-18.
 #' @export
+#' @note Updated 2019-10-18.
 #'
 #' @inheritParams acidroxygen::params
 #' @param ... Any number of R expressions that return `logical(1)`, each of
