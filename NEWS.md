@@ -1,3 +1,17 @@
+## goalie 0.3.13 (UNRELEASED)
+
+### New functions
+
+- Added assert checks, based on file extension:
+  `isCompressedFile`, `isACompressedFile`, `allAreCompressedFiles`.
+  These perform similarly to `isFile` but also check to see if the file
+  extension contains a compression format (e.g. bz2, gz, xz, zip).
+
+### New globals
+
+- Migrated file extension globals from brio.
+  Now exporting `extPattern` and `compressExtPattern`.
+
 ## goalie 0.3.12 (2019-10-21)
 
 ### New functions
