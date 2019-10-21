@@ -1,3 +1,14 @@
+## goalie 0.3.12 (2019-10-21)
+
+### New functions
+
+- `isFileSystemCaseSensitive`: Checks whether file system is case sensitive
+  (`TRUE`) or insensitive (`FALSE`). Linux tends to default to case sensitive,
+  where as macOS and Windows default to case insensitive. Note that case
+  insensitive file systems can lead to issues with Git repos. This check will
+  be incorporated into a new `rename` mode for [syntactic][] naming functions
+  in a future release.
+
 ## goalie 0.3.11 (2019-10-18)
 
 ### Minor changes
