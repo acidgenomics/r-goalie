@@ -11,6 +11,10 @@ isFileSystemCaseSensitive(dir = ".")
 \item{dir}{\code{character(1)}.
 Directory path.}
 }
+\value{
+\code{TRUE} on success;
+\code{FALSE} on failure, with cause set.
+}
 \description{
 Is the file system case sensitive?
 }
