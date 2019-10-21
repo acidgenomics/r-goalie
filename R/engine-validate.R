@@ -50,7 +50,7 @@ validate <- function(..., msg = NULL) {
             if (!is(r, "goalie")) {
                 r <- unname(r)
             }
-            call <- .Dparse(dots[[i]])
+            call <- .deparse(dots[[i]])
             ## Validity checks must return logical(1) or character(1).
             ## In the event of FALSE, we'll return character(1) automatically.
             if (!(
