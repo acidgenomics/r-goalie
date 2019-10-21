@@ -1,3 +1,15 @@
+#' Assert check
+#'
+#' @name check
+#' @keywords internal
+#'
+#' @return
+#' `TRUE` on success;
+#' `FALSE` on failure, with cause set.
+NULL
+
+
+
 ## @seealso `base::stopifnot()`.
 ## Updated 2019-07-15.
 .Dparse <-  # nolint

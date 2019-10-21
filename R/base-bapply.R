@@ -7,8 +7,8 @@
 #' - `FUN.VALUE` is always set to `logical(1)`.
 #' - `USE.NAMES` is always set to `TRUE`.
 #'
-#' @note Updated 2019-09-06.
 #' @export
+#' @note Updated 2019-09-06.
 #'
 #' @param X `atomic` or `list`.
 #' @param FUN `function`.

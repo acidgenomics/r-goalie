@@ -5,8 +5,8 @@
 #' [safeDeparse()] is modified version of [`deparse()`][base::deparse] that
 #' always returns `character(1)`.
 #'
-#' @note Updated 2019-07-29.
 #' @export
+#' @note Updated 2019-07-29.
 #'
 #' @param expr `expression`.
 #'   Any R expression.
