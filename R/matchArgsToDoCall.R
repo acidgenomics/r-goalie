@@ -42,7 +42,7 @@ matchArgsToDoCall <- function(
     args = NULL,
     removeFormals = NULL,
     which = sys.parent(n = 1L),
-    verbose = getOption("goalie.traceback", FALSE)
+    verbose = getOption("verbose", FALSE)
 ) {
     assert(
         isAny(args, classes = c("list", "NULL")),

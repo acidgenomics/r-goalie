@@ -4,7 +4,8 @@ test_that("Match the arguments in call.", {
     fun <- function(object, xxx, ...) {
         args <- matchArgsToDoCall(
             args = list(object = object, collapse = " "),
-            removeFormals = "xxx"
+            removeFormals = "xxx",
+            verbose = FALSE
         )
         args
     }
@@ -23,7 +24,8 @@ test_that("Pass the arguments to 'do.call()'.", {
             what = paste,
             args = matchArgsToDoCall(
                 args = list(collapse = " "),
-                removeFormals = "xxx"
+                removeFormals = "xxx",
+                verbose = FALSE
             )
         )
     }
