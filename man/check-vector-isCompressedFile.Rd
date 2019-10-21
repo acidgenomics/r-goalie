@@ -57,6 +57,6 @@ unlink(x)
 \seealso{
 \itemize{
 \item \code{\link[=isFile]{isFile()}}.
-\item \link{compressFileExt}.
+\item \code{compressFileExt}.
 }
 }

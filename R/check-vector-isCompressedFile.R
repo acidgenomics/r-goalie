@@ -11,7 +11,7 @@
 #'
 #' @seealso
 #' - [isFile()].
-#' - [compressFileExt].
+#' - `compressFileExt`.
 #'
 #' @examples
 #' ## TRUE ====
