@@ -9,7 +9,7 @@
 #' two invisible files with names that only differ by case. If 2 files are
 #' detected, the file system is case sensitive.
 #'
-#' @export
+#' @name check-scalar-isFileSystemCaseSensitive
 #' @note Updated 2019-10-21.
 #'
 #' @inheritParams acidroxygen::params
@@ -19,6 +19,12 @@
 #'
 #' @examples
 #' isFileSystemCaseSensitive()
+NULL
+
+
+
+#' @rdname check-scalar-isFileSystemCaseSensitive
+#' @export
 isFileSystemCaseSensitive <- function(dir = ".") {
     ok <- isADirectory(dir)
     if (!isTRUE(ok)) return(ok)
