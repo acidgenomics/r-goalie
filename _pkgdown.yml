@@ -23,18 +23,3 @@ reference:
   - title: S3 methods
     contents:
       - print
-  - title: Base functions
-    contents:
-      - appendToBody
-      - bapply
-      - basenameSansExt
-      - callAndName
-      - extPattern
-      - fileExt
-      - getNameInParent
-      - matchArgsToDoCall
-      - methodDefinition
-      - printString
-      - safeDeparse
-      - standardizeCall
-      - toNames

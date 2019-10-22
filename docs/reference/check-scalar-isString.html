@@ -122,7 +122,7 @@
     <p>Does the input contain a (non-empty) character string?</p>
     </div>
 
-    <pre class="usage"><span class='fu'>isString</span>(<span class='no'>x</span>, <span class='kw'>nullOK</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>.xname</span> <span class='kw'>=</span> <span class='fu'><a href='getNameInParent.html'>getNameInParent</a></span>(<span class='no'>x</span>))</pre>
+    <pre class="usage"><span class='fu'>isString</span>(<span class='no'>x</span>, <span class='kw'>nullOK</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>.xname</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/acidbase/man/getNameInParent.html'>getNameInParent</a></span>(<span class='no'>x</span>))</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -156,7 +156,7 @@ If set to <code>TRUE</code>, <code>x</code> may also be <code>NULL</code>.</p></
 <span class='fu'>isString</span>(<span class='st'>"hello"</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
 <span class='co'>## FALSE ====</span>
 <span class='fu'>isString</span>(<span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] FALSE
-#&gt; Cause: '1' is not a character of length 1.</div><div class='input'><span class='fu'>isString</span>(<span class='st'>""</span>)</div><div class='output co'>#&gt; [1] FALSE
+#&gt; Cause: '1' is not character.</div><div class='input'><span class='fu'>isString</span>(<span class='st'>""</span>)</div><div class='output co'>#&gt; [1] FALSE
 #&gt; Cause: '""' contains empty string.</div><div class='input'><span class='fu'>isString</span>(<span class='fl'>NA_character_</span>)</div><div class='output co'>#&gt; [1] FALSE
 #&gt; Cause: 'NA_character_' is NA.</div></pre>
   </div>

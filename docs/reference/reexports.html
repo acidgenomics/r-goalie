@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Get the name of a variable defined in the parent frame — getNameInParent • goalie</title>
+<title>Objects exported from other packages — reexports • goalie</title>
 
 
 <!-- jquery -->
@@ -37,8 +37,13 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="Get the name of a variable defined in the parent frame — getNameInParent" />
-<meta property="og:description" content="Get the name of a variable defined in the parent frame" />
+<meta property="og:title" content="Objects exported from other packages — reexports" />
+<meta property="og:description" content="These objects are imported from other packages. Follow the links
+below to see their documentation.
+
+  acidbasebapply, getNameInParent
+
+" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -113,64 +118,27 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Get the name of a variable defined in the parent frame</h1>
-    <small class="dont-index">Source: <a href='https://github.com/acidgenomics/goalie/blob/master/R/base-getNameInParent.R'><code>R/base-getNameInParent.R</code></a></small>
-    <div class="hidden name"><code>getNameInParent.Rd</code></div>
+    <h1>Objects exported from other packages</h1>
+    <small class="dont-index">Source: <a href='https://github.com/acidgenomics/goalie/blob/master/R/reexports.R'><code>R/reexports.R</code></a></small>
+    <div class="hidden name"><code>reexports.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Get the name of a variable defined in the parent frame</p>
+    <p>These objects are imported from other packages. Follow the links
+below to see their documentation.</p>
+<dl class='dl-horizontal'>
+  <dt>acidbase</dt><dd><p><code><a href='https://rdrr.io/pkg/acidbase/man/bapply.html'>bapply</a></code>, <code><a href='https://rdrr.io/pkg/acidbase/man/getNameInParent.html'>getNameInParent</a></code></p></dd>
+
+</dl>
     </div>
 
-    <pre class="usage"><span class='fu'>getNameInParent</span>(<span class='no'>x</span>, <span class='kw'>escapePercent</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>100L</span>)</pre>
 
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>x</th>
-      <td><p><code>symbol</code>.
-Variable to get the name of.</p></td>
-    </tr>
-    <tr>
-      <th>escapePercent</th>
-      <td><p><code><a href='https://rdrr.io/r/base/logical.html'>logical(1)</a></code>.
-If <code>TRUE</code>, percent signs are doubled, making the value suitable for use
-with <code><a href='https://rdrr.io/r/base/sprintf.html'>sprintf()</a></code>.</p></td>
-    </tr>
-    <tr>
-      <th>width</th>
-      <td><p><code><a href='https://rdrr.io/r/base/integer.html'>integer(1)</a></code>.
-Maximum width of the name.</p></td>
-    </tr>
-    </table>
 
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code>.</p>
-    <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
-
-    <p>Updated 2019-09-06.</p>
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
-
-    <div class='dont-index'>
-<ul>
-<li><p><code><a href='https://rdrr.io/pkg/assertive.base/man/get_name_in_parent.html'>assertive.base::get_name_in_parent()</a></code>.</p></li>
-<li><p><code><a href='https://rdrr.io/pkg/checkmate/man/vname.html'>checkmate::vname()</a></code>.</p></li>
-</ul>
-</div>
-
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>getNameInParent</span>(<span class='no'>test</span>)</div><div class='output co'>#&gt; [1] "test"</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#value">Value</a></li>
-      <li><a href="#note">Note</a></li>
-      <li><a href="#see-also">See also</a></li>
-      <li><a href="#examples">Examples</a></li>
     </ul>
 
   </div>
