@@ -31,7 +31,7 @@ print.goalie <- function(x, n = 10L, ignoreNA = FALSE, ...) {
     if (is.null(names)) {
         names <- character(length(x))
     }
-    x <- .stripAttributes(x)
+    attributes(x) <- NULL
     ok <- if (isTRUE(ignoreNA)) {
         x | is.na(x)
     } else {
@@ -42,7 +42,7 @@ print.goalie <- function(x, n = 10L, ignoreNA = FALSE, ...) {
     index <- head(index, n = n)
     failures <- data.frame(
         pos = index,
-        value = .truncate(names[index]),
+        value = shorten(names[index]),
         cause = unclass(cause[index]),
         row.names = seq_along(index)
     )

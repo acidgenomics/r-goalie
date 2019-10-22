@@ -30,6 +30,7 @@ isFileSystemCaseSensitive <- function(dir = ".") {
     ok <- isADirectory(dir)
     if (!isTRUE(ok)) return(ok)
     files <- file.path(dir, c(".acid-checkcase", ".acid-checkCase"))
+    unlink(files)
     file.create(files, showWarnings = FALSE)
     n <- length(list.files(
         path = dir,
@@ -39,10 +40,10 @@ isFileSystemCaseSensitive <- function(dir = ".") {
         recursive = FALSE,
         ignore.case = TRUE
     ))
+    unlink(files)
     ok <- identical(n, 2L)
     if (!isTRUE(ok)) {
         return(false("'%s' is not case sensitive.", dir))
     }
-    unlink(files)
     TRUE
 }
