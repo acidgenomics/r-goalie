@@ -36,8 +36,8 @@ test_that("FALSE : not dir", {
     expect_s3_class(ok, "goalie")
     expect_false(ok)
     expect_identical(
-        cause(ok),
-        noquote(c(aaa = "not dir"))
+        object = cause(ok),
+        expected = noquote(c(aaa = "not dir"))
     )
 })
 
@@ -46,8 +46,8 @@ test_that("FALSE : not scalar", {
     expect_s3_class(ok, "goalie")
     expect_false(ok)
     expect_identical(
-        cause(ok),
-        noquote("'x' is not a character of length 1.")
+        object = cause(ok),
+        expected = noquote("'x' does not have a length of 1.")
     )
 })
 
