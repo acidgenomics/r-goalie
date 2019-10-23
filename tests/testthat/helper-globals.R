@@ -1,3 +1,8 @@
+options(
+    "goalie.traceback" = FALSE,
+    "verbose" = FALSE
+)
+
 ## nolint start
 DataFrame <- S4Vectors::DataFrame
 SummarizedExperiment <- SummarizedExperiment::SummarizedExperiment
