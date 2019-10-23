@@ -1,42 +1,28 @@
-## @seealso `base::stopifnot()`.
-## Updated 2019-07-15.
-.Dparse <-  # nolint
-    function(call, cutoff = 60L) {
-        ch <- deparse(call, width.cutoff = cutoff)
-        if (length(ch) > 1L) {
-            paste(ch[[1L]], "....")  # nocov
-        } else {
-            ch
-        }
-    }
+#' Assert check
+#'
+#' @name check
+#' @keywords internal
+#'
+#' @return
+#' `TRUE` on success;
+#' `FALSE` on failure, with cause set.
+NULL
 
 
 
-## @seealso `syntactic::capitalize()`.
-## Updated 2019-07-15.
+## Updated 2019-10-21.
 .capitalize <- function(x) {
-    n <- length(x)
-    if (identical(n, 0L)) {
-        return(x)
-    }
-    nas <- is.na(x)
-    idxs <- which(nas)
-    if (identical(length(idxs), n)) {
-        return(x)  # nocov
-    }
-    res <- character(length = n)
-    if (length(idxs) > 0L) {
-        res[idxs] <- NA_character_
-    }
-    idxs <- which(!nas)
-    if (length(idxs) > 0L) {
-        t <- x[idxs]
-        first <- substring(t, first = 1L, last = 1L)
-        tail <- substring(t, first = 2L)
-        first <- toupper(first)
-        res[idxs] <- paste(first, tail, sep = "")
-    }
-    res
+    vapply(
+        X = as.character(x),
+        FUN = function(x) {
+            if (is.na(x)) return(x)
+            first <- toupper(substring(x, first = 1L, last = 1L))
+            tail <- substring(x, first = 2L)
+            paste0(first, tail)
+        },
+        FUN.VALUE = character(1L),
+        USE.NAMES = FALSE
+    )
 }
 
 
@@ -46,6 +32,20 @@
     assert(requireNamespace("SummarizedExperiment", quietly = TRUE))
     SummarizedExperiment::assay(object)
 }
+
+
+
+## @seealso `base::stopifnot()`.
+## Updated 2019-10-21.
+.deparse <-
+    function(call, cutoff = 60L) {
+        ch <- deparse(call, width.cutoff = cutoff)
+        if (length(ch) > 1L) {
+            paste(ch[[1L]], "....")  # nocov
+        } else {
+            ch
+        }
+    }
 
 
 
@@ -87,7 +87,7 @@
 #'
 #' Used internally by [isAll()][] and [isAny()][] checks.
 #'
-#' @note Updated 2019-10-04.
+#' @note Updated 2019-10-21.
 #' @noRd
 #'
 #' @inheritParams acidroxygen::params
@@ -142,29 +142,8 @@
 
 
 
-## @seealso `assertive.base::strip_attributes().
-## Updated 2019-07-15.
-.stripAttributes <- function(x) {
-    attributes(x) <- NULL
-    x
-}
-
-
-
+## Updated 2019-08-10.
 .tolerance <- 100L * .Machine[["double.eps"]]
-
-
-
-## @seealso `assertive.base:::truncate()`.
-## Updated 2019-07-15.
-.truncate <- function(x, width = getOption("width")) {
-    x <- as.character(x)
-    ifelse(
-        test = nchar(x) > width,
-        yes = paste0(substring(x, 1L, width - 3L), "..."),
-        no = x
-    )
-}
 
 
 

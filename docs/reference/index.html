@@ -69,7 +69,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">goalie</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.12</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.0</span>
       </span>
     </div>
 
@@ -125,7 +125,7 @@
     <tbody>
       <tr>
         <th colspan="2">
-          <h2 id="section-assert-engines" class="hasAnchor"><a href="#section-assert-engines" class="anchor"></a>Assert engines</h2>
+          <h2 id="section-engine" class="hasAnchor"><a href="#section-engine" class="anchor"></a>Engine</h2>
           <p class="section-desc"></p>
         </th>
       </tr>
@@ -138,9 +138,21 @@
       </tr><tr>
         
         <td>
+          <p><code><a href="cause.html">cause()</a></code> <code><a href="cause.html">`cause<-`()</a></code> <code><a href="cause.html">nocause()</a></code> </p>
+        </td>
+        <td><p>Get or set the <code>cause</code> attribute</p></td>
+      </tr><tr>
+        
+        <td>
           <p><code><a href="validate.html">validate()</a></code> </p>
         </td>
         <td><p>Validate an S4 class</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="validateClasses.html">validateClasses()</a></code> </p>
+        </td>
+        <td><p>Validate expected classes</p></td>
       </tr>
     </tbody><tbody>
       <tr>
@@ -278,6 +290,12 @@
       </tr><tr>
         
         <td>
+          <p><code><a href="check-scalar-isFileSystemCaseSensitive.html">isFileSystemCaseSensitive()</a></code> </p>
+        </td>
+        <td><p>Is the file system case sensitive?</p></td>
+      </tr><tr>
+        
+        <td>
           <p><code><a href="check-scalar-isFlag.html">isFlag()</a></code> </p>
         </td>
         <td><p>Does the input contain a boolean flag?</p></td>
@@ -320,6 +338,12 @@
       </tr><tr>
         
         <td>
+          <p><code><a href="check-scalar-matchesUniqueGeneNames.html">matchesUniqueGeneNames()</a></code> </p>
+        </td>
+        <td><p>Do the input gene names match unique values in the corresponding object?</p></td>
+      </tr><tr>
+        
+        <td>
           <p><code><a href="check-scalar-sets.html">isSubset()</a></code> <code><a href="check-scalar-sets.html">isSuperset()</a></code> <code><a href="check-scalar-sets.html">areDisjointSets()</a></code> <code><a href="check-scalar-sets.html">areIntersectingSets()</a></code> <code><a href="check-scalar-sets.html">areSetEqual()</a></code> </p>
         </td>
         <td><p>Set comparisons</p></td>
@@ -343,6 +367,12 @@
           <p><code><a href="check-vector-hasAccess.html">hasAccess()</a></code> <code><a href="check-vector-hasAccess.html">allHaveAccess()</a></code> </p>
         </td>
         <td><p>Check file system access rights</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="check-vector-isCompressedFile.html">isCompressedFile()</a></code> <code><a href="check-vector-isCompressedFile.html">isACompressedFile()</a></code> <code><a href="check-vector-isCompressedFile.html">allAreCompressedFiles()</a></code> </p>
+        </td>
+        <td><p>Does the input contain a compressed file?</p></td>
       </tr><tr>
         
         <td>
@@ -412,104 +442,6 @@
         </td>
         <td><p>Print methods for objects with a cause attribute</p></td>
       </tr>
-    </tbody><tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-system" class="hasAnchor"><a href="#section-system" class="anchor"></a>System</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      <tr>
-        
-        <td>
-          <p><code><a href="MethodDefinition.html">methodFunction()</a></code> <code><a href="MethodDefinition.html">methodFormals()</a></code> </p>
-        </td>
-        <td><p>Access the data inside an S4 method definition</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="appendToBody.html">appendToBody()</a></code> </p>
-        </td>
-        <td><p>Append values to function body</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="bapply.html">bapply()</a></code> </p>
-        </td>
-        <td><p>Boolean apply</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="callAndName.html">callAndName()</a></code> </p>
-        </td>
-        <td><p>Call a function and give the result names</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="cause.html">cause()</a></code> <code><a href="cause.html">`cause<-`()</a></code> <code><a href="cause.html">nocause()</a></code> </p>
-        </td>
-        <td><p>Get or set the <code>cause</code> attribute</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="false.html">false()</a></code> <code><a href="false.html">falseFromVector()</a></code> </p>
-        </td>
-        <td><p>Return <code>FALSE</code> scalar with cause of failure</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="getNameInParent.html">getNameInParent()</a></code> </p>
-        </td>
-        <td><p>Get the name of a variable defined in the parent frame</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="matchArgsToDoCall.html">matchArgsToDoCall()</a></code> </p>
-        </td>
-        <td><p>Match arguments to <code>do.call</code></p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="matchesUniqueGeneNames.html">matchesUniqueGeneNames()</a></code> </p>
-        </td>
-        <td><p>Do the input gene names match unique values in the corresponding object?</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="printString.html">printString()</a></code> </p>
-        </td>
-        <td><p>Print string</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="safeDeparse.html">safeDeparse()</a></code> </p>
-        </td>
-        <td><p>Expression deparsing</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="setCause.html">setCause()</a></code> </p>
-        </td>
-        <td><p>Return <code>FALSE</code> vector with causes of failure</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="standardizeCall.html">standardizeCall()</a></code> </p>
-        </td>
-        <td><p>Standardize call</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="toNames.html">toNames()</a></code> </p>
-        </td>
-        <td><p>Sanitize vector input to names</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="validateClasses.html">validateClasses()</a></code> </p>
-        </td>
-        <td><p>Validate expected classes</p></td>
-      </tr>
     </tbody>
     </table>
   </div>
@@ -517,11 +449,10 @@
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-assert-engines">Assert engines</a></li>
+      <li><a href="#section-engine">Engine</a></li>
       <li><a href="#section-scalar-checks">Scalar checks</a></li>
       <li><a href="#section-vectorized-checks">Vectorized checks</a></li>
       <li><a href="#section-s-methods">S3 methods</a></li>
-      <li><a href="#section-system">System</a></li>
     </ul>
   </div>
 </div>
