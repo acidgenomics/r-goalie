@@ -1,4 +1,12 @@
-## goalie 0.3.13 (UNRELEASED)
+## goalie 0.4.0 (2019-10-22)
+
+The increase in version number here denotes new import of [acidbase][] package.
+
+### Major changes
+
+- Migrated base (system) functions to new low-level acidbase package.
+  Some of these functions are not specific to an assert check engine and should
+  be defined in a separate package.
 
 ### New functions
 
@@ -6,11 +14,6 @@
   `isCompressedFile`, `isACompressedFile`, `allAreCompressedFiles`.
   These perform similarly to `isFile` but also check to see if the file
   extension contains a compression format (e.g. bz2, gz, xz, zip).
-
-### New globals
-
-- Migrated file extension globals from brio.
-  Now exporting `extPattern` and `compressExtPattern`.
 
 ## goalie 0.3.12 (2019-10-21)
 
@@ -358,6 +361,8 @@ Version bump, reflecting start of a new release series.
 - Initial release, migrating assertive check functions from [basejump][]
   package.
 
+[acid genomics]: https://acidgenomics.com/
+[acidbase]: https://acidbase.acidgenomics.com/
 [basejump]: https://basejump.acidgenomics.com/
-[Acid Genomics]: https://acidgenomics.com/
+[brio]: https://brio.acidgenomics.com/
 [syntactic]: https://syntactic.acidgenomics.com/
