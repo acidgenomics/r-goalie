@@ -29,15 +29,19 @@ isString <- function(
     if (isTRUE(nullOK) && is.null(x)) {
         return(TRUE)
     }
-    ok <- is.character(x) && identical(length(x), 1L)
+    ok <- isScalar(x)
+    if (!isTRUE(ok)) return(ok)
+    ok <- is.character(x)
     if (!isTRUE(ok)) {
-        return(false("'%s' is not a character of length 1.", .xname))
+        return(false("'%s' is not character.", .xname))
     }
+    ok <- !is.na(x)
     ## Return FALSE on NA character or empty string.
-    if (is.na(x)) {
+    if (!isTRUE(ok)) {
         return(false("'%s' is NA.", .xname))
     }
-    if (identical(x, "")) {
+    ok <- !identical(x, "")
+    if (!isTRUE(ok)) {
         return(false("'%s' contains empty string.", .xname))
     }
     TRUE

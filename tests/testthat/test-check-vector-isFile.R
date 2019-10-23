@@ -1,13 +1,12 @@
-file <- "example.txt"
-file.create(file)
+files <- c("example1.txt", "example2.txt")
+file.create(files)
 
 
 
 context("check : vector : isFile")
 
 test_that("TRUE", {
-    expect_true(isFile(file))
-    expect_true(isAFile(file))
+    expect_true(all(isFile(files)))
 })
 
 ## Directories currently return TRUE, similar to base R `dir.exists()`.
@@ -45,7 +44,7 @@ test_that("FALSE : not character", {
 context("check : scalar : isAFile")
 
 test_that("TRUE", {
-    expect_true(isAFile(file))
+    expect_true(isAFile(files[[1L]]))
 })
 
 test_that("FALSE", {
@@ -65,7 +64,7 @@ test_that("nullOK", {
 context("check : scalar : allAreFiles")
 
 test_that("TRUE", {
-    expect_true(allAreFiles(file))
+    expect_true(allAreFiles(files))
 })
 
 test_that("FALSE", {
@@ -74,4 +73,4 @@ test_that("FALSE", {
 
 
 
-file.remove(file)
+file.remove(files)
