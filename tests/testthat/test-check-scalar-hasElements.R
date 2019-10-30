@@ -6,6 +6,9 @@ test_that("TRUE", {
 })
 
 test_that("FALSE", {
+    expect_false(hasElements(NULL))
+    expect_false(hasElements(c()))
+    expect_false(hasElements(list()))
     ok <- hasElements(list(), n = 1L)
     expect_false(ok)
     expect_s3_class(ok, "goalie")

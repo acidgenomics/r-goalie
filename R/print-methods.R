@@ -29,7 +29,7 @@ print.goalie <- function(x, n = 10L, ignoreNA = FALSE, ...) {
         return(cat("Cause:", cause(x)))
     }
     if (is.null(names)) {
-        names <- character(length(x))
+        names <- character(length(x))  # nocov
     }
     attributes(x) <- NULL
     ok <- if (isTRUE(ignoreNA)) {
