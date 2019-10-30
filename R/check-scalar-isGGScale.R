@@ -67,6 +67,6 @@ isGGScale <- function(
         aes <- "colour"
     }
     ok <- identical(x = x[["aesthetics"]], y = aes)
-    if (!isTRUE(ok)) return(ok)
+    if (!isTRUE(ok)) return(ok)  # nocov
     TRUE
 }
