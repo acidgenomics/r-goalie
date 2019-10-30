@@ -34,7 +34,7 @@ NULL
 #' @export
 isCompressedFile <- function(x) {
     ok <- allAreFiles(x)
-    if (!isTRUE(ok)) return(ok)
+    if (!isTRUE(ok)) return(ok)  # nocov
     ok <- bapply(X = x, FUN = isMatchingRegex, pattern = compressExtPattern)
     setCause(ok, false = "no compress ext")
 }
@@ -47,7 +47,7 @@ isCompressedFile <- function(x) {
 isACompressedFile <- function(x, nullOK = FALSE) {
     ## Conditionally allow NULL.
     if (isTRUE(nullOK) && is.null(x)) {
-        return(TRUE)
+        return(TRUE)  # nocov
     }
     ok <- isString(x)
     if (!isTRUE(ok)) return(ok)

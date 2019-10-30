@@ -10,12 +10,12 @@ NULL
 
 
 
-## Updated 2019-10-21.
+## Updated 2019-10-30.
 .capitalize <- function(x) {
     vapply(
         X = as.character(x),
         FUN = function(x) {
-            if (is.na(x)) return(x)
+            if (is.na(x)) return(x)  # nocov
             first <- toupper(substring(x, first = 1L, last = 1L))
             tail <- substring(x, first = 2L)
             paste0(first, tail)
@@ -50,26 +50,26 @@ NULL
 
 
 ## @seealso `assertive.properties::DIM()`.
-## Updated 2019-07-15.
+## Updated 2019-10-30.
 .dim <- function(x) {
     dim <- dim(x)
     if (is.null(dim)) {
         length(x)
     } else {
-        dim
+        dim  # nocov
     }
 }
 
 
 
-## Updated 2019-08-10.
+## Updated 2019-10-30.
 .hasCause <- function(x) {
     cause <- cause(x)
     if (
         length(cause) != 1L &&
         !identical(length(x), length(cause))
     ) {
-        FALSE
+        FALSE  # nocov
     } else {
         TRUE
     }
@@ -109,7 +109,7 @@ NULL
 #' .is2(mean, class = c("function", "data.frame"))
 .is2 <- function(x, class, .xname = getNameInParent(x)) {
     if (!is.character(class) || identical(length(class), 0L)) {
-        stop("'class' must be non-empty character.")
+        stop("'class' must be non-empty character.")  # nocov
     }
     if (length(class) > 1L) {
         ok <- bapply(X = class, FUN = function(cl) .is2(x, cl, ""))
@@ -148,7 +148,7 @@ NULL
 
 
 ## @seealso `assertive.base:::type_description()`.
-## Updated 2019-08-10.
+## Updated 2019-10-30.
 .typeDescription <- function(x) {
     if (is.array(x)) {
         sprintf(
@@ -157,10 +157,12 @@ NULL
             toString(class(x))
         )
     } else if (is.function(x)) {
+        ## nocov start
         sprintf(
             fmt = "class '%s %s'",
             typeof(x), toString(class(x))
         )
+        ## nocov end
     } else if (isS4(x)) {
         sprintf("S4 class '%s'", toString(class(x)))
     } else {

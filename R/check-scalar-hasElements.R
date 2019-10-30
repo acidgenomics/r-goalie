@@ -34,7 +34,7 @@ hasElements <- function(x, n = NULL, .xname = getNameInParent(x)) {
         if (identical(nElementsX, 0L)) {
             return(false("'%s' has 0 elements.", .xname))
         } else {
-            return(TRUE)
+            return(TRUE)  # nocov
         }
     }
     ## We're using `prod()` here to check vector n input (e.g. `c(nrow, ncol)`).
