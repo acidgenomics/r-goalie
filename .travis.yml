@@ -1,5 +1,8 @@
 language: general
 
+env:
+  - RCHECK_KEEP_IT_100=1
+
 services:
   - docker
 
