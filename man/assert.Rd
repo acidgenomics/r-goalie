@@ -4,13 +4,16 @@
 \alias{assert}
 \title{Assert that certain conditions are true}
 \usage{
-assert(..., msg = NULL, traceback = getOption("acid.traceback", default
-  = FALSE))
+assert(
+  ...,
+  msg = NULL,
+  traceback = getOption("acid.traceback", default = FALSE)
+)
 }
 \arguments{
 \item{...}{Any number of R expressions that return \code{logical(1)}, each of
 which should evaluate to \code{TRUE}. Rather than combining expressions with
-\code{&&}, separate them by commas so that better error messages can be
+\verb{&&}, separate them by commas so that better error messages can be
 generated.}
 
 \item{msg}{\code{NULL} or \code{character(1)}.
@@ -29,7 +32,7 @@ See \code{\link[base:traceback]{traceback()}} for details.
 supporting more informative error messages.
 }
 \details{
-If any of the expressions defined in \code{...} are not \href{base::all}{all} \code{TRUE},
+If any of the expressions defined in \code{...} are not \href{base::all}{\code{all}} \code{TRUE},
 \code{\link[base:stop]{stop}} is called, producing an error message indicating the
 first expression which was not \code{TRUE}.
 }

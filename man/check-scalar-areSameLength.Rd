@@ -5,8 +5,7 @@
 \alias{areSameLength}
 \title{Do the inputs have the same length?}
 \usage{
-areSameLength(x, y, .xname = getNameInParent(x),
-  .yname = getNameInParent(y))
+areSameLength(x, y, .xname = getNameInParent(x), .yname = getNameInParent(y))
 }
 \arguments{
 \item{x}{Object.}

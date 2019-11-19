@@ -3,10 +3,9 @@
 #' Works for either file or directory paths.
 #'
 #' @name check-vector-hasAccess
-#' @note Updated 2019-07-29.
+#' @note Updated 2019-11-19.
 #'
-#' @inherit check
-#' @inheritParams acidroxygen::params
+#' @inherit check return
 #'
 #' @param x `character(1)`.
 #'   File or directory path(s).

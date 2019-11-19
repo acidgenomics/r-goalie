@@ -26,20 +26,21 @@
 \alias{allAreProportion}
 \title{Is the input in range?}
 \usage{
-isInRange(x, lower = -Inf, upper = Inf, closed = c(TRUE, TRUE),
-  .xname = getNameInParent(x))
+isInRange(
+  x,
+  lower = -Inf,
+  upper = Inf,
+  closed = c(TRUE, TRUE),
+  .xname = getNameInParent(x)
+)
 
-isInClosedRange(x, lower = -Inf, upper = Inf,
-  .xname = getNameInParent(x))
+isInClosedRange(x, lower = -Inf, upper = Inf, .xname = getNameInParent(x))
 
-isInOpenRange(x, lower = -Inf, upper = Inf,
-  .xname = getNameInParent(x))
+isInOpenRange(x, lower = -Inf, upper = Inf, .xname = getNameInParent(x))
 
-isInLeftOpenRange(x, lower = -Inf, upper = Inf,
-  .xname = getNameInParent(x))
+isInLeftOpenRange(x, lower = -Inf, upper = Inf, .xname = getNameInParent(x))
 
-isInRightOpenRange(x, lower = -Inf, upper = Inf,
-  .xname = getNameInParent(x))
+isInRightOpenRange(x, lower = -Inf, upper = Inf, .xname = getNameInParent(x))
 
 isNegative(x, .xname = getNameInParent(x))
 
@@ -53,20 +54,31 @@ isPercentage(x, .xname = getNameInParent(x))
 
 isProportion(x, .xname = getNameInParent(x))
 
-allAreInRange(x, lower = -Inf, upper = Inf, closed = c(TRUE, TRUE),
-  .xname = getNameInParent(x))
+allAreInRange(
+  x,
+  lower = -Inf,
+  upper = Inf,
+  closed = c(TRUE, TRUE),
+  .xname = getNameInParent(x)
+)
 
-allAreInClosedRange(x, lower = -Inf, upper = Inf,
-  .xname = getNameInParent(x))
+allAreInClosedRange(x, lower = -Inf, upper = Inf, .xname = getNameInParent(x))
 
-allAreInOpenRange(x, lower = -Inf, upper = Inf,
-  .xname = getNameInParent(x))
+allAreInOpenRange(x, lower = -Inf, upper = Inf, .xname = getNameInParent(x))
 
-allAreInLeftOpenRange(x, lower = -Inf, upper = Inf,
-  .xname = getNameInParent(x))
+allAreInLeftOpenRange(
+  x,
+  lower = -Inf,
+  upper = Inf,
+  .xname = getNameInParent(x)
+)
 
-allAreInRightOpenRange(x, lower = -Inf, upper = Inf,
-  .xname = getNameInParent(x))
+allAreInRightOpenRange(
+  x,
+  lower = -Inf,
+  upper = Inf,
+  .xname = getNameInParent(x)
+)
 
 allAreNegative(x, .xname = getNameInParent(x))
 
@@ -156,10 +168,10 @@ Updated 2019-08-10.
 
 \itemize{
 \item Closed: Includes all its limit points, and is denoted with square brackets.
-For example, \code{[0,1]} means greater than or equal to 0 and less than or
+For example, \verb{[0,1]} means greater than or equal to 0 and less than or
 equal to 1.
 \item Open: Does not include its endpoints, and is indicated with parentheses.
-For example, \code{(0,1)} means greater than 0 and less than 1.
+For example, \verb{(0,1)} means greater than 0 and less than 1.
 }
 }
 
