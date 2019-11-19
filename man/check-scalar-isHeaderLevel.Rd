@@ -18,7 +18,7 @@ isHeaderLevel(x, .xname = getNameInParent(x))
 \code{FALSE} on failure, with cause set.
 }
 \description{
-Markdown supports header levels \code{1}-\code{7} (\code{<H1>}-\code{<H7>}).
+Markdown supports header levels \code{1}-\code{7} (\verb{<H1>}-\verb{<H7>}).
 }
 \note{
 Updated 2019-08-10.

@@ -8,17 +8,33 @@
 \alias{allAreNonExisting}
 \title{Does the requested input exist in the environment?}
 \usage{
-isExisting(x, envir = parent.frame(), inherits = FALSE,
-  .xname = getNameInParent(x))
+isExisting(
+  x,
+  envir = parent.frame(),
+  inherits = FALSE,
+  .xname = getNameInParent(x)
+)
 
-isNonExisting(x, envir = parent.frame(), inherits = FALSE,
-  .xname = getNameInParent(x))
+isNonExisting(
+  x,
+  envir = parent.frame(),
+  inherits = FALSE,
+  .xname = getNameInParent(x)
+)
 
-allAreExisting(x, envir = parent.frame(), inherits = FALSE,
-  .xname = getNameInParent(x))
+allAreExisting(
+  x,
+  envir = parent.frame(),
+  inherits = FALSE,
+  .xname = getNameInParent(x)
+)
 
-allAreNonExisting(x, envir = parent.frame(), inherits = FALSE,
-  .xname = getNameInParent(x))
+allAreNonExisting(
+  x,
+  envir = parent.frame(),
+  inherits = FALSE,
+  .xname = getNameInParent(x)
+)
 }
 \arguments{
 \item{x}{\code{character}.

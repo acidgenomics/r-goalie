@@ -11,70 +11,61 @@ NULL
 
 
 
-#' @name deprecated
-#' @inherit acidroxygen::deprecated description examples return seealso title
-#' @inheritParams acidroxygen::params
-#' @keywords internal
-NULL
-
-
-
 ## v0.2.1 =======================================================================
-#' @rdname deprecated
+#' @rdname defunct
 #' @export
-containsAlpha <- appendToBody(
-    fun = isAlpha,
-    values = quote(.Deprecated("isAlpha"))
-)
+containsAlpha <- function(...) {
+    .Defunct("isAlpha")
+}
 
-#' @rdname deprecated
+#' @rdname defunct
 #' @export
-containsHeaderLevel <- appendToBody(
-    fun = isHeaderLevel,
-    values = quote(.Deprecated("isHeaderLevel"))
-)
+containsHeaderLevel <- function(...) {
+    .Defunct("isHeaderLevel")
+}
 
-#' @rdname deprecated
+#' @rdname defunct
 #' @export
-containsHexColors <- appendToBody(
-    fun = allAreHexColors,
-    values = quote(.Deprecated("allAreHexColors"))
-)
+containsHexColors <- function(...) {
+    .Defunct("allAreHexColors")
+}
 
-#' @rdname deprecated
+#' @rdname defunct
 #' @export
-containsURL <- isURL
+containsURL <- function(...) {
+    .Defunct("isURL")
+}
 
-#' @rdname deprecated
+#' @rdname defunct
 #' @export
-containsAURL <- isAURL
+containsAURL <- function(...) {
+    .Defunct("isAURL")
+}
 
 
 
 ## v0.3.8 ======================================================================
-#' @rdname deprecated
+#' @rdname defunct
 #' @export
 isOfLength <- function(...) {
-    .Deprecated("hasLength")
-    hasLength(...)
+    .Defunct("hasLength")
 }
 
 
 
 ## v0.3.9 ======================================================================
-## Soft deprecated in favor of `hasLength()`.
-## Note that this function is defined in S4Vectors, and we don't want to mask.
-#' @rdname deprecated
+## These functions are defined in S4Vectors, and we don't want to mask.
+#' @rdname defunct
 #' @export
 isEmpty <- function(x, .xname = getNameInParent(x)) {
-    hasLength(x = x, n = 0L, .xname = .xname)
+    .Defunct("hasLength")
 }
 
 ## Soft deprecated in favor of `hasLength()` or `hasElements()` instead.
-#' @rdname deprecated
+#' @rdname defunct
 #' @export
 isNonEmpty <- function(x, .xname = getNameInParent(x)) {
-    hasLength(x = x, n = NULL, .xname = .xname)
+    .Defunct("hasLength")
 }
 
 
