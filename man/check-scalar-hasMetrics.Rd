@@ -5,8 +5,7 @@
 \alias{hasMetrics}
 \title{Does the object contain quality control metrics?}
 \usage{
-hasMetrics(x, colData = c("nCount", "nFeature"),
-  .xname = getNameInParent(x))
+hasMetrics(x, colData = c("nCount", "nFeature"), .xname = getNameInParent(x))
 }
 \arguments{
 \item{x}{\code{SummarizedExperiment}.}

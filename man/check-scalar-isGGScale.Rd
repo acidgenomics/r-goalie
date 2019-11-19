@@ -5,8 +5,12 @@
 \alias{isGGScale}
 \title{Does the input contain a ggplot2 scale?}
 \usage{
-isGGScale(x, scale = c("continuous", "discrete"), aes = c("color",
-  "colour", "fill"), nullOK = FALSE)
+isGGScale(
+  x,
+  scale = c("continuous", "discrete"),
+  aes = c("color", "colour", "fill"),
+  nullOK = FALSE
+)
 }
 \arguments{
 \item{x}{Object.}

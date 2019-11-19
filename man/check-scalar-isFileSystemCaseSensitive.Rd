@@ -34,5 +34,5 @@ Updated 2019-10-21.
 isFileSystemCaseSensitive()
 }
 \seealso{
-\code{_koopa_is_file_system_case_sensitive} shell function in koopa.
+\verb{_koopa_is_file_system_case_sensitive} shell function in koopa.
 }
