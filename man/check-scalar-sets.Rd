@@ -9,20 +9,20 @@
 \alias{areSetEqual}
 \title{Set comparisons}
 \usage{
-isSubset(x, y, .xname = getNameInParent(x),
-  .yname = getNameInParent(y))
+isSubset(x, y, .xname = getNameInParent(x), .yname = getNameInParent(y))
 
-isSuperset(x, y, .xname = getNameInParent(x),
-  .yname = getNameInParent(y))
+isSuperset(x, y, .xname = getNameInParent(x), .yname = getNameInParent(y))
 
-areDisjointSets(x, y, .xname = getNameInParent(x),
-  .yname = getNameInParent(y))
+areDisjointSets(x, y, .xname = getNameInParent(x), .yname = getNameInParent(y))
 
-areIntersectingSets(x, y, .xname = getNameInParent(x),
-  .yname = getNameInParent(y))
+areIntersectingSets(
+  x,
+  y,
+  .xname = getNameInParent(x),
+  .yname = getNameInParent(y)
+)
 
-areSetEqual(x, y, .xname = getNameInParent(x),
-  .yname = getNameInParent(y))
+areSetEqual(x, y, .xname = getNameInParent(x), .yname = getNameInParent(y))
 }
 \arguments{
 \item{x}{Object.}
