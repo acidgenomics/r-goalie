@@ -124,8 +124,11 @@ supporting more informative error messages." />
 supporting more informative error messages.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>assert</span>(<span class='no'>...</span>, <span class='kw'>msg</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>traceback</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span>(<span class='st'>"acid.traceback"</span>, <span class='kw'>default</span>
-  <span class='kw'>=</span> <span class='fl'>FALSE</span>))</pre>
+    <pre class="usage"><span class='fu'>assert</span>(
+  <span class='no'>...</span>,
+  <span class='kw'>msg</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>traceback</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span>(<span class='st'>"acid.traceback"</span>, <span class='kw'>default</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
+)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -156,7 +159,7 @@ See <code><a href='https://rdrr.io/r/base/traceback.html'>traceback()</a></code>
     <p><code>TRUE</code> on success, error on failure.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>If any of the expressions defined in <code>...</code> are not <a href='base::all'>all</a> <code>TRUE</code>,
+    <p>If any of the expressions defined in <code>...</code> are not <a href='base::all'><code>all</code></a> <code>TRUE</code>,
 <code><a href='https://rdrr.io/r/base/stop.html'>stop</a></code> is called, producing an error message indicating the
 first expression which was not <code>TRUE</code>.</p>
     <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>

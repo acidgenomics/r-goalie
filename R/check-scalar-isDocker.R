@@ -5,10 +5,9 @@
 #' Is the R session running inside Docker?
 #'
 #' @name check-scalar-isDocker
-#' @note Updated 2019-08-10.
+#' @note Updated 2019-11-19.
 #'
-#' @inherit check
-#' @inheritParams acidroxygen::params
+#' @inherit check return
 #'
 #' @examples
 #' isDocker()
