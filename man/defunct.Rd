@@ -2,7 +2,40 @@
 % Please edit documentation in R/deprecated.R
 \name{defunct}
 \alias{defunct}
+\alias{containsAlpha}
+\alias{containsHeaderLevel}
+\alias{containsHexColors}
+\alias{containsURL}
+\alias{containsAURL}
+\alias{isOfLength}
+\alias{isEmpty}
+\alias{isNonEmpty}
 \title{Defunct functions}
+\usage{
+containsAlpha(...)
+
+containsHeaderLevel(...)
+
+containsHexColors(...)
+
+containsURL(...)
+
+containsAURL(...)
+
+isOfLength(...)
+
+isEmpty(x, .xname = getNameInParent(x))
+
+isNonEmpty(x, .xname = getNameInParent(x))
+}
+\arguments{
+\item{...}{Additional arguments.}
+
+\item{x}{Object.}
+
+\item{.xname}{Name of object defined in \code{x}.
+\emph{Not intended to be used directly.}}
+}
 \value{
 \code{.Defunct}.
 }
