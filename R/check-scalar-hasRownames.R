@@ -8,7 +8,7 @@
 #' rows.
 #'
 #' @name check-scalar-hasRownames
-#' @note Updated 2019-08-10.
+#' @note Updated 2019-12-09.
 #'
 #' @inherit check
 #' @inheritParams acidroxygen::params
@@ -56,15 +56,14 @@ hasRownames <- function(x, .xname = getNameInParent(x)) {
     if (is(rownames, "error")) {
         return(false("'rownames()' command on '%s' failed.", .xname))  # nocov
     }
-    ## Standard data frames can't return NULL row names, so check for sequence.
+    ## Standard data frames can't return NULL row names, so check against
+    ## integer comparison. Previously this used a `seq_len()` comparison
+    ## approach, which will incorrectly return TRUE for subset data frames.
     if (
         is.data.frame(x) &&
-        identical(
-            x = as(rownames, "character"),
-            y = as(seq_len(nrow(x)), "character")
-        )
+        allAreMatchingRegex(x = rownames, pattern = "^[0-9]+$")
     ) {
-        return(false("'%s' has sequence row names (soft NULL).", .xname))
+        return(false("'%s' has integer row names (soft NULL).", .xname))
     }
     ## Other classes (e.g. matrix, DataFrame) do support NULL row names.
     ok <- !is.null(rownames)

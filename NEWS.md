@@ -1,3 +1,13 @@
+## goalie 0.4.1 (2019-12-09)
+
+### Minor changes
+
+- `hasRownames`: Improved internal check for integer (sequence) row names for
+  `data.frame` class, which previously returned `TRUE` unexpectedly if the rows
+  are reordered or subset. Now this function uses an internal `grepl` check
+  via `allAreMatchingRegex`, which hardens this check, and now should always
+  return `FALSE` for soft NULL row names in `data.frame` class.
+
 ## goalie 0.4.0 (2019-10-22)
 
 The increase in version number here denotes new import of [acidbase][] package.

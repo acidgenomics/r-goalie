@@ -13,7 +13,7 @@ assert(
 \arguments{
 \item{...}{Any number of R expressions that return \code{logical(1)}, each of
 which should evaluate to \code{TRUE}. Rather than combining expressions with
-\verb{&&}, separate them by commas so that better error messages can be
+\code{&&}, separate them by commas so that better error messages can be
 generated.}
 
 \item{msg}{\code{NULL} or \code{character(1)}.

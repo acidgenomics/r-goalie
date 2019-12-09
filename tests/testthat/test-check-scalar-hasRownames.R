@@ -15,7 +15,7 @@ with_parameters_test_that(
         tibble
     ),
     cause = c(
-        "'data' has sequence row names (soft NULL).",
+        "'data' has integer row names (soft NULL).",
         "'data' has NULL row names.",
         "data.table class doesn't support row names.",
         "tbl_df class doesn't support row names."
@@ -38,7 +38,7 @@ test_that("FALSE : data.frame sequence row names", {
     expect_s3_class(ok, "goalie")
     expect_identical(
         cause(ok),
-        noquote("'x' has sequence row names (soft NULL).")
+        noquote("'x' has integer row names (soft NULL).")
     )
 })
 
