@@ -69,7 +69,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">goalie</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.1</span>
       </span>
     </div>
 
@@ -134,6 +134,18 @@
 </ul>
 </div>
 </div>
+    <div id="goalie-0-4-1-2019-12-09" class="section level2">
+<h2 class="hasAnchor">
+<a href="#goalie-0-4-1-2019-12-09" class="anchor"></a>goalie 0.4.1 (2019-12-09)</h2>
+<div id="minor-changes" class="section level3">
+<h3 class="hasAnchor">
+<a href="#minor-changes" class="anchor"></a>Minor changes</h3>
+<ul>
+<li>
+<code>hasRownames</code>: Improved internal check for integer (sequence) row names for <code>data.frame</code> class, which previously returned <code>TRUE</code> unexpectedly if the rows are reordered or subset. Now this function uses an internal <code>grepl</code> check via <code>allAreMatchingRegex</code>, which hardens this check, and now should always return <code>FALSE</code> for soft NULL row names in <code>data.frame</code> class.</li>
+</ul>
+</div>
+</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -141,6 +153,7 @@
       <h2>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
         <li><a href="#goalie-0-4-0-2019-10-22">0.4.0</a></li>
+        <li><a href="#goalie-0-4-1-2019-12-09">0.4.1</a></li>
       </ul>
     </div>
   </div>
