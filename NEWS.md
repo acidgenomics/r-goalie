@@ -1,3 +1,9 @@
+## goalie 0.4.2 (2020-01-28)
+
+### Minor changes
+
+- Switched license from MIT to GPL-3.
+
 ## goalie 0.4.1 (2019-12-09)
 
 ### Minor changes
