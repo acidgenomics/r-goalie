@@ -45,6 +45,14 @@ Todo
 
 Todo
 
+# Related packages
+
+The goalie source code incorporates elements from these excellent assert check packages:
+
+- [assertive][] by Richie Cotton.
+- [assertthat][] by Hadley Wickham.
+- [checkmate][] by Michael Lang.
+
 # R session information
 
 ```{r}
@@ -53,10 +61,10 @@ utils::sessionInfo()
 
 [assertive]: https://cran.r-project.org/package=assertive
 [assertthat]: https://cran.r-project.org/package=assertthat
-[BiocManager]: https://cran.r-project.org/package=BiocManager
+[biocmanager]: https://cran.r-project.org/package=BiocManager
 [bioconda]: https://bioconda.github.io/
-[Bioconductor]: https://bioconductor.org/
+[bioconductor]: https://bioconductor.org/
 [checkmate]: https://cran.r-project.org/package=checkmate
 [conda]: https://conda.io/
 [goalie]: https://goalie.acidgenomics.com/
-[R]: https://www.r-project.org/
+[r]: https://www.r-project.org/
