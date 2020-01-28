@@ -21,7 +21,7 @@ hasRownames(x, .xname = getNameInParent(x))
 Does the input have row names?
 }
 \note{
-Updated 2019-08-10.
+Updated 2019-12-09.
 }
 \section{data.frame}{
 
