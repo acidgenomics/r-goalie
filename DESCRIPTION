@@ -1,8 +1,8 @@
 Package: goalie
 Title: Assertive check functions
 Description: Assertive check functions for defensive R programming.
-Version: 0.4.1
-Date: 2019-12-09
+Version: 0.4.2
+Date: 2019-01-28
 Authors@R: c(
     person(
         "Michael", "Steinbaugh",
@@ -18,16 +18,15 @@ URL:
     https://goalie.acidgenomics.com/,
     https://github.com/acidgenomics/goalie/
 BugReports: https://github.com/acidgenomics/goalie/issues/
-License: MIT + file LICENSE
+License: GPL-3
 Encoding: UTF-8
 Depends: R (>= 3.6)
 Imports:
-    acidbase (>= 0.1.2),
+    acidbase (>= 0.1.4),
     methods,
     utils
 Suggests:
-    acidroxygen (>= 0.1.4),
-    acidtest (>= 0.2.8),
+    acidtest (>= 0.2.11),
     DelayedArray (>= 0.10),
     DelayedMatrixStats (>= 1.6),
     S4Vectors (>= 0.22),
@@ -42,7 +41,6 @@ Suggests:
     viridis (>= 0.5)
 Remotes:
     acidgenomics/acidbase,
-    acidgenomics/acidroxygen,
     acidgenomics/acidtest
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.0.2
