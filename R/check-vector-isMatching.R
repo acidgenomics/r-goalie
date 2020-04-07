@@ -32,7 +32,7 @@ NULL
 ## Vector ======================================================================
 #' @describeIn check-vector-isMatching Vectorized.
 #' @export
-isMatchingFixed <- function(x, pattern, .xname = getNameInParent(x)) {
+isMatchingFixed <- function(x, pattern) {
     ok <- grepl(
         pattern = pattern,
         x = x,
@@ -47,7 +47,7 @@ isMatchingFixed <- function(x, pattern, .xname = getNameInParent(x)) {
 
 #' @describeIn check-vector-isMatching Vectorized.
 #' @export
-isMatchingRegex <- function(x, pattern, .xname = getNameInParent(x)) {
+isMatchingRegex <- function(x, pattern) {
     ok <- grepl(
         pattern = pattern,
         x = x,
@@ -62,7 +62,7 @@ isMatchingRegex <- function(x, pattern, .xname = getNameInParent(x)) {
 
 #' @describeIn check-vector-isMatching Vectorized.
 #' @export
-isNotMatchingFixed <- function(x, pattern, .xname = getNameInParent(x)) {
+isNotMatchingFixed <- function(x, pattern) {
     ok <- !grepl(
         pattern = pattern,
         x = x,
@@ -77,7 +77,7 @@ isNotMatchingFixed <- function(x, pattern, .xname = getNameInParent(x)) {
 
 #' @describeIn check-vector-isMatching Vectorized.
 #' @export
-isNotMatchingRegex <- function(x, pattern, .xname = getNameInParent(x)) {
+isNotMatchingRegex <- function(x, pattern) {
     ok <- !grepl(
         pattern = pattern,
         x = x,
@@ -93,8 +93,8 @@ isNotMatchingRegex <- function(x, pattern, .xname = getNameInParent(x)) {
 ## Scalar ======================================================================
 #' @describeIn check-vector-isMatching Scalar.
 #' @export
-allAreMatchingFixed <- function(x, pattern, .xname = getNameInParent(x)) {
-    ok <- isMatchingFixed(x = x, pattern = pattern, .xname = .xname)
+allAreMatchingFixed <- function(x, pattern) {
+    ok <- isMatchingFixed(x = x, pattern = pattern)
     if (!all(ok)) return(falseFromVector(ok))
     TRUE
 }
@@ -103,8 +103,8 @@ allAreMatchingFixed <- function(x, pattern, .xname = getNameInParent(x)) {
 
 #' @describeIn check-vector-isMatching Scalar.
 #' @export
-allAreMatchingRegex <- function(x, pattern, .xname = getNameInParent(x)) {
-    ok <- isMatchingRegex(x = x, pattern = pattern, .xname = .xname)
+allAreMatchingRegex <- function(x, pattern) {
+    ok <- isMatchingRegex(x = x, pattern = pattern)
     if (!all(ok)) return(falseFromVector(ok))
     TRUE
 }
@@ -113,8 +113,8 @@ allAreMatchingRegex <- function(x, pattern, .xname = getNameInParent(x)) {
 
 #' @describeIn check-vector-isMatching Scalar.
 #' @export
-allAreNotMatchingFixed <- function(x, pattern, .xname = getNameInParent(x)) {
-    ok <- isNotMatchingFixed(x = x, pattern = pattern, .xname = .xname)
+allAreNotMatchingFixed <- function(x, pattern) {
+    ok <- isNotMatchingFixed(x = x, pattern = pattern)
     if (!all(ok)) return(falseFromVector(ok))
     TRUE
 }
@@ -123,8 +123,8 @@ allAreNotMatchingFixed <- function(x, pattern, .xname = getNameInParent(x)) {
 
 #' @describeIn check-vector-isMatching Scalar.
 #' @export
-allAreNotMatchingRegex <- function(x, pattern, .xname = getNameInParent(x)) {
-    ok <- isNotMatchingRegex(x = x, pattern = pattern, .xname = .xname)
+allAreNotMatchingRegex <- function(x, pattern) {
+    ok <- isNotMatchingRegex(x = x, pattern = pattern)
     if (!all(ok)) return(falseFromVector(ok))
     TRUE
 }
