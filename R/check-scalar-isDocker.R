@@ -5,7 +5,7 @@
 #' Is the R session running inside Docker?
 #'
 #' @name check-scalar-isDocker
-#' @note Updated 2019-11-19.
+#' @note Updated 2020-04-07.
 #'
 #' @inherit check return
 #'
@@ -18,15 +18,15 @@ NULL
 #' @rdname check-scalar-isDocker
 #' @export
 isDocker <- function() {
-    if (
-        identical(Sys.getenv("DOCKER"), "True") ||
-        identical(Sys.getenv("HOME"), "/root") ||
-        identical(Sys.info()[["user"]], "root")
-    ) {
-        TRUE
-    } else {
-        false("Docker image not detected.")
+    file <- file.path("", "proc", "1", "cgroup")
+    ok <- isFile(file)
+    if (!isTRUE(ok)) return(ok)
+    x <- readLines(file)
+    ok <- any(grepl(pattern = ":/docker/", x = x))
+    if (!isTRUE(ok)) {
+        return(false("Docker not detected."))
     }
+    TRUE
 }
 
 
