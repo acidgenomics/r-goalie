@@ -14,5 +14,5 @@ NULL
 #' @rdname check-scalar-isMacOS
 #' @export
 isMacOS <- function() {
-    grepl(pattern = "darwin", x = R.Version()[["os"]])
+    isTRUE(grepl(pattern = "darwin", x = R.Version()[["os"]]))
 }
