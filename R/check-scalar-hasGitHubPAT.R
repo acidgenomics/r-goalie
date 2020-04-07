@@ -8,6 +8,12 @@
 #' @inherit check return
 #'
 #' @examples
+#' ## TRUE ====
+#' Sys.setenv("GITHUB_PAT" = "XXX")
+#' hasGitHubPAT()
+#'
+#' ## FALSE ====
+#' Sys.setenv("GITHUB_PAT" = "")
 #' hasGitHubPAT()
 NULL
 
