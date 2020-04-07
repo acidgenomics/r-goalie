@@ -18,5 +18,11 @@ Required for package installs from GitHub, otherwise will hit rate limit.
 Updated 2019-10-04.
 }
 \examples{
+## TRUE ====
+Sys.setenv("GITHUB_PAT" = "XXX")
+hasGitHubPAT()
+
+## FALSE ====
+Sys.setenv("GITHUB_PAT" = "")
 hasGitHubPAT()
 }
