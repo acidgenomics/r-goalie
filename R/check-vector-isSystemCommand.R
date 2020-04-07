@@ -7,7 +7,11 @@
 #' @inheritParams acidroxygen::params
 #'
 #' @examples
-#' isSystemCommand(which = "ls")
+#' ## TRUE ====
+#' isSystemCommand(c("find", "ls", "man"))
+#'
+#' ## FALSE ====
+#' isSystemCommand(c("AAA", "BBB"))
 NULL
 
 
