@@ -17,15 +17,19 @@ isDocker <- function() {
     file <- file.path("", "proc", "1", "cgroup")
     ok <- isFile(file)
     if (!isTRUE(ok)) return(ok)
+    ## nocov start
     x <- readLines(file)
     ok <- any(grepl(pattern = ":/docker/", x = x))
     if (!isTRUE(ok)) {
         return(false("Docker not detected."))
     }
     TRUE
+    ## nocov end
 }
 
 
+
+## nocov start
 
 #' @describeIn check-scalar-isDocker Utility function for testthat.
 #' @export
@@ -37,3 +41,5 @@ skip_on_docker <-  # nolint
         }
         testthat::skip("On Docker")
     }
+
+## nocov end
