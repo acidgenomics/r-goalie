@@ -26,5 +26,9 @@ Is a system command installed?
 Updated 2020-04-07.
 }
 \examples{
-isSystemCommand(which = "ls")
+## TRUE ====
+isSystemCommand(c("find", "ls", "man"))
+
+## FALSE ====
+isSystemCommand(c("AAA", "BBB"))
 }
