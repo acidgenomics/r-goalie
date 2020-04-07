@@ -31,7 +31,7 @@ Does the input contain hexadecimal colors?
 }}
 
 \note{
-Updated 2019-08-10.
+Updated 2020-04-07.
 }
 \examples{
 ## TRUE ====
