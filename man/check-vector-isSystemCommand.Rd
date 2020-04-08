@@ -23,11 +23,11 @@ Is a system command installed?
 }}
 
 \note{
-Updated 2020-04-07.
+Updated 2020-04-08.
 }
 \examples{
 ## TRUE ====
-isSystemCommand(c("find", "ls", "man"))
+isSystemCommand(c("cd", "rm"))
 
 ## FALSE ====
 isSystemCommand(c("AAA", "BBB"))
