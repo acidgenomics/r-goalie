@@ -1,7 +1,7 @@
 #' Does the object contain a subset of data?
 #'
 #' @name check-scalar-hasSubset
-#' @note Updated 2019-08-12.
+#' @note Updated 2020-04-08.
 #'
 #' @inherit check
 #' @inheritParams acidroxygen::params
@@ -27,8 +27,8 @@ hasSubset <-
         metadata = "subset",
         .xname = getNameInParent(x)
     ) {
+        requireNamespaces("S4Vectors")
         assert(
-            requireNamespace("S4Vectors", quietly = TRUE),
             is(x, "Annotated"),
             isCharacter(metadata)
         )

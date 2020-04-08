@@ -1,7 +1,7 @@
 #' Is the R session running inside Docker?
 #'
 #' @name check-scalar-isDocker
-#' @note Updated 2020-04-07.
+#' @note Updated 2020-04-08.
 #'
 #' @inherit check return
 #'
@@ -35,10 +35,8 @@ isDocker <- function() {
 #' @export
 skip_on_docker <-  # nolint
     function() {
-        assert(requireNamespace("testthat", quietly = TRUE))
-        if (!isTRUE(isDocker())) {
-            return()
-        }
+        requireNamespaces("testthat")
+        if (!isTRUE(isDocker())) return()
         testthat::skip("On Docker")
     }
 
