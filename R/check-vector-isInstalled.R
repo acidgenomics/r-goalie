@@ -1,9 +1,9 @@
 #' Is the package installed?
 #'
 #' @name check-vector-isInstalled
-#' @note Updated 2020-04-07.
+#' @note Updated 2020-04-08.
 #'
-#' @inherit check return
+#' @inherit check
 #'
 #' @examples
 #' ## TRUE ====
