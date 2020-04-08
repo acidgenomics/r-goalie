@@ -8,7 +8,7 @@
 #'
 #' @examples
 #' ## TRUE ====
-#' isSystemCommand(c("cd", "rm"))
+#' isSystemCommand(c("cp", "rm"))
 #'
 #' ## FALSE ====
 #' isSystemCommand(c("AAA", "BBB"))
