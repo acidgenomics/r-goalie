@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Is the input integer(ish)? — check-vector-isIntegerish • goalie</title>
+<title>Is the operating system Unix-based? — check-scalar-isUnix • goalie</title>
 
 
 <!-- jquery -->
@@ -41,9 +41,8 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="Is the input integer(ish)? — check-vector-isIntegerish" />
-<meta property="og:description" content="Check for valid input of either explicit (e.g. 1L) and/or implict
-(e.g. 1) integer." />
+<meta property="og:title" content="Is the operating system Unix-based? — check-scalar-isUnix" />
+<meta property="og:description" content="Is the operating system Unix-based?" />
 
 
 
@@ -117,73 +116,31 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Is the input integer(ish)?</h1>
-    <small class="dont-index">Source: <a href='https://github.com/acidgenomics/goalie/blob/master/R/check-vector-isIntegerish.R'><code>R/check-vector-isIntegerish.R</code></a></small>
-    <div class="hidden name"><code>check-vector-isIntegerish.Rd</code></div>
+    <h1>Is the operating system Unix-based?</h1>
+    <small class="dont-index">Source: <a href='https://github.com/acidgenomics/goalie/blob/master/R/check-scalar-isUnix.R'><code>R/check-scalar-isUnix.R</code></a></small>
+    <div class="hidden name"><code>check-scalar-isUnix.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Check for valid input of either explicit (e.g. <code>1L</code>) and/or implict
-(e.g. <code>1</code>) <code>integer</code>.</p>
+    <p>Is the operating system Unix-based?</p>
     </div>
 
-    <pre class="usage"><span class='fu'>isIntegerish</span>(<span class='no'>x</span>, <span class='kw'>.xname</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/acidbase/man/getNameInParent.html'>getNameInParent</a></span>(<span class='no'>x</span>))
+    <pre class="usage"><span class='fu'>isUnix</span>()</pre>
 
-<span class='fu'>isInt</span>(<span class='no'>x</span>, <span class='kw'>nullOK</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
-
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>x</th>
-      <td><p>Object.</p></td>
-    </tr>
-    <tr>
-      <th>.xname</th>
-      <td><p>Name of object defined in <code>x</code>.
-<em>Not intended to be used directly.</em></p></td>
-    </tr>
-    <tr>
-      <th>nullOK</th>
-      <td><p><code><a href='https://rdrr.io/r/base/logical.html'>logical(1)</a></code>.
-If set to <code>TRUE</code>, <code>x</code> may also be <code>NULL</code>.</p></td>
-    </tr>
-    </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p><code>TRUE</code> on success;
 <code>FALSE</code> on failure, with cause set.</p>
-    <h2 class="hasAnchor" id="functions"><a class="anchor" href="#functions"></a>Functions</h2>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    
-<ul>
-<li><p><code>isIntegerish</code>: Vectorized.</p></li>
-<li><p><code>isInt</code>: Scalar.</p></li>
-</ul>
+    <p>This check will return <code>TRUE</code> on Linux and macOS but <code>FALSE</code> on Windows.</p>
     <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
-    <p>Updated 2019-10-09.</p>
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
-
-    <div class='dont-index'>
-<ul>
-<li><p><code>isInt()</code> or <code><a href='check-scalar-isScalar.html'>isScalarIntegerish()</a></code> for scalar.</p></li>
-<li><p><code><a href='https://rlang.r-lib.org/reference/is_integerish.html'>rlang::is_integerish()</a></code>.</p></li>
-<li><p><code><a href='https://rdrr.io/pkg/checkmate/man/checkIntegerish.html'>checkmate::checkIntegerish()</a></code>.</p></li>
-</ul>
-</div>
+    <p>Updated 2020-04-07.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'>## TRUE ====</span>
-<span class='fu'>isIntegerish</span>(<span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq_len</a></span>(<span class='fl'>2L</span>))</div><div class='output co'>#&gt;    1    2 
-#&gt; TRUE TRUE </div><div class='input'><span class='fu'>isIntegerish</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>, <span class='fl'>2</span>))</div><div class='output co'>#&gt; 1.000000000000000e+00 2.000000000000000e+00 
-#&gt;                  TRUE                  TRUE </div><div class='input'>
-<span class='co'>## FALSE ====</span>
-<span class='fu'>isIntegerish</span>(<span class='fl'>0.1</span>)</div><div class='output co'>#&gt; [1] FALSE
-#&gt; Cause: 1 failure
-#&gt;   pos                 value       cause
-#&gt; 1   1 1.000000000000000e-01 not integer</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>isUnix</span>()</div><div class='output co'>#&gt; [1] TRUE</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
