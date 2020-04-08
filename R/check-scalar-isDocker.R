@@ -1,3 +1,7 @@
+## nocov start
+
+
+
 #' Is the R session running inside Docker?
 #'
 #' @name check-scalar-isDocker
@@ -13,23 +17,20 @@ NULL
 
 #' @rdname check-scalar-isDocker
 #' @export
-isDocker <- function() {
-    file <- file.path("", "proc", "1", "cgroup")
-    ok <- isFile(file)
-    if (!isTRUE(ok)) return(ok)
-    ## nocov start
-    x <- readLines(file)
-    ok <- any(grepl(pattern = ":/docker/", x = x))
-    if (!isTRUE(ok)) {
-        return(false("Docker not detected."))
+isDocker <-
+    function() {
+        file <- file.path("", "proc", "1", "cgroup")
+        ok <- isFile(file)
+        if (!isTRUE(ok)) return(ok)
+        x <- readLines(file)
+        ok <- any(grepl(pattern = ":/docker/", x = x))
+        if (!isTRUE(ok)) {
+            return(false("Docker not detected."))
+        }
+        TRUE
     }
-    TRUE
-    ## nocov end
-}
 
 
-
-## nocov start
 
 #' @describeIn check-scalar-isDocker Utility function for testthat.
 #' @export
@@ -39,5 +40,3 @@ skip_on_docker <-  # nolint
         if (!isTRUE(isDocker())) return()
         testthat::skip("On Docker")
     }
-
-## nocov end
