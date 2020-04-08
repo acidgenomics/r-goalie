@@ -24,7 +24,7 @@ Names in \code{\link[S4Vectors:metadata]{metadata()}} that denote object is subs
 Does the object contain a subset of data?
 }
 \note{
-Updated 2019-08-12.
+Updated 2020-04-08.
 }
 \examples{
 if (requireNamespace("SummarizedExperiment", quietly = TRUE)) {

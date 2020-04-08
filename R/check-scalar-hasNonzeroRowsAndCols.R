@@ -7,7 +7,7 @@
 #' heatmap or applying a log transformation, for example.
 #'
 #' @name check-scalar-hasNonzeroRowsAndCols
-#' @note Updated 2019-10-04.
+#' @note Updated 2020-04-08.
 #'
 #' @inherit check
 #' @inheritParams acidroxygen::params
@@ -44,12 +44,12 @@ hasNonzeroRowsAndCols <- function(x, .xname = getNameInParent(x)) {
     ok <- hasCols(x, .xname = .xname)
     if (!isTRUE(ok)) return(ok)
     if (is(x, "Matrix")) {
-        assert(requireNamespace("Matrix", quietly = TRUE))
+        requireNamespaces("Matrix")
         colSums <- Matrix::colSums
         rowSums <- Matrix::rowSums
     } else if (is(x, "DelayedMatrix")) {
         ## nocov start
-        assert(requireNamespace("DelayedMatrixStats", quietly = TRUE))
+        requireNamespaces("DelayedMatrixStats")
         colSums <- DelayedMatrixStats::colSums2
         rowSums <- DelayedMatrixStats::rowSums2
         ## nocov end
