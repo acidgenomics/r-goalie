@@ -1,14 +1,14 @@
 #' Is a system command installed?
 #'
 #' @name check-vector-isSystemCommand
-#' @note Updated 2020-04-07.
+#' @note Updated 2020-04-08.
 #'
 #' @inherit check
 #' @inheritParams acidroxygen::params
 #'
 #' @examples
 #' ## TRUE ====
-#' isSystemCommand(c("find", "ls", "man"))
+#' isSystemCommand(c("cd", "rm"))
 #'
 #' ## FALSE ====
 #' isSystemCommand(c("AAA", "BBB"))
