@@ -10,6 +10,9 @@ isInstalled(x)
 
 allAreInstalled(x)
 }
+\arguments{
+\item{x}{Object.}
+}
 \value{
 \code{TRUE} on success;
 \code{FALSE} on failure, with cause set.
