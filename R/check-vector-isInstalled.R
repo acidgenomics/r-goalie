@@ -4,6 +4,7 @@
 #' @note Updated 2020-04-08.
 #'
 #' @inherit check
+#' @inheritParams acidroxygen::params
 #'
 #' @examples
 #' ## TRUE ====
