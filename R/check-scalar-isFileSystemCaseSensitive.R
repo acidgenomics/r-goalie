@@ -42,8 +42,10 @@ isFileSystemCaseSensitive <- function(dir = ".") {
     ))
     unlink(files)
     ok <- identical(n, 2L)
+    ## nocov start
     if (!isTRUE(ok)) {
-        return(false("'%s' is not case sensitive.", dir))  # nocov
+        return(false("'%s' is not case sensitive.", dir))
     }
     TRUE
+    ## nocov end
 }

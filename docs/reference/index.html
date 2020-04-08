@@ -10,23 +10,27 @@
 
 
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
 <!-- headroom.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -55,7 +59,7 @@
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-index">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -69,7 +73,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">goalie</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.3</span>
       </span>
     </div>
 
@@ -93,7 +97,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/acidgenomics/goalie">
+  <a href="https://github.com/acidgenomics/goalie/">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -129,6 +133,11 @@
           <p class="section-desc"></p>
         </th>
       </tr>
+      
+      
+    </tbody><tbody>
+      
+      
       <tr>
         
         <td>
@@ -138,7 +147,7 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="cause.html">cause()</a></code> <code><a href="cause.html">`cause<-`()</a></code> <code><a href="cause.html">nocause()</a></code> </p>
+          <p><code><a href="cause.html">cause()</a></code> <code><a href="cause.html">`cause&lt;-`()</a></code> <code><a href="cause.html">nocause()</a></code> </p>
         </td>
         <td><p>Get or set the <code>cause</code> attribute</p></td>
       </tr><tr>
@@ -161,6 +170,11 @@
           <p class="section-desc"></p>
         </th>
       </tr>
+      
+      
+    </tbody><tbody>
+      
+      
       <tr>
         
         <td>
@@ -203,6 +217,12 @@
           <p><code><a href="check-scalar-hasElements.html">hasElements()</a></code> <code><a href="check-scalar-hasElements.html">nElements()</a></code> </p>
         </td>
         <td><p>Does the input have elements?</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="check-scalar-hasGitHubPAT.html">hasGitHubPAT()</a></code> </p>
+        </td>
+        <td><p>Does the current session have a GitHub personal access token?</p></td>
       </tr><tr>
         
         <td>
@@ -320,6 +340,18 @@
       </tr><tr>
         
         <td>
+          <p><code><a href="check-scalar-isLinux.html">isLinux()</a></code> </p>
+        </td>
+        <td><p>Is the operating system Linux?</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="check-scalar-isMacOS.html">isMacOS()</a></code> </p>
+        </td>
+        <td><p>Is the operating system macOS?</p></td>
+      </tr><tr>
+        
+        <td>
           <p><code><a href="check-scalar-isOfDimension.html">isOfDimension()</a></code> </p>
         </td>
         <td><p>Does the input contain specific dimensions?</p></td>
@@ -335,6 +367,18 @@
           <p><code><a href="check-scalar-isString.html">isString()</a></code> </p>
         </td>
         <td><p>Does the input contain a (non-empty) character string?</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="check-scalar-isUnix.html">isUnix()</a></code> </p>
+        </td>
+        <td><p>Is the operating system Unix-based?</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="check-scalar-isWindows.html">isWindows()</a></code> </p>
+        </td>
+        <td><p>Is the operating system Windows?</p></td>
       </tr><tr>
         
         <td>
@@ -361,6 +405,11 @@
           <p class="section-desc"></p>
         </th>
       </tr>
+      
+      
+    </tbody><tbody>
+      
+      
       <tr>
         
         <td>
@@ -412,15 +461,27 @@
       </tr><tr>
         
         <td>
+          <p><code><a href="check-vector-isInstalled.html">isInstalled()</a></code> <code><a href="check-vector-isInstalled.html">allAreInstalled()</a></code> </p>
+        </td>
+        <td><p>Is the package installed?</p></td>
+      </tr><tr>
+        
+        <td>
           <p><code><a href="check-vector-isIntegerish.html">isIntegerish()</a></code> <code><a href="check-vector-isIntegerish.html">isInt()</a></code> </p>
         </td>
         <td><p>Is the input integer(ish)?</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="check-vector-isMatching.html">isMatchingFixed()</a></code> <code><a href="check-vector-isMatching.html">isMatchingRegex()</a></code> <code><a href="check-vector-isMatching.html">isNotMatchingFixed()</a></code> <code><a href="check-vector-isMatching.html">isNotMatchingRegex()</a></code> <code><a href="check-vector-isMatching.html">allAreMatchingFixed()</a></code> <code><a href="check-vector-isMatching.html">allAreMatchingRegex()</a></code> <code><a href="check-vector-isMatching.html">allAreNotMatchingFixed()</a></code> <code><a href="check-vector-isMatching.html">allAreNotMatchingRegex()</a></code> </p>
+          <p><code><a href="check-vector-isMatching.html">isMatchingFixed()</a></code> <code><a href="check-vector-isMatching.html">isMatchingRegex()</a></code> <code><a href="check-vector-isMatching.html">isNotMatchingFixed()</a></code> <code><a href="check-vector-isMatching.html">isNotMatchingRegex()</a></code> <code><a href="check-vector-isMatching.html">allAreMatchingFixed()</a></code> <code><a href="check-vector-isMatching.html">allAreMatchingRegex()</a></code> <code><a href="check-vector-isMatching.html">allAreNotMatchingFixed()</a></code> <code><a href="check-vector-isMatching.html">allAreNotMatchingRegex()</a></code> <code><a href="check-vector-isMatching.html">allAreSystemCommands()</a></code> </p>
         </td>
         <td><p>Does the string match a pattern?</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="check-vector-isSystemCommand.html">isSystemCommand()</a></code> </p>
+        </td>
+        <td><p>Is a system command installed?</p></td>
       </tr><tr>
         
         <td>
@@ -435,6 +496,11 @@
           <p class="section-desc"></p>
         </th>
       </tr>
+      
+      
+    </tbody><tbody>
+      
+      
       <tr>
         
         <td>
@@ -446,14 +512,10 @@
     </table>
   </div>
 
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-engine">Engine</a></li>
-      <li><a href="#section-scalar-checks">Scalar checks</a></li>
-      <li><a href="#section-vectorized-checks">Vectorized checks</a></li>
-      <li><a href="#section-s-methods">S3 methods</a></li>
-    </ul>
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
 
@@ -464,7 +526,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.0.</p>
 </div>
 
       </footer>

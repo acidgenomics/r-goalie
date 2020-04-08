@@ -1,7 +1,7 @@
 #' Does the input contain hexadecimal colors?
 #'
 #' @name check-vector-isHexColor
-#' @note Updated 2019-08-10.
+#' @note Updated 2020-04-07.
 #'
 #' @inherit check
 #' @inheritParams acidroxygen::params
@@ -31,7 +31,7 @@ isHexColor <- function(x, .xname = getNameInParent(x)) {
     if (!isTRUE(ok)) return(ok)
     ## NOTE `viridis()` adds an extra "FF" to the end of hex color return.
     pattern <- "^(#[0-9A-F]{6})"
-    ok <- isMatchingRegex(x = x, pattern = pattern, .xname = .xname)
+    ok <- isMatchingRegex(x = x, pattern = pattern)
     setCause(ok, false = sprintf("doesn't match '%s'", pattern))
 }
 
