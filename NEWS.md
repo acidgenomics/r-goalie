@@ -1,3 +1,20 @@
+## goalie 0.4.3 (2020-04-08)
+
+### New functions
+
+Migrated some functions that were previously defined in the [koopa][] package:
+
+- `hasGitHubPAT`: Check if the user has a GitHUB personal access token (PAT)
+  defined as `GITHUB_PAT` environment variable.
+- `isMacOS`, `isLinux`, `isUnix`, `isWindows`. The Linux, Unix, and Windows
+  checks are new but inspired by the macOS check from koopa.
+- `isSystemCommand` (previously named `isCommand` in koopa). This check will
+  look to see if a system (shell) command is available.
+
+### Minor changes
+
+- `isDocker`: Hardened the check function to look at `/proc/1/cgroup`.
+
 ## goalie 0.4.2 (2020-01-28)
 
 ### Minor changes
@@ -381,4 +398,5 @@ Version bump, reflecting start of a new release series.
 [acidbase]: https://acidbase.acidgenomics.com/
 [basejump]: https://basejump.acidgenomics.com/
 [brio]: https://brio.acidgenomics.com/
+[koopa]: https://koopa.acidgenomics.com/
 [syntactic]: https://syntactic.acidgenomics.com/

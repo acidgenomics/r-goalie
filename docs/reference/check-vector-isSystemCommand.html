@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Does the string match a pattern? — check-vector-isMatching • goalie</title>
+<title>Is a system command installed? — check-vector-isSystemCommand • goalie</title>
 
 
 <!-- jquery -->
@@ -41,8 +41,8 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="Does the string match a pattern? — check-vector-isMatching" />
-<meta property="og:description" content="Does the string match a pattern?" />
+<meta property="og:title" content="Is a system command installed? — check-vector-isSystemCommand" />
+<meta property="og:description" content="Is a system command installed?" />
 
 
 
@@ -116,32 +116,16 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Does the string match a pattern?</h1>
-    <small class="dont-index">Source: <a href='https://github.com/acidgenomics/goalie/blob/master/R/check-vector-isMatching.R'><code>R/check-vector-isMatching.R</code></a>, <a href='https://github.com/acidgenomics/goalie/blob/master/R/check-vector-isSystemCommand.R'><code>R/check-vector-isSystemCommand.R</code></a></small>
-    <div class="hidden name"><code>check-vector-isMatching.Rd</code></div>
+    <h1>Is a system command installed?</h1>
+    <small class="dont-index">Source: <a href='https://github.com/acidgenomics/goalie/blob/master/R/check-vector-isSystemCommand.R'><code>R/check-vector-isSystemCommand.R</code></a></small>
+    <div class="hidden name"><code>check-vector-isSystemCommand.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Does the string match a pattern?</p>
+    <p>Is a system command installed?</p>
     </div>
 
-    <pre class="usage"><span class='fu'>isMatchingFixed</span>(<span class='no'>x</span>, <span class='no'>pattern</span>)
-
-<span class='fu'>isMatchingRegex</span>(<span class='no'>x</span>, <span class='no'>pattern</span>)
-
-<span class='fu'>isNotMatchingFixed</span>(<span class='no'>x</span>, <span class='no'>pattern</span>)
-
-<span class='fu'>isNotMatchingRegex</span>(<span class='no'>x</span>, <span class='no'>pattern</span>)
-
-<span class='fu'>allAreMatchingFixed</span>(<span class='no'>x</span>, <span class='no'>pattern</span>)
-
-<span class='fu'>allAreMatchingRegex</span>(<span class='no'>x</span>, <span class='no'>pattern</span>)
-
-<span class='fu'>allAreNotMatchingFixed</span>(<span class='no'>x</span>, <span class='no'>pattern</span>)
-
-<span class='fu'>allAreNotMatchingRegex</span>(<span class='no'>x</span>, <span class='no'>pattern</span>)
-
-<span class='fu'>allAreSystemCommands</span>(<span class='no'>x</span>)</pre>
+    <pre class="usage"><span class='fu'>isSystemCommand</span>(<span class='no'>x</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -150,56 +134,32 @@
       <th>x</th>
       <td><p>Object.</p></td>
     </tr>
-    <tr>
-      <th>pattern</th>
-      <td><p><code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code>.
-Pattern to use for matching.</p></td>
-    </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><code>logical</code>.</p>
+    <p><code>TRUE</code> on success;
+<code>FALSE</code> on failure, with cause set.</p>
     <h2 class="hasAnchor" id="functions"><a class="anchor" href="#functions"></a>Functions</h2>
 
     
 <ul>
-<li><p><code>isMatchingFixed</code>: Vectorized.</p></li>
-<li><p><code>isMatchingRegex</code>: Vectorized.</p></li>
-<li><p><code>isNotMatchingFixed</code>: Vectorized.</p></li>
-<li><p><code>isNotMatchingRegex</code>: Vectorized.</p></li>
-<li><p><code>allAreMatchingFixed</code>: Scalar.</p></li>
-<li><p><code>allAreMatchingRegex</code>: Scalar.</p></li>
-<li><p><code>allAreNotMatchingFixed</code>: Scalar.</p></li>
-<li><p><code>allAreNotMatchingRegex</code>: Scalar.</p></li>
-<li><p><code>allAreSystemCommands</code>: Scalar.</p></li>
+<li><p><code>isSystemCommand</code>: Vectorized.</p></li>
 </ul>
     <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
-    <p>Updated 2019-08-10.</p>
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
-
-    <div class='dont-index'>
-<ul>
-<li><p><code><a href='https://rdrr.io/r/base/grep.html'>grepl()</a></code>.</p></li>
-<li><p><code><a href='https://rdrr.io/pkg/stringi/man/stri_detect.html'>stringi::stri_detect_regex()</a></code>.</p></li>
-<li><p><code><a href='https://rdrr.io/pkg/stringi/man/stri_detect.html'>stringi::stri_detect_fixed()</a></code>.</p></li>
-<li><p><code><a href='https://stringr.tidyverse.org/reference/str_detect.html'>stringr::str_detect()</a></code>.</p></li>
-<li><p><code><a href='https://rdrr.io/pkg/assertive.strings/man/is_matching_fixed.html'>assertive.strings::is_matching_regex()</a></code>.</p></li>
-<li><p><code><a href='https://rdrr.io/pkg/assertive.strings/man/is_matching_fixed.html'>assertive.strings::is_matching_fixed()</a></code>.</p></li>
-<li><p><code><a href='https://rdrr.io/pkg/assertive.strings/man/is_matching_fixed.html'>assertive.strings::is_not_matching_regex()</a></code>.</p></li>
-<li><p><code><a href='https://rdrr.io/pkg/assertive.strings/man/is_matching_fixed.html'>assertive.strings::is_not_matching_fixed()</a></code>.</p></li>
-</ul>
-</div>
+    <p>Updated 2020-04-07.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'>## TRUE ====</span>
-<span class='fu'>isMatchingRegex</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='st'>"foobar"</span>, <span class='kw'>pattern</span> <span class='kw'>=</span> <span class='st'>"^f"</span>)</div><div class='output co'>#&gt; foobar 
-#&gt;   TRUE </div><div class='input'><span class='fu'>isNotMatchingRegex</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='st'>"foobar"</span>, <span class='kw'>pattern</span> <span class='kw'>=</span> <span class='st'>"^b"</span>)</div><div class='output co'>#&gt; foobar 
-#&gt;   TRUE </div><div class='input'>
-<span class='fu'>isMatchingFixed</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='st'>"foobar"</span>, <span class='kw'>pattern</span> <span class='kw'>=</span> <span class='st'>"bar"</span>)</div><div class='output co'>#&gt; foobar 
-#&gt;   TRUE </div><div class='input'><span class='fu'>isNotMatchingFixed</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='st'>"foo"</span>, <span class='kw'>pattern</span> <span class='kw'>=</span> <span class='st'>"bar"</span>)</div><div class='output co'>#&gt;  foo 
-#&gt; TRUE </div></pre>
+<span class='fu'>isSystemCommand</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"find"</span>, <span class='st'>"ls"</span>, <span class='st'>"man"</span>))</div><div class='output co'>#&gt; find   ls  man 
+#&gt; TRUE TRUE TRUE </div><div class='input'>
+<span class='co'>## FALSE ====</span>
+<span class='fu'>isSystemCommand</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"AAA"</span>, <span class='st'>"BBB"</span>))</div><div class='output co'>#&gt; [1] FALSE FALSE
+#&gt; Cause: 2 failures
+#&gt;   pos value       cause
+#&gt; 1   1   AAA not command
+#&gt; 2   2   BBB not command</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
