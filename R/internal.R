@@ -28,8 +28,9 @@ NULL
 
 
 ## Using primary assay here.
+## Updated 2020-04-08.
 .coerceSummarizedExperimentToMatrix <- function(object) {
-    assert(requireNamespace("SummarizedExperiment", quietly = TRUE))
+    requireNamespaces("SummarizedExperiment")
     SummarizedExperiment::assay(object)
 }
 

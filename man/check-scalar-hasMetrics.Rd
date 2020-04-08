@@ -25,7 +25,7 @@ expected quality control metrics.}
 Does the object contain quality control metrics?
 }
 \note{
-Updated 2019-08-12.
+Updated 2020-04-08.
 }
 \examples{
 if (requireNamespace("SummarizedExperiment", quietly = TRUE)) {
