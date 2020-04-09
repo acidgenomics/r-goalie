@@ -40,3 +40,7 @@ skip_on_docker <-  # nolint
         if (!isTRUE(isDocker())) return()
         testthat::skip("On Docker")
     }
+
+
+
+## nocov end
