@@ -1,3 +1,14 @@
+## goalie 0.4.4 (2020-04-12)
+
+### New functions
+
+- `isRStudio`: Checks whether current R session is running inside RStudio.
+
+### Minor changes
+
+- Now setting cause attribute on failure for: `isLinux`, `isMacOS`, `isUnix`,
+  and `isWindows`.
+
 ## goalie 0.4.3 (2020-04-08)
 
 ### New functions
