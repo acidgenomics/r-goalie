@@ -15,7 +15,7 @@ isLinux()
 Is the operating system Linux?
 }
 \note{
-Updated 2020-04-07.
+Updated 2020-04-12.
 }
 \examples{
 isLinux()

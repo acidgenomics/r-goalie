@@ -1,7 +1,7 @@
 #' Is the operating system Windows?
 #'
 #' @name check-scalar-isWindows
-#' @note Updated 2020-04-07.
+#' @note Updated 2020-04-12.
 #'
 #' @inherit check return
 #'
@@ -14,5 +14,11 @@ NULL
 #' @rdname check-scalar-isWindows
 #' @export
 isWindows <- function() {
-    identical(.Platform[["OS.type"]], "windows")
+    ok <- identical(.Platform[["OS.type"]], "windows")
+    ## nocov start
+    if (!isTRUE(ok)) {
+        return(false("Windows not detected."))
+    }
+    TRUE
+    ## nocov end
 }

@@ -1,7 +1,7 @@
 #' Is the operating system Linux?
 #'
 #' @name check-scalar-isLinux
-#' @note Updated 2020-04-07.
+#' @note Updated 2020-04-12.
 #'
 #' @inherit check return
 #'
@@ -14,5 +14,11 @@ NULL
 #' @rdname check-scalar-isLinux
 #' @export
 isLinux <- function() {
-    isTRUE(grepl(pattern = "linux", x = R.Version()[["os"]]))
+    ok <- isTRUE(grepl(pattern = "linux", x = R.Version()[["os"]]))
+    ## nocov start
+    if (!isTRUE(ok)) {
+        return(false("Linux not detected."))
+    }
+    TRUE
+    ## nocov end
 }

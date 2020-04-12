@@ -18,7 +18,7 @@ Is the operating system Unix-based?
 This check will return \code{TRUE} on Linux and macOS but \code{FALSE} on Windows.
 }
 \note{
-Updated 2020-04-07.
+Updated 2020-04-12.
 }
 \examples{
 isUnix()
