@@ -73,7 +73,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">goalie</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.4</span>
       </span>
     </div>
 
@@ -123,20 +123,20 @@
 <h2 class="hasAnchor">
 <a href="#goalie-0-3-0-2019-07-29" class="anchor"></a>goalie 0.3.0 (2019-07-29)</h2>
 <p>Version bump, reflecting start of a new release series.</p>
-<div id="minor-changes-14" class="section level3">
+<div id="minor-changes-15" class="section level3">
 <h3 class="hasAnchor">
-<a href="#minor-changes-14" class="anchor"></a>Minor changes</h3>
+<a href="#minor-changes-15" class="anchor"></a>Minor changes</h3>
 <ul>
-<li>Hardened <code>hasColnames</code>, <code>hasDimnames</code>, <code>hasNames</code>, <code>hasRownames</code>, <code>hasValidDimnames</code>, and <code>hasValidNames</code> against invalid objects that donât return either a value or <code>NULL</code>. This can happen in rare cases with invalid SummarizedExperiment objects (e.g. <code>bcb_invalid</code> object in bcbioRNASeq tests).</li>
+<li>Hardened <code>hasColnames</code>, <code>hasDimnames</code>, <code>hasNames</code>, <code>hasRownames</code>, <code>hasValidDimnames</code>, and <code>hasValidNames</code> against invalid objects that don’t return either a value or <code>NULL</code>. This can happen in rare cases with invalid SummarizedExperiment objects (e.g. <code>bcb_invalid</code> object in bcbioRNASeq tests).</li>
 </ul>
 </div>
 </div>
     <div id="goalie-0-3-1-2019-08-05" class="section level2">
 <h2 class="hasAnchor">
 <a href="#goalie-0-3-1-2019-08-05" class="anchor"></a>goalie 0.3.1 (2019-08-05)</h2>
-<div id="minor-changes-13" class="section level3">
+<div id="minor-changes-14" class="section level3">
 <h3 class="hasAnchor">
-<a href="#minor-changes-13" class="anchor"></a>Minor changes</h3>
+<a href="#minor-changes-14" class="anchor"></a>Minor changes</h3>
 <ul>
 <li>Improved documentation consistency, using shared params defined in new acidroxygen package. This will be used across the basejump packages in a forthcoming update.</li>
 </ul>
@@ -145,16 +145,16 @@
     <div id="goalie-0-3-2-2019-08-10" class="section level2">
 <h2 class="hasAnchor">
 <a href="#goalie-0-3-2-2019-08-10" class="anchor"></a>goalie 0.3.2 (2019-08-10)</h2>
-<div id="new-functions-5" class="section level3">
+<div id="new-functions-6" class="section level3">
 <h3 class="hasAnchor">
-<a href="#new-functions-5" class="anchor"></a>New functions</h3>
+<a href="#new-functions-6" class="anchor"></a>New functions</h3>
 <ul>
 <li>Now exporting <code>toNames</code>, which was previously used internally by the package. Improved handling in this function for floating points. Also now using <code>toNames</code> more consistently internally to sanitize names for <code>cause</code> return.</li>
 </ul>
 </div>
-<div id="minor-changes-12" class="section level3">
+<div id="minor-changes-13" class="section level3">
 <h3 class="hasAnchor">
-<a href="#minor-changes-12" class="anchor"></a>Minor changes</h3>
+<a href="#minor-changes-13" class="anchor"></a>Minor changes</h3>
 <ul>
 <li>
 <code>standardizeCall</code>: Now returns with default arguments included. Can disable using <code>defaults = FALSE</code>.</li>
@@ -168,9 +168,9 @@
     <div id="goalie-0-3-3-2019-08-11" class="section level2">
 <h2 class="hasAnchor">
 <a href="#goalie-0-3-3-2019-08-11" class="anchor"></a>goalie 0.3.3 (2019-08-11)</h2>
-<div id="minor-changes-11" class="section level3">
+<div id="minor-changes-12" class="section level3">
 <h3 class="hasAnchor">
-<a href="#minor-changes-11" class="anchor"></a>Minor changes</h3>
+<a href="#minor-changes-12" class="anchor"></a>Minor changes</h3>
 <ul>
 <li>
 <code>validNames</code>: Bug fix and improvement for function, clearly showing position where names are invalid.</li>
@@ -180,9 +180,9 @@
     <div id="goalie-0-3-4-2019-08-12" class="section level2">
 <h2 class="hasAnchor">
 <a href="#goalie-0-3-4-2019-08-12" class="anchor"></a>goalie 0.3.4 (2019-08-12)</h2>
-<div id="new-functions-4" class="section level3">
+<div id="new-functions-5" class="section level3">
 <h3 class="hasAnchor">
-<a href="#new-functions-4" class="anchor"></a>New functions</h3>
+<a href="#new-functions-5" class="anchor"></a>New functions</h3>
 <ul>
 <li>
 <code>hasMetrics</code>, <code>hasSubset</code>: New functions that were previously used internally in basejump. Requires S4Vectors / SummarizedExperiment.</li>
@@ -192,9 +192,9 @@
     <div id="goalie-0-3-5-2019-08-13" class="section level2">
 <h2 class="hasAnchor">
 <a href="#goalie-0-3-5-2019-08-13" class="anchor"></a>goalie 0.3.5 (2019-08-13)</h2>
-<div id="minor-changes-10" class="section level3">
+<div id="minor-changes-11" class="section level3">
 <h3 class="hasAnchor">
-<a href="#minor-changes-10" class="anchor"></a>Minor changes</h3>
+<a href="#minor-changes-11" class="anchor"></a>Minor changes</h3>
 <ul>
 <li>
 <code>isURL</code> now returns true on <code>url</code> class input.</li>
@@ -206,9 +206,9 @@
 <h2 class="hasAnchor">
 <a href="#goalie-0-3-6-2019-08-27" class="anchor"></a>goalie 0.3.6 (2019-08-27)</h2>
 <p>Updated R dependency to 3.6.</p>
-<div id="minor-changes-9" class="section level3">
+<div id="minor-changes-10" class="section level3">
 <h3 class="hasAnchor">
-<a href="#minor-changes-9" class="anchor"></a>Minor changes</h3>
+<a href="#minor-changes-10" class="anchor"></a>Minor changes</h3>
 <ul>
 <li>
 <code>appendToBody</code>: Now allowing pass-in of multiple values as a <code>list</code>. The list must contains <code>call</code> elements.</li>
@@ -220,9 +220,9 @@
     <div id="goalie-0-3-7-2019-09-06" class="section level2">
 <h2 class="hasAnchor">
 <a href="#goalie-0-3-7-2019-09-06" class="anchor"></a>goalie 0.3.7 (2019-09-06)</h2>
-<div id="minor-changes-8" class="section level3">
+<div id="minor-changes-9" class="section level3">
 <h3 class="hasAnchor">
-<a href="#minor-changes-8" class="anchor"></a>Minor changes</h3>
+<a href="#minor-changes-9" class="anchor"></a>Minor changes</h3>
 <ul>
 <li>
 <code>hasInternet</code>: Now allowing a user to check a specific URL, using the <code>url</code> argument. Currently defaults to Bioconductor.</li>
@@ -232,52 +232,52 @@
     <div id="goalie-0-3-8-2019-09-15" class="section level2">
 <h2 class="hasAnchor">
 <a href="#goalie-0-3-8-2019-09-15" class="anchor"></a>goalie 0.3.8 (2019-09-15)</h2>
-<div id="minor-changes-6" class="section level3">
-<h3 class="hasAnchor">
-<a href="#minor-changes-6" class="anchor"></a>Minor changes</h3>
-<ul>
-<li>
-<code>isGGScale</code>: Update <code>aes</code> argument to support American âcolorâ pass-in in addition to British âcolourâ spelling.</li>
-</ul>
-</div>
 <div id="minor-changes-7" class="section level3">
 <h3 class="hasAnchor">
 <a href="#minor-changes-7" class="anchor"></a>Minor changes</h3>
 <ul>
-<li>Switched to consistent use of âcolorâ instead of âcolourâ in documentation, working examples, and unit tests.</li>
+<li>
+<code>isGGScale</code>: Update <code>aes</code> argument to support American “color” pass-in in addition to British “colour” spelling.</li>
+</ul>
+</div>
+<div id="minor-changes-8" class="section level3">
+<h3 class="hasAnchor">
+<a href="#minor-changes-8" class="anchor"></a>Minor changes</h3>
+<ul>
+<li>Switched to consistent use of “color” instead of “colour” in documentation, working examples, and unit tests.</li>
 </ul>
 </div>
 </div>
     <div id="goalie-0-3-9-2019-10-04" class="section level2">
 <h2 class="hasAnchor">
 <a href="#goalie-0-3-9-2019-10-04" class="anchor"></a>goalie 0.3.9 (2019-10-04)</h2>
-<div id="new-functions-3" class="section level3">
+<div id="new-functions-4" class="section level3">
 <h3 class="hasAnchor">
-<a href="#new-functions-3" class="anchor"></a>New functions</h3>
+<a href="#new-functions-4" class="anchor"></a>New functions</h3>
 <ul>
 <li>
 <code>nElements</code>: Return the number of elements in an object. Previously this was defined internally in the package but is generally useful.</li>
 </ul>
 </div>
-<div id="minor-changes-5" class="section level3">
+<div id="minor-changes-6" class="section level3">
 <h3 class="hasAnchor">
-<a href="#minor-changes-5" class="anchor"></a>Minor changes</h3>
+<a href="#minor-changes-6" class="anchor"></a>Minor changes</h3>
 <ul>
 <li>
 <code>hasElements</code>: No longer requiring the <code>n</code> argument. The function now performs similarly to <code>hasLength</code>.</li>
 <li>
-<code>isEmpty</code> and <code>isNonEmpty</code> are now soft deprecated. <code>isEmpty</code> is defined in the Bioconductor S4Vectors package, and we donât want to mask in interactive scripting sessions.</li>
+<code>isEmpty</code> and <code>isNonEmpty</code> are now soft deprecated. <code>isEmpty</code> is defined in the Bioconductor S4Vectors package, and we don’t want to mask in interactive scripting sessions.</li>
 <li>
-<code>is2</code>: No longer exported, since this function isnât really intended for use outside of the package. Refer to <code>isAll</code> or <code>isAny</code> checks instead.</li>
+<code>is2</code>: No longer exported, since this function isn’t really intended for use outside of the package. Refer to <code>isAll</code> or <code>isAny</code> checks instead.</li>
 </ul>
 </div>
 </div>
     <div id="goalie-0-3-10-2019-10-10" class="section level2">
 <h2 class="hasAnchor">
 <a href="#goalie-0-3-10-2019-10-10" class="anchor"></a>goalie 0.3.10 (2019-10-10)</h2>
-<div id="minor-changes-4" class="section level3">
+<div id="minor-changes-5" class="section level3">
 <h3 class="hasAnchor">
-<a href="#minor-changes-4" class="anchor"></a>Minor changes</h3>
+<a href="#minor-changes-5" class="anchor"></a>Minor changes</h3>
 <ul>
 <li>
 <code>toNames</code>: Bug fix for <code>na.omit</code> return causing assert check to fail because class returns <code>FALSE</code> for <code>is.vector</code> check but <code>TRUE</code> for <code>is.atomic</code>.</li>
@@ -289,9 +289,9 @@
     <div id="goalie-0-3-11-2019-10-18" class="section level2">
 <h2 class="hasAnchor">
 <a href="#goalie-0-3-11-2019-10-18" class="anchor"></a>goalie 0.3.11 (2019-10-18)</h2>
-<div id="minor-changes-3" class="section level3">
+<div id="minor-changes-4" class="section level3">
 <h3 class="hasAnchor">
-<a href="#minor-changes-3" class="anchor"></a>Minor changes</h3>
+<a href="#minor-changes-4" class="anchor"></a>Minor changes</h3>
 <ul>
 <li>Improved consistency of scalar and vector print messages.</li>
 </ul>
@@ -300,9 +300,9 @@
     <div id="goalie-0-3-12-2019-10-21" class="section level2">
 <h2 class="hasAnchor">
 <a href="#goalie-0-3-12-2019-10-21" class="anchor"></a>goalie 0.3.12 (2019-10-21)</h2>
-<div id="new-functions-2" class="section level3">
+<div id="new-functions-3" class="section level3">
 <h3 class="hasAnchor">
-<a href="#new-functions-2" class="anchor"></a>New functions</h3>
+<a href="#new-functions-3" class="anchor"></a>New functions</h3>
 <ul>
 <li>
 <code>isFileSystemCaseSensitive</code>: Checks whether file system is case sensitive (<code>TRUE</code>) or insensitive (<code>FALSE</code>). Linux tends to default to case sensitive, where as macOS and Windows default to case insensitive. Note that case insensitive file systems can lead to issues with Git repos. This check will be incorporated into a new <code>rename</code> mode for <a href="https://syntactic.acidgenomics.com/">syntactic</a> naming functions in a future release.</li>
@@ -326,7 +326,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
 </div>
 
       </footer>
