@@ -15,7 +15,7 @@ isMacOS()
 Is the operating system macOS?
 }
 \note{
-Updated 2020-04-07.
+Updated 2020-04-12.
 }
 \examples{
 isMacOS()
