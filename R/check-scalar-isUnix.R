@@ -18,8 +18,10 @@ NULL
 #' @export
 isUnix <- function() {
     ok <- identical(.Platform[["OS.type"]], "unix")
+    ## nocov start
     if (!isTRUE(ok)) {
         return(false("Unix not detected."))
     }
     TRUE
+    ## nocov end
 }

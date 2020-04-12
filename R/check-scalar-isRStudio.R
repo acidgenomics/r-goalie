@@ -15,8 +15,10 @@ NULL
 #' @export
 isRStudio <- function() {
     ok <- isTRUE(nzchar(Sys.getenv("RSTUDIO_USER_IDENTITY")))
+    ## nocov start
     if (!isTRUE(ok)) {
         return(false("RStudio not detected."))
     }
     TRUE
+    ## nocov end
 }
