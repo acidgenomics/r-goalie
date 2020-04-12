@@ -15,8 +15,10 @@ NULL
 #' @export
 isLinux <- function() {
     ok <- isTRUE(grepl(pattern = "linux", x = R.Version()[["os"]]))
+    ## nocov start
     if (!isTRUE(ok)) {
         return(false("Linux not detected."))
     }
     TRUE
+    ## nocov end
 }
