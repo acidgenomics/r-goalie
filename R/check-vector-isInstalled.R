@@ -20,8 +20,7 @@ NULL
 #' @describeIn check-vector-isInstalled Vectorized.
 #' @export
 isInstalled <- function(x) {
-    requireNamespaces("utils")
-    # Note that GitHub packages are "user/repo", so use basename.
+    # Note that GitHub packages are "owner/repo", so use basename.
     ok <- basename(x) %in% rownames(installed.packages())
     names(ok) <- toNames(x)
     setCause(ok, false = "not installed")
