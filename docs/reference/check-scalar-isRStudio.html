@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Does the input contain a boolean flag? — check-scalar-isFlag • goalie</title>
+<title>Is the current R session running inside RStudio? — check-scalar-isRStudio • goalie</title>
 
 
 <!-- jquery -->
@@ -41,8 +41,8 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="Does the input contain a boolean flag? — check-scalar-isFlag" />
-<meta property="og:description" content="Does the input contain a boolean flag?" />
+<meta property="og:title" content="Is the current R session running inside RStudio? — check-scalar-isRStudio" />
+<meta property="og:description" content="Is the current R session running inside RStudio?" />
 
 
 
@@ -116,30 +116,17 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Does the input contain a boolean flag?</h1>
-    <small class="dont-index">Source: <a href='https://github.com/acidgenomics/goalie/blob/master/R/check-scalar-isFlag.R'><code>R/check-scalar-isFlag.R</code></a></small>
-    <div class="hidden name"><code>check-scalar-isFlag.Rd</code></div>
+    <h1>Is the current R session running inside RStudio?</h1>
+    <small class="dont-index">Source: <a href='https://github.com/acidgenomics/goalie/blob/master/R/check-scalar-isRStudio.R'><code>R/check-scalar-isRStudio.R</code></a></small>
+    <div class="hidden name"><code>check-scalar-isRStudio.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Does the input contain a boolean flag?</p>
+    <p>Is the current R session running inside RStudio?</p>
     </div>
 
-    <pre class="usage"><span class='fu'>isFlag</span>(<span class='no'>x</span>, <span class='kw'>.xname</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/acidbase/man/getNameInParent.html'>getNameInParent</a></span>(<span class='no'>x</span>))</pre>
+    <pre class="usage"><span class='fu'>isRStudio</span>()</pre>
 
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>x</th>
-      <td><p>Object.</p></td>
-    </tr>
-    <tr>
-      <th>.xname</th>
-      <td><p>Name of object defined in <code>x</code>.
-<em>Not intended to be used directly.</em></p></td>
-    </tr>
-    </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
@@ -147,16 +134,10 @@
 <code>FALSE</code> on failure, with cause set.</p>
     <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
-    <p>Updated 2019-08-10.</p>
+    <p>Updated 2020-04-12.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'>## TRUE ====</span>
-<span class='fu'>isFlag</span>(<span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>isFlag</span>(<span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
-<span class='co'>## FALSE ====</span>
-<span class='fu'>isFlag</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>TRUE</span>, <span class='fl'>TRUE</span>))</div><div class='output co'>#&gt; [1] FALSE
-#&gt; Cause: 'c(TRUE, TRUE)' is not a boolean flag (TRUE/FALSE).</div><div class='input'><span class='fu'>isFlag</span>(<span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] FALSE
-#&gt; Cause: '1' is not a boolean flag (TRUE/FALSE).</div><div class='input'><span class='fu'>isFlag</span>(<span class='fl'>NA</span>)</div><div class='output co'>#&gt; [1] FALSE
-#&gt; Cause: 'NA' is NA.</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>isRStudio</span>()</div><div class='output co'>#&gt; [1] TRUE</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
