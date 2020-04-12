@@ -4,7 +4,7 @@
 #' This check will return `TRUE` on Linux and macOS but `FALSE` on Windows.
 #'
 #' @name check-scalar-isUnix
-#' @note Updated 2020-04-07.
+#' @note Updated 2020-04-12.
 #'
 #' @inherit check return
 #'
@@ -17,5 +17,11 @@ NULL
 #' @rdname check-scalar-isUnix
 #' @export
 isUnix <- function() {
-    identical(.Platform[["OS.type"]], "unix")
+    ok <- identical(.Platform[["OS.type"]], "unix")
+    ## nocov start
+    if (!isTRUE(ok)) {
+        return(false("Unix not detected."))
+    }
+    TRUE
+    ## nocov end
 }
