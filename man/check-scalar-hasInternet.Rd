@@ -5,7 +5,7 @@
 \alias{hasInternet}
 \title{Does the current session have an internet connection?}
 \usage{
-hasInternet(url = "http://www.bioconductor.org")
+hasInternet(url = "http://www.bioconductor.org/")
 }
 \arguments{
 \item{url}{\code{character(1)}.
@@ -19,7 +19,7 @@ Uniform Resource Locator (URL).}
 Does the current session have an internet connection?
 }
 \note{
-Updated 2019-09-06.
+Updated 2020-05-11.
 }
 \examples{
 hasInternet()
