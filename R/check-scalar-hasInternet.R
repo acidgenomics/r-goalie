@@ -1,7 +1,7 @@
 #' Does the current session have an internet connection?
 #'
 #' @name check-scalar-hasInternet
-#' @note Updated 2019-09-06.
+#' @note Updated 2020-05-11.
 #'
 #' @inherit check
 #' @inheritParams acidroxygen::params
@@ -21,7 +21,7 @@ NULL
 
 #' @rdname check-scalar-hasInternet
 #' @export
-hasInternet <- function(url = "http://www.bioconductor.org") {
+hasInternet <- function(url = "http://www.bioconductor.org/") {
     fail <- false("Internet connection test failed.")
     ok <- as.logical(capabilities(what = "http/ftp"))
     if (!isTRUE(ok)) {
