@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Does the object contain a subset of data? — check-scalar-hasSubset • goalie</title>
+<title>Does the input contain a symbolic link? — check-vector-isSymlink • goalie</title>
 
 
 <!-- jquery -->
@@ -41,8 +41,8 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="Does the object contain a subset of data? — check-scalar-hasSubset" />
-<meta property="og:description" content="Does the object contain a subset of data?" />
+<meta property="og:title" content="Does the input contain a symbolic link? — check-vector-isSymlink" />
+<meta property="og:description" content="Does the input contain a symbolic link?" />
 
 
 
@@ -116,33 +116,32 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Does the object contain a subset of data?</h1>
-    <small class="dont-index">Source: <a href='https://github.com/acidgenomics/goalie/blob/master/R/check-scalar-hasSubset.R'><code>R/check-scalar-hasSubset.R</code></a></small>
-    <div class="hidden name"><code>check-scalar-hasSubset.Rd</code></div>
+    <h1>Does the input contain a symbolic link?</h1>
+    <small class="dont-index">Source: <a href='https://github.com/acidgenomics/goalie/blob/master/R/check-vector-isSymlink.R'><code>R/check-vector-isSymlink.R</code></a></small>
+    <div class="hidden name"><code>check-vector-isSymlink.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Does the object contain a subset of data?</p>
+    <p>Does the input contain a symbolic link?</p>
     </div>
 
-    <pre class="usage"><span class='fu'>hasSubset</span>(<span class='no'>x</span>, <span class='kw'>metadata</span> <span class='kw'>=</span> <span class='st'>"subset"</span>, <span class='kw'>.xname</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/acidbase/man/getNameInParent.html'>getNameInParent</a></span>(<span class='no'>x</span>))</pre>
+    <pre class="usage"><span class='fu'>isSymlink</span>(<span class='no'>x</span>)
+
+<span class='fu'>isASymlink</span>(<span class='no'>x</span>, <span class='kw'>nullOK</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
+
+<span class='fu'>allAreSymlinks</span>(<span class='no'>x</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>x</th>
-      <td><p><code>Annotated</code>.</p></td>
+      <td><p>Object.</p></td>
     </tr>
     <tr>
-      <th>metadata</th>
-      <td><p><code>character</code>.
-Names in <code><a href='https://rdrr.io/pkg/S4Vectors/man/Annotated-class.html'>metadata()</a></code> that denote object is subset.</p></td>
-    </tr>
-    <tr>
-      <th>.xname</th>
-      <td><p>Name of object defined in <code>x</code>.
-<em>Not intended to be used directly.</em></p></td>
+      <th>nullOK</th>
+      <td><p><code><a href='https://rdrr.io/r/base/logical.html'>logical(1)</a></code>.
+If set to <code>TRUE</code>, <code>x</code> may also be <code>NULL</code>.</p></td>
     </tr>
     </table>
 
@@ -150,17 +149,33 @@ Names in <code><a href='https://rdrr.io/pkg/S4Vectors/man/Annotated-class.html'>
 
     <p><code>TRUE</code> on success;
 <code>FALSE</code> on failure, with cause set.</p>
+    <h2 class="hasAnchor" id="functions"><a class="anchor" href="#functions"></a>Functions</h2>
+
+    
+<ul>
+<li><p><code>isSymlink</code>: Vectorized.</p></li>
+<li><p><code>isASymlink</code>: Scalar.</p></li>
+<li><p><code>allAreSymlinks</code>: Scalar.</p></li>
+</ul>
     <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
-    <p>Updated 2020-04-08.</p>
+    <p>Updated 2020-06-26.</p>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'>
+<ul>
+<li><p><code><a href='https://rdrr.io/r/base/file.info.html'>file.info()</a></code>.</p></li>
+<li><p><code><a href='https://rdrr.io/r/base/Sys.readlink.html'>Sys.readlink()</a></code>.</p></li>
+</ul>
+</div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fu'><a href='https://rdrr.io/r/base/ns-load.html'>requireNamespace</a></span>(<span class='st'>"SummarizedExperiment"</span>, <span class='kw'>quietly</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)) {
-    <span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>RangedSummarizedExperiment</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"acidtest"</span>)
-    <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='no'>RangedSummarizedExperiment</span>
-    <span class='fu'>hasSubset</span>(<span class='no'>x</span>)
-}</div><div class='output co'>#&gt; [1] FALSE
-#&gt; Cause: 'x' does not contain slots in 'metadata()': subset.</div></pre>
+    <pre class="examples"><div class='input'><span class='no'>from</span> <span class='kw'>&lt;-</span> <span class='st'>"from.txt"</span>
+<span class='no'>to</span> <span class='kw'>&lt;-</span> <span class='st'>"to.txt"</span>
+<span class='fu'><a href='https://rdrr.io/r/base/files.html'>file.create</a></span>(<span class='no'>from</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/files.html'>file.symlink</a></span>(<span class='kw'>from</span> <span class='kw'>=</span> <span class='no'>from</span>, <span class='kw'>to</span> <span class='kw'>=</span> <span class='no'>to</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>isSymlink</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='no'>from</span>, <span class='no'>to</span>))</div><div class='output co'>#&gt; [1] FALSE  TRUE
+#&gt; Cause: 1 failure
+#&gt;   pos    value       cause
+#&gt; 1   1 from.txt not symlink</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/unlink.html'>unlink</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='no'>from</span>, <span class='no'>to</span>))</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

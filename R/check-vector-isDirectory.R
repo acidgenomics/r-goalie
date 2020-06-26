@@ -1,7 +1,7 @@
 #' Does the input contain a directory?
 #'
 #' @name check-vector-isDirectory
-#' @note Updated 2019-08-08.
+#' @note Updated 2020-06-26.
 #'
 #' @inherit check
 #' @inheritParams acidroxygen::params
@@ -37,10 +37,7 @@ isDirectory <- function(x) {
 #' @describeIn check-vector-isDirectory Scalar.
 #' @export
 isADirectory <- function(x, nullOK = FALSE) {
-    ## Conditionally allow NULL.
-    if (isTRUE(nullOK) && is.null(x)) {
-        return(TRUE)
-    }
+    if (isTRUE(nullOK) && is.null(x)) return(TRUE)
     ok <- isString(x)
     if (!isTRUE(ok)) return(ok)
     ok <- isDirectory(x)
