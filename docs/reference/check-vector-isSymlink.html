@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Does the input contain a file? — check-vector-isFile • goalie</title>
+<title>Does the input contain a symbolic link? — check-vector-isSymlink • goalie</title>
 
 
 <!-- jquery -->
@@ -41,8 +41,8 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="Does the input contain a file? — check-vector-isFile" />
-<meta property="og:description" content="Does the input contain a file?" />
+<meta property="og:title" content="Does the input contain a symbolic link? — check-vector-isSymlink" />
+<meta property="og:description" content="Does the input contain a symbolic link?" />
 
 
 
@@ -116,20 +116,20 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Does the input contain a file?</h1>
-    <small class="dont-index">Source: <a href='https://github.com/acidgenomics/goalie/blob/master/R/check-vector-isFile.R'><code>R/check-vector-isFile.R</code></a></small>
-    <div class="hidden name"><code>check-vector-isFile.Rd</code></div>
+    <h1>Does the input contain a symbolic link?</h1>
+    <small class="dont-index">Source: <a href='https://github.com/acidgenomics/goalie/blob/master/R/check-vector-isSymlink.R'><code>R/check-vector-isSymlink.R</code></a></small>
+    <div class="hidden name"><code>check-vector-isSymlink.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Does the input contain a file?</p>
+    <p>Does the input contain a symbolic link?</p>
     </div>
 
-    <pre class="usage"><span class='fu'>isFile</span>(<span class='no'>x</span>)
+    <pre class="usage"><span class='fu'>isSymlink</span>(<span class='no'>x</span>)
 
-<span class='fu'>isAFile</span>(<span class='no'>x</span>, <span class='kw'>nullOK</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
+<span class='fu'>isASymlink</span>(<span class='no'>x</span>, <span class='kw'>nullOK</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
 
-<span class='fu'>allAreFiles</span>(<span class='no'>x</span>)</pre>
+<span class='fu'>allAreSymlinks</span>(<span class='no'>x</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -153,9 +153,9 @@ If set to <code>TRUE</code>, <code>x</code> may also be <code>NULL</code>.</p></
 
     
 <ul>
-<li><p><code>isFile</code>: Vectorized.</p></li>
-<li><p><code>isAFile</code>: Scalar.</p></li>
-<li><p><code>allAreFiles</code>: Scalar.</p></li>
+<li><p><code>isSymlink</code>: Vectorized.</p></li>
+<li><p><code>isASymlink</code>: Scalar.</p></li>
+<li><p><code>allAreSymlinks</code>: Scalar.</p></li>
 </ul>
     <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
@@ -164,22 +164,18 @@ If set to <code>TRUE</code>, <code>x</code> may also be <code>NULL</code>.</p></
 
     <div class='dont-index'>
 <ul>
-<li><p><code><a href='https://rdrr.io/r/base/files.html'>file.exists()</a></code>.</p></li>
-<li><p><code><a href='https://rdrr.io/pkg/R.utils/man/isFile.html'>R.utils::isFile()</a></code>.</p></li>
+<li><p><code><a href='https://rdrr.io/r/base/file.info.html'>file.info()</a></code>.</p></li>
+<li><p><code><a href='https://rdrr.io/r/base/Sys.readlink.html'>Sys.readlink()</a></code>.</p></li>
 </ul>
 </div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'>## TRUE ====</span>
-<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='st'>"example.txt"</span>
-<span class='fu'><a href='https://rdrr.io/r/base/files.html'>file.create</a></span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>isAFile</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/unlink.html'>unlink</a></span>(<span class='no'>x</span>)
-
-<span class='co'>## FALSE ====</span>
-<span class='fu'>isFile</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"~"</span>, <span class='st'>"."</span>))</div><div class='output co'>#&gt; [1] FALSE FALSE
-#&gt; Cause: 2 failures
-#&gt;   pos value cause
-#&gt; 1   1     ~   dir
-#&gt; 2   2     .   dir</div></pre>
+    <pre class="examples"><div class='input'><span class='no'>from</span> <span class='kw'>&lt;-</span> <span class='st'>"from.txt"</span>
+<span class='no'>to</span> <span class='kw'>&lt;-</span> <span class='st'>"to.txt"</span>
+<span class='fu'><a href='https://rdrr.io/r/base/files.html'>file.create</a></span>(<span class='no'>from</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/files.html'>file.symlink</a></span>(<span class='kw'>from</span> <span class='kw'>=</span> <span class='no'>from</span>, <span class='kw'>to</span> <span class='kw'>=</span> <span class='no'>to</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>isSymlink</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='no'>from</span>, <span class='no'>to</span>))</div><div class='output co'>#&gt; [1] FALSE  TRUE
+#&gt; Cause: 1 failure
+#&gt;   pos    value       cause
+#&gt; 1   1 from.txt not symlink</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/unlink.html'>unlink</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='no'>from</span>, <span class='no'>to</span>))</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
