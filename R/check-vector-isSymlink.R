@@ -26,9 +26,9 @@ NULL
 #' @export
 isSymlink <- function(x) {
     ok <- isCharacter(x)
-    if (!isTRUE(ok)) return(ok)
+    if (!isTRUE(ok)) return(ok)  # nocov
     ok <- file.exists(x)
-    if (!all(ok)) return(setCause(ok, false = "does not exist"))
+    if (!all(ok)) return(setCause(ok, false = "does not exist"))  # nocov
     ok <- nzchar(Sys.readlink(x), keepNA = TRUE)
     names(ok) <- x
     setCause(ok, false = "not symlink")
@@ -40,9 +40,9 @@ isSymlink <- function(x) {
 #' @describeIn check-vector-isSymlink Scalar.
 #' @export
 isASymlink <- function(x, nullOK = FALSE) {
-    if (isTRUE(nullOK) && is.null(x)) return(TRUE)
+    if (isTRUE(nullOK) && is.null(x)) return(TRUE)  # nocov
     ok <- isString(x)
-    if (!isTRUE(ok)) return(ok)
+    if (!isTRUE(ok)) return(ok)  # nocov
     ok <- isSymlink(x)
     if (!all(ok)) return(ok)
     TRUE
