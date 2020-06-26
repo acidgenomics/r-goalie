@@ -1,6 +1,6 @@
 #' Does the input contain a symbolic link?
 #'
-#' @name check-vector-isFile
+#' @name check-vector-isSymlink
 #' @note Updated 2020-06-26.
 #'
 #' @inherit check
