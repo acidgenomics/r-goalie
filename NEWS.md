@@ -1,3 +1,10 @@
+## goalie 0.4.5 (2020-06-26)
+
+### New functions
+
+- `isSymlink`, `isASymlink`, `allAreSymlinks`: Added logical check functions
+  for symbolic links. Note that these functions won't work on Windows.
+
 ## goalie 0.4.4 (2020-04-12)
 
 ### New functions
