@@ -11,7 +11,7 @@ hasSubset(x, metadata = "subset", .xname = getNameInParent(x))
 \item{x}{\code{Annotated}.}
 
 \item{metadata}{\code{character}.
-Names in \code{\link[S4Vectors:metadata]{metadata()}} that denote object is subset.}
+Names in \code{\link[S4Vectors:Annotated-class]{metadata()}} that denote object is subset.}
 
 \item{.xname}{Name of object defined in \code{x}.
 \emph{Not intended to be used directly.}}

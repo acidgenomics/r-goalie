@@ -10,7 +10,7 @@ false(...)
 falseFromVector(x)
 }
 \arguments{
-\item{...}{Passed to \code{\link[base:gettextf]{gettextf()}} to create a \link{cause} of
+\item{...}{Passed to \code{\link[base:sprintf]{gettextf()}} to create a \link{cause} of
 failure message.}
 
 \item{x}{Object.}
