@@ -23,9 +23,9 @@ informative message on failure.
 Validity check capable of validating multiple slots in a single call.
 }
 \details{
-To be used inside S4 \code{\link[methods:setValidity]{setValidity()}} call or with
+To be used inside S4 \code{\link[methods:validObject]{setValidity()}} call or with
 \code{\link[=validate]{validate()}}. Particularly useful for checking multiple slotted objects
-inside \code{\link[S4Vectors:metadata]{metadata()}}.
+inside \code{\link[S4Vectors:Annotated-class]{metadata()}}.
 }
 \note{
 Updated 2019-07-29.
