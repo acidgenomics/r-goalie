@@ -27,7 +27,7 @@ used inside of an S4 validity method definition.
 Like \code{\link[=assert]{assert()}}, \code{\link[=validate]{validate()}} returns \code{TRUE} on success. However, on failure
 it returns a \code{character} instead of a \code{\link[base:stop]{stop()}} call. This is
 the current recommended practice for defining S4 validity methods inside of a
-\code{\link[methods:setValidity]{setValidity()}} call. Refer to the documentation in
+\code{\link[methods:validObject]{setValidity()}} call. Refer to the documentation in
 the methods package, specifically \code{\link[methods:validObject]{validObject()}} for
 detailed information on S4 validity methods.
 }

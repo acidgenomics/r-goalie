@@ -28,7 +28,7 @@ Updated 2019-08-10.
 
 
 If the object is a \code{SummarizedExperiment}, then the primary
-\link[SummarizedExperiment:assay]{assay} matrix is checked for duplicated
+\link[SummarizedExperiment:SummarizedExperiment-class]{assay} matrix is checked for duplicated
 columns.
 }
 

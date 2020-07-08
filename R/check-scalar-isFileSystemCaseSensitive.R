@@ -10,13 +10,13 @@
 #' detected, the file system is case sensitive.
 #'
 #' @name check-scalar-isFileSystemCaseSensitive
-#' @note Updated 2019-10-21.
+#' @note Updated 2020-07-08.
 #'
 #' @inherit check
 #' @inheritParams acidroxygen::params
 #'
 #' @seealso
-#' `_koopa_is_file_system_case_sensitive` shell function in koopa.
+#' `koopa::is_file_system_case_sensitive` shell function in koopa.
 #'
 #' @examples
 #' isFileSystemCaseSensitive()

@@ -28,11 +28,11 @@ two invisible files with names that only differ by case. If 2 files are
 detected, the file system is case sensitive.
 }
 \note{
-Updated 2019-10-21.
+Updated 2020-07-08.
 }
 \examples{
 isFileSystemCaseSensitive()
 }
 \seealso{
-\verb{_koopa_is_file_system_case_sensitive} shell function in koopa.
+\code{koopa::is_file_system_case_sensitive} shell function in koopa.
 }

@@ -11,7 +11,7 @@ hasMetrics(x, colData = c("nCount", "nFeature"), .xname = getNameInParent(x))
 \item{x}{\code{SummarizedExperiment}.}
 
 \item{colData}{\code{character}.
-Column names in \code{\link[SummarizedExperiment:colData]{colData()}} containing
+Column names in \code{\link[SummarizedExperiment:SummarizedExperiment-class]{colData()}} containing
 expected quality control metrics.}
 
 \item{.xname}{Name of object defined in \code{x}.
