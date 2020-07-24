@@ -12,12 +12,14 @@
 #' - `Sys.readlink()`.
 #'
 #' @examples
-#' from <- "from.txt"
-#' to <- "to.txt"
-#' file.create(from)
-#' file.symlink(from = from, to = to)
-#' isSymlink(c(from, to))
-#' unlink(c(from, to))
+#' if (!isTRUE(isWindows())) {
+#'     from <- "from.txt"
+#'     to <- "to.txt"
+#'     file.create(from)
+#'     file.symlink(from = from, to = to)
+#'     isSymlink(c(from, to))
+#'     unlink(c(from, to))
+#' }
 NULL
 
 
@@ -26,7 +28,7 @@ NULL
 #' @describeIn check-vector-isSymlink Vectorized.
 #' @export
 isSymlink <- function(x) {
-    assert(!isWindows())
+    assert(!isTRUE(isWindows()))
     ok <- isCharacter(x)
     if (!isTRUE(ok)) return(ok)  # nocov
     ok <- file.exists(x)
