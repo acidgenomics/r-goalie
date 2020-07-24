@@ -1,3 +1,5 @@
+skip_on_os("windows")
+
 from <- "from.txt"
 to <- "to.txt"
 file.create(from)
