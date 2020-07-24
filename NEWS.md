@@ -1,3 +1,9 @@
+## goalie 0.4.6 (2020-07-24)
+
+### Minor changes
+
+- Maintenance release, increasing minimum R dependency to 4.0.
+
 ## goalie 0.4.5 (2020-06-26)
 
 ### New functions
