@@ -1,7 +1,8 @@
 #' Does the input contain a symbolic link?
 #'
 #' @name check-vector-isSymlink
-#' @note Updated 2020-06-26.
+#' @note Updated 2020-07-24.
+#' @note Supported on Linux and macOS but not Windows.
 #'
 #' @inherit check
 #' @inheritParams acidroxygen::params
@@ -25,6 +26,7 @@ NULL
 #' @describeIn check-vector-isSymlink Vectorized.
 #' @export
 isSymlink <- function(x) {
+    assert(!isWindows())
     ok <- isCharacter(x)
     if (!isTRUE(ok)) return(ok)  # nocov
     ok <- file.exists(x)

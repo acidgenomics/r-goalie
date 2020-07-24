@@ -36,7 +36,9 @@ Does the input contain a symbolic link?
 }}
 
 \note{
-Updated 2020-06-26.
+Updated 2020-07-24.
+
+Supported on Linux and macOS but not Windows.
 }
 \examples{
 from <- "from.txt"
