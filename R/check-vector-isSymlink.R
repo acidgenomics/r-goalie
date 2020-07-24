@@ -1,7 +1,8 @@
 #' Does the input contain a symbolic link?
 #'
 #' @name check-vector-isSymlink
-#' @note Updated 2020-06-26.
+#' @note Updated 2020-07-24.
+#' @note Supported on Linux and macOS but not Windows.
 #'
 #' @inherit check
 #' @inheritParams acidroxygen::params
@@ -11,12 +12,14 @@
 #' - `Sys.readlink()`.
 #'
 #' @examples
-#' from <- "from.txt"
-#' to <- "to.txt"
-#' file.create(from)
-#' file.symlink(from = from, to = to)
-#' isSymlink(c(from, to))
-#' unlink(c(from, to))
+#' if (!isTRUE(isWindows())) {
+#'     from <- "from.txt"
+#'     to <- "to.txt"
+#'     file.create(from)
+#'     file.symlink(from = from, to = to)
+#'     isSymlink(c(from, to))
+#'     unlink(c(from, to))
+#' }
 NULL
 
 
@@ -25,6 +28,7 @@ NULL
 #' @describeIn check-vector-isSymlink Vectorized.
 #' @export
 isSymlink <- function(x) {
+    assert(!isTRUE(isWindows()))
     ok <- isCharacter(x)
     if (!isTRUE(ok)) return(ok)  # nocov
     ok <- file.exists(x)

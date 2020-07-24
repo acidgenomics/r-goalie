@@ -36,15 +36,19 @@ Does the input contain a symbolic link?
 }}
 
 \note{
-Updated 2020-06-26.
+Updated 2020-07-24.
+
+Supported on Linux and macOS but not Windows.
 }
 \examples{
-from <- "from.txt"
-to <- "to.txt"
-file.create(from)
-file.symlink(from = from, to = to)
-isSymlink(c(from, to))
-unlink(c(from, to))
+if (!isTRUE(isWindows())) {
+    from <- "from.txt"
+    to <- "to.txt"
+    file.create(from)
+    file.symlink(from = from, to = to)
+    isSymlink(c(from, to))
+    unlink(c(from, to))
+}
 }
 \seealso{
 \itemize{
