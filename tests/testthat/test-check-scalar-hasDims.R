@@ -13,8 +13,8 @@ test_that("hasDims", {
     )
 })
 
-with_parameters_test_that(
-    "hasRows, hasCols", {
+test_that("hasRows, hasCols", {
+    for (fun in list(hasRows, hasCols)) {
         x <- mtcars
         expect_true(fun(x))
         x <- data.frame()
@@ -22,6 +22,5 @@ with_parameters_test_that(
         ## Support NULL.
         x <- list()
         expect_false(fun(x))
-    },
-    fun = list(hasRows, hasCols)
-)
+    }
+})
