@@ -3,6 +3,7 @@
 ### New functions
 
 - `isPackageVersion`: Migrated check that was previously defined in koopa.
+- `isVanilla`: Check if R session is running with `--vanilla` flag enabled.
 
 ## goalie 0.4.6 (2020-07-24)
 
