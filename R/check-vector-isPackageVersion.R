@@ -1,6 +1,6 @@
 #' Is the package installed and a specific version?
 #'
-#' @export
+#' @name check-vector-isPackageVersion
 #' @note Updated 2020-08-11.
 #'
 #' @param x `character`.
@@ -10,16 +10,24 @@
 #'   Mathematical operator.
 #'   Defaults to less than or equal to.
 #'
-#' @return `logical`.
-#'   Whether package passes version check.
-#'
 #' @examples
+#' ## TRUE ====
 #' isPackageVersion(
 #'     x = c(
 #'         "basejump" = "0.1.0",
 #'         "goalie" = "0.1.0"
 #'     )
 #' )
+#'
+#' ## FALSE ====
+#' isPackageVersion(c("base" = "99.0.0"))
+NULL
+
+
+
+## Vector ======================================================================
+#' @describeIn check-vector-isPackageVersion Vectorized.
+#' @export
 isPackageVersion <- function(x, op = ">=") {
     packages <- basename(names(x))
     versions <- package_version(x)
