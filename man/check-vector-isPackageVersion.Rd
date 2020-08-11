@@ -31,11 +31,18 @@ Updated 2020-08-11.
 ## TRUE ====
 isPackageVersion(
     x = c(
-        "basejump" = "0.1.0",
-        "goalie" = "0.1.0"
-    )
+        "base" = packageVersion("base"),
+        "utils" = packageVersion("utils")
+    ),
+    op = "=="
 )
 
 ## FALSE ====
-isPackageVersion(c("base" = "99.0.0"))
+isPackageVersion(
+    x = c(
+        "base" = packageVersion("base"),
+        "utils" = packageVersion("utils")
+    ),
+    op = ">"
+)
 }
