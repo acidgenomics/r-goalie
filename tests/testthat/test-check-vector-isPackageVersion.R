@@ -15,7 +15,8 @@ test_that("FALSE", {
     x <- isPackageVersion(
         x = c(
             "base" = packageVersion("base"),
-            "utils" = packageVersion("utils")
+            "utils" = packageVersion("utils"),
+            "XXX" = "0.0.1"
         ),
         op = ">"
     )
