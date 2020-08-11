@@ -73,7 +73,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">goalie</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.7</span>
       </span>
     </div>
 
@@ -130,9 +130,9 @@
 <li>Migrated base (system) functions to new low-level acidbase package. Some of these functions are not specific to an assert check engine and should be defined in a separate package.</li>
 </ul>
 </div>
-<div id="new-functions-3" class="section level3">
+<div id="new-functions-4" class="section level3">
 <h3 class="hasAnchor">
-<a href="#new-functions-3" class="anchor"></a>New functions</h3>
+<a href="#new-functions-4" class="anchor"></a>New functions</h3>
 <ul>
 <li>Added assert checks, based on file extension: <code>isCompressedFile</code>, <code>isACompressedFile</code>, <code>allAreCompressedFiles</code>. These perform similarly to <code>isFile</code> but also check to see if the file extension contains a compression format (e.g. bz2, gz, xz, zip).</li>
 </ul>
@@ -164,9 +164,9 @@
     <div id="goalie-043-2020-04-08" class="section level2">
 <h2 class="hasAnchor">
 <a href="#goalie-043-2020-04-08" class="anchor"></a>goalie 0.4.3 (2020-04-08)</h2>
-<div id="new-functions-2" class="section level3">
+<div id="new-functions-3" class="section level3">
 <h3 class="hasAnchor">
-<a href="#new-functions-2" class="anchor"></a>New functions</h3>
+<a href="#new-functions-3" class="anchor"></a>New functions</h3>
 <p>Migrated some functions that were previously defined in the <a href="https://koopa.acidgenomics.com/">koopa</a> package:</p>
 <ul>
 <li>
@@ -189,9 +189,9 @@
     <div id="goalie-044-2020-04-12" class="section level2">
 <h2 class="hasAnchor">
 <a href="#goalie-044-2020-04-12" class="anchor"></a>goalie 0.4.4 (2020-04-12)</h2>
-<div id="new-functions-1" class="section level3">
+<div id="new-functions-2" class="section level3">
 <h3 class="hasAnchor">
-<a href="#new-functions-1" class="anchor"></a>New functions</h3>
+<a href="#new-functions-2" class="anchor"></a>New functions</h3>
 <ul>
 <li>
 <code>isRStudio</code>: Checks whether current R session is running inside RStudio.</li>
@@ -208,9 +208,9 @@
     <div id="goalie-045-2020-06-26" class="section level2">
 <h2 class="hasAnchor">
 <a href="#goalie-045-2020-06-26" class="anchor"></a>goalie 0.4.5 (2020-06-26)</h2>
-<div id="new-functions" class="section level3">
+<div id="new-functions-1" class="section level3">
 <h3 class="hasAnchor">
-<a href="#new-functions" class="anchor"></a>New functions</h3>
+<a href="#new-functions-1" class="anchor"></a>New functions</h3>
 <ul>
 <li>
 <code>isSymlink</code>, <code>isASymlink</code>, <code>allAreSymlinks</code>: Added logical check functions for symbolic links. Note that these functions won’t work on Windows.</li>
@@ -225,6 +225,18 @@
 <a href="#minor-changes" class="anchor"></a>Minor changes</h3>
 <ul>
 <li>Maintenance release, increasing minimum R dependency to 4.0.</li>
+</ul>
+</div>
+</div>
+    <div id="goalie-047-2020-08-11" class="section level2">
+<h2 class="hasAnchor">
+<a href="#goalie-047-2020-08-11" class="anchor"></a>goalie 0.4.7 (2020-08-11)</h2>
+<div id="new-functions" class="section level3">
+<h3 class="hasAnchor">
+<a href="#new-functions" class="anchor"></a>New functions</h3>
+<ul>
+<li>
+<code>isPackageVersion</code>: Migrated check that was previously defined in koopa.</li>
 </ul>
 </div>
 </div>
