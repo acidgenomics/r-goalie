@@ -4,6 +4,7 @@
 
 - `isPackageVersion`: Migrated check that was previously defined in koopa.
 - `isVanilla`: Check if R session is running with `--vanilla` flag enabled.
+- Migrated `isCleanSystemLibrary` here from bb8.
 
 ## goalie 0.4.6 (2020-07-24)
 
