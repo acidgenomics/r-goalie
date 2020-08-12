@@ -1,7 +1,7 @@
 ---
 title: "goalie"
-date: "`r BiocStyle::doc_date()`"
-output: BiocStyle::html_document
+date: "`r Sys.Date()`"
+output: html_document
 vignette: >
   %\VignetteIndexEntry{goalie}
   %\VignetteEngine{knitr::rmarkdown}

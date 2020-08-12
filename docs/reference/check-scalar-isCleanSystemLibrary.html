@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Does the input belong to or inherit all of these classes? — check-scalar-isAll • goalie</title>
+<title>Is the R system library clean? — check-scalar-isCleanSystemLibrary • goalie</title>
 
 
 <!-- jquery -->
@@ -41,8 +41,8 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="Does the input belong to or inherit all of these classes? — check-scalar-isAll" />
-<meta property="og:description" content="Does the input belong to or inherit all of these classes?" />
+<meta property="og:title" content="Is the R system library clean? — check-scalar-isCleanSystemLibrary" />
+<meta property="og:description" content="Is the R system library clean?" />
 
 
 
@@ -116,35 +116,17 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Does the input belong to or inherit all of these classes?</h1>
-    <small class="dont-index">Source: <a href='https://github.com/acidgenomics/goalie/blob/master/R/check-scalar-isAll.R'><code>R/check-scalar-isAll.R</code></a></small>
-    <div class="hidden name"><code>check-scalar-isAll.Rd</code></div>
+    <h1>Is the R system library clean?</h1>
+    <small class="dont-index">Source: <a href='https://github.com/acidgenomics/goalie/blob/master/R/check-scalar-isCleanSystemLibrary.R'><code>R/check-scalar-isCleanSystemLibrary.R</code></a></small>
+    <div class="hidden name"><code>check-scalar-isCleanSystemLibrary.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Does the input belong to or inherit all of these classes?</p>
+    <p>Is the R system library clean?</p>
     </div>
 
-    <pre class="usage"><span class='fu'>isAll</span>(<span class='no'>x</span>, <span class='no'>classes</span>, <span class='kw'>.xname</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/acidbase/man/getNameInParent.html'>getNameInParent</a></span>(<span class='no'>x</span>))</pre>
+    <pre class="usage"><span class='fu'>isCleanSystemLibrary</span>()</pre>
 
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>x</th>
-      <td><p>Object.</p></td>
-    </tr>
-    <tr>
-      <th>classes</th>
-      <td><p><code>character</code>.
-Object classes.</p></td>
-    </tr>
-    <tr>
-      <th>.xname</th>
-      <td><p>Name of object defined in <code>x</code>.
-<em>Not intended to be used directly.</em></p></td>
-    </tr>
-    </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
@@ -152,16 +134,10 @@ Object classes.</p></td>
 <code>FALSE</code> on failure, with cause set.</p>
     <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
-    <p>Updated 2019-10-04.</p>
+    <p>Updated 2020-08-11.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fl'>1L</span>
-
-<span class='co'>## TRUE ====</span>
-<span class='fu'>isAll</span>(<span class='no'>x</span>, <span class='kw'>classes</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"integer"</span>, <span class='st'>"numeric"</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
-<span class='co'>## FALSE ====</span>
-<span class='fu'>isAll</span>(<span class='no'>x</span>, <span class='kw'>classes</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"integer"</span>, <span class='st'>"NULL"</span>))</div><div class='output co'>#&gt; [1] FALSE
-#&gt; Cause: 'x' is not all of: integer, NULL.</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>isCleanSystemLibrary</span>()</div><div class='output co'>#&gt; [1] TRUE</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
