@@ -1,10 +1,19 @@
+## goalie 0.4.8 (2020-08-12)
+
+### New functions
+
+- Migrated `isCleanSystemLibrary` here from bb8.
+
+### Minor changes
+
+- Switched vignette back to default instead of using BiocStyle.
+
 ## goalie 0.4.7 (2020-08-11)
 
 ### New functions
 
 - `isPackageVersion`: Migrated check that was previously defined in koopa.
 - `isVanilla`: Check if R session is running with `--vanilla` flag enabled.
-- Migrated `isCleanSystemLibrary` here from bb8.
 
 ## goalie 0.4.6 (2020-07-24)
 
