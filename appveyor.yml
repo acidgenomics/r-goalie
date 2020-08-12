@@ -15,11 +15,12 @@ branches:
 
 environment:
   global:
-    _R_CHECK_FORCE_SUGGESTS_: false
     BIOC_USE_DEVEL: "FALSE"
     GCC_PATH: mingw_64
     R_ARCH: x64
     USE_RTOOLS: true
+    _R_CHECK_CRAN_INCOMING_: true
+    _R_CHECK_FORCE_SUGGESTS_: false
   matrix:
     - configuration: release
       R_VERSION: release
@@ -28,7 +29,6 @@ matrix:
   fast_finish: true
 
 build_script:
-  - travis-tool.sh install_bioc GenomeInfoDbData
   - travis-tool.sh install_bioc_deps
 
 test_script:
