@@ -1,26 +1,29 @@
 context("check : scalar : hasRownames")
 
-with_parameters_test_that(
-    "hasRownames", {
-        data <- fun()
-        ok <- hasRownames(data)
-        expect_false(ok)
-        expect_s3_class(ok, "goalie")
-        expect_identical(cause(ok), noquote(cause))
-    },
-    fun = list(
-        data.frame,
-        DataFrame,
-        data.table,
-        tibble
-    ),
-    cause = c(
-        "'data' has integer row names (soft NULL).",
-        "'data' has NULL row names.",
-        "data.table class doesn't support row names.",
-        "tbl_df class doesn't support row names."
+test_that("hasRownames", {
+    mapply(
+        fun = list(
+            data.frame,
+            DataFrame,
+            data.table,
+            tibble
+        ),
+        cause = c(
+            "'data' has integer row names (soft NULL).",
+            "'data' has NULL row names.",
+            "data.table class doesn't support row names.",
+            "tbl_df class doesn't support row names."
+        ),
+        FUN = function(fun, cause) {
+            data <- fun()
+            ok <- hasRownames(data)
+            expect_false(ok)
+            expect_s3_class(ok, "goalie")
+            expect_identical(cause(ok), noquote(cause))
+        },
+        SIMPLIFY = FALSE
     )
-)
+})
 
 test_that("TRUE", {
     x <- data.frame(
