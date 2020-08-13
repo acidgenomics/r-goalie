@@ -12,12 +12,10 @@ Assertive check functions for defensive R programming.
 ### [R][] method
 
 ```r
-if (!requireNamespace("remotes", quietly = TRUE)) {
-    install.packages("remotes")
-}
-Sys.setenv(R_REMOTES_UPGRADE = "always")
-## Set `GITHUB_PAT` in `~/.Renviron` if you get a rate limit error.
-remotes::install_github("acidgenomics/goalie")
+install.packages(
+    pkgs = "goalie",
+    repos = c("r.acidgenomics.com", getOption("repos"))
+)
 ```
 
 ### [conda][] method
@@ -25,7 +23,11 @@ remotes::install_github("acidgenomics/goalie")
 Configure [conda][] to use the [bioconda][] channels.
 
 ```sh
-conda install -c bioconda r-goalie
+# Don't install recipe into base environment.
+name="r-goalie"
+conda create --name="$name" "$name"
+conda activate "$name"
+R
 ```
 
 [bioconda]: https://bioconda.github.io/
