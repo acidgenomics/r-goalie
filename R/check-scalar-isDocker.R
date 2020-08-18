@@ -37,7 +37,7 @@ isDocker <-
 skip_on_docker <-  # nolint
     function() {
         requireNamespaces("testthat")
-        if (!isTRUE(isDocker())) return()
+        if (!isTRUE(isDocker())) return(invisible())
         testthat::skip("On Docker")
     }
 
