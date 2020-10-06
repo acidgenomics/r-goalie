@@ -1,7 +1,7 @@
-#' @importFrom acidbase bapply
+#' @importFrom AcidBase bapply
 #' @export
-acidbase::bapply
+AcidBase::bapply
 
-#' @importFrom acidbase getNameInParent
+#' @importFrom AcidBase getNameInParent
 #' @export
-acidbase::getNameInParent
+AcidBase::getNameInParent
