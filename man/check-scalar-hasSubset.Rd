@@ -28,7 +28,7 @@ Updated 2020-04-08.
 }
 \examples{
 if (requireNamespace("SummarizedExperiment", quietly = TRUE)) {
-    data(RangedSummarizedExperiment, package = "acidtest")
+    data(RangedSummarizedExperiment, package = "AcidTest")
     x <- RangedSummarizedExperiment
     hasSubset(x)
 }

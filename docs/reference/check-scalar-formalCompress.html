@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Check the <code>compress</code> formal argument — check-scalar-formalCompress • goalie</title>
+<title>Check the compress formal argument — check-scalar-formalCompress • goalie</title>
 
 
 <!-- jquery -->
@@ -41,7 +41,7 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="Check the <code>compress</code> formal argument — check-scalar-formalCompress" />
+<meta property="og:title" content="Check the compress formal argument — check-scalar-formalCompress" />
 <meta property="og:description" content="Check the compress formal argument" />
 
 
@@ -74,7 +74,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">goalie</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.8</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.9</span>
       </span>
     </div>
 
@@ -87,17 +87,23 @@
   </a>
 </li>
 <li>
-  <a href="../articles/goalie.html">Get started</a>
-</li>
-<li>
   <a href="../reference/index.html">Reference</a>
 </li>
 <li>
   <a href="../news/index.html">Changelog</a>
 </li>
+<li>
+  <a href="../articles/goalie.html">Get started</a>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
+  <a href="https://acidgenomics.com/">
+    <span class="fas fa fas fa-vial fa-lg"></span>
+     
+  </a>
+</li>
+<li>
   <a href="https://github.com/acidgenomics/goalie/">
     <span class="fab fa fab fa-github fa-lg"></span>
      
@@ -125,7 +131,7 @@
     <p>Check the <code>compress</code> formal argument</p>
     </div>
 
-    <pre class="usage"><span class='fu'>formalCompress</span>(<span class='no'>compress</span>)</pre>
+    <pre class="usage"><span class='fu'>formalCompress</span><span class='op'>(</span><span class='va'>compress</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -148,10 +154,14 @@ These character strings are currently allowed for <code><a href='https://rdrr.io
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'>## TRUE ====</span>
-<span class='fu'>formalCompress</span>(<span class='st'>"gzip"</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>formalCompress</span>(<span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
+<span class='fu'>formalCompress</span><span class='op'>(</span><span class='st'>"gzip"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>formalCompress</span><span class='op'>(</span><span class='cn'>TRUE</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
 <span class='co'>## FALSE ====</span>
-<span class='fu'>formalCompress</span>(<span class='fl'>NA</span>)</div><div class='output co'>#&gt; [1] FALSE
-#&gt; Cause: 'compress' is NA.</div><div class='input'><span class='fu'>formalCompress</span>(<span class='st'>"xxx"</span>)</div><div class='output co'>#&gt; [1] FALSE
+<span class='fu'>formalCompress</span><span class='op'>(</span><span class='cn'>NA</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] FALSE
+#&gt; Cause: 'compress' is NA.</div><div class='input'><span class='fu'>formalCompress</span><span class='op'>(</span><span class='st'>"xxx"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] FALSE
 #&gt; Cause: 'compress' has elements not in 'c("bzip2", "gzip", "xz")': xxx</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -168,7 +178,7 @@ These character strings are currently allowed for <code><a href='https://rdrr.io
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>
