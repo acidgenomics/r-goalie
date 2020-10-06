@@ -4,7 +4,7 @@ skip_if_not_installed(pkg = "SummarizedExperiment")
 
 data(
     RangedSummarizedExperiment,
-    package = "acidtest",
+    package = "AcidTest",
     envir = environment()
 )
 x <- RangedSummarizedExperiment
