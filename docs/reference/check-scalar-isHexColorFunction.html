@@ -75,7 +75,7 @@ hexadecimal color value return." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">goalie</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.8</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.9</span>
       </span>
     </div>
 
@@ -88,17 +88,23 @@ hexadecimal color value return." />
   </a>
 </li>
 <li>
-  <a href="../articles/goalie.html">Get started</a>
-</li>
-<li>
   <a href="../reference/index.html">Reference</a>
 </li>
 <li>
   <a href="../news/index.html">Changelog</a>
 </li>
+<li>
+  <a href="../articles/goalie.html">Get started</a>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
+  <a href="https://acidgenomics.com/">
+    <span class="fas fa fas fa-vial fa-lg"></span>
+     
+  </a>
+</li>
+<li>
   <a href="https://github.com/acidgenomics/goalie/">
     <span class="fab fa fab fa-github fa-lg"></span>
      
@@ -127,7 +133,7 @@ hexadecimal color value return." />
 hexadecimal color value return.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>isHexColorFunction</span>(<span class='no'>x</span>, <span class='kw'>nullOK</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>.xname</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/acidbase/man/getNameInParent.html'>getNameInParent</a></span>(<span class='no'>x</span>))</pre>
+    <pre class="usage"><span class='fu'>isHexColorFunction</span><span class='op'>(</span><span class='va'>x</span>, nullOK <span class='op'>=</span> <span class='cn'>FALSE</span>, .xname <span class='op'>=</span> <span class='fu'><a href='https://acidbase.acidgenomics.com/reference/getNameInParent.html'>getNameInParent</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -161,11 +167,13 @@ If set to <code>TRUE</code>, <code>x</code> may also be <code>NULL</code>.</p></
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'>## TRUE ====</span>
-<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>viridis</span><span class='kw ns'>::</span><span class='no'><a href='https://rdrr.io/pkg/viridis/man/reexports.html'>viridis</a></span>
-<span class='fu'>isHexColorFunction</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
+<span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fu'>viridis</span><span class='fu'>::</span><span class='va'><a href='https://rdrr.io/pkg/viridisLite/man/viridis.html'>viridis</a></span>
+<span class='fu'>isHexColorFunction</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
 <span class='co'>## FALSE ====</span>
-<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>ggplot2</span><span class='kw ns'>::</span><span class='no'><a href='https://ggplot2.tidyverse.org/reference/scale_manual.html'>scale_color_manual</a></span>
-<span class='fu'>isHexColorFunction</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] FALSE
+<span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fu'>ggplot2</span><span class='fu'>::</span><span class='va'><a href='https://ggplot2.tidyverse.org/reference/scale_manual.html'>scale_color_manual</a></span>
+<span class='fu'>isHexColorFunction</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] FALSE
 #&gt; Cause: 'x' does not contain an 'n' argument.</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -182,7 +190,7 @@ If set to <code>TRUE</code>, <code>x</code> may also be <code>NULL</code>.</p></
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>
