@@ -12,6 +12,6 @@ These objects are imported from other packages. Follow the links
 below to see their documentation.
 
 \describe{
-  \item{acidbase}{\code{\link[acidbase]{bapply}}, \code{\link[acidbase]{getNameInParent}}}
+  \item{AcidBase}{\code{\link[AcidBase]{bapply}}, \code{\link[AcidBase]{getNameInParent}}}
 }}
 
