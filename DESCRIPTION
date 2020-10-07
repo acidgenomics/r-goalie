@@ -39,9 +39,6 @@ Suggests:
     testthat,
     tibble,
     viridis
-Remotes:
-    acidgenomics/AcidBase,
-    acidgenomics/AcidTest
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 VignetteBuilder: knitr

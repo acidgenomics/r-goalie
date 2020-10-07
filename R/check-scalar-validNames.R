@@ -8,7 +8,6 @@
 #'
 #' @seealso
 #' - `make.names()`.
-#' - `basejump::makeNames()`.
 #'
 #' @examples
 #' ## TRUE ====
