@@ -40,6 +40,5 @@ validNames("GFP+")
 \seealso{
 \itemize{
 \item \code{make.names()}.
-\item \code{basejump::makeNames()}.
 }
 }
