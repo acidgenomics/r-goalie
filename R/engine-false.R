@@ -7,7 +7,7 @@
 #' @keywords internal
 #' @note Updated 2019-07-29.
 #'
-#' @inheritParams acidroxygen::params
+#' @inheritParams AcidRoxygen::params
 #' @param ... Passed to [`gettextf()`][base::gettextf] to create a [cause] of
 #'   failure message.
 #'

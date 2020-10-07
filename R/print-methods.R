@@ -3,7 +3,7 @@
 #' @name print
 #' @note Updated 2019-10-18.
 #'
-#' @inheritParams acidroxygen::params
+#' @inheritParams AcidRoxygen::params
 #' @param ignoreNA `logical(1)`.
 #'   Should NA values pass (`TRUE`) or fail (`FALSE`)?
 #'

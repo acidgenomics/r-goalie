@@ -4,7 +4,7 @@
 #' @note Updated 2020-04-07.
 #'
 #' @inherit check
-#' @inheritParams acidroxygen::params
+#' @inheritParams AcidRoxygen::params
 #'
 #' @seealso `assertive::is_hex_color()`.
 #'
