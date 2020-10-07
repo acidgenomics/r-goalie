@@ -206,7 +206,7 @@ Updated R dependency to 3.6.
 ### Minor changes
 
 - Improved documentation consistency, using shared params defined in new
-  acidroxygen package. This will be used across the basejump packages in a
+  AcidRoxygen package. This will be used across the basejump packages in a
   forthcoming update.
 
 ## goalie 0.3.0 (2019-07-29)

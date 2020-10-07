@@ -4,8 +4,8 @@
 
 
 #' @name defunct
-#' @inherit acidroxygen::defunct description examples return seealso title
-#' @inheritParams acidroxygen::params
+#' @inherit AcidRoxygen::defunct description examples return seealso title
+#' @inheritParams AcidRoxygen::params
 #' @keywords internal
 NULL
 

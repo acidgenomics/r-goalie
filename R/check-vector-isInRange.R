@@ -12,7 +12,7 @@
 #'   For example, `(0,1)` means greater than 0 and less than 1.
 #'
 #' @inherit check
-#' @inheritParams acidroxygen::params
+#' @inheritParams AcidRoxygen::params
 #'
 #' @seealso
 #' - `assertive.numbers::is_in_range()`.

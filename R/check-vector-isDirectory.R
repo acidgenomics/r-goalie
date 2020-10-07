@@ -4,7 +4,7 @@
 #' @note Updated 2020-06-26.
 #'
 #' @inherit check
-#' @inheritParams acidroxygen::params
+#' @inheritParams AcidRoxygen::params
 #'
 #' @seealso
 #' - `dir.exists()`.
