@@ -4,7 +4,7 @@
 #' @note Updated 2020-04-08.
 #'
 #' @inherit check
-#' @inheritParams acidroxygen::params
+#' @inheritParams AcidRoxygen::params
 #' @param x `Annotated`.
 #' @param metadata `character`.
 #'   Names in [`metadata()`][S4Vectors::metadata] that denote object is subset.

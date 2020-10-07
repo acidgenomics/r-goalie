@@ -7,7 +7,7 @@
 #' @note Updated 2019-10-22.
 #'
 #' @inherit check
-#' @inheritParams acidroxygen::params
+#' @inheritParams AcidRoxygen::params
 #'
 #' @seealso
 #' - [isFile()].
