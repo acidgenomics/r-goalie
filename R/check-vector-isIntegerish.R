@@ -7,7 +7,7 @@
 #' @note Updated 2019-10-09.
 #'
 #' @inherit check
-#' @inheritParams acidroxygen::params
+#' @inheritParams AcidRoxygen::params
 #'
 #' @seealso
 #' - `isInt()` or `isScalarIntegerish()` for scalar.

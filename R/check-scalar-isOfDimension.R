@@ -4,7 +4,7 @@
 #' @note Updated 2019-10-04.
 #'
 #' @inherit check
-#' @inheritParams acidroxygen::params
+#' @inheritParams AcidRoxygen::params
 #'
 #' @seealso
 #' - `assertive.properties::is_of_dimension()`.

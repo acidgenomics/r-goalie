@@ -4,7 +4,7 @@
 #' @note Updated 2019-09-14.
 #'
 #' @inherit check
-#' @inheritParams acidroxygen::params
+#' @inheritParams AcidRoxygen::params
 #'
 #' @param scale `character(1)`.
 #'   Type of scale, either `"continuous"` or `"discrete"`.
