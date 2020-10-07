@@ -11,7 +11,7 @@
 #' @note Updated 2019-12-09.
 #'
 #' @inherit check
-#' @inheritParams acidroxygen::params
+#' @inheritParams AcidRoxygen::params
 #'
 #' @examples
 #' ## TRUE ====

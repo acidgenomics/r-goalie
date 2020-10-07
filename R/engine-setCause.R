@@ -7,7 +7,7 @@
 #' @keywords internal
 #' @note Updated 2019-08-08.
 #'
-#' @inheritParams acidroxygen::params
+#' @inheritParams AcidRoxygen::params
 #' @param false `character`.
 #'   A character vector to set the cause to, when `x` is `FALSE`.
 #' @param missing `character`.

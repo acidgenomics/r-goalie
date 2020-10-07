@@ -4,7 +4,7 @@
 #' @note Updated 2020-04-08.
 #'
 #' @inherit check
-#' @inheritParams acidroxygen::params
+#' @inheritParams AcidRoxygen::params
 #' @param x `SummarizedExperiment`.
 #' @param colData `character`.
 #'   Column names in [`colData()`][SummarizedExperiment::colData] containing

@@ -5,7 +5,7 @@
 #' @note Supported on Linux and macOS but not Windows.
 #'
 #' @inherit check
-#' @inheritParams acidroxygen::params
+#' @inheritParams AcidRoxygen::params
 #'
 #' @seealso
 #' - `file.info()`.
