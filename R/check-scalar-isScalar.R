@@ -6,7 +6,7 @@
 #' @note Updated 2019-08-10.
 #'
 #' @inherit check
-#' @inheritParams acidroxygen::params
+#' @inheritParams AcidRoxygen::params
 #'
 #' @seealso
 #' - `help(topic = "scalar-type-predicates", package = "rlang")`.

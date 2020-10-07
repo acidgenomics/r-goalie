@@ -10,7 +10,7 @@
 #' @note Updated 2019-07-29.
 #'
 #' @inherit check
-#' @inheritParams acidroxygen::params
+#' @inheritParams AcidRoxygen::params
 #'
 #' @seealso `assertive.strings::is_non_missing_nor_empty_character()`.
 #'

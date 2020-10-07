@@ -4,7 +4,7 @@
 #' @note Updated 2020-05-11.
 #'
 #' @inherit check
-#' @inheritParams acidroxygen::params
+#' @inheritParams AcidRoxygen::params
 #'
 #' @seealso
 #' - `Biobase::testBioCConnection()`.

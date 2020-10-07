@@ -13,7 +13,7 @@
 #' @note Updated 2020-07-08.
 #'
 #' @inherit check
-#' @inheritParams acidroxygen::params
+#' @inheritParams AcidRoxygen::params
 #'
 #' @seealso
 #' `koopa::is_file_system_case_sensitive` shell function in koopa.

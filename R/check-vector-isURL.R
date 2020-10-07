@@ -4,7 +4,7 @@
 #' @note Updated 2019-08-10.
 #'
 #' @inherit check
-#' @inheritParams acidroxygen::params
+#' @inheritParams AcidRoxygen::params
 #'
 #' @examples
 #' urls <- c("https://www.r-project.org", "ftp://r-project.org")

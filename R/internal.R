@@ -91,7 +91,7 @@ NULL
 #' @note Updated 2019-10-21.
 #' @noRd
 #'
-#' @inheritParams acidroxygen::params
+#' @inheritParams AcidRoxygen::params
 #'
 #' @seealso
 #' - `assertive.base::is2()`.

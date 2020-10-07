@@ -9,7 +9,7 @@
 #' @export
 #' @note Updated 2019-07-29.
 #'
-#' @inheritParams acidroxygen::params
+#' @inheritParams AcidRoxygen::params
 #' @param expected `list`.
 #'   Named list of expected classes per slot.
 #' @param subset `logical(1)`.
