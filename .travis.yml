@@ -1,5 +1,5 @@
 env:
-  - CRAN=1 RCHECK_KEEP_IT_100=1
+  - RCHECK_KEEP_IT_100=1
 
 os: linux
 language: shell
