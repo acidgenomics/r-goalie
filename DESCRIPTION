@@ -1,8 +1,8 @@
 Package: goalie
 Title: Assertive Check Functions
 Description: Assertive check functions for defensive R programming.
-Version: 0.4.9
-Date: 2020-10-06
+Version: 0.4.10
+Date: 2020-10-29
 Authors@R: c(
     person(
         "Michael", "Steinbaugh",
@@ -27,6 +27,7 @@ Imports:
     utils
 Suggests:
     AcidTest (>= 0.4.0),
+    BiocManager,
     DelayedArray,
     DelayedMatrixStats,
     S4Vectors,
@@ -38,7 +39,8 @@ Suggests:
     rmarkdown,
     testthat,
     tibble,
-    viridis
+    viridis,
+    yaml
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 VignetteBuilder: knitr
