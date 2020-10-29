@@ -1,3 +1,14 @@
+## goalie 0.4.10 (2020-10-29)
+
+### New functions
+
+- `isDevel`: Check if session is running inside R-devel.
+  Internally checks against `R.version.string`.
+- `isBiocDevel`: Check if Bioconductor installation is under development.
+  Requires BiocManager and yaml packages, which have been added to "Suggests".
+
+## goalie 0.4.9 (2020-10-06)
+
 ## goalie 0.4.8 (2020-08-12)
 
 ### New functions
