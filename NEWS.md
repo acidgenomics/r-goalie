@@ -9,6 +9,8 @@
 
 ## goalie 0.4.9 (2020-10-06)
 
+- Updated dependency package names (e.g. AcidBase).
+
 ## goalie 0.4.8 (2020-08-12)
 
 ### New functions
