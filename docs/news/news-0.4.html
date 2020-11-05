@@ -73,7 +73,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">goalie</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.10</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.11</span>
       </span>
     </div>
 
@@ -147,9 +147,9 @@
     <div id="goalie-041-2019-12-09" class="section level2">
 <h2 class="hasAnchor">
 <a href="#goalie-041-2019-12-09" class="anchor"></a>goalie 0.4.1 (2019-12-09)</h2>
-<div id="minor-changes-5" class="section level3">
+<div id="minor-changes-6" class="section level3">
 <h3 class="hasAnchor">
-<a href="#minor-changes-5" class="anchor"></a>Minor changes</h3>
+<a href="#minor-changes-6" class="anchor"></a>Minor changes</h3>
 <ul>
 <li>
 <code>hasRownames</code>: Improved internal check for integer (sequence) row names for <code>data.frame</code> class, which previously returned <code>TRUE</code> unexpectedly if the rows are reordered or subset. Now this function uses an internal <code>grepl</code> check via <code>allAreMatchingRegex</code>, which hardens this check, and now should always return <code>FALSE</code> for soft NULL row names in <code>data.frame</code> class.</li>
@@ -159,9 +159,9 @@
     <div id="goalie-042-2020-01-28" class="section level2">
 <h2 class="hasAnchor">
 <a href="#goalie-042-2020-01-28" class="anchor"></a>goalie 0.4.2 (2020-01-28)</h2>
-<div id="minor-changes-4" class="section level3">
+<div id="minor-changes-5" class="section level3">
 <h3 class="hasAnchor">
-<a href="#minor-changes-4" class="anchor"></a>Minor changes</h3>
+<a href="#minor-changes-5" class="anchor"></a>Minor changes</h3>
 <ul>
 <li>Switched license from MIT to GPL-3.</li>
 </ul>
@@ -183,9 +183,9 @@
 <code>isSystemCommand</code> (previously named <code>isCommand</code> in koopa). This check will look to see if a system (shell) command is available.</li>
 </ul>
 </div>
-<div id="minor-changes-3" class="section level3">
+<div id="minor-changes-4" class="section level3">
 <h3 class="hasAnchor">
-<a href="#minor-changes-3" class="anchor"></a>Minor changes</h3>
+<a href="#minor-changes-4" class="anchor"></a>Minor changes</h3>
 <ul>
 <li>
 <code>isDocker</code>: Hardened the check function to look at <code>/proc/1/cgroup</code>.</li>
@@ -203,9 +203,9 @@
 <code>isRStudio</code>: Checks whether current R session is running inside RStudio.</li>
 </ul>
 </div>
-<div id="minor-changes-2" class="section level3">
+<div id="minor-changes-3" class="section level3">
 <h3 class="hasAnchor">
-<a href="#minor-changes-2" class="anchor"></a>Minor changes</h3>
+<a href="#minor-changes-3" class="anchor"></a>Minor changes</h3>
 <ul>
 <li>Now setting cause attribute on failure for: <code>isLinux</code>, <code>isMacOS</code>, <code>isUnix</code>, and <code>isWindows</code>.</li>
 </ul>
@@ -226,9 +226,9 @@
     <div id="goalie-046-2020-07-24" class="section level2">
 <h2 class="hasAnchor">
 <a href="#goalie-046-2020-07-24" class="anchor"></a>goalie 0.4.6 (2020-07-24)</h2>
-<div id="minor-changes-1" class="section level3">
+<div id="minor-changes-2" class="section level3">
 <h3 class="hasAnchor">
-<a href="#minor-changes-1" class="anchor"></a>Minor changes</h3>
+<a href="#minor-changes-2" class="anchor"></a>Minor changes</h3>
 <ul>
 <li>Maintenance release, increasing minimum R dependency to 4.0.</li>
 </ul>
@@ -258,9 +258,9 @@
 <li>Migrated <code>isCleanSystemLibrary</code> here from bb8.</li>
 </ul>
 </div>
-<div id="minor-changes" class="section level3">
+<div id="minor-changes-1" class="section level3">
 <h3 class="hasAnchor">
-<a href="#minor-changes" class="anchor"></a>Minor changes</h3>
+<a href="#minor-changes-1" class="anchor"></a>Minor changes</h3>
 <ul>
 <li>Switched vignette back to default instead of using BiocStyle.</li>
 </ul>
@@ -284,6 +284,17 @@
 <code>isDevel</code>: Check if session is running inside R-devel. Internally checks against <code>R.version.string</code>.</li>
 <li>
 <code>isBiocDevel</code>: Check if Bioconductor installation is under development. Requires BiocManager and yaml packages, which have been added to “Suggests”.</li>
+</ul>
+</div>
+</div>
+    <div id="goalie-0411-2020-11-05" class="section level2">
+<h2 class="hasAnchor">
+<a href="#goalie-0411-2020-11-05" class="anchor"></a>goalie 0.4.11 (2020-11-05)</h2>
+<div id="minor-changes" class="section level3">
+<h3 class="hasAnchor">
+<a href="#minor-changes" class="anchor"></a>Minor changes</h3>
+<ul>
+<li>Decreased the number of suggested packages, removing DelayedArray and DelayedMatrixStats. These packages were called internally but basically never used in practice inside the <code>hasNonzeroRowsAndCols</code> check function. DelayedArray can have some HDF5-related build issues on some machines, so removing it as a suggested package makes goalie easier to install consistently across platforms.</li>
 </ul>
 </div>
 </div>
