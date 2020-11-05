@@ -1,3 +1,14 @@
+## goalie 0.4.11 (2020-11-05)
+
+### Minor changes
+
+- Decreased the number of suggested packages, removing DelayedArray and
+  DelayedMatrixStats. These packages were called internally but basically
+  never used in practice inside the `hasNonzeroRowsAndCols` check function.
+  DelayedArray can have some HDF5-related build issues on some machines, so
+  removing it as a suggested package makes goalie easier to install consistently
+  across platforms.
+
 ## goalie 0.4.10 (2020-10-29)
 
 ### New functions
