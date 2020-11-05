@@ -33,11 +33,7 @@ NULL
 #' @rdname check-scalar-hasNonzeroRowsAndCols
 #' @export
 hasNonzeroRowsAndCols <- function(x, .xname = getNameInParent(x)) {
-    ok <- isAny(
-        x = x,
-        classes = c("matrix", "Matrix", "DelayedMatrix"),
-        .xname = .xname
-    )
+    ok <- isAny(x = x, classes = c("matrix", "Matrix"), .xname = .xname)
     if (!isTRUE(ok)) return(ok)  # nocov
     ok <- hasRows(x, .xname = .xname)
     if (!isTRUE(ok)) return(ok)
@@ -47,12 +43,6 @@ hasNonzeroRowsAndCols <- function(x, .xname = getNameInParent(x)) {
         requireNamespaces("Matrix")
         colSums <- Matrix::colSums
         rowSums <- Matrix::rowSums
-    } else if (is(x, "DelayedMatrix")) {
-        ## nocov start
-        requireNamespaces("DelayedMatrixStats")
-        colSums <- DelayedMatrixStats::colSums2
-        rowSums <- DelayedMatrixStats::rowSums2
-        ## nocov end
     }
     ## Inform the user if any rows or columns contain all zeros. It's good
     ## practice to remove them before attempting to plot a heatmap.
