@@ -28,8 +28,6 @@ Imports:
 Suggests:
     AcidTest (>= 0.4.0),
     BiocManager,
-    DelayedArray,
-    DelayedMatrixStats,
     S4Vectors,
     SummarizedExperiment,
     Matrix,
