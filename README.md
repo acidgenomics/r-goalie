@@ -11,7 +11,10 @@ Assertive check functions for defensive R programming.
 ```r
 install.packages(
     pkgs = "goalie",
-    repos = c("r.acidgenomics.com", getOption("repos"))
+    repos = c(
+        "https://r.acidgenomics.com",
+        getOption("repos")
+    )
 )
 ```
 
