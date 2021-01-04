@@ -3,6 +3,7 @@
 #'
 #' @name extPattern
 #' @note Updated 2020-01-04.
+#' @keywords internal
 #'
 #' @examples
 #' extPattern
