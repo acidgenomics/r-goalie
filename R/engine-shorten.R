@@ -8,6 +8,8 @@
 #' @note Updated 2020-01-04.
 #'
 #' @param x `atomic`.
+#' @param width `integer`.
+#'   Maximum string width.
 #'
 #' @seealso `assertive.base:::truncate()`.
 #'

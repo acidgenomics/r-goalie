@@ -9,6 +9,9 @@ shorten(x, width = getOption("width"))
 }
 \arguments{
 \item{x}{\code{atomic}.}
+
+\item{width}{\code{integer}.
+Maximum string width.}
 }
 \value{
 \code{character}.
