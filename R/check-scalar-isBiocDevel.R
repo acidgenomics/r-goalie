@@ -16,7 +16,7 @@ NULL
 isBiocDevel <- function() {
     assert(hasInternet())
     ok <- isInstalled("BiocManager")
-    if (!isTRUE(ok)) return(ok)
+    if (!isTRUE(ok)) return(ok)  # nocov
     assert(
         requireNamespace("BiocManager", quietly = TRUE),
         requireNamespace("yaml", quietly = TRUE)
