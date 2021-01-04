@@ -6,7 +6,6 @@
 #' [validate()]. Particularly useful for checking multiple slotted objects
 #' inside [`metadata()`][S4Vectors::metadata].
 #'
-#' @rdname engine-validateClasses
 #' @note Updated 2019-07-29.
 #' @export
 #'
