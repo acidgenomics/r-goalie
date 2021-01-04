@@ -1,7 +1,7 @@
 #' Is the current Bioconductor installation under development?
 #'
 #' @name check-scalar-isBiocDevel
-#' @note Updated 2020-10-29.
+#' @note Updated 2021-01-04.
 #'
 #' @inherit check return
 #'
@@ -17,7 +17,10 @@ isBiocDevel <- function() {
     assert(hasInternet())
     ok <- isInstalled("BiocManager")
     if (!isTRUE(ok)) return(ok)
-    requireNamespaces(c("BiocManager", "yaml"))
+    assert(
+        requireNamespace("BiocManager", quietly = TRUE),
+        requireNamespace("yaml", quietly = TRUE)
+    )
     version <- BiocManager::version()
     yaml <- yaml::read_yaml("https://bioconductor.org/config.yaml")
     assert(isSubset("devel_version", names(yaml)))
