@@ -1,7 +1,7 @@
 #' Does the object contain quality control metrics?
 #'
 #' @name check-scalar-hasMetrics
-#' @note Updated 2020-04-08.
+#' @note Updated 2021-01-04.
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
@@ -28,8 +28,8 @@ hasMetrics <-
         colData = c("nCount", "nFeature"),
         .xname = getNameInParent(x)
     ) {
-        requireNamespaces("SummarizedExperiment")
         assert(
+            requireNamespace("SummarizedExperiment", quietly = TRUE),
             is(x, "SummarizedExperiment"),
             isCharacter(colData)
         )
