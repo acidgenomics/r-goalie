@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Get or set the cause attribute — cause • goalie</title>
+<title>Expression deparsing — engine-safeDeparse • goalie</title>
 
 
 <!-- jquery -->
@@ -41,9 +41,8 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="Get or set the cause attribute — cause" />
-<meta property="og:description" content="Gets or sets the cause (of failure) attribute of a
-variable." />
+<meta property="og:title" content="Expression deparsing — engine-safeDeparse" />
+<meta property="og:description" content="Turn unevaluated expressions into character strings." />
 
 
 
@@ -75,7 +74,7 @@ variable." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">goalie</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.11</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.12</span>
       </span>
     </div>
 
@@ -83,7 +82,7 @@ variable." />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -100,13 +99,13 @@ variable." />
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://acidgenomics.com/">
-    <span class="fas fa fas fa-vial fa-lg"></span>
+    <span class="fas fa-vial fa-lg"></span>
      
   </a>
 </li>
 <li>
   <a href="https://github.com/acidgenomics/goalie/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -123,62 +122,53 @@ variable." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Get or set the <code>cause</code> attribute</h1>
-    <small class="dont-index">Source: <a href='https://github.com/acidgenomics/goalie/blob/master/R/engine-cause.R'><code>R/engine-cause.R</code></a></small>
-    <div class="hidden name"><code>cause.Rd</code></div>
+    <h1>Expression deparsing</h1>
+    <small class="dont-index">Source: <a href='https://github.com/acidgenomics/goalie/blob/master/R/engine-safeDeparse.R'><code>R/engine-safeDeparse.R</code></a></small>
+    <div class="hidden name"><code>engine-safeDeparse.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Gets or sets the cause (of failure) <a href='https://rdrr.io/r/base/attributes.html'>attribute</a> of a
-variable.</p>
+    <p>Turn unevaluated expressions into character strings.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>cause</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
-
-<span class='fu'>cause</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span> <span class='op'>&lt;-</span> <span class='va'>value</span>
-
-<span class='fu'>nocause</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>safeDeparse</span><span class='op'>(</span><span class='va'>expr</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>x</th>
-      <td><p>Object.</p></td>
+      <th>expr</th>
+      <td><p><code>expression</code>.
+Any R expression.</p></td>
     </tr>
     <tr>
-      <th>value</th>
-      <td><p>Value to assign.</p></td>
+      <th>...</th>
+      <td><p>Passed to <code><a href='https://rdrr.io/r/base/deparse.html'>deparse()</a></code>.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code>.
-Cause attribute.</p>
+    <p><code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code>.</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p><code>safeDeparse()</code> is modified version of <code><a href='https://rdrr.io/r/base/deparse.html'>deparse()</a></code> that
+always returns <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code>.</p>
     <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
-    <p>Updated 2019-07-29.</p>
+    <p>Updated 2020-01-04.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'>
 <ul>
-<li><p><code><a href='https://rdrr.io/pkg/assertive.base/man/cause.html'>assertive.base::cause()</a></code>.</p></li>
-<li><p><code><a href='https://rdrr.io/r/base/attributes.html'>attributes()</a></code>.</p></li>
-<li><p><code><a href='https://rdrr.io/r/base/attr.html'>attr()</a></code>.</p></li>
+<li><p><code><a href='https://rdrr.io/pkg/assertive.base/man/safe_deparse.html'>assertive.base::safe_deparse()</a></code>.</p></li>
+<li><p><code><a href='https://rdrr.io/r/base/deparse.html'>deparse()</a></code>.</p></li>
 </ul>
 </div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'>## Scalar cause.</span>
-<span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fu'><a href='check-scalar-isFlag.html'>isFlag</a></span><span class='op'>(</span><span class='st'>"xxx"</span><span class='op'>)</span>
-<span class='fu'>cause</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; [1] '"xxx"' is not a boolean flag (TRUE/FALSE).</div><div class='input'>
-<span class='co'>## Vector cause.</span>
-<span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fu'><a href='check-vector-isInRange.html'>isInRange</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1L</span>, <span class='fl'>2L</span><span class='op'>)</span>, lower <span class='op'>=</span> <span class='fl'>3L</span><span class='op'>)</span>
-<span class='fu'>cause</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;       1       2 
-#&gt; too low too low </div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>safeDeparse</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/character.html'>is.character</a></span><span class='op'>(</span><span class='st'>"a"</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] "TRUE"</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
