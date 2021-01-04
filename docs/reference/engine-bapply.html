@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Do the input gene names match unique values in the corresponding object? — check-scalar-matchesUniqueGeneNames • goalie</title>
+<title>Boolean apply — engine-bapply • goalie</title>
 
 
 <!-- jquery -->
@@ -41,10 +41,9 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="Do the input gene names match unique values in the corresponding object? — check-scalar-matchesUniqueGeneNames" />
-<meta property="og:description" content="This assert check determines if a user-defined gene name query is using only
-unique (non-amgibuous) symbols. It is designed to be used for gene plotting
-particularly when performing single-cell RNA-seq marker analysis." />
+<meta property="og:title" content="Boolean apply — engine-bapply" />
+<meta property="og:description" content="bapply() is a wrapper for vapply() that enforces
+FUN.VALUE = logical(1)." />
 
 
 
@@ -124,67 +123,62 @@ particularly when performing single-cell RNA-seq marker analysis." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Do the input gene names match unique values in the corresponding object?</h1>
-    <small class="dont-index">Source: <a href='https://github.com/acidgenomics/goalie/blob/master/R/check-scalar-matchesUniqueGeneNames.R'><code>R/check-scalar-matchesUniqueGeneNames.R</code></a></small>
-    <div class="hidden name"><code>check-scalar-matchesUniqueGeneNames.Rd</code></div>
+    <h1>Boolean apply</h1>
+    <small class="dont-index">Source: <a href='https://github.com/acidgenomics/goalie/blob/master/R/engine-bapply.R'><code>R/engine-bapply.R</code></a></small>
+    <div class="hidden name"><code>engine-bapply.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>This assert check determines if a user-defined gene name query is using only
-unique (non-amgibuous) symbols. It is designed to be used for gene plotting
-particularly when performing single-cell RNA-seq marker analysis.</p>
+    <p><code>bapply()</code> is a wrapper for <code><a href='https://rdrr.io/r/base/lapply.html'>vapply()</a></code> that enforces
+<code>FUN.VALUE = logical(1)</code>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>matchesUniqueGeneNames</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>genes</span>, .xname <span class='op'>=</span> <span class='fu'><a href='engine-getNameInParent.html'>getNameInParent</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>bapply</span><span class='op'>(</span><span class='va'>X</span>, <span class='va'>FUN</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>x</th>
-      <td><p>Object.</p></td>
+      <th>X</th>
+      <td><p><code>atomic</code> or <code>list</code>.</p></td>
     </tr>
     <tr>
-      <th>genes</th>
-      <td><p><code>character</code>.
-Gene identifiers.</p></td>
+      <th>FUN</th>
+      <td><p><code>function</code>.
+An assert check function that returns <code><a href='https://rdrr.io/r/base/logical.html'>logical(1)</a></code> boolean flag
+(<code>TRUE</code>/<code>FALSE</code>) to <a href='https://rdrr.io/r/base/apply.html'>apply</a>.</p></td>
     </tr>
     <tr>
-      <th>.xname</th>
-      <td><p>Name of object defined in <code>x</code>.
-<em>Not intended to be used directly.</em></p></td>
+      <th>...</th>
+      <td><p>Additional arguments passed to <a href='https://rdrr.io/r/base/lapply.html'>vapply()</a>.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><code>TRUE</code> on success;
-<code>FALSE</code> on failure, with cause set.</p>
+    <p><code>logical</code>.</p>
     <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
-    <p>Updated 2021-01-04.</p>
+    
+<ul>
+<li><p><code>FUN.VALUE</code> is always set to <code><a href='https://rdrr.io/r/base/logical.html'>logical(1)</a></code>.</p></li>
+<li><p><code>USE.NAMES</code> is always set to <code>TRUE</code>.</p></li>
+</ul>
+
+<p>Updated 2020-01-04.</p>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'>
+<ul>
+<li><p><code><a href='https://rdrr.io/pkg/assertive.base/man/bapply.html'>assertive.base::bapply()</a></code>.</p></li>
+<li><p><code><a href='https://rdrr.io/r/base/lapply.html'>vapply()</a></code>.</p></li>
+</ul>
+</div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fu'>SummarizedExperiment</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/SummarizedExperiment/man/RangedSummarizedExperiment-class.html'>SummarizedExperiment</a></span><span class='op'>(</span>
-    assays <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span><span class='op'>(</span>
-        data <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq_len</a></span><span class='op'>(</span><span class='fl'>16L</span><span class='op'>)</span>,
-        nrow <span class='op'>=</span> <span class='fl'>4L</span>,
-        ncol <span class='op'>=</span> <span class='fl'>4L</span>,
-        dimnames <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>
-            <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span><span class='op'>(</span><span class='st'>"gene"</span>, <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq_len</a></span><span class='op'>(</span><span class='fl'>4L</span><span class='op'>)</span><span class='op'>)</span>,
-            <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span><span class='op'>(</span><span class='st'>"sample"</span>, <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq_len</a></span><span class='op'>(</span><span class='fl'>4L</span><span class='op'>)</span><span class='op'>)</span>
-        <span class='op'>)</span>
-    <span class='op'>)</span>,
-    rowData <span class='op'>=</span> <span class='fu'>S4Vectors</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/S4Vectors/man/DataFrame-class.html'>DataFrame</a></span><span class='op'>(</span>
-        geneID <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span><span class='op'>(</span><span class='st'>"ENSG0000000000"</span>, <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq_len</a></span><span class='op'>(</span><span class='fl'>4L</span><span class='op'>)</span><span class='op'>)</span>,
-        geneName <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span><span class='op'>(</span><span class='st'>"SYMBOL"</span>, <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq_len</a></span><span class='op'>(</span><span class='fl'>4L</span><span class='op'>)</span><span class='op'>)</span>
-    <span class='op'>)</span>
-<span class='op'>)</span>
-<span class='va'>genes</span> <span class='op'>&lt;-</span> <span class='fu'>SummarizedExperiment</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/SummarizedExperiment/man/SummarizedExperiment-class.html'>rowData</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span><span class='op'>$</span><span class='va'>geneName</span>
-
-<span class='co'>## TRUE ====</span>
-<span class='fu'>matchesUniqueGeneNames</span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>x</span>, genes <span class='op'>=</span> <span class='va'>genes</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; [1] TRUE</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>bapply</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>a <span class='op'>=</span> <span class='st'>"example"</span>, b <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span>, <span class='va'>is.character</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;     a     b 
+#&gt;  TRUE FALSE </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
