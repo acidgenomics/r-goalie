@@ -4,7 +4,7 @@
 #'
 #' Note that return matches the desired width.
 #'
-#' @export
+#' @name engine-shorten
 #' @note Updated 2020-01-04.
 #'
 #' @param x `atomic`.
@@ -17,6 +17,12 @@
 #' x <- "the quick brown fox"
 #' x <- shorten(x, width = 10L)
 #' nchar(x)
+NULL
+
+
+
+#' @rdname engine-shorten
+#' @export
 shorten <- function(x, width = getOption("width")) {
     stopifnot(
         is.atomic(x),

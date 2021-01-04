@@ -3,8 +3,8 @@
 #' Sets the `cause` [attribute][base::attributes] of an object and returns that
 #' object.
 #'
+#' @name engine-setCause
 #' @note Updated 2021-01-04.
-#' @export
 #'
 #' @inheritParams AcidRoxygen::params
 #' @param false `character`.
@@ -21,6 +21,12 @@
 #'
 #' @examples
 #' setCause(x = FALSE, false = "test")
+NULL
+
+
+
+#' @rdname engine-setCause
+#' @export
 setCause <- function(
     x,
     false = "false",
