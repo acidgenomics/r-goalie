@@ -22,7 +22,6 @@ License: GPL-3
 Encoding: UTF-8
 Depends: R (>= 4.0)
 Imports:
-    AcidBase (>= 0.2.3),
     methods,
     utils
 Suggests:
