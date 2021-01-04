@@ -2,7 +2,11 @@
 % Please edit documentation in R/engine-printString.R
 \name{engine-printString}
 \alias{engine-printString}
+\alias{printString}
 \title{Print string}
+\usage{
+printString(x, ..., max = getOption("max.print", 100L))
+}
 \arguments{
 \item{x}{An object used to select a \code{\link[base:print]{print()}} method.}
 
