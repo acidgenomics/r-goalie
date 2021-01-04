@@ -5,7 +5,7 @@
 #' particularly when performing single-cell RNA-seq marker analysis.
 #'
 #' @name check-scalar-matchesUniqueGeneNames
-#' @note Updated 2020-04-08.
+#' @note Updated 2021-01-04.
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
@@ -45,7 +45,7 @@ matchesUniqueGeneNames <- function(x, genes, .xname = getNameInParent(x)) {
     if (!isTRUE(ok)) return(ok)
     ## Get all of the gene names stashed in the x.
     if (is(x, "SummarizedExperiment")) {
-        requireNamespaces("SummarizedExperiment")
+        assert(requireNamespace("SummarizedExperiment", quietly = TRUE))
         x <- SummarizedExperiment::rowData(x)
     }
     ## Coercing to character here to handle Rle/factor matching.

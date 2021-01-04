@@ -23,7 +23,7 @@ Is the R session running inside Docker?
 }}
 
 \note{
-Updated 2020-04-08.
+Updated 2021-01-04.
 }
 \examples{
 isDocker()

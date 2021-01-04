@@ -24,7 +24,7 @@ Names in \code{\link[S4Vectors:Annotated-class]{metadata()}} that denote object 
 Does the object contain a subset of data?
 }
 \note{
-Updated 2020-04-08.
+Updated 2021-01-04.
 }
 \examples{
 if (requireNamespace("SummarizedExperiment", quietly = TRUE)) {

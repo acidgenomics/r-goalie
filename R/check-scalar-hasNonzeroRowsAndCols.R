@@ -7,7 +7,7 @@
 #' heatmap or applying a log transformation, for example.
 #'
 #' @name check-scalar-hasNonzeroRowsAndCols
-#' @note Updated 2020-04-08.
+#' @note Updated 2021-01-04.
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
@@ -40,7 +40,7 @@ hasNonzeroRowsAndCols <- function(x, .xname = getNameInParent(x)) {
     ok <- hasCols(x, .xname = .xname)
     if (!isTRUE(ok)) return(ok)
     if (is(x, "Matrix")) {
-        requireNamespaces("Matrix")
+        assert(requireNamespace("Matrix", quietly = TRUE))
         colSums <- Matrix::colSums
         rowSums <- Matrix::rowSums
     }

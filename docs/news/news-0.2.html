@@ -73,7 +73,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">goalie</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.11</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.12</span>
       </span>
     </div>
 
@@ -81,7 +81,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -98,13 +98,13 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://acidgenomics.com/">
-    <span class="fas fa fas fa-vial fa-lg"></span>
+    <span class="fas fa-vial fa-lg"></span>
      
   </a>
 </li>
 <li>
-  <a href="https://github.com/acidgenomics/goalie/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+  <a href="https://github.com/acidgenomics/r-goalie/">
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -179,9 +179,9 @@
 <li>Migrated some low-level functions from <a href="https://basejump.acidgenomics.com/">basejump</a> that are useful for assertive checks: <code>matchArgsToDoCall</code>, <code>standardizeCall</code>, and the <code>MethodDefinition</code> family, which includes <code>methodFunction</code>, <code>methodFormals</code>, <code>hasLocal</code>, <code>extractLocal</code>. These will get re-exported in <a href="https://basejump.acidgenomics.com/">basejump</a>.</li>
 </ul>
 </div>
-<div id="minor-changes-33" class="section level3">
+<div id="minor-changes-34" class="section level3">
 <h3 class="hasAnchor">
-<a href="#minor-changes-33" class="anchor"></a>Minor changes</h3>
+<a href="#minor-changes-34" class="anchor"></a>Minor changes</h3>
 <ul>
 <li>Reorganized base engine function files, getting rid of the <code>base-</code> prefix.</li>
 <li>Added conditional <code>NULL</code> support where applicable, with <code>nullOK</code> formal. Applies to <code>isInt</code>, <code>isNumber</code>, <code>isString</code>, for example.</li>
@@ -199,9 +199,9 @@
 <li>New exports: <code>allAreDirectories</code>, <code>allAreFiles</code>, which return scalar.</li>
 </ul>
 </div>
-<div id="minor-changes-32" class="section level3">
+<div id="minor-changes-33" class="section level3">
 <h3 class="hasAnchor">
-<a href="#minor-changes-32" class="anchor"></a>Minor changes</h3>
+<a href="#minor-changes-33" class="anchor"></a>Minor changes</h3>
 <ul>
 <li>Documentation improvements.</li>
 </ul>
@@ -210,9 +210,9 @@
     <div id="goalie-025-2019-01-15" class="section level2">
 <h2 class="hasAnchor">
 <a href="#goalie-025-2019-01-15" class="anchor"></a>goalie 0.2.5 (2019-01-15)</h2>
-<div id="minor-changes-31" class="section level3">
+<div id="minor-changes-32" class="section level3">
 <h3 class="hasAnchor">
-<a href="#minor-changes-31" class="anchor"></a>Minor changes</h3>
+<a href="#minor-changes-32" class="anchor"></a>Minor changes</h3>
 <ul>
 <li>
 <code>isADirectory</code>, <code>isAFile</code>: Added <code>nullOK</code> argument support.</li>
@@ -233,9 +233,9 @@
     <div id="goalie-027-2019-02-11" class="section level2">
 <h2 class="hasAnchor">
 <a href="#goalie-027-2019-02-11" class="anchor"></a>goalie 0.2.7 (2019-02-11)</h2>
-<div id="minor-changes-30" class="section level3">
+<div id="minor-changes-31" class="section level3">
 <h3 class="hasAnchor">
-<a href="#minor-changes-30" class="anchor"></a>Minor changes</h3>
+<a href="#minor-changes-31" class="anchor"></a>Minor changes</h3>
 <ul>
 <li>
 <code>assert</code>: <code>traceback</code> argument is disabled by default. Note that this can be enabled globally using <code><a href="https://rdrr.io/r/base/options.html">options(goalie.traceback = TRUE)</a></code>, which can be useful for code debugging in some situations.</li>
@@ -251,9 +251,9 @@
     <div id="goalie-028-2019-02-11" class="section level2">
 <h2 class="hasAnchor">
 <a href="#goalie-028-2019-02-11" class="anchor"></a>goalie 0.2.8 (2019-02-11)</h2>
-<div id="minor-changes-29" class="section level3">
+<div id="minor-changes-30" class="section level3">
 <h3 class="hasAnchor">
-<a href="#minor-changes-29" class="anchor"></a>Minor changes</h3>
+<a href="#minor-changes-30" class="anchor"></a>Minor changes</h3>
 <ul>
 <li>Bioconda unit tests revealed that <code>...elt</code> approach used in <code>assert</code> isn’t backward compatible with R 3.4. The backports package was added as a dependency, which provides legacy support for <code>...elt</code> in R 3.4. This is called internally inside <code>.onLoad</code> specifically for R releases prior to 3.5.</li>
 </ul>
@@ -262,9 +262,9 @@
     <div id="goalie-029-2019-02-25" class="section level2">
 <h2 class="hasAnchor">
 <a href="#goalie-029-2019-02-25" class="anchor"></a>goalie 0.2.9 (2019-02-25)</h2>
-<div id="minor-changes-28" class="section level3">
+<div id="minor-changes-29" class="section level3">
 <h3 class="hasAnchor">
-<a href="#minor-changes-28" class="anchor"></a>Minor changes</h3>
+<a href="#minor-changes-29" class="anchor"></a>Minor changes</h3>
 <ul>
 <li>Needed to tweak internal code in <code>assignToBody</code> to fix backports handling of <code>...elt</code> for R 3.4.</li>
 <li>
@@ -275,9 +275,9 @@
     <div id="goalie-0210-2019-03-10" class="section level2">
 <h2 class="hasAnchor">
 <a href="#goalie-0210-2019-03-10" class="anchor"></a>goalie 0.2.10 (2019-03-10)</h2>
-<div id="minor-changes-27" class="section level3">
+<div id="minor-changes-28" class="section level3">
 <h3 class="hasAnchor">
-<a href="#minor-changes-27" class="anchor"></a>Minor changes</h3>
+<a href="#minor-changes-28" class="anchor"></a>Minor changes</h3>
 <ul>
 <li>
 <code>isSubset</code>: Improved cause message, which would error using internal <code>deparse</code> call on long vectors.</li>
@@ -287,9 +287,9 @@
     <div id="goalie-0211-2019-03-17" class="section level2">
 <h2 class="hasAnchor">
 <a href="#goalie-0211-2019-03-17" class="anchor"></a>goalie 0.2.11 (2019-03-17)</h2>
-<div id="minor-changes-26" class="section level3">
+<div id="minor-changes-27" class="section level3">
 <h3 class="hasAnchor">
-<a href="#minor-changes-26" class="anchor"></a>Minor changes</h3>
+<a href="#minor-changes-27" class="anchor"></a>Minor changes</h3>
 <ul>
 <li>
 <code>isDirectory</code>, <code>isFile</code>: Now return with <code>cause</code> attribute set on failure.</li>
@@ -300,9 +300,9 @@
     <div id="goalie-0212-2019-03-22" class="section level2">
 <h2 class="hasAnchor">
 <a href="#goalie-0212-2019-03-22" class="anchor"></a>goalie 0.2.12 (2019-03-22)</h2>
-<div id="minor-changes-25" class="section level3">
+<div id="minor-changes-26" class="section level3">
 <h3 class="hasAnchor">
-<a href="#minor-changes-25" class="anchor"></a>Minor changes</h3>
+<a href="#minor-changes-26" class="anchor"></a>Minor changes</h3>
 <ul>
 <li>Migrated domain to <a href="https://acidgenomics.com/">Acid Genomics</a>.</li>
 </ul>
@@ -311,9 +311,9 @@
     <div id="goalie-0213-2019-03-31" class="section level2">
 <h2 class="hasAnchor">
 <a href="#goalie-0213-2019-03-31" class="anchor"></a>goalie 0.2.13 (2019-03-31)</h2>
-<div id="minor-changes-24" class="section level3">
+<div id="minor-changes-25" class="section level3">
 <h3 class="hasAnchor">
-<a href="#minor-changes-24" class="anchor"></a>Minor changes</h3>
+<a href="#minor-changes-25" class="anchor"></a>Minor changes</h3>
 <ul>
 <li>Overhauled and improved assert checks.</li>
 <li>Miscellaneous bug fixes for assert checks.</li>
@@ -323,9 +323,9 @@
     <div id="goalie-0214-2019-04-02" class="section level2">
 <h2 class="hasAnchor">
 <a href="#goalie-0214-2019-04-02" class="anchor"></a>goalie 0.2.14 (2019-04-02)</h2>
-<div id="minor-changes-23" class="section level3">
+<div id="minor-changes-24" class="section level3">
 <h3 class="hasAnchor">
-<a href="#minor-changes-23" class="anchor"></a>Minor changes</h3>
+<a href="#minor-changes-24" class="anchor"></a>Minor changes</h3>
 <ul>
 <li>
 <code>standardizeCall</code>: Improved <code>isNonNegative</code> assert check by wrapping in <code>unname</code> call, to keep backward compatibility with R 3.4.</li>
@@ -336,9 +336,9 @@
     <div id="goalie-0215-2019-04-22" class="section level2">
 <h2 class="hasAnchor">
 <a href="#goalie-0215-2019-04-22" class="anchor"></a>goalie 0.2.15 (2019-04-22)</h2>
-<div id="minor-changes-22" class="section level3">
+<div id="minor-changes-23" class="section level3">
 <h3 class="hasAnchor">
-<a href="#minor-changes-22" class="anchor"></a>Minor changes</h3>
+<a href="#minor-changes-23" class="anchor"></a>Minor changes</h3>
 <ul>
 <li>Bug fix for name handling in <code>assert</code> and <code>validate</code> calls. Now using <code>unname</code> internally to prevent unexpected errors with named logical vectors.</li>
 </ul>
@@ -347,9 +347,9 @@
     <div id="goalie-0216-2019-05-04" class="section level2">
 <h2 class="hasAnchor">
 <a href="#goalie-0216-2019-05-04" class="anchor"></a>goalie 0.2.16 (2019-05-04)</h2>
-<div id="minor-changes-21" class="section level3">
+<div id="minor-changes-22" class="section level3">
 <h3 class="hasAnchor">
-<a href="#minor-changes-21" class="anchor"></a>Minor changes</h3>
+<a href="#minor-changes-22" class="anchor"></a>Minor changes</h3>
 <ul>
 <li>Improved pkgdown NEWS configuration.</li>
 <li>Improved Travis Docker configuration.</li>
@@ -370,9 +370,9 @@
 <li>Removed support for R 3.4 and no longer need to import backports.</li>
 </ul>
 </div>
-<div id="minor-changes-20" class="section level3">
+<div id="minor-changes-21" class="section level3">
 <h3 class="hasAnchor">
-<a href="#minor-changes-20" class="anchor"></a>Minor changes</h3>
+<a href="#minor-changes-21" class="anchor"></a>Minor changes</h3>
 <ul>
 <li>No longer exporting <code>extractLocal</code> and <code>hasLocal</code>. These are currently only used by MethodDefinition utility functions defined here in the goalie package.</li>
 <li>Improved code coverage back up to 100%.</li>
@@ -394,9 +394,9 @@
     <div id="goalie-0219-2019-07-21" class="section level2">
 <h2 class="hasAnchor">
 <a href="#goalie-0219-2019-07-21" class="anchor"></a>goalie 0.2.19 (2019-07-21)</h2>
-<div id="minor-changes-19" class="section level3">
+<div id="minor-changes-20" class="section level3">
 <h3 class="hasAnchor">
-<a href="#minor-changes-19" class="anchor"></a>Minor changes</h3>
+<a href="#minor-changes-20" class="anchor"></a>Minor changes</h3>
 <ul>
 <li>Improved full line comments to use “##” instead of “#”, as recommended by current Bioconductor coding style.</li>
 </ul>

@@ -10,7 +10,10 @@ NULL
 
 
 
-## Updated 2019-10-30.
+#' Capitalize
+#'
+#' @note Updated 2019-10-30.
+#' @noRd
 .capitalize <- function(x) {
     vapply(
         X = as.character(x),
@@ -27,17 +30,25 @@ NULL
 
 
 
-## Using primary assay here.
-## Updated 2020-04-08.
+#' Coerce a SummarizedExperiment to a matrix
+#'
+#' @details Using primary assay here.
+#'
+#' @note Updated 2021-01-04.
+#' @noRd
 .coerceSummarizedExperimentToMatrix <- function(object) {
-    requireNamespaces("SummarizedExperiment")
+    assert(requireNamespace("SummarizedExperiment", quietly = TRUE))
     SummarizedExperiment::assay(object)
 }
 
 
 
-## @seealso `base::stopifnot()`.
-## Updated 2019-10-21.
+#' Deparse
+#'
+#' @note Updated 2021-01-04.
+#' @noRd
+#'
+#' @seealso `base::stopifnot()`.
 .deparse <-
     function(call, cutoff = 60L) {
         ch <- deparse(call, width.cutoff = cutoff)
@@ -50,8 +61,12 @@ NULL
 
 
 
-## @seealso `assertive.properties::DIM()`.
-## Updated 2019-10-30.
+#' Get dimensions
+#'
+#' @note Updated 2021-01-04.
+#' @noRd
+#'
+#' @seealso `assertive.properties::DIM()`.
 .dim <- function(x) {
     dim <- dim(x)
     if (is.null(dim)) {
@@ -63,7 +78,10 @@ NULL
 
 
 
-## Updated 2019-10-30.
+#' Does the input have a cause attribute set?
+#'
+#' @note Updated 2019-10-30.
+#' @noRd
 .hasCause <- function(x) {
     cause <- cause(x)
     if (
@@ -90,8 +108,6 @@ NULL
 #'
 #' @note Updated 2019-10-21.
 #' @noRd
-#'
-#' @inheritParams AcidRoxygen::params
 #'
 #' @seealso
 #' - `assertive.base::is2()`.
@@ -143,13 +159,12 @@ NULL
 
 
 
-## Updated 2019-08-10.
-.tolerance <- 100L * .Machine[["double.eps"]]
-
-
-
-## @seealso `assertive.base:::type_description()`.
-## Updated 2019-10-30.
+#' Get the type description
+#'
+#' @note Updated 2021-01-04.
+#' @noRd
+#'
+#' @seealso `assertive.base:::type_description()`.
 .typeDescription <- function(x) {
     if (is.array(x)) {
         sprintf(

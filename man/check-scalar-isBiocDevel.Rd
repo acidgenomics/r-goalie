@@ -15,7 +15,7 @@ isBiocDevel()
 Is the current Bioconductor installation under development?
 }
 \note{
-Updated 2020-10-29.
+Updated 2021-01-04.
 }
 \examples{
 isBiocDevel()
