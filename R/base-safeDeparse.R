@@ -6,7 +6,7 @@
 #' always returns `character(1)`.
 #'
 #' @export
-#' @note Updated 2019-07-29.
+#' @note Updated 2020-01-04.
 #'
 #' @param expr `expression`.
 #'   Any R expression.
