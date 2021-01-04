@@ -3,7 +3,7 @@
 #' Always returns the value `FALSE`, with a [cause]
 #' [attribute][base::attributes].
 #'
-#' @name false
+#' @name engine-false
 #' @note Updated 2021-01-04.
 #'
 #' @inheritParams AcidRoxygen::params
@@ -14,22 +14,6 @@
 #'
 #' @seealso `assertive.base::false()`.
 NULL
-
-
-
-#' @rdname false
-#' @export
-## Updated 2019-07-29.
-false <- function(...) {
-    msg <- if (nargs() > 0L) {
-        sprintf(...)
-    } else {
-        ""
-    }
-    x <- FALSE
-    cause(x) <- msg[[1L]]
-    x
-}
 
 
 
@@ -46,7 +30,23 @@ false <- function(...) {
 
 
 
-#' @rdname false
+#' @rdname engine-false
+#' @export
+## Updated 2019-07-29.
+false <- function(...) {
+    msg <- if (nargs() > 0L) {
+        sprintf(...)
+    } else {
+        ""
+    }
+    x <- FALSE
+    cause(x) <- msg[[1L]]
+    x
+}
+
+
+
+#' @rdname engine-false
 #' @export
 ## Updated 2019-07-29.
 falseFromVector <- function(x) {
