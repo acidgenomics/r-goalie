@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Do the input gene names match unique values in the corresponding object? — check-scalar-matchesUniqueGeneNames • goalie</title>
+<title>Assert that certain conditions are true — engine-assert • goalie</title>
 
 
 <!-- jquery -->
@@ -41,10 +41,9 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="Do the input gene names match unique values in the corresponding object? — check-scalar-matchesUniqueGeneNames" />
-<meta property="og:description" content="This assert check determines if a user-defined gene name query is using only
-unique (non-amgibuous) symbols. It is designed to be used for gene plotting
-particularly when performing single-cell RNA-seq marker analysis." />
+<meta property="og:title" content="Assert that certain conditions are true — engine-assert" />
+<meta property="og:description" content="assert() is a drop-in replacement for stopifnot()
+supporting more informative error messages." />
 
 
 
@@ -124,67 +123,74 @@ particularly when performing single-cell RNA-seq marker analysis." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Do the input gene names match unique values in the corresponding object?</h1>
-    <small class="dont-index">Source: <a href='https://github.com/acidgenomics/goalie/blob/master/R/check-scalar-matchesUniqueGeneNames.R'><code>R/check-scalar-matchesUniqueGeneNames.R</code></a></small>
-    <div class="hidden name"><code>check-scalar-matchesUniqueGeneNames.Rd</code></div>
+    <h1>Assert that certain conditions are true</h1>
+    <small class="dont-index">Source: <a href='https://github.com/acidgenomics/goalie/blob/master/R/engine-assert.R'><code>R/engine-assert.R</code></a></small>
+    <div class="hidden name"><code>engine-assert.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>This assert check determines if a user-defined gene name query is using only
-unique (non-amgibuous) symbols. It is designed to be used for gene plotting
-particularly when performing single-cell RNA-seq marker analysis.</p>
+    <p><code>assert()</code> is a drop-in replacement for <code><a href='https://rdrr.io/r/base/stopifnot.html'>stopifnot()</a></code>
+supporting more informative error messages.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>matchesUniqueGeneNames</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>genes</span>, .xname <span class='op'>=</span> <span class='fu'><a href='engine-getNameInParent.html'>getNameInParent</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>assert</span><span class='op'>(</span>
+  <span class='va'>...</span>,
+  msg <span class='op'>=</span> <span class='cn'>NULL</span>,
+  traceback <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span><span class='op'>(</span><span class='st'>"acid.traceback"</span>, default <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>x</th>
-      <td><p>Object.</p></td>
+      <th>...</th>
+      <td><p>Any number of R expressions that return <code><a href='https://rdrr.io/r/base/logical.html'>logical(1)</a></code>, each of
+which should evaluate to <code>TRUE</code>. Rather than combining expressions with
+<code>&amp;&amp;</code>, separate them by commas so that better error messages can be
+generated.</p></td>
     </tr>
     <tr>
-      <th>genes</th>
-      <td><p><code>character</code>.
-Gene identifiers.</p></td>
+      <th>msg</th>
+      <td><p><code>NULL</code> or <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code>.
+Custom message to return.</p></td>
     </tr>
     <tr>
-      <th>.xname</th>
-      <td><p>Name of object defined in <code>x</code>.
-<em>Not intended to be used directly.</em></p></td>
+      <th>traceback</th>
+      <td><p><code><a href='https://rdrr.io/r/base/logical.html'>logical(1)</a></code>.
+Include traceback in error message.
+See <code><a href='https://rdrr.io/r/base/traceback.html'>traceback()</a></code> for details.
+<code><a href='https://rlang.r-lib.org/reference/entrace.html'>rlang::entrace()</a></code> also works nicely and can be set in <code>.Rprofile</code>.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><code>TRUE</code> on success;
-<code>FALSE</code> on failure, with cause set.</p>
+    <p><code>TRUE</code> on success, error on failure.</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>If any of the expressions defined in <code>...</code> are not <a href='base::all'><code>all</code></a> <code>TRUE</code>,
+<code><a href='https://rdrr.io/r/base/stop.html'>stop</a></code> is called, producing an error message indicating the
+first expression which was not <code>TRUE</code>.</p>
     <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
     <p>Updated 2021-01-04.</p>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'>
+<ul>
+<li><p><code><a href='https://rdrr.io/r/base/stopifnot.html'>stopifnot()</a></code>.</p></li>
+<li><p><code><a href='https://rdrr.io/pkg/assertthat/man/assert_that.html'>assertthat::assert_that()</a></code>.</p></li>
+<li><p><code><a href='https://rdrr.io/pkg/assertive.base/man/assert_engine.html'>assertive.base::assert_engine()</a></code>.</p></li>
+<li><p><code><a href='https://rdrr.io/pkg/checkmate/man/assert.html'>checkmate::assert()</a></code>.</p></li>
+</ul>
+</div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fu'>SummarizedExperiment</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/SummarizedExperiment/man/RangedSummarizedExperiment-class.html'>SummarizedExperiment</a></span><span class='op'>(</span>
-    assays <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span><span class='op'>(</span>
-        data <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq_len</a></span><span class='op'>(</span><span class='fl'>16L</span><span class='op'>)</span>,
-        nrow <span class='op'>=</span> <span class='fl'>4L</span>,
-        ncol <span class='op'>=</span> <span class='fl'>4L</span>,
-        dimnames <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>
-            <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span><span class='op'>(</span><span class='st'>"gene"</span>, <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq_len</a></span><span class='op'>(</span><span class='fl'>4L</span><span class='op'>)</span><span class='op'>)</span>,
-            <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span><span class='op'>(</span><span class='st'>"sample"</span>, <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq_len</a></span><span class='op'>(</span><span class='fl'>4L</span><span class='op'>)</span><span class='op'>)</span>
-        <span class='op'>)</span>
-    <span class='op'>)</span>,
-    rowData <span class='op'>=</span> <span class='fu'>S4Vectors</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/S4Vectors/man/DataFrame-class.html'>DataFrame</a></span><span class='op'>(</span>
-        geneID <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span><span class='op'>(</span><span class='st'>"ENSG0000000000"</span>, <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq_len</a></span><span class='op'>(</span><span class='fl'>4L</span><span class='op'>)</span><span class='op'>)</span>,
-        geneName <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span><span class='op'>(</span><span class='st'>"SYMBOL"</span>, <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq_len</a></span><span class='op'>(</span><span class='fl'>4L</span><span class='op'>)</span><span class='op'>)</span>
-    <span class='op'>)</span>
+    <pre class="examples"><div class='input'><span class='fu'>assert</span><span class='op'>(</span>
+    <span class='fu'><a href='https://rdrr.io/r/base/is.recursive.html'>is.atomic</a></span><span class='op'>(</span><span class='st'>"example"</span><span class='op'>)</span>,
+    <span class='fu'><a href='https://rdrr.io/r/base/character.html'>is.character</a></span><span class='op'>(</span><span class='st'>"example"</span><span class='op'>)</span>
 <span class='op'>)</span>
-<span class='va'>genes</span> <span class='op'>&lt;-</span> <span class='fu'>SummarizedExperiment</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/SummarizedExperiment/man/SummarizedExperiment-class.html'>rowData</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span><span class='op'>$</span><span class='va'>geneName</span>
-
-<span class='co'>## TRUE ====</span>
-<span class='fu'>matchesUniqueGeneNames</span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>x</span>, genes <span class='op'>=</span> <span class='va'>genes</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; [1] TRUE</div></pre>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

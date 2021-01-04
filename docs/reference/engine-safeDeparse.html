@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Objects exported from other packages — reexports • goalie</title>
+<title>Expression deparsing — engine-safeDeparse • goalie</title>
 
 
 <!-- jquery -->
@@ -41,13 +41,8 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="Objects exported from other packages — reexports" />
-<meta property="og:description" content="These objects are imported from other packages. Follow the links
-below to see their documentation.
-
-  AcidBasebapply, getNameInParent
-
-" />
+<meta property="og:title" content="Expression deparsing — engine-safeDeparse" />
+<meta property="og:description" content="Turn unevaluated expressions into character strings." />
 
 
 
@@ -87,7 +82,7 @@ below to see their documentation.
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -104,13 +99,13 @@ below to see their documentation.
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://acidgenomics.com/">
-    <span class="fas fa fas fa-vial fa-lg"></span>
+    <span class="fas fa-vial fa-lg"></span>
      
   </a>
 </li>
 <li>
   <a href="https://github.com/acidgenomics/goalie/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -127,23 +122,53 @@ below to see their documentation.
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Objects exported from other packages</h1>
-    <small class="dont-index">Source: <a href='https://github.com/acidgenomics/goalie/blob/master/R/reexports.R'><code>R/reexports.R</code></a></small>
-    <div class="hidden name"><code>reexports.Rd</code></div>
+    <h1>Expression deparsing</h1>
+    <small class="dont-index">Source: <a href='https://github.com/acidgenomics/goalie/blob/master/R/engine-safeDeparse.R'><code>R/engine-safeDeparse.R</code></a></small>
+    <div class="hidden name"><code>engine-safeDeparse.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>These objects are imported from other packages. Follow the links
-below to see their documentation.</p>
-<dl>
-  <dt>AcidBase</dt><dd><p><code><a href='https://acidbase.acidgenomics.com/reference/bapply.html'>bapply</a></code>, <code><a href='https://acidbase.acidgenomics.com/reference/getNameInParent.html'>getNameInParent</a></code></p></dd>
-
-</dl>
+    <p>Turn unevaluated expressions into character strings.</p>
     </div>
 
+    <pre class="usage"><span class='fu'>safeDeparse</span><span class='op'>(</span><span class='va'>expr</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>expr</th>
+      <td><p><code>expression</code>.
+Any R expression.</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>Passed to <code><a href='https://rdrr.io/r/base/deparse.html'>deparse()</a></code>.</p></td>
+    </tr>
+    </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
+    <p><code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code>.</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p><code>safeDeparse()</code> is modified version of <code><a href='https://rdrr.io/r/base/deparse.html'>deparse()</a></code> that
+always returns <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code>.</p>
+    <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
+
+    <p>Updated 2020-01-04.</p>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'>
+<ul>
+<li><p><code><a href='https://rdrr.io/pkg/assertive.base/man/safe_deparse.html'>assertive.base::safe_deparse()</a></code>.</p></li>
+<li><p><code><a href='https://rdrr.io/r/base/deparse.html'>deparse()</a></code>.</p></li>
+</ul>
+</div>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'>safeDeparse</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/character.html'>is.character</a></span><span class='op'>(</span><span class='st'>"a"</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] "TRUE"</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
