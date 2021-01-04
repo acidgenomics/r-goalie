@@ -26,7 +26,7 @@ NULL
 
 
 
-#' @rdname printString
+#' @rdname engine-printString
 #' @export
 printString <- function(
     x, ...,
