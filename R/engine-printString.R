@@ -33,7 +33,7 @@ printString <- function(
     max = getOption("max.print", 100L)
 ) {
     ## Note that this is called inside `assert()` for traceback support.
-    stopifnot(.isInt(max))
+    stopifnot(isInt(max))
     x <- capture.output(print(x, ...))
     ## Limit the number of lines returned, like `max.print` option.
     x <- head(x, n = max)
