@@ -1,3 +1,11 @@
+## goalie 0.4.12 (2021-01-04)
+
+### Minor changes
+
+- Migrated some base functions that were previously defined in AcidBase, so we
+  can pin the dependencies to base R only: `compressExtPattern`, `extPattern`,
+  `printString`, `safeDeparse`, `shorten`, `toNames`.
+
 ## goalie 0.4.11 (2020-11-05)
 
 ### Minor changes
