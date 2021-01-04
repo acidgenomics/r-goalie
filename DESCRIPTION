@@ -16,8 +16,8 @@ Authors@R: c(
     ))
 URL:
     https://goalie.acidgenomics.com/,
-    https://github.com/acidgenomics/goalie/
-BugReports: https://github.com/acidgenomics/goalie/issues/
+    https://github.com/acidgenomics/r-goalie/
+BugReports: https://github.com/acidgenomics/r-goalie/issues/
 License: GPL-3
 Encoding: UTF-8
 Depends: R (>= 4.0)
