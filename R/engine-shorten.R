@@ -26,7 +26,7 @@ NULL
 shorten <- function(x, width = getOption("width")) {
     stopifnot(
         is.atomic(x),
-        .isInt(width),
+        isInt(width),
         isTRUE(width > 3L)
     )
     x <- as.character(x)
