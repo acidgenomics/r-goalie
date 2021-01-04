@@ -4,7 +4,7 @@
 #' variable.
 #'
 #' @name cause
-#' @note Updated 2019-07-29.
+#' @note Updated 2021-01-04.
 #'
 #' @inheritParams AcidRoxygen::params
 #'

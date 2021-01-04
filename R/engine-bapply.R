@@ -8,7 +8,7 @@
 #' - `USE.NAMES` is always set to `TRUE`.
 #'
 #' @export
-#' @note Updated 2019-10-22.
+#' @note Updated 2020-01-04.
 #'
 #' @param X `atomic` or `list`.
 #' @param FUN `function`.

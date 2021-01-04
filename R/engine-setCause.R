@@ -3,9 +3,9 @@
 #' Sets the `cause` [attribute][base::attributes] of an object and returns that
 #' object.
 #'
+#' @rdname engine-setCause
+#' @note Updated 2021-01-04.
 #' @export
-#' @keywords internal
-#' @note Updated 2019-08-08.
 #'
 #' @inheritParams AcidRoxygen::params
 #' @param false `character`.
