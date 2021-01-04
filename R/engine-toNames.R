@@ -1,6 +1,6 @@
 #' Sanitize vector input to names
 #'
-#' @export
+#' @name engine-toNames
 #' @note Names resulting from this function do not necessarily return valid, and
 #'   will not be identical to output from [`make.names()`][base::make.names()].
 #' @note Updated 2020-01-04.
@@ -22,6 +22,12 @@
 #'
 #' ## Doesn't use 'make.names()' to sanitize.
 #' toNames(c("sample-1", "hello world"))
+NULL
+
+
+
+#' @rdname engine-toNames
+#' @export
 toNames <- function(x) {
     ## Assert check for `is.vector()` instead of `is.atomic()` here will error
     ## out for `na.omit()` return.
