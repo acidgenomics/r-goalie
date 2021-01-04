@@ -4,8 +4,7 @@
 #' [attribute][base::attributes].
 #'
 #' @name false
-#' @keywords internal
-#' @note Updated 2019-07-29.
+#' @note Updated 2021-01-04.
 #'
 #' @inheritParams AcidRoxygen::params
 #' @param ... Passed to [`gettextf()`][base::gettextf] to create a [cause] of
