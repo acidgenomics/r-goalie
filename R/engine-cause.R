@@ -3,7 +3,7 @@
 #' Gets or sets the [cause] (of failure) [attribute][base::attributes] of a
 #' variable.
 #'
-#' @name cause
+#' @name engine-cause
 #' @note Updated 2021-01-04.
 #'
 #' @inheritParams AcidRoxygen::params
@@ -28,7 +28,7 @@ NULL
 
 
 
-#' @rdname cause
+#' @rdname engine-cause
 #' @export
 ## Updated 2019-07-15.
 cause <- function(x) {
@@ -37,7 +37,7 @@ cause <- function(x) {
 
 
 
-#' @rdname cause
+#' @rdname engine-cause
 #' @export
 ## Updated 2019-08-08.
 `cause<-` <-  # nolint
@@ -62,7 +62,7 @@ cause <- function(x) {
 
 
 
-#' @rdname cause
+#' @rdname engine-cause
 #' @export
 ## Updated 2019-07-15.
 nocause <- function(x) {
