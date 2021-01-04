@@ -16,18 +16,15 @@ news:
   - one_page: false
 
 reference:
-  - title: Engine
-    contents:
-      - assert
-      - cause
-      - validate
-      - validateClasses
   - title: Scalar checks
     contents:
       - starts_with("check-scalar-")
   - title: Vectorized checks
     contents:
       - starts_with("check-vector-")
+  - title: Assert check engine
+    contents:
+      - starts_with("engine-")
   - title: S3 methods
     contents:
       - print

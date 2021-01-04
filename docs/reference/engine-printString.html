@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Get or set the cause attribute — cause • goalie</title>
+<title>Print string — engine-printString • goalie</title>
 
 
 <!-- jquery -->
@@ -41,9 +41,8 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="Get or set the cause attribute — cause" />
-<meta property="og:description" content="Gets or sets the cause (of failure) attribute of a
-variable." />
+<meta property="og:title" content="Print string — engine-printString" />
+<meta property="og:description" content="Capture print() output as a character string." />
 
 
 
@@ -83,7 +82,7 @@ variable." />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -100,13 +99,13 @@ variable." />
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://acidgenomics.com/">
-    <span class="fas fa fas fa-vial fa-lg"></span>
+    <span class="fas fa-vial fa-lg"></span>
      
   </a>
 </li>
 <li>
   <a href="https://github.com/acidgenomics/goalie/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -123,62 +122,54 @@ variable." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Get or set the <code>cause</code> attribute</h1>
-    <small class="dont-index">Source: <a href='https://github.com/acidgenomics/goalie/blob/master/R/engine-cause.R'><code>R/engine-cause.R</code></a></small>
-    <div class="hidden name"><code>cause.Rd</code></div>
+    <h1>Print string</h1>
+    <small class="dont-index">Source: <a href='https://github.com/acidgenomics/goalie/blob/master/R/engine-printString.R'><code>R/engine-printString.R</code></a></small>
+    <div class="hidden name"><code>engine-printString.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Gets or sets the cause (of failure) <a href='https://rdrr.io/r/base/attributes.html'>attribute</a> of a
-variable.</p>
+    <p>Capture <code><a href='https://rdrr.io/r/base/print.html'>print()</a></code> output as a <code>character</code> string.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>cause</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
-
-<span class='fu'>cause</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span> <span class='op'>&lt;-</span> <span class='va'>value</span>
-
-<span class='fu'>nocause</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>x</th>
-      <td><p>Object.</p></td>
+      <td><p>An object used to select a <code><a href='https://rdrr.io/r/base/print.html'>print()</a></code> method.</p></td>
     </tr>
     <tr>
-      <th>value</th>
-      <td><p>Value to assign.</p></td>
+      <th>...</th>
+      <td><p>Passthrough arguments to <code><a href='https://rdrr.io/r/base/print.html'>print()</a></code>.</p></td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td><p><code><a href='https://rdrr.io/r/base/integer.html'>integer(1)</a></code>.
+Maximum length of vector. Works internally by calling
+<code><a href='https://rdrr.io/r/utils/head.html'>head()</a></code> on the print capture, prior to collapse using
+<code><a href='https://rdrr.io/r/base/paste.html'>paste()</a></code>. Supports <code><a href='https://rdrr.io/r/base/options.html'>getOption("max.print")</a></code> global
+variable.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code>.
-Cause attribute.</p>
+    <p><code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code>.</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>Useful for returning informative messages inside a function.</p>
     <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
-    <p>Updated 2019-07-29.</p>
+    <p>Updated 2020-01-24.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'>
-<ul>
-<li><p><code><a href='https://rdrr.io/pkg/assertive.base/man/cause.html'>assertive.base::cause()</a></code>.</p></li>
-<li><p><code><a href='https://rdrr.io/r/base/attributes.html'>attributes()</a></code>.</p></li>
-<li><p><code><a href='https://rdrr.io/r/base/attr.html'>attr()</a></code>.</p></li>
-</ul>
-</div>
+    <div class='dont-index'><p><code><a href='https://rdrr.io/r/base/cat.html'>cat()</a></code>.</p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'>## Scalar cause.</span>
-<span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fu'><a href='check-scalar-isFlag.html'>isFlag</a></span><span class='op'>(</span><span class='st'>"xxx"</span><span class='op'>)</span>
-<span class='fu'>cause</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; [1] '"xxx"' is not a boolean flag (TRUE/FALSE).</div><div class='input'>
-<span class='co'>## Vector cause.</span>
-<span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fu'><a href='check-vector-isInRange.html'>isInRange</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1L</span>, <span class='fl'>2L</span><span class='op'>)</span>, lower <span class='op'>=</span> <span class='fl'>3L</span><span class='op'>)</span>
-<span class='fu'>cause</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;       1       2 
-#&gt; too low too low </div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>printString</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"hello"</span>, <span class='st'>"world"</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='error'>Error in .isInt(max): could not find function ".isInt"</span></div><div class='input'><span class='fu'>printString</span><span class='op'>(</span><span class='fu'>datasets</span><span class='fu'>::</span><span class='va'><a href='https://rdrr.io/r/datasets/mtcars.html'>mtcars</a></span>, max <span class='op'>=</span> <span class='fl'>2L</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='error'>Error in .isInt(max): could not find function ".isInt"</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
