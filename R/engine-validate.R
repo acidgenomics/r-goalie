@@ -10,7 +10,6 @@
 #' the methods package, specifically [`validObject()`][methods::validObject] for
 #' detailed information on S4 validity methods.
 #'
-#' @rdname engine-validate
 #' @note Updated 2021-01-04.
 #' @export
 #'

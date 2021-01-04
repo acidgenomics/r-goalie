@@ -7,7 +7,6 @@
 #' [`stop`][base::stop] is called, producing an error message indicating the
 #' first expression which was not `TRUE`.
 #'
-#' @rdname engine-assert
 #' @note Updated 2021-01-04.
 #' @export
 #'

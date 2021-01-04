@@ -3,7 +3,6 @@
 #' Sets the `cause` [attribute][base::attributes] of an object and returns that
 #' object.
 #'
-#' @rdname engine-setCause
 #' @note Updated 2021-01-04.
 #' @export
 #'
