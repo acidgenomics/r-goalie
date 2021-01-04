@@ -32,7 +32,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">goalie</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.11</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.12</span>
       </span>
     </div>
 
@@ -40,7 +40,7 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -57,13 +57,13 @@
 <ul class="nav navbar-nav navbar-right">
 <li>
   <a href="https://acidgenomics.com/">
-    <span class="fas fa fas fa-vial fa-lg"></span>
+    <span class="fas fa-vial fa-lg"></span>
      
   </a>
 </li>
 <li>
   <a href="https://github.com/acidgenomics/goalie/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -77,13 +77,12 @@
 
       
 
-      </header><script src="goalie_files/accessible-code-block-0.0.1/empty-anchor.js"></script><link href="goalie_files/anchor-sections-1.0/anchor-sections.css" rel="stylesheet">
-<script src="goalie_files/anchor-sections-1.0/anchor-sections.js"></script><div class="row">
+      </header><script src="goalie_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>goalie</h1>
             
-            <h4 class="date">2020-11-05</h4>
+            <h4 class="date">2021-01-04</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/acidgenomics/goalie/blob/master/vignettes/goalie.Rmd"><code>vignettes/goalie.Rmd</code></a></small>
       <div class="hidden name"><code>goalie.Rmd</code></div>
@@ -101,8 +100,8 @@
 <a href="#introduction" class="anchor"></a>Introduction</h1>
 <p><a href="https://goalie.acidgenomics.com/">goalie</a> is an attempt to incorporate elements of multiple assertive check packages into a single package with as few dependencies as possible. All assertive checks are written in the most basic <a href="https://www.r-project.org/">R</a> code possible, without reliance on compilation (e.g. C++/Rcpp). It is still a work in progress, and feature requests are welcome.</p>
 <p>R exports the <code><a href="https://rdrr.io/r/base/stopifnot.html">stopifnot()</a></code> function as a simple assert engine that supports multiple boolean returns (<code>TRUE</code>/<code>FALSE</code>) in a single call, separated by commas. This is a nice, flexible system for defensive programming. However, <code><a href="https://rdrr.io/r/base/stopifnot.html">stopifnot()</a></code> does not currently support custom error messages, and can be confusing to debug.</p>
-<p>Similar to the approach used in the <a href="https://cran.r-project.org/package=assertthat">assertthat</a> package, goalie exports the <code><a href="../reference/assert.html">assert()</a></code> function, which is designed to be a drop-in replacement for <code><a href="https://rdrr.io/r/base/stopifnot.html">stopifnot()</a></code> with improved error message support. <code><a href="../reference/validate.html">validate()</a></code> is a variation on <code><a href="../reference/assert.html">assert()</a></code> that is intended to be used within S4 class validity checks, which is useful for <a href="https://bioconductor.org/">Bioconductor</a> packages.</p>
-<p>Additionally, goalie exports a number of assertive check functions that are intended to harden bioinformatics-oriented functions in R. These check functions return <code>logical</code> with an additional <code>"goalie"</code> S3 class definition, which enables us to define custom print methods that display additional useful information about the cause of the error (see <code><a href="../reference/cause.html">cause()</a></code> and <code><a href="../reference/print.html">print()</a></code> for details). This approach draws heavily from the <a href="https://cran.r-project.org/package=assertive">assertive</a> package.</p>
+<p>Similar to the approach used in the <a href="https://cran.r-project.org/package=assertthat">assertthat</a> package, goalie exports the <code><a href="../reference/engine-assert.html">assert()</a></code> function, which is designed to be a drop-in replacement for <code><a href="https://rdrr.io/r/base/stopifnot.html">stopifnot()</a></code> with improved error message support. <code><a href="../reference/engine-validate.html">validate()</a></code> is a variation on <code><a href="../reference/engine-assert.html">assert()</a></code> that is intended to be used within S4 class validity checks, which is useful for <a href="https://bioconductor.org/">Bioconductor</a> packages.</p>
+<p>Additionally, goalie exports a number of assertive check functions that are intended to harden bioinformatics-oriented functions in R. These check functions return <code>logical</code> with an additional <code>"goalie"</code> S3 class definition, which enables us to define custom print methods that display additional useful information about the cause of the error (see <code><a href="../reference/engine-cause.html">cause()</a></code> and <code><a href="../reference/print.html">print()</a></code> for details). This approach draws heavily from the <a href="https://cran.r-project.org/package=assertive">assertive</a> package.</p>
 <p>The goalie source code incorporates elements from these excellent assert check packages:</p>
 <ul>
 <li>
@@ -149,11 +148,11 @@
 <div id="r-session-information" class="section level1">
 <h1 class="hasAnchor">
 <a href="#r-session-information" class="anchor"></a>R session information</h1>
-<div class="sourceCode" id="cb1"><pre class="downlit">
-<span class="fu">utils</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html">sessionInfo</a></span><span class="op">(</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">utils</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html">sessionInfo</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <pre><code>## R version 4.0.3 (2020-10-10)
 ## Platform: x86_64-apple-darwin17.0 (64-bit)
-## Running under: macOS Catalina 10.15.7
+## Running under: macOS Big Sur 10.16
 ## 
 ## Matrix products: default
 ## BLAS:   /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRblas.dylib
@@ -166,13 +165,12 @@
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] rprojroot_1.3-2   digest_0.6.27     crayon_1.3.4      assertthat_0.2.1 
-##  [5] R6_2.5.0          backports_1.1.10  magrittr_1.5      evaluate_0.14    
-##  [9] stringi_1.5.3     rlang_0.4.8       rstudioapi_0.11   fs_1.5.0         
-## [13] ragg_0.4.0        rmarkdown_2.5     pkgdown_1.6.1     textshaping_0.1.2
-## [17] desc_1.2.0        tools_4.0.3       stringr_1.4.0     yaml_2.2.1       
-## [21] xfun_0.19         compiler_4.0.3    systemfonts_0.3.2 memoise_1.1.0    
-## [25] htmltools_0.5.0   knitr_1.30</code></pre>
+##  [1] digest_0.6.27     crayon_1.3.4      rprojroot_2.0.2   assertthat_0.2.1 
+##  [5] R6_2.5.0          magrittr_2.0.1    evaluate_0.14     stringi_1.5.3    
+##  [9] rlang_0.4.9       fs_1.5.0          ragg_0.4.0        rmarkdown_2.6    
+## [13] pkgdown_1.6.1     textshaping_0.2.1 desc_1.2.0        tools_4.0.3      
+## [17] stringr_1.4.0     yaml_2.2.1        xfun_0.19         compiler_4.0.3   
+## [21] systemfonts_0.3.2 memoise_1.1.0     htmltools_0.5.0   knitr_1.30</code></pre>
 </div>
   </div>
 
