@@ -4,7 +4,7 @@
 #'
 #' Useful for returning informative messages inside a function.
 #'
-#' @export
+#' @name engine-printString
 #' @note Updated 2020-01-24.
 #'
 #' @param x An object used to select a [`print()`][base::print] method.
@@ -22,6 +22,12 @@
 #' @examples
 #' printString(c("hello", "world"))
 #' printString(datasets::mtcars, max = 2L)
+NULL
+
+
+
+#' @rdname printString
+#' @export
 printString <- function(
     x, ...,
     max = getOption("max.print", 100L)

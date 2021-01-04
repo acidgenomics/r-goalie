@@ -1,6 +1,6 @@
 #' Get the name of a variable defined in the parent frame
 #'
-#' @export
+#' @name engine-getNameInParent
 #' @note Updated 2020-01-04.
 #'
 #' @param x `symbol`.
@@ -19,6 +19,12 @@
 #'
 #' @examples
 #' getNameInParent(test)
+NULL
+
+
+
+#' @rdname engine-getNameInParent
+#' @export
 getNameInParent <- function(x, escapePercent = TRUE, width = 100L) {
     xname <- safeDeparse(do.call(
         what = substitute,
