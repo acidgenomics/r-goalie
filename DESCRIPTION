@@ -15,7 +15,7 @@ Authors@R: c(
         role = c("cph", "fnd")
     ))
 URL:
-    https://goalie.acidgenomics.com/,
+    https://r.acidgenomics.com/packages/goalie,
     https://github.com/acidgenomics/r-goalie/
 BugReports: https://github.com/acidgenomics/r-goalie/issues/
 License: GPL-3
