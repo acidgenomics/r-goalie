@@ -11,9 +11,9 @@ Assertive check functions for defensive R programming.
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://goalie.acidgenomics.com/}
-  \item \url{https://github.com/acidgenomics/goalie/}
-  \item Report bugs at \url{https://github.com/acidgenomics/goalie/issues/}
+  \item \url{https://r.acidgenomics.com/packages/goalie}
+  \item \url{https://github.com/acidgenomics/r-goalie/}
+  \item Report bugs at \url{https://github.com/acidgenomics/r-goalie/issues/}
 }
 
 }
