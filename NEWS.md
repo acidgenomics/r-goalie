@@ -1,3 +1,11 @@
+## goalie 0.4.13 (2020-01-06)
+
+### New functions
+
+- `isOrganism`: New assert check to verify that user precisely entered expected
+  organism format of `<genus>` `<species>` (e.g. "Homo sapiens"). Case
+  sensitivity and spaces are required here.
+
 ## goalie 0.4.12 (2021-01-04)
 
 ### Minor changes
