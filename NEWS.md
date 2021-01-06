@@ -1,4 +1,10 @@
-## goalie 0.4.13 (2020-01-06)
+## goalie 0.4.14 (2021-01-06)
+
+### Minor changes
+
+- `isOrganism`: Added `nullOK` argument.
+
+## goalie 0.4.13 (2021-01-06)
 
 ### New functions
 
