@@ -27,8 +27,8 @@ se <- SummarizedExperiment(
         )
     ),
     rowData = DataFrame(
-        geneID = paste0("ENSG0000000000", seq_len(4L)),
-        geneName = paste0("SYMBOL", seq_len(4L))
+        "geneId" = paste0("ENSG0000000000", seq_len(4L)),
+        "geneName" = paste0("SYMBOL", seq_len(4L))
     )
 )
 
