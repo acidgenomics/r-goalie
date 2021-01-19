@@ -9,4 +9,6 @@
 ^data-raw$
 ^doc(s)?$
 ^pkgdown$
+^tests$
+^todo\.org$
 ^vignettes/\.$
