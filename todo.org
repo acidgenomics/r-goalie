@@ -1,6 +1,7 @@
 #+TITLE: goalie
 #+STARTUP: content
 * Development
+** TODO Need `isFormula` check.
 ** TODO isEmpty masks some Bioconductor functions.
 ** TODO Note that `NULL` arguments aren't passing through as expected with `matchArgsToDoCall()`. Look into fixing this in a future goalie release.
     For example, `color = NULL` doesn't pass as expected.
