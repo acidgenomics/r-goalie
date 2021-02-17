@@ -1,10 +1,10 @@
 #+TITLE: goalie
 #+STARTUP: content
 * Development
-** TODO Need `isFormula` check.
+** TODO Consider updating 'validate()' and 'validateClasses()' to inform the
+   user about 'updateObject' function.
+** TODO Consider adding `isFormula` check.
 ** TODO isEmpty masks some Bioconductor functions.
-** TODO Note that `NULL` arguments aren't passing through as expected with `matchArgsToDoCall()`. Look into fixing this in a future goalie release.
-    For example, `color = NULL` doesn't pass as expected.
 ** TODO skip_on_ci utility.
 ** TODO isInstalled.
 ** TODO isNonEmpty("") returns TRUE.
