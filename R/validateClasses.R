@@ -6,7 +6,7 @@
 #' [validate()]. Particularly useful for checking multiple slotted objects
 #' inside [`metadata()`][S4Vectors::metadata].
 #'
-#' @name engine-validateClasses
+#' @export
 #' @note Updated 2021-02-23.
 #'
 #' @inheritParams AcidRoxygen::params
@@ -51,12 +51,6 @@
 #'         c = "character"
 #'     )
 #' )
-NULL
-
-
-
-#' @rdname engine-validateClasses
-#' @export
 validateClasses <- function(object, expected, subset = FALSE) {
     assert(
         is(expected, "list"),
