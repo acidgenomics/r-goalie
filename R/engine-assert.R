@@ -12,7 +12,7 @@
 #' first expression which was not `TRUE`.
 #'
 #' @name engine-assert
-#' @note Updated 2021-01-04.
+#' @note Updated 2021-02-23.
 #'
 #' @inheritParams AcidRoxygen::params
 #' @param ... Any number of R expressions that return `logical(1)`, each of
@@ -39,11 +39,7 @@ NULL
 
 #' @rdname engine-assert
 #' @export
-assert <- function(
-    ...,
-    msg = NULL,
-    traceback = getOption("acid.traceback", default = FALSE)
-) {
+assert <- function(..., msg = NULL) {
     n <- ...length()
     if (identical(n, 0L)) {
         stop("No assert check defined.")
@@ -75,18 +71,10 @@ assert <- function(
             cause <- cause(r)
             if (!is.null(cause)) {
                 ## Capturing the S3 print method on goalie class here.
+                ## FIXME RETHINK THIS APPROACH...ISSUES WITH R MARKDOWN?
                 msg <- c(msg, capture.output(print(r))[-1L])
             }
             msg <- paste0(msg, collapse = "\n")
-        }
-        ## Include the traceback in error.
-        if (isTRUE(traceback)) {
-            ## Note that we're reversing the call stack here to make it easier
-            ## to see the parents.
-            stack <- rev(sys.calls())
-            stack <- printString(stack)
-            ## Add the traceback to the error message.
-            msg <- paste(msg, "Traceback:", stack, sep = "\n")
         }
         stop(simpleError(msg, call = if (p <- sys.parent(1L)) sys.call(p)))
     }

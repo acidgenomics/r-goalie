@@ -5,11 +5,7 @@
 \alias{assert}
 \title{Assert that certain conditions are true}
 \usage{
-assert(
-  ...,
-  msg = NULL,
-  traceback = getOption("acid.traceback", default = FALSE)
-)
+assert(..., msg = NULL)
 }
 \arguments{
 \item{...}{Any number of R expressions that return \code{logical(1)}, each of
@@ -19,11 +15,6 @@ generated.}
 
 \item{msg}{\code{NULL} or \code{character(1)}.
 Custom message to return.}
-
-\item{traceback}{\code{logical(1)}.
-Include traceback in error message.
-See \code{\link[base:traceback]{traceback()}} for details.
-\code{rlang::entrace()} also works nicely and can be set in \code{.Rprofile}.}
 }
 \value{
 \code{TRUE} on success, error on failure.
@@ -38,7 +29,7 @@ If any of the expressions defined in \code{...} are not \href{base::all}{\code{a
 first expression which was not \code{TRUE}.
 }
 \note{
-Updated 2021-01-04.
+Updated 2021-02-23.
 }
 \examples{
 assert(
