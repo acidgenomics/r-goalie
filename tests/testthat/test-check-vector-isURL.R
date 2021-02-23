@@ -12,7 +12,7 @@ test_that("isURL", {
     expect_false(ok)
     expect_identical(
         cause(ok),
-        noquote(c(xxx = "not URL"))
+        c(xxx = "not URL")
     )
 })
 
@@ -30,7 +30,7 @@ test_that("isAURL", {
     expect_false(ok)
     expect_identical(
         cause(ok),
-        noquote("'urls' does not have a length of 1.")
+        "'urls' does not have a length of 1."
     )
 })
 

@@ -19,7 +19,7 @@ test_that("hasRownames", {
             ok <- hasRownames(data)
             expect_false(ok)
             expect_s4_class(ok, "goalie")
-            expect_identical(cause(ok), noquote(cause))
+            expect_identical(cause(ok), cause)
         },
         SIMPLIFY = FALSE
     )
@@ -41,7 +41,7 @@ test_that("FALSE : data.frame sequence row names", {
     expect_s4_class(ok, "goalie")
     expect_identical(
         cause(ok),
-        noquote("'x' has integer row names (soft NULL).")
+        "'x' has integer row names (soft NULL)."
     )
 })
 
@@ -52,6 +52,6 @@ test_that("FALSE : DataFrame NULL", {
     expect_s4_class(ok, "goalie")
     expect_identical(
         cause(ok),
-        noquote("'x' has NULL row names.")
+        "'x' has NULL row names."
     )
 })

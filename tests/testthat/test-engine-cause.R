@@ -5,7 +5,7 @@ test_that("scalar", {
     cause(x) <- "xxx"
     expect_s4_class(x, "goalie")
     expect_false(x)
-    expect_identical(cause(x), noquote("xxx"))
+    expect_identical(cause(x), "xxx")
 })
 
 test_that("vector", {
@@ -19,7 +19,7 @@ test_that("vector", {
     cause(x) <- cause
     expect_s4_class(x, "goalie")
     expect_is(x, "logical")
-    expect_identical(cause(x), noquote(cause))
+    expect_identical(cause(x), cause)
 })
 
 test_that("cause assignment mismatch", {

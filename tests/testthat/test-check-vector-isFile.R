@@ -25,7 +25,7 @@ test_that("FALSE : not file", {
     )
     expect_identical(
         cause(ok),
-        noquote(c(aaa = "not file", bbb = "not file"))
+        c(aaa = "not file", bbb = "not file")
     )
 })
 
@@ -35,7 +35,7 @@ test_that("FALSE : not character", {
     expect_false(ok)
     expect_identical(
         cause(ok),
-        noquote("'x' is not character.")
+        "'x' is not character."
     )
 })
 

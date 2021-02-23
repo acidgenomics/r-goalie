@@ -22,7 +22,7 @@ test_that("FALSE : not symlink", {
     )
     expect_identical(
         cause(ok),
-        noquote(c(from.txt = "not symlink", to.txt = ""))
+        c(from.txt = "not symlink", to.txt = "")
     )
 })
 

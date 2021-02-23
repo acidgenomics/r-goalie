@@ -9,7 +9,7 @@ test_that("hasDims", {
     expect_s4_class(ok, "goalie")
     expect_identical(
         cause(ok),
-        noquote("The dimensions of 'list()' are NULL.")
+        "The dimensions of 'list()' are NULL."
     )
 })
 

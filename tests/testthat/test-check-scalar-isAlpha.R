@@ -9,12 +9,12 @@ test_that("FALSE : out of bounds", {
     ok <- isAlpha(0)  # nolint
     expect_identical(
         cause(ok),
-        noquote(c("0.000000000000000e+00" = "too low"))
+        c("0.000000000000000e+00" = "too low")
     )
     ok <- isAlpha(1)  # nolint
     expect_identical(
         cause(ok),
-        noquote(c("1.000000000000000e+00" = "too high"))
+        c("1.000000000000000e+00" = "too high")
     )
 })
 
@@ -22,7 +22,7 @@ test_that("FALSE : not scalar double", {
     ok <- isAlpha(c(0.1, 0.1))
     expect_identical(
         cause(ok),
-        noquote("'c(0.1, 0.1)' is not scalar double.")
+        "'c(0.1, 0.1)' is not scalar double."
     )
 })
 
@@ -32,6 +32,6 @@ test_that("FALSE : zero integer", {
     expect_s4_class(ok, "goalie")
     expect_identical(
         cause(ok),
-        noquote("'0L' is not scalar double.")
+        "'0L' is not scalar double."
     )
 })

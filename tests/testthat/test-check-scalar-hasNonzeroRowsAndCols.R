@@ -32,7 +32,7 @@ test_that("FALSE : rows containing all zeros", {
     expect_s4_class(ok, "goalie")
     expect_identical(
         cause(ok),
-        noquote("'x' has 1 zero row at position 2.")
+        "'x' has 1 zero row at position 2."
     )
 })
 
@@ -47,7 +47,7 @@ test_that("FALSE : columns containing all zeros", {
     expect_s4_class(ok, "goalie")
     expect_identical(
         cause(ok),
-        noquote("'x' has 2 zero columns at positions 3, 4.")
+        "'x' has 2 zero columns at positions 3, 4."
     )
 })
 
@@ -58,7 +58,7 @@ test_that("FALSE : no rows", {
     expect_s4_class(ok, "goalie")
     expect_identical(
         cause(ok),
-        noquote("The number of rows in 'x' is zero.")
+        "The number of rows in 'x' is zero."
     )
 })
 
@@ -69,7 +69,7 @@ test_that("FALSE : no columns", {
     expect_s4_class(ok, "goalie")
     expect_identical(
         cause(ok),
-        noquote("The number of columns in 'x' is zero.")
+        "The number of columns in 'x' is zero."
     )
 })
 
@@ -80,6 +80,6 @@ test_that("FALSE : no rows or columns", {
     expect_s4_class(ok, "goalie")
     expect_identical(
         cause(ok),
-        noquote("The number of rows in 'x' is zero.")
+        "The number of rows in 'x' is zero."
     )
 })
