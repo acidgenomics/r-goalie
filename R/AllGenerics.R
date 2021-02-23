@@ -2,12 +2,14 @@
 #' @export
 setGeneric(
     name = "cause",
-    def = function(object) {
+    def = function(object, ...) {
         standardGeneric("cause")
     }
 )
 
 
+
+## FIXME RENAME TO OBJECT.
 
 #' @rdname false
 #' @export
@@ -15,6 +17,17 @@ setGeneric(
     name = "falseFromVector",
     def = function(x, ...) {
         standardGeneric("falseFromVector")
+    }
+)
+
+
+
+#' @rdname nocause
+#' @export
+setGeneric(
+    name = "nocause",
+    def = function(object, ...) {
+        standardGeneric("nocause")
     }
 )
 
@@ -29,6 +42,8 @@ setGeneric(
 NULL
 
 
+
+## FIXME RENAME TO OBJECT.
 
 #' @rdname setCause
 #' @export
