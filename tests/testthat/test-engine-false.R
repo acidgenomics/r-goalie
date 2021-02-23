@@ -8,8 +8,5 @@ test_that("cause", {
 })
 
 test_that("empty cause", {
-    ok <- false()
-    expect_s4_class(ok, "goalie")
-    expect_false(ok)
-    expect_identical(cause(ok), "")
+    expect_error(false())
 })
