@@ -16,7 +16,7 @@ setClass(
 setValidity(
     Class = "goalie",
     method = function(object) {
-        if (!isTRUE(length(object) > 0)) {
+        if (!isTRUE(length(object) > 0L)) {
             return("Object is 'logical(0)'.")
         }
         cause <- slot(object, name = "cause")
@@ -34,7 +34,7 @@ setValidity(
                 X = cause,
                 FUN = identical,
                 y = NA_character_,
-                FUN.VALUE = logical(1),
+                FUN.VALUE = logical(1L),
                 USE.NAMES = FALSE
             )
             if (!isTRUE(all(ok))) {
@@ -46,7 +46,7 @@ setValidity(
                     X = cause[which(object == TRUE)],
                     FUN = identical,
                     y = NA_character_,
-                    FUN.VALUE = logical(1),
+                    FUN.VALUE = logical(1L),
                     USE.NAMES = FALSE
                 )
                 if (!isTRUE(all(ok))) {

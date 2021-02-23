@@ -32,37 +32,38 @@ NULL
 
 
 ## Updated 2021-02-23.
-`setCause,logical` <- function(
-    object,
-    false = "false",
-    missing = "missing"
-) {
-    ## Early return without cause if TRUE.
-    ## Consider wrapping in `unname()` call here.
-    if (!anyNA(object) && all(object, na.rm = TRUE)) {
-        return(object)
+`setCause,logical` <-  # nolint
+    function(
+        object,
+        false = "false",
+        missing = "missing"
+    ) {
+        ## Early return without cause if TRUE.
+        ## Consider wrapping in `unname()` call here.
+        if (!anyNA(object) && all(object, na.rm = TRUE)) {
+            return(object)
+        }
+        isNA <- is.na(object)
+        length <- length(object)
+        cause <- rep(x = NA_character_, times = length)
+        if (identical(length(missing), 1L)) {
+            cause[isNA] <- missing
+        } else {
+            ## nocov start
+            missing <- rep_len(missing, length)
+            cause[isNA] <- missing[isNA]
+            ## nocov end
+        }
+        ## Define the FALSE index.
+        index <- !(object | isNA)
+        if (identical(length(false), 1L)) {
+            cause[index] <- false
+        } else {
+            false <- rep_len(false, length)
+            cause[index] <- false[index]
+        }
+        goalie(object = object, cause = cause)
     }
-    isNA <- is.na(object)
-    length <- length(object)
-    cause <- rep(x = NA_character_, times = length)
-    if (identical(length(missing), 1L)) {
-        cause[isNA] <- missing
-    } else {
-        ## nocov start
-        missing <- rep_len(missing, length)
-        cause[isNA] <- missing[isNA]
-        ## nocov end
-    }
-    ## Define the FALSE index.
-    index <- !(object | isNA)
-    if (identical(length(false), 1L)) {
-        cause[index] <- false
-    } else {
-        false <- rep_len(false, length)
-        cause[index] <- false[index]
-    }
-    goalie(object = object, cause = cause)
-}
 
 
 
