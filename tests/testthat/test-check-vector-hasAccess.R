@@ -13,14 +13,12 @@ test_that("TRUE", {
 
 test_that("FALSE : no access", {
     x <- c("xxx", "yyy")
-
     ok <- hasAccess(x)
     expect_s4_class(ok, "goalie")
     expect_identical(nocause(ok), c(xxx = FALSE, yyy = FALSE))
-    expected <- noquote(c("no access", "no access"))
+    expected <- c("no access", "no access")
     names(expected) <- x
     expect_identical(cause(ok), expected)
-
     ok <- allHaveAccess(x)
     expect_s4_class(ok, "goalie")
     expect_false(ok)
@@ -32,7 +30,7 @@ test_that("FALSE : NULL input", {
     expect_false(ok)
     expect_identical(
         cause(ok),
-        noquote("'x' is not character.")
+        "'x' is not character."
     )
 })
 
@@ -42,9 +40,9 @@ test_that("FALSE : Invalid access codes", {
     expect_false(ok)
     expect_identical(
         cause(ok),
-        noquote(paste0(
+        paste0(
             "'x' doesn't contain valid access codes.", "\n",
             "Combinations of 'r', 'w' and 'x' are allowed."
-        ))
+        )
     )
 })

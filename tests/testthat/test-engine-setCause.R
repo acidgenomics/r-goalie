@@ -4,7 +4,7 @@ test_that("FALSE", {
     ok <- setCause(x = FALSE, false = "xxx")
     expect_s4_class(ok, "goalie")
     expect_false(ok)
-    expect_identical(cause(ok), noquote("xxx"))
+    expect_identical(cause(ok), "xxx")
 })
 
 test_that("NA logical (missing)", {
@@ -20,6 +20,6 @@ test_that("NA logical (missing)", {
     )
     expect_identical(
         cause(ok),
-        noquote(c(a = "", b = "custom false", c = "custom missing"))
+        c(a = "", b = "custom false", c = "custom missing")
     )
 })

@@ -18,7 +18,7 @@ test_that("FALSE", {
     expect_identical(nocause(ok), c(x = FALSE, y = FALSE))
     expect_identical(
         cause(ok),
-        noquote(c(x = "non-existing", y = "non-existing"))
+        c(x = "non-existing", y = "non-existing")
     )
 })
 

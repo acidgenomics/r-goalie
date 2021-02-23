@@ -23,7 +23,7 @@ test_that("1 column", {
     expect_s4_class(ok, "goalie")
     expect_identical(
         cause(ok),
-        noquote("'x' does not have >= 2 columns.")
+        "'x' does not have >= 2 columns."
     )
 })
 

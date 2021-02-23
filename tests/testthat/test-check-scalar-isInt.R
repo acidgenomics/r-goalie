@@ -14,7 +14,7 @@ test_that("FALSE : not integer", {
     expect_false(ok)
     expect_identical(
         cause(ok),
-        noquote(c("1.000000000000000e-01" = "not integer"))
+        c("1.000000000000000e-01" = "not integer")
     )
 })
 
@@ -24,6 +24,6 @@ test_that("FALSE : not scalar", {
     expect_false(ok)
     expect_identical(
         cause(ok),
-        noquote("'x' does not have a length of 1.")
+        "'x' does not have a length of 1."
     )
 })

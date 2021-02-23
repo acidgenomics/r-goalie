@@ -17,7 +17,7 @@ test_that("FALSE", {
     expect_false(ok)
     expect_identical(
         cause(ok),
-        c("1.000000000000000e-01" = noquote("not integer"))
+        c("1.000000000000000e-01" = "not integer")
     )
 })
 
@@ -34,11 +34,11 @@ test_that("FALSE : NA input", {
     )
     expect_identical(
         cause(ok),
-        noquote(c(
+        c(
             "1.000000000000000e+00" = "",
             "2.000000000000000e+00" = "",
             "NA" = "NA"
-        ))
+        )
     )
 })
 
