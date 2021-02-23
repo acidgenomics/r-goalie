@@ -5,7 +5,7 @@
 \alias{bapply}
 \title{Boolean apply}
 \usage{
-bapply(X, FUN, ...)
+bapply(X, FUN, ..., USE.NAMES = TRUE)
 }
 \arguments{
 \item{X}{\code{atomic} or \code{list}.}
@@ -15,6 +15,10 @@ An assert check function that returns \code{logical(1)} boolean flag
 (\code{TRUE}/\code{FALSE}) to \link[base:apply]{apply}.}
 
 \item{...}{Additional arguments passed to \link[base:lapply]{vapply()}.}
+
+\item{USE.NAMES}{\code{logical(1)}.
+If \code{TRUE} and \code{X} is character, use \code{X} as \code{\link[base:names]{names}} for the
+result, unless it has names already.}
 }
 \value{
 \code{logical}.
@@ -29,10 +33,10 @@ An assert check function that returns \code{logical(1)} boolean flag
 \item \code{USE.NAMES} is always set to \code{TRUE}.
 }
 
-Updated 2020-01-04.
+Updated 2021-02-23.
 }
 \examples{
-bapply(list(a = "example", b = 1), is.character)
+bapply(X = list(a = "example", b = 1), FUN = is.character)
 }
 \seealso{
 \itemize{

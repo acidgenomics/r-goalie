@@ -23,7 +23,7 @@ Automatically generate a substring and add trailing "..." if necessary.
 Note that return matches the desired width.
 }
 \note{
-Updated 2020-01-04.
+Updated 2021-02-23.
 }
 \examples{
 x <- "the quick brown fox"
