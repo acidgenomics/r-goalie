@@ -70,5 +70,10 @@ isNonEmpty <- function(x, .xname = getNameInParent(x)) {
 
 
 
+## v0.5.0 ======================================================================
+## FIXME NEED TO DEPRECATE SOME STUFF.
+
+
+
 ## nolint end
 ## nocov end
