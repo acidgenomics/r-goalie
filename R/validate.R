@@ -10,7 +10,7 @@
 #' the methods package, specifically [`validObject()`][methods::validObject] for
 #' detailed information on S4 validity methods.
 #'
-#' @name engine-validate
+#' @export
 #' @note Updated 2021-02-23.
 #'
 #' @inheritParams assert
@@ -35,12 +35,6 @@
 #'     isFlag("xxx"),
 #'     isPositive(-1)
 #' )
-NULL
-
-
-
-#' @rdname engine-validate
-#' @export
 validate <- function(..., msg = NULL) {
     n <- ...length()
     if (identical(n, 0L)) {
