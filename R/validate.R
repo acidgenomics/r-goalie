@@ -41,12 +41,17 @@ validate <- function(..., msg = NULL) {
         stop("No assert check defined.")
     }
     dots <- as.call(substitute(...()))
+    ## Support character passthrough.
+    if (length(dots) == 1L && is.character(dots[[1L]])) {
+        return(dots[[1L]])
+    }
     ## Note that here we're evaluating all of the checks instead of stopping on
     ## the first error, like the approach in `assert()`.
     checks <- lapply(
         X = seq_along(dots),
         FUN = function(i) {
             r <- ...elt(i)
+            stopifnot(length(r) == 1L)
             if (!is(r, "goalie")) {
                 r <- unname(r)
             }
