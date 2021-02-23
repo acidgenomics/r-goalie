@@ -24,8 +24,11 @@ Updated 2021-02-23.
 \examples{
 ## Match the default logical print method.
 x <- goalie(
-    x = c("aaa" = FALSE, "bbb" = TRUE),
-    cause = "'aaa' is FALSE."
+    object = c("aaa" = FALSE, "bbb" = TRUE),
+    cause = c(
+        "'aaa' is FALSE.",
+        NA_character_
+    )
 )
 show(x)
 }

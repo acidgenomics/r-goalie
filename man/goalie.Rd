@@ -4,12 +4,15 @@
 \alias{goalie}
 \title{Define a goalie check classed return}
 \usage{
-goalie(object, cause = character())
+goalie(object, cause)
 }
 \arguments{
 \item{object}{\code{logical}.}
 
-\item{cause}{\code{character(0-1)}.}
+\item{cause}{\code{character}.
+Corresponding cause attribute for logical \code{object}.
+Note that \code{TRUE} values must contain \code{NA_character_} cause.
+This value should not be named.}
 }
 \value{
 \code{goalie}, which extends \code{logical}.
