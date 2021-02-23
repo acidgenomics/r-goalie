@@ -3,11 +3,14 @@
 \name{setCause}
 \alias{setCause}
 \alias{setCause,logical-method}
+\alias{setCause,goalie-method}
 \title{Return \code{FALSE} vector with causes of failure}
 \usage{
 setCause(object, ...)
 
 \S4method{setCause}{logical}(object, false = "false", missing = "missing")
+
+\S4method{setCause}{goalie}(object, ...)
 }
 \arguments{
 \item{object}{Object.}
