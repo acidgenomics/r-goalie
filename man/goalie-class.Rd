@@ -3,16 +3,12 @@
 \docType{class}
 \name{goalie-class}
 \alias{goalie-class}
-\title{goalie check}
+\title{goalie logical assert check return}
 \value{
 \code{goalie}.
 }
 \description{
-goalie check
-}
-\details{
-Contains a \code{logical} with \code{cause} of \code{character(1)} if any elements are
-\code{FALSE}.
+Contains a \code{logical} with \code{cause} attributes.
 }
 \note{
 Updated 2021-02-23.

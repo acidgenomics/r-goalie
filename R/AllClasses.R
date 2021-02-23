@@ -1,8 +1,6 @@
-#' goalie check
+#' goalie logical assert check return
 #'
-#' @details
-#' Contains a `logical` with `cause` of `character(1)` if any elements are
-#' `FALSE`.
+#' Contains a `logical` with `cause` attributes.
 #'
 #' @export
 #' @note Updated 2021-02-23.
@@ -31,7 +29,6 @@ setValidity(
         if (!is.null(names(cause))) {
             return("Cause attribute has names assigned.")
         }
-
         if (isTRUE(all(object))) {
             ok <- vapply(
                 X = cause,
@@ -41,13 +38,34 @@ setValidity(
                 USE.NAMES = FALSE
             )
             if (!isTRUE(all(ok))) {
-                return("TRUE values must have 'NA_character_' cause.")
+                return("TRUE values must have NA cause.")
             }
-        }
-        if (isTRUE(any(object))) {
-            ## FIXME ONLY ALLOW NAS HERE.
         } else {
-            ## FIXME DONT ALLOW ANY NA OR EMPTY STRINGS HERE.
+            if (isTRUE(any(object))) {
+                ok <- vapply(
+                    X = cause[which(object == TRUE)],
+                    FUN = identical,
+                    y = NA_character_,
+                    FUN.VALUE = logical(1),
+                    USE.NAMES = FALSE
+                )
+                if (!isTRUE(all(ok))) {
+                    return("TRUE values must have NA cause.")
+                }
+            }
+            ok <- vapply(
+                X = cause[which(object == FALSE)],
+                FUN = function(x) {
+                    isTRUE(nzchar(x)) || return(FALSE)
+                    isFALSE(is.na(x)) || return(FALSE)
+                    TRUE
+                },
+                FUN.VALUE = logical(1L),
+                USE.NAMES = FALSE
+            )
+            if (!isTRUE(all(ok))) {
+                return("FALSE values must have non-empty character cause.")
+            }
         }
         TRUE
     }
