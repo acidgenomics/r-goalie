@@ -22,8 +22,11 @@ Updated 2021-02-23.
 }
 \examples{
 x <- goalie(
-    object = c(FALSE, TRUE),
-    cause = "Element 1 is false."
+    object = c("aaa" = FALSE, "bbb" = TRUE),
+    cause = c(
+        "'aaa' is FALSE.",
+        NA_character_
+    )
 )
 print(object)
 }
