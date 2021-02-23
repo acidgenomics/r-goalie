@@ -1,28 +1,41 @@
-## FIXME THIS IS CAUSING WEIRD ISSUES WITH R MARKDOWN.
-
-
-
-#' Print methods for objects with a cause attribute
+#' @name show
+#' @author Michael Steinbaugh
+#' @inherit AcidGenerics::show
+#' @note Updated 2021-02-23.
 #'
-#' @name print
-#' @note Updated 2019-10-18.
-#'
-#' @inheritParams AcidRoxygen::params
-#' @param ignoreNA `logical(1)`.
-#'   Should NA values pass (`TRUE`) or fail (`FALSE`)?
-#'
-#'   - `TRUE`: OK can be `TRUE` or `NA`; `FALSE` is bad.
-#'   - `FALSE`: OK can be `TRUE`; `FALSE` or `NA` is bad.
-#'
-#' @return Print command and return invisibly.
+#' @examples
+#' ## Match the default logical print method.
+#' x <- goalie(
+#'     x = c("aaa" = FALSE, "bbb" = TRUE),
+#'     cause = "'aaa' is FALSE."
+#' )
+#' show(x)
 NULL
 
 
 
-#' @rdname print
-#' @method print goalie
+## Updated 2021-02-23.
+`show,goalie` <- function(object) {
+    x <- as.logical(object)
+    names(x) <- names(object)
+    show(x)
+}
+
+
+
+#' @rdname show
 #' @export
-print.goalie <- function(x, n = 10L, ignoreNA = FALSE, ...) {
+setMethod(
+    f = "show",
+    signature = signature("goalie"),
+    definition = `show,goalie`
+)
+
+
+
+## FIXME RETHINK THIS.
+.print.goalie <-
+    function(x, n = 10L, ignoreNA = FALSE, ...) {
     ## THIS GETS CALLED IN ASSERT ENGINE AND NEEDS TO BE RETHOUGHT...
     stop("FIXME")
     stopifnot(is.logical(x), .hasCause(x))
