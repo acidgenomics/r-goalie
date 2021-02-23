@@ -39,8 +39,8 @@ test_that("FALSE : Invalid access codes", {
     expect_identical(
         cause(ok),
         paste0(
-            "'x' doesn't contain valid access codes.", "\n",
-            "Combinations of 'r', 'w' and 'x' are allowed."
+            "'xxx' is not a valid access code.", "\n",
+            "Unique combinations of 'r', 'w' and 'x' are allowed."
         )
     )
 })
