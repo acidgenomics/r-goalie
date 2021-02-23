@@ -13,7 +13,7 @@ test_that("TRUE", {
 
 test_that("FALSE", {
     ok <- isIntegerish(0.1)
-    expect_s3_class(ok, "goalie")
+    expect_s4_class(ok, "goalie")
     expect_false(ok)
     expect_identical(
         cause(ok),
@@ -23,7 +23,7 @@ test_that("FALSE", {
 
 test_that("FALSE : NA input", {
     ok <- isIntegerish(c(1, 2, NA))  # nolint
-    expect_s3_class(ok, "goalie")
+    expect_s4_class(ok, "goalie")
     expect_identical(
         nocause(ok),
         c(

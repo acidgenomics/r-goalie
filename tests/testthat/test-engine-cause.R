@@ -3,7 +3,7 @@ context("engine : cause")
 test_that("scalar", {
     x <- FALSE
     cause(x) <- "xxx"
-    expect_s3_class(x, "goalie")
+    expect_s4_class(x, "goalie")
     expect_false(x)
     expect_identical(cause(x), noquote("xxx"))
 })
@@ -17,7 +17,7 @@ test_that("vector", {
     cause <- rep("XXX", length(x))
     names(cause) <- LETTERS[seq_along(cause)]
     cause(x) <- cause
-    expect_s3_class(x, "goalie")
+    expect_s4_class(x, "goalie")
     expect_is(x, "logical")
     expect_identical(cause(x), noquote(cause))
 })

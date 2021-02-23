@@ -29,7 +29,7 @@ test_that("FALSE : not scalar double", {
 test_that("FALSE : zero integer", {
     ok <- isAlpha(0L)
     expect_false(ok)
-    expect_s3_class(ok, "goalie")
+    expect_s4_class(ok, "goalie")
     expect_identical(
         cause(ok),
         noquote("'0L' is not scalar double.")
