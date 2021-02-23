@@ -39,7 +39,7 @@ isMatchingFixed <- function(x, pattern) {
         ignore.case = FALSE,
         fixed = TRUE
     )
-    names(ok) <- toNames(x)
+    names(ok) <- .toNames(x)
     setCause(ok, false = gettextf("does not match '%s'", pattern))
 }
 
@@ -54,7 +54,7 @@ isMatchingRegex <- function(x, pattern) {
         ignore.case = FALSE,
         fixed = FALSE
     )
-    names(ok) <- toNames(x)
+    names(ok) <- .toNames(x)
     setCause(ok, false = gettextf("does not match '%s'", pattern))
 }
 
@@ -69,7 +69,7 @@ isNotMatchingFixed <- function(x, pattern) {
         ignore.case = FALSE,
         fixed = TRUE
     )
-    names(ok) <- toNames(x)
+    names(ok) <- .toNames(x)
     setCause(ok, false = gettextf("matches '%s'", pattern))
 }
 
@@ -84,7 +84,7 @@ isNotMatchingRegex <- function(x, pattern) {
         ignore.case = FALSE,
         fixed = FALSE
     )
-    names(ok) <- toNames(x)
+    names(ok) <- .toNames(x)
     setCause(ok, false = gettextf("matches '%s'", pattern))
 }
 
