@@ -1,3 +1,7 @@
+## FIXME Inform the user about `updateObject()` function.
+
+
+
 #' Validate an S4 class
 #'
 #' [validate()] is a variant of [assert()] that is specifically intended to be
