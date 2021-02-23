@@ -45,7 +45,7 @@ NULL
 
 #' Deparse
 #'
-#' @note Updated 2021-01-04.
+#' @note Updated 2021-02-23.
 #' @noRd
 #'
 #' @seealso `base::stopifnot()`.
@@ -53,48 +53,30 @@ NULL
     function(call, cutoff = 60L) {
         ch <- deparse(call, width.cutoff = cutoff)
         if (length(ch) > 1L) {
-            paste(ch[[1L]], "....")  # nocov
-        } else {
-            ch
+            ch <- paste(ch[[1L]], "....")  # nocov
         }
+        ch
     }
 
 
 
 #' Get dimensions
 #'
-#' @note Updated 2021-01-04.
+#' @note Updated 2021-02-23.
 #' @noRd
 #'
 #' @seealso `assertive.properties::DIM()`.
 .dim <- function(x) {
     dim <- dim(x)
     if (is.null(dim)) {
-        length(x)
-    } else {
-        dim  # nocov
+        dim <- length(x)
     }
+    dim
 }
 
 
 
-#' Does the input have a cause attribute set?
-#'
-#' @note Updated 2019-10-30.
-#' @noRd
-.hasCause <- function(x) {
-    cause <- cause(x)
-    if (
-        length(cause) != 1L &&
-        !identical(length(x), length(cause))
-    ) {
-        FALSE  # nocov
-    } else {
-        TRUE
-    }
-}
-
-
+## FIXME NEED TO REWORK THIS?
 
 #' Is an object from a class?
 #'
@@ -282,27 +264,29 @@ NULL
 
 #' Get the type description
 #'
-#' @note Updated 2021-01-04.
+#' @note Updated 2021-02-23.
 #' @noRd
 #'
 #' @seealso `assertive.base:::type_description()`.
+#'
+#' @details
+#' .typeDescription("xxx")
 .typeDescription <- function(x) {
     if (is.array(x)) {
-        sprintf(
+        x <- sprintf(
             fmt = "class '%s %s'",
             class(x[FALSE]),  # nolint
             toString(class(x))
         )
     } else if (is.function(x)) {
-        ## nocov start
-        sprintf(
+        x <- sprintf(
             fmt = "class '%s %s'",
             typeof(x), toString(class(x))
         )
-        ## nocov end
     } else if (isS4(x)) {
-        sprintf("S4 class '%s'", toString(class(x)))
+        x <- sprintf("S4 class '%s'", toString(class(x)))
     } else {
-        sprintf("class '%s'", toString(class(x)))
+        x <- sprintf("class '%s'", toString(class(x)))
     }
+    x
 }
