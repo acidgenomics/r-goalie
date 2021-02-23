@@ -18,11 +18,12 @@ NULL
 
 
 ## Updated 2021-02-23.
-`show,goalie` <- function(object) {
-    x <- as.logical(object)
-    names(x) <- names(object)
-    show(x)
-}
+`show,goalie` <-  # nolint
+    function(object) {
+        x <- as.logical(object)
+        names(x) <- names(object)
+        show(x)
+    }
 
 
 
