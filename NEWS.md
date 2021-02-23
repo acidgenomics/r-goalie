@@ -1,3 +1,12 @@
+## goalie 0.5.0 (2021-02-23)
+
+### Major changes
+
+- Reworked internal engine to redefine the goalie class as an S4 instead of
+  an S3. This allows us to provide better validity checks with `setValidity`.
+- Reworked internal handling of cause attribute, to provide better compatibility
+  inside of R Markdown renders.
+
 ## goalie 0.4.14 (2021-01-06)
 
 ### Minor changes
