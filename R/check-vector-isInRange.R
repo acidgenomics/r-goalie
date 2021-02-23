@@ -87,7 +87,7 @@ isInRange <- function(
     ok <- rep.int(TRUE, length(x))
     ok[tooLow] <- FALSE
     ok[tooHigh] <- FALSE
-    names(ok) <- toNames(x)
+    names(ok) <- .toNames(x)
     setCause(ok, false = ifelse(tooLow, "too low", "too high"))
 }
 
