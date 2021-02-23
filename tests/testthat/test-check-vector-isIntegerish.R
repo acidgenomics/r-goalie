@@ -35,8 +35,8 @@ test_that("FALSE : NA input", {
     expect_identical(
         cause(ok),
         c(
-            "1.000000000000000e+00" = "",
-            "2.000000000000000e+00" = "",
+            "1.000000000000000e+00" = NA_character_,
+            "2.000000000000000e+00" = NA_character_,
             "NA" = "NA"
         )
     )

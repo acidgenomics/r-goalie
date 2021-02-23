@@ -2,6 +2,8 @@ skip_on_os("windows")
 
 from <- "from.txt"
 to <- "to.txt"
+unlink(from)
+unlink(to)
 file.create(from)
 file.symlink(from = from, to = to)
 
@@ -18,11 +20,11 @@ test_that("FALSE : not symlink", {
     expect_s4_class(ok, "goalie")
     expect_identical(
         nocause(ok),
-        c(from.txt = FALSE, to.txt = TRUE)
+        c("from.txt" = FALSE, "to.txt" = TRUE)
     )
     expect_identical(
         cause(ok),
-        c(from.txt = "not symlink", to.txt = "")
+        c("from.txt" = "not symlink", "to.txt" = NA_character_)
     )
 })
 
