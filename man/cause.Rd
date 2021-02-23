@@ -5,12 +5,14 @@
 \alias{cause,goalie-method}
 \title{Cause attribute}
 \usage{
-cause(object)
+cause(object, ...)
 
 \S4method{cause}{goalie}(object)
 }
 \arguments{
 \item{object}{Object.}
+
+\item{...}{Additional arguments.}
 }
 \value{
 \code{character}.

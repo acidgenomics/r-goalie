@@ -2,11 +2,9 @@ context("check : vector : hasAccess")
 
 test_that("TRUE", {
     x <- c("~", ".")
-
     ok <- hasAccess(x, access = "rwx")
     expect_true(all(ok))
     expect_identical(ok, c(`~` = TRUE, `.` = TRUE))
-
     ok <- allHaveAccess(x, access = "rwx")
     expect_true(ok)
 })
