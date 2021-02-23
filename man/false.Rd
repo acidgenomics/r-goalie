@@ -34,8 +34,8 @@ print(cause(x))
 
 ## falseFromVector ====
 x <- goalie(
-    object = c("aaa" = FALSE, "bbb" = FALSE),
-    cause = c("xxx", "yyy")
+    object = c("aaa" = FALSE, "bbb" = TRUE, "ccc" = FALSE),
+    cause = c("xxx", NA, "yyy")
 )
 print(x)
 print(cause(x))
