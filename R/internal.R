@@ -86,7 +86,7 @@ NULL
 #'
 #' Used internally by [isAll()][] and [isAny()][] checks.
 #'
-#' @note Updated 2019-10-21.
+#' @note Updated 2021-02-23.
 #' @noRd
 #'
 #' @seealso
@@ -111,7 +111,7 @@ NULL
     if (length(class) > 1L) {
         ok <- bapply(X = class, FUN = function(cl) .is2(x, cl, ""))
         return(setCause(
-            x = ok,
+            object = ok,
             false = sprintf("%s is not '%s'", .typeDescription(x), class)
         ))
     }
