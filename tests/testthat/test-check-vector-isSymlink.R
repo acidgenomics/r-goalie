@@ -15,7 +15,7 @@ test_that("TRUE", {
 
 test_that("FALSE : not symlink", {
     ok <- isSymlink(c(from, to))
-    expect_s3_class(ok, "goalie")
+    expect_s4_class(ok, "goalie")
     expect_identical(
         nocause(ok),
         c(from.txt = FALSE, to.txt = TRUE)
@@ -35,7 +35,7 @@ test_that("TRUE", {
 
 test_that("FALSE", {
     ok <- isASymlink(from)
-    expect_s3_class(ok, "goalie")
+    expect_s4_class(ok, "goalie")
     expect_false(ok)
 })
 

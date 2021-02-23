@@ -12,7 +12,7 @@ x <- RangedSummarizedExperiment
 test_that("FALSE", {
     ok <- hasSubset(x)
     expect_false(ok)
-    expect_s3_class(ok, "goalie")
+    expect_s4_class(ok, "goalie")
     expect_match(cause(ok), "subset")
 })
 
