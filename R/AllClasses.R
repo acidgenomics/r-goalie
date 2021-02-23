@@ -1,3 +1,9 @@
+## FIXME WHEN ANY ELEMENTS ARE FALSE, CAUSE NEEDS TO MATCH THE INPUT...
+## FIXME THIS WILL IMPROVE VECTORIZED SUPPORT.
+## FIXME TRUE ELEMENTS SHOULD RETURN NA_CHARACTER_ HERE...
+
+
+
 #' goalie check
 #'
 #' @details
@@ -22,15 +28,18 @@ setValidity(
             return("Object is 'logical(0)'.")
         }
         cause <- slot(object, name = "cause")
+        if (!isTRUE(is.character(cause))) {
+            return("Cause attribute is not character.")
+        }
         if (isTRUE(all(object))) {
             if (!identical(cause, character())) {
                 return("'cause' attribute is not allowed for TRUE return.")
             }
         } else {
-            if (!isTRUE(is.character(cause) && length(cause) == 1L)) {
-                return("'cause' attribute is not 'character(1)'.")
+            if (!identical(length(object), length(cause))) {
+                return("Cause attribute not the same length as check return.")
             }
-            ## FIXME DONT ALLOW EMPTY CHARACTER STRING HERE.
+            ## FIXME CHECK FOR NA VALUES IF ANY ARE TRUE...
         }
         TRUE
     }
