@@ -15,3 +15,14 @@ setGeneric(
 #' @usage show(object)
 #' @export
 NULL
+
+
+
+#' @rdname setCause
+#' @export
+setGeneric(
+    name = "setCause",
+    def = function(x, ...) {
+        standardGeneric("setCause")
+    }
+)

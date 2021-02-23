@@ -2,6 +2,19 @@
 
 
 
+## Note that this will intentionally fail if you pass in a logical vector
+## without a goalie cause attribute.
+## Updated 2019-07-29.
+.causeString <- function(x) {
+    stopifnot(is(x, "goalie"))
+    out <- capture.output(print(x))
+    ## Remove the first 2 lines.
+    out <- out[3L:length(out)]
+    paste0(out, collapse = "\n")
+}
+
+
+
 ## FIXME RETHINK THIS.
 .print.goalie <-
     function(x, n = 10L, ignoreNA = FALSE, ...) {
@@ -51,19 +64,6 @@
         ))
         print(failures)
     }
-
-
-
-## Note that this will intentionally fail if you pass in a logical vector
-## without a goalie cause attribute.
-## Updated 2019-07-29.
-.causeString <- function(x) {
-    stopifnot(is(x, "goalie"))
-    out <- capture.output(print(x))
-    ## Remove the first 2 lines.
-    out <- out[3L:length(out)]
-    paste0(out, collapse = "\n")
-}
 
 
 

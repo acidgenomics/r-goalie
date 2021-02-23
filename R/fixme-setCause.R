@@ -7,8 +7,8 @@
 #' Sets the `cause` [attribute][base::attributes] of an object and returns that
 #' object.
 #'
-#' @name engine-setCause
-#' @note Updated 2021-01-04.
+#' @name setCause
+#' @note Updated 2021-02-23.
 #'
 #' @inheritParams AcidRoxygen::params
 #' @param false `character`.
@@ -16,7 +16,7 @@
 #' @param missing `character`.
 #'   A character vector to set the cause to, when `x` is `NA`.
 #'
-#' @return `goalie`/`logical`.
+#' @return `goalie`.
 #'
 #' @seealso
 #' - `cause()`.
@@ -24,19 +24,19 @@
 #' - `stats::setNames()`.
 #'
 #' @examples
-#' setCause(x = FALSE, false = "test")
+#' x <- setCause(x = FALSE, false = "test")
+#' print(x)
+#' cause(x)
 NULL
 
 
 
-#' @rdname engine-setCause
-#' @export
-setCause <- function(
+## Updated 2021-02-23.
+`setCause,logical` <- function(
     x,
     false = "false",
     missing = "missing"
 ) {
-    assert(is.logical(x))
     ## Early return without cause if TRUE.
     ## Consider wrapping in `unname()` call here.
     if (!anyNA(x) && all(x, na.rm = TRUE)) {
@@ -61,7 +61,15 @@ setCause <- function(
         false <- rep_len(false, length)
         cause[index] <- false[index]
     }
-    names(cause) <- names(x)
-    cause(x) <- cause
-    x
+    goalie(x, cause = cause)
 }
+
+
+
+#' @rdname setCause
+#' @export
+setMethod(
+    f = "setCause",
+    signature = signature("logical"),
+    definition = `setCause,logical`
+)

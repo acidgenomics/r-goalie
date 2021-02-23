@@ -39,6 +39,7 @@ setValidity(
             if (!identical(length(object), length(cause))) {
                 return("Cause attribute not the same length as check return.")
             }
+            ## FIXME DONT ALLOW NAMES IN THE CAUSE ATTRIBUTE...
             ## FIXME CHECK FOR NA VALUES IF ANY ARE TRUE...
         }
         TRUE
