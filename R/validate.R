@@ -1,7 +1,3 @@
-## FIXME Inform the user about `updateObject()` function.
-
-
-
 #' Validate an S4 class
 #'
 #' [validate()] is a variant of [assert()] that is specifically intended to be
@@ -15,7 +11,7 @@
 #' detailed information on S4 validity methods.
 #'
 #' @name engine-validate
-#' @note Updated 2021-01-04.
+#' @note Updated 2021-02-23.
 #'
 #' @inheritParams assert
 #'
@@ -63,10 +59,22 @@ validate <- function(..., msg = NULL) {
             call <- .deparse(dots[[i]])
             ## Validity checks must return logical(1) or character(1).
             ## In the event of FALSE, we'll return character(1) automatically.
-            if (!(
-                (is.logical(r) || is.character(r)) &&
-                identical(length(r), 1L)
-            )) {
+            if (isTRUE(r)) {
+                return(TRUE)
+            } else if (is.character(r)) {
+                ## We're allowing the user to pass character(1) through here,
+                ## enabling the use of other check functions (see checkmate
+                ## package for examples).
+                msg <- r
+            } else if (is.logical(r)) {
+                ## Convert an assert check error to a character string.
+                msg <- sprintf("[%s] %s is not TRUE.", i, call)
+                if (is(r, "goalie")) {
+                    cause <- cause(r)
+                    stopifnot(is.character(cause) && length(cause) == 1L)
+                    msg <- paste(msg, cause)
+                }
+            } else {
                 stop(sprintf(
                     paste0(
                         "Validity failure.\n",
@@ -75,43 +83,22 @@ validate <- function(..., msg = NULL) {
                     ),
                     i, call
                 ))
-            } else if (isTRUE(r)) {
-                return(TRUE)
-            } else if (is.logical(r)) {
-                ## Convert an assert check error to a character string.
-                ## Always return a `stopifnot()`-like message.
-                msg <- sprintf("%s is not TRUE.", call)
-                ## Check for defined cause attribute.
-                cause <- cause(r)
-                if (!is.null(cause)) {
-                    ## Capturing the S3 print method on goalie class here.
-                    msg <- c(msg, capture.output(print(r))[-1L])
-                }
-                msg <- paste0(msg, collapse = "\n")
-            } else if (is.character(r)) {
-                ## We're allowing the user to pass character(1) through here,
-                ## enabling the use of other check functions (see checkmate
-                ## package for examples).
-                msg <- r
             }
             as.character(msg)
         }
     )
     ## Return.
     if (all(bapply(checks, isTRUE))) {
-        ## Return TRUE boolean flag when all checks pass.
-        TRUE
-    } else if (isString(msg)) {
-        msg
-    } else {
-        ## Otherwise, return a character string indicating which checks failed.
-        ## Note that we need to remove checks that return TRUE here.
-        fail <- Filter(Negate(isTRUE), checks)
-        ## Convert the list to a character vector.
-        fail <- unlist(fail)
-        ## Return character string indicating all of the failures.
-        ## Using two line breaks here so we can visually distinguish checks
-        ## with a cause attribute set.
-        paste0(fail, collapse = "\n\n")
+        return(TRUE)
     }
+    if (is.null(msg)) {
+        fail <- unlist(Filter(Negate(isTRUE), checks))
+        msg <- paste0(fail, collapse = "\n")
+        msg <- paste0(
+            msg, "\n",
+            "If supported, 'updateObject()' ",
+            "may help resolve these issues."
+        )
+    }
+    msg
 }
