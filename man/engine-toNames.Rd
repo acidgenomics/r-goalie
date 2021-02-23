@@ -20,7 +20,7 @@ Sanitize vector input to names
 Names resulting from this function do not necessarily return valid, and
 will not be identical to output from \code{\link[base:make.names]{make.names()}}.
 
-Updated 2020-01-04.
+Updated 2021-02-23.
 }
 \examples{
 ## Non-character vectors are supported.

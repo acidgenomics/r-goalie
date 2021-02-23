@@ -25,7 +25,7 @@ Maximum width of the name.}
 Get the name of a variable defined in the parent frame
 }
 \note{
-Updated 2020-01-04.
+Updated 2021-02-23.
 }
 \examples{
 getNameInParent(test)
