@@ -8,13 +8,16 @@
 #' - `USE.NAMES` is always set to `TRUE`.
 #'
 #' @name engine-bapply
-#' @note Updated 2020-01-04.
+#' @note Updated 2021-02-23.
 #'
 #' @param X `atomic` or `list`.
 #' @param FUN `function`.
 #'   An assert check function that returns `logical(1)` boolean flag
 #'   (`TRUE`/`FALSE`) to [apply][base::apply].
 #' @param ... Additional arguments passed to [vapply()][base::vapply].
+#' @param USE.NAMES `logical(1)`.
+#'   If `TRUE` and `X` is character, use `X` as [`names`][base::names] for the
+#'   result, unless it has names already.
 #'
 #' @seealso
 #' - `assertive.base::bapply()`.
@@ -30,12 +33,12 @@ NULL
 
 #' @name engine-bapply
 #' @export
-bapply <- function(X, FUN, ...) {  # nolint
+bapply <- function(X, FUN, ..., USE.NAMES = TRUE) {  # nolint
     vapply(
         X = X,
         FUN = FUN,
         FUN.VALUE = logical(1L),
         ...,
-        USE.NAMES = TRUE
+        USE.NAMES = USE.NAMES
     )
 }
