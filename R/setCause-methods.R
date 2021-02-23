@@ -1,7 +1,3 @@
-## FIXME NEED TO RETHINK THIS...
-
-
-
 #' Return `FALSE` vector with causes of failure
 #'
 #' Sets the `cause` [attribute][base::attributes] of an object and returns that
@@ -44,7 +40,7 @@ NULL
     }
     isNA <- is.na(x)
     length <- length(x)
-    cause <- character(length = length)
+    cause <- rep(x = NA_character_, times = length)
     if (identical(length(missing), 1L)) {
         cause[isNA] <- missing
     } else {
