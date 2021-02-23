@@ -9,8 +9,53 @@
 #'
 #' @examples
 #' x <- false("'%s' is invalid.", "xxx")
-#' cause(x)
+#' print(x)
+#' print(cause(x))
+#'
+#' ## falseFromVector ====
+#' x <- goalie(
+#'     object = c("aaa" = FALSE, "bbb" = FALSE),
+#'     cause = c("xxx", "yyy")
+#' )
+#' print(x)
+#' print(cause(x))
+#' xx <- falseFromVector(x)
+#' print(xx)
+#' print(cause(xx))
 false <- function(...) {
     stopifnot(isTRUE(nargs() > 0L))
     goalie(object = FALSE, cause = sprintf(...))
 }
+
+
+
+#' @rdname false
+#' @export
+## Updated 2021-02-23.
+`falseFromVector,goalie` <-  # nolint
+    function(x) {
+        cause <- cause(x)
+        stopifnot(!is.null(names(cause)))
+        x <- mapply(
+            name = names(cause),
+            value = cause,
+            FUN = function(name, value) {
+                paste0(name, ": ", value)
+            },
+            SIMPLIFY = FALSE,
+            USE.NAMES = FALSE
+        )
+        x <- unlist(x)
+        x <- paste(x, collapse = "; ")
+        false(x)
+    }
+
+
+
+#' @rdname false
+#' @export
+setMethod(
+    f = "falseFromVector",
+    signature = signature("goalie"),
+    definition = `falseFromVector,goalie`
+)
