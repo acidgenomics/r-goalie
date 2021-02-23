@@ -1,3 +1,7 @@
+## FIXME THIS IS CAUSING WEIRD ISSUES WITH R MARKDOWN.
+
+
+
 #' Print methods for objects with a cause attribute
 #'
 #' @name print
@@ -19,6 +23,8 @@ NULL
 #' @method print goalie
 #' @export
 print.goalie <- function(x, n = 10L, ignoreNA = FALSE, ...) {
+    ## THIS GETS CALLED IN ASSERT ENGINE AND NEEDS TO BE RETHOUGHT...
+    stop("FIXME")
     stopifnot(is.logical(x), .hasCause(x))
     lgl <- unclass(x)
     attributes(lgl) <- NULL

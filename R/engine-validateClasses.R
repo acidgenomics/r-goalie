@@ -1,3 +1,7 @@
+## FIXME Inform the user about `updateObject()` function.
+
+
+
 #' Validate expected classes
 #'
 #' Validity check capable of validating multiple slots in a single call.
