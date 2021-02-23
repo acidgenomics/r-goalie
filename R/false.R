@@ -29,6 +29,7 @@ false <- function(...) {
 
 
 
+## NOTE Subset operation on goalie currently coerces back to logical.
 #' @rdname false
 #' @export
 ## Updated 2021-02-23.
