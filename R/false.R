@@ -8,6 +8,7 @@
 #' @return `goalie`.
 #'
 #' @examples
+#' ## false ====
 #' x <- false("'%s' is invalid.", "xxx")
 #' print(x)
 #' print(cause(x))
