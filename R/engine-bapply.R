@@ -26,7 +26,7 @@
 #' @return `logical`.
 #'
 #' @examples
-#' bapply(list(a = "example", b = 1), is.character)
+#' bapply(X = list(a = "example", b = 1), FUN = is.character)
 NULL
 
 

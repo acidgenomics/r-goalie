@@ -1,3 +1,7 @@
+## FIXME RETHINK THIS, AND DONT EXPORT.
+
+
+
 #' Return `FALSE` vector with causes of failure
 #'
 #' Sets the `cause` [attribute][base::attributes] of an object and returns that
@@ -32,7 +36,7 @@ setCause <- function(
     false = "false",
     missing = "missing"
 ) {
-    assert(is.logical(x))
+    stopifnot(is.logical(x))
     ## Early return without cause if TRUE.
     ## Consider wrapping in `unname()` call here.
     if (!anyNA(x) && all(x, na.rm = TRUE)) {

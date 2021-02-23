@@ -1,3 +1,7 @@
+## FIXME CAUSE MUST BE A STRING (SCALAR).
+
+
+
 #' Get or set the `cause` attribute
 #'
 #' Gets or sets the [cause] (of failure) [attribute][base::attributes] of a
@@ -28,6 +32,8 @@ NULL
 
 
 
+## FIXME NEED TO REWORK USING S4.
+
 #' @rdname engine-cause
 #' @export
 ## Updated 2019-07-15.
@@ -55,12 +61,16 @@ cause <- function(x) {
         } else if (length(x) > 1L && !is.character(names(value))) {
             stop("'value' containing multiple elements must be named.")
         }
-        attr(x, "cause") <- noquote(value)
-        class(x) <- c("goalie", "logical")
-        x
+        ## FIXME RETHINK THIS?
+        ## FIXME DONT USE NOQUOTE HERE?
+        ## > attr(x, "cause") <- noquote(value)
+        ## > class(x) <- c("goalie", "logical")
+        new(Class = "goalie", x)
     }
 
 
+
+## FIXME REWORK...
 
 #' @rdname engine-cause
 #' @export
