@@ -6,3 +6,12 @@ setGeneric(
         standardGeneric("cause")
     }
 )
+
+
+
+#' @rdname show
+#' @name show
+#' @importFrom methods show
+#' @usage show(object)
+#' @export
+NULL
