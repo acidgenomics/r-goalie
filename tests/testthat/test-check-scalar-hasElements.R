@@ -14,7 +14,7 @@ test_that("FALSE", {
     expect_s4_class(ok, "goalie")
     expect_identical(
         object = cause(ok),
-        expected = noquote("'list()' has 0 elements, not 1.")
+        expected = "'list()' has 0 elements, not 1."
     )
 })
 
@@ -34,7 +34,7 @@ test_that("FALSE : dimension mismatch", {
     expect_false(ok)
     expect_identical(
         object = cause(ok),
-        expected = noquote("Dimensions 1, 2 of 'mtcars' are incorrect.")
+        expected = "Dimensions 1, 2 of 'mtcars' are incorrect."
     )
 })
 
@@ -44,6 +44,6 @@ test_that("FALSE : expecting dim", {
     expect_false(ok)
     expect_identical(
         object = cause(ok),
-        expected = noquote("'mtcars' has dimensions c(32L, 11L), not NULL.")
+        expected = "'mtcars' has dimensions c(32L, 11L), not NULL."
     )
 })

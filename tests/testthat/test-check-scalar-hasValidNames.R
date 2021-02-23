@@ -27,7 +27,7 @@ test_that("Unset names", {
     expect_s4_class(ok, "goalie")
     expect_identical(
         object = cause(ok),
-        expected = noquote("'x' does not have names.")
+        expected = "'x' does not have names."
     )
 })
 
