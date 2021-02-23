@@ -5,12 +5,12 @@
 \alias{setCause,logical-method}
 \title{Return \code{FALSE} vector with causes of failure}
 \usage{
-setCause(x, ...)
+setCause(object, ...)
 
-\S4method{setCause}{logical}(x, false = "false", missing = "missing")
+\S4method{setCause}{logical}(object, false = "false", missing = "missing")
 }
 \arguments{
-\item{x}{Object.}
+\item{object}{Object.}
 
 \item{...}{Additional arguments.}
 
@@ -31,7 +31,11 @@ object.
 Updated 2021-02-23.
 }
 \examples{
-x <- setCause(x = FALSE, false = "test")
+x <- setCause(
+    object = c(TRUE, TRUE, FALSE, FALSE, NA, NA),
+    false = "foo",
+    missing = "bar"
+)
 print(x)
 cause(x)
 }

@@ -20,7 +20,11 @@
 #' - `stats::setNames()`.
 #'
 #' @examples
-#' x <- setCause(x = FALSE, false = "test")
+#' x <- setCause(
+#'     object = c(TRUE, TRUE, FALSE, FALSE, NA, NA),
+#'     false = "foo",
+#'     missing = "bar"
+#' )
 #' print(x)
 #' cause(x)
 NULL
@@ -29,17 +33,17 @@ NULL
 
 ## Updated 2021-02-23.
 `setCause,logical` <- function(
-    x,
+    object,
     false = "false",
     missing = "missing"
 ) {
     ## Early return without cause if TRUE.
     ## Consider wrapping in `unname()` call here.
-    if (!anyNA(x) && all(x, na.rm = TRUE)) {
-        return(x)
+    if (!anyNA(object) && all(object, na.rm = TRUE)) {
+        return(object)
     }
-    isNA <- is.na(x)
-    length <- length(x)
+    isNA <- is.na(object)
+    length <- length(object)
     cause <- rep(x = NA_character_, times = length)
     if (identical(length(missing), 1L)) {
         cause[isNA] <- missing
@@ -50,14 +54,14 @@ NULL
         ## nocov end
     }
     ## Define the FALSE index.
-    index <- !(x | isNA)
+    index <- !(object | isNA)
     if (identical(length(false), 1L)) {
         cause[index] <- false
     } else {
         false <- rep_len(false, length)
         cause[index] <- false[index]
     }
-    goalie(x, cause = cause)
+    goalie(object = object, cause = cause)
 }
 
 
