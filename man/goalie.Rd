@@ -28,5 +28,6 @@ x <- goalie(
         NA_character_
     )
 )
-print(object)
+print(x)
+print(cause(x))
 }
