@@ -76,8 +76,6 @@ NULL
 
 
 
-## FIXME NEED TO REWORK THIS?
-
 #' Is an object from a class?
 #'
 #' Alternate version of [`is()`][methods::is] that supports multiple checks in a

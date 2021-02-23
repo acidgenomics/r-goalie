@@ -1,7 +1,3 @@
-## FIXME Inform the user about `updateObject()` function.
-
-
-
 #' Validate expected classes
 #'
 #' Validity check capable of validating multiple slots in a single call.
@@ -11,7 +7,7 @@
 #' inside [`metadata()`][S4Vectors::metadata].
 #'
 #' @name engine-validateClasses
-#' @note Updated 2021-01-04.
+#' @note Updated 2021-02-23.
 #'
 #' @inheritParams AcidRoxygen::params
 #' @param expected `list`.
@@ -28,6 +24,7 @@
 #'   informative message on failure.
 #'
 #' @examples
+#' ## TRUE ====
 #' validateClasses(
 #'     object = list(
 #'         a = character(),
@@ -38,6 +35,20 @@
 #'         a = "character",
 #'         b = "integer",
 #'         c = "factor"
+#'     )
+#' )
+#'
+#' ## FALSE ====
+#' validateClasses(
+#'     object = list(
+#'         a = character(),
+#'         b = integer(),
+#'         c = factor()
+#'     ),
+#'     expected = list(
+#'         a = "character",
+#'         b = "character",
+#'         c = "character"
 #'     )
 #' )
 NULL
@@ -71,12 +82,13 @@ validateClasses <- function(object, expected, subset = FALSE) {
         SIMPLIFY = TRUE,
         USE.NAMES = TRUE
     )
-    if (!all(valid)) {
-        return(paste(
-            "Class checks failed:",
-            capture.output(print(names(valid)[!valid])),
-            sep = "\n"
-        ))
+    if (all(valid)) {
+        return(TRUE)
     }
-    TRUE
+    paste0(
+        "Class checks failed: ",
+        toString(names(valid)[!valid], width = 200L), ".\n",
+        "If supported, 'updateObject()' ",
+        "may help resolve these issues."
+    )
 }
