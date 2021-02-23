@@ -21,8 +21,8 @@ NULL
 
 ## Updated 2021-02-23.
 `falseFromVector,goalie` <-  # nolint
-    function(x) {
-        cause <- cause(x)[which(x == FALSE)]
+    function(object) {
+        cause <- cause(object)[which(object == FALSE)]
         stopifnot(!is.null(names(cause)))
         x <- mapply(
             name = names(cause),

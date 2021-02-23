@@ -9,13 +9,11 @@ setGeneric(
 
 
 
-## FIXME RENAME TO OBJECT.
-
-#' @rdname false
+#' @rdname falseFromVector
 #' @export
 setGeneric(
     name = "falseFromVector",
-    def = function(x, ...) {
+    def = function(object, ...) {
         standardGeneric("falseFromVector")
     }
 )
@@ -33,7 +31,6 @@ setGeneric(
 
 
 
-
 #' @rdname show
 #' @name show
 #' @importFrom methods show
@@ -43,13 +40,11 @@ NULL
 
 
 
-## FIXME RENAME TO OBJECT.
-
 #' @rdname setCause
 #' @export
 setGeneric(
     name = "setCause",
-    def = function(x, ...) {
+    def = function(object, ...) {
         standardGeneric("setCause")
     }
 )
