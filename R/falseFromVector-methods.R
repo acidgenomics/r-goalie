@@ -3,6 +3,8 @@
 #' @name falseFromVector
 #' @note Updated 2021-02-23.
 #'
+#' @inheritParams AcidRoxygen::params
+#'
 #' @return `goalie`.
 #'
 #' @examples
@@ -40,7 +42,7 @@ NULL
 
 
 
-#' @rdname false
+#' @rdname falseFromVector
 #' @export
 setMethod(
     f = "falseFromVector",

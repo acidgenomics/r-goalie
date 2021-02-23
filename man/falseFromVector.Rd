@@ -2,9 +2,17 @@
 % Please edit documentation in R/AllGenerics.R, R/falseFromVector-methods.R
 \name{falseFromVector}
 \alias{falseFromVector}
+\alias{falseFromVector,goalie-method}
 \title{Set a scalar false goalie check with cause attribute}
 \usage{
 falseFromVector(object, ...)
+
+\S4method{falseFromVector}{goalie}(object)
+}
+\arguments{
+\item{object}{Object.}
+
+\item{...}{Additional arguments.}
 }
 \value{
 \code{goalie}.
