@@ -40,6 +40,7 @@ test_that("Function with 'n' formal that isn't supported", {
         object = cause(ok),
         expected = "'f' function didn't return any hex colors."
     )
+    ## FIXME THIS IS CAUSING UNIT TEST TO FAIL...
     f <- function(n) {
         "XXX"
     }

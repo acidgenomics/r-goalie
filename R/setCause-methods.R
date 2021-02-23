@@ -73,3 +73,24 @@ setMethod(
     signature = signature("logical"),
     definition = `setCause,logical`
 )
+
+
+
+## Updated 2021-02-23.
+`setCause,goalie` <-  # nolint
+    function(object, ...) {
+        names <- names(object)
+        object <- as.logical(object)
+        names(object) <- names
+        setCause(object = object, ...)
+    }
+
+
+
+#' @rdname setCause
+#' @export
+setMethod(
+    f = "setCause",
+    signature = signature("goalie"),
+    definition = `setCause,goalie`
+)
