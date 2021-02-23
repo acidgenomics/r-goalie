@@ -9,6 +9,18 @@ setGeneric(
 
 
 
+#' @rdname false
+#' @export
+setGeneric(
+    name = "falseFromVector",
+    def = function(x, ...) {
+        standardGeneric("falseFromVector")
+    }
+)
+
+
+
+
 #' @rdname show
 #' @name show
 #' @importFrom methods show
