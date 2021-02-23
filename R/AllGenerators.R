@@ -19,7 +19,8 @@
 #'         NA_character_
 #'     )
 #' )
-#' print(object)
+#' print(x)
+#' print(cause(x))
 goalie <- function(object, cause = character()) {
     stopifnot(
         is.logical(object),

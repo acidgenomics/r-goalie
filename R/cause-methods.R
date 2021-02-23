@@ -25,7 +25,9 @@ NULL
 ## Updated 2021-02-23.
 `cause,goalie` <-  # nolint
     function(object) {
-        slot(object, name = "cause")
+        x <- slot(object, name = "cause")
+        names(x) <- names(object)
+        x
     }
 
 
