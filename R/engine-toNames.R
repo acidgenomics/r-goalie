@@ -1,9 +1,13 @@
+## FIXME DONT EXPORT THIS.
+
+
+
 #' Sanitize vector input to names
 #'
 #' @name engine-toNames
 #' @note Names resulting from this function do not necessarily return valid, and
 #'   will not be identical to output from [`make.names()`][base::make.names()].
-#' @note Updated 2020-01-04.
+#' @note Updated 2021-02-23.
 #'
 #' @param x `atomic`.
 #'
@@ -33,23 +37,24 @@ toNames <- function(x) {
     ## out for `na.omit()` return.
     stopifnot(is.atomic(x))
     if (is.double(x)) {
-        ifelse(
+        x <- ifelse(
             test = is.na(x),
             yes = "NA",  # NA_real_
             no = sprintf("%.15e", x)
         )
     } else if (is.complex(x)) {
-        ifelse(
+        x <- ifelse(
             test = is.na(x),
             yes = "NA",  # NA_complex_
             no = sprintf("%.15g+%.15gi", Re(x), Im(x))
         )
     } else {
         x <- as.character(x)
-        ifelse(
+        x <- ifelse(
             test = is.na(x),
             yes = "NA",  # NA_character_
             no = sprintf("%s", x)
         )
     }
+    x
 }

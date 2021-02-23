@@ -61,7 +61,7 @@ setMethod(
     index <- head(index, n = n)
     failures <- data.frame(
         pos = index,
-        value = shorten(names[index]),
+        value = .shorten(names[index]),
         cause = unclass(cause[index]),
         row.names = seq_along(index)
     )
