@@ -1,3 +1,7 @@
+## FIXME THIS IS CAUSING THE GOALIE PRINT METHOD, WHICH HAS ISSUES WITH R MARKDOWN.
+
+
+
 #' Assert that certain conditions are true
 #'
 #' [assert()] is a drop-in replacement for [`stopifnot()`][base::stopifnot]
