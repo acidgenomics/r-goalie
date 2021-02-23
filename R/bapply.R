@@ -7,7 +7,7 @@
 #' - `FUN.VALUE` is always set to `logical(1)`.
 #' - `USE.NAMES` is always set to `TRUE`.
 #'
-#' @name engine-bapply
+#' @export
 #' @note Updated 2021-02-23.
 #'
 #' @param X `atomic` or `list`.
@@ -27,12 +27,6 @@
 #'
 #' @examples
 #' bapply(X = list(a = "example", b = 1), FUN = is.character)
-NULL
-
-
-
-#' @name engine-bapply
-#' @export
 bapply <- function(X, FUN, ..., USE.NAMES = TRUE) {  # nolint
     vapply(
         X = X,
