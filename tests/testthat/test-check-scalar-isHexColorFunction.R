@@ -7,7 +7,7 @@ test_that("TRUE", {
 test_that("FALSE : not a function", {
     ok <- isHexColorFunction("viridis")
     expect_false(ok)
-    expect_s3_class(ok, "goalie")
+    expect_s4_class(ok, "goalie")
     expect_identical(
         cause(ok),
         noquote("'\"viridis\"' is not a function.")
@@ -17,7 +17,7 @@ test_that("FALSE : not a function", {
 test_that("FALSE : no 'n' formal", {
     ok <- isHexColorFunction(ggplot2::scale_color_manual)
     expect_false(ok)
-    expect_s3_class(ok, "goalie")
+    expect_s4_class(ok, "goalie")
     expect_identical(
         cause(ok),
         noquote(
@@ -37,7 +37,7 @@ test_that("Function with 'n' formal that isn't supported", {
     }
     ok <- isHexColorFunction(f)
     expect_false(ok)
-    expect_s3_class(ok, "goalie")
+    expect_s4_class(ok, "goalie")
     expect_identical(
         object = cause(ok),
         expected = noquote("'f' function didn't return any hex colors.")
@@ -47,5 +47,5 @@ test_that("Function with 'n' formal that isn't supported", {
     }
     ok <- isHexColorFunction(f)
     expect_false(ok)
-    expect_s3_class(ok, "goalie")
+    expect_s4_class(ok, "goalie")
 })

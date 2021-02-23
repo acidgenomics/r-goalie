@@ -13,7 +13,7 @@ test_that("FALSE", {
     )
     ok <- hasValidNames(x)
     expect_false(ok)
-    expect_s3_class(ok, "goalie")
+    expect_s4_class(ok, "goalie")
     expect_match(
         object = cause(ok),
         regexp = "valid names"
@@ -24,7 +24,7 @@ test_that("Unset names", {
     x <- data.frame()
     ok <- hasValidNames(x)
     expect_false(ok)
-    expect_s3_class(ok, "goalie")
+    expect_s4_class(ok, "goalie")
     expect_identical(
         object = cause(ok),
         expected = noquote("'x' does not have names.")
@@ -45,7 +45,7 @@ test_that("FALSE", {
     x <- mtcars
     ok <- hasValidDimnames(x)
     expect_false(ok)
-    expect_s3_class(ok, "goalie")
+    expect_s4_class(ok, "goalie")
     expect_match(
         object = cause(ok),
         regexp = "valid names"
@@ -58,7 +58,7 @@ test_that("FALSE", {
     )
     ok <- hasValidDimnames(x)
     expect_false(ok)
-    expect_s3_class(ok, "goalie")
+    expect_s4_class(ok, "goalie")
     expect_match(
         object = cause(ok),
         regexp = "valid names"

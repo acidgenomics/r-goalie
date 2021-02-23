@@ -8,7 +8,7 @@ test_that("TRUE", {
 test_that("FALSE : numeric sequence", {
     ok <- isCharacter(seq_len(5L))
     expect_false(ok)
-    expect_s3_class(ok, "goalie")
+    expect_s4_class(ok, "goalie")
     expect_identical(
         cause(ok),
         noquote("'seq_len(5L)' is not character.")
