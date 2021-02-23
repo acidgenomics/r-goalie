@@ -13,8 +13,11 @@
 #'
 #' @examples
 #' x <- goalie(
-#'     object = c(FALSE, TRUE),
-#'     cause = "Element 1 is false."
+#'     object = c("aaa" = FALSE, "bbb" = TRUE),
+#'     cause = c(
+#'         "'aaa' is FALSE.",
+#'         NA_character_
+#'     )
 #' )
 #' print(object)
 goalie <- function(object, cause = character()) {
