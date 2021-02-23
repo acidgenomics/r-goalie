@@ -159,6 +159,34 @@ NULL
 
 
 
+#' Expression deparsing
+#'
+#' Turn unevaluated expressions into character strings.
+#'
+#' [safeDeparse()] is modified version of [`deparse()`][base::deparse] that
+#' always returns `character(1)`.
+#'
+#' @note Updated 2020-01-04.
+#' @noRd
+#'
+#' @param expr `expression`.
+#'   Any R expression.
+#' @param ... Passed to [`deparse()`][base::deparse].
+#'
+#' @seealso
+#' - `assertive.base::safe_deparse()`.
+#' - `deparse()`.
+#'
+#' @return `character(1)`.
+#'
+#' @examples
+#' .safeDeparse(is.character("a"))
+.safeDeparse <- function(expr, ...) {
+    paste0(deparse(expr, width.cutoff = 500L, ...), collapse = "")
+}
+
+
+
 #' Get the type description
 #'
 #' @note Updated 2021-01-04.
