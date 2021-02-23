@@ -30,6 +30,7 @@ setValidity(
             if (!isTRUE(is.character(cause) && length(cause) == 1L)) {
                 return("'cause' attribute is not 'character(1)'.")
             }
+            ## FIXME DONT ALLOW EMPTY CHARACTER STRING HERE.
         }
         TRUE
     }
