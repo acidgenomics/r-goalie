@@ -2,6 +2,7 @@
 #'
 #' Assertive check functions for defensive R programming.
 #'
+#' @aliases NULL
 #' @keywords internal
 #'
 #' @importClassesFrom methods logical
