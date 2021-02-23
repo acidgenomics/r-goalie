@@ -36,7 +36,7 @@ NULL
             USE.NAMES = FALSE
         )
         x <- unlist(x)
-        x <- paste(x, collapse = "; ")
+        x <- toString(x, width = 500L)
         false(x)
     }
 
