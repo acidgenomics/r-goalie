@@ -14,8 +14,8 @@
 #'
 #' ## falseFromVector ====
 #' x <- goalie(
-#'     object = c("aaa" = FALSE, "bbb" = FALSE),
-#'     cause = c("xxx", "yyy")
+#'     object = c("aaa" = FALSE, "bbb" = TRUE, "ccc" = FALSE),
+#'     cause = c("xxx", NA, "yyy")
 #' )
 #' print(x)
 #' print(cause(x))
@@ -34,7 +34,7 @@ false <- function(...) {
 ## Updated 2021-02-23.
 `falseFromVector,goalie` <-  # nolint
     function(x) {
-        cause <- cause(x)
+        cause <- cause(x)[which(x == FALSE)]
         stopifnot(!is.null(names(cause)))
         x <- mapply(
             name = names(cause),
