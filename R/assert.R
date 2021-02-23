@@ -53,7 +53,6 @@ assert <- function(..., msg = NULL) {
         } else if (isTRUE(r)) {
             next
         }
-        ## Note that we're allowing the user to define the message.
         if (is.null(msg)) {
             msg <- sprintf("Assert failure.\n[%s] %s is not TRUE.", i, call)
             if (is(r, "goalie")) {
