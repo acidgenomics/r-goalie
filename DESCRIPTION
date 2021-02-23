@@ -27,12 +27,11 @@ Imports:
 Suggests:
     AcidTest,
     BiocManager,
+    Matrix,
     S4Vectors,
     SummarizedExperiment,
-    Matrix,
     data.table,
     ggplot2,
-    knitr,
     rmarkdown,
     testthat,
     tibble,
@@ -40,5 +39,4 @@ Suggests:
     yaml
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
-VignetteBuilder: knitr
 Additional_repositories: https://r.acidgenomics.com
