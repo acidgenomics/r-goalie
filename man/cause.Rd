@@ -22,7 +22,14 @@ Cause attribute
 Updated 2021-02-23.
 }
 \examples{
-x <- goalie(object = c(FALSE, TRUE), cause = "Element 1 is FALSE.")
+x <- goalie(
+    object = c(FALSE, TRUE),
+    cause = c(
+        "Element 1 is FALSE.",
+        NA_character_
+    )
+)
+print(x)
 x <- cause(x)
 print(x)
 }
