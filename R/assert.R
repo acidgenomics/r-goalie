@@ -58,7 +58,7 @@ assert <- function(..., msg = NULL) {
             if (is(r, "goalie")) {
                 cause <- cause(r)
                 stopifnot(is.character(cause) && length(cause) == 1L)
-                msg <- paste(msg, cause)
+                msg <- paste0(msg, "\nCause: ", cause)
             }
         }
         stop(simpleError(msg, call = if (p <- sys.parent(1L)) sys.call(p)))
