@@ -37,7 +37,7 @@ isIntegerish <- function(x, .xname = getNameInParent(x)) {
     ok <- !is.na(x)
     if (!all(ok)) {
         names(ok) <- .toNames(x)
-        return(setCause(x = ok, false = "NA"))
+        return(setCause(ok, false = "NA"))
     }
     ## Early return without running `all.equal()` for integer or infinite (Inf).
     ok <- bapply(
