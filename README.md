@@ -12,7 +12,7 @@ R exports the `stopifnot()` function as a simple assert engine that supports mul
 
 Similar to the approach used in the [assertthat][] package, goalie exports the `assert()` function, which is designed to be a drop-in replacement for `stopifnot()` with improved error message support. `validate()` is a variation on `assert()` that is intended to be used within S4 class validity checks, which is useful for [Bioconductor][] packages.
 
-Additionally, goalie exports a number of assertive check functions that are intended to harden bioinformatics-oriented functions in R. These check functions return `logical` with an additional `"goalie"` S3 class definition, which enables us to define custom print methods that display additional useful information about the cause of the error (see `cause()` and `print()` for details). This approach draws heavily from the [assertive][] package.
+Additionally, goalie exports a number of assertive check functions that are intended to harden bioinformatics-oriented functions in R. These check functions return `logical` with an additional `"goalie"` S4 class definition, which enables us to keep track of additional useful information about the cause of the error (see `cause()` for details). This approach draws heavily from the [assertive][] package.
 
 ## Installation
 
