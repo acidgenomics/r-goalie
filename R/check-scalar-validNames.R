@@ -1,7 +1,7 @@
 #' Are these valid names?
 #'
 #' @name check-scalar-validNames
-#' @note Updated 2019-08-11.
+#' @note Updated 2021-03-09.
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
@@ -18,6 +18,9 @@
 #' ## Can't begin with a number.
 #' validNames("293cells")
 #'
+#' ## Cannot contain duplicates.
+#' validNames(c("a", "a"))
+#'
 #' ## Spaces, dashes (hyphens), and other non-alphanumerics aren't valid.
 #' validNames("sample 1")
 #' validNames("cell-AAAAAAAA")
@@ -31,6 +34,8 @@ NULL
 validNames <- function(x, .xname = getNameInParent(x)) {
     ok <- isCharacter(x, .xname = .xname)
     if (!isTRUE(ok)) return(ok)  # nocov
+    ok <- hasNoDuplicates(x, .xname = .xname)
+    if (!isTRUE(ok)) return(ok)
     valid <- mapply(
         x = x,
         y = make.names(x, unique = TRUE),

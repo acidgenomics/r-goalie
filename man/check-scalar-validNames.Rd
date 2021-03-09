@@ -21,7 +21,7 @@ validNames(x, .xname = getNameInParent(x))
 Are these valid names?
 }
 \note{
-Updated 2019-08-11.
+Updated 2021-03-09.
 }
 \examples{
 ## TRUE ====
@@ -31,6 +31,9 @@ validNames(c("sample.1", "sample_1"))
 ## FALSE ====
 ## Can't begin with a number.
 validNames("293cells")
+
+## Cannot contain duplicates.
+validNames(c("a", "a"))
 
 ## Spaces, dashes (hyphens), and other non-alphanumerics aren't valid.
 validNames("sample 1")
