@@ -39,6 +39,8 @@ isCleanSystemLibrary <- function() {
         pattern = paste0("^", version),
         x = system[, "Built"]
     ))) {
+        ## FIXME This is failing for R 4.0 to R 4.1 transition
+        ## e.g. Ubuntu CRAN binary install now fails this.
         return(false("Detected packages built against a different release."))
     }
     TRUE
