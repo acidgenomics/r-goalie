@@ -21,7 +21,7 @@ NULL
 #' @export
 isSystemCommand <- function(x) {
     ok <- nzchar(Sys.which(x))
-    names(ok) <- toNames(x)
+    names(ok) <- .toNames(x)
     setCause(ok, false = "not command")
 }
 

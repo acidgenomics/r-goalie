@@ -12,6 +12,6 @@ test_that("hasDimnames", {
         x <- data.frame()
         ok <- fun(x)
         expect_false(ok)
-        expect_s3_class(ok, "goalie")
+        expect_s4_class(ok, "goalie")
     }
 })

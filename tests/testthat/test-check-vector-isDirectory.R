@@ -8,18 +8,18 @@ test_that("TRUE", {
 test_that("FALSE : not dir", {
     x <- c("aaa", "bbb")
     ok <- isDirectory(x)
-    expect_s3_class(ok, "goalie")
+    expect_s4_class(ok, "goalie")
     expect_identical(nocause(ok), c(aaa = FALSE, bbb = FALSE))
-    expected <- noquote(c("not dir", "not dir"))
+    expected <- c("not dir", "not dir")
     names(expected) <- x
     expect_identical(cause(ok), expected = expected)
 })
 
 test_that("FALSE : NULL input", {
     ok <- isDirectory(NULL)
-    expect_s3_class(ok, "goalie")
+    expect_s4_class(ok, "goalie")
     expect_false(ok)
-    expect_identical(cause(ok), noquote("'x' is not character."))
+    expect_identical(cause(ok), "'x' is not character.")
 })
 
 
@@ -33,21 +33,21 @@ test_that("TRUE", {
 
 test_that("FALSE : not dir", {
     ok <- isADirectory("aaa")
-    expect_s3_class(ok, "goalie")
+    expect_s4_class(ok, "goalie")
     expect_false(ok)
     expect_identical(
         object = cause(ok),
-        expected = noquote(c(aaa = "not dir"))
+        expected = c(aaa = "not dir")
     )
 })
 
 test_that("FALSE : not scalar", {
     ok <- isADirectory(c("~", "."))
-    expect_s3_class(ok, "goalie")
+    expect_s4_class(ok, "goalie")
     expect_false(ok)
     expect_identical(
         object = cause(ok),
-        expected = noquote("'x' does not have a length of 1.")
+        expected = "'x' does not have a length of 1."
     )
 })
 
@@ -67,7 +67,7 @@ test_that("TRUE", {
 
 test_that("FALSE", {
     ok <- allAreDirectories(c(".", "bbb"))
-    expect_s3_class(ok, "goalie")
+    expect_s4_class(ok, "goalie")
     expect_false(ok)
     expect_match(cause(ok), "bbb")
 })

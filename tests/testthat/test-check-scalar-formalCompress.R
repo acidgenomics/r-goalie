@@ -8,32 +8,32 @@ test_that("TRUE", {
 test_that("FALSE : unsupported string", {
     ok <- formalCompress("xxx")
     expect_false(ok)
-    expect_s3_class(ok, "goalie")
+    expect_s4_class(ok, "goalie")
     expect_identical(
         cause(ok),
-        noquote(paste0(
+        paste0(
             "'compress' has elements not in ",
             "'c(\"bzip2\", \"gzip\", \"xz\")': xxx"
-        ))
+        )
     )
 })
 
 test_that("FALSE : not character", {
     ok <- formalCompress(NULL)
     expect_false(ok)
-    expect_s3_class(ok, "goalie")
+    expect_s4_class(ok, "goalie")
     expect_identical(
         cause(ok),
-        noquote("'compress' is not any of: character, logical.")
+        "'compress' is not any of: character, logical."
     )
 })
 
 test_that("FALSE : logical NA is not boolean", {
     ok <- formalCompress(NA)
     expect_false(ok)
-    expect_s3_class(ok, "goalie")
+    expect_s4_class(ok, "goalie")
     expect_identical(
         cause(ok),
-        noquote("'compress' is NA.")
+        "'compress' is NA."
     )
 })

@@ -36,7 +36,7 @@ NULL
 isEqualTo <- function(x, y) {
     diff <- abs(x - y)
     ok <- diff <= .tolerance
-    names(ok) <- toNames(x)
+    names(ok) <- .toNames(x)
     setCause(ok, sprintf("not equal to %g; abs diff = %g", y, diff))
 }
 
@@ -46,7 +46,7 @@ isEqualTo <- function(x, y) {
 #' @export
 isNotEqualTo <- function(x, y) {
     ok <- abs(x - y) > .tolerance
-    names(ok) <- toNames(x)
+    names(ok) <- .toNames(x)
     setCause(ok, sprintf("equal to %g", y))
 }
 
@@ -56,7 +56,7 @@ isNotEqualTo <- function(x, y) {
 #' @export
 isGreaterThan <- function(x, y) {
     ok <- x > y
-    names(ok) <- toNames(x)
+    names(ok) <- .toNames(x)
     setCause(ok, false = paste("less than or equal to", y))
 }
 
@@ -66,7 +66,7 @@ isGreaterThan <- function(x, y) {
 #' @export
 isGreaterThanOrEqualTo <- function(x, y) {
     ok <- x >= y
-    names(ok) <- toNames(x)
+    names(ok) <- .toNames(x)
     setCause(ok, false = paste("less than", y))
 }
 
@@ -76,7 +76,7 @@ isGreaterThanOrEqualTo <- function(x, y) {
 #' @export
 isLessThan <- function(x, y) {
     ok <- x < y
-    names(ok) <- toNames(x)
+    names(ok) <- .toNames(x)
     setCause(ok, false = paste("greater than or equal to", y))
 }
 
@@ -86,7 +86,7 @@ isLessThan <- function(x, y) {
 #' @export
 isLessThanOrEqualTo <- function(x, y) {
     ok <- x <= y
-    names(ok) <- toNames(x)
+    names(ok) <- .toNames(x)
     setCause(ok, false = paste("greater than", y))
 }
 

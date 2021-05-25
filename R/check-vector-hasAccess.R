@@ -44,7 +44,7 @@ NULL
 ## Vector ======================================================================
 #' @describeIn check-vector-hasAccess Vectorized.
 #' @export
-## Updated 2019-07-15.
+## Updated 2021-02-23.
 hasAccess <- function(x, access = "r") {
     ok <- isCharacter(x)
     if (!isTRUE(ok)) return(ok)
@@ -54,10 +54,10 @@ hasAccess <- function(x, access = "r") {
     if (anyDuplicated(access) > 0L || !all(access %in% c("r", "w", "x"))) {
         return(false(
             paste0(
-                "'%s' doesn't contain valid access codes.\n",
-                "Combinations of 'r', 'w' and 'x' are allowed."
+                "'%s' is not a valid access code.\n",
+                "Unique combinations of 'r', 'w' and 'x' are allowed."
             ),
-            access
+            paste0(access, collapse = "")
         ))
     }
     isWindows <- identical(.Platform[["OS.type"]], "windows")

@@ -45,7 +45,7 @@ NULL
 
 #' Deparse
 #'
-#' @note Updated 2021-01-04.
+#' @note Updated 2021-02-23.
 #' @noRd
 #'
 #' @seealso `base::stopifnot()`.
@@ -53,45 +53,25 @@ NULL
     function(call, cutoff = 60L) {
         ch <- deparse(call, width.cutoff = cutoff)
         if (length(ch) > 1L) {
-            paste(ch[[1L]], "....")  # nocov
-        } else {
-            ch
+            ch <- paste(ch[[1L]], "....")  # nocov
         }
+        ch
     }
 
 
 
 #' Get dimensions
 #'
-#' @note Updated 2021-01-04.
+#' @note Updated 2021-02-23.
 #' @noRd
 #'
 #' @seealso `assertive.properties::DIM()`.
 .dim <- function(x) {
     dim <- dim(x)
     if (is.null(dim)) {
-        length(x)
-    } else {
-        dim  # nocov
+        dim <- length(x)
     }
-}
-
-
-
-#' Does the input have a cause attribute set?
-#'
-#' @note Updated 2019-10-30.
-#' @noRd
-.hasCause <- function(x) {
-    cause <- cause(x)
-    if (
-        length(cause) != 1L &&
-        !identical(length(x), length(cause))
-    ) {
-        FALSE  # nocov
-    } else {
-        TRUE
-    }
+    dim
 }
 
 
@@ -106,7 +86,7 @@ NULL
 #'
 #' Used internally by [isAll()][] and [isAny()][] checks.
 #'
-#' @note Updated 2019-10-21.
+#' @note Updated 2021-02-23.
 #' @noRd
 #'
 #' @seealso
@@ -131,7 +111,7 @@ NULL
     if (length(class) > 1L) {
         ok <- bapply(X = class, FUN = function(cl) .is2(x, cl, ""))
         return(setCause(
-            x = ok,
+            object = ok,
             false = sprintf("%s is not '%s'", .typeDescription(x), class)
         ))
     }
@@ -159,29 +139,114 @@ NULL
 
 
 
+#' Expression deparsing
+#'
+#' Turn unevaluated expressions into character strings.
+#'
+#' [safeDeparse()] is modified version of [`deparse()`][base::deparse] that
+#' always returns `character(1)`.
+#'
+#' @note Updated 2020-01-04.
+#' @noRd
+#'
+#' @param expr `expression`.
+#'   Any R expression.
+#' @param ... Passed to [`deparse()`][base::deparse].
+#'
+#' @seealso
+#' - `assertive.base::safe_deparse()`.
+#' - `deparse()`.
+#'
+#' @return `character(1)`.
+#'
+#' @examples
+#' .safeDeparse(is.character("a"))
+.safeDeparse <- function(expr, ...) {
+    paste0(deparse(expr, width.cutoff = 500L, ...), collapse = "")
+}
+
+
+
+#' Sanitize vector input to names
+#'
+#' @note Updated 2021-02-23.
+#' @noRd
+#'
+#' @details
+#' Names resulting from this function do not necessarily return valid, and will
+#' not be identical to output from [`make.names()`][base::make.names()].
+#'
+#' @param x `atomic`.
+#'
+#' @return `character`.
+#'
+#' @seealso
+#' - `assertive.base:::to_names()`.
+#' - https://stackoverflow.com/questions/26183735
+#'
+#' @examples
+#' ## Non-character vectors are supported.
+#' .toNames(1)
+#' .toNames(complex(1L))
+#' .toNames(NA)
+#' .toNames(TRUE)
+#'
+#' ## Doesn't use 'make.names()' to sanitize.
+#' .toNames(c("sample-1", "hello world"))
+.toNames <- function(x) {
+    ## Assert check for `is.vector()` instead of `is.atomic()` here will error
+    ## out for `na.omit()` return.
+    stopifnot(is.atomic(x))
+    if (is.double(x)) {
+        x <- ifelse(
+            test = is.na(x),
+            yes = "NA",  # NA_real_
+            no = sprintf("%.15e", x)
+        )
+    } else if (is.complex(x)) {
+        x <- ifelse(
+            test = is.na(x),
+            yes = "NA",  # NA_complex_
+            no = sprintf("%.15g+%.15gi", Re(x), Im(x))
+        )
+    } else {
+        x <- as.character(x)
+        x <- ifelse(
+            test = is.na(x),
+            yes = "NA",  # NA_character_
+            no = sprintf("%s", x)
+        )
+    }
+    x
+}
+
+
+
 #' Get the type description
 #'
-#' @note Updated 2021-01-04.
+#' @note Updated 2021-02-23.
 #' @noRd
 #'
 #' @seealso `assertive.base:::type_description()`.
+#'
+#' @details
+#' .typeDescription("xxx")
 .typeDescription <- function(x) {
     if (is.array(x)) {
-        sprintf(
+        x <- sprintf(
             fmt = "class '%s %s'",
             class(x[FALSE]),  # nolint
             toString(class(x))
         )
     } else if (is.function(x)) {
-        ## nocov start
-        sprintf(
+        x <- sprintf(
             fmt = "class '%s %s'",
             typeof(x), toString(class(x))
         )
-        ## nocov end
     } else if (isS4(x)) {
-        sprintf("S4 class '%s'", toString(class(x)))
+        x <- sprintf("S4 class '%s'", toString(class(x)))
     } else {
-        sprintf("class '%s'", toString(class(x)))
+        x <- sprintf("class '%s'", toString(class(x)))
     }
+    x
 }

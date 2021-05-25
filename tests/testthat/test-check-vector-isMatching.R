@@ -16,7 +16,7 @@ test_that("FALSE", {
     pattern <- "ccc"
 
     ok <- isMatchingFixed(x = x, pattern = pattern)
-    expect_s3_class(ok, "goalie")
+    expect_s4_class(ok, "goalie")
     expect_false(any(ok))
 
     ok <- allAreMatchingFixed(x = x, pattern = pattern)
@@ -43,11 +43,11 @@ test_that("FALSE", {
     pattern <- "^F"
 
     ok <- isMatchingRegex(x = x, pattern = pattern)
-    expect_s3_class(ok, "goalie")
+    expect_s4_class(ok, "goalie")
     expect_false(any(ok))
 
     ok <- allAreMatchingRegex(x = x, pattern = pattern)
-    expect_s3_class(ok, "goalie")
+    expect_s4_class(ok, "goalie")
     expect_false(ok)
 })
 
@@ -71,11 +71,11 @@ test_that("FALSE", {
     pattern <- "bar"
 
     ok <- allAreNotMatchingFixed(x = x, pattern = pattern)
-    expect_s3_class(ok, "goalie")
+    expect_s4_class(ok, "goalie")
     expect_false(any(ok))
 
     ok <- allAreNotMatchingFixed(x = x, pattern = pattern)
-    expect_s3_class(ok, "goalie")
+    expect_s4_class(ok, "goalie")
     expect_false(ok)
 })
 
@@ -99,7 +99,7 @@ test_that("FALSE", {
     pattern <- "^f"
 
     ok <- isNotMatchingRegex(x = x, pattern = pattern)
-    expect_s3_class(ok, "goalie")
+    expect_s4_class(ok, "goalie")
     expect_false(any(ok))
 
     ok <- allAreNotMatchingRegex(x = x, pattern = pattern)

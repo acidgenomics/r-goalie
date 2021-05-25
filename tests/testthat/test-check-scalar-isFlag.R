@@ -8,29 +8,29 @@ test_that("TRUE", {
 test_that("FALSE : logical but not boolean", {
     ok <- isFlag(c(TRUE, TRUE))
     expect_false(ok)
-    expect_s3_class(ok, "goalie")
+    expect_s4_class(ok, "goalie")
     expect_identical(
         cause(ok),
-        noquote("'c(TRUE, TRUE)' is not a boolean flag (TRUE/FALSE).")
+        "'c(TRUE, TRUE)' is not a boolean flag (TRUE/FALSE)."
     )
 })
 
 test_that("FALSE : integer", {
     ok <- isFlag(1L)
     expect_false(ok)
-    expect_s3_class(ok, "goalie")
+    expect_s4_class(ok, "goalie")
     expect_identical(
         cause(ok),
-        noquote("'1L' is not a boolean flag (TRUE/FALSE).")
+        "'1L' is not a boolean flag (TRUE/FALSE)."
     )
 })
 
 test_that("FALSE : NA is logical but not boolean", {
     ok <- isFlag(NA)
     expect_false(ok)
-    expect_s3_class(ok, "goalie")
+    expect_s4_class(ok, "goalie")
     expect_identical(
         cause(ok),
-        noquote("'NA' is NA.")
+        "'NA' is NA."
     )
 })

@@ -22,7 +22,7 @@ NULL
 isInstalled <- function(x) {
     # Note that GitHub packages are "owner/repo", so use basename.
     ok <- basename(x) %in% rownames(installed.packages())
-    names(ok) <- toNames(x)
+    names(ok) <- .toNames(x)
     setCause(ok, false = "not installed")
 }
 

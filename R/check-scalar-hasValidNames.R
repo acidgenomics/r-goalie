@@ -1,7 +1,7 @@
 #' Does the input object have syntactically valid names?
 #'
 #' @name check-scalar-hasValidNames
-#' @note Updated 2019-08-10.
+#' @note Updated 2021-03-09.
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
