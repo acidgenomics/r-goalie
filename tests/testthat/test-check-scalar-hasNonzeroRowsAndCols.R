@@ -29,10 +29,10 @@ test_that("FALSE : rows containing all zeros", {
     )
     ok <- hasNonzeroRowsAndCols(x)
     expect_false(ok)
-    expect_s3_class(ok, "goalie")
+    expect_s4_class(ok, "goalie")
     expect_identical(
         cause(ok),
-        noquote("'x' has 1 zero row at position 2.")
+        "'x' has 1 zero row at position 2."
     )
 })
 
@@ -44,10 +44,10 @@ test_that("FALSE : columns containing all zeros", {
     )
     ok <- hasNonzeroRowsAndCols(x)
     expect_false(ok)
-    expect_s3_class(ok, "goalie")
+    expect_s4_class(ok, "goalie")
     expect_identical(
         cause(ok),
-        noquote("'x' has 2 zero columns at positions 3, 4.")
+        "'x' has 2 zero columns at positions 3, 4."
     )
 })
 
@@ -55,10 +55,10 @@ test_that("FALSE : no rows", {
     x <- matrix(nrow = 0L, ncol = 1L)
     ok <- hasNonzeroRowsAndCols(x)
     expect_false(ok)
-    expect_s3_class(ok, "goalie")
+    expect_s4_class(ok, "goalie")
     expect_identical(
         cause(ok),
-        noquote("The number of rows in 'x' is zero.")
+        "The number of rows in 'x' is zero."
     )
 })
 
@@ -66,10 +66,10 @@ test_that("FALSE : no columns", {
     x <- matrix(nrow = 1L, ncol = 0L)
     ok <- hasNonzeroRowsAndCols(x)
     expect_false(ok)
-    expect_s3_class(ok, "goalie")
+    expect_s4_class(ok, "goalie")
     expect_identical(
         cause(ok),
-        noquote("The number of columns in 'x' is zero.")
+        "The number of columns in 'x' is zero."
     )
 })
 
@@ -77,9 +77,9 @@ test_that("FALSE : no rows or columns", {
     x <- matrix(nrow = 0L, ncol = 0L)
     ok <- hasNonzeroRowsAndCols(x)
     expect_false(ok)
-    expect_s3_class(ok, "goalie")
+    expect_s4_class(ok, "goalie")
     expect_identical(
         cause(ok),
-        noquote("The number of rows in 'x' is zero.")
+        "The number of rows in 'x' is zero."
     )
 })

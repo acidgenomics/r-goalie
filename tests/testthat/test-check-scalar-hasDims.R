@@ -6,10 +6,10 @@ test_that("hasDims", {
     expect_true(hasDims(data.frame()))
     ok <- hasDims(list())
     expect_false(ok)
-    expect_s3_class(ok, "goalie")
+    expect_s4_class(ok, "goalie")
     expect_identical(
         cause(ok),
-        noquote("The dimensions of 'list()' are NULL.")
+        "The dimensions of 'list()' are NULL."
     )
 })
 

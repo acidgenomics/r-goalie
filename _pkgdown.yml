@@ -1,9 +1,8 @@
 authors:
   Michael Steinbaugh:
-    href: https://steinbaugh.com/
+    href: https://mike.steinbaugh.com/
   Acid Genomics:
     href: https://acidgenomics.com/
-
 navbar:
   components:
      acid:
@@ -11,10 +10,8 @@ navbar:
        href: https://acidgenomics.com/
   structure:
     right: [acid, github]
-
 news:
   - one_page: false
-
 reference:
   - title: Scalar checks
     contents:
@@ -24,7 +21,18 @@ reference:
       - starts_with("check-vector-")
   - title: Assert check engine
     contents:
-      - starts_with("engine-")
-  - title: S3 methods
+      - "assert"
+      - starts_with("goalie")
+      - "validate"
+      - "validateClasses"
+  - title: Other functions
     contents:
-      - print
+      - "bapply"
+      - "cause"
+      - "false"
+      - "falseFromVector"
+      - "getNameInParent"
+      - "nocause"
+      - "setCause"
+      - "show"
+url: https://r.acidgenomics.com/packages/goalie

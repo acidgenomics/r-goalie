@@ -18,24 +18,24 @@ test_that("TRUE : directory input", {
 
 test_that("FALSE : not file", {
     ok <- isFile(c("aaa", "bbb"))
-    expect_s3_class(ok, "goalie")
+    expect_s4_class(ok, "goalie")
     expect_identical(
         nocause(ok),
         c(aaa = FALSE, bbb = FALSE)
     )
     expect_identical(
         cause(ok),
-        noquote(c(aaa = "not file", bbb = "not file"))
+        c(aaa = "not file", bbb = "not file")
     )
 })
 
 test_that("FALSE : not character", {
     ok <- isFile(1L)
-    expect_s3_class(ok, "goalie")
+    expect_s4_class(ok, "goalie")
     expect_false(ok)
     expect_identical(
         cause(ok),
-        noquote("'x' is not character.")
+        "'x' is not character."
     )
 })
 
@@ -50,7 +50,7 @@ test_that("TRUE", {
 test_that("FALSE", {
     expect_false(isAFile("~"))
     ok <- isAFile("aaa")
-    expect_s3_class(ok, "goalie")
+    expect_s4_class(ok, "goalie")
     expect_false(ok)
 })
 

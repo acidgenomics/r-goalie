@@ -9,9 +9,9 @@ test_that("TRUE", {
 test_that("FALSE", {
     ok <- isAll(x, classes = c("integer", "NULL"))
     expect_false(ok)
-    expect_s3_class(ok, "goalie")
+    expect_s4_class(ok, "goalie")
     expect_identical(
         cause(ok),
-        noquote("'x' is not all of: integer, NULL.")
+        "'x' is not all of: integer, NULL."
     )
 })

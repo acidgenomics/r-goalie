@@ -1,9 +1,13 @@
 #+TITLE: goalie
 #+STARTUP: content
 * Development
+** TODO Cause attributes are causing weird extra data frame rendering issues
+   inside of R Markdown. Does switching to S4 help with this?
+   For example, try rendering the bcbioRNASeq vignette.
+** TODO Consider updating 'validate()' and 'validateClasses()' to inform the
+   user about 'updateObject' function.
+** TODO Consider adding `isFormula` check.
 ** TODO isEmpty masks some Bioconductor functions.
-** TODO Note that `NULL` arguments aren't passing through as expected with `matchArgsToDoCall()`. Look into fixing this in a future goalie release.
-    For example, `color = NULL` doesn't pass as expected.
 ** TODO skip_on_ci utility.
 ** TODO isInstalled.
 ** TODO isNonEmpty("") returns TRUE.
