@@ -11,10 +11,10 @@ test_that("FALSE", {
     x <- list(a = 1L)
     y <- list(b = 2L, c = 3L)
     ok <- areSameLength(x = x, y = y)
-    expect_s3_class(ok, "goalie")
+    expect_s4_class(ok, "goalie")
     expect_false(ok)
     expect_identical(
         cause(ok),
-        noquote("'x' does not have the same length as 'y'.")
+        "'x' does not have the same length as 'y'."
     )
 })

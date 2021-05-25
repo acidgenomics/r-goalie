@@ -36,8 +36,8 @@ isIntegerish <- function(x, .xname = getNameInParent(x)) {
     ## Require that vector does not contain NA.
     ok <- !is.na(x)
     if (!all(ok)) {
-        names(ok) <- toNames(x)
-        return(setCause(x = ok, false = "NA"))
+        names(ok) <- .toNames(x)
+        return(setCause(ok, false = "NA"))
     }
     ## Early return without running `all.equal()` for integer or infinite (Inf).
     ok <- bapply(
@@ -46,7 +46,7 @@ isIntegerish <- function(x, .xname = getNameInParent(x)) {
             is.integer(x) || is.infinite(x)
         }
     )
-    names(ok) <- toNames(x)
+    names(ok) <- .toNames(x)
     ## Check if numeric is equal to integer, based on tolerance.
     if (all(ok)) return(ok)
     ok <- bapply(
@@ -59,7 +59,7 @@ isIntegerish <- function(x, .xname = getNameInParent(x)) {
             ))
         }
     )
-    names(ok) <- toNames(x)
+    names(ok) <- .toNames(x)
     setCause(ok, false = "not integer")
 }
 

@@ -14,11 +14,11 @@ test_that("TRUE", {
 
 test_that("FALSE", {
     ok <- isExisting(c("x", "y"))
-    expect_s3_class(ok, "goalie")
+    expect_s4_class(ok, "goalie")
     expect_identical(nocause(ok), c(x = FALSE, y = FALSE))
     expect_identical(
         cause(ok),
-        noquote(c(x = "non-existing", y = "non-existing"))
+        c(x = "non-existing", y = "non-existing")
     )
 })
 
@@ -35,7 +35,7 @@ test_that("TRUE", {
 test_that("FALSE", {
     ok <- allAreExisting(c("x", "y"))
     expect_false(ok)
-    expect_s3_class(ok, "goalie")
+    expect_s4_class(ok, "goalie")
 })
 
 
@@ -52,5 +52,5 @@ test_that("FALSE", {
     b <- 2L
     ok <- allAreNonExisting(c("a", "b"))
     expect_false(ok)
-    expect_s3_class(ok, "goalie")
+    expect_s4_class(ok, "goalie")
 })

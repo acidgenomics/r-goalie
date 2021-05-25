@@ -13,17 +13,17 @@ test_that("TRUE", {
 
 test_that("FALSE", {
     ok <- isIntegerish(0.1)
-    expect_s3_class(ok, "goalie")
+    expect_s4_class(ok, "goalie")
     expect_false(ok)
     expect_identical(
         cause(ok),
-        c("1.000000000000000e-01" = noquote("not integer"))
+        c("1.000000000000000e-01" = "not integer")
     )
 })
 
 test_that("FALSE : NA input", {
     ok <- isIntegerish(c(1, 2, NA))  # nolint
-    expect_s3_class(ok, "goalie")
+    expect_s4_class(ok, "goalie")
     expect_identical(
         nocause(ok),
         c(
@@ -34,11 +34,11 @@ test_that("FALSE : NA input", {
     )
     expect_identical(
         cause(ok),
-        noquote(c(
-            "1.000000000000000e+00" = "",
-            "2.000000000000000e+00" = "",
+        c(
+            "1.000000000000000e+00" = NA_character_,
+            "2.000000000000000e+00" = NA_character_,
             "NA" = "NA"
-        ))
+        )
     )
 })
 

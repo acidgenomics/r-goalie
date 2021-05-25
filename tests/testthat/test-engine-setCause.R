@@ -1,25 +1,29 @@
 context("engine : setCause")
 
 test_that("FALSE", {
-    ok <- setCause(x = FALSE, false = "xxx")
-    expect_s3_class(ok, "goalie")
+    ok <- setCause(object = FALSE, false = "xxx")
+    expect_s4_class(ok, "goalie")
     expect_false(ok)
-    expect_identical(cause(ok), noquote("xxx"))
+    expect_identical(cause(ok), "xxx")
 })
 
 test_that("NA logical (missing)", {
     ok <- setCause(
-        x = c(a = TRUE, b = FALSE, c = NA),
+        object = c(a = TRUE, b = FALSE, c = NA),
         false = "custom false",
         missing = "custom missing"
     )
-    expect_s3_class(ok, "goalie")
+    expect_s4_class(ok, "goalie")
     expect_identical(
         nocause(ok),
         c(a = TRUE, b = FALSE, c = NA)
     )
     expect_identical(
         cause(ok),
-        noquote(c(a = "", b = "custom false", c = "custom missing"))
+        c(
+            "a" = NA_character_,
+            "b" = "custom false",
+            "c" = "custom missing"
+        )
     )
 })

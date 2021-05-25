@@ -7,20 +7,20 @@ test_that("TRUE", {
 
 test_that("FALSE : non-atomic", {
     ok <- allAreAtomic(list(a = "x", b = list()))
-    expect_s3_class(ok, "goalie")
+    expect_s4_class(ok, "goalie")
     expect_false(ok)
     expect_identical(
         cause(ok),
-        noquote("Not all elements in 'list(a = \"x\", b = list())' are atomic.")
+        "Not all elements in 'list(a = \"x\", b = list())' are atomic."
     )
 })
 
 test_that("FALSE : length 0", {
     ok <- allAreAtomic(data.frame())
-    expect_s3_class(ok, "goalie")
+    expect_s4_class(ok, "goalie")
     expect_false(ok)
     expect_identical(
         cause(ok),
-        noquote("'data.frame()' has length 0.")
+        "'data.frame()' has length 0."
     )
 })

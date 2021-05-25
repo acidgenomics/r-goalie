@@ -15,17 +15,19 @@ test_that("validateClasses", {
             )
         )
     )
-
     expect_identical(
         validateClasses(
             object = list(
-                a = character()
+                "a" = character()
             ),
             expected = list(
-                a = "integer"
+                "a" = "integer"
             )
         ),
-        "Class checks failed:\n[1] \"a\""
+        paste0(
+            "Class checks failed: a.\n",
+            "If supported, 'updateObject()' may help resolve these issues."
+        )
     )
 })
 
