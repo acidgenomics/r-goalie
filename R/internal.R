@@ -204,13 +204,11 @@ NULL
             no = sprintf("%.15e", x)
         )
     } else if (is.complex(x)) {
-        ## FIXME Failed to cover start.
         x <- ifelse(
             test = is.na(x),
             yes = "NA",  # NA_complex_
             no = sprintf("%.15g+%.15gi", Re(x), Im(x))
         )
-        ## FIXME Failed to cover end.
     } else {
         x <- as.character(x)
         x <- ifelse(
