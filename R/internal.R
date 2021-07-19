@@ -239,12 +239,10 @@ NULL
             toString(class(x))
         )
     } else if (is.function(x)) {
-        ## FIXME Failed to cover start.
         x <- sprintf(
             fmt = "class '%s %s'",
             typeof(x), toString(class(x))
         )
-        ## FIXME Failed to cover end.
     } else if (isS4(x)) {
         x <- sprintf("S4 class '%s'", toString(class(x)))
     } else {

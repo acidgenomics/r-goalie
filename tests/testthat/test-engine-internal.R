@@ -9,3 +9,10 @@ test_that("toNames complex", {
         expected = c("0+0i", "0+0i")
     )
 })
+
+test_that("typeDescription function", {
+    expect_identical(
+        object = .typeDescription(class),
+        expected = "class 'builtin function'"
+    )
+})
