@@ -19,6 +19,7 @@ test_that("URL connection support", {
     x <- url(urls[[1L]])
     expect_is(x, "url")
     expect_true(isAURL(x))
+    close(x)
 })
 
 test_that("isAURL", {

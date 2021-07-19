@@ -1,7 +1,7 @@
 #' Does the input contain a URL?
 #'
 #' @name check-vector-isURL
-#' @note Updated 2019-08-10.
+#' @note Updated 2021-07-19.
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
