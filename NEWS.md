@@ -1,9 +1,12 @@
 ## goalie 0.5.2 (2021-07-19)
 
+### Minor changes
+
 - `isAURL`: Improve setting of cause attribute when string is encoded
   (e.g. "top_correlations%3Fdataset_name%3DChronos_Combined"). Bug fix is
   applied internally to `falseFromVector`, which passes `false` to internal
   `sprintf` call.
+- Got package coverage back to 100%.
 
 ## goalie 0.5.1 (2021-03-09)
 
