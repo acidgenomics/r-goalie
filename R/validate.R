@@ -64,7 +64,7 @@ validate <- function(..., msg = NULL) {
                 ## We're allowing the user to pass character(1) through here,
                 ## enabling the use of other check functions (see checkmate
                 ## package for examples).
-                msg <- r  # FIXME Need to cover this.
+                msg <- r
             } else if (is.logical(r)) {
                 ## Convert an assert check error to a character string.
                 msg <- sprintf("[%s] %s is not TRUE.", i, call)
@@ -74,7 +74,6 @@ validate <- function(..., msg = NULL) {
                     msg <- paste(msg, cause)
                 }
             } else {
-                ## FIXME Failed to cover start.
                 stop(sprintf(
                     paste0(
                         "Validity failure.\n",
@@ -83,17 +82,16 @@ validate <- function(..., msg = NULL) {
                     ),
                     i, call
                 ))
-                ## FIXME Failed to cover end.
             }
             as.character(msg)
         }
     )
     ## Return.
-    if (all(bapply(checks, isTRUE))) {
+    if (all(bapply(X = checks, FUN = isTRUE))) {
         return(TRUE)
     }
     if (is.null(msg)) {
-        fail <- unlist(Filter(Negate(isTRUE), checks))
+        fail <- unlist(Filter(f = Negate(isTRUE), x = checks))
         msg <- paste0(fail, collapse = "\n")
         msg <- paste0(
             msg, "\n",
