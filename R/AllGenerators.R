@@ -27,10 +27,8 @@ goalie <- function(object, cause) {
         length(object) >= 1L
     )
     if (isTRUE(all(object))) {
-        ## FIXME Failed to cover start.
         stopifnot(isTRUE(missing(cause)))
         cause <- rep(x = NA_character_, times = length(object))
-        ## FIXME Failed to cover end.
     } else {
         stopifnot(is.character(cause))
     }
