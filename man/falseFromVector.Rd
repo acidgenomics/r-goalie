@@ -21,7 +21,7 @@ falseFromVector(object, ...)
 Set a scalar false goalie check with cause attribute
 }
 \note{
-Updated 2021-02-23.
+Updated 2021-07-19.
 }
 \examples{
 x <- goalie(
