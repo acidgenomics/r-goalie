@@ -204,11 +204,13 @@ NULL
             no = sprintf("%.15e", x)
         )
     } else if (is.complex(x)) {
+        ## FIXME Failed to cover start.
         x <- ifelse(
             test = is.na(x),
             yes = "NA",  # NA_complex_
             no = sprintf("%.15g+%.15gi", Re(x), Im(x))
         )
+        ## FIXME Failed to cover end.
     } else {
         x <- as.character(x)
         x <- ifelse(
@@ -239,10 +241,12 @@ NULL
             toString(class(x))
         )
     } else if (is.function(x)) {
+        ## FIXME Failed to cover start.
         x <- sprintf(
             fmt = "class '%s %s'",
             typeof(x), toString(class(x))
         )
+        ## FIXME Failed to cover end.
     } else if (isS4(x)) {
         x <- sprintf("S4 class '%s'", toString(class(x)))
     } else {
