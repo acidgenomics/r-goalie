@@ -1,3 +1,14 @@
+## goalie 0.5.2 (2021-07-19)
+
+- `isAURL`: Improve setting of cause attribute when string is encoded
+  (e.g. "top_correlations%3Fdataset_name%3DChronos_Combined").
+
+## goalie 0.5.1 (2021-03-09)
+
+### Minor changes
+
+- Miscellaneous documentation updates, to pass build checks.
+
 ## goalie 0.5.0 (2021-02-23)
 
 ### Major changes
