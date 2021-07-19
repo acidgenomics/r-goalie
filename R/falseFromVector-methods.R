@@ -1,7 +1,7 @@
 #' Set a scalar false goalie check with cause attribute
 #'
 #' @name falseFromVector
-#' @note Updated 2021-02-23.
+#' @note Updated 2021-07-19.
 #'
 #' @inheritParams AcidRoxygen::params
 #'
@@ -21,7 +21,7 @@ NULL
 
 
 
-## Updated 2021-02-23.
+## Updated 2021-07-19.
 `falseFromVector,goalie` <-  # nolint
     function(object) {
         cause <- cause(object)[which(object == FALSE)]
@@ -37,6 +37,9 @@ NULL
         )
         x <- unlist(x)
         x <- toString(x, width = 500L)
+        ## Need to ensure "%" is encoded as "%%" before handing off to
+        ## cause attribute setter, which calls `sprintf` internally.
+        x <- gsub(pattern = "%", replacement = "%%", x = x)
         false(x)
     }
 
