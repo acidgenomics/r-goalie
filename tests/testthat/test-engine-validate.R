@@ -13,12 +13,21 @@ test_that("Expected failure", {
 
 test_that("Character passthrough", {
     expect_identical(validate("xxx"), "xxx")
+    expect_match(
+        object = validate("foo", "bar"),
+        regexp = "foo\nbar"
+    )
+    expect_error(
+        object = validate(c("foo", "bar")),
+        regexp = "length\\(r\\) == 1L is not TRUE"
+    )
 })
 
 test_that("Invalid input", {
     expect_error(validate())
     expect_error(validate(c(TRUE, FALSE)))
     expect_error(validate(c("aaa", "bbb")))
+    expect_error(validate(NA_integer_))
 })
 
 test_that("Custom message", {
