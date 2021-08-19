@@ -1,10 +1,29 @@
+## goalie 0.5.3 (2021-08-19)
+
+### New functions
+
+- `isCondaEnabled`: Scalar check to determine if Conda is active inside of the
+  current R session. Evaluates `CONDA_DEFAULT_ENV` and `CONDA_SHLVL` system
+  environment variables internally.
+- `isDockerEnabled`: Scalar check to determine if Docker is installed and is
+  actively running on the current machine.
+- `isGitRepo`: Vectorized checks for the existence of Git repositories. This
+  is a little tricky to check inside of CI, so may need to think of a more
+  clever approach for code coverage in the future.
+
+### Minor changes
+
+- `assert`, `validate`: Improved cause return when attribute is set from
+  internal `falseFromVector` call. This was detected when `isSystemCommand`
+  was not returning the expected program name in the assert call.
+- `falseFromVector`: Improved internal cause attribute handling for scalars.
+
 ## goalie 0.5.2 (2021-07-19)
 
 ### Minor changes
 
-- `isAURL`: Improve setting of cause attribute when string is encoded
-  (e.g. "top_correlations%3Fdataset_name%3DChronos_Combined"). Bug fix is
-  applied internally to `falseFromVector`, which passes `false` to internal
+- `isAURL`: Improve setting of cause attribute when string is encoded. Bug fix
+  is applied internally to `falseFromVector`, which passes `false` to internal
   `sprintf` call.
 - Got package coverage back to 100%.
 
