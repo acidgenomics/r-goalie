@@ -33,7 +33,6 @@ isSystemCommand <- function(x) {
 isASystemCommand <- function(x) {
     ok <- isString(x)
     if (!isTRUE(ok)) return(ok)
-    ## FIXME This isn't setting the cause attribute the way we want.
     ok <- isSystemCommand(x)
     if (!all(ok)) return(ok)
     TRUE

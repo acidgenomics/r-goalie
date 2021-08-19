@@ -1,3 +1,7 @@
+## nocov start
+
+
+
 #' Does the input contain a Git repository?
 #'
 #' @name check-vector-isGitRepo
@@ -73,3 +77,7 @@ allAreGitRepos <- function(x) {
     if (!all(ok)) return(falseFromVector(ok))
     TRUE
 }
+
+
+
+## nocov end
