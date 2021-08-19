@@ -30,30 +30,30 @@ Updated 2021-08-19.
 }
 \examples{
 vars <- c("CONDA_DEFAULT_ENV", "CONDA_SHLVL")
+Sys.unsetenv(vars)
 
 ## TRUE ====
-Sys.unsetenv(vars)
 Sys.setenv(
     "CONDA_DEFAULT_ENV" = "test",
     "CONDA_SHLVL" = "2"
 )
 isCondaEnabled()
-
 Sys.unsetenv(vars)
+
 Sys.setenv(
     "CONDA_DEFAULT_ENV" = "base",
     "CONDA_SHLVL" = "1"
 )
 isCondaEnabled(ignoreBase = FALSE)
+Sys.unsetenv(vars)
 
 ## FALSE ====
-Sys.unsetenv(vars)
 isCondaEnabled()
 
-Sys.unsetenv(vars)
 Sys.setenv(
     "CONDA_DEFAULT_ENV" = "base",
     "CONDA_SHLVL" = "1"
 )
 isCondaEnabled(ignoreBase = TRUE)
+Sys.unsetenv(vars)
 }
