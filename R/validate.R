@@ -11,7 +11,7 @@
 #' detailed information on S4 validity methods.
 #'
 #' @export
-#' @note Updated 2021-02-23.
+#' @note Updated 2021-08-19.
 #'
 #' @inheritParams assert
 #'
@@ -71,6 +71,10 @@ validate <- function(..., msg = NULL) {
                 if (is(r, "goalie")) {
                     cause <- cause(r)
                     stopifnot(is.character(cause) && length(cause) == 1L)
+                    msg <- paste0(msg, "\nCause: ")
+                    if (!is.null(names(cause))) {
+                        cause <- paste(names(cause), cause, sep = ": ")
+                    }
                     msg <- paste(msg, cause)
                 }
             } else {
