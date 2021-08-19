@@ -32,7 +32,7 @@ the methods package, specifically \code{\link[methods:validObject]{validObject()
 detailed information on S4 validity methods.
 }
 \note{
-Updated 2021-02-23.
+Updated 2021-08-19.
 }
 \examples{
 ## TRUE ====

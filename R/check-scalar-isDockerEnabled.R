@@ -11,24 +11,31 @@ NULL
 
 
 
+## nocov start
+
 #' @rdname check-scalar-isDockerEnabled
 #' @export
 isDockerEnabled <- function() {
-    ok <- isSystemCommand("docker")
-    if (!isTRUE(ok)) return(ok)
+    ok <- isASystemCommand("docker")
+    if (!isTRUE(ok)) {
+        return(false("Docker is not installed."))
+    }
     ok <- tryCatch(
         expr = {
-            ## FIXME Need to migrate this to system2 instead.
-            shell(
+            system2(
                 command = "docker",
                 args = "info",
-                print = FALSE
+                stdout = FALSE,
+                stderr = FALSE
             )
         },
-        error = function(e) {
-            FALSE
-        }
+        warning = function(w) FALSE,
+        error = function(e) FALSE
     )
-    if (!isTRUE(ok)) return(ok)
+    if (!isTRUE(ok)) {
+        return(false("Docker is installed, but not enabled."))
+    }
     TRUE
 }
+
+## nocov end
