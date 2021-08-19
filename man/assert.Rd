@@ -28,7 +28,7 @@ If any of the expressions defined in \code{...} are not \href{base::all}{\code{a
 first expression which was not \code{TRUE}.
 }
 \note{
-Updated 2021-02-23.
+Updated 2021-08-19.
 }
 \examples{
 assert(
