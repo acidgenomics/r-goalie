@@ -1,3 +1,7 @@
+## nocov start
+
+
+
 #' Is the operating system Unix-based?
 #'
 #' @details
@@ -18,10 +22,12 @@ NULL
 #' @export
 isUnix <- function() {
     ok <- identical(.Platform[["OS.type"]], "unix")
-    ## nocov start
     if (!isTRUE(ok)) {
         return(false("Unix not detected."))
     }
     TRUE
-    ## nocov end
 }
+
+
+
+## nocov end

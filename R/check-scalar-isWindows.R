@@ -1,3 +1,7 @@
+## nocov start
+
+
+
 #' Is the operating system Windows?
 #'
 #' @name check-scalar-isWindows
@@ -15,10 +19,13 @@ NULL
 #' @export
 isWindows <- function() {
     ok <- identical(.Platform[["OS.type"]], "windows")
-    ## nocov start
     if (!isTRUE(ok)) {
         return(false("Windows not detected."))
     }
     TRUE
-    ## nocov end
+
 }
+
+
+
+## nocov end
