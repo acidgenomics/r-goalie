@@ -3,9 +3,12 @@
 \name{check-vector-isSystemCommand}
 \alias{check-vector-isSystemCommand}
 \alias{isSystemCommand}
+\alias{isASystemCommand}
 \title{Is a system command installed?}
 \usage{
 isSystemCommand(x)
+
+isASystemCommand(x)
 }
 \arguments{
 \item{x}{Object.}
@@ -20,6 +23,8 @@ Is a system command installed?
 \section{Functions}{
 \itemize{
 \item \code{isSystemCommand}: Vectorized.
+
+\item \code{isASystemCommand}: Scalar.
 }}
 
 \note{
