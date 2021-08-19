@@ -8,7 +8,7 @@
 #' first expression which was not `TRUE`.
 #'
 #' @export
-#' @note Updated 2021-02-23.
+#' @note Updated 2021-08-19.
 #'
 #' @inheritParams AcidRoxygen::params
 #' @param ... Any number of R expressions that return `logical(1)`, each of
@@ -58,7 +58,11 @@ assert <- function(..., msg = NULL) {
             if (is(r, "goalie")) {
                 cause <- cause(r)
                 stopifnot(is.character(cause) && length(cause) == 1L)
-                msg <- paste0(msg, "\nCause: ", cause)
+                msg <- paste0(msg, "\nCause: ")
+                if (!is.null(names(cause))) {
+                    cause <- paste(names(cause), cause, sep = ": ")
+                }
+                msg <- paste0(msg, cause)
             }
         }
         stop(simpleError(msg, call = if (p <- sys.parent(1L)) sys.call(p)))
