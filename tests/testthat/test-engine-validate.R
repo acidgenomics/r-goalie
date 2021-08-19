@@ -42,4 +42,8 @@ test_that("goalie cause support", {
         object = validate(isFlag("XXX")),
         regexp = "boolean flag"
     )
+    expect_match(
+        object = validate(isADir("XXX")),
+        regexp = "Cause: XXX: not dir"
+    )
 })
