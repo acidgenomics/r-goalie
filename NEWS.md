@@ -17,6 +17,8 @@
   internal `falseFromVector` call. This was detected when `isSystemCommand`
   was not returning the expected program name in the assert call.
 - `falseFromVector`: Improved internal cause attribute handling for scalars.
+- Reworked no coverage exclusions with `nocov`, for platform- and configuration-
+  specific checks.
 
 ## goalie 0.5.2 (2021-07-19)
 
