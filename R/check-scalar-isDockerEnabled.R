@@ -1,3 +1,7 @@
+## nocov start
+
+
+
 #' Is Docker enabled (running) on the current machine?
 #'
 #' @name check-scalar-isDockerEnabled
@@ -10,8 +14,6 @@
 NULL
 
 
-
-## nocov start
 
 #' @rdname check-scalar-isDockerEnabled
 #' @export
@@ -37,5 +39,7 @@ isDockerEnabled <- function() {
     }
     TRUE
 }
+
+
 
 ## nocov end

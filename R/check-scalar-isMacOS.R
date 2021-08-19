@@ -1,3 +1,7 @@
+## nocov start
+
+
+
 #' Is the operating system macOS?
 #'
 #' @name check-scalar-isMacOS
@@ -15,10 +19,14 @@ NULL
 #' @export
 isMacOS <- function() {
     ok <- isTRUE(grepl(pattern = "darwin", x = R.Version()[["os"]]))
-    ## nocov start
+
     if (!isTRUE(ok)) {
         return(false("macOS not detected."))
     }
     TRUE
-    ## nocov end
+
 }
+
+
+
+## nocov end
