@@ -17,32 +17,32 @@
 #'
 #' @examples
 #' vars <- c("CONDA_DEFAULT_ENV", "CONDA_SHLVL")
+#' Sys.unsetenv(vars)
 #'
 #' ## TRUE ====
-#' Sys.unsetenv(vars)
 #' Sys.setenv(
 #'     "CONDA_DEFAULT_ENV" = "test",
 #'     "CONDA_SHLVL" = "2"
 #' )
 #' isCondaEnabled()
-#'
 #' Sys.unsetenv(vars)
+#'
 #' Sys.setenv(
 #'     "CONDA_DEFAULT_ENV" = "base",
 #'     "CONDA_SHLVL" = "1"
 #' )
 #' isCondaEnabled(ignoreBase = FALSE)
+#' Sys.unsetenv(vars)
 #'
 #' ## FALSE ====
-#' Sys.unsetenv(vars)
 #' isCondaEnabled()
 #'
-#' Sys.unsetenv(vars)
 #' Sys.setenv(
 #'     "CONDA_DEFAULT_ENV" = "base",
 #'     "CONDA_SHLVL" = "1"
 #' )
 #' isCondaEnabled(ignoreBase = TRUE)
+#' Sys.unsetenv(vars)
 NULL
 
 
@@ -55,8 +55,13 @@ isCondaEnabled <- function(ignoreBase = TRUE) {
     ## Allow the user to selectively ignore when "base" environment is active.
     if (isTRUE(ignoreBase)) {
         ok <- identical(defaultEnv, "base")
-        if (isTRUE(ok)) return(FALSE)
+        if (isTRUE(ok)) {
+            return(false("Ignoring active conda 'base' environment."))
+        }
     }
     ok <- isString(defaultEnv) && isTRUE(shlvl > 0L)
-    ok
+    if (!isTRUE(ok)) {
+        return(false("Conda is not enabled."))
+    }
+    TRUE
 }
