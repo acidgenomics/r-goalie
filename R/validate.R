@@ -70,12 +70,11 @@ validate <- function(..., msg = NULL) {
                 msg <- sprintf("[%s] %s is not TRUE.", i, call)
                 if (is(r, "goalie")) {
                     cause <- cause(r)
-                    stopifnot(is.character(cause) && length(cause) == 1L)
-                    msg <- paste0(msg, "\nCause: ")
                     if (!is.null(names(cause))) {
                         cause <- paste(names(cause), cause, sep = ": ")
                     }
-                    msg <- paste(msg, cause)
+                    stopifnot(is.character(cause) && length(cause) == 1L)
+                    msg <- paste0(msg, "\nCause: ", cause)
                 }
             } else {
                 stop(sprintf(

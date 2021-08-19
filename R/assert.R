@@ -57,12 +57,11 @@ assert <- function(..., msg = NULL) {
             msg <- sprintf("Assert failure.\n[%s] %s is not TRUE.", i, call)
             if (is(r, "goalie")) {
                 cause <- cause(r)
-                stopifnot(is.character(cause) && length(cause) == 1L)
-                msg <- paste0(msg, "\nCause: ")
                 if (!is.null(names(cause))) {
                     cause <- paste(names(cause), cause, sep = ": ")
                 }
-                msg <- paste0(msg, cause)
+                stopifnot(is.character(cause) && length(cause) == 1L)
+                msg <- paste0(msg, "\nCause: ", cause)
             }
         }
         stop(simpleError(msg, call = if (p <- sys.parent(1L)) sys.call(p)))
