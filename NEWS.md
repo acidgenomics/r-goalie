@@ -1,3 +1,12 @@
+## goalie 0.5.4 (2021-08-22)
+
+### Minor changes
+
+- `isInstalled`: Added support for `lib` argument, which allows the user to
+  check whether an R package is installed in a specific package library.
+  Defaults to checking against all libraries, calling `installed.packages`
+  internally. This is a non-breaking change.
+
 ## goalie 0.5.3 (2021-08-19)
 
 ### New functions
