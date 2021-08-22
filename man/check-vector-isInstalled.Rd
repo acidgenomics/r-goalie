@@ -6,12 +6,16 @@
 \alias{allAreInstalled}
 \title{Is the package installed?}
 \usage{
-isInstalled(x)
+isInstalled(x, lib = NULL)
 
-allAreInstalled(x)
+allAreInstalled(x, lib = NULL)
 }
 \arguments{
 \item{x}{Object.}
+
+\item{lib}{\code{character(1)} or \code{NULL}.
+R library location.
+If left \code{NULL}, includes all known library paths defined in \code{.libPaths}.}
 }
 \value{
 \code{TRUE} on success;
@@ -28,7 +32,7 @@ Is the package installed?
 }}
 
 \note{
-Updated 2020-04-08.
+Updated 2021-08-22.
 }
 \examples{
 ## TRUE ====
