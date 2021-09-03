@@ -16,6 +16,8 @@ Additionally, goalie exports a number of assertive check functions that are inte
 
 ## Installation
 
+Requirements: [R][] >= 4.0.
+
 ### [R][] method
 
 ```r
