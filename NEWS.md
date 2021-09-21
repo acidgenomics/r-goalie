@@ -1,3 +1,10 @@
+## goalie 0.5.5 (2021-09-21)
+
+### Minor changes
+
+- `isDockerEnabled`: Bug fix for properly checking successful status on
+  internal `docker info` call via `system2`.
+
 ## goalie 0.5.4 (2021-08-22)
 
 ### Minor changes
