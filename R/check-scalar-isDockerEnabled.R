@@ -5,7 +5,7 @@
 #' Is Docker enabled (running) on the current machine?
 #'
 #' @name check-scalar-isDockerEnabled
-#' @note Updated 2021-08-19.
+#' @note Updated 2021-09-21.
 #'
 #' @inherit check return
 #'
@@ -24,12 +24,13 @@ isDockerEnabled <- function() {
     }
     ok <- tryCatch(
         expr = {
-            system2(
+            status <- system2(
                 command = "docker",
                 args = "info",
                 stdout = FALSE,
                 stderr = FALSE
             )
+            identical(status, 0L)
         },
         warning = function(w) FALSE,
         error = function(e) FALSE
