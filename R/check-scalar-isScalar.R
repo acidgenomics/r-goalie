@@ -1,3 +1,6 @@
+## FIXME Add support for `nullOK = TRUE`.
+
+
 #' Is the input scalar?
 #'
 #' Scalar represents a length of 1.
