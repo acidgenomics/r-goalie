@@ -1,3 +1,8 @@
+## FIXME Need to support named arguments, similar to stopifnot.
+## FIXME Need to support sanitization of CLI-formatted messages.
+
+
+
 #' Validate an S4 class
 #'
 #' [validate()] is a variant of [assert()] that is specifically intended to be
