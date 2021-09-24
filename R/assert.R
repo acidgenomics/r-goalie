@@ -1,3 +1,8 @@
+## FIXME Need to support named arguments, similar to stopifnot.
+## FIXME Need to support sanitization of CLI-formatted messages.
+
+
+
 #' Assert that certain conditions are true
 #'
 #' [assert()] is a drop-in replacement for [`stopifnot()`][base::stopifnot]
