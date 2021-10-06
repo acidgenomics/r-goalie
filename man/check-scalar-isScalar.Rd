@@ -19,7 +19,7 @@
 \usage{
 isNumber(x, nullOK = FALSE)
 
-isScalar(x, .xname = getNameInParent(x))
+isScalar(x, nullOK = FALSE, .xname = getNameInParent(x))
 
 isScalarList(x, .xname = getNameInParent(x))
 
@@ -63,7 +63,7 @@ Scalar represents a length of 1.
 }}
 
 \note{
-Updated 2019-08-10.
+Updated 2021-10-06.
 }
 \examples{
 ## TRUE ====
