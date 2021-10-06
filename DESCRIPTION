@@ -2,7 +2,7 @@ Package: goalie
 Title: Assertive Check Functions
 Description: Assertive check functions for defensive R programming.
 Version: 0.5.5
-Date: 2021-09-21
+Date: 2021-10-06
 Authors@R: c(
     person(
         "Michael", "Steinbaugh",
@@ -15,7 +15,7 @@ Authors@R: c(
         role = c("cph", "fnd")
     ))
 URL:
-    https://r.acidgenomics.com/packages/goalie,
+    https://r.acidgenomics.com/packages/goalie/,
     https://github.com/acidgenomics/r-goalie/
 BugReports: https://github.com/acidgenomics/r-goalie/issues/
 License: AGPL-3
