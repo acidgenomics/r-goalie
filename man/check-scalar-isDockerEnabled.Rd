@@ -15,7 +15,7 @@ isDockerEnabled()
 Is Docker enabled (running) on the current machine?
 }
 \note{
-Updated 2021-08-19.
+Updated 2021-09-21.
 }
 \examples{
 isDockerEnabled()
