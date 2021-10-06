@@ -6,7 +6,7 @@
 #' Scalar represents a length of 1.
 #'
 #' @name check-scalar-isScalar
-#' @note Updated 2019-08-10.
+#' @note Updated 2021-10-06.
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
@@ -38,7 +38,15 @@ NULL
 
 #' @rdname check-scalar-isScalar
 #' @export
-isScalar <- function(x, .xname = getNameInParent(x)) {
+isScalar <- function(
+    x,
+    nullOK = FALSE,
+    .xname = getNameInParent(x)
+) {
+    ## Conditionally allow NULL.
+    if (isTRUE(nullOK) && is.null(x)) {
+        return(TRUE)
+    }
     ok <- identical(length(x), 1L)
     if (!isTRUE(ok)) {
         return(false("'%s' does not have a length of 1.", .xname))
