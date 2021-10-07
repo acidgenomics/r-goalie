@@ -25,6 +25,7 @@ Imports:
     methods,
     utils
 Suggests:
+    AcidCLI,
     AcidTest,
     BiocManager,
     Matrix,
