@@ -27,6 +27,8 @@ isAlpha <- function(x, .xname = getNameInParent(x)) {
         return(false("'%s' is not scalar double.", .xname))
     }
     ok <- isInOpenRange(x, lower = 0L, upper = 1L, .xname = .xname)
-    if (!isTRUE(ok)) return(ok)
+    if (!isTRUE(ok)) {
+        return(ok)
+    }
     TRUE
 }

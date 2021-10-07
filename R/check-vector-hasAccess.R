@@ -47,7 +47,9 @@ NULL
 ## Updated 2021-02-23.
 hasAccess <- function(x, access = "r") {
     ok <- isCharacter(x)
-    if (!isTRUE(ok)) return(ok)
+    if (!isTRUE(ok)) {
+        return(ok)
+    }
     ## Here we're converting the "rwx" flags to the `file.access()` modes.
     access <- tolower(access)
     access <- strsplit(access, "")[[1L]]
@@ -65,17 +67,23 @@ hasAccess <- function(x, access = "r") {
     checkAccess <- function(x, access) {
         if ("r" %in% access) {
             ok <- identical(unname(file.access(x, mode = 4L)), 0L)
-            if (!isTRUE(ok)) return(FALSE)
+            if (!isTRUE(ok)) {
+                return(FALSE)
+            }
         }
         ## Write/execute permissions can't be checked on Windows.
         if (!isTRUE(isWindows)) {
             if ("w" %in% access) {
                 ok <- identical(unname(file.access(x, mode = 2L)), 0L)
-                if (!isTRUE(ok)) return(FALSE)  # nocov
+                if (!isTRUE(ok)) {
+                    return(FALSE)
+                }
             }
             if ("x" %in% access) {
                 ok <- identical(unname(file.access(x, mode = 1L)), 0L)
-                if (!isTRUE(ok)) return(FALSE)  # nocov
+                if (!isTRUE(ok)) {
+                    return(FALSE)
+                }
             }
         }
         TRUE
@@ -92,7 +100,9 @@ hasAccess <- function(x, access = "r") {
 ## Updated 2019-07-15.
 allHaveAccess <- function() {
     ok <- hasAccess(x = x, access = access)
-    if (!all(ok)) return(falseFromVector(ok))
+    if (!all(ok)) {
+        return(falseFromVector(ok))
+    }
     TRUE
 }
 

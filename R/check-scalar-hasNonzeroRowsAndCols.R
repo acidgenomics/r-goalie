@@ -35,7 +35,7 @@ NULL
 hasNonzeroRowsAndCols <- function(x, .xname = getNameInParent(x)) {
     ok <- isAny(x = x, classes = c("matrix", "Matrix"), .xname = .xname)
     if (!isTRUE(ok)) {
-        return(ok)  # nocov
+        return(ok)
     }
     ok <- hasRows(x, .xname = .xname)
     if (!isTRUE(ok)) {

@@ -25,12 +25,13 @@ isString <- function(
     nullOK = FALSE,
     .xname = getNameInParent(x)
 ) {
-    ## Conditionally allow NULL.
     if (isTRUE(nullOK) && is.null(x)) {
         return(TRUE)
     }
     ok <- isScalar(x)
-    if (!isTRUE(ok)) return(ok)
+    if (!isTRUE(ok)) {
+        return(ok)
+    }
     ok <- is.character(x)
     if (!isTRUE(ok)) {
         return(false("'%s' is not character.", .xname))

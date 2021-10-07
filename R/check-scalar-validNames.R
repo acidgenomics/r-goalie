@@ -31,9 +31,13 @@ NULL
 #' @export
 validNames <- function(x, .xname = getNameInParent(x)) {
     ok <- isCharacter(x, .xname = .xname)
-    if (!isTRUE(ok)) return(ok)  # nocov
+    if (!isTRUE(ok)) {
+        return(ok)
+    }
     ok <- hasNoDuplicates(x, .xname = .xname)
-    if (!isTRUE(ok)) return(ok)
+    if (!isTRUE(ok)) {
+        return(ok)
+    }
     valid <- mapply(
         x = x,
         y = make.names(x, unique = TRUE),

@@ -1,8 +1,3 @@
-## FIXME Improve the NULL cause attribute.
-## FIXME Need to make these alphabetical here.
-
-
-
 #' Is the input scalar?
 #'
 #' Scalar represents a length of 1.
@@ -80,7 +75,7 @@ isScalarAtomic <- function(
     }
     ok <- is.atomic(x)
     if (!isTRUE(ok)) {
-        return(false("'%s' is not atomic.", .xname))  # nocov
+        return(false("'%s' is not atomic.", .xname))
     }
     TRUE
 }
@@ -234,7 +229,7 @@ isScalarNumeric <- function(
     }
     ok <- is.numeric(x)
     if (!isTRUE(ok)) {
-        return(false("'%s' is not numeric.", .xname))  # nocov
+        return(false("'%s' is not numeric.", .xname))
     }
     TRUE
 }
@@ -256,7 +251,7 @@ isScalarVector <- function(
     }
     ok <- is.vector(x)
     if (!isTRUE(ok)) {
-        return(false("'%s' is not vector.", .xname))  # nocov
+        return(false("'%s' is not vector.", .xname))
     }
     TRUE
 }

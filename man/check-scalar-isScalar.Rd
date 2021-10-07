@@ -5,15 +5,15 @@
 \alias{isNumber}
 \alias{check-scalar-isScalar}
 \alias{isScalar}
-\alias{isScalarList}
 \alias{isScalarAtomic}
-\alias{isScalarVector}
-\alias{isScalarNumeric}
+\alias{isScalarCharacter}
+\alias{isScalarDouble}
 \alias{isScalarInteger}
 \alias{isScalarIntegerish}
-\alias{isScalarDouble}
-\alias{isScalarCharacter}
+\alias{isScalarList}
 \alias{isScalarLogical}
+\alias{isScalarNumeric}
+\alias{isScalarVector}
 \alias{isNonScalar}
 \title{Is the input scalar?}
 \usage{
@@ -21,23 +21,23 @@ isNumber(x, nullOK = FALSE)
 
 isScalar(x, nullOK = FALSE, .xname = getNameInParent(x))
 
-isScalarList(x, .xname = getNameInParent(x))
+isScalarAtomic(x, nullOK = FALSE, .xname = getNameInParent(x))
 
-isScalarAtomic(x, .xname = getNameInParent(x))
+isScalarCharacter(x, nullOK = TRUE, .xname = getNameInParent(x))
 
-isScalarVector(x, .xname = getNameInParent(x))
+isScalarDouble(x, nullOK = TRUE, .xname = getNameInParent(x))
 
-isScalarNumeric(x, .xname = getNameInParent(x))
+isScalarInteger(x, nullOK = FALSE, .xname = getNameInParent(x))
 
-isScalarInteger(x, .xname = getNameInParent(x))
+isScalarIntegerish(x, nullOK = TRUE, .xname = getNameInParent(x))
 
-isScalarIntegerish(x)
+isScalarList(x, nullOK = FALSE, .xname = getNameInParent(x))
 
-isScalarDouble(x, .xname = getNameInParent(x))
+isScalarLogical(x, nullOK = TRUE, .xname = getNameInParent(x))
 
-isScalarCharacter(x, .xname = getNameInParent(x))
+isScalarNumeric(x, nullOK = FALSE, .xname = getNameInParent(x))
 
-isScalarLogical(x, .xname = getNameInParent(x))
+isScalarVector(x, nullOK = FALSE, .xname = getNameInParent(x))
 
 isNonScalar(x, .xname = getNameInParent(x))
 }
@@ -63,7 +63,7 @@ Scalar represents a length of 1.
 }}
 
 \note{
-Updated 2021-10-06.
+Updated 2021-10-07.
 }
 \examples{
 ## TRUE ====
@@ -79,13 +79,13 @@ isScalar(c("a", "b"))
 \itemize{
 \item \code{help(topic = "scalar-type-predicates", package = "rlang")}.
 \item \code{assertive.properties::is_scalar()}.
-\item \code{rlang::is_scalar_list()}.
 \item \code{rlang::is_scalar_atomic()}.
-\item \code{rlang::is_scalar_vector()}.
+\item \code{rlang::is_scalar_character()}.
+\item \code{rlang::is_scalar_double()}.
 \item \code{rlang::is_scalar_integer()}.
 \item \code{rlang::is_scalar_integerish()}.
-\item \code{rlang::is_scalar_double()}.
-\item \code{rlang::is_scalar_character()}.
-\item \code{rlang::is_scalar_logical()}.
+\item \code{rlang::is_scalar_list()}.
+\item \code{rlang::is_scalar_logical()}
+\item \code{rlang::is_scalar_vector()}.
 }
 }
