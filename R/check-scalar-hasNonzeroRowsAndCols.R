@@ -34,11 +34,17 @@ NULL
 #' @export
 hasNonzeroRowsAndCols <- function(x, .xname = getNameInParent(x)) {
     ok <- isAny(x = x, classes = c("matrix", "Matrix"), .xname = .xname)
-    if (!isTRUE(ok)) return(ok)  # nocov
+    if (!isTRUE(ok)) {
+        return(ok)  # nocov
+    }
     ok <- hasRows(x, .xname = .xname)
-    if (!isTRUE(ok)) return(ok)
+    if (!isTRUE(ok)) {
+        return(ok)
+    }
     ok <- hasCols(x, .xname = .xname)
-    if (!isTRUE(ok)) return(ok)
+    if (!isTRUE(ok)) {
+        return(ok)
+    }
     if (is(x, "Matrix")) {
         assert(requireNamespace("Matrix", quietly = TRUE))
         colSums <- Matrix::colSums
