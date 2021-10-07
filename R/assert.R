@@ -1,8 +1,3 @@
-## FIXME Need to support named arguments, similar to stopifnot.
-## FIXME Need to support sanitization of CLI-formatted messages.
-
-
-
 #' Assert that certain conditions are true
 #'
 #' [assert()] is a drop-in replacement for [`stopifnot()`][base::stopifnot]
@@ -13,7 +8,7 @@
 #' first expression which was not `TRUE`.
 #'
 #' @export
-#' @note Updated 2021-08-19.
+#' @note Updated 2021-10-07.
 #'
 #' @inheritParams AcidRoxygen::params
 #' @param ... Any number of R expressions that return `logical(1)`, each of
@@ -35,6 +30,10 @@
 #'     is.character("example")
 #' )
 assert <- function(..., msg = NULL) {
+    hasCLI <- isInstalled("AcidCLI")
+    if (isTRUE(hasCLI)) {
+        stop <- AcidCLI::abort
+    }
     n <- ...length()
     if (identical(n, 0L)) {
         stop("No assert check defined.")
@@ -65,9 +64,12 @@ assert <- function(..., msg = NULL) {
                 if (!is.null(names(cause))) {
                     cause <- paste(names(cause), cause, sep = ": ")
                 }
-                stopifnot(is.character(cause) && length(cause) == 1L)
                 msg <- paste0(msg, "\nCause: ", cause)
             }
+        }
+        ## Simplify CLI-formatted messages when AcidCLI is not installed.
+        if (isFALSE(hasCLI)) {
+            msg <- gsub(pattern = .cliPattern, replacement = "'\\1'", x = msg)
         }
         stop(simpleError(msg, call = if (p <- sys.parent(1L)) sys.call(p)))
     }
