@@ -1,7 +1,3 @@
-## nocov start
-
-
-
 #' Is the R system library clean?
 #'
 #' @name check-scalar-isCleanSystemLibrary
@@ -44,7 +40,3 @@ isCleanSystemLibrary <- function() {
     }
     TRUE
 }
-
-
-
-## nocov end

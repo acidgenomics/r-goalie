@@ -46,8 +46,6 @@ isGGScale <- function(
 ) {
     scale <- match.arg(scale)
     aes <- match.arg(aes)
-    assert(isFlag(nullOK))
-    ## Conditionally allow NULL.
     if (isTRUE(nullOK) && is.null(x)) {
         return(TRUE)
     }
@@ -61,12 +59,16 @@ isGGScale <- function(
             "gg"
         )
     )
-    if (!isTRUE(ok)) return(ok)
+    if (!isTRUE(ok)) {
+        return(ok)
+    }
     ## Note that this has to match the British spelling (e.g colour).
     if (identical(aes, "color")) {
         aes <- "colour"
     }
     ok <- identical(x = x[["aesthetics"]], y = aes)
-    if (!isTRUE(ok)) return(ok)  # nocov
+    if (!isTRUE(ok)) {
+        return(ok)
+    }
     TRUE
 }

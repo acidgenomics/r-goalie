@@ -1,7 +1,3 @@
-## nocov start
-
-
-
 #' Is the operating system Unix-based?
 #'
 #' @details
@@ -27,7 +23,3 @@ isUnix <- function() {
     }
     TRUE
 }
-
-
-
-## nocov end

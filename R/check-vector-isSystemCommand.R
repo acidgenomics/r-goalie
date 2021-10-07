@@ -32,9 +32,13 @@ isSystemCommand <- function(x) {
 #' @export
 isASystemCommand <- function(x) {
     ok <- isString(x)
-    if (!isTRUE(ok)) return(ok)
+    if (!isTRUE(ok)) {
+        return(ok)
+    }
     ok <- isSystemCommand(x)
-    if (!all(ok)) return(ok)
+    if (!all(ok)) {
+        return(ok)
+    }
     TRUE
 }
 
@@ -44,6 +48,8 @@ isASystemCommand <- function(x) {
 #' @export
 allAreSystemCommands <- function(x) {
     ok <- isSystemCommand(x)
-    if (!all(ok)) return(falseFromVector(ok))
+    if (!all(ok)) {
+        return(falseFromVector(ok))
+    }
     TRUE
 }

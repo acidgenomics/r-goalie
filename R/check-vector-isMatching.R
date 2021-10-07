@@ -95,7 +95,9 @@ isNotMatchingRegex <- function(x, pattern) {
 #' @export
 allAreMatchingFixed <- function(x, pattern) {
     ok <- isMatchingFixed(x = x, pattern = pattern)
-    if (!all(ok)) return(falseFromVector(ok))
+    if (!all(ok)) {
+        return(falseFromVector(ok))
+    }
     TRUE
 }
 
@@ -105,7 +107,9 @@ allAreMatchingFixed <- function(x, pattern) {
 #' @export
 allAreMatchingRegex <- function(x, pattern) {
     ok <- isMatchingRegex(x = x, pattern = pattern)
-    if (!all(ok)) return(falseFromVector(ok))
+    if (!all(ok)) {
+        return(falseFromVector(ok))
+    }
     TRUE
 }
 
@@ -115,7 +119,9 @@ allAreMatchingRegex <- function(x, pattern) {
 #' @export
 allAreNotMatchingFixed <- function(x, pattern) {
     ok <- isNotMatchingFixed(x = x, pattern = pattern)
-    if (!all(ok)) return(falseFromVector(ok))
+    if (!all(ok)) {
+        return(falseFromVector(ok))
+    }
     TRUE
 }
 
@@ -125,6 +131,8 @@ allAreNotMatchingFixed <- function(x, pattern) {
 #' @export
 allAreNotMatchingRegex <- function(x, pattern) {
     ok <- isNotMatchingRegex(x = x, pattern = pattern)
-    if (!all(ok)) return(falseFromVector(ok))
+    if (!all(ok)) {
+        return(falseFromVector(ok))
+    }
     TRUE
 }

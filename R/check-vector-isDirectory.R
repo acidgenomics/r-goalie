@@ -26,7 +26,9 @@ NULL
 #' @export
 isDirectory <- function(x) {
     ok <- isCharacter(x)
-    if (!isTRUE(ok)) return(ok)
+    if (!isTRUE(ok)) {
+        return(ok)
+    }
     ok <- bapply(X = x, FUN = dir.exists)
     setCause(ok, false = "not dir")
 }
@@ -37,11 +39,17 @@ isDirectory <- function(x) {
 #' @describeIn check-vector-isDirectory Scalar.
 #' @export
 isADirectory <- function(x, nullOK = FALSE) {
-    if (isTRUE(nullOK) && is.null(x)) return(TRUE)
+    if (isTRUE(nullOK) && is.null(x)) {
+        return(TRUE)
+    }
     ok <- isString(x)
-    if (!isTRUE(ok)) return(ok)
+    if (!isTRUE(ok)) {
+        return(ok)
+    }
     ok <- isDirectory(x)
-    if (!isTRUE(ok)) return(ok)
+    if (!isTRUE(ok)) {
+        return(ok)
+    }
     TRUE
 }
 
@@ -49,7 +57,9 @@ isADirectory <- function(x, nullOK = FALSE) {
 #' @export
 allAreDirectories <- function(x) {
     ok <- isDirectory(x)
-    if (!all(ok)) return(falseFromVector(ok))
+    if (!all(ok)) {
+        return(falseFromVector(ok))
+    }
     TRUE
 }
 

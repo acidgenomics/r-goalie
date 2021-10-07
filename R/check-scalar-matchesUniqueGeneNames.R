@@ -42,7 +42,9 @@ matchesUniqueGeneNames <- function(x, genes, .xname = getNameInParent(x)) {
         return(false("'%s' is not an S4 class object.", .xname))
     }
     ok <- isCharacter(genes)
-    if (!isTRUE(ok)) return(ok)
+    if (!isTRUE(ok)) {
+        return(ok)
+    }
     ## Get all of the gene names stashed in the x.
     if (is(x, "SummarizedExperiment")) {
         assert(requireNamespace("SummarizedExperiment", quietly = TRUE))

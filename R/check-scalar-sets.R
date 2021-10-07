@@ -51,9 +51,16 @@ isSubset <- function(
     .xname = getNameInParent(x),
     .yname = getNameInParent(y)
 ) {
-    if (!isTRUE(ok <- hasLength(x))) return(ok)
-    if (!isTRUE(ok <- hasLength(y))) return(ok)
-    if (!isTRUE(all(x %in% y))) {
+    ok <- hasLength(x)
+    if (!isTRUE(ok)) {
+        return(ok)
+    }
+    ok <- hasLength(y)
+    if (!isTRUE(ok)) {
+        return(ok)
+    }
+    ok <- all(x %in% y)
+    if (!isTRUE(ok)) {
         setdiff <- setdiff(x, y)
         return(false(
             gettext("'%s' has elements not in '%s': %s"),
@@ -139,7 +146,13 @@ areSetEqual <- function(
             .xname, .yname, length(x), length(y)
         ))
     }
-    if (!isTRUE(ok <- isSubset(x, y))) return(ok)
-    if (!isTRUE(ok <- isSubset(y, x))) return(ok)  # nocov
+    ok <- isSubset(x, y)
+    if (!isTRUE(ok)) {
+        return(ok)
+    }
+    ok <- isSubset(y, x)
+    if (!isTRUE(ok)) {
+        return(ok)
+    }
     TRUE
 }

@@ -30,13 +30,16 @@ isOrganism <- function(
     nullOK = FALSE,
     .xname = getNameInParent(x)
 ) {
-    ## Conditionally allow NULL.
     if (isTRUE(nullOK) && is.null(x)) {
         return(TRUE)
     }
     ok <- isString(x)
-    if (!isTRUE(ok)) return(ok)
+    if (!isTRUE(ok)) {
+        return(ok)
+    }
     ok <- isMatchingRegex(x = x, pattern = "^[A-Z][a-z]+ [a-z]+$")
-    if (!isTRUE(ok)) return(ok)
+    if (!isTRUE(ok)) {
+        return(ok)
+    }
     TRUE
 }

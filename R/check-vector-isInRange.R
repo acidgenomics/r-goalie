@@ -80,7 +80,7 @@ isInRange <- function(
     )
     ok <- is.numeric(x) && !any(is.na(x))
     if (!isTRUE(ok)) {
-        return(false("'%s' is not (non-NA) numeric.", .xname))  # nocov
+        return(false("'%s' is not (non-NA) numeric.", .xname))
     }
     tooLow <- (if (closed[[1L]]) `<` else `<=`)(x, lower)
     tooHigh <- (if (closed[[2L]]) `>` else `>=`)(x, upper)
@@ -260,7 +260,9 @@ allAreInRange <- function() {
     ok <- isInRange(
         x = x, lower = lower, upper = upper, closed = closed, .xname = .xname
     )
-    if (!all(ok)) return(falseFromVector(ok))
+    if (!all(ok)) {
+        return(falseFromVector(ok))
+    }
     TRUE
 }
 
@@ -272,7 +274,9 @@ formals(allAreInRange) <- formals(isInRange)
 #' @export
 allAreInClosedRange <- function() {
     ok <- isInClosedRange(x = x, lower = lower, upper = upper, .xname = .xname)
-    if (!all(ok)) return(falseFromVector(ok))
+    if (!all(ok)) {
+        return(falseFromVector(ok))
+    }
     TRUE
 }
 
@@ -284,7 +288,9 @@ formals(allAreInClosedRange) <- formals(isInClosedRange)
 #' @export
 allAreInOpenRange <- function() {
     ok <- isInOpenRange(x = x, lower = lower, upper = upper, .xname = .xname)
-    if (!all(ok)) return(falseFromVector(ok))
+    if (!all(ok)) {
+        return(falseFromVector(ok))
+    }
     TRUE
 }
 
@@ -298,7 +304,9 @@ allAreInLeftOpenRange <- function() {
     ok <- isInLeftOpenRange(
         x = x, lower = lower, upper = upper, .xname = .xname
     )
-    if (!all(ok)) return(falseFromVector(ok))
+    if (!all(ok)) {
+        return(falseFromVector(ok))
+    }
     TRUE
 }
 
@@ -312,7 +320,9 @@ allAreInRightOpenRange <- function() {
     ok <- isInRightOpenRange(
         x = x, lower = lower, upper = upper, .xname = .xname
     )
-    if (!all(ok)) return(falseFromVector(ok))
+    if (!all(ok)) {
+        return(falseFromVector(ok))
+    }
     TRUE
 }
 
@@ -324,7 +334,9 @@ formals(allAreInRightOpenRange) <- formals(isInRightOpenRange)
 #' @export
 allAreNegative <- function() {
     ok <- isNegative(x = x, .xname = .xname)
-    if (!all(ok)) return(falseFromVector(ok))
+    if (!all(ok)) {
+        return(falseFromVector(ok))
+    }
     TRUE
 }
 
@@ -336,7 +348,9 @@ formals(allAreNegative) <- formals(isNegative)
 #' @export
 allArePositive <- function() {
     ok <- isPositive(x = x, .xname = .xname)
-    if (!all(ok)) return(falseFromVector(ok))
+    if (!all(ok)) {
+        return(falseFromVector(ok))
+    }
     TRUE
 }
 
@@ -348,7 +362,9 @@ formals(allArePositive) <- formals(isPositive)
 #' @export
 allAreNonNegative <- function() {
     ok <- isNonNegative(x = x, .xname = .xname)
-    if (!all(ok)) return(falseFromVector(ok))
+    if (!all(ok)) {
+        return(falseFromVector(ok))
+    }
     TRUE
 }
 
@@ -360,7 +376,9 @@ formals(allAreNonNegative) <- formals(isNonNegative)
 #' @export
 allAreNonPositive <- function() {
     ok <- isNonPositive(x = x, .xname = .xname)
-    if (!all(ok)) return(falseFromVector(ok))
+    if (!all(ok)) {
+        return(falseFromVector(ok))
+    }
     TRUE
 }
 
@@ -372,7 +390,9 @@ formals(allAreNonPositive) <- formals(isNonPositive)
 #' @export
 allArePercentage <- function() {
     ok <- isPercentage(x = x, .xname = .xname)
-    if (!all(ok)) return(falseFromVector(ok))
+    if (!all(ok)) {
+        return(falseFromVector(ok))
+    }
     TRUE
 }
 
@@ -384,7 +404,9 @@ formals(allArePercentage) <- formals(isPercentage)
 #' @export
 allAreProportion <- function() {
     ok <- isProportion(x = x, .xname = .xname)
-    if (!all(ok)) return(falseFromVector(ok))
+    if (!all(ok)) {
+        return(falseFromVector(ok))
+    }
     TRUE
 }
 

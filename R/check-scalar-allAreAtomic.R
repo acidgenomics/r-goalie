@@ -24,7 +24,9 @@ NULL
 #' @export
 allAreAtomic <- function(x, .xname = getNameInParent(x)) {
     ok <- hasLength(x, .xname = .xname)
-    if (!isTRUE(ok)) return(ok)
+    if (!isTRUE(ok)) {
+        return(ok)
+    }
     ok <- all(bapply(x, is.atomic))
     if (!isTRUE(ok)) {
         return(false("Not all elements in '%s' are atomic.", .xname))

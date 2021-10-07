@@ -38,6 +38,8 @@ isInstalled <- function(x, lib = NULL) {
 #' @export
 allAreInstalled <- function(x, lib = NULL) {
     ok <- isInstalled(x, lib = lib)
-    if (!all(ok)) return(falseFromVector(ok))
+    if (!all(ok)) {
+        return(falseFromVector(ok))
+    }
     TRUE
 }

@@ -49,10 +49,8 @@ NULL
         if (identical(length(missing), 1L)) {
             cause[isNA] <- missing
         } else {
-            ## nocov start
             missing <- rep_len(missing, length)
             cause[isNA] <- missing[isNA]
-            ## nocov end
         }
         ## Define the FALSE index.
         index <- !(object | isNA)

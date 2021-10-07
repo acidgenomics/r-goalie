@@ -18,7 +18,9 @@ NULL
     vapply(
         X = as.character(x),
         FUN = function(x) {
-            if (is.na(x)) return(x)  # nocov
+            if (is.na(x)) {
+                return(x)
+            }
             first <- toupper(substring(x, first = 1L, last = 1L))
             tail <- substring(x, first = 2L)
             paste0(first, tail)
@@ -53,7 +55,7 @@ NULL
     function(call, cutoff = 60L) {
         ch <- deparse(call, width.cutoff = cutoff)
         if (length(ch) > 1L) {
-            ch <- paste(ch[[1L]], "....")  # nocov
+            ch <- paste(ch[[1L]], "....")
         }
         ch
     }
@@ -106,7 +108,7 @@ NULL
 #' .is2(mean, class = c("function", "data.frame"))
 .is2 <- function(x, class, .xname = getNameInParent(x)) {
     if (!is.character(class) || identical(length(class), 0L)) {
-        stop("'class' must be non-empty character.")  # nocov
+        stop("'class' must be non-empty character.")
     }
     if (length(class) > 1L) {
         ok <- bapply(X = class, FUN = function(cl) .is2(x, cl, ""))

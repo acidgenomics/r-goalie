@@ -1,7 +1,3 @@
-## nocov start
-
-
-
 #' Is the current R session running inside RStudio?
 #'
 #' @name check-scalar-isRStudio
@@ -24,7 +20,3 @@ isRStudio <- function() {
     }
     TRUE
 }
-
-
-
-## nocov end

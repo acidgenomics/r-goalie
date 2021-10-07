@@ -1,7 +1,3 @@
-## nocov start
-
-
-
 #' Does the input contain a Git repository?
 #'
 #' @name check-vector-isGitRepo
@@ -25,16 +21,24 @@ NULL
 #' @export
 isGitRepo <- function(x) {
     ok <- isCharacter(x)
-    if (!all(ok)) return(ok)
+    if (!all(ok)) {
+        return(ok)
+    }
     ok <- bapply(
         X = x,
         FUN = function(x) {
             ok <- isADirectory(x)
-            if (!isTRUE(ok)) return(FALSE)
+            if (!isTRUE(ok)) {
+                return(FALSE)
+            }
             ok <- isADirectory(file.path(x, ".git"))
-            if (isTRUE(ok)) return(TRUE)
+            if (isTRUE(ok)) {
+                return(TRUE)
+            }
             ok <- isSystemCommand("git")
-            if (!isTRUE(ok)) return(FALSE)
+            if (!isTRUE(ok)) {
+                return(FALSE)
+            }
             wd <- getwd()
             setwd(x)
             ok <- tryCatch(
@@ -64,9 +68,13 @@ isGitRepo <- function(x) {
 #' @export
 isAGitRepo <- function(x) {
     ok <- isString(x)
-    if (!isTRUE(ok)) return(ok)
+    if (!isTRUE(ok)) {
+        return(ok)
+    }
     ok <- isGitRepo(x)
-    if (!isTRUE(ok)) return(ok)
+    if (!isTRUE(ok)) {
+        return(ok)
+    }
     TRUE
 }
 
@@ -74,10 +82,8 @@ isAGitRepo <- function(x) {
 #' @export
 allAreGitRepos <- function(x) {
     ok <- isGitRepo(x)
-    if (!all(ok)) return(falseFromVector(ok))
+    if (!all(ok)) {
+        return(falseFromVector(ok))
+    }
     TRUE
 }
-
-
-
-## nocov end

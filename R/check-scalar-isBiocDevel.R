@@ -16,7 +16,9 @@ NULL
 isBiocDevel <- function() {
     assert(hasInternet())
     ok <- isInstalled("BiocManager")
-    if (!isTRUE(ok)) return(ok)  # nocov
+    if (!isTRUE(ok)) {
+        return(ok)
+    }
     assert(
         requireNamespace("BiocManager", quietly = TRUE),
         requireNamespace("yaml", quietly = TRUE)
@@ -26,10 +28,8 @@ isBiocDevel <- function() {
     assert(isSubset("devel_version", names(yaml)))
     develVersion <- yaml[["devel_version"]]
     ok <- identical(x = as.character(version), y = as.character(develVersion))
-    ## nocov start
     if (!isTRUE(ok)) {
         return(false("Not Bioc Devel: '%s'.", as.character(version)))
     }
     TRUE
-    ## nocov end
 }

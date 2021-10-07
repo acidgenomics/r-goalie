@@ -21,7 +21,9 @@ NULL
 #' @export
 isHeaderLevel <- function(x, .xname = getNameInParent(x)) {
     ok <- isScalarIntegerish(x)
-    if (!isTRUE(ok)) return(ok)
+    if (!isTRUE(ok)) {
+        return(ok)
+    }
     ## Check for Markdown headers 1-7.
     ok <- x %in% seq_len(7L)
     if (!isTRUE(ok)) {

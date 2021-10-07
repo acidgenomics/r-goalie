@@ -28,7 +28,9 @@ NULL
 #' @export
 isFileSystemCaseSensitive <- function(dir = ".") {
     ok <- isADirectory(dir)
-    if (!isTRUE(ok)) return(ok)  # nocov
+    if (!isTRUE(ok)) {
+        return(ok)
+    }
     files <- file.path(dir, c(".tmp.checkcase", ".tmp.checkCase"))
     unlink(files)
     file.create(files, showWarnings = FALSE)
@@ -42,10 +44,8 @@ isFileSystemCaseSensitive <- function(dir = ".") {
     ))
     unlink(files)
     ok <- identical(n, 2L)
-    ## nocov start
     if (!isTRUE(ok)) {
         return(false("'%s' is not case sensitive.", dir))
     }
     TRUE
-    ## nocov end
 }

@@ -28,7 +28,9 @@ NULL
 #' @export
 isHexColor <- function(x, .xname = getNameInParent(x)) {
     ok <- isCharacter(x = x, .xname = .xname)
-    if (!isTRUE(ok)) return(ok)
+    if (!isTRUE(ok)) {
+        return(ok)
+    }
     ## NOTE `viridis()` adds an extra "FF" to the end of hex color return.
     pattern <- "^(#[0-9A-F]{6})"
     ok <- isMatchingRegex(x = x, pattern = pattern)
@@ -42,6 +44,8 @@ isHexColor <- function(x, .xname = getNameInParent(x)) {
 #' @export
 allAreHexColors <- function(x, .xname = getNameInParent(x)) {
     ok <- isHexColor(x = x, .xname = .xname)
-    if (!all(ok)) return(falseFromVector(ok))
+    if (!all(ok)) {
+        return(falseFromVector(ok))
+    }
     TRUE
 }
