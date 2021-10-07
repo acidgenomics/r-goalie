@@ -30,9 +30,13 @@ NULL
 isSymlink <- function(x) {
     assert(!isTRUE(isWindows()))
     ok <- isCharacter(x)
-    if (!isTRUE(ok)) return(ok)  # nocov
+    if (!isTRUE(ok)) {
+        return(ok)
+    }
     ok <- file.exists(x)
-    if (!all(ok)) return(setCause(ok, false = "does not exist"))  # nocov
+    if (!all(ok)) {
+        return(setCause(ok, false = "does not exist"))
+    }
     ok <- nzchar(Sys.readlink(x), keepNA = TRUE)
     names(ok) <- x
     setCause(ok, false = "not symlink")
@@ -44,11 +48,17 @@ isSymlink <- function(x) {
 #' @describeIn check-vector-isSymlink Scalar.
 #' @export
 isASymlink <- function(x, nullOK = FALSE) {
-    if (isTRUE(nullOK) && is.null(x)) return(TRUE)  # nocov
+    if (isTRUE(nullOK) && is.null(x)) {
+        return(TRUE)
+    }
     ok <- isString(x)
-    if (!isTRUE(ok)) return(ok)  # nocov
+    if (!isTRUE(ok)) {
+        return(ok)
+    }
     ok <- isSymlink(x)
-    if (!all(ok)) return(ok)
+    if (!all(ok)) {
+        return(ok)
+    }
     TRUE
 }
 
@@ -58,6 +68,8 @@ isASymlink <- function(x, nullOK = FALSE) {
 #' @export
 allAreSymlinks <- function(x) {
     ok <- isSymlink(x)
-    if (!all(ok)) return(falseFromVector(ok))
+    if (!all(ok)) {
+        return(falseFromVector(ok))
+    }
     TRUE
 }

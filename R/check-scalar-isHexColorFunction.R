@@ -30,7 +30,6 @@ isHexColorFunction <- function(
     nullOK = FALSE,
     .xname = getNameInParent(x)
 ) {
-    ## Conditionally allow NULL.
     if (isTRUE(nullOK) && is.null(x)) {
         return(TRUE)
     }
@@ -50,6 +49,8 @@ isHexColorFunction <- function(
         return(false("'%s' function didn't return any hex colors.", .xname))
     }
     ok <- allAreHexColors(colors)
-    if (!isTRUE(ok)) return(ok)
+    if (!isTRUE(ok)) {
+        return(ok)
+    }
     TRUE
 }

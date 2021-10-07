@@ -28,9 +28,13 @@ NULL
 #' @export
 isFile <- function(x) {
     ok <- isCharacter(x)
-    if (!isTRUE(ok)) return(ok)
+    if (!isTRUE(ok)) {
+        return(ok)
+    }
     ok <- !bapply(X = x, FUN = dir.exists)
-    if (!all(ok)) return(setCause(ok, false = "dir"))
+    if (!all(ok)) {
+        return(setCause(ok, false = "dir"))
+    }
     ok <- bapply(X = x, FUN = file.exists)
     setCause(ok, false = "not file")
 }
@@ -41,11 +45,17 @@ isFile <- function(x) {
 #' @describeIn check-vector-isFile Scalar.
 #' @export
 isAFile <- function(x, nullOK = FALSE) {
-    if (isTRUE(nullOK) && is.null(x)) return(TRUE)
+    if (isTRUE(nullOK) && is.null(x)) {
+        return(TRUE)
+    }
     ok <- isString(x)
-    if (!isTRUE(ok)) return(ok)
+    if (!isTRUE(ok)) {
+        return(ok)
+    }
     ok <- isFile(x)
-    if (!all(ok)) return(ok)
+    if (!all(ok)) {
+        return(ok)
+    }
     TRUE
 }
 
@@ -55,6 +65,8 @@ isAFile <- function(x, nullOK = FALSE) {
 #' @export
 allAreFiles <- function(x) {
     ok <- isFile(x)
-    if (!all(ok)) return(falseFromVector(ok))
+    if (!all(ok)) {
+        return(falseFromVector(ok))
+    }
     TRUE
 }

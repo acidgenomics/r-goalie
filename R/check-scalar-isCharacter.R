@@ -33,8 +33,6 @@ isCharacter <- function(
     nullOK = FALSE,
     .xname = getNameInParent(x)
 ) {
-    assert(isFlag(nullOK))
-    ## Conditionally allow NULL.
     if (isTRUE(nullOK) && is.null(x)) {
         return(TRUE)
     }
@@ -44,7 +42,9 @@ isCharacter <- function(
     }
     ## Don't allow `character(0)`.
     ok <- hasLength(x, .xname = .xname)
-    if (!isTRUE(ok)) return(ok)
+    if (!isTRUE(ok)) {
+        return(ok)
+    }
     ## Don't allow empty strings ("").
     ok <- nzchar(x)
     if (!all(ok)) {

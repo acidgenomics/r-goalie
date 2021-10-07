@@ -97,7 +97,9 @@ isLessThanOrEqualTo <- function(x, y) {
 #' @export
 allAreEqualTo <- function(x, y) {
     ok <- isEqualTo(x, y)
-    if (!all(ok)) return(falseFromVector(ok))
+    if (!all(ok)) {
+        return(falseFromVector(ok))
+    }
     TRUE
 }
 
@@ -107,7 +109,9 @@ allAreEqualTo <- function(x, y) {
 #' @export
 allAreNotEqualTo <- function(x, y) {
     ok <- isNotEqualTo(x, y)
-    if (!all(ok)) return(falseFromVector(ok))
+    if (!all(ok)) {
+        return(falseFromVector(ok))
+    }
     TRUE
 }
 
@@ -117,7 +121,9 @@ allAreNotEqualTo <- function(x, y) {
 #' @export
 allAreGreaterThan <- function(x, y) {
     ok <- isGreaterThan(x, y)
-    if (!all(ok)) return(falseFromVector(ok))
+    if (!all(ok)) {
+        return(falseFromVector(ok))
+    }
     TRUE
 }
 
@@ -127,7 +133,9 @@ allAreGreaterThan <- function(x, y) {
 #' @export
 allAreGreaterThanOrEqualTo <- function(x, y) {
     ok <- isGreaterThanOrEqualTo(x, y)
-    if (!all(ok)) return(falseFromVector(ok))
+    if (!all(ok)) {
+        return(falseFromVector(ok))
+    }
     TRUE
 }
 
@@ -137,7 +145,9 @@ allAreGreaterThanOrEqualTo <- function(x, y) {
 #' @export
 allAreLessThan <- function(x, y) {
     ok <- isLessThan(x, y)
-    if (!all(ok)) return(falseFromVector(ok))
+    if (!all(ok)) {
+        return(falseFromVector(ok))
+    }
     TRUE
 }
 
@@ -147,6 +157,8 @@ allAreLessThan <- function(x, y) {
 #' @export
 allAreLessThanOrEqualTo <- function(x, y) {
     ok <- isLessThanOrEqualTo(x, y)
-    if (!all(ok)) return(falseFromVector(ok))
+    if (!all(ok)) {
+        return(falseFromVector(ok))
+    }
     TRUE
 }

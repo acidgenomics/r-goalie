@@ -1,3 +1,7 @@
+## FIXME Add support for nullOK here.
+
+
+
 #' Is the input integer(ish)?
 #'
 #' Check for valid input of either explicit (e.g. `1L`) and/or implict
@@ -31,7 +35,7 @@ NULL
 isIntegerish <- function(x, .xname = getNameInParent(x)) {
     ## Check for numeric vector.
     if (!is.numeric(x)) {
-        return(false("'%s' is not numeric.", .xname))  # nocov
+        return(false("'%s' is not numeric.", .xname))
     }
     ## Require that vector does not contain NA.
     ok <- !is.na(x)
@@ -48,7 +52,9 @@ isIntegerish <- function(x, .xname = getNameInParent(x)) {
     )
     names(ok) <- .toNames(x)
     ## Check if numeric is equal to integer, based on tolerance.
-    if (all(ok)) return(ok)
+    if (all(ok)) {
+        return(ok)
+    }
     ok <- bapply(
         X = x,
         FUN = function(x) {
@@ -69,6 +75,8 @@ isIntegerish <- function(x, .xname = getNameInParent(x)) {
 #' @describeIn check-vector-isIntegerish Scalar.
 #' @export
 isInt <- function(x, nullOK = FALSE) {
-    if (isTRUE(nullOK) && is.null(x)) return(TRUE)
+    if (isTRUE(nullOK) && is.null(x)) {
+        return(TRUE)
+    }
     isScalarIntegerish(x)
 }

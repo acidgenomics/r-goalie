@@ -40,8 +40,9 @@ isExisting <- function(
     .xname = getNameInParent(x)
 )  {
     ok <- isCharacter(x, .xname = .xname)
-    if (!isTRUE(ok)) return(ok)  # nocov
-
+    if (!isTRUE(ok)) {
+        return(ok)
+    }
     ok <- bapply(
         X = x,
         FUN = exists,
@@ -81,7 +82,9 @@ allAreExisting <- function() {
         inherits = inherits,
         .xname = .xname
     )
-    if (!all(ok)) return(falseFromVector(ok))
+    if (!all(ok)) {
+        return(falseFromVector(ok))
+    }
     TRUE
 }
 
@@ -99,7 +102,9 @@ allAreNonExisting <- function() {
         inherits = inherits,
         .xname = .xname
     )
-    if (!all(ok)) return(falseFromVector(ok))
+    if (!all(ok)) {
+        return(falseFromVector(ok))
+    }
     TRUE
 }
 

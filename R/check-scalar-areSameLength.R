@@ -31,11 +31,13 @@ areSameLength <- function(
     .yname = getNameInParent(y)
 ) {
     ok <- hasLength(x = x, .xname = .xname)
-    if (!isTRUE(ok)) return(ok)  # nocov
-
+    if (!isTRUE(ok)) {
+        return(ok)
+    }
     ok <- hasLength(x = y, .xname = .yname)
-    if (!isTRUE(ok)) return(ok)  # nocov
-
+    if (!isTRUE(ok)) {
+        return(ok)
+    }
     ok <- identical(length(x), length(y))
     if (!isTRUE(ok)) {
         return(false(
@@ -43,6 +45,5 @@ areSameLength <- function(
             .xname, .yname
         ))
     }
-
     TRUE
 }

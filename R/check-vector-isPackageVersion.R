@@ -45,7 +45,9 @@ isPackageVersion <- function(x, op = ">=") {
         version = versions,
         MoreArgs = list(op = op),
         FUN = function(package, version, op) {
-            if (!isInstalled(package)) return(FALSE)
+            if (!isInstalled(package)) {
+                return(FALSE)
+            }
             op(e1 = packageVersion(package), e2 = version)
         },
         SIMPLIFY = TRUE,
