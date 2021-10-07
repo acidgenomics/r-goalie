@@ -1,3 +1,14 @@
+## NOTE Enclosing in `\\b` word boundary here doesn't work.
+## Updated 2021-10-07.
+.cliPattern <- paste0(
+    "\\{",
+    "\\.[a-z]+\\s",
+    "([^\\}]+)",
+    "\\}"
+)
+
+
+
 ## extPattern ==================================================================
 #' File extension pattern matching
 #'
