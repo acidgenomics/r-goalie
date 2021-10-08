@@ -19,7 +19,7 @@ test_that("Character passthrough", {
     )
     expect_error(
         object = validate(c("foo", "bar")),
-        regexp = "length\\(r\\) == 1L is not TRUE"
+        regexp = "Invalid input to validate."
     )
 })
 
