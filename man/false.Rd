@@ -19,7 +19,7 @@ Set a false goalie check with cause attribute
 Updated 2021-02-23.
 }
 \examples{
-x <- false("'\%s' is invalid.", "xxx")
+x <- false("{.var \%s} is invalid.", "xxx")
 print(x)
 print(cause(x))
 }

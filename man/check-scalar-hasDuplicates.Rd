@@ -24,7 +24,7 @@ hasNoDuplicates(x, .xname = getNameInParent(x))
 Does the input have duplicates?
 }
 \note{
-Updated 2019-08-10.
+Updated 2021-10-07.
 }
 \examples{
 ## TRUE ====
