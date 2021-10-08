@@ -3,7 +3,7 @@
 #' Works for either file or directory paths.
 #'
 #' @name check-vector-hasAccess
-#' @note Updated 2019-11-19.
+#' @note Updated 2021-10-08.
 #'
 #' @inherit check return
 #'
@@ -44,7 +44,7 @@ NULL
 ## Vector ======================================================================
 #' @describeIn check-vector-hasAccess Vectorized.
 #' @export
-## Updated 2021-02-23.
+## Updated 2021-10-08.
 hasAccess <- function(x, access = "r") {
     ok <- isCharacter(x)
     if (!isTRUE(ok)) {
@@ -57,9 +57,11 @@ hasAccess <- function(x, access = "r") {
         return(false(
             paste0(
                 "{.var %s} is not a valid access code.\n",
-                "Unique combinations of 'r', 'w' and 'x' are allowed."
+                "Unique combinations of {.val %s}, {.val %s} ",
+                "and {.val %s} are allowed."
             ),
-            paste0(access, collapse = "")
+            paste0(access, collapse = ""),
+            "r", "w", "x"
         ))
     }
     isWindows <- identical(.Platform[["OS.type"]], "windows")

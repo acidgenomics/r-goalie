@@ -34,6 +34,9 @@ test_that("FALSE", {
     ok <- isCondaEnabled(ignoreBase = TRUE)
     expect_s4_class(ok, "goalie")
     expect_false(ok)
-    expect_identical(cause(ok), "Ignoring active conda 'base' environment.")
+    expect_identical(
+        cause(ok),
+        "Ignoring active conda {.val base} environment."
+    )
     Sys.unsetenv(vars)
 })

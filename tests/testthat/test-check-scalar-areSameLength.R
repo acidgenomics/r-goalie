@@ -15,6 +15,6 @@ test_that("FALSE", {
     expect_false(ok)
     expect_identical(
         cause(ok),
-        "'x' does not have the same length as 'y'."
+        "{.var x} doesn't have the same length as {.var y}."
     )
 })
