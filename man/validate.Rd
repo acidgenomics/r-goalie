@@ -20,19 +20,18 @@ Custom message to return.}
 message.
 }
 \description{
-\code{\link[=validate]{validate()}} is a variant of \code{\link[=assert]{assert()}} that is specifically intended to be
+\code{validate()} is a variant of \code{assert()} that is specifically intended to be
 used inside of an S4 validity method definition.
 }
 \details{
-Like \code{\link[=assert]{assert()}}, \code{\link[=validate]{validate()}} returns \code{TRUE} on success. However, on failure
-it returns a \code{character} instead of a \code{\link[base:stop]{stop()}} call. This is
-the current recommended practice for defining S4 validity methods inside of a
-\code{\link[methods:validObject]{setValidity()}} call. Refer to the documentation in
-the methods package, specifically \code{\link[methods:validObject]{validObject()}} for
-detailed information on S4 validity methods.
+Like \code{assert()}, \code{validate()} returns \code{TRUE} on success. However, on failure
+it returns a \code{character} instead of a \code{stop()} call. This is the current
+recommended practice for defining S4 validity methods inside of a
+\code{setValidity()} call. Refer to the documentation in the methods package,
+specifically \code{validObject()} for detailed information on S4 validity methods.
 }
 \note{
-Updated 2021-08-19.
+Updated 2021-10-08.
 }
 \examples{
 ## TRUE ====

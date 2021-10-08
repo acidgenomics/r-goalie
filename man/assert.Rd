@@ -19,16 +19,16 @@ Custom message to return.}
 \code{TRUE} on success, error on failure.
 }
 \description{
-\code{\link[=assert]{assert()}} is a drop-in replacement for \code{\link[base:stopifnot]{stopifnot()}}
-supporting more informative error messages.
+\code{assert()} is a drop-in replacement for \code{stopifnot()} that supports more
+informative error messages.
 }
 \details{
-If any of the expressions defined in \code{...} are not \href{base::all}{\code{all}} \code{TRUE},
-\code{\link[base:stop]{stop}} is called, producing an error message indicating the
-first expression which was not \code{TRUE}.
+If any of the expressions defined in \code{...} are \code{TRUE}, \code{stop()} is called,
+producing an error message indicating the first expression which was not
+\code{TRUE}.
 }
 \note{
-Updated 2021-08-19.
+Updated 2021-10-08.
 }
 \examples{
 assert(

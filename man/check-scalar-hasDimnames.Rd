@@ -24,7 +24,7 @@ hasColnames(x, .xname = getNameInParent(x))
 Does the input have dimnames?
 }
 \note{
-Updated 2019-08-10.
+Updated 2021-10-07.
 }
 \examples{
 ## TRUE ====
