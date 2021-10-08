@@ -31,9 +31,20 @@ test_that("Invalid input", {
 })
 
 test_that("Custom message", {
-    expect_identical(
-        object = validate(is.character(1L), msg = "custom message"),
-        expected = "custom message"
+    expect_match(
+        object = validate(is.character(1L), msg = "XXX"),
+        regexp = "XXX"
+    )
+})
+
+test_that("Named arguments", {
+    expect_match(
+        object = validate(
+            "AAA" = TRUE,
+            "BBB" = is.logical(1L),
+            "CCC" = is.character("AAA")
+        ),
+        regexp = "BBB"
     )
 })
 
