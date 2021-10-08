@@ -36,17 +36,23 @@ isHexColorFunction <- function(
     ## Check for function.
     ok <- is.function(x)
     if (!isTRUE(ok)) {
-        return(false("'%s' is not a function.", .xname))
+        return(false("{.var %s} is not a function.", .xname))
     }
     ## Check for `n` formal.
     ok <- "n" %in% formalArgs(x)
     if (!isTRUE(ok)) {
-        return(false("'%s' does not contain an 'n' argument.", .xname))
+        return(false(
+            "{.var %s} doesn't contain an {.var %s} argument.",
+            .xname, "n"
+        ))
     }
     ## Check for hex value return.
     colors <- x(n = 2L)
     if (!is.character(colors) || identical(length(colors), 0L)) {
-        return(false("'%s' function didn't return any hex colors.", .xname))
+        return(false(
+            "{.var %s} function didn't return any hex colors.",
+            .xname
+        ))
     }
     ok <- allAreHexColors(colors)
     if (!isTRUE(ok)) {

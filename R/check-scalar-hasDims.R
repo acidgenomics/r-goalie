@@ -34,7 +34,10 @@ NULL
 #' @export
 hasDims <- function(x, .xname = getNameInParent(x)) {
     if (is.null(dim(x))) {
-        return(false("The dimensions of '%s' are NULL.", .xname))
+        return(false(
+            "The dimensions of {.var %s} are {.val %s}.",
+            .xname, "NULL"
+        ))
     }
     TRUE
 }
@@ -46,10 +49,13 @@ hasDims <- function(x, .xname = getNameInParent(x)) {
 hasRows <- function(x, .xname = getNameInParent(x)) {
     nrowx <- nrow(x)
     if (is.null(nrowx)) {
-        return(false("The number of rows in '%s' is NULL.", .xname))
+        return(false(
+            "The number of rows in {.var %s} is {.val %s}.",
+            .xname, "NULL"
+        ))
     }
     if (identical(nrowx, 0L)) {
-        return(false("The number of rows in '%s' is zero.", .xname))
+        return(false("The number of rows in {.var %s} is zero.", .xname))
     }
     TRUE
 }
@@ -61,10 +67,13 @@ hasRows <- function(x, .xname = getNameInParent(x)) {
 hasCols <- function(x, .xname = getNameInParent(x)) {
     ncolx <- ncol(x)
     if (is.null(ncolx)) {
-        return(false("The number of columns in '%s' is NULL.", .xname))
+        return(false(
+            "The number of columns in {.var %s} is {.val %s}.",
+            .xname, "NULL"
+        ))
     }
     if (identical(ncolx, 0L)) {
-        return(false("The number of columns in '%s' is zero.", .xname))
+        return(false("The number of columns in {.var %s} is zero.", .xname))
     }
     TRUE
 }

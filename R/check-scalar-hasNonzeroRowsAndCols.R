@@ -59,8 +59,8 @@ hasNonzeroRowsAndCols <- function(x, .xname = getNameInParent(x)) {
         return(false(
             ngettext(
                 n = n,
-                msg1 = "'%s' has %s zero row at position %s.",
-                msg2 = "'%s' has %s zero rows at positions %s."
+                msg1 = "{.var %s} has %s zero row at position %s.",
+                msg2 = "{.var %s} has %s zero rows at positions %s."
             ),
             .xname, n, which
         ))
@@ -72,8 +72,8 @@ hasNonzeroRowsAndCols <- function(x, .xname = getNameInParent(x)) {
         return(false(
             ngettext(
                 n = n,
-                msg1 = "'%s' has %s zero column at position %s.",
-                msg2 = "'%s' has %s zero columns at positions %s."
+                msg1 = "{.var %s} has %s zero column at position %s.",
+                msg2 = "{.var %s} has %s zero columns at positions %s."
             ),
             .xname, n, which
         ))

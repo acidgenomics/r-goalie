@@ -63,7 +63,7 @@ isSubset <- function(
     if (!isTRUE(ok)) {
         setdiff <- setdiff(x, y)
         return(false(
-            gettext("'%s' has elements not in '%s': %s"),
+            gettext("{.var %s} has elements not in {.var %s}: %s"),
             .xname, .yname, toString(setdiff, width = 100L)
         ))
     }
@@ -98,7 +98,7 @@ areDisjointSets <- function(
     intersect <- intersect(x, y)
     if (length(intersect) > 0L) {
         return(false(
-            gettext("'%s' and '%s' have common elements: %s"),
+            gettext("{.var %s} and {.var %s} have common elements: %s"),
             .xname, .yname, toString(intersect, width = 100L)
         ))
     }
@@ -118,7 +118,7 @@ areIntersectingSets <- function(
     intersect <- intersect(x, y)
     if (identical(length(intersect), 0L)) {
         return(false(
-            gettext("'%s' and '%s' have 0 common elements."),
+            gettext("{.var %s} and {.var %s} have 0 common elements."),
             .xname, .yname
         ))
     }
@@ -140,7 +140,7 @@ areSetEqual <- function(
     if (length(x) != length(y)) {
         return(false(
             gettext(paste0(
-                "'%s' and '%s' have different numbers of elements ",
+                "{.var %s} and {.var %s} have different numbers of elements ",
                 "(%d versus %d)."
             )),
             .xname, .yname, length(x), length(y)
