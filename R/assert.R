@@ -1,14 +1,18 @@
+## FIXME Need to add support for named arguments.
+
+
+
 #' Assert that certain conditions are true
 #'
-#' [assert()] is a drop-in replacement for [`stopifnot()`][base::stopifnot]
-#' supporting more informative error messages.
+#' `assert()` is a drop-in replacement for `stopifnot()` that supports more
+#' informative error messages.
 #'
-#' If any of the expressions defined in `...` are not [`all`](base::all) `TRUE`,
-#' [`stop`][base::stop] is called, producing an error message indicating the
-#' first expression which was not `TRUE`.
+#' If any of the expressions defined in `...` are `TRUE`, `stop()` is called,
+#' producing an error message indicating the first expression which was not
+#' `TRUE`.
 #'
 #' @export
-#' @note Updated 2021-10-07.
+#' @note Updated 2021-10-08.
 #'
 #' @inheritParams AcidRoxygen::params
 #' @param ... Any number of R expressions that return `logical(1)`, each of
@@ -36,7 +40,7 @@ assert <- function(..., msg = NULL) {
     }
     n <- ...length()
     if (identical(n, 0L)) {
-        stop("No assert check defined.")
+        stop("No assert check is defined.")
     }
     dots <- as.call(substitute(...()))
     for (i in seq_len(n)) {
