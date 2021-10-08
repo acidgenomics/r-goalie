@@ -30,7 +30,7 @@ hasLength <- function(x, n = NULL, .xname = getNameInParent(x)) {
     length <- length(x)
     if (is.null(n)) {
         if (identical(length, 0L)) {
-            return(false("'%s' has length 0.", .xname))
+            return(false("{.var %s} has length 0.", .xname))
         } else {
             return(TRUE)
         }
@@ -38,7 +38,7 @@ hasLength <- function(x, n = NULL, .xname = getNameInParent(x)) {
     assert(isInt(n), isTRUE(n >= 0L))
     ok <- identical(length, n)
     if (!isTRUE(ok)) {
-        return(false("'%s' does not have a length of %d.", .xname, n))
+        return(false("{.var %s} doesn't have a length of %d.", .xname, n))
     }
     TRUE
 }

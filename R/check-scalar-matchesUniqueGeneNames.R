@@ -39,7 +39,7 @@ NULL
 matchesUniqueGeneNames <- function(x, genes, .xname = getNameInParent(x)) {
     ok <- isS4(x)
     if (!isTRUE(ok)) {
-        return(false("'%s' is not an S4 class object.", .xname))
+        return(false("{.var %s} is not an S4 class object.", .xname))
     }
     ok <- isCharacter(genes)
     if (!isTRUE(ok)) {
@@ -54,15 +54,15 @@ matchesUniqueGeneNames <- function(x, genes, .xname = getNameInParent(x)) {
     all <- as.character(x[["geneName"]])
     ## Check for gene names (symbols).
     if (identical(length(all), 0L)) {
-        return(false("Gene names are not defined in '%s'.", .xname))
+        return(false("Gene names are not defined in {.var %s}.", .xname))
     }
     ## Require that the user passed in gene names.
     ok <- all(genes %in% all)
     if (!isTRUE(ok)) {
         setdiff <- setdiff(genes, all)
         return(false(
-            "Gene names missing in '%s': %s",
-            .xname, toString(setdiff, width = 200L)
+            "Gene names missing in {.var %s}: %s",
+            .xname, toString(setdiff, width = 100L)
         ))
     }
     ## Get a vector of all duplicated gene names in the object.
@@ -71,8 +71,8 @@ matchesUniqueGeneNames <- function(x, genes, .xname = getNameInParent(x)) {
     intersect <- intersect(genes, dupes)
     if (length(intersect) > 0L) {
         return(false(
-            "Non-unique gene names in '%s': %s",
-            .xname, toString(intersect, width = 200L)
+            "Non-unique gene names in {.var %s}: %s",
+            .xname, toString(intersect, width = 100L)
         ))
     }
     TRUE

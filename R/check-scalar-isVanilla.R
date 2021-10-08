@@ -17,7 +17,10 @@ isVanilla <-
     function() {
         ok <- isSubset("--vanilla", commandArgs())
         if (!isTRUE(ok)) {
-            return(false("R session is not running with '--vanilla' flag."))
+            return(false(
+                "R session is not running with {.arg %s} flag.",
+                "--vanilla"
+            ))
         }
         TRUE
     }

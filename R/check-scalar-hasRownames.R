@@ -44,9 +44,15 @@ NULL
 hasRownames <- function(x, .xname = getNameInParent(x)) {
     ## Classes that extend data.frame but intentionally don't support row names.
     if (inherits(x, "data.table")) {
-        return(false("data.table class doesn't support row names."))
+        return(false(
+            "{.cls %s} class doesn't support row names.",
+            "data.table"
+        ))
     } else if (inherits(x, "tbl_df")) {
-        return(false("tbl_df class doesn't support row names."))
+        return(false(
+            "{.cls %s} class doesn't support row names.",
+            "tbl_df"
+        ))
     }
     ## Early return if `rownames()` function fails.
     rownames <- tryCatch(
@@ -54,7 +60,10 @@ hasRownames <- function(x, .xname = getNameInParent(x)) {
         error = function(e) e
     )
     if (is(rownames, "error")) {
-        return(false("'rownames()' command on '%s' failed.", .xname))  # nocov
+        return(false(
+            "{.fun %s} command on {.var %s} failed.",
+            "rownames", .xname
+        ))
     }
     ## Standard data frames can't return NULL row names, so check against
     ## integer comparison. Previously this used a `seq_len()` comparison
@@ -63,12 +72,15 @@ hasRownames <- function(x, .xname = getNameInParent(x)) {
         is.data.frame(x) &&
         allAreMatchingRegex(x = rownames, pattern = "^[0-9]+$")
     ) {
-        return(false("'%s' has integer row names (soft NULL).", .xname))
+        return(false(
+            "{.var %s} has integer row names (soft {.val %s}).",
+            .xname, "NULL"
+        ))
     }
     ## Other classes (e.g. matrix, DataFrame) do support NULL row names.
     ok <- !is.null(rownames)
     if (!isTRUE(ok)) {
-        return(false("'%s' has NULL row names.", .xname))
+        return(false("{.var %s} has {.val %s} row names.", .xname, "NULL"))
     }
     TRUE
 }

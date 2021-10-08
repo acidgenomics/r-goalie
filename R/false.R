@@ -8,7 +8,7 @@
 #' @return `goalie`.
 #'
 #' @examples
-#' x <- false("'%s' is invalid.", "xxx")
+#' x <- false("{.var %s} is invalid.", "xxx")
 #' print(x)
 #' print(cause(x))
 false <- function(...) {

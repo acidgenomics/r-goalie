@@ -27,11 +27,17 @@ hasNames <- function(x, .xname = getNameInParent(x)) {
         error = function(e) e
     )
     if (is(names, "error")) {
-        false("'names()' command on '%s' failed.", .xname)  # nocov
+        false(
+            "{.fun %s} command on {.var %s} failed.",
+            "names", .xname
+        )
     } else if (is.null(names)) {
-        false("The names of '%s' are NULL.", .xname)
+        false(
+            "The names of {.var %s} are {.val %s}.",
+            .xname, "NULL"
+        )
     } else if (!any(nzchar(names))) {
-        false("The names of '%s' are all empty.", .xname)
+        false("The names of {.var %s} are all empty.", .xname)
     } else {
         TRUE
     }

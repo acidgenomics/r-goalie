@@ -29,7 +29,7 @@ isHeaderLevel <- function(x, .xname = getNameInParent(x)) {
     if (!isTRUE(ok)) {
         return(false(
             paste0(
-                "'%s' is not a valid Markdown header.\n",
+                "{.var %s} is not a valid Markdown header.\n",
                 "Markdown supports header levels 1-7."
             ),
             .xname

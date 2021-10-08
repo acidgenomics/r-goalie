@@ -43,14 +43,19 @@ hasValidNames <- function(x, .xname = getNameInParent(x)) {
         error = function(e) e
     )
     if (is(names, "error")) {
-        return(false("'names()' command on '%s' failed.", .xname))  # nocov
+        return(false(
+            "{.fun %s} command on {.var %s} failed.",
+            "names", .xname
+        ))
     }
     ok <- length(names) > 0L
     if (!isTRUE(ok)) {
-        return(false("'%s' does not have names.", .xname))
+        return(false("{.var %s} doesn't have names.", .xname))
     }
     ok <- validNames(names, .xname = .xname)
-    if (!isTRUE(ok)) return(ok)
+    if (!isTRUE(ok)) {
+        return(ok)
+    }
     TRUE
 }
 
@@ -65,19 +70,26 @@ hasValidDimnames <- function(x, .xname = getNameInParent(x)) {
         error = function(e) e
     )
     if (is(dimnames, "error")) {
-        return(false("'dimnames()' command on '%s' failed.", .xname))  # nocov
+        return(false(
+            "{.fun %s} command on {.var %s} failed.",
+            "dimnames", .xname
+        ))
     }
     ## Row names.
     if (isTRUE(hasRownames(x))) {
         rownames <- rownames(x)
         ok <- validNames(rownames, .xname = .xname)
-        if (!isTRUE(ok)) return(ok)
+        if (!isTRUE(ok)) {
+            return(ok)
+        }
     }
     ## Column names.
     if (isTRUE(hasColnames(x))) {
         colnames <- colnames(x)
         ok <- validNames(colnames, .xname = .xname)
-        if (!isTRUE(ok)) return(ok)
+        if (!isTRUE(ok)) {
+            return(ok)
+        }
     }
     TRUE
 }

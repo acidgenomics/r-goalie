@@ -40,7 +40,7 @@ isMatchingFixed <- function(x, pattern) {
         fixed = TRUE
     )
     names(ok) <- .toNames(x)
-    setCause(ok, false = gettextf("does not match '%s'", pattern))
+    setCause(ok, false = gettextf("doesn't match {.var %s}", pattern))
 }
 
 
@@ -55,7 +55,7 @@ isMatchingRegex <- function(x, pattern) {
         fixed = FALSE
     )
     names(ok) <- .toNames(x)
-    setCause(ok, false = gettextf("does not match '%s'", pattern))
+    setCause(ok, false = gettextf("doesn't match {.var %s}", pattern))
 }
 
 
@@ -70,7 +70,7 @@ isNotMatchingFixed <- function(x, pattern) {
         fixed = TRUE
     )
     names(ok) <- .toNames(x)
-    setCause(ok, false = gettextf("matches '%s'", pattern))
+    setCause(ok, false = gettextf("matches {.var %s}", pattern))
 }
 
 
@@ -85,7 +85,7 @@ isNotMatchingRegex <- function(x, pattern) {
         fixed = FALSE
     )
     names(ok) <- .toNames(x)
-    setCause(ok, false = gettextf("matches '%s'", pattern))
+    setCause(ok, false = gettextf("matches {.var %s}", pattern))
 }
 
 

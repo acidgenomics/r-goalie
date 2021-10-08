@@ -47,13 +47,13 @@ isScalar <- function(
                 return(TRUE)
             },
             no = {
-                return(false("'%s' is NULL.", .xname))
+                return(false("{.var %s} is {.val %s}.", .xname, "NULL"))
             }
         )
     }
     ok <- identical(length(x), 1L)
     if (!isTRUE(ok)) {
-        return(false("'%s' does not have a length of 1.", .xname))
+        return(false("{.var %s} doesn't have a length of 1.", .xname))
     }
     TRUE
 }
@@ -75,7 +75,7 @@ isScalarAtomic <- function(
     }
     ok <- is.atomic(x)
     if (!isTRUE(ok)) {
-        return(false("'%s' is not atomic.", .xname))
+        return(false("{.var %s} is not atomic.", .xname))
     }
     TRUE
 }
@@ -97,7 +97,7 @@ isScalarCharacter <- function(
     }
     ok <- is.character(x)
     if (!isTRUE(ok)) {
-        return(false("'%s' is not character.", .xname))
+        return(false("{.var %s} is not character.", .xname))
     }
     TRUE
 }
@@ -119,7 +119,7 @@ isScalarDouble <- function(
     }
     ok <- is.double(x)
     if (!isTRUE(ok)) {
-        return(false("'%s' is not double.", .xname))
+        return(false("{.var %s} is not double.", .xname))
     }
     TRUE
 }
@@ -141,7 +141,7 @@ isScalarInteger <- function(
     }
     ok <- is.integer(x)
     if (!isTRUE(ok)) {
-        return(false("'%s' is not integer.", .xname))
+        return(false("{.var %s} is not integer.", .xname))
     }
     TRUE
 }
@@ -185,7 +185,7 @@ isScalarList <- function(
     }
     ok <- is.list(x)
     if (!isTRUE(ok)) {
-        return(false("'%s' is not list.", .xname))
+        return(false("{.var %s} is not list.", .xname))
     }
     TRUE
 }
@@ -207,7 +207,7 @@ isScalarLogical <- function(
     }
     ok <- is.logical(x)
     if (!isTRUE(ok)) {
-        return(false("'%s' is not logical.", .xname))
+        return(false("{.var %s} is not logical.", .xname))
     }
     TRUE
 }
@@ -229,7 +229,7 @@ isScalarNumeric <- function(
     }
     ok <- is.numeric(x)
     if (!isTRUE(ok)) {
-        return(false("'%s' is not numeric.", .xname))
+        return(false("{.var %s} is not numeric.", .xname))
     }
     TRUE
 }
@@ -251,7 +251,7 @@ isScalarVector <- function(
     }
     ok <- is.vector(x)
     if (!isTRUE(ok)) {
-        return(false("'%s' is not vector.", .xname))
+        return(false("{.var %s} is not vector.", .xname))
     }
     TRUE
 }
@@ -266,7 +266,7 @@ isNonScalar <- function(
 ) {
     ok <- isFALSE(isScalar(x))
     if (!isTRUE(ok)) {
-        return(false("'%s' is scalar (has a length of 1).", .xname))
+        return(false("{.var %s} is scalar (has a length of 1).", .xname))
     }
     TRUE
 }
