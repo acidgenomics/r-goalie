@@ -1,3 +1,7 @@
+## nocov start
+
+
+
 #' Is the operating system Linux?
 #'
 #' @name check-scalar-isLinux
@@ -20,3 +24,7 @@ isLinux <- function() {
     }
     TRUE
 }
+
+
+
+## nocov end

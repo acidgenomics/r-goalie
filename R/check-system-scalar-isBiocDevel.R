@@ -1,3 +1,7 @@
+## nocov start
+
+
+
 #' Is the current Bioconductor installation under development?
 #'
 #' @name check-scalar-isBiocDevel
@@ -36,3 +40,7 @@ isBiocDevel <- function() {
     }
     TRUE
 }
+
+
+
+## nocov end
