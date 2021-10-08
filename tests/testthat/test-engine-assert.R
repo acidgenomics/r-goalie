@@ -19,6 +19,17 @@ test_that("Custom message", {
     )
 })
 
+test_that("Named arguments", {
+    expect_error(
+        object = assert(
+            "AAA" = TRUE,
+            "BBB" = is.logical(1L),
+            "CCC" = is.character("AAA")
+        ),
+        regexp = "BBB"
+    )
+})
+
 test_that("Not boolean", {
     expect_error(
         object = assert(c(TRUE, TRUE)),

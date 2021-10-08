@@ -1,7 +1,3 @@
-## FIXME Need to add support for named arguments.
-
-
-
 #' Assert that certain conditions are true
 #'
 #' `assert()` is a drop-in replacement for `stopifnot()` that supports more
@@ -58,13 +54,18 @@ assert <- function(..., msg = NULL) {
             next
         }
         if (is.null(msg)) {
-            msg <- sprintf("Assert failure.\n[%s] %s is not TRUE.", i, call)
-            if (is(r, "goalie")) {
-                cause <- cause(r)
-                if (!is.null(names(cause))) {
-                    cause <- paste(names(cause), cause, sep = ": ")
+            namedMsg <- names((match.call())[-1L])[[i]]
+            if (!is.null(namedMsg)) {
+                msg <- namedMsg
+            } else {
+                msg <- sprintf("Assert failure.\n[%s] %s is not TRUE.", i, call)
+                if (is(r, "goalie")) {
+                    cause <- cause(r)
+                    if (!is.null(names(cause))) {
+                        cause <- paste(names(cause), cause, sep = ": ")
+                    }
+                    msg <- paste0(msg, "\nCause: ", cause)
                 }
-                msg <- paste0(msg, "\nCause: ", cause)
             }
         }
         if (isTRUE(isInstalled("AcidCLI"))) {
@@ -72,7 +73,12 @@ assert <- function(..., msg = NULL) {
         } else {
             msg <- gsub(pattern = .cliPattern, replacement = "'\\1'", x = msg)
         }
-        stop(simpleError(msg, call = if (p <- sys.parent(1L)) sys.call(p)))
+        stop(simpleError(
+            message = msg,
+            call = if (p <- sys.parent(1L)) {
+                sys.call(p)
+            }
+        ))
     }
     invisible(TRUE)
 }
