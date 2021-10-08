@@ -1,22 +1,20 @@
-## FIXME Need to support named arguments, similar to stopifnot.
-## FIXME Need to support sanitization of CLI-formatted messages.
+## FIXME Need to add support for named arguments.
 
 
 
 #' Validate an S4 class
 #'
-#' [validate()] is a variant of [assert()] that is specifically intended to be
+#' `validate()` is a variant of `assert()` that is specifically intended to be
 #' used inside of an S4 validity method definition.
 #'
-#' Like [assert()], [validate()] returns `TRUE` on success. However, on failure
-#' it returns a `character` instead of a [`stop()`][base::stop] call. This is
-#' the current recommended practice for defining S4 validity methods inside of a
-#' [`setValidity()`][methods::setValidity] call. Refer to the documentation in
-#' the methods package, specifically [`validObject()`][methods::validObject] for
-#' detailed information on S4 validity methods.
+#' Like `assert()`, `validate()` returns `TRUE` on success. However, on failure
+#' it returns a `character` instead of a `stop()` call. This is the current
+#' recommended practice for defining S4 validity methods inside of a
+#' `setValidity()` call. Refer to the documentation in the methods package,
+#' specifically `validObject()` for detailed information on S4 validity methods.
 #'
 #' @export
-#' @note Updated 2021-08-19.
+#' @note Updated 2021-10-08.
 #'
 #' @inheritParams assert
 #'
@@ -41,9 +39,13 @@
 #'     isPositive(-1)
 #' )
 validate <- function(..., msg = NULL) {
+    hasCLI <- isInstalled("AcidCLI")
+    if (isTRUE(hasCLI)) {
+        stop <- AcidCLI::abort
+    }
     n <- ...length()
     if (identical(n, 0L)) {
-        stop("No assert check defined.")
+        stop("No validate check is defined.")
     }
     dots <- as.call(substitute(...()))
     ## Support character passthrough.
@@ -56,17 +58,16 @@ validate <- function(..., msg = NULL) {
         X = seq_along(dots),
         FUN = function(i) {
             r <- ...elt(i)
-            stopifnot(length(r) == 1L)
             if (!is(r, "goalie")) {
                 r <- unname(r)
             }
             call <- .deparse(dots[[i]])
-            ## Validity checks must return logical(1) or character(1).
-            ## In the event of FALSE, we'll return character(1) automatically.
+            ## Validity checks must return `logical(1)` or `character(1)`.
+            ## In the event of `FALSE`, return `character(1)` automatically.
             if (isTRUE(r)) {
                 return(TRUE)
             } else if (is.character(r)) {
-                ## We're allowing the user to pass character(1) through here,
+                ## We're allowing the user to pass `character(1)` through here,
                 ## enabling the use of other check functions (see checkmate
                 ## package for examples).
                 msg <- r
@@ -78,7 +79,6 @@ validate <- function(..., msg = NULL) {
                     if (!is.null(names(cause))) {
                         cause <- paste(names(cause), cause, sep = ": ")
                     }
-                    stopifnot(is.character(cause) && length(cause) == 1L)
                     msg <- paste0(msg, "\nCause: ", cause)
                 }
             } else {
@@ -103,9 +103,12 @@ validate <- function(..., msg = NULL) {
         msg <- paste0(fail, collapse = "\n")
         msg <- paste0(
             msg, "\n",
-            "If supported, 'updateObject()' ",
+            "If supported, {.fun updateObject} ",
             "may help resolve these issues."
         )
     }
+    ## Simplify CLI-formatted messages, since this is not currently supported
+    ## in `validObject()` call.
+    msg <- gsub(pattern = .cliPattern, replacement = "'\\1'", x = msg)
     msg
 }
