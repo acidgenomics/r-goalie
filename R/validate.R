@@ -1,7 +1,3 @@
-## FIXME Need to add support for named arguments.
-
-
-
 #' Validate an S4 class
 #'
 #' `validate()` is a variant of `assert()` that is specifically intended to be
@@ -52,7 +48,8 @@ validate <- function(..., msg = NULL) {
     ## the first error, like the approach in `assert()`.
     checks <- lapply(
         X = seq_along(dots),
-        FUN = function(i) {
+        mc = match.call(),
+        FUN = function(i, mc) {
             r <- ...elt(i)
             if (length(r) != 1L) {
                 stop("Invalid input to validate.")
@@ -69,28 +66,34 @@ validate <- function(..., msg = NULL) {
                 ## We're allowing the user to pass `character(1)` through here,
                 ## enabling the use of other check functions (see checkmate
                 ## package for examples).
-                msg <- r
-            } else if (is.logical(r)) {
-                ## Convert an assert check error to a character string.
-                msg <- sprintf("[%s] %s is not TRUE.", i, call)
-                if (is(r, "goalie")) {
-                    cause <- cause(r)
-                    if (!is.null(names(cause))) {
-                        cause <- paste(names(cause), cause, sep = ": ")
+                return(r)
+            } else if (isFALSE(r)) {
+                namedMsg <- names(mc)[-1L][[i]]
+                if (!is.null(namedMsg)) {
+                    msg <- namedMsg
+                } else {
+                    ## Convert an assert check error to a character string.
+                    msg <- sprintf("[%s] %s is not TRUE.", i, call)
+                    if (is(r, "goalie")) {
+                        cause <- cause(r)
+                        if (!is.null(names(cause))) {
+                            cause <- paste(names(cause), cause, sep = ": ")
+                        }
+                        msg <- paste0(msg, "\nCause: ", cause)
                     }
-                    msg <- paste0(msg, "\nCause: ", cause)
                 }
+                return(msg)
             } else {
                 stop(sprintf(
                     paste0(
                         "Validity failure.\n",
-                        "Check did not return logical(1) or character(1).\n",
+                        "Check did not return",
+                        "'logical(1)' or 'character(1)'.\n",
                         "[%s]: %s"
                     ),
                     i, call
                 ))
             }
-            as.character(msg)
         }
     )
     ## Return.
@@ -100,12 +103,15 @@ validate <- function(..., msg = NULL) {
     if (is.null(msg)) {
         fail <- unlist(Filter(f = Negate(isTRUE), x = checks))
         msg <- paste0(fail, collapse = "\n")
-        msg <- paste0(
-            msg, "\n",
-            "If supported, {.fun updateObject} ",
-            "may help resolve these issues."
-        )
     }
+    if (!is.character(msg) || length(msg) != 1L) {
+        stop("Invalid 'msg' input.")
+    }
+    msg <- paste0(
+        msg, "\n",
+        "If supported, {.fun updateObject} ",
+        "may help resolve these issues."
+    )
     msg <- gsub(pattern = .cliPattern, replacement = "'\\1'", x = msg)
     msg
 }

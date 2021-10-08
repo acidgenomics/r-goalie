@@ -1,7 +1,3 @@
-## FIXME Add support for nullOK here.
-
-
-
 #' Is the input integer(ish)?
 #'
 #' Check for valid input of either explicit (e.g. `1L`) and/or implict
