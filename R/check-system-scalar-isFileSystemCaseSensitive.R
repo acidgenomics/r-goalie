@@ -1,3 +1,7 @@
+## nocov start
+
+
+
 #' Is the file system case sensitive?
 #'
 #' @details
@@ -49,3 +53,7 @@ isFileSystemCaseSensitive <- function(dir = ".") {
     }
     TRUE
 }
+
+
+
+## nocov end

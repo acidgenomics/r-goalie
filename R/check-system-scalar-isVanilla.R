@@ -1,3 +1,7 @@
+## nocov start
+
+
+
 #' Is the R session running as vanilla?
 #'
 #' @name check-scalar-isVanilla
@@ -24,3 +28,7 @@ isVanilla <-
         }
         TRUE
     }
+
+
+
+## nocov end

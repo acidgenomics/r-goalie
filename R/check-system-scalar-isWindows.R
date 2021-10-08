@@ -1,3 +1,7 @@
+## nocov start
+
+
+
 #' Is the operating system Windows?
 #'
 #' @name check-scalar-isWindows
@@ -21,3 +25,7 @@ isWindows <- function() {
     TRUE
 
 }
+
+
+
+## nocov end
