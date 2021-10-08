@@ -34,10 +34,6 @@
 #'     is.character("example")
 #' )
 assert <- function(..., msg = NULL) {
-    hasCLI <- isInstalled("AcidCLI")
-    if (isTRUE(hasCLI)) {
-        stop <- AcidCLI::abort
-    }
     n <- ...length()
     if (identical(n, 0L)) {
         stop("No assert check is defined.")
@@ -71,8 +67,9 @@ assert <- function(..., msg = NULL) {
                 msg <- paste0(msg, "\nCause: ", cause)
             }
         }
-        ## Simplify CLI-formatted messages when AcidCLI is not installed.
-        if (isFALSE(hasCLI)) {
+        if (isTRUE(isInstalled("AcidCLI"))) {
+            stop <- AcidCLI::abort
+        } else {
             msg <- gsub(pattern = .cliPattern, replacement = "'\\1'", x = msg)
         }
         stop(simpleError(msg, call = if (p <- sys.parent(1L)) sys.call(p)))

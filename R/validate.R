@@ -107,8 +107,6 @@ validate <- function(..., msg = NULL) {
             "may help resolve these issues."
         )
     }
-    ## Simplify CLI-formatted messages, since this is not currently supported
-    ## in `validObject()` call.
     msg <- gsub(pattern = .cliPattern, replacement = "'\\1'", x = msg)
     msg
 }
