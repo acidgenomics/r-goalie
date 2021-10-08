@@ -1,3 +1,7 @@
+## nocov start
+
+
+
 #' Does the current session have an internet connection?
 #'
 #' @name check-scalar-hasInternet
@@ -39,3 +43,7 @@ hasInternet <- function(url = "http://www.bioconductor.org/") {
     }
     TRUE
 }
+
+
+
+## nocov end
