@@ -9,8 +9,8 @@ test_that("FALSE : not a function", {
     expect_false(ok)
     expect_s4_class(ok, "goalie")
     expect_identical(
-        cause(ok),
-        "{.var \"viridis\"} is not a function."
+        object = cause(ok),
+        expected = "{.var \"viridis\"} is not a function."
     )
 })
 
@@ -19,8 +19,8 @@ test_that("FALSE : no 'n' formal", {
     expect_false(ok)
     expect_s4_class(ok, "goalie")
     expect_identical(
-        cause(ok),
-        paste(
+        object = cause(ok),
+        expected = paste(
             "{.var ggplot2::scale_color_manual} doesn't contain",
             "an {.arg n} argument."
         )

@@ -27,8 +27,8 @@ test_that("FALSE : NULL input", {
     expect_s4_class(ok, "goalie")
     expect_false(ok)
     expect_identical(
-        cause(ok),
-        "{.var x} is not character."
+        object = cause(ok),
+        expected = "{.var x} is not character."
     )
 })
 
@@ -37,8 +37,8 @@ test_that("FALSE : Invalid access codes", {
     expect_s4_class(ok, "goalie")
     expect_false(ok)
     expect_identical(
-        cause(ok),
-        paste0(
+        object = cause(ok),
+        expected = paste0(
             "{.var xxx} is not a valid access code.", "\n",
             "Unique combinations of {.val r}, {.val w} ",
             "and {.val x} are allowed."

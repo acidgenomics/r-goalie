@@ -22,8 +22,8 @@ test_that("1 column", {
     expect_false(ok)
     expect_s4_class(ok, "goalie")
     expect_identical(
-        cause(ok),
-        "{.var x} doesn't have >= 2 columns."
+        object = cause(ok),
+        expected = "{.var x} doesn't have >= 2 columns."
     )
 })
 

@@ -17,8 +17,8 @@ test_that("FALSE", {
     ok <- isEqualTo(x = x, y = y)
     expect_s4_class(ok, "goalie")
     expect_identical(
-        nocause(ok),
-        c(`1` = FALSE, `2` = FALSE)
+        object = nocause(ok),
+        expected = c("1" = FALSE, "2" = FALSE)
     )
     expected <- c(
         "not equal to 0; abs diff = 1",
@@ -38,10 +38,8 @@ context("check : vector : isNotEqualTo")
 test_that("TRUE", {
     x <- seq_len(2L)
     y <- 0L
-
     ok <- isNotEqualTo(x = x, y = y)
     expect_true(all(ok))
-
     ok <- allAreNotEqualTo(x = x, y = y)
     expect_true(ok)
 })
@@ -49,11 +47,9 @@ test_that("TRUE", {
 test_that("FALSE", {
     x <- c(1L, 1L)
     y <- 1L
-
     ok <- isNotEqualTo(x = x, y = y)
     expect_s4_class(ok, "goalie")
     expect_false(any(ok))
-
     ok <- allAreNotEqualTo(x = x, y = y)
     expect_s4_class(ok, "goalie")
     expect_false(ok)
@@ -66,10 +62,8 @@ context("check : vector : isGreaterThan")
 test_that("TRUE", {
     x <- seq_len(2L)
     y <- 0L
-
     ok <- isGreaterThan(x = x, y = y)
     expect_true(all(ok))
-
     ok <- allAreGreaterThan(x = x, y = y)
     expect_true(ok)
 })
@@ -77,11 +71,9 @@ test_that("TRUE", {
 test_that("FALSE", {
     x <- seq_len(2L)
     y <- 3L
-
     ok <- isGreaterThan(x = x, y = y)
     expect_s4_class(ok, "goalie")
     expect_false(any(ok))
-
     ok <- allAreGreaterThan(x = x, y = y)
     expect_s4_class(ok, "goalie")
     expect_false(ok)
@@ -94,10 +86,8 @@ context("check : vector : isGreaterThanOrEqualTo")
 test_that("TRUE", {
     x <- seq_len(2L)
     y <- 1L
-
     ok <- isGreaterThanOrEqualTo(x = x, y = y)
     expect_true(all(ok))
-
     ok <- allAreGreaterThanOrEqualTo(x = x, y = y)
     expect_true(ok)
 })
@@ -105,11 +95,9 @@ test_that("TRUE", {
 test_that("FALSE", {
     x <- seq_len(2L)
     y <- 3L
-
     ok <- isGreaterThanOrEqualTo(x = x, y = y)
     expect_s4_class(ok, "goalie")
     expect_false(any(ok))
-
     ok <- allAreGreaterThanOrEqualTo(x = x, y = y)
     expect_s4_class(ok, "goalie")
     expect_false(ok)
@@ -122,10 +110,8 @@ context("check : vector : isLessThan")
 test_that("TRUE", {
     x <- seq_len(2L)
     y <- 3L
-
     ok <- isLessThan(x = x, y = y)
     expect_true(all(ok))
-
     ok <- allAreLessThan(x = x, y = y)
     expect_true(ok)
 })
@@ -133,11 +119,9 @@ test_that("TRUE", {
 test_that("FALSE", {
     x <- seq_len(2L)
     y <- 0L
-
     ok <- isLessThan(x = x, y = y)
     expect_s4_class(ok, "goalie")
     expect_false(any(ok))
-
     ok <- allAreLessThan(x = x, y = y)
     expect_s4_class(ok, "goalie")
     expect_false(ok)
@@ -150,10 +134,8 @@ context("check : vector : isLessThanOrEqualTo")
 test_that("TRUE", {
     x <- seq_len(2L)
     y <- 3L
-
     ok <- isLessThanOrEqualTo(x = x, y = y)
     expect_true(all(ok))
-
     ok <- allAreLessThanOrEqualTo(x = x, y = y)
     expect_true(ok)
 })
@@ -161,11 +143,9 @@ test_that("TRUE", {
 test_that("FALSE", {
     x <- seq_len(2L)
     y <- 0L
-
     ok <- isLessThanOrEqualTo(x = x, y = y)
     expect_s4_class(ok, "goalie")
     expect_false(any(ok))
-
     ok <- allAreLessThanOrEqualTo(x = x, y = y)
     expect_s4_class(ok, "goalie")
     expect_false(ok)

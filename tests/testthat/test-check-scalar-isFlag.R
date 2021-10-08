@@ -10,8 +10,11 @@ test_that("FALSE : logical but not boolean", {
     expect_false(ok)
     expect_s4_class(ok, "goalie")
     expect_identical(
-        cause(ok),
-        "{.var c(TRUE, TRUE)} is not a boolean flag ({.val TRUE}/{.val FALSE})."
+        object = cause(ok),
+        expected = paste(
+            "{.var c(TRUE, TRUE)} is not a boolean flag",
+            "({.val TRUE}/{.val FALSE})."
+        )
     )
 })
 
@@ -20,8 +23,11 @@ test_that("FALSE : integer", {
     expect_false(ok)
     expect_s4_class(ok, "goalie")
     expect_identical(
-        cause(ok),
-        "{.var 1L} is not a boolean flag ({.val TRUE}/{.val FALSE})."
+        object = cause(ok),
+        expected = paste(
+            "{.var 1L} is not a boolean flag",
+            "({.val TRUE}/{.val FALSE})."
+        )
     )
 })
 
@@ -30,7 +36,7 @@ test_that("FALSE : NA is logical but not boolean", {
     expect_false(ok)
     expect_s4_class(ok, "goalie")
     expect_identical(
-        cause(ok),
-        "{.var NA} is {.val NA}."
+        object = cause(ok),
+        expected = "{.var NA} is {.val NA}."
     )
 })

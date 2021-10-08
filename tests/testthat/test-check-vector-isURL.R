@@ -10,8 +10,8 @@ test_that("isURL", {
     expect_s4_class(ok, "goalie")
     expect_false(ok)
     expect_identical(
-        cause(ok),
-        c(xxx = "not URL")
+        object = cause(ok),
+        expected = c("xxx" = "not URL")
     )
 })
 
@@ -28,8 +28,8 @@ test_that("isAURL", {
     expect_s4_class(ok, "goalie")
     expect_false(ok)
     expect_identical(
-        cause(ok),
-        "'urls' does not have a length of 1."
+        object = cause(ok),
+        expected = "{.var urls} doesn't have a length of 1."
     )
 })
 

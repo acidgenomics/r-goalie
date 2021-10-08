@@ -35,8 +35,8 @@ test_that("FALSE", {
     expect_s4_class(ok, "goalie")
     expect_false(ok)
     expect_identical(
-        cause(ok),
-        "Ignoring active conda {.val base} environment."
+        object = cause(ok),
+        expected = "Ignoring active conda {.val base} environment."
     )
     Sys.unsetenv(vars)
 })

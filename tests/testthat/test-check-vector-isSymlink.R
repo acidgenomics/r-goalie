@@ -19,12 +19,12 @@ test_that("FALSE : not symlink", {
     ok <- isSymlink(c(from, to))
     expect_s4_class(ok, "goalie")
     expect_identical(
-        nocause(ok),
-        c("from.txt" = FALSE, "to.txt" = TRUE)
+        object = nocause(ok),
+        expected = c("from.txt" = FALSE, "to.txt" = TRUE)
     )
     expect_identical(
-        cause(ok),
-        c("from.txt" = "not symlink", "to.txt" = NA_character_)
+        object = cause(ok),
+        expected = c("from.txt" = "not symlink", "to.txt" = NA_character_)
     )
 })
 

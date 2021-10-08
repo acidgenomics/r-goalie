@@ -15,12 +15,12 @@ test_that("NA logical (missing)", {
     )
     expect_s4_class(ok, "goalie")
     expect_identical(
-        nocause(ok),
-        c(a = TRUE, b = FALSE, c = NA)
+        object = nocause(ok),
+        expected = c("a" = TRUE, "b" = FALSE, "c" = NA)
     )
     expect_identical(
-        cause(ok),
-        c(
+        object = cause(ok),
+        expected = c(
             "a" = NA_character_,
             "b" = "custom false",
             "c" = "custom missing"
