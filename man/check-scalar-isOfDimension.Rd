@@ -24,7 +24,7 @@ Number to include.}
 Does the input contain specific dimensions?
 }
 \note{
-Updated 2019-10-04.
+Updated 2021-10-08.
 }
 \examples{
 x <- data.frame(a = c(TRUE, FALSE), b = c(FALSE, TRUE))

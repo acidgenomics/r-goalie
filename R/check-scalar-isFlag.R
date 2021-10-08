@@ -25,7 +25,7 @@ isFlag <- function(x, .xname = getNameInParent(x)) {
     ok <- isScalarLogical(x)
     if (!isTRUE(ok)) {
         return(false(
-            "{.var %s} is not a boolean flag ({.val %s} / {.val %s}).",
+            "{.var %s} is not a boolean flag ({.val %s}/{.val %s}).",
             .xname, "TRUE", "FALSE"
         ))
     }

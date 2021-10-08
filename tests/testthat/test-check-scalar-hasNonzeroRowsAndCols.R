@@ -3,10 +3,8 @@ context("check : scalar : hasNonzeroRowsAndCols")
 test_that("TRUE : matrix", {
     x <- matrix(data = seq_len(4L), nrow = 2L)
     expect_true(hasNonzeroRowsAndCols(x))
-
     x <- matrix(data = rep(1L, times = 2L), byrow = TRUE)
     expect_true(hasNonzeroRowsAndCols(x))
-
     x <- matrix(data = rep(1L, times = 2L), byrow = FALSE)
     expect_true(hasNonzeroRowsAndCols(x))
 })
@@ -32,7 +30,7 @@ test_that("FALSE : rows containing all zeros", {
     expect_s4_class(ok, "goalie")
     expect_identical(
         cause(ok),
-        "'x' has 1 zero row at position 2."
+        "{.var x} has 1 zero row at position 2."
     )
 })
 
@@ -47,7 +45,7 @@ test_that("FALSE : columns containing all zeros", {
     expect_s4_class(ok, "goalie")
     expect_identical(
         cause(ok),
-        "'x' has 2 zero columns at positions 3, 4."
+        "{.var x} has 2 zero columns at positions 3, 4."
     )
 })
 
@@ -58,7 +56,7 @@ test_that("FALSE : no rows", {
     expect_s4_class(ok, "goalie")
     expect_identical(
         cause(ok),
-        "The number of rows in 'x' is zero."
+        "The number of rows in {.var x} is zero."
     )
 })
 
@@ -69,7 +67,7 @@ test_that("FALSE : no columns", {
     expect_s4_class(ok, "goalie")
     expect_identical(
         cause(ok),
-        "The number of columns in 'x' is zero."
+        "The number of columns in {.var x} is zero."
     )
 })
 
@@ -80,6 +78,6 @@ test_that("FALSE : no rows or columns", {
     expect_s4_class(ok, "goalie")
     expect_identical(
         cause(ok),
-        "The number of rows in 'x' is zero."
+        "The number of rows in {.var x} is zero."
     )
 })

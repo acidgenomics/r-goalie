@@ -23,17 +23,17 @@ isScalar(x, nullOK = FALSE, .xname = getNameInParent(x))
 
 isScalarAtomic(x, nullOK = FALSE, .xname = getNameInParent(x))
 
-isScalarCharacter(x, nullOK = TRUE, .xname = getNameInParent(x))
+isScalarCharacter(x, nullOK = FALSE, .xname = getNameInParent(x))
 
-isScalarDouble(x, nullOK = TRUE, .xname = getNameInParent(x))
+isScalarDouble(x, nullOK = FALSE, .xname = getNameInParent(x))
 
 isScalarInteger(x, nullOK = FALSE, .xname = getNameInParent(x))
 
-isScalarIntegerish(x, nullOK = TRUE, .xname = getNameInParent(x))
+isScalarIntegerish(x, nullOK = FALSE, .xname = getNameInParent(x))
 
 isScalarList(x, nullOK = FALSE, .xname = getNameInParent(x))
 
-isScalarLogical(x, nullOK = TRUE, .xname = getNameInParent(x))
+isScalarLogical(x, nullOK = FALSE, .xname = getNameInParent(x))
 
 isScalarNumeric(x, nullOK = FALSE, .xname = getNameInParent(x))
 
@@ -63,7 +63,7 @@ Scalar represents a length of 1.
 }}
 
 \note{
-Updated 2021-10-07.
+Updated 2021-10-08.
 }
 \examples{
 ## TRUE ====

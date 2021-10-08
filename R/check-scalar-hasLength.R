@@ -1,7 +1,7 @@
 #' Does the input have a non-zero or defined length?
 #'
 #' @name check-scalar-hasLength
-#' @note Updated 2019-09-06.
+#' @note Updated 2021-10-08.
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params

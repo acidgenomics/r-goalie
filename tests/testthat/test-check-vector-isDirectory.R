@@ -47,7 +47,7 @@ test_that("FALSE : not scalar", {
     expect_false(ok)
     expect_identical(
         object = cause(ok),
-        expected = "'x' does not have a length of 1."
+        expected = "'x' doesn't have a length of 1."
     )
 })
 

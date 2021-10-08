@@ -1,7 +1,7 @@
 #' Does the input contain specific dimensions?
 #'
 #' @name check-scalar-isOfDimension
-#' @note Updated 2019-10-04.
+#' @note Updated 2021-10-08.
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
@@ -34,13 +34,17 @@ isOfDimension <- function(x, n, .xname = getNameInParent(x)) {
     if (is.null(n)) {
         if (hasDims(x)) {
             return(false(
-                ngettext(
-                    n = length(dimX),
-                    msg1 = "{.var %s} has dimension %s, not NULL.",
-                    msg2 = "{.var %s} has dimensions %s, not NULL."
-                ),
-                .xname,
-                deparse(dimX)
+                sprintf(
+                    "{.var %s} has %s {.val %s}, not {.val %s}.",
+                    .xname,
+                    ngettext(
+                        n = length(dimX),
+                        msg1 = "dimension",
+                        msg2 = "dimensions"
+                    ),
+                    deparse(dimX),
+                    "NULL"
+                )
             ))
         }
         return(TRUE)
@@ -54,7 +58,7 @@ isOfDimension <- function(x, n, .xname = getNameInParent(x)) {
                 msg1 = "Dimension %s of {.var %s} is incorrect.",
                 msg2 = "Dimensions %s of {.var %s} are incorrect."
             ),
-            toString(notok),
+            toString(notok, width = 50L),
             .xname
         ))
     }

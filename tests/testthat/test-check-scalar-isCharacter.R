@@ -11,7 +11,7 @@ test_that("FALSE : numeric sequence", {
     expect_s4_class(ok, "goalie")
     expect_identical(
         cause(ok),
-        "'seq_len(5L)' is not character."
+        "{.var seq_len(5L)} is not character."
     )
 })
 
