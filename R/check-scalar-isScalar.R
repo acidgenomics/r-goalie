@@ -3,7 +3,7 @@
 #' Scalar represents a length of 1.
 #'
 #' @name check-scalar-isScalar
-#' @note Updated 2021-10-07.
+#' @note Updated 2021-10-08.
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
@@ -86,7 +86,7 @@ isScalarAtomic <- function(
 #' @export
 isScalarCharacter <- function(
     x,
-    nullOK = TRUE,
+    nullOK = FALSE,
     .xname = getNameInParent(x)
 ) {
     ok <- isScalar(x, nullOK = nullOK, .xname = .xname)
@@ -108,7 +108,7 @@ isScalarCharacter <- function(
 #' @export
 isScalarDouble <- function(
     x,
-    nullOK = TRUE,
+    nullOK = FALSE,
     .xname = getNameInParent(x)
 ) {
     ok <- isScalar(x, nullOK = nullOK, .xname = .xname)
@@ -152,7 +152,7 @@ isScalarInteger <- function(
 #' @export
 isScalarIntegerish <- function(
     x,
-    nullOK = TRUE,
+    nullOK = FALSE,
     .xname = getNameInParent(x)
 ) {
     ok <- isScalar(x, nullOK = nullOK, .xname = .xname)
@@ -196,7 +196,7 @@ isScalarList <- function(
 #' @export
 isScalarLogical <- function(
     x,
-    nullOK = TRUE,
+    nullOK = FALSE,
     .xname = getNameInParent(x)
 ) {
     ok <- isScalar(x, nullOK = nullOK, .xname = .xname)

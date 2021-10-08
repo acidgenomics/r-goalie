@@ -11,7 +11,7 @@ test_that("Not an S4 object", {
     expect_s4_class(ok, "goalie")
     expect_identical(
         cause(ok),
-        "'assay(se)' is not an S4 class object."
+        "{.var assay(se)} is not an S4 class object."
     )
 })
 
@@ -21,7 +21,7 @@ test_that("Invalid genes input", {
     expect_s4_class(ok, "goalie")
     expect_identical(
         cause(ok),
-        "'genes' is not character."
+        "{.var genes} is not character."
     )
 })
 

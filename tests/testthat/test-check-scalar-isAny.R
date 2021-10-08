@@ -14,7 +14,7 @@ test_that("FALSE", {
     expect_s4_class(ok, "goalie")
     expect_identical(
         cause(ok),
-        "'x' is not any of: character, data.frame."
+        "{.var x} is not any of: character, data.frame."
     )
 })
 
@@ -24,6 +24,6 @@ test_that("Invalid classes argument", {
     expect_s4_class(ok, "goalie")
     expect_identical(
         cause(ok),
-        "'classes' is not character."
+        "{.var classes} is not character."
     )
 })

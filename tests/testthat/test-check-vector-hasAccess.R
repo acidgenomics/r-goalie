@@ -28,7 +28,7 @@ test_that("FALSE : NULL input", {
     expect_false(ok)
     expect_identical(
         cause(ok),
-        "'x' is not character."
+        "{.var x} is not character."
     )
 })
 
@@ -39,8 +39,9 @@ test_that("FALSE : Invalid access codes", {
     expect_identical(
         cause(ok),
         paste0(
-            "'xxx' is not a valid access code.", "\n",
-            "Unique combinations of 'r', 'w' and 'x' are allowed."
+            "{.var xxx} is not a valid access code.", "\n",
+            "Unique combinations of {.val r}, {.val w} ",
+            "and {.val x} are allowed."
         )
     )
 })

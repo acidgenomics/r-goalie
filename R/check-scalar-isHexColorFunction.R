@@ -42,7 +42,7 @@ isHexColorFunction <- function(
     ok <- "n" %in% formalArgs(x)
     if (!isTRUE(ok)) {
         return(false(
-            "{.var %s} doesn't contain an {.var %s} argument.",
+            "{.var %s} doesn't contain an {.arg %s} argument.",
             .xname, "n"
         ))
     }
