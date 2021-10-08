@@ -24,11 +24,14 @@ NULL
 isFlag <- function(x, .xname = getNameInParent(x)) {
     ok <- isScalarLogical(x)
     if (!isTRUE(ok)) {
-        return(false("'%s' is not a boolean flag (TRUE/FALSE).", .xname))
+        return(false(
+            "{.var %s} is not a boolean flag ({.val %s} / {.val %s}).",
+            .xname, "TRUE", "FALSE"
+        ))
     }
-    ## Check for NA, which is logical but not a flag.
+    ## Check for `NA`, which is logical but not a flag.
     if (is.na(x)) {
-        return(false("'%s' is NA.", .xname))
+        return(false("{.var %s} is {.val %s}.", .xname, "NA"))
     }
     TRUE
 }

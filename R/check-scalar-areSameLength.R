@@ -41,7 +41,7 @@ areSameLength <- function(
     ok <- identical(length(x), length(y))
     if (!isTRUE(ok)) {
         return(false(
-            "'%s' does not have the same length as '%s'.",
+            "{.var %s} doesn't have the same length as {.var %s}.",
             .xname, .yname
         ))
     }

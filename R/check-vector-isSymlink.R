@@ -35,7 +35,7 @@ isSymlink <- function(x) {
     }
     ok <- file.exists(x)
     if (!all(ok)) {
-        return(setCause(ok, false = "does not exist"))
+        return(setCause(ok, false = "doesn't exist"))
     }
     ok <- nzchar(Sys.readlink(x), keepNA = TRUE)
     names(ok) <- x

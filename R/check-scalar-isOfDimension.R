@@ -36,8 +36,8 @@ isOfDimension <- function(x, n, .xname = getNameInParent(x)) {
             return(false(
                 ngettext(
                     n = length(dimX),
-                    msg1 = "'%s' has dimension %s, not NULL.",
-                    msg2 = "'%s' has dimensions %s, not NULL."
+                    msg1 = "{.var %s} has dimension %s, not NULL.",
+                    msg2 = "{.var %s} has dimensions %s, not NULL."
                 ),
                 .xname,
                 deparse(dimX)
@@ -51,8 +51,8 @@ isOfDimension <- function(x, n, .xname = getNameInParent(x)) {
         return(false(
             ngettext(
                 n = length(notok),
-                msg1 = "Dimension %s of '%s' is incorrect.",
-                msg2 = "Dimensions %s of '%s' are incorrect."
+                msg1 = "Dimension %s of {.var %s} is incorrect.",
+                msg2 = "Dimensions %s of {.var %s} are incorrect."
             ),
             toString(notok),
             .xname

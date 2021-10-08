@@ -51,11 +51,10 @@ validNames <- function(x, .xname = getNameInParent(x)) {
         info <- paste0("[", pos, "] ", name)
         return(false(
             paste0(
-                "'%s' does not contain valid names: %s\n",
-                "See 'make.names()' for details."
+                "{.var %s} doesn't contain valid names: %s\n",
+                "See {.fun %s} for details."
             ),
-            .xname,
-            toString(info, width = 100L)
+            .xname, toString(info, width = 100L), "make.names"
         ))
     }
     TRUE

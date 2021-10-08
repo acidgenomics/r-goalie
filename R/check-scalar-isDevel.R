@@ -17,7 +17,10 @@ isDevel <- function() {
     ok <- isMatchingFixed(x = R.version.string, pattern = "development")
 
     if (!isTRUE(ok)) {
-        return(false("Not R-devel: '%s'.", R.version.string))
+        return(false(
+            "Not R Devel: {.val %s}.",
+            as.character(R.version.string)
+        ))
     }
     TRUE
 }

@@ -45,7 +45,7 @@ isFileSystemCaseSensitive <- function(dir = ".") {
     unlink(files)
     ok <- identical(n, 2L)
     if (!isTRUE(ok)) {
-        return(false("'%s' is not case sensitive.", dir))
+        return(false("{.path %s} is not case sensitive.", dir))
     }
     TRUE
 }

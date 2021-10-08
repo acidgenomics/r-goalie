@@ -30,8 +30,8 @@ isAny <- function(x, classes, .xname = getNameInParent(x)) {
     ok <- any(.is2(x, class = classes))
     if (!isTRUE(ok)) {
         return(false(
-            "'%s' is not any of: %s.",
-            .xname, toString(classes)
+            "{.var %s} is not any of: %s.",
+            .xname, toString(classes, width = 50L)
         ))
     }
     TRUE

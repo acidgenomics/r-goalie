@@ -38,8 +38,8 @@ hasMetrics <-
         ok <- isSubset(c1, c2)
         if (!isTRUE(ok)) {
             return(false(
-                "'%s' does not contain metrics in 'colData()': %s.",
-                .xname,
+                "{.var %s} doesn't contain metrics in {.fun %s}: %s.",
+                .xname, "colData",
                 toString(setdiff(c1, c2), width = 100L)
             ))
         }

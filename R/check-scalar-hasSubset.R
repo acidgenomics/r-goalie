@@ -37,8 +37,8 @@ hasSubset <-
         ok <- isSubset(m1, m2)
         if (!isTRUE(ok)) {
             return(false(
-                "'%s' does not contain slots in 'metadata()': %s.",
-                .xname,
+                "{.var %s} doesn't contain slots in {.fun %s}: %s.",
+                .xname, "metadata",
                 toString(setdiff(m1, m2), width = 100L)
             ))
         }

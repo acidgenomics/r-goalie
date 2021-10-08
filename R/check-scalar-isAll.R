@@ -24,8 +24,8 @@ isAll <- function(x, classes, .xname = getNameInParent(x)) {
     ok <- all(.is2(x, class = classes))
     if (!isTRUE(ok)) {
         return(false(
-            "'%s' is not all of: %s.",
-            .xname, toString(classes)
+            "{.var %s} is not all of: %s.",
+            .xname, toString(classes, width = 50L)
         ))
     }
     TRUE

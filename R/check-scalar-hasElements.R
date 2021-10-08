@@ -32,7 +32,7 @@ hasElements <- function(x, n = NULL, .xname = getNameInParent(x)) {
     nElementsX <- nElements(x)
     if (is.null(n)) {
         if (identical(nElementsX, 0L)) {
-            return(false("'%s' has 0 elements.", .xname))
+            return(false("{.var %s} has 0 elements.", .xname))
         } else {
             return(TRUE)
         }
@@ -43,8 +43,8 @@ hasElements <- function(x, n = NULL, .xname = getNameInParent(x)) {
         return(false(
             ngettext(
                 nElementsX,
-                "'%s' has %d element, not %d.",
-                "'%s' has %d elements, not %d."
+                "{.var %s} has %d element, not %d.",
+                "{.var %s} has %d elements, not %d."
             ),
             .xname,
             nElementsX,

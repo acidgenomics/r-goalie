@@ -35,9 +35,9 @@ NULL
 isIntegerish <- function(x, .xname = getNameInParent(x)) {
     ## Check for numeric vector.
     if (!is.numeric(x)) {
-        return(false("'%s' is not numeric.", .xname))
+        return(false("{.var %s} is not numeric.", .xname))
     }
-    ## Require that vector does not contain NA.
+    ## Require that vector doesn't contain NA.
     ok <- !is.na(x)
     if (!all(ok)) {
         names(ok) <- .toNames(x)

@@ -34,16 +34,16 @@ isString <- function(
     }
     ok <- is.character(x)
     if (!isTRUE(ok)) {
-        return(false("'%s' is not character.", .xname))
+        return(false("{.var %s} is not character.", .xname))
     }
     ok <- !is.na(x)
     ## Return FALSE on NA character or empty string.
     if (!isTRUE(ok)) {
-        return(false("'%s' is NA.", .xname))
+        return(false("{.var %s} is {.val %s}.", .xname, "NA"))
     }
     ok <- !identical(x, "")
     if (!isTRUE(ok)) {
-        return(false("'%s' contains empty string.", .xname))
+        return(false("{.var %s} contains empty string.", .xname))
     }
     TRUE
 }

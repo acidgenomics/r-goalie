@@ -114,7 +114,7 @@ NULL
         ok <- bapply(X = class, FUN = function(cl) .is2(x, cl, ""))
         return(setCause(
             object = ok,
-            false = sprintf("%s is not '%s'", .typeDescription(x), class)
+            false = sprintf("%s is not {.var %s}", .typeDescription(x), class)
         ))
     }
     ## Attempt to use `is.character(x)` first.
@@ -132,7 +132,7 @@ NULL
     )
     if (!isTRUE(ok)) {
         return(false(
-            "'%s' is not of class '%s'; it has %s.",
+            "{.var %s} is not of class {.var %s}; it has %s.",
             .xname, class, .typeDescription(x)
         ))
     }
@@ -246,9 +246,9 @@ NULL
             typeof(x), toString(class(x))
         )
     } else if (isS4(x)) {
-        x <- sprintf("S4 class '%s'", toString(class(x)))
+        x <- sprintf("S4 class {.var %s}", toString(class(x)))
     } else {
-        x <- sprintf("class '%s'", toString(class(x)))
+        x <- sprintf("class {.var %s}", toString(class(x)))
     }
     x
 }

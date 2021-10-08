@@ -29,7 +29,10 @@ isBiocDevel <- function() {
     develVersion <- yaml[["devel_version"]]
     ok <- identical(x = as.character(version), y = as.character(develVersion))
     if (!isTRUE(ok)) {
-        return(false("Not Bioc Devel: '%s'.", as.character(version)))
+        return(false(
+            "Not Bioc Devel: {.val %s}.",
+            as.character(version)
+        ))
     }
     TRUE
 }

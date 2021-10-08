@@ -29,7 +29,7 @@ allAreAtomic <- function(x, .xname = getNameInParent(x)) {
     }
     ok <- all(bapply(x, is.atomic))
     if (!isTRUE(ok)) {
-        return(false("Not all elements in '%s' are atomic.", .xname))
+        return(false("Not all elements in {.var %s} are atomic.", .xname))
     }
     TRUE
 }

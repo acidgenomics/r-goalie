@@ -34,7 +34,7 @@ isHexColor <- function(x, .xname = getNameInParent(x)) {
     ## NOTE `viridis()` adds an extra "FF" to the end of hex color return.
     pattern <- "^(#[0-9A-F]{6})"
     ok <- isMatchingRegex(x = x, pattern = pattern)
-    setCause(ok, false = sprintf("doesn't match '%s'", pattern))
+    setCause(ok, false = sprintf("doesn't match {.var %s}", pattern))
 }
 
 

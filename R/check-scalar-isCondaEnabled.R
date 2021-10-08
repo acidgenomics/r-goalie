@@ -56,7 +56,10 @@ isCondaEnabled <- function(ignoreBase = TRUE) {
     if (isTRUE(ignoreBase)) {
         ok <- identical(defaultEnv, "base")
         if (isTRUE(ok)) {
-            return(false("Ignoring active conda 'base' environment."))
+            return(false(
+                "Ignoring active conda {.val %s} environment.",
+                "base"
+            ))
         }
     }
     ok <- isString(defaultEnv) && isTRUE(shlvl > 0L)
