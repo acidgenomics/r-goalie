@@ -68,6 +68,9 @@ assert <- function(..., msg = NULL) {
                 }
             }
         }
+        if (!is.character(msg) || length(msg) != 1L) {
+            stop("Invalid 'msg' input.")
+        }
         if (isTRUE(isInstalled("AcidCLI"))) {
             stop <- AcidCLI::abort
         } else {
