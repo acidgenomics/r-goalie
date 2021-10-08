@@ -10,8 +10,8 @@ test_that("FALSE : numeric sequence", {
     expect_false(ok)
     expect_s4_class(ok, "goalie")
     expect_identical(
-        cause(ok),
-        "{.var seq_len(5L)} is not character."
+        object = cause(ok),
+        expected = "{.var seq_len(5L)} is not character."
     )
 })
 

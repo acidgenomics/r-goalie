@@ -8,8 +8,8 @@ test_that("hasDims", {
     expect_false(ok)
     expect_s4_class(ok, "goalie")
     expect_identical(
-        cause(ok),
-        "The dimensions of {.var list()} are {.val NULL}."
+        object = cause(ok),
+        expected = "The dimensions of {.var list()} are {.val NULL}."
     )
 })
 

@@ -10,8 +10,11 @@ test_that("FALSE : non-atomic", {
     expect_s4_class(ok, "goalie")
     expect_false(ok)
     expect_identical(
-        cause(ok),
-        "Not all elements in {.var list(a = \"x\", b = list())} are atomic."
+        object = cause(ok),
+        expected = paste(
+            "Not all elements in {.var list(a = \"x\", b = list())}",
+            "are atomic."
+        )
     )
 })
 
@@ -20,7 +23,7 @@ test_that("FALSE : length 0", {
     expect_s4_class(ok, "goalie")
     expect_false(ok)
     expect_identical(
-        cause(ok),
-        "{.var data.frame()} has length 0."
+        object = cause(ok),
+        expected = "{.var data.frame()} has length 0."
     )
 })

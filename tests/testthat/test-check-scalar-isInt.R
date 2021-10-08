@@ -13,8 +13,8 @@ test_that("FALSE : not integer", {
     expect_s4_class(ok, "goalie")
     expect_false(ok)
     expect_identical(
-        cause(ok),
-        c("1.000000000000000e-01" = "not integer")
+        object = cause(ok),
+        expected = c("1.000000000000000e-01" = "not integer")
     )
 })
 
@@ -23,7 +23,7 @@ test_that("FALSE : not scalar", {
     expect_s4_class(ok, "goalie")
     expect_false(ok)
     expect_identical(
-        cause(ok),
-        "{.var x} doesn't have a length of 1."
+        object = cause(ok),
+        expected = "{.var x} doesn't have a length of 1."
     )
 })

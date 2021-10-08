@@ -40,8 +40,8 @@ test_that("FALSE : data.frame sequence row names", {
     expect_false(ok)
     expect_s4_class(ok, "goalie")
     expect_identical(
-        cause(ok),
-        "{.var x} has integer row names (soft {.val NULL})."
+        object = cause(ok),
+        expected = "{.var x} has integer row names (soft {.val NULL})."
     )
 })
 
@@ -51,7 +51,7 @@ test_that("FALSE : DataFrame NULL", {
     expect_false(ok)
     expect_s4_class(ok, "goalie")
     expect_identical(
-        cause(ok),
-        "{.var x} has {.val NULL} row names."
+        object = cause(ok),
+        expected = "{.var x} has {.val NULL} row names."
     )
 })

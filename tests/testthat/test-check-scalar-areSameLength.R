@@ -14,7 +14,7 @@ test_that("FALSE", {
     expect_s4_class(ok, "goalie")
     expect_false(ok)
     expect_identical(
-        cause(ok),
-        "{.var x} doesn't have the same length as {.var y}."
+        object = cause(ok),
+        expected = "{.var x} doesn't have the same length as {.var y}."
     )
 })

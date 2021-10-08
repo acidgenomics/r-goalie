@@ -4,19 +4,19 @@ test_that("validateClasses", {
     expect_true(
         validateClasses(
             object = list(
-                a = character(),
-                b = integer(),
-                c = factor()
+                "a" = character(),
+                "b" = integer(),
+                "c" = factor()
             ),
             expected = list(
-                a = "character",
-                b = "integer",
-                c = "factor"
+                "a" = "character",
+                "b" = "integer",
+                "c" = "factor"
             )
         )
     )
     expect_identical(
-        validateClasses(
+        object = validateClasses(
             object = list(
                 "a" = character()
             ),
@@ -24,7 +24,7 @@ test_that("validateClasses", {
                 "a" = "integer"
             )
         ),
-        paste0(
+        expected = paste0(
             "Class checks failed: a.\n",
             "If supported, 'updateObject()' may help resolve these issues."
         )
@@ -35,13 +35,13 @@ test_that("Subset mode", {
     expect_true(
         validateClasses(
             object = list(
-                a = character(),
-                b = integer(),
-                c = factor()
+                "a" = character(),
+                "b" = integer(),
+                "c" = factor()
             ),
             expected = list(
-                a = "character",
-                b = "integer"
+                "a" = "character",
+                "b" = "integer"
             ),
             subset = TRUE
         )
@@ -49,13 +49,13 @@ test_that("Subset mode", {
     expect_error(
         validateClasses(
             object = list(
-                a = character(),
-                b = integer(),
-                c = factor()
+                "a" = character(),
+                "b" = integer(),
+                "c" = factor()
             ),
             expected = list(
-                a = "character",
-                b = "integer"
+                "a" = "character",
+                "b" = "integer"
             ),
             subset = FALSE
         )
