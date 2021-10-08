@@ -8,11 +8,7 @@ test_that("Success", {
 test_that("Failure", {
     expect_error(
         object = assert(is.character(1L)),
-        regexp = paste(
-            "Assert failure.",
-            "\\[1\\] is.character\\(1L\\) is not TRUE.",
-            sep = "\n"
-        )
+        regexp = "is.character"
     )
 })
 
@@ -26,11 +22,11 @@ test_that("Custom message", {
 test_that("Not boolean", {
     expect_error(
         object = assert(c(TRUE, TRUE)),
-        regexp = "Check did not return a boolean flag \\(TRUE/FALSE\\)."
+        regexp = "boolean flag"
     )
     expect_error(
         object = assert("xxx"),
-        regexp = "Check did not return a boolean flag \\(TRUE/FALSE\\)."
+        regexp = "boolean flag"
     )
 })
 

@@ -39,10 +39,6 @@
 #'     isPositive(-1)
 #' )
 validate <- function(..., msg = NULL) {
-    hasCLI <- isInstalled("AcidCLI")
-    if (isTRUE(hasCLI)) {
-        stop <- AcidCLI::abort
-    }
     n <- ...length()
     if (identical(n, 0L)) {
         stop("No validate check is defined.")
@@ -58,6 +54,9 @@ validate <- function(..., msg = NULL) {
         X = seq_along(dots),
         FUN = function(i) {
             r <- ...elt(i)
+            if (length(r) != 1L) {
+                stop("Invalid input to validate.")
+            }
             if (!is(r, "goalie")) {
                 r <- unname(r)
             }
