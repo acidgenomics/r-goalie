@@ -37,7 +37,7 @@ Suggests:
     testthat (>= 3.1.0),
     tibble (>= 3.1.5),
     viridis (>= 0.6.1),
-    yaml (2.2.1)
+    yaml (>= 2.2.1)
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
 Additional_repositories: https://r.acidgenomics.com
