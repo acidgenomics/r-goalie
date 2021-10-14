@@ -65,16 +65,6 @@ NULL
 
 
 
-#' @rdname setCause
-#' @export
-setMethod(
-    f = "setCause",
-    signature = signature("logical"),
-    definition = `setCause,logical`
-)
-
-
-
 ## Updated 2021-02-23.
 `setCause,goalie` <-  # nolint
     function(object, ...) {
@@ -90,6 +80,14 @@ setMethod(
 #' @export
 setMethod(
     f = "setCause",
-    signature = signature("goalie"),
+    signature = signature(object = "goalie"),
     definition = `setCause,goalie`
+)
+
+#' @rdname setCause
+#' @export
+setMethod(
+    f = "setCause",
+    signature = signature(object = "logical"),
+    definition = `setCause,logical`
 )
