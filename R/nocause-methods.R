@@ -38,6 +38,6 @@ NULL
 #' @export
 setMethod(
     f = "nocause",
-    signature = signature("goalie"),
+    signature = signature(object = "goalie"),
     definition = `nocause,goalie`
 )
