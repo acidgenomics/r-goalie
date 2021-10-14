@@ -52,6 +52,6 @@ NULL
 #' @export
 setMethod(
     f = "falseFromVector",
-    signature = signature("goalie"),
+    signature = signature(object = "goalie"),
     definition = `falseFromVector,goalie`
 )
