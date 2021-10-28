@@ -30,7 +30,7 @@ NULL
 
 #' @rdname check-scalar-isFileSystemCaseSensitive
 #' @export
-isFileSystemCaseSensitive <- function(dir = ".") {
+isFileSystemCaseSensitive <- function(dir = getwd()) {
     ok <- isADirectory(dir)
     if (!isTRUE(ok)) {
         return(ok)
