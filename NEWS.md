@@ -1,5 +1,9 @@
 ## goalie 0.5.6 (UNRELEASED)
 
+### Minor changes
+
+- Updated minimum R version dependency to 4.1, matching Bioconductor 3.14.
+
 ## goalie 0.5.5 (2021-09-21)
 
 ### Minor changes
