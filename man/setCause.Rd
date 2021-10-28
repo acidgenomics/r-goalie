@@ -2,15 +2,15 @@
 % Please edit documentation in R/AllGenerics.R, R/setCause-methods.R
 \name{setCause}
 \alias{setCause}
-\alias{setCause,logical-method}
 \alias{setCause,goalie-method}
+\alias{setCause,logical-method}
 \title{Return \code{FALSE} vector with causes of failure}
 \usage{
 setCause(object, ...)
 
-\S4method{setCause}{logical}(object, false = "false", missing = "missing")
-
 \S4method{setCause}{goalie}(object, ...)
+
+\S4method{setCause}{logical}(object, false = "false", missing = "missing")
 }
 \arguments{
 \item{object}{Object.}
