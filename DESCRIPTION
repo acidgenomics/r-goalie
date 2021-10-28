@@ -20,7 +20,7 @@ URL:
 BugReports: https://github.com/acidgenomics/r-goalie/issues/
 License: AGPL-3
 Encoding: UTF-8
-Depends: R (>= 4.0)
+Depends: R (>= 4.1)
 Imports:
     methods,
     utils
@@ -29,8 +29,8 @@ Suggests:
     AcidTest (>= 0.5.0),
     BiocManager (>= 1.30.16),
     Matrix (>= 1.3),
-    S4Vectors (>= 0.30.0),
-    SummarizedExperiment (>= 1.22.0),
+    S4Vectors (>= 0.32.0),
+    SummarizedExperiment (>= 1.24.0),
     data.table (>= 1.14.2),
     ggplot2 (>= 3.3.5),
     rmarkdown (>= 2.11),
