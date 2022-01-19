@@ -1,4 +1,4 @@
-## goalie 0.5.6 (UNRELEASED)
+## goalie 0.6.0 (UNRELEASED)
 
 ### Minor changes
 
