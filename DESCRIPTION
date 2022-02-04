@@ -25,19 +25,19 @@ Imports:
     methods,
     utils
 Suggests:
-    AcidCLI (>= 0.1.8),
-    AcidTest (>= 0.5.0),
-    BiocManager (>= 1.30.16),
-    Matrix (>= 1.3.4),
-    S4Vectors (>= 0.32.0),
-    SummarizedExperiment (>= 1.24.0),
-    data.table (>= 1.14.2),
-    ggplot2 (>= 3.3.5),
-    rmarkdown (>= 2.11),
-    testthat (>= 3.1.0),
-    tibble (>= 3.1.5),
-    viridis (>= 0.6.1),
-    yaml (>= 2.2.1)
+    AcidCLI,
+    AcidTest,
+    BiocManager,
+    Matrix,
+    S4Vectors,
+    SummarizedExperiment,
+    data.table,
+    ggplot2,
+    rmarkdown,
+    testthat,
+    tibble,
+    viridis,
+    yaml
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
 Additional_repositories: https://r.acidgenomics.com
