@@ -4,6 +4,8 @@
 #' @author Michael Steinbaugh
 #' @note Updated 2022-02-07.
 #'
+#' @inheritParams AcidRoxygen::params
+#'
 #' @return Invisible `NULL`.
 #'
 #' @examples
