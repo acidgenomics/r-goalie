@@ -1,7 +1,10 @@
+#' Show an object
+#'
 #' @name show
 #' @author Michael Steinbaugh
-#' @inherit AcidGenerics::show
-#' @note Updated 2021-02-23.
+#' @note Updated 2022-02-07.
+#'
+#' @return Invisible `NULL`.
 #'
 #' @examples
 #' ## Match the default logical print method.
