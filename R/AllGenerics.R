@@ -7,8 +7,6 @@ setGeneric(
     }
 )
 
-
-
 #' @rdname falseFromVector
 #' @export
 setGeneric(
@@ -17,8 +15,6 @@ setGeneric(
         standardGeneric("falseFromVector")
     }
 )
-
-
 
 #' @rdname nocause
 #' @export
@@ -29,17 +25,6 @@ setGeneric(
     }
 )
 
-
-
-#' @rdname show
-#' @name show
-#' @importFrom methods show
-#' @usage show(object)
-#' @export
-NULL
-
-
-
 #' @rdname setCause
 #' @export
 setGeneric(
@@ -48,3 +33,9 @@ setGeneric(
         standardGeneric("setCause")
     }
 )
+
+#' @rdname show
+#' @name show
+#' @usage show(object)
+#' @export
+NULL

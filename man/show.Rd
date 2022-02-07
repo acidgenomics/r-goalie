@@ -9,17 +9,14 @@ show(object)
 
 \S4method{show}{goalie}(object)
 }
-\arguments{
-\item{object}{Object.}
-}
 \value{
-Console output.
+Invisible \code{NULL}.
 }
 \description{
 Show an object
 }
 \note{
-Updated 2021-02-23.
+Updated 2022-02-07.
 }
 \examples{
 ## Match the default logical print method.
