@@ -9,6 +9,9 @@ show(object)
 
 \S4method{show}{goalie}(object)
 }
+\arguments{
+\item{object}{Object.}
+}
 \value{
 Invisible \code{NULL}.
 }
