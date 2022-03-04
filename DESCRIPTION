@@ -26,6 +26,8 @@ Imports:
     utils
 Suggests:
     AcidCLI,
+    AcidGenerics,
+    AcidSingleCell,
     AcidTest,
     BiocManager,
     Matrix,
