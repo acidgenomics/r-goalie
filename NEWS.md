@@ -1,5 +1,10 @@
 ## goalie 0.6.0 (UNRELEASED)
 
+### Major changes
+
+- Migrated some check functions from pointillism / AcidSingleCell packages:
+  `hasClusters`, `hasMultipleSamples`, and `isBiocParallelParam`.
+
 ### Minor changes
 
 - Updated minimum R version dependency to 4.1, matching Bioconductor 3.14.
