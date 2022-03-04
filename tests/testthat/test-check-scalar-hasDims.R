@@ -1,7 +1,9 @@
 context("check : scalar : hasDims")
 
+skip_if_not_installed("datasets")
+
 test_that("hasDims", {
-    expect_true(hasDims(mtcars))
+    expect_true(hasDims(datasets::mtcars))
     ## Note that dims don't have to be non-zero, just not NULL.
     expect_true(hasDims(data.frame()))
     ok <- hasDims(list())
@@ -15,7 +17,7 @@ test_that("hasDims", {
 
 test_that("hasRows, hasCols", {
     for (fun in list(hasRows, hasCols)) {
-        x <- mtcars
+        x <- datasets::mtcars
         expect_true(fun(x))
         x <- data.frame()
         expect_false(fun(x))

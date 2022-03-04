@@ -4,7 +4,12 @@ test_that("TRUE", {
     expect_true(hasLength(seq(2L), n = 2L))
     expect_true(hasLength(1L))
     expect_true(hasLength(FALSE))
-    expect_true(hasLength(mtcars))
+    expect_true(hasLength(
+        data.frame(
+            "a" = c("aa", "bb"),
+            "b" = c("cc", "dd")
+        )
+    ))
     expect_true(hasLength(""))
 })
 
