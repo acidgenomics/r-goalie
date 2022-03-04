@@ -1,12 +1,15 @@
 context("check : scalar : hasRownames")
 
 test_that("hasRownames", {
+    skip_if_not_installed("S4Vectors")
+    skip_if_not_installed("data.table")
+    skip_if_not_installed("tibble")
     mapply(
         fun = list(
             data.frame,
-            DataFrame,
-            data.table,
-            tibble
+            S4Vectors::DataFrame,
+            data.table::data.table,
+            tibble::tibble
         ),
         cause = c(
             "{.var data} has integer row names (soft {.val NULL}).",
@@ -46,7 +49,8 @@ test_that("FALSE : data.frame sequence row names", {
 })
 
 test_that("FALSE : DataFrame NULL", {
-    x <- DataFrame(a = seq_len(2L))
+    skip_if_not_installed("S4Vectors")
+    x <- S4Vectors::DataFrame("a" = seq_len(2L))
     ok <- hasRownames(x)
     expect_false(ok)
     expect_s4_class(ok, "goalie")

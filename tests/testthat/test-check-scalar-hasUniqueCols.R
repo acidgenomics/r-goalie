@@ -28,5 +28,21 @@ test_that("1 column", {
 })
 
 test_that("SummarizedExperiment", {
-    expect_true(hasUniqueCols(se))
+    skip_if_not_installed("SummarizedExperiment")
+    object <- SummarizedExperiment::SummarizedExperiment(
+        assays = matrix(
+            data = seq_len(16L),
+            nrow = 4L,
+            ncol = 4L,
+            dimnames = list(
+                paste0("gene", seq_len(4L)),
+                paste0("sample", seq_len(4L))
+            )
+        ),
+        rowData = S4Vectors::DataFrame(
+            "geneId" = paste0("ENSG0000000000", seq_len(4L)),
+            "geneName" = paste0("SYMBOL", seq_len(4L))
+        )
+    )
+    expect_true(hasUniqueCols(object))
 })

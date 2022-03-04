@@ -1,7 +1,7 @@
 context("check : scalar : hasValidNames")
 
 test_that("TRUE", {
-    x <- list(a = 1L, b = 2L)
+    x <- list("a" = 1L, "b" = 2L)
     expect_true(hasValidNames(x))
 })
 
@@ -35,14 +35,16 @@ test_that("Unset names", {
 
 context("check : scalar : hasValidDimnames")
 
+skip_if_not_installed("datasets")
+
 test_that("TRUE", {
-    x <- iris
+    x <- datasets::iris
     expect_true(hasValidDimnames(x))
 })
 
 test_that("FALSE", {
     ## Note the spaces in the row names here.
-    x <- mtcars
+    x <- datasets::mtcars
     ok <- hasValidDimnames(x)
     expect_false(ok)
     expect_s4_class(ok, "goalie")
@@ -50,7 +52,6 @@ test_that("FALSE", {
         object = cause(ok),
         regexp = "valid names"
     )
-
     x <- data.frame(
         `1` = "a",
         `2` = "b",
