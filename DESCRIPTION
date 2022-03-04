@@ -29,6 +29,7 @@ Suggests:
     AcidGenerics,
     AcidSingleCell,
     AcidTest,
+    Biobase,
     BiocManager,
     Matrix,
     S4Vectors,
