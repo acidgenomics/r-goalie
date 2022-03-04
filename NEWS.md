@@ -4,6 +4,7 @@
 
 - Migrated some check functions from pointillism / AcidSingleCell packages:
   `hasClusters`, `hasMultipleSamples`, and `isBiocParallelParam`.
+- Migrated `isDark` check here from AcidPlots package.
 
 ### Minor changes
 
