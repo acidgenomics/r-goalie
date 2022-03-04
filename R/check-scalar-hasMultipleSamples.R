@@ -25,6 +25,10 @@ NULL
 #' @rdname check-scalar-hasMultipleSamples
 #' @export
 hasMultipleSamples <- function(x, .xname = getNameInParent(x)) {
+    ok <- is(x, "SummarizedExperiment")
+    if (!isTRUE(ok)) {
+        return(false("{.var %s} is not {.cls SummarizedExperiment}.", .xname))
+    }
     assert(requireNamespace("Biobase", quietly = TRUE))
     ok <- tryCatch(
         expr = {
