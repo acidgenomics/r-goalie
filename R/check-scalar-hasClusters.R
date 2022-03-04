@@ -27,7 +27,9 @@ NULL
 hasClusters <- function(x, .xname = getNameInParent(x)) {
     assert(requireNamespace("AcidGenerics", quietly = TRUE))
     ok <- tryCatch(
-        expr = is.factor(clusters(x)),
+        expr = {
+            is.factor(AcidGenerics::clusters(x))
+        },
         error = function(e) FALSE
     )
     if (!isTRUE(ok)) {
