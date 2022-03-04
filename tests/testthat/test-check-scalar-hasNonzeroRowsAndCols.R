@@ -10,7 +10,8 @@ test_that("TRUE : matrix", {
 })
 
 test_that("TRUE : sparseMatrix", {
-    x <- sparseMatrix(
+    skip_if_not_installed("Matrix")
+    x <- Matrix::sparseMatrix(
         i = seq_len(4L),
         j = seq_len(4L),
         x = 1L
@@ -19,8 +20,9 @@ test_that("TRUE : sparseMatrix", {
 })
 
 test_that("FALSE : rows containing all zeros", {
+    skip_if_not_installed("Matrix")
     ## This example is from the sparseMatrix documentation.
-    x <- sparseMatrix(
+    x <- Matrix::sparseMatrix(
         i = c(1L, 3L:8L),
         j = c(2L, 9L, 6L:10L),
         x = 7L * (seq_len(7L))

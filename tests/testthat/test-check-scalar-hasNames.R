@@ -1,7 +1,13 @@
 context("check : scalar : hasNames")
 
 test_that("TRUE", {
-    expect_true(hasNames(mtcars))
+    expect_true(hasNames(c("a" = 1L, "b" = 2L)))
+    expect_true(hasNames(
+        data.frame(
+            "a" = c("aa", "bb"),
+            "b" = c("cc", "dd")
+        )
+    ))
 })
 
 test_that("FALSE : matrix", {

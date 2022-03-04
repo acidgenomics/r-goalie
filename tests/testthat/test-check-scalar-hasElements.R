@@ -2,7 +2,7 @@ context("check : scalar : hasElements")
 
 test_that("TRUE", {
     expect_true(hasElements("hello", n = 1L))
-    expect_true(hasElements(list(a = 1L, b = 2L), n = 2L))
+    expect_true(hasElements(list("a" = 1L, "b" = 2L), n = 2L))
 })
 
 test_that("FALSE", {
@@ -22,30 +22,32 @@ test_that("FALSE", {
 
 context("check : scalar : isOfDimension")
 
+skip_if_not_installed("datasets")
+
 test_that("TRUE", {
-    expect_true(isOfDimension(mtcars, n = c(32L, 11L)))
+    expect_true(isOfDimension(datasets::mtcars, n = c(32L, 11L)))
     expect_true(isOfDimension("xxx", n = NULL))
     expect_true(isOfDimension(list(a = 1L), n = NULL))
 })
 
 test_that("FALSE : dimension mismatch", {
-    ok <- isOfDimension(mtcars, n = c(1L, 1L))
+    ok <- isOfDimension(datasets::mtcars, n = c(1L, 1L))
     expect_s4_class(ok, "goalie")
     expect_false(ok)
     expect_identical(
         object = cause(ok),
-        expected = "Dimensions 1, 2 of {.var mtcars} are incorrect."
+        expected = "Dimensions 1, 2 of {.var datasets::mtcars} are incorrect."
     )
 })
 
 test_that("FALSE : expecting dim", {
-    ok <- isOfDimension(mtcars, n = NULL)
+    ok <- isOfDimension(datasets::mtcars, n = NULL)
     expect_s4_class(ok, "goalie")
     expect_false(ok)
     expect_identical(
         object = cause(ok),
         expected = paste(
-            "{.var mtcars} has dimensions {.val c(32L, 11L)},",
+            "{.var datasets::mtcars} has dimensions {.val c(32L, 11L)},",
             "not {.val NULL}."
         )
     )
