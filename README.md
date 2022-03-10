@@ -26,7 +26,8 @@ install.packages(
     repos = c(
         "https://r.acidgenomics.com",
         getOption("repos")
-    )
+    ),
+    dependencies = NA
 )
 ```
 
