@@ -1,7 +1,7 @@
 #' Is dark mode preferred?
 #'
-#' @export
-#' @note Updated 2022-03-04.
+#' @name check-scalar-isDark
+#' @note Updated 2022-03-08.
 #'
 #' @details
 #' Checks for `acid.dark` option in current session.
@@ -19,6 +19,12 @@
 #' ## FALSE ====
 #' options("acid.dark" = NULL)
 #' isDark()
+NULL
+
+
+
+#' @rdname check-scalar-isDark
+#' @export
 isDark <- function() {
     ok <- isTRUE(getOption(x = "acid.dark"))
     if (!isTRUE(ok)) {

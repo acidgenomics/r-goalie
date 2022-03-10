@@ -35,4 +35,6 @@ reference:
       - "nocause"
       - "setCause"
       - "show"
+template:
+  bootstrap: 5
 url: https://r.acidgenomics.com/packages/goalie
