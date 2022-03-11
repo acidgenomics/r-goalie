@@ -1,14 +1,19 @@
-# goalie 0.6.0 (UNRELEASED)
+# goalie 0.6.0 (2022-03-11)
 
 ## Major changes
 
-- Migrated some check functions from pointillism / AcidSingleCell packages:
-  `hasClusters`, `hasMultipleSamples`, and `isBiocParallelParam`.
-- Migrated `isDark` check here from AcidPlots package.
+- `assert`: Engine will use `AcidCLI::abort` if installed, to return richer
+  error messages in the console. Also improved named message handling, similar
+  to `stopifnot` conventions.
+- Updated minimum R version dependency to 4.1, matching Bioconductor 3.14.
 
 ## Minor changes
 
-- Updated minimum R version dependency to 4.1, matching Bioconductor 3.14.
+- Improved some cause attributes to use better CLI formatting.
+- Migrated some check functions from pointillism / AcidSingleCell packages:
+  `hasClusters`, `hasMultipleSamples`, and `isBiocParallelParam`.
+- Migrated `isDark` check here from AcidPlots package.
+- Updated pkgdown website to use bootstrap 5 template.
 
 # goalie 0.5.5 (2021-09-21)
 
