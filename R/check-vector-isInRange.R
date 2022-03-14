@@ -6,10 +6,10 @@
 #' @section Intervals:
 #'
 #' - Closed: Includes all its limit points, and is denoted with square brackets.
-#'   For example, `[0,1]` means greater than or equal to 0 and less than or
-#'   equal to 1.
+#' For example, `[0,1]` means greater than or equal to 0 and less than or
+#' equal to 1.
 #' - Open: Does not include its endpoints, and is indicated with parentheses.
-#'   For example, `(0,1)` means greater than 0 and less than 1.
+#' For example, `(0,1)` means greater than 0 and less than 1.
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
@@ -66,106 +66,101 @@ NULL
 ## Vector ======================================================================
 #' @describeIn check-vector-isInRange Vectorized.
 #' @export
-isInRange <- function(
-    x,
-    lower = -Inf,
-    upper = Inf,
-    closed = c(TRUE, TRUE),
-    .xname = getNameInParent(x)
-) {
-    assert(
-        is.numeric(lower) && !is.na(lower),
-        is.numeric(upper) && !is.na(upper),
-        is.logical(closed) && identical(length(closed), 2L)
-    )
-    ok <- is.numeric(x) && !any(is.na(x))
-    if (!isTRUE(ok)) {
-        return(false("{.var %s} is not (non-NA) numeric.", .xname))
+isInRange <-
+    function(x,
+             lower = -Inf,
+             upper = Inf,
+             closed = c(TRUE, TRUE),
+             .xname = getNameInParent(x)) {
+        assert(
+            is.numeric(lower) && !is.na(lower),
+            is.numeric(upper) && !is.na(upper),
+            is.logical(closed) && identical(length(closed), 2L)
+        )
+        ok <- is.numeric(x) && !any(is.na(x))
+        if (!isTRUE(ok)) {
+            return(false("{.var %s} is not (non-NA) numeric.", .xname))
+        }
+        tooLow <- (if (closed[[1L]]) `<` else `<=`)(x, lower)
+        tooHigh <- (if (closed[[2L]]) `>` else `>=`)(x, upper)
+        ok <- rep.int(TRUE, length(x))
+        ok[tooLow] <- FALSE
+        ok[tooHigh] <- FALSE
+        names(ok) <- .toNames(x)
+        setCause(ok, false = ifelse(tooLow, "too low", "too high"))
     }
-    tooLow <- (if (closed[[1L]]) `<` else `<=`)(x, lower)
-    tooHigh <- (if (closed[[2L]]) `>` else `>=`)(x, upper)
-    ok <- rep.int(TRUE, length(x))
-    ok[tooLow] <- FALSE
-    ok[tooHigh] <- FALSE
-    names(ok) <- .toNames(x)
-    setCause(ok, false = ifelse(tooLow, "too low", "too high"))
-}
 
 
 
 #' @describeIn check-vector-isInRange Vectorized.
 #' @export
-isInClosedRange <- function(
-    x,
-    lower = -Inf,
-    upper = Inf,
-    .xname = getNameInParent(x)
-) {
-    isInRange(
-        x = x,
-        lower = lower,
-        upper = upper,
-        closed = c(TRUE, TRUE),
-        .xname = .xname
-    )
-}
+isInClosedRange <-
+    function(x,
+             lower = -Inf,
+             upper = Inf,
+             .xname = getNameInParent(x)) {
+        isInRange(
+            x = x,
+            lower = lower,
+            upper = upper,
+            closed = c(TRUE, TRUE),
+            .xname = .xname
+        )
+    }
 
 
 
 #' @describeIn check-vector-isInRange Vectorized.
 #' @export
-isInOpenRange <- function(
-    x,
-    lower = -Inf,
-    upper = Inf,
-    .xname = getNameInParent(x)
-) {
-    isInRange(
-        x = x,
-        lower = lower,
-        upper = upper,
-        closed = c(FALSE, FALSE),
-        .xname = .xname
-    )
-}
+isInOpenRange <-
+    function(x,
+             lower = -Inf,
+             upper = Inf,
+             .xname = getNameInParent(x)) {
+        isInRange(
+            x = x,
+            lower = lower,
+            upper = upper,
+            closed = c(FALSE, FALSE),
+            .xname = .xname
+        )
+    }
 
 
 
 #' @describeIn check-vector-isInRange Vectorized.
 #' @export
-isInLeftOpenRange <- function(
-    x,
-    lower = -Inf,
-    upper = Inf,
-    .xname = getNameInParent(x)
-) {
-    isInRange(
-        x = x,
-        lower = lower,
-        upper = upper,
-        closed = c(FALSE, TRUE),
-        .xname = .xname
-    )
-}
+isInLeftOpenRange <-
+    function(x,
+             lower = -Inf,
+             upper = Inf,
+             .xname = getNameInParent(x)) {
+        isInRange(
+            x = x,
+            lower = lower,
+            upper = upper,
+            closed = c(FALSE, TRUE),
+            .xname = .xname
+        )
+    }
 
 
 
 #' @describeIn check-vector-isInRange Vectorized.
 #' @export
-isInRightOpenRange <- function(
-    x,
-    lower = -Inf,
-    upper = Inf,
-    .xname = getNameInParent(x)
-) {
-    isInRange(
-        x = x,
-        lower = lower,
-        upper = upper,
-        closed = c(TRUE, FALSE),
-        .xname = .xname
-    )
-}
+isInRightOpenRange <-
+    function(x,
+             lower = -Inf,
+             upper = Inf,
+             .xname = getNameInParent(x)) {
+        isInRange(
+            x = x,
+            lower = lower,
+            upper = upper,
+            closed = c(TRUE, FALSE),
+            .xname = .xname
+        )
+    }
 
 
 

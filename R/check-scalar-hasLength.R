@@ -5,9 +5,10 @@
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
+#'
 #' @param n `NULL` or `integer`.
-#'   If `NULL` (default), the function will check to see if the input length is
-#'   non-zero.
+#' If `NULL` (default), the function will check to see if the input length is
+#' non-zero.
 #'
 #' @examples
 #' ## TRUE ====

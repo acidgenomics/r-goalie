@@ -11,10 +11,11 @@
 #' @note Updated 2021-10-08.
 #'
 #' @inheritParams AcidRoxygen::params
+#'
 #' @param ... Any number of R expressions that return `logical(1)`, each of
-#'   which should evaluate to `TRUE`. Rather than combining expressions with
-#'   `&&`, separate them by commas so that better error messages can be
-#'   generated.
+#' which should evaluate to `TRUE`. Rather than combining expressions with
+#' `&&`, separate them by commas so that better error messages can be
+#' generated.
 #'
 #' @seealso
 #' - `stopifnot()`.

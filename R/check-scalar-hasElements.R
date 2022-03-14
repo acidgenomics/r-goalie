@@ -8,7 +8,7 @@
 #'
 #' @seealso
 #' - `prod()`, which returns the product of all values in its arguments. This
-#'   is called internally to check the number of elements.
+#' is called internally to check the number of elements.
 #' - `assertive.properties::has_elements()`.
 #' - `assertive.properties::is_of_dimension()`.
 #' - `assertive.properties:::n_elements()`.
@@ -61,8 +61,7 @@ hasElements <- function(x, n = NULL, .xname = getNameInParent(x)) {
 nElements <- function(x) {
     if (is.recursive(x)) {
         sum(vapply(x, nElements, integer(1L)))
-    }
-    else {
+    } else {
         as.integer(prod(.dim(x)))
     }
 }

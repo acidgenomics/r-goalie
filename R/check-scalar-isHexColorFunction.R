@@ -25,38 +25,37 @@ NULL
 
 #' @rdname check-scalar-isHexColorFunction
 #' @export
-isHexColorFunction <- function(
-    x,
-    nullOK = FALSE,
-    .xname = getNameInParent(x)
-) {
-    if (isTRUE(nullOK) && is.null(x)) {
-        return(TRUE)
+isHexColorFunction <-
+    function(x,
+             nullOK = FALSE,
+             .xname = getNameInParent(x)) {
+        if (isTRUE(nullOK) && is.null(x)) {
+            return(TRUE)
+        }
+        ## Check for function.
+        ok <- is.function(x)
+        if (!isTRUE(ok)) {
+            return(false("{.var %s} is not a function.", .xname))
+        }
+        ## Check for `n` formal.
+        ok <- "n" %in% formalArgs(x)
+        if (!isTRUE(ok)) {
+            return(false(
+                "{.var %s} doesn't contain an {.arg %s} argument.",
+                .xname, "n"
+            ))
+        }
+        ## Check for hex value return.
+        colors <- x(n = 2L)
+        if (!is.character(colors) || identical(length(colors), 0L)) {
+            return(false(
+                "{.var %s} function didn't return any hex colors.",
+                .xname
+            ))
+        }
+        ok <- allAreHexColors(colors)
+        if (!isTRUE(ok)) {
+            return(ok)
+        }
+        TRUE
     }
-    ## Check for function.
-    ok <- is.function(x)
-    if (!isTRUE(ok)) {
-        return(false("{.var %s} is not a function.", .xname))
-    }
-    ## Check for `n` formal.
-    ok <- "n" %in% formalArgs(x)
-    if (!isTRUE(ok)) {
-        return(false(
-            "{.var %s} doesn't contain an {.arg %s} argument.",
-            .xname, "n"
-        ))
-    }
-    ## Check for hex value return.
-    colors <- x(n = 2L)
-    if (!is.character(colors) || identical(length(colors), 0L)) {
-        return(false(
-            "{.var %s} function didn't return any hex colors.",
-            .xname
-        ))
-    }
-    ok <- allAreHexColors(colors)
-    if (!isTRUE(ok)) {
-        return(ok)
-    }
-    TRUE
-}

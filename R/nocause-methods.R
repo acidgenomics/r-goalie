@@ -24,7 +24,7 @@ NULL
 
 
 ## Updated 2021-02-23.
-`nocause,goalie` <-  # nolint
+`nocause,goalie` <- # nolint
     function(object) {
         names <- names(object)
         object <- as.logical(object)

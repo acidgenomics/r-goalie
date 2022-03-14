@@ -8,13 +8,14 @@
 #' @inherit check return
 #'
 #' @param x `character(1)`.
-#'   File or directory path(s).
-#' @param access `character(1)`.
-#'   String containing any of these characters, including in combination:
+#' File or directory path(s).
 #'
-#'   - `r`: read.
-#'   - `w`: write.
-#'   - `x`: execute.
+#' @param access `character(1)`.
+#' String containing any of these characters, including in combination:
+#'
+#' - `r`: read.
+#' - `w`: write.
+#' - `x`: execute.
 #'
 #' Write and executable status cannot be checked on Windows.
 #'

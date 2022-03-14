@@ -6,7 +6,7 @@ test_that("TRUE", {
         expected = c("1" = TRUE, "2" = TRUE)
     )
     expect_identical(
-        object = isIntegerish(c(1, 2)),  # nolint
+        object = isIntegerish(c(1, 2)), # nolint
         expected = c(
             "1.000000000000000e+00" = TRUE,
             "2.000000000000000e+00" = TRUE
@@ -25,7 +25,7 @@ test_that("FALSE", {
 })
 
 test_that("FALSE : NA input", {
-    ok <- isIntegerish(c(1, 2, NA))  # nolint
+    ok <- isIntegerish(c(1, 2, NA)) # nolint
     expect_s4_class(ok, "goalie")
     expect_identical(
         object = nocause(ok),

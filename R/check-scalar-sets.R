@@ -45,30 +45,29 @@ NULL
 
 #' @rdname check-scalar-sets
 #' @export
-isSubset <- function(
-    x,
-    y,
-    .xname = getNameInParent(x),
-    .yname = getNameInParent(y)
-) {
-    ok <- hasLength(x)
-    if (!isTRUE(ok)) {
-        return(ok)
+isSubset <-
+    function(x,
+             y,
+             .xname = getNameInParent(x),
+             .yname = getNameInParent(y)) {
+        ok <- hasLength(x)
+        if (!isTRUE(ok)) {
+            return(ok)
+        }
+        ok <- hasLength(y)
+        if (!isTRUE(ok)) {
+            return(ok)
+        }
+        ok <- all(x %in% y)
+        if (!isTRUE(ok)) {
+            setdiff <- setdiff(x, y)
+            return(false(
+                gettext("{.var %s} has elements not in {.var %s}: %s"),
+                .xname, .yname, toString(setdiff, width = 100L)
+            ))
+        }
+        TRUE
     }
-    ok <- hasLength(y)
-    if (!isTRUE(ok)) {
-        return(ok)
-    }
-    ok <- all(x %in% y)
-    if (!isTRUE(ok)) {
-        setdiff <- setdiff(x, y)
-        return(false(
-            gettext("{.var %s} has elements not in {.var %s}: %s"),
-            .xname, .yname, toString(setdiff, width = 100L)
-        ))
-    }
-    TRUE
-}
 
 
 
@@ -76,83 +75,79 @@ isSubset <- function(
 
 #' @rdname check-scalar-sets
 #' @export
-isSuperset <- function(
-    x,
-    y,
-    .xname = getNameInParent(x),
-    .yname = getNameInParent(y)
-) {
-    isSubset(x = y, y = x, .xname = .yname, .yname = .xname)
-}
+isSuperset <-
+    function(x,
+             y,
+             .xname = getNameInParent(x),
+             .yname = getNameInParent(y)) {
+        isSubset(x = y, y = x, .xname = .yname, .yname = .xname)
+    }
 
 
 
 #' @rdname check-scalar-sets
 #' @export
-areDisjointSets <- function(
-    x,
-    y,
-    .xname = getNameInParent(x),
-    .yname = getNameInParent(y)
-) {
-    intersect <- intersect(x, y)
-    if (length(intersect) > 0L) {
-        return(false(
-            gettext("{.var %s} and {.var %s} have common elements: %s"),
-            .xname, .yname, toString(intersect, width = 100L)
-        ))
+areDisjointSets <-
+    function(x,
+             y,
+             .xname = getNameInParent(x),
+             .yname = getNameInParent(y)) {
+        intersect <- intersect(x, y)
+        if (length(intersect) > 0L) {
+            return(false(
+                gettext("{.var %s} and {.var %s} have common elements: %s"),
+                .xname, .yname, toString(intersect, width = 100L)
+            ))
+        }
+        TRUE
     }
-    TRUE
-}
 
 
 
 #' @rdname check-scalar-sets
 #' @export
-areIntersectingSets <- function(
-    x,
-    y,
-    .xname = getNameInParent(x),
-    .yname = getNameInParent(y)
-) {
-    intersect <- intersect(x, y)
-    if (identical(length(intersect), 0L)) {
-        return(false(
-            gettext("{.var %s} and {.var %s} have 0 common elements."),
-            .xname, .yname
-        ))
+areIntersectingSets <-
+    function(x,
+             y,
+             .xname = getNameInParent(x),
+             .yname = getNameInParent(y)) {
+        intersect <- intersect(x, y)
+        if (identical(length(intersect), 0L)) {
+            return(false(
+                gettext("{.var %s} and {.var %s} have 0 common elements."),
+                .xname, .yname
+            ))
+        }
+        TRUE
     }
-    TRUE
-}
 
 
 
 #' @rdname check-scalar-sets
 #' @export
-areSetEqual <- function(
-    x,
-    y,
-    .xname = getNameInParent(x),
-    .yname = getNameInParent(y)
-) {
-    x <- unique(x)
-    y <- unique(y)
-    if (length(x) != length(y)) {
-        return(false(
-            gettext(paste0(
-                "{.var %s} and {.var %s} have different numbers of elements ",
-                "(%d versus %d)."
-            )),
-            .xname, .yname, length(x), length(y)
-        ))
+areSetEqual <-
+    function(x,
+             y,
+             .xname = getNameInParent(x),
+             .yname = getNameInParent(y)) {
+        x <- unique(x)
+        y <- unique(y)
+        if (length(x) != length(y)) {
+            return(false(
+                gettext(paste0(
+                    "{.var %s} and {.var %s} have different numbers of elements ",
+                    "(%d versus %d)."
+                )),
+                .xname, .yname, length(x), length(y)
+            ))
+        }
+        ok <- isSubset(x, y)
+        if (!isTRUE(ok)) {
+            return(ok)
+        }
+        ok <- isSubset(y, x)
+        if (!isTRUE(ok)) {
+            return(ok)
+        }
+        TRUE
     }
-    ok <- isSubset(x, y)
-    if (!isTRUE(ok)) {
-        return(ok)
-    }
-    ok <- isSubset(y, x)
-    if (!isTRUE(ok)) {
-        return(ok)
-    }
-    TRUE
-}

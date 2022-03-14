@@ -15,7 +15,7 @@
 #' @inheritParams assert
 #'
 #' @return `TRUE` on success, or `character(1)` on failure, containing an error
-#'   message.
+#' message.
 #'
 #' @seealso
 #' - `methods::setValidity()`.
