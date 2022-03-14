@@ -1,7 +1,7 @@
 context("check : vector : isEqual")
 
 test_that("TRUE", {
-    x <- c(1L, 1)  # nolint
+    x <- c(1L, 1) # nolint
     y <- 1L
 
     ok <- isEqualTo(x = x, y = y)

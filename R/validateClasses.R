@@ -10,10 +10,12 @@
 #' @note Updated 2021-02-23.
 #'
 #' @inheritParams AcidRoxygen::params
+#'
 #' @param expected `list`.
-#'   Named list of expected classes per slot.
+#' Named list of expected classes per slot.
+#'
 #' @param subset `logical(1)`.
-#'   Only check a subset of slots in the object.
+#' Only check a subset of slots in the object.
 #'
 #' @seealso
 #' - `validate()`.
@@ -21,7 +23,7 @@
 #' - `methods::validObject()`.
 #'
 #' @return `logical(1)` (`TRUE`) on sucess or `character(1)` containing
-#'   informative message on failure.
+#' informative message on failure.
 #'
 #' @examples
 #' ## TRUE ====

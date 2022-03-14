@@ -5,9 +5,11 @@
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
+#'
 #' @param x `Annotated`.
+#'
 #' @param metadata `character`.
-#'   Names in [`metadata()`][S4Vectors::metadata] that denote object is subset.
+#' Names in [`metadata()`][S4Vectors::metadata] that denote object is subset.
 #'
 #' @examples
 #' if (requireNamespace("SummarizedExperiment", quietly = TRUE)) {
@@ -22,11 +24,9 @@ NULL
 #' @rdname check-scalar-hasSubset
 #' @export
 hasSubset <-
-    function(
-        x,
-        metadata = "subset",
-        .xname = getNameInParent(x)
-    ) {
+    function(x,
+             metadata = "subset",
+             .xname = getNameInParent(x)) {
         assert(
             requireNamespace("S4Vectors", quietly = TRUE),
             is(x, "Annotated"),

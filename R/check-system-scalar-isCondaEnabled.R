@@ -10,10 +10,10 @@
 #' variables internally.
 #'
 #' @param ignoreBase `logical(1)`.
-#'   If `TRUE`, don't consider conda to be "active" if only the base
-#'   environment is loaded. This is useful to avoid some false-positive
-#'   situations when handling the main conda `activate` script in shell
-#'   sessions.
+#' If `TRUE`, don't consider conda to be "active" if only the base
+#' environment is loaded. This is useful to avoid some false-positive
+#' situations when handling the main conda `activate` script in shell
+#' sessions.
 #'
 #' @examples
 #' vars <- c("CONDA_DEFAULT_ENV", "CONDA_SHLVL")

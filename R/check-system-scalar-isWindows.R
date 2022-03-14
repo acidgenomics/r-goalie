@@ -23,7 +23,6 @@ isWindows <- function() {
         return(false("Windows not detected."))
     }
     TRUE
-
 }
 
 

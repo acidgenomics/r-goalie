@@ -24,7 +24,6 @@ isMacOS <- function() {
         return(false("macOS not detected."))
     }
     TRUE
-
 }
 
 

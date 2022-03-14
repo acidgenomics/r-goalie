@@ -25,21 +25,20 @@ NULL
 
 #' @rdname check-scalar-isOrganism
 #' @export
-isOrganism <- function(
-    x,
-    nullOK = FALSE,
-    .xname = getNameInParent(x)
-) {
-    if (isTRUE(nullOK) && is.null(x)) {
-        return(TRUE)
+isOrganism <-
+    function(x,
+             nullOK = FALSE,
+             .xname = getNameInParent(x)) {
+        if (isTRUE(nullOK) && is.null(x)) {
+            return(TRUE)
+        }
+        ok <- isString(x)
+        if (!isTRUE(ok)) {
+            return(ok)
+        }
+        ok <- isMatchingRegex(x = x, pattern = "^[A-Z][a-z]+ [a-z]+$")
+        if (!isTRUE(ok)) {
+            return(ok)
+        }
+        TRUE
     }
-    ok <- isString(x)
-    if (!isTRUE(ok)) {
-        return(ok)
-    }
-    ok <- isMatchingRegex(x = x, pattern = "^[A-Z][a-z]+ [a-z]+$")
-    if (!isTRUE(ok)) {
-        return(ok)
-    }
-    TRUE
-}
