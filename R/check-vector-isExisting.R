@@ -1,8 +1,8 @@
 #' Does the requested input exist in the environment?
 #'
 #' @note [`exists()`][base::exists] only supports `character(1)`, so we are
-#'   exporting [isExisting()] as a convenience function to check multiple
-#'   variables in a single call.
+#' exporting [isExisting()] as a convenience function to check multiple
+#' variables in a single call.
 #'
 #' @name check-vector-isExisting
 #' @note Updated 2019-08-08.
@@ -11,7 +11,7 @@
 #' @inheritParams AcidRoxygen::params
 #'
 #' @param x `character`.
-#'   Variable names to check in `environment`.
+#' Variable names to check in `environment`.
 #'
 #' @seealso `assertive.code::is_existing()`.
 #'
@@ -33,24 +33,23 @@ NULL
 #' @describeIn check-vector-isExisting Vectorized.
 #' @export
 ## Updated 2019-07-15.
-isExisting <- function(
-    x,
-    envir = parent.frame(),
-    inherits = FALSE,
-    .xname = getNameInParent(x)
-)  {
-    ok <- isCharacter(x, .xname = .xname)
-    if (!isTRUE(ok)) {
-        return(ok)
+isExisting <-
+    function(x,
+             envir = parent.frame(),
+             inherits = FALSE,
+             .xname = getNameInParent(x)) {
+        ok <- isCharacter(x, .xname = .xname)
+        if (!isTRUE(ok)) {
+            return(ok)
+        }
+        ok <- bapply(
+            X = x,
+            FUN = exists,
+            envir = envir,
+            inherits = inherits
+        )
+        setCause(ok, false = "non-existing")
     }
-    ok <- bapply(
-        X = x,
-        FUN = exists,
-        envir = envir,
-        inherits = inherits
-    )
-    setCause(ok, false = "non-existing")
-}
 
 
 

@@ -1,7 +1,7 @@
 #' Do the inputs have the same length?
 #'
 #' @note Non-zero lengths for `x` and `y` are required, otherwise the check
-#'   function will intentionally error.
+#' function will intentionally error.
 #'
 #' @name check-scalar-areSameLength
 #' @note Updated 2019-08-10.
@@ -25,25 +25,24 @@ NULL
 
 #' @rdname check-scalar-areSameLength
 #' @export
-areSameLength <- function(
-    x, y,
-    .xname = getNameInParent(x),
-    .yname = getNameInParent(y)
-) {
-    ok <- hasLength(x = x, .xname = .xname)
-    if (!isTRUE(ok)) {
-        return(ok)
+areSameLength <-
+    function(x, y,
+             .xname = getNameInParent(x),
+             .yname = getNameInParent(y)) {
+        ok <- hasLength(x = x, .xname = .xname)
+        if (!isTRUE(ok)) {
+            return(ok)
+        }
+        ok <- hasLength(x = y, .xname = .yname)
+        if (!isTRUE(ok)) {
+            return(ok)
+        }
+        ok <- identical(length(x), length(y))
+        if (!isTRUE(ok)) {
+            return(false(
+                "{.var %s} doesn't have the same length as {.var %s}.",
+                .xname, .yname
+            ))
+        }
+        TRUE
     }
-    ok <- hasLength(x = y, .xname = .yname)
-    if (!isTRUE(ok)) {
-        return(ok)
-    }
-    ok <- identical(length(x), length(y))
-    if (!isTRUE(ok)) {
-        return(false(
-            "{.var %s} doesn't have the same length as {.var %s}.",
-            .xname, .yname
-        ))
-    }
-    TRUE
-}

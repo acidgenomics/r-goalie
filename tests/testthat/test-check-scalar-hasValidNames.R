@@ -7,9 +7,9 @@ test_that("TRUE", {
 
 test_that("FALSE", {
     x <- list(
-        `1`       = 1L,  # can't start with number
-        `foo bar` = 2L,  # no spaces
-        `foo-bar` = 3L   # no hyphens
+        `1`       = 1L, # can't start with number
+        `foo bar` = 2L, # no spaces
+        `foo-bar` = 3L # no hyphens
     )
     ok <- hasValidNames(x)
     expect_false(ok)

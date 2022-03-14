@@ -4,11 +4,12 @@
 #' @note Updated 2020-08-11.
 #'
 #' @param x `character`.
-#'   Named character vector.
-#'   Name corresponds to package name, and value corresponds to minimum version.
+#' Named character vector.
+#' Name corresponds to package name, and value corresponds to minimum version.
+#'
 #' @param op `character(1)`.
-#'   Mathematical operator.
-#'   Defaults to less than or equal to.
+#' Mathematical operator.
+#' Defaults to less than or equal to.
 #'
 #' @examples
 #' ## TRUE ====

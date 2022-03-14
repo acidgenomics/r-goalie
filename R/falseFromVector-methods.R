@@ -22,7 +22,7 @@ NULL
 
 
 ## Updated 2021-08-19.
-`falseFromVector,goalie` <-  # nolint
+`falseFromVector,goalie` <- # nolint
     function(object) {
         cause <- cause(object)
         if (isFALSE(object) && is.null(names(cause))) {

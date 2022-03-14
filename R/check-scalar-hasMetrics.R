@@ -5,10 +5,12 @@
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
+#'
 #' @param x `SummarizedExperiment`.
+#'
 #' @param colData `character`.
-#'   Column names in [`colData()`][SummarizedExperiment::colData] containing
-#'   expected quality control metrics.
+#' Column names in [`colData()`][SummarizedExperiment::colData] containing
+#' expected quality control metrics.
 #'
 #' @examples
 #' if (requireNamespace("SummarizedExperiment", quietly = TRUE)) {
@@ -23,11 +25,9 @@ NULL
 #' @rdname check-scalar-hasMetrics
 #' @export
 hasMetrics <-
-    function(
-        x,
-        colData = c("nCount", "nFeature"),
-        .xname = getNameInParent(x)
-    ) {
+    function(x,
+             colData = c("nCount", "nFeature"),
+             .xname = getNameInParent(x)) {
         assert(
             requireNamespace("SummarizedExperiment", quietly = TRUE),
             is(x, "SummarizedExperiment"),

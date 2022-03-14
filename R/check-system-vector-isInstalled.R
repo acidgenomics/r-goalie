@@ -7,8 +7,8 @@
 #' @inheritParams AcidRoxygen::params
 #'
 #' @param lib `character(1)` or `NULL`.
-#'   R library location.
-#'   If left `NULL`, includes all known library paths defined in `.libPaths`.
+#' R library location.
+#' If left `NULL`, includes all known library paths defined in `.libPaths`.
 #'
 #' @examples
 #' ## TRUE ====

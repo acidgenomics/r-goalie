@@ -7,10 +7,11 @@
 #' @inheritParams AcidRoxygen::params
 #'
 #' @param scale `character(1)`.
-#'   Type of scale, either `"continuous"` or `"discrete"`.
+#' Type of scale, either `"continuous"` or `"discrete"`.
+#'
 #' @param aes `character(1)`.
-#'   Aesthetic mapping, either  `"color"`/`"colour"` or `"fill"`.
-#'   Note that ggplot2 prefers British spelling.
+#' Aesthetic mapping, either  `"color"`/`"colour"` or `"fill"`.
+#' Note that ggplot2 prefers British spelling.
 #'
 #' @examples
 #' library(ggplot2)
@@ -38,37 +39,36 @@ NULL
 #' @rdname check-scalar-isGGScale
 #' @export
 ## Updated 2019-07-15.
-isGGScale <- function(
-    x,
-    scale = c("continuous", "discrete"),
-    aes = c("color", "colour", "fill"),
-    nullOK = FALSE
-) {
-    scale <- match.arg(scale)
-    aes <- match.arg(aes)
-    if (isTRUE(nullOK) && is.null(x)) {
-        return(TRUE)
-    }
-    ## Check that the object inherits all of the required classes.
-    ok <- isAll(
-        x = x,
-        classes = c(
-            paste0("Scale", .capitalize(scale)),
-            "Scale",
-            "ggproto",
-            "gg"
+isGGScale <-
+    function(x,
+             scale = c("continuous", "discrete"),
+             aes = c("color", "colour", "fill"),
+             nullOK = FALSE) {
+        scale <- match.arg(scale)
+        aes <- match.arg(aes)
+        if (isTRUE(nullOK) && is.null(x)) {
+            return(TRUE)
+        }
+        ## Check that the object inherits all of the required classes.
+        ok <- isAll(
+            x = x,
+            classes = c(
+                paste0("Scale", .capitalize(scale)),
+                "Scale",
+                "ggproto",
+                "gg"
+            )
         )
-    )
-    if (!isTRUE(ok)) {
-        return(ok)
+        if (!isTRUE(ok)) {
+            return(ok)
+        }
+        ## Note that this has to match the British spelling (e.g colour).
+        if (identical(aes, "color")) {
+            aes <- "colour"
+        }
+        ok <- identical(x = x[["aesthetics"]], y = aes)
+        if (!isTRUE(ok)) {
+            return(ok)
+        }
+        TRUE
     }
-    ## Note that this has to match the British spelling (e.g colour).
-    if (identical(aes, "color")) {
-        aes <- "colour"
-    }
-    ok <- identical(x = x[["aesthetics"]], y = aes)
-    if (!isTRUE(ok)) {
-        return(ok)
-    }
-    TRUE
-}

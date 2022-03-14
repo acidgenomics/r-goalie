@@ -5,7 +5,7 @@ context("check : scalar : isInt")
 test_that("TRUE", {
     expect_true(isInt(1L))
     expect_true(isInt(1.0))
-    expect_true(isInt(1))  # nolint
+    expect_true(isInt(1)) # nolint
 })
 
 test_that("FALSE : not integer", {

@@ -70,7 +70,7 @@ hasRownames <- function(x, .xname = getNameInParent(x)) {
     ## approach, which will incorrectly return TRUE for subset data frames.
     if (
         is.data.frame(x) &&
-        allAreMatchingRegex(x = rownames, pattern = "^[0-9]+$")
+            allAreMatchingRegex(x = rownames, pattern = "^[0-9]+$")
     ) {
         return(false(
             "{.var %s} has integer row names (soft {.val %s}).",

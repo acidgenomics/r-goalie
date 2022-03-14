@@ -152,7 +152,8 @@ NULL
 #' @noRd
 #'
 #' @param expr `expression`.
-#'   Any R expression.
+#' Any R expression.
+#'
 #' @param ... Passed to [`deparse()`][base::deparse].
 #'
 #' @seealso
@@ -202,20 +203,20 @@ NULL
     if (is.double(x)) {
         x <- ifelse(
             test = is.na(x),
-            yes = "NA",  # NA_real_
+            yes = "NA", # NA_real_
             no = sprintf("%.15e", x)
         )
     } else if (is.complex(x)) {
         x <- ifelse(
             test = is.na(x),
-            yes = "NA",  # NA_complex_
+            yes = "NA", # NA_complex_
             no = sprintf("%.15g+%.15gi", Re(x), Im(x))
         )
     } else {
         x <- as.character(x)
         x <- ifelse(
             test = is.na(x),
-            yes = "NA",  # NA_character_
+            yes = "NA", # NA_character_
             no = sprintf("%s", x)
         )
     }
@@ -237,7 +238,7 @@ NULL
     if (is.array(x)) {
         x <- sprintf(
             fmt = "class '%s %s'",
-            class(x[FALSE]),  # nolint
+            class(x[FALSE]), # nolint
             toString(class(x))
         )
     } else if (is.function(x)) {

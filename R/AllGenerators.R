@@ -4,10 +4,11 @@
 #' @note Updated 2021-02-23.
 #'
 #' @param object `logical`.
+#'
 #' @param cause `character`.
-#'   Corresponding cause attribute for logical `object`.
-#'   Note that `TRUE` values must contain `NA_character_` cause.
-#'   This value should not be named.
+#' Corresponding cause attribute for logical `object`.
+#' Note that `TRUE` values must contain `NA_character_` cause.
+#' This value should not be named.
 #'
 #' @return `goalie`, which extends `logical`.
 #'

@@ -41,7 +41,7 @@ test_that("isScalarCharacter", {
 test_that("isScalarDouble", {
     expect_true(isScalarDouble(0.1))
     expect_true(isScalarDouble(1.0))
-    expect_true(isScalarDouble(1))  # nolint
+    expect_true(isScalarDouble(1)) # nolint
     expect_false(isScalarDouble(c(0.1, 0.2)))
     expect_false(isScalarDouble(1L))
     expect_false(isScalarDouble(numeric()))
@@ -52,13 +52,13 @@ test_that("isScalarInteger", {
     expect_true(isScalarInteger(1L))
     expect_true(isScalarInteger(NA_integer_))
     expect_false(isScalarInteger(NULL))
-    expect_false(isScalarInteger(1))  # nolint
+    expect_false(isScalarInteger(1)) # nolint
     expect_false(isScalarInteger(integer()))
     expect_false(isScalarInteger(c(1L, 2L)))
 })
 
 test_that("isScalarIntegerish", {
-    expect_true(isScalarIntegerish(1))  # nolint
+    expect_true(isScalarIntegerish(1)) # nolint
     expect_true(isScalarIntegerish(1L))
     expect_true(isScalarIntegerish(1.0))
     expect_false(isScalarIntegerish(NULL))

@@ -4,12 +4,14 @@
 #' @note Updated 2021-02-23.
 #'
 #' @param x `symbol`.
-#'   Variable to get the name of.
+#' Variable to get the name of.
+#'
 #' @param escapePercent `logical(1)`.
-#'   If `TRUE`, percent signs are doubled, making the value suitable for use
-#'   with [`sprintf()`][base::sprintf].
+#' If `TRUE`, percent signs are doubled, making the value suitable for use
+#' with [`sprintf()`][base::sprintf].
+#'
 #' @param width `integer(1)`.
-#'   Maximum width of the name.
+#' Maximum width of the name.
 #'
 #' @seealso
 #' - `assertive.base::get_name_in_parent()`.

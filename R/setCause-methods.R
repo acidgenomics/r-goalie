@@ -7,10 +7,12 @@
 #' @note Updated 2021-02-23.
 #'
 #' @inheritParams AcidRoxygen::params
+#'
 #' @param false `character`.
-#'   A character vector to set the cause to, when `x` is `FALSE`.
+#' A character vector to set the cause to, when `x` is `FALSE`.
+#'
 #' @param missing `character`.
-#'   A character vector to set the cause to, when `x` is `NA`.
+#' A character vector to set the cause to, when `x` is `NA`.
 #'
 #' @return `goalie`.
 #'
@@ -32,12 +34,10 @@ NULL
 
 
 ## Updated 2021-02-23.
-`setCause,logical` <-  # nolint
-    function(
-        object,
-        false = "false",
-        missing = "missing"
-    ) {
+`setCause,logical` <- # nolint
+    function(object,
+             false = "false",
+             missing = "missing") {
         ## Early return without cause if TRUE.
         ## Consider wrapping in `unname()` call here.
         if (!anyNA(object) && all(object, na.rm = TRUE)) {
@@ -66,7 +66,7 @@ NULL
 
 
 ## Updated 2021-02-23.
-`setCause,goalie` <-  # nolint
+`setCause,goalie` <- # nolint
     function(object, ...) {
         names <- names(object)
         object <- as.logical(object)
