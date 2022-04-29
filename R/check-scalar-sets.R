@@ -134,9 +134,9 @@ areSetEqual <-
         y <- unique(y)
         if (length(x) != length(y)) {
             return(false(
-                gettext(paste0(
-                    "{.var %s} and {.var %s} have different numbers of elements ",
-                    "(%d versus %d)."
+                gettext(paste(
+                    "{.var %s} and {.var %s} have different numbers",
+                    "of elements (%d versus %d)."
                 )),
                 .xname, .yname, length(x), length(y)
             ))
