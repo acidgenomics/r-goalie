@@ -1,3 +1,9 @@
+# goalie 0.6.1 (2022-04-29)
+
+## Minor changes
+
+- Updated R dependency to 4.2.
+
 # goalie 0.6.0 (2022-03-11)
 
 ## Major changes
