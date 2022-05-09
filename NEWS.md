@@ -1,3 +1,12 @@
+# goalie 0.6.2 (2022-05-09)
+
+## Minor changes
+
+- `validateClasses`: Reworked internal code to use `isAny`, to allowing "or"
+  checking for multiple acceptable class types. Currently needed to update
+  validity checks against `sessionInfo` (utils package) vs. `session_info`
+  (sessioninfo package) in our S4 classes that extend `SummarizedExperiment`.
+
 # goalie 0.6.1 (2022-04-29)
 
 ## Minor changes
