@@ -7,7 +7,7 @@
 #' inside [`metadata()`][S4Vectors::metadata].
 #'
 #' @export
-#' @note Updated 2021-02-23.
+#' @note Updated 2022-05-09.
 #'
 #' @inheritParams AcidRoxygen::params
 #'
@@ -29,28 +29,28 @@
 #' ## TRUE ====
 #' validateClasses(
 #'     object = list(
-#'         a = character(),
-#'         b = integer(),
-#'         c = factor()
+#'         "a" = character(),
+#'         "b" = integer(),
+#'         "c" = factor()
 #'     ),
 #'     expected = list(
-#'         a = "character",
-#'         b = "integer",
-#'         c = "factor"
+#'         "a" = "character",
+#'         "b" = "integer",
+#'         "c" = "factor"
 #'     )
 #' )
 #'
 #' ## FALSE ====
 #' validateClasses(
 #'     object = list(
-#'         a = character(),
-#'         b = integer(),
-#'         c = factor()
+#'         "a" = character(),
+#'         "b" = integer(),
+#'         "c" = factor()
 #'     ),
 #'     expected = list(
-#'         a = "character",
-#'         b = "character",
-#'         c = "character"
+#'         "a" = "character",
+#'         "b" = "character",
+#'         "c" = "character"
 #'     )
 #' )
 validateClasses <- function(object, expected, subset = FALSE) {
@@ -66,14 +66,9 @@ validateClasses <- function(object, expected, subset = FALSE) {
     valid <- mapply(
         slot = names(expected),
         classes = expected,
-        MoreArgs = list(object = object),
+        MoreArgs = list("object" = object),
         FUN = function(slot, classes, object) {
-            intersect <- intersect(classes, class(object[[slot]]))
-            if (identical(length(intersect), 0L)) {
-                FALSE
-            } else {
-                TRUE
-            }
+            isAny(x = object[[slot]], classes = classes)
         },
         SIMPLIFY = TRUE,
         USE.NAMES = TRUE
