@@ -44,6 +44,7 @@ isCharacter(NULL)
 isCharacter(character())
 isCharacter("")
 isCharacter(NA_character_)
+
 }
 \seealso{
 \code{assertive.strings::is_non_missing_nor_empty_character()}.

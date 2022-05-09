@@ -20,7 +20,7 @@
 #'
 #' ## FALSE ====
 #' x <- list(
-#'     "1"       = 1, # can't start with number
+#'     "1" = 1, # can't start with number
 #'     "foo bar" = 2, # no spaces
 #'     "foo-bar" = 3 # no hyphens
 #' )
