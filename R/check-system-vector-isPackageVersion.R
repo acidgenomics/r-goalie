@@ -1,7 +1,7 @@
 #' Is the package installed and a specific version?
 #'
 #' @name check-vector-isPackageVersion
-#' @note Updated 2020-08-11.
+#' @note Updated 2022-05-13.
 #'
 #' @param x `character`.
 #' Named character vector.
@@ -41,18 +41,17 @@ isPackageVersion <- function(x, op = ">=") {
     versions <- package_version(x)
     op <- get(x = op, inherits = TRUE)
     assert(is.primitive(op))
-    ok <- mapply(
-        package = packages,
-        version = versions,
-        MoreArgs = list(op = op),
-        FUN = function(package, version, op) {
+    ok <- as.logical(Map(
+        f = function(package, version, op) {
             if (!isInstalled(package)) {
                 return(FALSE)
             }
             op(e1 = packageVersion(package), e2 = version)
         },
-        SIMPLIFY = TRUE,
-        USE.NAMES = TRUE
-    )
+        package = packages,
+        version = versions,
+        MoreArgs = list("op" = op)
+    ))
+    names(ok) <- names(x)
     setCause(ok, false = "version check fail")
 }
