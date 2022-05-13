@@ -72,6 +72,7 @@ validateClasses <-
             classes = expected,
             MoreArgs = list("object" = object)
         ))
+        names(valid) <- names(expected)
         if (all(valid)) {
             return(TRUE)
         }
