@@ -28,7 +28,7 @@ isCleanSystemLibrary <- function() {
     }
     ## Subset packages in the system library.
     system <- x[which(x[, "LibPath"] == syslib), ]
-    if (any(is.na(system[, "Priority"]))) {
+    if (isTRUE(anyNA(system[, "Priority"]))) {
         return(false("Detected user-installed packages in system library."))
     }
     ## Check for packages built against a different point release.
