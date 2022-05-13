@@ -1,4 +1,4 @@
 test_that("isBiocDevel", {
     ok <- isBiocDevel()
-    expect_is(ok, "logical")
+    expect_type(ok, "logical")
 })
