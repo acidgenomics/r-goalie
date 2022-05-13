@@ -1,24 +1,22 @@
-library(ggplot2)
+skip_if_not_installed("ggplot2")
 
-## nolint start
-color_c <- scale_color_gradient(low = "red", high = "blue")
-color_d <- scale_color_manual(values = c("red", "blue"))
-fill_c <- scale_fill_gradient(low = "red", high = "blue")
-fill_d <- scale_fill_manual(values = c("red", "blue"))
-## nolint end
+cc <- ggplot2::scale_color_gradient(low = "red", high = "blue")
+cd <- ggplot2::scale_color_manual(values = c("red", "blue"))
+fc <- ggplot2::scale_fill_gradient(low = "red", high = "blue")
+fd <- ggplot2::scale_fill_manual(values = c("red", "blue"))
 
 test_that("TRUE", {
-    expect_true(isGGScale(x = color_c, scale = "continuous", aes = "color"))
-    expect_true(isGGScale(x = color_d, scale = "discrete", aes = "color"))
-    expect_true(isGGScale(x = fill_c, scale = "continuous", aes = "fill"))
-    expect_true(isGGScale(x = fill_d, scale = "discrete", aes = "fill"))
+    expect_true(isGGScale(x = cc, scale = "continuous", aes = "color"))
+    expect_true(isGGScale(x = cd, scale = "discrete", aes = "color"))
+    expect_true(isGGScale(x = fc, scale = "continuous", aes = "fill"))
+    expect_true(isGGScale(x = fd, scale = "discrete", aes = "fill"))
 })
 
 test_that("FALSE", {
-    expect_false(isGGScale(x = color_d, scale = "continuous", aes = "color"))
-    expect_false(isGGScale(x = color_c, scale = "discrete", aes = "color"))
-    expect_false(isGGScale(x = fill_d, scale = "continuous", aes = "fill"))
-    expect_false(isGGScale(x = fill_c, scale = "discrete", aes = "fill"))
+    expect_false(isGGScale(x = cd, scale = "continuous", aes = "color"))
+    expect_false(isGGScale(x = cc, scale = "discrete", aes = "color"))
+    expect_false(isGGScale(x = fd, scale = "continuous", aes = "fill"))
+    expect_false(isGGScale(x = fc, scale = "discrete", aes = "fill"))
 })
 
 test_that("nullOK", {
