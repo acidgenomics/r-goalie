@@ -7,7 +7,7 @@
 #' inside [`metadata()`][S4Vectors::metadata].
 #'
 #' @export
-#' @note Updated 2022-05-09.
+#' @note Updated 2022-06-13.
 #'
 #' @inheritParams AcidRoxygen::params
 #'
@@ -53,33 +53,32 @@
 #'         "c" = "character"
 #'     )
 #' )
-validateClasses <- function(object, expected, subset = FALSE) {
-    assert(
-        is(expected, "list"),
-        isFlag(subset)
-    )
-    if (isTRUE(subset)) {
-        assert(isSubset(names(expected), names(object)))
-    } else {
-        assert(areSetEqual(names(expected), names(object)))
+validateClasses <-
+    function(object, expected, subset = FALSE) {
+        assert(
+            is(expected, "list"),
+            isFlag(subset)
+        )
+        if (isTRUE(subset)) {
+            assert(isSubset(names(expected), names(object)))
+        } else {
+            assert(areSetEqual(names(expected), names(object)))
+        }
+        valid <- as.logical(Map(
+            f = function(slot, classes, object) {
+                isAny(x = object[[slot]], classes = classes)
+            },
+            slot = names(expected),
+            classes = expected,
+            MoreArgs = list("object" = object)
+        ))
+        if (all(valid)) {
+            return(TRUE)
+        }
+        paste0(
+            "Class checks failed: ",
+            toString(names(valid)[!valid], width = 200L), ".\n",
+            "If supported, 'updateObject()' ",
+            "may help resolve these issues."
+        )
     }
-    valid <- mapply(
-        slot = names(expected),
-        classes = expected,
-        MoreArgs = list("object" = object),
-        FUN = function(slot, classes, object) {
-            isAny(x = object[[slot]], classes = classes)
-        },
-        SIMPLIFY = TRUE,
-        USE.NAMES = TRUE
-    )
-    if (all(valid)) {
-        return(TRUE)
-    }
-    paste0(
-        "Class checks failed: ",
-        toString(names(valid)[!valid], width = 200L), ".\n",
-        "If supported, 'updateObject()' ",
-        "may help resolve these issues."
-    )
-}
