@@ -25,6 +25,7 @@ Imports:
     methods,
     utils
 Suggests:
+    AcidBase,
     AcidCLI,
     AcidGenerics,
     AcidSingleCell,
