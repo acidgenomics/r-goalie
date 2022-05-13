@@ -25,7 +25,7 @@ Is the package installed and a specific version?
 }}
 
 \note{
-Updated 2020-08-11.
+Updated 2022-05-13.
 }
 \examples{
 ## TRUE ====

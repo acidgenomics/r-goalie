@@ -55,56 +55,62 @@ isExisting <-
 
 #' @describeIn check-vector-isExisting Vectorized.
 #' @export
-## Updated 2019-07-15.
-isNonExisting <- function() {
-    ok <- !isExisting(
-        x = x,
-        envir = envir,
-        inherits = inherits,
-        .xname = .xname
-    )
-    setCause(ok, false = "existing")
-}
-
-formals(isNonExisting) <- formals(isExisting)
+## Updated 2022-05-13.
+isNonExisting <-
+    function(x,
+             envir = parent.frame(),
+             inherits = FALSE,
+             .xname = getNameInParent(x)) {
+        ok <- !isExisting(
+            x = x,
+            envir = envir,
+            inherits = inherits,
+            .xname = .xname
+        )
+        setCause(ok, false = "existing")
+    }
 
 
 
 ## Scalar ======================================================================
 #' @describeIn check-vector-isExisting Scalar.
 #' @export
-## Updated 2019-07-15.
-allAreExisting <- function() {
-    ok <- isExisting(
-        x = x,
-        envir = envir,
-        inherits = inherits,
-        .xname = .xname
-    )
-    if (!all(ok)) {
-        return(falseFromVector(ok))
+## Updated 2022-05-13.
+allAreExisting <-
+    function(x,
+             envir = parent.frame(),
+             inherits = FALSE,
+             .xname = getNameInParent(x)) {
+        ok <- isExisting(
+            x = x,
+            envir = envir,
+            inherits = inherits,
+            .xname = .xname
+        )
+        if (!all(ok)) {
+            return(falseFromVector(ok))
+        }
+        TRUE
     }
-    TRUE
-}
-
-formals(allAreExisting) <- formals(isExisting)
 
 
 
 #' @describeIn check-vector-isExisting Scalar.
 #' @export
-## Updated 2019-07-15.
-allAreNonExisting <- function() {
-    ok <- isNonExisting(
-        x = x,
-        envir = envir,
-        inherits = inherits,
-        .xname = .xname
-    )
-    if (!all(ok)) {
-        return(falseFromVector(ok))
+## Updated 2022-05-13.
+allAreNonExisting <-
+    function(x,
+             envir = parent.frame(),
+             inherits = FALSE,
+             .xname = getNameInParent(x)) {
+        ok <- isNonExisting(
+            x = x,
+            envir = envir,
+            inherits = inherits,
+            .xname = .xname
+        )
+        if (!all(ok)) {
+            return(falseFromVector(ok))
+        }
+        TRUE
     }
-    TRUE
-}
-
-formals(allAreNonExisting) <- formals(isNonExisting)

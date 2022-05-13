@@ -39,7 +39,7 @@ Works for either file or directory paths.
 }}
 
 \note{
-Updated 2021-10-08.
+Updated 2022-05-13.
 }
 \examples{
 ## TRUE ====
