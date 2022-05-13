@@ -1,7 +1,7 @@
 #' Are these valid names?
 #'
 #' @name check-scalar-validNames
-#' @note Updated 2021-03-09.
+#' @note Updated 2022-05-13.
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
@@ -38,13 +38,11 @@ validNames <- function(x, .xname = getNameInParent(x)) {
     if (!isTRUE(ok)) {
         return(ok)
     }
-    valid <- mapply(
+    valid <- as.logical(Map(
+        f = identical,
         x = x,
-        y = make.names(x, unique = TRUE),
-        FUN = identical,
-        SIMPLIFY = TRUE,
-        USE.NAMES = FALSE
-    )
+        y = make.names(x, unique = TRUE)
+    ))
     if (!all(valid)) {
         pos <- which(!valid)
         name <- x[pos]

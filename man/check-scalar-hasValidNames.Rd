@@ -24,16 +24,16 @@ hasValidDimnames(x, .xname = getNameInParent(x))
 Does the input object have syntactically valid names?
 }
 \note{
-Updated 2021-03-09.
+Updated 2022-05-13.
 }
 \examples{
 ## TRUE ====
-x <- list(a = 1, b = 2)
+x <- list("a" = 1L, "b" = 2L)
 names(x)
 hasValidNames(x)
 
 x <- datasets::iris
-lapply(dimnames(x), head)
+lapply(X = dimnames(x), FUN = head)
 hasValidDimnames(x)
 
 ## FALSE ====
@@ -47,7 +47,7 @@ hasValidNames(x)
 
 x <- datasets::mtcars
 # Note the spaces in the row names here.
-lapply(dimnames(x), head)
+lapply(X = dimnames(x), FUN = head)
 hasValidDimnames(x)
 }
 \seealso{

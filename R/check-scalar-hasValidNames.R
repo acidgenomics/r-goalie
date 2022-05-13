@@ -1,7 +1,7 @@
 #' Does the input object have syntactically valid names?
 #'
 #' @name check-scalar-hasValidNames
-#' @note Updated 2021-03-09.
+#' @note Updated 2022-05-13.
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
@@ -10,12 +10,12 @@
 #'
 #' @examples
 #' ## TRUE ====
-#' x <- list(a = 1, b = 2)
+#' x <- list("a" = 1L, "b" = 2L)
 #' names(x)
 #' hasValidNames(x)
 #'
 #' x <- datasets::iris
-#' lapply(dimnames(x), head)
+#' lapply(X = dimnames(x), FUN = head)
 #' hasValidDimnames(x)
 #'
 #' ## FALSE ====
@@ -29,7 +29,7 @@
 #'
 #' x <- datasets::mtcars
 #' # Note the spaces in the row names here.
-#' lapply(dimnames(x), head)
+#' lapply(X = dimnames(x), FUN = head)
 #' hasValidDimnames(x)
 NULL
 
