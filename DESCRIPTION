@@ -43,6 +43,7 @@ Suggests:
     testthat (>= 3.0.0),
     tibble,
     viridis,
+    withr,
     yaml
 Additional_repositories: https://r.acidgenomics.com
 Config/testthat/edition: 3
