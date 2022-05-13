@@ -1,7 +1,7 @@
 #' Is the input in range?
 #'
 #' @name check-vector-isInRange
-#' @note Updated 2019-08-10.
+#' @note Updated 2022-05-13.
 #'
 #' @section Intervals:
 #'
@@ -166,100 +166,115 @@ isInRightOpenRange <-
 
 #' @describeIn check-vector-isInRange Vectorized.
 #' @export
-isNegative <- function(x, .xname = getNameInParent(x)) {
-    isInRange(
-        x = x,
-        lower = -Inf,
-        upper = 0L,
-        closed = c(TRUE, FALSE),
-        .xname = .xname
-    )
-}
+isNegative <-
+    function(x, .xname = getNameInParent(x)) {
+        isInRange(
+            x = x,
+            lower = -Inf,
+            upper = 0L,
+            closed = c(TRUE, FALSE),
+            .xname = .xname
+        )
+    }
 
 
 
 #' @describeIn check-vector-isInRange Vectorized.
 #' @export
-isPositive <- function(x, .xname = getNameInParent(x)) {
-    isInRange(
-        x = x,
-        lower = 0L,
-        upper = Inf,
-        closed = c(FALSE, TRUE),
-        .xname = .xname
-    )
-}
+isPositive <-
+    function(x, .xname = getNameInParent(x)) {
+        isInRange(
+            x = x,
+            lower = 0L,
+            upper = Inf,
+            closed = c(FALSE, TRUE),
+            .xname = .xname
+        )
+    }
 
 
 
 #' @describeIn check-vector-isInRange Vectorized.
 #' @export
-isNonNegative <- function(x, .xname = getNameInParent(x)) {
-    isInRange(
-        x = x,
-        lower = 0L,
-        upper = Inf,
-        closed = c(TRUE, TRUE),
-        .xname = .xname
-    )
-}
+isNonNegative <-
+    function(x, .xname = getNameInParent(x)) {
+        isInRange(
+            x = x,
+            lower = 0L,
+            upper = Inf,
+            closed = c(TRUE, TRUE),
+            .xname = .xname
+        )
+    }
 
 
 
 #' @describeIn check-vector-isInRange Vectorized.
 #' @export
-isNonPositive <- function(x, .xname = getNameInParent(x)) {
-    isInRange(
-        x = x,
-        lower = -Inf,
-        upper = 0L,
-        closed = c(TRUE, TRUE),
-        .xname = .xname
-    )
-}
+isNonPositive <-
+    function(x, .xname = getNameInParent(x)) {
+        isInRange(
+            x = x,
+            lower = -Inf,
+            upper = 0L,
+            closed = c(TRUE, TRUE),
+            .xname = .xname
+        )
+    }
 
 
 
 #' @describeIn check-vector-isInRange Vectorized.
 #' @export
-isPercentage <- function(x, .xname = getNameInParent(x)) {
-    isInRange(
-        x = x,
-        lower = 0L,
-        upper = 100L,
-        closed = c(TRUE, TRUE),
-        .xname = .xname
-    )
-}
+isPercentage <-
+    function(x, .xname = getNameInParent(x)) {
+        isInRange(
+            x = x,
+            lower = 0L,
+            upper = 100L,
+            closed = c(TRUE, TRUE),
+            .xname = .xname
+        )
+    }
 
 
 
 #' @describeIn check-vector-isInRange Vectorized.
 #' @export
-isProportion <- function(x, .xname = getNameInParent(x)) {
-    isInRange(
-        x = x,
-        lower = 0L,
-        upper = 1L,
-        closed = c(TRUE, TRUE),
-        .xname = .xname
-    )
-}
+isProportion <-
+    function(x, .xname = getNameInParent(x)) {
+        isInRange(
+            x = x,
+            lower = 0L,
+            upper = 1L,
+            closed = c(TRUE, TRUE),
+            .xname = .xname
+        )
+    }
 
 
 
 ## Scalar ======================================================================
 #' @describeIn check-vector-isInRange Scalar.
 #' @export
-allAreInRange <- function() {
-    ok <- isInRange(
-        x = x, lower = lower, upper = upper, closed = closed, .xname = .xname
-    )
-    if (!all(ok)) {
-        return(falseFromVector(ok))
+allAreInRange <-
+    function(x,
+             lower,
+             upper,
+             closed,
+             .xname) {
+        ok <- isInRange(
+            x = x,
+            lower = lower,
+            upper = upper,
+            closed = closed,
+            .xname = .xname
+        )
+        if (!all(ok)) {
+            return(falseFromVector(ok))
+        }
+        TRUE
     }
-    TRUE
-}
 
 formals(allAreInRange) <- formals(isInRange)
 
@@ -267,13 +282,22 @@ formals(allAreInRange) <- formals(isInRange)
 
 #' @describeIn check-vector-isInRange Scalar.
 #' @export
-allAreInClosedRange <- function() {
-    ok <- isInClosedRange(x = x, lower = lower, upper = upper, .xname = .xname)
-    if (!all(ok)) {
-        return(falseFromVector(ok))
+allAreInClosedRange <-
+    function(x,
+             lower,
+             upper,
+             .xname) {
+        ok <- isInClosedRange(
+            x = x,
+            lower = lower,
+            upper = upper,
+            .xname = .xname
+        )
+        if (!all(ok)) {
+            return(falseFromVector(ok))
+        }
+        TRUE
     }
-    TRUE
-}
 
 formals(allAreInClosedRange) <- formals(isInClosedRange)
 
@@ -281,13 +305,22 @@ formals(allAreInClosedRange) <- formals(isInClosedRange)
 
 #' @describeIn check-vector-isInRange Scalar.
 #' @export
-allAreInOpenRange <- function() {
-    ok <- isInOpenRange(x = x, lower = lower, upper = upper, .xname = .xname)
-    if (!all(ok)) {
-        return(falseFromVector(ok))
+allAreInOpenRange <-
+    function(x,
+             lower,
+             upper,
+             .xname) {
+        ok <- isInOpenRange(
+            x = x,
+            lower = lower,
+            upper = upper,
+            .xname = .xname
+        )
+        if (!all(ok)) {
+            return(falseFromVector(ok))
+        }
+        TRUE
     }
-    TRUE
-}
 
 formals(allAreInOpenRange) <- formals(isInOpenRange)
 
@@ -295,15 +328,22 @@ formals(allAreInOpenRange) <- formals(isInOpenRange)
 
 #' @describeIn check-vector-isInRange Scalar.
 #' @export
-allAreInLeftOpenRange <- function() {
-    ok <- isInLeftOpenRange(
-        x = x, lower = lower, upper = upper, .xname = .xname
-    )
-    if (!all(ok)) {
-        return(falseFromVector(ok))
+allAreInLeftOpenRange <-
+    function(x,
+             lower,
+             upper,
+             .xname) {
+        ok <- isInLeftOpenRange(
+            x = x,
+            lower = lower,
+            upper = upper,
+            .xname = .xname
+        )
+        if (!all(ok)) {
+            return(falseFromVector(ok))
+        }
+        TRUE
     }
-    TRUE
-}
 
 formals(allAreInLeftOpenRange) <- formals(isInLeftOpenRange)
 
@@ -311,15 +351,20 @@ formals(allAreInLeftOpenRange) <- formals(isInLeftOpenRange)
 
 #' @describeIn check-vector-isInRange Scalar.
 #' @export
-allAreInRightOpenRange <- function() {
-    ok <- isInRightOpenRange(
-        x = x, lower = lower, upper = upper, .xname = .xname
-    )
-    if (!all(ok)) {
-        return(falseFromVector(ok))
+allAreInRightOpenRange <-
+    function(
+        x,
+        lower,
+        upper,
+        .xname) {
+        ok <- isInRightOpenRange(
+            x = x, lower = lower, upper = upper, .xname = .xname
+        )
+        if (!all(ok)) {
+            return(falseFromVector(ok))
+        }
+        TRUE
     }
-    TRUE
-}
 
 formals(allAreInRightOpenRange) <- formals(isInRightOpenRange)
 
@@ -327,82 +372,76 @@ formals(allAreInRightOpenRange) <- formals(isInRightOpenRange)
 
 #' @describeIn check-vector-isInRange Scalar.
 #' @export
-allAreNegative <- function() {
-    ok <- isNegative(x = x, .xname = .xname)
-    if (!all(ok)) {
-        return(falseFromVector(ok))
+allAreNegative <-
+    function(x, .xname = getNameInParent(x)) {
+        ok <- isNegative(x = x, .xname = .xname)
+        if (!all(ok)) {
+            return(falseFromVector(ok))
+        }
+        TRUE
     }
-    TRUE
-}
-
-formals(allAreNegative) <- formals(isNegative)
 
 
 
 #' @describeIn check-vector-isInRange Scalar.
 #' @export
-allArePositive <- function() {
-    ok <- isPositive(x = x, .xname = .xname)
-    if (!all(ok)) {
-        return(falseFromVector(ok))
+allArePositive <-
+    function(x, .xname = getNameInParent(x)) {
+        ok <- isPositive(x = x, .xname = .xname)
+        if (!all(ok)) {
+            return(falseFromVector(ok))
+        }
+        TRUE
     }
-    TRUE
-}
-
-formals(allArePositive) <- formals(isPositive)
 
 
 
 #' @describeIn check-vector-isInRange Scalar.
 #' @export
-allAreNonNegative <- function() {
-    ok <- isNonNegative(x = x, .xname = .xname)
-    if (!all(ok)) {
-        return(falseFromVector(ok))
+allAreNonNegative <-
+    function(x, .xname = getNameInParent(x)) {
+        ok <- isNonNegative(x = x, .xname = .xname)
+        if (!all(ok)) {
+            return(falseFromVector(ok))
+        }
+        TRUE
     }
-    TRUE
-}
-
-formals(allAreNonNegative) <- formals(isNonNegative)
 
 
 
 #' @describeIn check-vector-isInRange Scalar.
 #' @export
-allAreNonPositive <- function() {
-    ok <- isNonPositive(x = x, .xname = .xname)
-    if (!all(ok)) {
-        return(falseFromVector(ok))
+allAreNonPositive <-
+    function(x, .xname = getNameInParent(x)) {
+        ok <- isNonPositive(x = x, .xname = .xname)
+        if (!all(ok)) {
+            return(falseFromVector(ok))
+        }
+        TRUE
     }
-    TRUE
-}
-
-formals(allAreNonPositive) <- formals(isNonPositive)
 
 
 
 #' @describeIn check-vector-isInRange Scalar.
 #' @export
-allArePercentage <- function() {
-    ok <- isPercentage(x = x, .xname = .xname)
-    if (!all(ok)) {
-        return(falseFromVector(ok))
+allArePercentage <-
+    function(x, .xname = getNameInParent(x)) {
+        ok <- isPercentage(x = x, .xname = .xname)
+        if (!all(ok)) {
+            return(falseFromVector(ok))
+        }
+        TRUE
     }
-    TRUE
-}
-
-formals(allArePercentage) <- formals(isPercentage)
 
 
 
 #' @describeIn check-vector-isInRange Scalar.
 #' @export
-allAreProportion <- function() {
-    ok <- isProportion(x = x, .xname = .xname)
-    if (!all(ok)) {
-        return(falseFromVector(ok))
+allAreProportion <-
+    function(x, .xname = getNameInParent(x)) {
+        ok <- isProportion(x = x, .xname = .xname)
+        if (!all(ok)) {
+            return(falseFromVector(ok))
+        }
+        TRUE
     }
-    TRUE
-}
-
-formals(allAreProportion) <- formals(isProportion)
