@@ -1,5 +1,3 @@
-context("engine : bapply")
-
 test_that("bapply", {
     expect_identical(
         object = bapply(

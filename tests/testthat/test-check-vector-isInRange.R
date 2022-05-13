@@ -1,5 +1,3 @@
-context("check : vector : isInRange")
-
 lower <- 0L
 upper <- 1L
 
@@ -40,8 +38,6 @@ test_that("FALSE", {
 
 
 
-context("check : vector : isInOpenRange")
-
 test_that("TRUE", {
     x <- c(0.25, 0.5, 0.75)
 
@@ -65,8 +61,6 @@ test_that("FALSE", {
 })
 
 
-
-context("check : vector : isInLeftOpenRange")
 
 test_that("TRUE", {
     x <- c(0.5, 0.75, 1L)
@@ -92,8 +86,6 @@ test_that("FALSE", {
 
 
 
-context("check : vector : isInRightOpenRange")
-
 test_that("TRUE", {
     x <- c(0L, 0.25, 0.5)
 
@@ -118,8 +110,6 @@ test_that("FALSE", {
 
 
 
-context("check : vector : isNegative")
-
 test_that("TRUE", {
     x <- c(-2L, -1L)
 
@@ -143,8 +133,6 @@ test_that("FALSE", {
 })
 
 
-
-context("check : vector : isPositive")
 
 test_that("TRUE", {
     x <- c(1L, 2L)
@@ -170,8 +158,6 @@ test_that("FALSE", {
 
 
 
-context("check : vector : isNonNegative")
-
 test_that("TRUE", {
     x <- c(0L, 1L)
 
@@ -196,8 +182,6 @@ test_that("FALSE", {
 
 
 
-context("check : vector : isNonPositive")
-
 test_that("TRUE", {
     x <- c(-1L, 0L)
 
@@ -221,8 +205,6 @@ test_that("FALSE", {
 })
 
 
-
-context("check : vector : isPercentage")
 
 test_that("TRUE", {
     x <- c(0L, 25L, 50L, 100L)
@@ -249,8 +231,6 @@ test_that("FALSE", {
 
 
 
-context("check : vector : isProportion")
-
 test_that("TRUE", {
     x <- c(0L, 0.01, 0.1, 1L)
 
@@ -275,8 +255,6 @@ test_that("FALSE", {
 })
 
 
-
-context("check : scalar : allArePercentage")
 
 test_that("FALSE", {
     ok <- allArePercentage(c(100L, 200L))

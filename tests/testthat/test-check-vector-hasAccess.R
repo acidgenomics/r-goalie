@@ -1,5 +1,3 @@
-context("check : vector : hasAccess")
-
 test_that("TRUE", {
     x <- c("~", ".")
     ok <- hasAccess(x, access = "rwx")

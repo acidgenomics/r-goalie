@@ -1,5 +1,3 @@
-context("check : scalar : isHexColorFunction")
-
 test_that("TRUE", {
     expect_true(isHexColorFunction(viridis::viridis))
 })

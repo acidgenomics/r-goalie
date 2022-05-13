@@ -4,8 +4,6 @@ file.create(pass, fail)
 
 
 
-context("check : vector : isCompressedFile")
-
 test_that("TRUE", {
     expect_true(all(isCompressedFile(pass)))
 })
@@ -15,8 +13,6 @@ test_that("FALSE", {
 })
 
 
-
-context("check : scalar : isACompressedFile")
 
 test_that("TRUE", {
     expect_true(isACompressedFile(pass[[1L]]))
@@ -28,8 +24,6 @@ test_that("FALSE", {
 })
 
 
-
-context("check : scalar : allAreCompressedFiles")
 
 test_that("TRUE", {
     expect_true(allAreCompressedFiles(pass))

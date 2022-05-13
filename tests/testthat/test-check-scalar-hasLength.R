@@ -1,5 +1,3 @@
-context("check : scalar : hasLength")
-
 test_that("TRUE", {
     expect_true(hasLength(seq(2L), n = 2L))
     expect_true(hasLength(1L))

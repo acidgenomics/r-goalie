@@ -1,5 +1,3 @@
-context("check : vector : isSystemCommand")
-
 test_that("TRUE", {
     x <- c("cp", "rm")
     expect_true(all(isSystemCommand(x)))

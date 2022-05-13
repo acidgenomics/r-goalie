@@ -1,5 +1,3 @@
-context("check : scalar : isInt")
-
 ## `isInt()` is a scalar short alias of `isIntegerish()`.
 
 test_that("TRUE", {

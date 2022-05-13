@@ -1,5 +1,3 @@
-context("internal")
-
 test_that("toNames complex", {
     object <- complex(length.out = 2L)
     expect_is(object, "complex")
