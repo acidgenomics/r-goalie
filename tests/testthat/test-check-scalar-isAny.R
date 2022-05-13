@@ -1,5 +1,3 @@
-context("check : scalar : isAny")
-
 x <- 1L
 
 test_that("TRUE", {

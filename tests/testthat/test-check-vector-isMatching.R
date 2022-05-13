@@ -1,5 +1,3 @@
-context("check : vector : isMatchingFixed")
-
 test_that("TRUE", {
     x <- c("foobar", "bar")
     pattern <- "bar"
@@ -24,8 +22,6 @@ test_that("FALSE", {
 })
 
 
-
-context("check : vector : isMatchingRegex")
 
 test_that("TRUE", {
     x <- c("foobar", "foo")
@@ -53,8 +49,6 @@ test_that("FALSE", {
 
 
 
-context("check : vector : isNotMatchingFixed")
-
 test_that("TRUE", {
     x <- c("aaa", "bbb")
     pattern <- "ccc"
@@ -80,8 +74,6 @@ test_that("FALSE", {
 })
 
 
-
-context("check : vector : isNotMatchingRegex")
 
 test_that("TRUE", {
     x <- c("foobar", "foo")

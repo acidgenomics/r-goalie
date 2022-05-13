@@ -1,5 +1,3 @@
-context("check : scalar : hasGitHubPAT")
-
 test_that("TRUE", {
     Sys.setenv("GITHUB_PAT" = "XXX")
     x <- hasGitHubPAT()

@@ -1,5 +1,3 @@
-context("check : scalar : hasMetrics")
-
 skip_if_not_installed(pkg = "SummarizedExperiment")
 
 data(

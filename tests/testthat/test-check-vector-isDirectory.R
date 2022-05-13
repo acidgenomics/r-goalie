@@ -1,5 +1,3 @@
-context("check : vector : isDirectory")
-
 test_that("TRUE", {
     ok <- isDirectory(c("~", "."))
     expect_identical(ok, c(`~` = TRUE, `.` = TRUE))
@@ -26,8 +24,6 @@ test_that("FALSE : NULL input", {
 })
 
 
-
-context("check : scalar : isADirectory")
 
 test_that("TRUE", {
     ok <- isADirectory(".")
@@ -60,8 +56,6 @@ test_that("nullOK", {
 })
 
 
-
-context("check : scalar : allAreDirectories")
 
 test_that("TRUE", {
     ok <- allAreDirectories(c("~", "."))

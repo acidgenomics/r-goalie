@@ -1,5 +1,3 @@
-context("check : vector : isInstalled")
-
 test_that("TRUE", {
     x <- c("base", "utils")
     expect_true(all(isInstalled(x)))

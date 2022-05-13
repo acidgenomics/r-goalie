@@ -1,5 +1,3 @@
-context("check : scalar : isAll")
-
 x <- 1L
 
 test_that("TRUE", {

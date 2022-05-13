@@ -1,5 +1,3 @@
-context("check : scalar : hasDuplicates")
-
 test_that("TRUE", {
     expect_true(hasDuplicates(c("a", "a")))
 })
@@ -15,8 +13,6 @@ test_that("FALSE", {
 })
 
 
-
-context("check : scalar : hasNoDuplicates")
 
 test_that("TRUE", {
     expect_true(hasNoDuplicates(c("a", "b")))

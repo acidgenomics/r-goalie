@@ -3,8 +3,6 @@
 
 
 
-context("check : vector : isExisting")
-
 test_that("TRUE", {
     a <- 1L
     b <- 2L
@@ -24,8 +22,6 @@ test_that("FALSE", {
 
 
 
-context("check : scalar : allAreExisting")
-
 test_that("TRUE", {
     a <- 1L
     b <- 2L
@@ -39,8 +35,6 @@ test_that("FALSE", {
 })
 
 
-
-context("check : scalar : allAreNonExisting")
 
 test_that("TRUE", {
     ok <- allAreNonExisting(c("x", "y"))

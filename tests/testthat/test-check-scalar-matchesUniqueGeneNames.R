@@ -1,5 +1,3 @@
-context("check : scalar : matchesUniqueGeneNames")
-
 skip_if_not_installed("SummarizedExperiment")
 
 se <- SummarizedExperiment::SummarizedExperiment(

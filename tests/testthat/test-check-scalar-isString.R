@@ -1,5 +1,3 @@
-context("check : scalar : isString")
-
 test_that("TRUE", {
     expect_true(isString("hello world"))
 })

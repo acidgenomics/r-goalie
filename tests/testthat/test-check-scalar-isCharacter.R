@@ -1,5 +1,3 @@
-context("check : scalar : isCharacter")
-
 test_that("TRUE", {
     expect_true(isCharacter("a"))
     expect_true(isCharacter(letters))

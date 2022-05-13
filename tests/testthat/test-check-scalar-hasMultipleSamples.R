@@ -1,5 +1,3 @@
-context("check : scalar : hasMultipleSamples")
-
 skip_if_not_installed(pkg = "SummarizedExperiment")
 
 test_that("TRUE", {

@@ -1,5 +1,3 @@
-context("check : scalar : isBiocParallelParam")
-
 skip_if_not_installed("BiocParallel")
 
 test_that("TRUE", {

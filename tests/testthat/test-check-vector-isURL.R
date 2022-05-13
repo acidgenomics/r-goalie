@@ -1,5 +1,3 @@
-context("check : vector : isURL")
-
 urls <- c("https://www.r-project.org", "ftp://r-project.org")
 
 test_that("isURL", {

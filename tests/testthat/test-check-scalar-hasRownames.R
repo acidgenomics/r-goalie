@@ -1,5 +1,3 @@
-context("check : scalar : hasRownames")
-
 test_that("hasRownames", {
     skip_if_not_installed("S4Vectors")
     skip_if_not_installed("data.table")

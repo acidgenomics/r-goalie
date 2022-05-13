@@ -1,5 +1,3 @@
-context("engine : setCause")
-
 test_that("FALSE", {
     ok <- setCause(object = FALSE, false = "xxx")
     expect_s4_class(ok, "goalie")

@@ -1,5 +1,3 @@
-context("check : scalar : hasDims")
-
 skip_if_not_installed("datasets")
 
 test_that("hasDims", {
