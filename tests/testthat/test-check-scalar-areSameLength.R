@@ -1,5 +1,3 @@
-context("check : scalar : areSameLength")
-
 test_that("TRUE", {
     x <- list(a = 1L, b = 2L)
     y <- list(c = 3L, d = 4L)

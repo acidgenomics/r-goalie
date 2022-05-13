@@ -1,5 +1,3 @@
-context("check : scalar : hasElements")
-
 test_that("TRUE", {
     expect_true(hasElements("hello", n = 1L))
     expect_true(hasElements(list("a" = 1L, "b" = 2L), n = 2L))
@@ -19,8 +17,6 @@ test_that("FALSE", {
 })
 
 
-
-context("check : scalar : isOfDimension")
 
 skip_if_not_installed("datasets")
 

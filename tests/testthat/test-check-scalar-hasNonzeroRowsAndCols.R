@@ -1,5 +1,3 @@
-context("check : scalar : hasNonzeroRowsAndCols")
-
 test_that("TRUE : matrix", {
     x <- matrix(data = seq_len(4L), nrow = 2L)
     expect_true(hasNonzeroRowsAndCols(x))

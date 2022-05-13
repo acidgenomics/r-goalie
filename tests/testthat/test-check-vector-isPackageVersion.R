@@ -1,5 +1,3 @@
-context("check : vector : isPackageVersion")
-
 test_that("TRUE", {
     x <- isPackageVersion(
         x = c(

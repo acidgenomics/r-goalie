@@ -1,5 +1,3 @@
-context("check : vector : isIntegerish")
-
 test_that("TRUE", {
     expect_identical(
         object = isIntegerish(seq_len(2L)),

@@ -1,5 +1,3 @@
-context("check : scalar : isGGScale")
-
 library(ggplot2)
 
 ## nolint start

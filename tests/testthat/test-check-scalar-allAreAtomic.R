@@ -1,5 +1,3 @@
-context("check : scalar : allAreAtomic")
-
 test_that("TRUE", {
     expect_true(allAreAtomic(data.frame(a = "foo", b = "bar")))
     expect_true(allAreAtomic(list(a = "foo", b = "bar")))

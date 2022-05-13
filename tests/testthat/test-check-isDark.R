@@ -1,5 +1,3 @@
-context("check : scalar : isDark")
-
 test_that("TRUE", {
     opt <- getOption("acid.dark")
     options("acid.dark" = TRUE)

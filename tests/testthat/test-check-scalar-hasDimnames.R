@@ -1,5 +1,3 @@
-context("check : scalar : hasDimnames")
-
 test_that("hasDimnames", {
     skip_if_not_installed("datasets")
     for (fun in list(

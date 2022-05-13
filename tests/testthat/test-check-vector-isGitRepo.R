@@ -1,5 +1,3 @@
-context("check : vector : isGitRepo")
-
 test_that("isGitRepo", {
     x <- getwd()
     ok <- isGitRepo(x)

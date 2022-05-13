@@ -1,5 +1,3 @@
-context("check : scalar : hasNames")
-
 test_that("TRUE", {
     expect_true(hasNames(c("a" = 1L, "b" = 2L)))
     expect_true(hasNames(

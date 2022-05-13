@@ -1,5 +1,3 @@
-context("check : scalar : hasSubset")
-
 skip_if_not_installed(pkg = "SummarizedExperiment")
 
 data(

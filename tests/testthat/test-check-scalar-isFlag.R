@@ -1,5 +1,3 @@
-context("check : scalar : isFlag")
-
 test_that("TRUE", {
     expect_true(isFlag(TRUE))
     expect_true(isFlag(FALSE))

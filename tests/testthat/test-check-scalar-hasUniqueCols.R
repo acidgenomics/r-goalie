@@ -1,5 +1,3 @@
-context("check : scalar : hasUniqueCols")
-
 test_that("TRUE", {
     x <- matrix(data = seq_len(20L), ncol = 2L)
     expect_true(hasUniqueCols(x))

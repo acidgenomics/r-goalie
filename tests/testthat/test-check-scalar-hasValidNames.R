@@ -1,5 +1,3 @@
-context("check : scalar : hasValidNames")
-
 test_that("TRUE", {
     x <- list("a" = 1L, "b" = 2L)
     expect_true(hasValidNames(x))
@@ -32,8 +30,6 @@ test_that("Unset names", {
 })
 
 
-
-context("check : scalar : hasValidDimnames")
 
 skip_if_not_installed("datasets")
 

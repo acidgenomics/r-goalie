@@ -9,8 +9,6 @@ file.symlink(from = from, to = to)
 
 
 
-context("check : vector : isSymlink")
-
 test_that("TRUE", {
     expect_true(all(isSymlink(to)))
 })
@@ -29,8 +27,6 @@ test_that("FALSE : not symlink", {
 })
 
 
-context("check : scalar : isASymlink")
-
 test_that("TRUE", {
     expect_true(isASymlink(to))
 })
@@ -42,8 +38,6 @@ test_that("FALSE", {
 })
 
 
-
-context("check : scalar : allAreSymlinks")
 
 test_that("TRUE", {
     expect_true(allAreSymlinks(c(to, to)))

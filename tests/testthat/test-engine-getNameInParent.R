@@ -1,5 +1,3 @@
-context("engine : getNameInParent")
-
 test_that("getNameInParent", {
     fun <- function(x, .xname = getNameInParent(x)) {
         .xname

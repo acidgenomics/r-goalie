@@ -1,5 +1,3 @@
-context("check : scalar : isCondaEnabled")
-
 test_that("TRUE", {
     vars <- c("CONDA_DEFAULT_ENV", "CONDA_SHLVL")
     Sys.unsetenv(vars)

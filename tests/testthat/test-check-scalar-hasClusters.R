@@ -1,5 +1,3 @@
-context("check : scalar : hasClusters")
-
 test_that("TRUE", {
     skip_if_not_installed(pkg = "AcidSingleCell")
     requireNamespace("AcidSingleCell", quietly = TRUE)

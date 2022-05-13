@@ -1,5 +1,3 @@
-context("goalie")
-
 test_that("Multiple FALSE", {
     ok <- c(FALSE, FALSE)
     cause <- c("AAA", "BBB")

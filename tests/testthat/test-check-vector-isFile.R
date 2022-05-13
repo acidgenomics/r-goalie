@@ -3,8 +3,6 @@ file.create(files)
 
 
 
-context("check : vector : isFile")
-
 test_that("TRUE", {
     expect_true(all(isFile(files)))
 })
@@ -44,8 +42,6 @@ test_that("FALSE : not character", {
 
 
 
-context("check : scalar : isAFile")
-
 test_that("TRUE", {
     expect_true(isAFile(files[[1L]]))
 })
@@ -63,8 +59,6 @@ test_that("nullOK", {
 })
 
 
-
-context("check : scalar : allAreFiles")
 
 test_that("TRUE", {
     expect_true(allAreFiles(files))

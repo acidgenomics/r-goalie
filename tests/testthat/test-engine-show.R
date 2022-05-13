@@ -1,5 +1,3 @@
-context("show")
-
 test_that("scalar", {
     expect_output(
         object = print(isFlag(1L)),

@@ -1,5 +1,3 @@
-context("check : scalar : isOrganism")
-
 test_that("TRUE", {
     expect_true(isOrganism("Homo sapiens"))
     expect_true(isOrganism("Mus musculus"))
