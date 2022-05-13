@@ -3,7 +3,7 @@
 #' Works for either file or directory paths.
 #'
 #' @name check-vector-hasAccess
-#' @note Updated 2021-10-08.
+#' @note Updated 2022-05-13.
 #'
 #' @inherit check return
 #'
@@ -100,13 +100,11 @@ hasAccess <- function(x, access = "r") {
 ## Scalar ======================================================================
 #' @describeIn check-vector-hasAccess Scalar.
 #' @export
-## Updated 2019-07-15.
-allHaveAccess <- function() {
+## Updated 2022-05-13.
+allHaveAccess <- function(x, access = "r") {
     ok <- hasAccess(x = x, access = access)
     if (!all(ok)) {
         return(falseFromVector(ok))
     }
     TRUE
 }
-
-formals(allHaveAccess) <- formals(hasAccess)
