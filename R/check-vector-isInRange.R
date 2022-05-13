@@ -352,11 +352,10 @@ formals(allAreInLeftOpenRange) <- formals(isInLeftOpenRange)
 #' @describeIn check-vector-isInRange Scalar.
 #' @export
 allAreInRightOpenRange <-
-    function(
-        x,
-        lower,
-        upper,
-        .xname) {
+    function(x,
+             lower,
+             upper,
+             .xname) {
         ok <- isInRightOpenRange(
             x = x, lower = lower, upper = upper, .xname = .xname
         )
