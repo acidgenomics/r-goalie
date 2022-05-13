@@ -1,7 +1,7 @@
 #' Set a scalar false goalie check with cause attribute
 #'
 #' @name falseFromVector
-#' @note Updated 2021-08-19.
+#' @note Updated 2022-05-13.
 #'
 #' @inheritParams AcidRoxygen::params
 #'
@@ -21,7 +21,7 @@ NULL
 
 
 
-## Updated 2021-08-19.
+## Updated 2022-05-13.
 `falseFromVector,goalie` <- # nolint
     function(object) {
         cause <- cause(object)
@@ -29,14 +29,12 @@ NULL
             return(object)
         }
         cause <- cause[which(object == FALSE)]
-        x <- mapply(
-            name = names(cause),
-            value = cause,
-            FUN = function(name, value) {
+        x <- Map(
+            f = function(name, value) {
                 paste0(name, ": ", value)
             },
-            SIMPLIFY = FALSE,
-            USE.NAMES = FALSE
+            name = names(cause),
+            value = cause
         )
         x <- unlist(x)
         x <- toString(x, width = 500L)
