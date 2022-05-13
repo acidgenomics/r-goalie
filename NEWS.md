@@ -1,3 +1,10 @@
+# goalie 0.6.3 (2022-05-13)
+
+## Minor changes
+
+- Reworked package to support new lintr and testthat releases.
+- Now using `Map` internally instead of `mapply`, as recommended by lintr.
+
 # goalie 0.6.2 (2022-05-09)
 
 ## Minor changes
