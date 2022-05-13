@@ -162,7 +162,7 @@ Is the input in range?
 }}
 
 \note{
-Updated 2019-08-10.
+Updated 2022-05-13.
 }
 \section{Intervals}{
 

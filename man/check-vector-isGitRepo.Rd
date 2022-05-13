@@ -33,7 +33,7 @@ Does the input contain a Git repository?
 }}
 
 \note{
-Updated 2021-08-19.
+Updated 2022-05-13.
 }
 \examples{
 ## TRUE ====
