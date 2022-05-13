@@ -4,7 +4,14 @@ test_that("hasRownames", {
     skip_if_not_installed("S4Vectors")
     skip_if_not_installed("data.table")
     skip_if_not_installed("tibble")
-    mapply(
+    invisible(Map(
+        f = function(fun, cause) {
+            data <- fun()
+            ok <- hasRownames(data)
+            expect_false(ok)
+            expect_s4_class(ok, "goalie")
+            expect_identical(cause(ok), cause)
+        },
         fun = list(
             data.frame,
             S4Vectors::DataFrame,
@@ -16,16 +23,8 @@ test_that("hasRownames", {
             "{.var data} has {.val NULL} row names.",
             "{.cls data.table} class doesn't support row names.",
             "{.cls tbl_df} class doesn't support row names."
-        ),
-        FUN = function(fun, cause) {
-            data <- fun()
-            ok <- hasRownames(data)
-            expect_false(ok)
-            expect_s4_class(ok, "goalie")
-            expect_identical(cause(ok), cause)
-        },
-        SIMPLIFY = FALSE
-    )
+        )
+    ))
 })
 
 test_that("TRUE", {
