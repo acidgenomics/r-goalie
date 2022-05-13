@@ -1,7 +1,7 @@
 #' Does the input contain a Git repository?
 #'
 #' @name check-vector-isGitRepo
-#' @note Updated 2021-08-19.
+#' @note Updated 2022-05-13.
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
@@ -20,6 +20,11 @@ NULL
 #' @describeIn check-vector-isGitRepo Vectorized.
 #' @export
 isGitRepo <- function(x) {
+    assert(requireNamespace("AcidBase", quietly = TRUE))
+    ok <- isSystemCommand("git")
+    if (!isTRUE(ok)) {
+        return(FALSE)
+    }
     ok <- isCharacter(x)
     if (!all(ok)) {
         return(ok)
@@ -35,26 +40,20 @@ isGitRepo <- function(x) {
             if (isTRUE(ok)) {
                 return(TRUE)
             }
-            ok <- isSystemCommand("git")
-            if (!isTRUE(ok)) {
-                return(FALSE)
-            }
-            wd <- getwd()
-            setwd(x)
             ok <- tryCatch(
                 expr = {
-                    x <- system2(
+                    gitDir <- AcidBase::shell(
                         command = "git",
                         args = c("rev-parse", "--git-dir"),
-                        stdout = TRUE,
-                        stderr = FALSE
+                        print = FALSE,
+                        wd = x,
+                        returnStdout = TRUE
                     )
-                    isADir(x)
+                    isADir(gitDir)
                 },
                 warning = function(w) FALSE,
                 error = function(e) FALSE
             )
-            setwd(wd)
             ok
         }
     )
