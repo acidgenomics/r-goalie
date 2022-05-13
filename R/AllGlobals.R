@@ -1,6 +1,11 @@
-## NOTE Enclosing in `\\b` word boundary here doesn't work.
-## Updated 2021-10-07.
-.cliPattern <- paste0(
+#' CLI extraction pattern
+#'
+#' @note Updated 2022-05-13.
+#' @noRd
+#'
+#' @details
+#' Enclosing in `\\b` word boundary here doesn't work.
+.cliPdattern <- paste0(
     "\\{",
     "\\.[a-z]+\\s",
     "([^\\}]+)",
