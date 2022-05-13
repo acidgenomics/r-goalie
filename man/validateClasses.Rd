@@ -28,7 +28,7 @@ To be used inside S4 \code{\link[methods:validObject]{setValidity()}} call or wi
 inside \code{\link[S4Vectors:Annotated-class]{metadata()}}.
 }
 \note{
-Updated 2022-05-09.
+Updated 2022-06-13.
 }
 \examples{
 ## TRUE ====
