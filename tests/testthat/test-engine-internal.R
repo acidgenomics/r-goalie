@@ -1,6 +1,6 @@
 test_that("toNames complex", {
     object <- complex(length.out = 2L)
-    expect_is(object, "complex")
+    expect_type(object, "complex")
     object <- .toNames(object)
     expect_identical(
         object = object,
