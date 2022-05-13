@@ -5,7 +5,7 @@
 #'
 #' @details
 #' Enclosing in `\\b` word boundary here doesn't work.
-.cliPdattern <- paste0(
+.cliPattern <- paste0(
     "\\{",
     "\\.[a-z]+\\s",
     "([^\\}]+)",
