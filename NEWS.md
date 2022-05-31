@@ -1,3 +1,9 @@
+# goalie 0.6.4 (2022-05-31)
+
+## Minor changes
+
+- `isGitRepo`: Return with classed cause in the event that Git is not installed.
+
 # goalie 0.6.3 (2022-05-13)
 
 ## Minor changes
