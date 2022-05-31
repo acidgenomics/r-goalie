@@ -23,7 +23,7 @@ isGitRepo <- function(x) {
     assert(requireNamespace("AcidBase", quietly = TRUE))
     ok <- isSystemCommand("git")
     if (!isTRUE(ok)) {
-        return(FALSE)
+        return(ok)
     }
     ok <- isCharacter(x)
     if (!all(ok)) {
