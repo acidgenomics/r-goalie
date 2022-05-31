@@ -1,6 +1,8 @@
 #+TITLE: goalie
 #+STARTUP: content
 * Development
+** TODO `isGitRepo` check is failing inside of our Windows VM.
+    I think this is due to Git not being installed? Double check.
 ** TODO Consider adding `nullOK` argument to `isScalar`.
 ** TODO Cause attributes are causing weird extra data frame rendering issues
    inside of R Markdown. Does switching to S4 help with this?
