@@ -589,8 +589,7 @@ Version bump, reflecting start of a new release series.
   package.
 
 [acid genomics]: https://acidgenomics.com/
-[acidbase]: https://acidbase.acidgenomics.com/
-[basejump]: https://basejump.acidgenomics.com/
-[brio]: https://brio.acidgenomics.com/
+[acidbase]: https://r.acidgenomics.com/packages/acidbase/
+[basejump]: https://r.acidgenomics.com/packages/basejump/
 [koopa]: https://koopa.acidgenomics.com/
-[syntactic]: https://syntactic.acidgenomics.com/
+[syntactic]: https://r.acidgenomics.com/packages/syntactic/
