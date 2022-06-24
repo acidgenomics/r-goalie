@@ -44,8 +44,8 @@ R
 ### [Docker][] method
 
 ```sh
-image="acidgenomics/r-goalie"
-workdir="/mnt/work"
+image='acidgenomics/r-packages:goalie'
+workdir='/mnt/work'
 docker pull "$image"
 docker run -it \
     --volume="${PWD}:${workdir}" \
