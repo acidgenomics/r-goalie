@@ -35,7 +35,7 @@ Configure [conda][] to use the [bioconda][] channels.
 
 ```sh
 # Don't install recipe into base environment.
-name="r-goalie"
+name='r-goalie'
 conda create --name="$name" "$name"
 conda activate "$name"
 R
