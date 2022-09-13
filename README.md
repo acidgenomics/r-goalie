@@ -35,7 +35,7 @@ Configure [conda][] to use the [bioconda][] channels.
 
 ```sh
 # Don't install recipe into base environment.
-name="r-goalie"
+name='r-goalie'
 conda create --name="$name" "$name"
 conda activate "$name"
 R
@@ -44,8 +44,8 @@ R
 ### [Docker][] method
 
 ```sh
-image="acidgenomics/r-goalie"
-workdir="/mnt/work"
+image='acidgenomics/r-packages:goalie'
+workdir='/mnt/work'
 docker pull "$image"
 docker run -it \
     --volume="${PWD}:${workdir}" \
