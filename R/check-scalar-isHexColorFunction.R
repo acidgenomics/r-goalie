@@ -4,7 +4,7 @@
 #' hexadecimal color value return.
 #'
 #' @name check-scalar-isHexColorFunction
-#' @note Updated 2019-08-10.
+#' @note Updated 2022-10-18.
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
@@ -38,7 +38,7 @@ isHexColorFunction <-
             return(false("{.var %s} is not a function.", .xname))
         }
         ## Check for `n` formal.
-        ok <- "n" %in% formalArgs(x)
+        ok <- isSubset("n", formalArgs(x))
         if (!isTRUE(ok)) {
             return(false(
                 "{.var %s} doesn't contain an {.arg %s} argument.",

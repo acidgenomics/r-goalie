@@ -43,7 +43,7 @@ areSetEqual(x, y, .xname = getNameInParent(x), .yname = getNameInParent(y))
 Set comparisons
 }
 \note{
-Updated 2019-08-10.
+Updated 2022-10-18.
 }
 \examples{
 ## TRUE ====
