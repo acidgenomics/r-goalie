@@ -46,25 +46,25 @@ Does the string match a pattern?
 }
 \section{Functions}{
 \itemize{
-\item \code{allAreSystemCommands}: Scalar.
+\item \code{allAreSystemCommands()}: Scalar.
 
-\item \code{isMatchingFixed}: Vectorized.
+\item \code{isMatchingFixed()}: Vectorized.
 
-\item \code{isMatchingRegex}: Vectorized.
+\item \code{isMatchingRegex()}: Vectorized.
 
-\item \code{isNotMatchingFixed}: Vectorized.
+\item \code{isNotMatchingFixed()}: Vectorized.
 
-\item \code{isNotMatchingRegex}: Vectorized.
+\item \code{isNotMatchingRegex()}: Vectorized.
 
-\item \code{allAreMatchingFixed}: Scalar.
+\item \code{allAreMatchingFixed()}: Scalar.
 
-\item \code{allAreMatchingRegex}: Scalar.
+\item \code{allAreMatchingRegex()}: Scalar.
 
-\item \code{allAreNotMatchingFixed}: Scalar.
+\item \code{allAreNotMatchingFixed()}: Scalar.
 
-\item \code{allAreNotMatchingRegex}: Scalar.
+\item \code{allAreNotMatchingRegex()}: Scalar.
+
 }}
-
 \note{
 Updated 2019-08-10.
 }

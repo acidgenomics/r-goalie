@@ -19,9 +19,9 @@ Is the R session running inside Docker?
 }
 \section{Functions}{
 \itemize{
-\item \code{skip_on_docker}: Utility function for testthat.
-}}
+\item \code{skip_on_docker()}: Utility function for testthat.
 
+}}
 \note{
 Updated 2021-01-04.
 }

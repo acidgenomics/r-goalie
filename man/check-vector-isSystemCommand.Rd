@@ -22,11 +22,11 @@ Is a system command installed?
 }
 \section{Functions}{
 \itemize{
-\item \code{isSystemCommand}: Vectorized.
+\item \code{isSystemCommand()}: Vectorized.
 
-\item \code{isASystemCommand}: Scalar.
+\item \code{isASystemCommand()}: Scalar.
+
 }}
-
 \note{
 Updated 2020-04-08.
 }

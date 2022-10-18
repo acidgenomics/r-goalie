@@ -28,13 +28,13 @@ Does the input contain a symbolic link?
 }
 \section{Functions}{
 \itemize{
-\item \code{isSymlink}: Vectorized.
+\item \code{isSymlink()}: Vectorized.
 
-\item \code{isASymlink}: Scalar.
+\item \code{isASymlink()}: Scalar.
 
-\item \code{allAreSymlinks}: Scalar.
+\item \code{allAreSymlinks()}: Scalar.
+
 }}
-
 \note{
 Updated 2020-07-24.
 

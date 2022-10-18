@@ -25,11 +25,11 @@ Does the input contain hexadecimal colors?
 }
 \section{Functions}{
 \itemize{
-\item \code{isHexColor}: Vectorized.
+\item \code{isHexColor()}: Vectorized.
 
-\item \code{allAreHexColors}: Scalar.
+\item \code{allAreHexColors()}: Scalar.
+
 }}
-
 \note{
 Updated 2020-04-07.
 }

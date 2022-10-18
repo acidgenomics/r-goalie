@@ -37,19 +37,19 @@ Does the input contain a directory?
 }
 \section{Functions}{
 \itemize{
-\item \code{isDirectory}: Vectorized.
+\item \code{isDirectory()}: Vectorized.
 
-\item \code{isADirectory}: Scalar.
+\item \code{isADirectory()}: Scalar.
 
-\item \code{allAreDirectories}: Scalar.
+\item \code{allAreDirectories()}: Scalar.
 
-\item \code{isDir}: Short alias for \code{\link[=isDirectory]{isDirectory()}}.
+\item \code{isDir()}: Short alias for \code{\link[=isDirectory]{isDirectory()}}.
 
-\item \code{isADir}: Short alias for \code{\link[=isADirectory]{isADirectory()}}.
+\item \code{isADir()}: Short alias for \code{\link[=isADirectory]{isADirectory()}}.
 
-\item \code{allAreDirs}: Short alias for \code{\link[=allAreDirectories]{allAreDirectories()}}.
+\item \code{allAreDirs()}: Short alias for \code{\link[=allAreDirectories]{allAreDirectories()}}.
+
 }}
-
 \note{
 Updated 2020-06-26.
 }

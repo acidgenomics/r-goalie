@@ -28,9 +28,9 @@ Does the input have elements?
 }
 \section{Functions}{
 \itemize{
-\item \code{nElements}: Return the number of elements in object.
-}}
+\item \code{nElements()}: Return the number of elements in object.
 
+}}
 \note{
 Updated 2019-10-04.
 }

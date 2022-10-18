@@ -33,11 +33,11 @@ Works for either file or directory paths.
 }
 \section{Functions}{
 \itemize{
-\item \code{hasAccess}: Vectorized.
+\item \code{hasAccess()}: Vectorized.
 
-\item \code{allHaveAccess}: Scalar.
+\item \code{allHaveAccess()}: Scalar.
+
 }}
-
 \note{
 Updated 2022-05-13.
 }
