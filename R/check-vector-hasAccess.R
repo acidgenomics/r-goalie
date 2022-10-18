@@ -45,7 +45,7 @@ NULL
 ## Vector ======================================================================
 #' @describeIn check-vector-hasAccess Vectorized.
 #' @export
-## Updated 2021-10-08.
+## Updated 2022-09-22.
 hasAccess <- function(x, access = "r") {
     ok <- isCharacter(x)
     if (!isTRUE(ok)) {
@@ -54,6 +54,8 @@ hasAccess <- function(x, access = "r") {
     ## Here we're converting the "rwx" flags to the `file.access()` modes.
     access <- tolower(access)
     access <- strsplit(access, "")[[1L]]
+    ## FIXME Switch to using hasDuplicates here.
+    ## FIXME Switch to using isSubset here too.
     if (anyDuplicated(access) > 0L || !all(access %in% c("r", "w", "x"))) {
         return(false(
             paste0(
