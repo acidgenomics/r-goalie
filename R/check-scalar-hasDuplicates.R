@@ -1,7 +1,7 @@
 #' Does the input have duplicates?
 #'
 #' @name check-scalar-hasDuplicates
-#' @note Updated 2021-10-07.
+#' @note Updated 2022-10-18.
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
@@ -25,9 +25,8 @@ NULL
 #' @rdname check-scalar-hasDuplicates
 #' @export
 hasDuplicates <- function(x, .xname = getNameInParent(x)) {
-    # FIXME Rethink this check here.
-    # FIXME Should we use `anyDuplicated(x) > 0L`?
-    if (!anyDuplicated(x)) {
+    ok <- anyDuplicated(x) == 0L
+    if (!isTRUE(ok)) {
         return(false("{.var %s} has no duplicates.", .xname))
     }
     TRUE
@@ -38,7 +37,8 @@ hasDuplicates <- function(x, .xname = getNameInParent(x)) {
 #' @rdname check-scalar-hasDuplicates
 #' @export
 hasNoDuplicates <- function(x, .xname = getNameInParent(x)) {
-    if (anyDuplicated(x)) {
+    ok <- anyDuplicated(x) > 0L
+    if (!isTRUE(ok)) {
         dupeIndicies <- which(duplicated(x))
         return(false(
             ngettext(
