@@ -54,31 +54,31 @@ How does the input relate to a value?
 }
 \section{Functions}{
 \itemize{
-\item \code{isEqualTo}: Vectorized.
+\item \code{isEqualTo()}: Vectorized.
 
-\item \code{isNotEqualTo}: Vectorized.
+\item \code{isNotEqualTo()}: Vectorized.
 
-\item \code{isGreaterThan}: Vectorized.
+\item \code{isGreaterThan()}: Vectorized.
 
-\item \code{isGreaterThanOrEqualTo}: Vectorized.
+\item \code{isGreaterThanOrEqualTo()}: Vectorized.
 
-\item \code{isLessThan}: Vectorized.
+\item \code{isLessThan()}: Vectorized.
 
-\item \code{isLessThanOrEqualTo}: Vectorized.
+\item \code{isLessThanOrEqualTo()}: Vectorized.
 
-\item \code{allAreEqualTo}: Scalar.
+\item \code{allAreEqualTo()}: Scalar.
 
-\item \code{allAreNotEqualTo}: Scalar.
+\item \code{allAreNotEqualTo()}: Scalar.
 
-\item \code{allAreGreaterThan}: Scalar.
+\item \code{allAreGreaterThan()}: Scalar.
 
-\item \code{allAreGreaterThanOrEqualTo}: Scalar.
+\item \code{allAreGreaterThanOrEqualTo()}: Scalar.
 
-\item \code{allAreLessThan}: Scalar.
+\item \code{allAreLessThan()}: Scalar.
 
-\item \code{allAreLessThanOrEqualTo}: Scalar.
+\item \code{allAreLessThanOrEqualTo()}: Scalar.
+
 }}
-
 \note{
 Updated 2019-08-10.
 }

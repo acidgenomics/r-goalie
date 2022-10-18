@@ -26,13 +26,13 @@ Is the package installed?
 }
 \section{Functions}{
 \itemize{
-\item \code{isInstalled}: Vectorized.
+\item \code{isInstalled()}: Vectorized.
 
-\item \code{allAreInstalled}: Scalar.
+\item \code{allAreInstalled()}: Scalar.
+
 }}
-
 \note{
-Updated 2021-08-22.
+Updated 2022-10-18.
 }
 \examples{
 ## TRUE ====

@@ -58,15 +58,15 @@ Does the requested input exist in the environment?
 }
 \section{Functions}{
 \itemize{
-\item \code{isExisting}: Vectorized.
+\item \code{isExisting()}: Vectorized.
 
-\item \code{isNonExisting}: Vectorized.
+\item \code{isNonExisting()}: Vectorized.
 
-\item \code{allAreExisting}: Scalar.
+\item \code{allAreExisting()}: Scalar.
 
-\item \code{allAreNonExisting}: Scalar.
+\item \code{allAreNonExisting()}: Scalar.
+
 }}
-
 \note{
 \code{\link[base:exists]{exists()}} only supports \code{character(1)}, so we are
 exporting \code{\link[=isExisting]{isExisting()}} as a convenience function to check multiple

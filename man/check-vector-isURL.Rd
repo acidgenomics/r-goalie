@@ -28,13 +28,13 @@ Does the input contain a URL?
 }
 \section{Functions}{
 \itemize{
-\item \code{isURL}: Vectorized.
+\item \code{isURL()}: Vectorized.
 
-\item \code{isAURL}: Scalar. Requires a single URL.
+\item \code{isAURL()}: Scalar. Requires a single URL.
 
-\item \code{allAreURLs}: Scalar. Checks that all strings are URLs.
+\item \code{allAreURLs()}: Scalar. Checks that all strings are URLs.
+
 }}
-
 \note{
 Updated 2021-07-19.
 }

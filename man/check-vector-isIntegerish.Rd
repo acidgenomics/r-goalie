@@ -29,11 +29,11 @@ Check for valid input of either explicit (e.g. \code{1L}) and/or implict
 }
 \section{Functions}{
 \itemize{
-\item \code{isIntegerish}: Vectorized.
+\item \code{isIntegerish()}: Vectorized.
 
-\item \code{isInt}: Scalar.
+\item \code{isInt()}: Scalar.
+
 }}
-
 \note{
 Updated 2019-10-09.
 }

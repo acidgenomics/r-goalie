@@ -25,13 +25,13 @@ Does the input contain a Git repository?
 }
 \section{Functions}{
 \itemize{
-\item \code{isGitRepo}: Vectorized.
+\item \code{isGitRepo()}: Vectorized.
 
-\item \code{isAGitRepo}: Scalar.
+\item \code{isAGitRepo()}: Scalar.
 
-\item \code{allAreGitRepos}: Scalar.
+\item \code{allAreGitRepos()}: Scalar.
+
 }}
-
 \note{
 Updated 2022-05-13.
 }
