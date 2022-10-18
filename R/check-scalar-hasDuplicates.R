@@ -25,6 +25,8 @@ NULL
 #' @rdname check-scalar-hasDuplicates
 #' @export
 hasDuplicates <- function(x, .xname = getNameInParent(x)) {
+    # FIXME Rethink this check here.
+    # FIXME Should we use `anyDuplicated(x) > 0L`?
     if (!anyDuplicated(x)) {
         return(false("{.var %s} has no duplicates.", .xname))
     }
