@@ -59,9 +59,9 @@ Scalar represents a length of 1.
 }
 \section{Functions}{
 \itemize{
-\item \code{isNumber}: Alias for \code{\link[=isScalarNumeric]{isScalarNumeric()}}.
-}}
+\item \code{isNumber()}: Alias for \code{\link[=isScalarNumeric]{isScalarNumeric()}}.
 
+}}
 \note{
 Updated 2021-10-08.
 }

@@ -31,13 +31,13 @@ Currently only performs a simple check, based on file extension match.
 }
 \section{Functions}{
 \itemize{
-\item \code{isCompressedFile}: Vectorized.
+\item \code{isCompressedFile()}: Vectorized.
 
-\item \code{isACompressedFile}: Scalar.
+\item \code{isACompressedFile()}: Scalar.
 
-\item \code{allAreCompressedFiles}: Scalar.
+\item \code{allAreCompressedFiles()}: Scalar.
+
 }}
-
 \note{
 Updated 2019-10-22.
 }

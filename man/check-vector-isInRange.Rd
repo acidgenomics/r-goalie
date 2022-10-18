@@ -116,51 +116,51 @@ Is the input in range?
 }
 \section{Functions}{
 \itemize{
-\item \code{isInRange}: Vectorized.
+\item \code{isInRange()}: Vectorized.
 
-\item \code{isInClosedRange}: Vectorized.
+\item \code{isInClosedRange()}: Vectorized.
 
-\item \code{isInOpenRange}: Vectorized.
+\item \code{isInOpenRange()}: Vectorized.
 
-\item \code{isInLeftOpenRange}: Vectorized.
+\item \code{isInLeftOpenRange()}: Vectorized.
 
-\item \code{isInRightOpenRange}: Vectorized.
+\item \code{isInRightOpenRange()}: Vectorized.
 
-\item \code{isNegative}: Vectorized.
+\item \code{isNegative()}: Vectorized.
 
-\item \code{isPositive}: Vectorized.
+\item \code{isPositive()}: Vectorized.
 
-\item \code{isNonNegative}: Vectorized.
+\item \code{isNonNegative()}: Vectorized.
 
-\item \code{isNonPositive}: Vectorized.
+\item \code{isNonPositive()}: Vectorized.
 
-\item \code{isPercentage}: Vectorized.
+\item \code{isPercentage()}: Vectorized.
 
-\item \code{isProportion}: Vectorized.
+\item \code{isProportion()}: Vectorized.
 
-\item \code{allAreInRange}: Scalar.
+\item \code{allAreInRange()}: Scalar.
 
-\item \code{allAreInClosedRange}: Scalar.
+\item \code{allAreInClosedRange()}: Scalar.
 
-\item \code{allAreInOpenRange}: Scalar.
+\item \code{allAreInOpenRange()}: Scalar.
 
-\item \code{allAreInLeftOpenRange}: Scalar.
+\item \code{allAreInLeftOpenRange()}: Scalar.
 
-\item \code{allAreInRightOpenRange}: Scalar.
+\item \code{allAreInRightOpenRange()}: Scalar.
 
-\item \code{allAreNegative}: Scalar.
+\item \code{allAreNegative()}: Scalar.
 
-\item \code{allArePositive}: Scalar.
+\item \code{allArePositive()}: Scalar.
 
-\item \code{allAreNonNegative}: Scalar.
+\item \code{allAreNonNegative()}: Scalar.
 
-\item \code{allAreNonPositive}: Scalar.
+\item \code{allAreNonPositive()}: Scalar.
 
-\item \code{allArePercentage}: Scalar.
+\item \code{allArePercentage()}: Scalar.
 
-\item \code{allAreProportion}: Scalar.
+\item \code{allAreProportion()}: Scalar.
+
 }}
-
 \note{
 Updated 2022-05-13.
 }

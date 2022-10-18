@@ -28,13 +28,13 @@ Does the input contain a file?
 }
 \section{Functions}{
 \itemize{
-\item \code{isFile}: Vectorized.
+\item \code{isFile()}: Vectorized.
 
-\item \code{isAFile}: Scalar.
+\item \code{isAFile()}: Scalar.
 
-\item \code{allAreFiles}: Scalar.
+\item \code{allAreFiles()}: Scalar.
+
 }}
-
 \note{
 Updated 2020-06-26.
 }

@@ -21,9 +21,9 @@ Is the package installed and a specific version?
 }
 \section{Functions}{
 \itemize{
-\item \code{isPackageVersion}: Vectorized.
-}}
+\item \code{isPackageVersion()}: Vectorized.
 
+}}
 \note{
 Updated 2022-05-13.
 }
