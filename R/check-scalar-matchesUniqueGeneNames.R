@@ -5,7 +5,7 @@
 #' particularly when performing single-cell RNA-seq marker analysis.
 #'
 #' @name check-scalar-matchesUniqueGeneNames
-#' @note Updated 2021-01-04.
+#' @note Updated 2022-10-18.
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
@@ -57,7 +57,7 @@ matchesUniqueGeneNames <- function(x, genes, .xname = getNameInParent(x)) {
         return(false("Gene names are not defined in {.var %s}.", .xname))
     }
     ## Require that the user passed in gene names.
-    ok <- all(genes %in% all)
+    ok <- isSubset(genes, all)
     if (!isTRUE(ok)) {
         setdiff <- setdiff(genes, all)
         return(false(

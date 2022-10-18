@@ -26,7 +26,7 @@ unique (non-amgibuous) symbols. It is designed to be used for gene plotting
 particularly when performing single-cell RNA-seq marker analysis.
 }
 \note{
-Updated 2021-01-04.
+Updated 2022-10-18.
 }
 \examples{
 x <- SummarizedExperiment::SummarizedExperiment(
