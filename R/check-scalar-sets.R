@@ -58,7 +58,7 @@ isSubset <-
         if (!isTRUE(ok)) {
             return(ok)
         }
-        ok <- isSubset(x, y)
+        ok <- all(x %in% y)
         if (!isTRUE(ok)) {
             setdiff <- setdiff(x, y)
             return(false(
