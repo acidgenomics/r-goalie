@@ -1,5 +1,11 @@
 # Release notes
 
+## goalie 0.6.6 (2022-10-18)
+
+New functions:
+
+- `isVSCode`: Check if R session is running inside of Visual Studio Code.
+
 ## goalie 0.6.5 (2022-10-18)
 
 Minor changes:
