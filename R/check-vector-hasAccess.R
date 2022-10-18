@@ -3,7 +3,7 @@
 #' Works for either file or directory paths.
 #'
 #' @name check-vector-hasAccess
-#' @note Updated 2022-05-13.
+#' @note Updated 2022-10-18.
 #'
 #' @inherit check return
 #'
@@ -45,7 +45,7 @@ NULL
 ## Vector ======================================================================
 #' @describeIn check-vector-hasAccess Vectorized.
 #' @export
-## Updated 2022-09-22.
+## Updated 2022-10-18.
 hasAccess <- function(x, access = "r") {
     ok <- isCharacter(x)
     if (!isTRUE(ok)) {
@@ -54,9 +54,7 @@ hasAccess <- function(x, access = "r") {
     ## Here we're converting the "rwx" flags to the `file.access()` modes.
     access <- tolower(access)
     access <- strsplit(access, "")[[1L]]
-    ## FIXME Switch to using hasDuplicates here.
-    ## FIXME Switch to using isSubset here too.
-    if (anyDuplicated(access) > 0L || !all(access %in% c("r", "w", "x"))) {
+    if (!isSubset(access, c("r", "w", "x")) || hasDuplicates(access)) {
         return(false(
             paste0(
                 "{.var %s} is not a valid access code.\n",
@@ -70,7 +68,7 @@ hasAccess <- function(x, access = "r") {
     isWindows <- identical(.Platform[["OS.type"]], "windows")
     ## String file checker that we can loop with `bapply()` below.
     checkAccess <- function(x, access) {
-        if ("r" %in% access) {
+        if (isSubset("r", access)) {
             ok <- identical(unname(file.access(x, mode = 4L)), 0L)
             if (!isTRUE(ok)) {
                 return(FALSE)
@@ -78,13 +76,13 @@ hasAccess <- function(x, access = "r") {
         }
         ## Write/execute permissions can't be checked on Windows.
         if (!isTRUE(isWindows)) {
-            if ("w" %in% access) {
+            if (isSubset("w", access)) {
                 ok <- identical(unname(file.access(x, mode = 2L)), 0L)
                 if (!isTRUE(ok)) {
                     return(FALSE)
                 }
             }
-            if ("x" %in% access) {
+            if (isSubset("x", access)) {
                 ok <- identical(unname(file.access(x, mode = 1L)), 0L)
                 if (!isTRUE(ok)) {
                     return(FALSE)

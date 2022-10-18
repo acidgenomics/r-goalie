@@ -1,7 +1,7 @@
 #' Set comparisons
 #'
 #' @name check-scalar-sets
-#' @note Updated 2019-08-10.
+#' @note Updated 2022-10-18.
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
@@ -58,7 +58,7 @@ isSubset <-
         if (!isTRUE(ok)) {
             return(ok)
         }
-        ok <- all(x %in% y)
+        ok <- isSubset(x, y)
         if (!isTRUE(ok)) {
             setdiff <- setdiff(x, y)
             return(false(

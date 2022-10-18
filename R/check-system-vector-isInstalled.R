@@ -26,7 +26,7 @@ NULL
 isInstalled <- function(x, lib = NULL) {
     pkgs <- .packages(all.available = TRUE, lib.loc = lib)
     # GitHub packages are "owner/repo", so using basename here.
-    ok <- basename(x) %in% pkgs
+    ok <- isSubset(basename(x), pkgs)
     names(ok) <- .toNames(x)
     setCause(ok, false = "not installed")
 }
