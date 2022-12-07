@@ -3,6 +3,7 @@
 * Development
 ** TODO Add a better general `isDuplicate` function.
     Return a more intuitive T/F vector for dupes in a data.frame for example.
+    Consider reworking with our `hasDuplicates` general function.
 ** TODO Consider adding `nullOK` argument to `isScalar`.
 ** TODO Cause attributes are causing weird extra data frame rendering issues
    inside of R Markdown. Does switching to S4 help with this?
