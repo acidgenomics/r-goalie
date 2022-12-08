@@ -58,6 +58,8 @@ isSubset <-
         if (!isTRUE(ok)) {
             return(ok)
         }
+        ## FIXME We need to use the Bioconductor variant here, otherwise we'll
+        ## run into issues with Rle objects.
         ok <- all(x %in% y)
         if (!isTRUE(ok)) {
             setdiff <- setdiff(x, y)
