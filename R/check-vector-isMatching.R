@@ -34,8 +34,8 @@ NULL
 ## Updated 2022-12-14.
 .grepl <- function(x, ...) {
     if (isS4(x)) {
-        assert(requireNamespace("BiocGenerics", quietly = TRUE))
-        grepl <- BiocGenerics::grepl
+        assert(requireNamespace("S4Vectors", quietly = TRUE))
+        grepl <- S4Vectors::grepl
     }
     ok <- grepl(x = x, ...)
     if (isS4(x)) {
