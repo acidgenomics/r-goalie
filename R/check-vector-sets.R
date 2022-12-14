@@ -1,7 +1,12 @@
+## FIXME These aren't scalar, need to rename.
+## FIXME Need to enforce that these are scalar.
+
+
+
 #' Set comparisons
 #'
 #' @name check-scalar-sets
-#' @note Updated 2022-10-18.
+#' @note Updated 2022-12-14.
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
@@ -50,6 +55,9 @@ isSubset <-
              y,
              .xname = getNameInParent(x),
              .yname = getNameInParent(y)) {
+
+        ## FIXME Only allow this for vector objects.
+
         ok <- hasLength(x)
         if (!isTRUE(ok)) {
             return(ok)
@@ -58,8 +66,10 @@ isSubset <-
         if (!isTRUE(ok)) {
             return(ok)
         }
-        ## FIXME We need to use the Bioconductor variant here, otherwise we'll
-        ## run into issues with Rle objects.
+        if (isS4(x) || isS4(y)) {
+            assert(requireNamespace("BiocGenerics", quietly = TRUE))
+            `%in%` <- BiocGenerics::`%in%`
+        }
         ok <- all(x %in% y)
         if (!isTRUE(ok)) {
             setdiff <- setdiff(x, y)
