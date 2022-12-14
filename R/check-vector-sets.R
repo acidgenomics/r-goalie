@@ -50,6 +50,12 @@ isSubset <-
              y,
              .xname = getNameInParent(x),
              .yname = getNameInParent(y)) {
+        if (is.null(x)) {
+            return(false(gettext("{.var %s} is NULL."), .xname))
+        }
+        if (is.null(y)) {
+            return(false(gettext("{.var %s} is NULL."), .yname))
+        }
         assert(isVectorish(x), isVectorish(y))
         ok <- hasLength(x)
         if (!isTRUE(ok)) {
@@ -97,9 +103,14 @@ areDisjointSets <-
              y,
              .xname = getNameInParent(x),
              .yname = getNameInParent(y)) {
-        assert(isVectorish(x), isVectorish(y))
+        if (!is.null(x)) {
+            assert(isVectorish(x, .xname = .xname))
+        }
+        if (!is.null(y)) {
+            assert(isVectorish(y, .xname = .yname))
+        }
         intersect <- intersect(x, y)
-        if (length(intersect) > 0L) {
+        if (hasLength(intersect)) {
             return(false(
                 gettext("{.var %s} and {.var %s} have common elements: %s"),
                 .xname, .yname, toString(intersect, width = 100L)
@@ -117,9 +128,14 @@ areIntersectingSets <-
              y,
              .xname = getNameInParent(x),
              .yname = getNameInParent(y)) {
-        assert(isVectorish(x), isVectorish(y))
+        if (!is.null(x)) {
+            assert(isVectorish(x, .xname = .xname))
+        }
+        if (!is.null(y)) {
+            assert(isVectorish(y, .xname = .yname))
+        }
         intersect <- intersect(x, y)
-        if (identical(length(intersect), 0L)) {
+        if (!hasLength(intersect)) {
             return(false(
                 gettext("{.var %s} and {.var %s} have 0 common elements."),
                 .xname, .yname
@@ -137,7 +153,12 @@ areSetEqual <-
              y,
              .xname = getNameInParent(x),
              .yname = getNameInParent(y)) {
-        assert(isVectorish(x), isVectorish(y))
+        if (!is.null(x)) {
+            assert(isVectorish(x, .xname = .xname))
+        }
+        if (!is.null(y)) {
+            assert(isVectorish(y, .xname = .yname))
+        }
         x <- unique(x)
         y <- unique(y)
         if (length(x) != length(y)) {
