@@ -1,11 +1,7 @@
-## FIXME Need to add isVector check.
-
-
-
 #' How does the input relate to a value?
 #'
 #' @name check-vector-isEqual
-#' @note Updated 2019-08-10.
+#' @note Updated 2022-12-14.
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
@@ -38,6 +34,15 @@ NULL
 #' @describeIn check-vector-isEqual Vectorized.
 #' @export
 isEqualTo <- function(x, y) {
+    if (is(x, "Rle") || is(y, "Rle")) {
+        assert(requireNamespace("S4Vectors", quietly = TRUE))
+        x <- S4Vectors::decode(x)
+        y <- S4Vectors::decode(y)
+    }
+    assert(
+        is.numeric(x), is.numeric(y),
+        is.vector(x), is.vector(y)
+    )
     diff <- abs(x - y)
     ok <- diff <= .tolerance
     names(ok) <- .toNames(x)
@@ -49,6 +54,15 @@ isEqualTo <- function(x, y) {
 #' @describeIn check-vector-isEqual Vectorized.
 #' @export
 isNotEqualTo <- function(x, y) {
+    if (is(x, "Rle") || is(y, "Rle")) {
+        assert(requireNamespace("S4Vectors", quietly = TRUE))
+        x <- S4Vectors::decode(x)
+        y <- S4Vectors::decode(y)
+    }
+    assert(
+        is.numeric(x), is.numeric(y),
+        is.vector(x), is.vector(y)
+    )
     ok <- abs(x - y) > .tolerance
     names(ok) <- .toNames(x)
     setCause(ok, sprintf("equal to %g", y))
@@ -59,6 +73,15 @@ isNotEqualTo <- function(x, y) {
 #' @describeIn check-vector-isEqual Vectorized.
 #' @export
 isGreaterThan <- function(x, y) {
+    if (is(x, "Rle") || is(y, "Rle")) {
+        assert(requireNamespace("S4Vectors", quietly = TRUE))
+        x <- S4Vectors::decode(x)
+        y <- S4Vectors::decode(y)
+    }
+    assert(
+        is.numeric(x), is.numeric(y),
+        is.vector(x), is.vector(y)
+    )
     ok <- x > y
     names(ok) <- .toNames(x)
     setCause(ok, false = paste("less than or equal to", y))
@@ -69,6 +92,15 @@ isGreaterThan <- function(x, y) {
 #' @describeIn check-vector-isEqual Vectorized.
 #' @export
 isGreaterThanOrEqualTo <- function(x, y) {
+    if (is(x, "Rle") || is(y, "Rle")) {
+        assert(requireNamespace("S4Vectors", quietly = TRUE))
+        x <- S4Vectors::decode(x)
+        y <- S4Vectors::decode(y)
+    }
+    assert(
+        is.numeric(x), is.numeric(y),
+        is.vector(x), is.vector(y)
+    )
     ok <- x >= y
     names(ok) <- .toNames(x)
     setCause(ok, false = paste("less than", y))
@@ -79,6 +111,15 @@ isGreaterThanOrEqualTo <- function(x, y) {
 #' @describeIn check-vector-isEqual Vectorized.
 #' @export
 isLessThan <- function(x, y) {
+    if (is(x, "Rle") || is(y, "Rle")) {
+        assert(requireNamespace("S4Vectors", quietly = TRUE))
+        x <- S4Vectors::decode(x)
+        y <- S4Vectors::decode(y)
+    }
+    assert(
+        is.numeric(x), is.numeric(y),
+        is.vector(x), is.vector(y)
+    )
     ok <- x < y
     names(ok) <- .toNames(x)
     setCause(ok, false = paste("greater than or equal to", y))
@@ -89,6 +130,15 @@ isLessThan <- function(x, y) {
 #' @describeIn check-vector-isEqual Vectorized.
 #' @export
 isLessThanOrEqualTo <- function(x, y) {
+    if (is(x, "Rle") || is(y, "Rle")) {
+        assert(requireNamespace("S4Vectors", quietly = TRUE))
+        x <- S4Vectors::decode(x)
+        y <- S4Vectors::decode(y)
+    }
+    assert(
+        is.numeric(x), is.numeric(y),
+        is.vector(x), is.vector(y)
+    )
     ok <- x <= y
     names(ok) <- .toNames(x)
     setCause(ok, false = paste("greater than", y))
