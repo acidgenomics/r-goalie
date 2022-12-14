@@ -10,6 +10,13 @@ test_that("TRUE", {
             "2.000000000000000e+00" = TRUE
         )
     )
+    expect_identical(
+        object = isIntegerish(S4Vectors::Rle(c(1, 2))), # nolint
+        expected = c(
+            "1.000000000000000e+00" = TRUE,
+            "2.000000000000000e+00" = TRUE
+        )
+    )
 })
 
 test_that("FALSE", {
