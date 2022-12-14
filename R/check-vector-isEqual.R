@@ -1,3 +1,7 @@
+## FIXME Need to add isVector check.
+
+
+
 #' How does the input relate to a value?
 #'
 #' @name check-vector-isEqual
