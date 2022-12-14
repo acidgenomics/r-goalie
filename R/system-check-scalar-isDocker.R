@@ -34,17 +34,4 @@ isDocker <-
 
 
 
-#' @describeIn check-scalar-isDocker Utility function for testthat.
-#' @export
-skip_on_docker <- # nolint
-    function() {
-        assert(requireNamespace("testthat", quietly = TRUE))
-        if (!isTRUE(isDocker())) {
-            return(invisible(NULL))
-        }
-        testthat::skip("On Docker")
-    }
-
-
-
 ## nocov end
