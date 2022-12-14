@@ -1,5 +1,21 @@
 # Release notes
 
+## goalie 0.6.7 (2022-12-14)
+
+New functions:
+
+- `isIntegerish`: New check function that will also return true for vector-like
+  classes, including `factor` and S4 `Rle`.
+
+Minor changes:
+
+- `hasRownames`: Should now return `TRUE` for `data.frame` with integer row
+  names out of order. This is useful for `matrix` export method defined in
+  pipette package.
+- Added support for S4 `Rle` class handling in `isSubset`, `areDisjointSets`,
+  `areIntersectingSets`, `areSetEqual`.
+- Removed unused `skip_on_docker` test function.
+
 ## goalie 0.6.6 (2022-10-18)
 
 New functions:

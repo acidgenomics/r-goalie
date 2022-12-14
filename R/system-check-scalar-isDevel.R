@@ -19,7 +19,6 @@ NULL
 #' @export
 isDevel <- function() {
     ok <- isMatchingFixed(x = R.version.string, pattern = "development")
-
     if (!isTRUE(ok)) {
         return(false(
             "Not R Devel: {.val %s}.",
