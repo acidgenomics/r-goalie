@@ -1,13 +1,9 @@
-## FIXME Need to add isVector check.
-
-
-
 #' Check file system access rights
 #'
 #' Works for either file or directory paths.
 #'
 #' @name check-vector-hasAccess
-#' @note Updated 2022-10-18.
+#' @note Updated 2022-12-14.
 #'
 #' @inherit check return
 #'
@@ -49,7 +45,7 @@ NULL
 ## Vector ======================================================================
 #' @describeIn check-vector-hasAccess Vectorized.
 #' @export
-## Updated 2022-10-18.
+## Updated 2022-12-14.
 hasAccess <- function(x, access = "r") {
     ok <- isCharacter(x)
     if (!isTRUE(ok)) {
@@ -69,7 +65,6 @@ hasAccess <- function(x, access = "r") {
             "r", "w", "x"
         ))
     }
-    isWindows <- identical(.Platform[["OS.type"]], "windows")
     ## String file checker that we can loop with `bapply()` below.
     checkAccess <- function(x, access) {
         if (isSubset("r", access)) {
@@ -79,7 +74,7 @@ hasAccess <- function(x, access = "r") {
             }
         }
         ## Write/execute permissions can't be checked on Windows.
-        if (!isTRUE(isWindows)) {
+        if (!isWindows()) {
             if (isSubset("w", access)) {
                 ok <- identical(unname(file.access(x, mode = 2L)), 0L)
                 if (!isTRUE(ok)) {
