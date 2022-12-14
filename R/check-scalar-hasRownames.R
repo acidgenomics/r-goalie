@@ -1,3 +1,7 @@
+## FIXME Improve this check to look for integer row names out of order.
+
+
+
 #' Does the input have row names?
 #'
 #' @section data.frame:
@@ -8,7 +12,7 @@
 #' rows.
 #'
 #' @name check-scalar-hasRownames
-#' @note Updated 2019-12-09.
+#' @note Updated 2022-12-14.
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
