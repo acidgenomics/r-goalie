@@ -1,7 +1,3 @@
-## FIXME This is a vector check.
-
-
-
 #' Does the input contain a (non-empty) character vector?
 #'
 #' @section Enforced parameters:
