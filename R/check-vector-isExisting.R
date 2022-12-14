@@ -1,7 +1,3 @@
-## FIXME Need to add isVector check.
-
-
-
 #' Does the requested input exist in the environment?
 #'
 #' @note [`exists()`][base::exists] only supports `character(1)`, so we are
@@ -9,7 +5,7 @@
 #' variables in a single call.
 #'
 #' @name check-vector-isExisting
-#' @note Updated 2019-08-08.
+#' @note Updated 2022-12-14.
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
@@ -36,16 +32,13 @@ NULL
 ## Vector ======================================================================
 #' @describeIn check-vector-isExisting Vectorized.
 #' @export
-## Updated 2019-07-15.
+## Updated 2022-12-14.
 isExisting <-
     function(x,
              envir = parent.frame(),
              inherits = FALSE,
              .xname = getNameInParent(x)) {
-        ok <- isCharacter(x, .xname = .xname)
-        if (!isTRUE(ok)) {
-            return(ok)
-        }
+        assert(isCharacter(x, .xname = .xname))
         ok <- bapply(
             X = x,
             FUN = exists,
