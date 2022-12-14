@@ -1,7 +1,3 @@
-## FIXME Improve this check to look for integer row names out of order.
-
-
-
 #' Does the input have row names?
 #'
 #' @section data.frame:
@@ -76,10 +72,14 @@ hasRownames <- function(x, .xname = getNameInParent(x)) {
         is.data.frame(x) &&
             allAreMatchingRegex(x = rownames, pattern = "^[0-9]+$")
     ) {
-        return(false(
-            "{.var %s} has integer row names (soft {.val %s}).",
-            .xname, "NULL"
-        ))
+        ok <- !identical(as.integer(rownames(x)), seq_len(nrow(x)))
+        if (!isTRUE(ok)) {
+            return(false(
+                "{.var %s} has integer row names (soft {.val %s}).",
+                .xname, "NULL"
+            ))
+        }
+        return(TRUE)
     }
     ## Other classes (e.g. matrix, DataFrame) do support NULL row names.
     ok <- !is.null(rownames)
