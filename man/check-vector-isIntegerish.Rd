@@ -35,12 +35,13 @@ Check for valid input of either explicit (e.g. \code{1L}) and/or implict
 
 }}
 \note{
-Updated 2019-10-09.
+Updated 2022-12-14.
 }
 \examples{
 ## TRUE ====
 isIntegerish(seq_len(2L))
 isIntegerish(c(1, 2))
+isIntegerish(S4Vectors::Rle(c(1, 2)))
 
 ## FALSE ====
 isIntegerish(0.1)
