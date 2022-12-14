@@ -1,11 +1,7 @@
-## FIXME Need to add isVector check.
-
-
-
 #' Is the input in range?
 #'
 #' @name check-vector-isInRange
-#' @note Updated 2022-05-13.
+#' @note Updated 2022-12-14.
 #'
 #' @section Intervals:
 #'
@@ -76,15 +72,18 @@ isInRange <-
              upper = Inf,
              closed = c(TRUE, TRUE),
              .xname = getNameInParent(x)) {
+        if (is(x, "Rle")) {
+            assert(requireNamespace("S4Vectors", quietly = TRUE))
+            x <- S4Vectors::decode(x)
+        }
         assert(
+            is.numeric(x),
+            is.vector(x),
+            !anyNA(x),
             is.numeric(lower) && !is.na(lower),
             is.numeric(upper) && !is.na(upper),
             is.logical(closed) && identical(length(closed), 2L)
         )
-        ok <- is.numeric(x) && !anyNA(x)
-        if (!isTRUE(ok)) {
-            return(false("{.var %s} is not (non-NA) numeric.", .xname))
-        }
         tooLow <- (if (closed[[1L]]) `<` else `<=`)(x, lower)
         tooHigh <- (if (closed[[2L]]) `>` else `>=`)(x, upper)
         ok <- rep.int(TRUE, length(x))
@@ -361,7 +360,10 @@ allAreInRightOpenRange <-
              upper,
              .xname) {
         ok <- isInRightOpenRange(
-            x = x, lower = lower, upper = upper, .xname = .xname
+            x = x,
+            lower = lower,
+            upper = upper,
+            .xname = .xname
         )
         if (!all(ok)) {
             return(falseFromVector(ok))
