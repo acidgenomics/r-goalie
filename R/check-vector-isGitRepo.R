@@ -1,11 +1,7 @@
-## FIXME Need to add isVector check.
-
-
-
 #' Does the input contain a Git repository?
 #'
 #' @name check-vector-isGitRepo
-#' @note Updated 2022-05-13.
+#' @note Updated 2022-12-14.
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
@@ -24,15 +20,15 @@ NULL
 #' @describeIn check-vector-isGitRepo Vectorized.
 #' @export
 isGitRepo <- function(x) {
-    assert(requireNamespace("AcidBase", quietly = TRUE))
-    ok <- isSystemCommand("git")
-    if (!isTRUE(ok)) {
-        return(ok)
-    }
     ok <- isCharacter(x)
     if (!all(ok)) {
         return(ok)
     }
+    ok <- isSystemCommand("git")
+    if (!isTRUE(ok)) {
+        return(ok)
+    }
+    assert(requireNamespace("AcidBase", quietly = TRUE))
     ok <- bapply(
         X = x,
         FUN = function(x) {
