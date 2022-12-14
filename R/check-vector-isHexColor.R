@@ -1,7 +1,3 @@
-## FIXME Need to add isVector check.
-
-
-
 #' Does the input contain hexadecimal colors?
 #'
 #' @name check-vector-isHexColor
