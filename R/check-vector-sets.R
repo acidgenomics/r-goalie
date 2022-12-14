@@ -60,8 +60,8 @@ isSubset <-
             return(ok)
         }
         if (isS4(x) || isS4(y)) {
-            assert(requireNamespace("BiocGenerics", quietly = TRUE))
-            `%in%` <- BiocGenerics::`%in%` # nolint
+            assert(requireNamespace("S4Vectors", quietly = TRUE))
+            `%in%` <- S4Vectors::`%in%` # nolint
         }
         ok <- all(x %in% y)
         if (!isTRUE(ok)) {
