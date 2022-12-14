@@ -61,7 +61,7 @@ isSubset <-
         }
         if (isS4(x) || isS4(y)) {
             assert(requireNamespace("BiocGenerics", quietly = TRUE))
-            `%in%` <- BiocGenerics::`%in%`
+            `%in%` <- BiocGenerics::`%in%` # nolint
         }
         ok <- all(x %in% y)
         if (!isTRUE(ok)) {
