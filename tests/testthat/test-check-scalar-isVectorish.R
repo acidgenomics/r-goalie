@@ -1,0 +1,10 @@
+test_that("isVectorish", {
+    expect_true(isVectorish(character()))
+    expect_true(isVectorish(factor()))
+    expect_true(isVectorish(integer()))
+    expect_true(isVectorish(logical()))
+    expect_true(isVectorish(S4Vectors::Rle()))
+    expect_false(isVectorish(data.frame()))
+    expect_false(isVectorish(matrix()))
+    expect_false(isVectorish(S4Vectors::DataFrame()))
+})
