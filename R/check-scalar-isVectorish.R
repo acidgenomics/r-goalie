@@ -1,10 +1,8 @@
-## FIXME This should return TRUE for Rle.
-## FIXME This should return TRUE for factor.
-## FIXME This should return FALSE for matrix.
-
-
-
 #' Is the input vector(ish)?
+#'
+#' @details
+#' Intentionally returns `TRUE` for some other vector-like classes, including
+#' `factor`, and `Rle`.
 #'
 #' @name check-scalar-isVectorish
 #' @note Updated 2022-12-14.
@@ -14,14 +12,16 @@
 #'
 #' @examples
 #' ## TRUE ====
-#' isVectorish(c("aaa", "bbb", "ccc"))
-#' isVectorish(c(1L, 2L, 3L))
-#' isVectorish(c(TRUE, FALSE))
+#' isVectorish(character())
+#' isVectorish(factor())
+#' isVectorish(integer())
+#' isVectorish(logical())
+#' isVectorish(S4Vectors::Rle())
 #'
 #' ## FALSE ====
-#' isVectorish(character())
-#' isVectorish(matrix())
 #' isVectorish(data.frame())
+#' isVectorish(matrix())
+#' isVectorish(S4Vectors::DataFrame())
 NULL
 
 
@@ -35,12 +35,12 @@ isVectorish <-
         if (isTRUE(nullOK) && is.null(x)) {
             return(TRUE)
         }
+        if (is.factor(x) || is(x, "Rle")) {
+            return(TRUE)
+        }
         ok <- is.vector(x)
         if (!isTRUE(ok)) {
             return(false("{.var %s} is not a vector.", .xname))
         }
-
-
-
         TRUE
     }

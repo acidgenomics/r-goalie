@@ -1,7 +1,3 @@
-## FIXME Need to add isVector check.
-
-
-
 #' Set comparisons
 #'
 #' @name check-scalar-sets
@@ -54,9 +50,7 @@ isSubset <-
              y,
              .xname = getNameInParent(x),
              .yname = getNameInParent(y)) {
-
-        ## FIXME Only allow this for vector objects.
-
+        assert(isVectorish(x), isVectorish(y))
         ok <- hasLength(x)
         if (!isTRUE(ok)) {
             return(ok)
@@ -103,6 +97,7 @@ areDisjointSets <-
              y,
              .xname = getNameInParent(x),
              .yname = getNameInParent(y)) {
+        assert(isVectorish(x), isVectorish(y))
         intersect <- intersect(x, y)
         if (length(intersect) > 0L) {
             return(false(
@@ -122,6 +117,7 @@ areIntersectingSets <-
              y,
              .xname = getNameInParent(x),
              .yname = getNameInParent(y)) {
+        assert(isVectorish(x), isVectorish(y))
         intersect <- intersect(x, y)
         if (identical(length(intersect), 0L)) {
             return(false(
@@ -141,6 +137,7 @@ areSetEqual <-
              y,
              .xname = getNameInParent(x),
              .yname = getNameInParent(y)) {
+        assert(isVectorish(x), isVectorish(y))
         x <- unique(x)
         y <- unique(y)
         if (length(x) != length(y)) {
