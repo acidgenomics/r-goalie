@@ -24,7 +24,7 @@ If set to \code{TRUE}, \code{x} may also be \code{NULL}.}
 Does the input contain a (non-empty) character string?
 }
 \note{
-Updated 2019-08-10.
+Updated 2022-12-14.
 }
 \examples{
 ## TRUE ====

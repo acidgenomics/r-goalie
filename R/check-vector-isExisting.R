@@ -1,3 +1,7 @@
+## FIXME Need to add isVector check.
+
+
+
 #' Does the requested input exist in the environment?
 #'
 #' @note [`exists()`][base::exists] only supports `character(1)`, so we are

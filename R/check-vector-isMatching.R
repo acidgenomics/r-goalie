@@ -1,3 +1,7 @@
+## FIXME Need to add isVector check.
+
+
+
 #' Does the string match a pattern?
 #'
 #' @name check-vector-isMatching
