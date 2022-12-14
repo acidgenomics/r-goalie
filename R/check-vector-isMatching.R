@@ -1,11 +1,7 @@
-## FIXME Need to add isVector check.
-
-
-
 #' Does the string match a pattern?
 #'
 #' @name check-vector-isMatching
-#' @note Updated 2019-08-10.
+#' @note Updated 2022-12-14.
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
@@ -33,17 +29,35 @@ NULL
 
 
 
+## grep matching that dynamically handles S4 objects, if necessary.
+## Updated 2022-12-14.
+.grepl <- function(x, ...) {
+    if (isS4(x)) {
+        assert(requireNamespace("BiocGenerics", quietly = TRUE))
+        grepl <- BiocGenerics::grepl
+    }
+    ok <- grepl(x = x, ...)
+    if (isS4(x)) {
+        ok <- as.logical(ok)
+        names(ok) <- .toNames(as.character(x))
+    } else {
+        names(ok) <- .toNames(x)
+    }
+    ok
+}
+
+
+
 ## Vector ======================================================================
 #' @describeIn check-vector-isMatching Vectorized.
 #' @export
 isMatchingFixed <- function(x, pattern) {
-    ok <- grepl(
+    ok <- .grepl(
         pattern = pattern,
         x = x,
         ignore.case = FALSE,
         fixed = TRUE
     )
-    names(ok) <- .toNames(x)
     setCause(ok, false = gettextf("doesn't match {.var %s}", pattern))
 }
 
@@ -52,13 +66,12 @@ isMatchingFixed <- function(x, pattern) {
 #' @describeIn check-vector-isMatching Vectorized.
 #' @export
 isMatchingRegex <- function(x, pattern) {
-    ok <- grepl(
+    ok <- .grepl(
         pattern = pattern,
         x = x,
         ignore.case = FALSE,
         fixed = FALSE
     )
-    names(ok) <- .toNames(x)
     setCause(ok, false = gettextf("doesn't match {.var %s}", pattern))
 }
 
@@ -67,13 +80,12 @@ isMatchingRegex <- function(x, pattern) {
 #' @describeIn check-vector-isMatching Vectorized.
 #' @export
 isNotMatchingFixed <- function(x, pattern) {
-    ok <- !grepl(
+    ok <- !.grepl(
         pattern = pattern,
         x = x,
         ignore.case = FALSE,
         fixed = TRUE
     )
-    names(ok) <- .toNames(x)
     setCause(ok, false = gettextf("matches {.var %s}", pattern))
 }
 
@@ -82,13 +94,12 @@ isNotMatchingFixed <- function(x, pattern) {
 #' @describeIn check-vector-isMatching Vectorized.
 #' @export
 isNotMatchingRegex <- function(x, pattern) {
-    ok <- !grepl(
+    ok <- !.grepl(
         pattern = pattern,
         x = x,
         ignore.case = FALSE,
         fixed = FALSE
     )
-    names(ok) <- .toNames(x)
     setCause(ok, false = gettextf("matches {.var %s}", pattern))
 }
 
