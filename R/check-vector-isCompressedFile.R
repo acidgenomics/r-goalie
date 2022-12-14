@@ -1,14 +1,10 @@
-## FIXME Need to add isVector check.
-
-
-
 #' Does the input contain a compressed file?
 #'
 #' @details
 #' Currently only performs a simple check, based on file extension match.
 #'
 #' @name check-vector-isCompressedFile
-#' @note Updated 2019-10-22.
+#' @note Updated 2022-12-14.
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
