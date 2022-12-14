@@ -1,5 +1,3 @@
-## FIXME Need to add coverage for Rle.
-
 lower <- 0L
 upper <- 1L
 
@@ -13,6 +11,8 @@ test_that("isInClosedRange : TRUE", {
     expect_true(all(ok))
     ok <- allAreInRange(x, lower = lower, upper = upper)
     expect_true(ok)
+    ok <- isInRange(x = S4Vectors::Rle(x), lower = lower, upper = upper)
+    expect_true(all(ok))
 })
 
 test_that("isInClosedRange : FALSE", {
