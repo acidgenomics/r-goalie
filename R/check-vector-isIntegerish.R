@@ -1,3 +1,7 @@
+## FIXME Need to add isVector check.
+
+
+
 #' Is the input integer(ish)?
 #'
 #' Check for valid input of either explicit (e.g. `1L`) and/or implict

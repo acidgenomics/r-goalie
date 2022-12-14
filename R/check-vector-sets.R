@@ -1,5 +1,4 @@
-## FIXME These aren't scalar, need to rename.
-## FIXME Need to enforce that these are scalar.
+## FIXME Need to add isVector check.
 
 
 

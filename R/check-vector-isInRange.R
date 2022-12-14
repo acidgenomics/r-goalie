@@ -1,3 +1,7 @@
+## FIXME Need to add isVector check.
+
+
+
 #' Is the input in range?
 #'
 #' @name check-vector-isInRange

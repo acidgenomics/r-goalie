@@ -19,6 +19,12 @@ reference:
   - title: Vectorized checks
     contents:
       - starts_with("check-vector-")
+  - title: System scalar checks
+    contents:
+      - starts_with("system-check-scalar-")
+  - title: System vectorized checks
+    contents:
+      - starts_with("system-check-vector-")
   - title: Assert check engine
     contents:
       - "assert"

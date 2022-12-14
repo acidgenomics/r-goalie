@@ -1,3 +1,7 @@
+## FIXME Need to add isVector check.
+
+
+
 #' Check file system access rights
 #'
 #' Works for either file or directory paths.

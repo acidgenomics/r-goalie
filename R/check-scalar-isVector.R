@@ -1,6 +1,6 @@
-#' Does the input contain a (non-empty) character string?
+#' Does the input contain a (non-empty) vector?
 #'
-#' @name check-scalar-isString
+#' @name check-scalar-isVector
 #' @note Updated 2022-12-14.
 #'
 #' @inherit check
@@ -8,36 +8,36 @@
 #'
 #' @examples
 #' ## TRUE ====
-#' isString("hello")
+#' isVector(c("aaa", "bbb", "ccc"))
+#' isVector(c(1L, 2L, 3L))
+#' isVector(c(TRUE, FALSE))
 #'
 #' ## FALSE ====
-#' isString(1)
-#' isString("")
-#' isString(NA_character_)
+#' isVector(character())
+#' isVector(matrix())
+#' isVector(data.frame())
+#' isVector("")
+#' isVector(NA)
 NULL
 
 
 
-#' @rdname check-scalar-isString
+#' @rdname check-scalar-isVector
 #' @export
-isString <-
+isVector <-
     function(x,
              nullOK = FALSE,
              .xname = getNameInParent(x)) {
         if (isTRUE(nullOK) && is.null(x)) {
             return(TRUE)
         }
-        ok <- isScalar(x)
+        ok <- is.vector(x)
         if (!isTRUE(ok)) {
-            return(ok)
+            return(false("{.var %s} is not a vector.", .xname))
         }
-        ok <- is.character(x)
+        ok <- !all(is.na(x))
         if (!isTRUE(ok)) {
-            return(false("{.var %s} is not character.", .xname))
-        }
-        ok <- !is.na(x)
-        if (!isTRUE(ok)) {
-            return(false("{.var %s} is {.val %s}.", .xname, "NA"))
+            return(false("{.var %s} contains only {.val %s}.", .xname, "NA"))
         }
         ok <- !identical(x, "")
         if (!isTRUE(ok)) {

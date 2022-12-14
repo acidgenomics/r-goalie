@@ -1,3 +1,7 @@
+## FIXME Need to add isVector check.
+
+
+
 #' Does the input contain a URL?
 #'
 #' @name check-vector-isURL
