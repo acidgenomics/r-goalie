@@ -36,12 +36,12 @@ Does the input contain a symbolic link?
 
 }}
 \note{
-Updated 2020-07-24.
+Updated 2022-12-14.
 
 Supported on Linux and macOS but not Windows.
 }
 \examples{
-if (!isTRUE(isWindows())) {
+if (!isWindows()) {
     from <- "from.txt"
     to <- "to.txt"
     file.create(from)

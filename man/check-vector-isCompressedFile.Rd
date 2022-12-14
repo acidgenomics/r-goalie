@@ -39,7 +39,7 @@ Currently only performs a simple check, based on file extension match.
 
 }}
 \note{
-Updated 2019-10-22.
+Updated 2022-12-14.
 }
 \examples{
 ## TRUE ====
