@@ -1,14 +1,10 @@
-## FIXME Need to add isVector check.
-
-
-
 #' Is the input integer(ish)?
 #'
 #' Check for valid input of either explicit (e.g. `1L`) and/or implict
 #' (e.g. `1`) `integer`.
 #'
 #' @name check-vector-isIntegerish
-#' @note Updated 2019-10-09.
+#' @note Updated 2022-12-14.
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
@@ -22,6 +18,7 @@
 #' ## TRUE ====
 #' isIntegerish(seq_len(2L))
 #' isIntegerish(c(1, 2))
+#' isIntegerish(S4Vectors::Rle(c(1, 2)))
 #'
 #' ## FALSE ====
 #' isIntegerish(0.1)
@@ -33,8 +30,13 @@ NULL
 #' @describeIn check-vector-isIntegerish Vectorized.
 #' @export
 isIntegerish <- function(x, .xname = getNameInParent(x)) {
+    if (is(x, "Rle")) {
+        assert(requireNamespace("S4Vectors", quietly = TRUE))
+        x <- S4Vectors::decode(x)
+    }
     ## Check for numeric vector.
-    if (!is.numeric(x)) {
+    ok <- is.numeric(x)
+    if (!isTRUE(ok)) {
         return(false("{.var %s} is not numeric.", .xname))
     }
     ## Require that vector doesn't contain NA.
