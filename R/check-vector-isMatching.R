@@ -30,6 +30,7 @@ NULL
 
 
 ## grep matching that dynamically handles S4 objects, if necessary.
+## Alternatively, could check directly for Rle and decode here instead.
 ## Updated 2022-12-14.
 .grepl <- function(x, ...) {
     if (isS4(x)) {
