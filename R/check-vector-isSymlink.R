@@ -1,11 +1,7 @@
-## FIXME Need to add isVector check.
-
-
-
 #' Does the input contain a symbolic link?
 #'
 #' @name check-vector-isSymlink
-#' @note Updated 2020-07-24.
+#' @note Updated 2022-12-14.
 #' @note Supported on Linux and macOS but not Windows.
 #'
 #' @inherit check
@@ -16,7 +12,7 @@
 #' - `Sys.readlink()`.
 #'
 #' @examples
-#' if (!isTRUE(isWindows())) {
+#' if (!isWindows()) {
 #'     from <- "from.txt"
 #'     to <- "to.txt"
 #'     file.create(from)
@@ -32,7 +28,7 @@ NULL
 #' @describeIn check-vector-isSymlink Vectorized.
 #' @export
 isSymlink <- function(x) {
-    assert(!isTRUE(isWindows()))
+    assert(!isWindows())
     ok <- isCharacter(x)
     if (!isTRUE(ok)) {
         return(ok)
