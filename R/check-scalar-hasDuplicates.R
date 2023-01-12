@@ -1,7 +1,11 @@
+## FIXME This needs to support Rle input.
+
+
+
 #' Does the input have duplicates?
 #'
 #' @name check-scalar-hasDuplicates
-#' @note Updated 2022-10-18.
+#' @note Updated 2023-01-12.
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
@@ -39,6 +43,7 @@ hasDuplicates <- function(x, .xname = getNameInParent(x)) {
 hasNoDuplicates <- function(x, .xname = getNameInParent(x)) {
     ok <- anyDuplicated(x) == 0L
     if (!isTRUE(ok)) {
+        # FIXME This step is currently problematic for Rle.
         dupeIndicies <- which(duplicated(x))
         return(false(
             ngettext(
