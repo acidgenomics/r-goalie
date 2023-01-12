@@ -1,5 +1,13 @@
 # Release notes
 
+## goalie 0.6.8 (2023-01-12)
+
+Minor changes
+
+- `hasNoDuplicates`: Improve support for Rle handling. Note that S4Vectors
+  currently doesn't define a `duplicated` method for `Rle`, so we have to
+  work around this at the moment.
+
 ## goalie 0.6.7 (2022-12-14)
 
 New functions:
