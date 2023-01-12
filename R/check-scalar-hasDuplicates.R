@@ -1,7 +1,3 @@
-## FIXME This needs to support Rle input.
-
-
-
 #' Does the input have duplicates?
 #'
 #' @name check-scalar-hasDuplicates
@@ -43,7 +39,10 @@ hasDuplicates <- function(x, .xname = getNameInParent(x)) {
 hasNoDuplicates <- function(x, .xname = getNameInParent(x)) {
     ok <- anyDuplicated(x) == 0L
     if (!isTRUE(ok)) {
-        # FIXME This step is currently problematic for Rle.
+        if (is(x, "Rle")) {
+            assert(requireNamespace("S4Vectors", quietly = TRUE))
+            x <- S4Vectors::decode(x)
+        }
         dupeIndicies <- which(duplicated(x))
         return(false(
             ngettext(
