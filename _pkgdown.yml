@@ -39,6 +39,7 @@ reference:
       - "falseFromVector"
       - "getNameInParent"
       - "nocause"
+      - "requireNamespaces"
       - "setCause"
       - "show"
 template:
