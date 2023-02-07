@@ -2,7 +2,12 @@
 
 ## goalie 0.6.8 (2023-01-12)
 
-Minor changes
+New functions:
+
+- `requireNamespaces`: Migrated this useful base function from AcidBase package
+  here to goalie instead, as this is often used inside of assert checks.
+
+Minor changes:
 
 - `hasNoDuplicates`: Improve support for Rle handling. Note that S4Vectors
   currently doesn't define a `duplicated` method for `Rle`, so we have to
