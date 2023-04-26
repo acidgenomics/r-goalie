@@ -7,7 +7,7 @@
 #' inside [`metadata()`][S4Vectors::metadata].
 #'
 #' @export
-#' @note Updated 2022-06-13.
+#' @note Updated 2023-04-26.
 #'
 #' @inheritParams AcidRoxygen::params
 #'
@@ -57,7 +57,9 @@ validateClasses <-
     function(object, expected, subset = FALSE) {
         assert(
             is(expected, "list"),
-            isFlag(subset)
+            isFlag(subset),
+            hasNames(object),
+            hasNames(expected)
         )
         if (isTRUE(subset)) {
             assert(isSubset(names(expected), names(object)))
