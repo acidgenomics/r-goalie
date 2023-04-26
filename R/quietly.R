@@ -5,6 +5,8 @@
 #' @export
 #' @note Updated 2023-04-26.
 #'
+#' @param expr Expression to evaluate.
+#'
 #' @return Invisible `NULL`.
 #'
 #' @examples

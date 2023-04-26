@@ -6,6 +6,9 @@
 \usage{
 quietly(expr)
 }
+\arguments{
+\item{expr}{Expression to evaluate.}
+}
 \value{
 Invisible \code{NULL}.
 }
