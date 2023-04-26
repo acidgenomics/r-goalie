@@ -39,6 +39,7 @@ reference:
       - "falseFromVector"
       - "getNameInParent"
       - "nocause"
+      - "quietly"
       - "requireNamespaces"
       - "setCause"
       - "show"
