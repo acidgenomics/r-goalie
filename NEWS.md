@@ -1,5 +1,18 @@
 # Release notes
 
+## goalie 0.6.9 (2023-04-26)
+
+New functions:
+
+- `quietly`: Useful expression wrapper that suppresses all warnings, messages,
+  and console output. Now used internally in `requireNamespaces` to suppress
+  unwanted warnings from some Bioconductor packages, such as AnnotationHub,
+  which now masks utils in the 3.17 release.
+
+Minor changes:
+
+- `validateClasses`: Improved assert check for input of empty list.
+
 ## goalie 0.6.8 (2023-01-12)
 
 New functions:
