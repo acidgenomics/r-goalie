@@ -24,13 +24,15 @@
 #' @examples
 #' requireNamespaces(c("base", "utils"))
 requireNamespaces <- function(packages) {
-    ok <- vapply(
-        X = packages,
-        FUN = requireNamespace,
-        FUN.VALUE = logical(1L),
-        USE.NAMES = TRUE,
-        quietly = TRUE
-    )
+    quietly({
+        ok <- vapply(
+            X = packages,
+            FUN = requireNamespace,
+            FUN.VALUE = logical(1L),
+            USE.NAMES = TRUE,
+            quietly = TRUE
+        )
+    })
     if (!isTRUE(all(ok))) {
         fail <- names(ok)[!ok]
         stop(sprintf(
