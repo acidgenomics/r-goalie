@@ -58,19 +58,6 @@ conda activate "$name"
 R
 ```
 
-### [Docker][] method
-
-```sh
-image='acidgenomics/r-packages:goalie'
-workdir='/mnt/work'
-docker pull "$image"
-docker run -it \
-    --volume="${PWD}:${workdir}" \
-    --workdir="$workdir" \
-    "$image" \
-    R
-```
-
 ## See also
 
 The goalie source code incorporates elements from these excellent assert check
@@ -86,5 +73,4 @@ packages:
 [bioconductor]: https://bioconductor.org/
 [checkmate]: https://cran.r-project.org/package=checkmate
 [conda]: https://conda.io/
-[docker]: https://www.docker.com/
 [r]: https://www.r-project.org/
