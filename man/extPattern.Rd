@@ -19,7 +19,7 @@ compressExtPattern
 File extension pattern matching
 }
 \note{
-Updated 2020-01-04.
+Updated 2023-05-31.
 }
 \examples{
 extPattern

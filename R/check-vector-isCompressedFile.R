@@ -38,7 +38,7 @@ isCompressedFile <- function(x) {
         return(ok)
     }
     ok <- bapply(
-        X = tolower(x),
+        X = tolower(basename(x)),
         FUN = isMatchingRegex,
         pattern = compressExtPattern
     )
