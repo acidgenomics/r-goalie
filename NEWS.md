@@ -1,5 +1,12 @@
 # Release notes
 
+## goalie 0.6.10 (2023-05-31)
+
+Minor changes:
+
+- `compressExtPattern`: Updated to ensure that maching is case insensitive.
+- Relaxed suggested package dependencies.
+
 ## goalie 0.6.9 (2023-04-26)
 
 New functions:
