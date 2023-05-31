@@ -1,8 +1,8 @@
 Package: goalie
 Title: Assertive Check Functions
 Description: Assertive check functions for defensive R programming.
-Version: 0.6.9
-Date: 2023-04-26
+Version: 0.6.10
+Date: 2023-05-31
 Authors@R: c(
     person(
         "Michael", "Steinbaugh",
@@ -25,26 +25,26 @@ Imports:
     methods,
     utils
 Suggests:
-    AcidBase (>= 0.6.10),
-    AcidCLI (>= 0.2.6),
-    AcidGenerics (>= 0.6.5),
-    AcidSingleCell (>= 0.3.3),
-    AcidTest (>= 0.7.0),
-    Biobase (>= 2.58.0),
-    BiocManager (>= 1.30.0),
-    BiocParallel (>= 1.32.5),
-    Matrix (>= 1.5.1),
-    S4Vectors (>= 0.36.0),
-    SingleCellExperiment (>= 1.20.0),
-    SummarizedExperiment (>= 1.28.0),
-    data.table (>= 1.14.6),
-    ggplot2 (>= 3.4.0),
-    rmarkdown (>= 2.20),
-    testthat (>= 3.1.6),
-    tibble (>= 3.1.8),
-    viridis (>= 0.6.2),
-    withr (>= 2.5.0),
-    yaml (>= 2.3.7)
+    AcidBase,
+    AcidCLI,
+    AcidGenerics,
+    AcidSingleCell,
+    AcidTest,
+    Biobase,
+    BiocManager,
+    BiocParallel,
+    Matrix,
+    S4Vectors,
+    SingleCellExperiment,
+    SummarizedExperiment,
+    data.table,
+    ggplot2,
+    rmarkdown,
+    testthat,
+    tibble,
+    viridis,
+    withr,
+    yaml
 Additional_repositories: https://r.acidgenomics.com
 Config/testthat/edition: 3
 Roxygen: list(markdown = TRUE)
