@@ -15,6 +15,7 @@
 
 
 ## extPattern ==================================================================
+
 #' File extension pattern matching
 #'
 #' @name extPattern
@@ -26,8 +27,11 @@
 #' compressExtPattern
 NULL
 
-## FIXME Construct this using paste.
-.compressExtPattern <- "\\.(7z|br|bz2|gz|lz|lz4|lzma|xz|z|zip|zst)"
+.compressExts <-
+    c("7z", "br", "bz2", "gz", "lz", "lz4", "lzma", "xz", "z", "zip", "zst")
+
+.compressExtPattern <-
+    paste0("\\.(", paste(.compressExts, collapse = "|"), ")")
 
 #' @rdname extPattern
 #' @export
@@ -43,6 +47,7 @@ compressExtPattern <- paste0(.compressExtPattern, "$")
 
 
 ## tolerance ===================================================================
+
 #' Set the tolerance limit
 #'
 #' @note Updated 2019-08-10.
