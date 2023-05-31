@@ -4,7 +4,7 @@
 #' Currently only performs a simple check, based on file extension match.
 #'
 #' @name check-vector-isCompressedFile
-#' @note Updated 2022-12-14.
+#' @note Updated 2023-05-31.
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
@@ -37,7 +37,11 @@ isCompressedFile <- function(x) {
     if (!isTRUE(ok)) {
         return(ok)
     }
-    ok <- bapply(X = x, FUN = isMatchingRegex, pattern = compressExtPattern)
+    ok <- bapply(
+        X = tolower(x),
+        FUN = isMatchingRegex,
+        pattern = compressExtPattern
+    )
     setCause(ok, false = "no compress ext")
 }
 

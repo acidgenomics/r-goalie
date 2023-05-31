@@ -18,7 +18,7 @@
 #' File extension pattern matching
 #'
 #' @name extPattern
-#' @note Updated 2020-01-04.
+#' @note Updated 2023-05-31.
 #' @keywords internal
 #'
 #' @examples
@@ -26,7 +26,8 @@
 #' compressExtPattern
 NULL
 
-.compressExtPattern <- "\\.(bz2|gz|xz|zip)"
+## FIXME Construct this using paste.
+.compressExtPattern <- "\\.(7z|br|bz2|gz|lz|lz4|lzma|xz|z|zip|zst)"
 
 #' @rdname extPattern
 #' @export
