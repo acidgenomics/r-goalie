@@ -52,7 +52,7 @@ isATempFile <- function(x) {
         return(ok)
     }
     ok <- isTempFile(x)
-    if (!isTRUE(ok)) {
+    if (!all(ok)) {
         return(ok)
     }
     TRUE
