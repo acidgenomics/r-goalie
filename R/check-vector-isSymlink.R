@@ -1,8 +1,10 @@
 #' Does the input contain a symbolic link?
 #'
 #' @name check-vector-isSymlink
-#' @note Updated 2022-12-14.
-#' @note Supported on Linux and macOS but not Windows.
+#' @note Updated 2023-07-13.
+#'
+#' @details
+#' Supported on Linux and macOS but not Windows.
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
@@ -25,6 +27,7 @@ NULL
 
 
 ## Vector ======================================================================
+
 #' @describeIn check-vector-isSymlink Vectorized.
 #' @export
 isSymlink <- function(x) {
@@ -45,6 +48,7 @@ isSymlink <- function(x) {
 
 
 ## Scalar ======================================================================
+
 #' @describeIn check-vector-isSymlink Scalar.
 #' @export
 isASymlink <- function(x, nullOK = FALSE) {
