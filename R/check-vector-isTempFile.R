@@ -28,23 +28,22 @@ NULL
 
 
 ## Vector ======================================================================
+
 #' @describeIn check-vector-isTempFile Vectorized.
 #' @export
 isTempFile <- function(x) {
-    ok <- allAreFiles(x)
-    if (!isTRUE(ok)) {
+    ok <- isFile(x)
+    if (!all(ok)) {
         return(ok)
     }
-    ok <- allAreMatchingFixed(x = x, pattern = tempdir())
-    if (!isTRUE(ok)) {
-        return(ok)
-    }
-    rep(x = TRUE, times = length(x))
+    ok <- isMatchingFixed(x = x, pattern = tempdir())
+    setCause(ok, false = "not temp file")
 }
 
 
 
 ## Scalar ======================================================================
+
 #' @describeIn check-vector-isTempFile Scalar.
 #' @export
 isATempFile <- function(x) {
