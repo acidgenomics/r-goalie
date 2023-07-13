@@ -22,6 +22,7 @@ NULL
 
 
 ## Vector ======================================================================
+
 #' @describeIn check-vector-isURL Vectorized.
 #' @export
 isURL <- function(x, .xname = getNameInParent(x)) {
@@ -41,6 +42,7 @@ isURL <- function(x, .xname = getNameInParent(x)) {
 
 
 ## Scalar ======================================================================
+
 #' @describeIn check-vector-isURL Scalar. Requires a single URL.
 #' @export
 isAURL <- function(x, .xname = getNameInParent(x)) {

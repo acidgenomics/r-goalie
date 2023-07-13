@@ -31,6 +31,7 @@ NULL
 
 
 ## Vector ======================================================================
+
 #' @describeIn check-vector-isEqual Vectorized.
 #' @export
 isEqualTo <- function(x, y) {
@@ -147,6 +148,7 @@ isLessThanOrEqualTo <- function(x, y) {
 
 
 ## Scalar ======================================================================
+
 #' @describeIn check-vector-isEqual Scalar.
 #' @export
 allAreEqualTo <- function(x, y) {

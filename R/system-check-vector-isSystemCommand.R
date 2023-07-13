@@ -17,6 +17,7 @@ NULL
 
 
 ## Vector ======================================================================
+
 #' @describeIn check-vector-isSystemCommand Vectorized.
 #' @export
 isSystemCommand <- function(x) {
@@ -28,6 +29,7 @@ isSystemCommand <- function(x) {
 
 
 ## Scalar ======================================================================
+
 #' @describeIn check-vector-isSystemCommand Scalar.
 #' @export
 isASystemCommand <- function(x) {

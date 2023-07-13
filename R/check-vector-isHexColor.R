@@ -24,6 +24,7 @@ NULL
 
 
 ## Vector ======================================================================
+
 #' @describeIn check-vector-isHexColor Vectorized.
 #' @export
 isHexColor <- function(x, .xname = getNameInParent(x)) {
@@ -40,6 +41,7 @@ isHexColor <- function(x, .xname = getNameInParent(x)) {
 
 
 ## Scalar ======================================================================
+
 #' @describeIn check-vector-isHexColor Scalar.
 #' @export
 allAreHexColors <- function(x, .xname = getNameInParent(x)) {

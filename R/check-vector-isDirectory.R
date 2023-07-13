@@ -22,6 +22,7 @@ NULL
 
 
 ## Vector ======================================================================
+
 #' @describeIn check-vector-isDirectory Vectorized.
 #' @export
 isDirectory <- function(x) {
@@ -36,6 +37,7 @@ isDirectory <- function(x) {
 
 
 ## Scalar ======================================================================
+
 #' @describeIn check-vector-isDirectory Scalar.
 #' @export
 isADirectory <- function(x, nullOK = FALSE) {
@@ -66,6 +68,7 @@ allAreDirectories <- function(x) {
 
 
 ## Aliases =====================================================================
+
 #' @describeIn check-vector-isDirectory Short alias for [isDirectory()].
 #' @export
 isDir <- isDirectory

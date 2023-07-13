@@ -17,6 +17,7 @@ NULL
 
 
 ## Vector ======================================================================
+
 #' @describeIn check-vector-isGitRepo Vectorized.
 #' @export
 isGitRepo <- function(x) {
@@ -63,6 +64,7 @@ isGitRepo <- function(x) {
 
 
 ## Scalar ======================================================================
+
 #' @describeIn check-vector-isGitRepo Scalar.
 #' @export
 isAGitRepo <- function(x) {
@@ -76,6 +78,8 @@ isAGitRepo <- function(x) {
     }
     TRUE
 }
+
+
 
 #' @describeIn check-vector-isGitRepo Scalar.
 #' @export

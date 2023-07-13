@@ -30,6 +30,7 @@ NULL
 
 
 ## Vector ======================================================================
+
 #' @describeIn check-vector-isExisting Vectorized.
 #' @export
 ## Updated 2022-12-14.
@@ -70,6 +71,7 @@ isNonExisting <-
 
 
 ## Scalar ======================================================================
+
 #' @describeIn check-vector-isExisting Scalar.
 #' @export
 ## Updated 2022-05-13.
