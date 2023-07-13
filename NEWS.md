@@ -1,5 +1,18 @@
 # Release notes
 
+## goalie 0.6.11 (2023-07-13)
+
+New functions:
+
+- `isTempFile` / `isATempFile` / `allAreTempFiles`: Check functions to determine
+  if a file exists on disk as a temporary file, defined by `tempfile`. Checks
+  directory path internally against `tempdir` return. This function will be
+  used in pipette update for compressed file cleanup during `import` calls.
+
+Minor changes:
+
+- Now requiring R 4.3 / Bioconductor 3.17.
+
 ## goalie 0.6.10 (2023-05-31)
 
 Minor changes:
