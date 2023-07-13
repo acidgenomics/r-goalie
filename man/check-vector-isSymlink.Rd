@@ -26,6 +26,9 @@ If set to \code{TRUE}, \code{x} may also be \code{NULL}.}
 \description{
 Does the input contain a symbolic link?
 }
+\details{
+Supported on Linux and macOS but not Windows.
+}
 \section{Functions}{
 \itemize{
 \item \code{isSymlink()}: Vectorized.
@@ -36,9 +39,7 @@ Does the input contain a symbolic link?
 
 }}
 \note{
-Updated 2022-12-14.
-
-Supported on Linux and macOS but not Windows.
+Updated 2023-07-13.
 }
 \examples{
 if (!isWindows()) {
