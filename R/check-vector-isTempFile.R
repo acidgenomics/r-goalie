@@ -1,4 +1,4 @@
-#' Does the input contain a temporary file?
+#' Does the input contain a temporary file (that exists on disk)?
 #'
 #' @name check-vector-isTempFile
 #' @note Updated 2023-07-13.
@@ -10,14 +10,19 @@
 #' - `tempfile()`.
 #'
 #' @examples
+#' ## The temporary file must exist on disk.
+#'
 #' ## TRUE ====
-#' x <- "example.txt"
+#' x <- tempfile()
 #' file.create(x)
-#' isAFile(x)
+#' file.exists(x)
+#' isATempFile(x)
 #' unlink(x)
 #'
 #' ## FALSE ====
-#' isFile(c("~", "."))
+#' x <- tempfile()
+#' file.exists(x)
+#' isATempFile(x)
 NULL
 
 
@@ -26,16 +31,15 @@ NULL
 #' @describeIn check-vector-isTempFile Vectorized.
 #' @export
 isTempFile <- function(x) {
-    ok <- isCharacter(x)
+    ok <- allAreFiles(x)
     if (!isTRUE(ok)) {
         return(ok)
     }
-    ok <- !bapply(X = x, FUN = dir.exists)
-    if (!all(ok)) {
-        return(setCause(ok, false = "dir"))
+    ok <- allAreMatchingFixed(x = x, pattern = tempdir())
+    if (!isTRUE(ok)) {
+        return(ok)
     }
-    ok <- bapply(X = x, FUN = file.exists)
-    setCause(ok, false = "not file")
+    rep(x = TRUE, times = length(x))
 }
 
 
@@ -43,16 +47,13 @@ isTempFile <- function(x) {
 ## Scalar ======================================================================
 #' @describeIn check-vector-isTempFile Scalar.
 #' @export
-isATempFile <- function(x, nullOK = FALSE) {
-    if (isTRUE(nullOK) && is.null(x)) {
-        return(TRUE)
-    }
+isATempFile <- function(x) {
     ok <- isString(x)
     if (!isTRUE(ok)) {
         return(ok)
     }
-    ok <- isFile(x)
-    if (!all(ok)) {
+    ok <- isTempFile(x)
+    if (!isTRUE(ok)) {
         return(ok)
     }
     TRUE

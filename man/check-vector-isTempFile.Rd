@@ -5,26 +5,23 @@
 \alias{isTempFile}
 \alias{isATempFile}
 \alias{allAreTempFiles}
-\title{Does the input contain a temporary file?}
+\title{Does the input contain a temporary file (that exists on disk)?}
 \usage{
 isTempFile(x)
 
-isATempFile(x, nullOK = FALSE)
+isATempFile(x)
 
 allAreTempFiles(x)
 }
 \arguments{
 \item{x}{Object.}
-
-\item{nullOK}{\code{logical(1)}.
-If set to \code{TRUE}, \code{x} may also be \code{NULL}.}
 }
 \value{
 \code{TRUE} on success;
 \code{FALSE} on failure, with cause set.
 }
 \description{
-Does the input contain a temporary file?
+Does the input contain a temporary file (that exists on disk)?
 }
 \section{Functions}{
 \itemize{
@@ -39,14 +36,19 @@ Does the input contain a temporary file?
 Updated 2023-07-13.
 }
 \examples{
+## The temporary file must exist on disk.
+
 ## TRUE ====
-x <- "example.txt"
+x <- tempfile()
 file.create(x)
-isAFile(x)
+file.exists(x)
+isATempFile(x)
 unlink(x)
 
 ## FALSE ====
-isFile(c("~", "."))
+x <- tempfile()
+file.exists(x)
+isATempFile(x)
 }
 \seealso{
 \itemize{
