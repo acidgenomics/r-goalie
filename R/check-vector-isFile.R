@@ -1,7 +1,7 @@
 #' Does the input contain a file?
 #'
 #' @name check-vector-isFile
-#' @note Updated 2020-06-26.
+#' @note Updated 2023-07-13.
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
@@ -36,7 +36,10 @@ isFile <- function(x) {
         return(setCause(ok, false = "dir"))
     }
     ok <- bapply(X = x, FUN = file.exists)
-    setCause(ok, false = "not file")
+    if (!all(ok)) {
+        return(setCause(ok, false = "not file"))
+    }
+    rep(x = TRUE, times = length(x))
 }
 
 
