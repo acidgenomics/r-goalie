@@ -27,6 +27,7 @@ NULL
 
 
 ## Vector ======================================================================
+
 #' @describeIn check-vector-isIntegerish Vectorized.
 #' @export
 isIntegerish <- function(x, .xname = getNameInParent(x)) {
@@ -74,6 +75,7 @@ isIntegerish <- function(x, .xname = getNameInParent(x)) {
 
 
 ## Scalar ======================================================================
+
 #' @describeIn check-vector-isIntegerish Scalar.
 #' @export
 isInt <- function(x, nullOK = FALSE) {

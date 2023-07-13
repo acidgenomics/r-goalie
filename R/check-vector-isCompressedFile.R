@@ -30,6 +30,7 @@ NULL
 
 
 ## Vector ======================================================================
+
 #' @describeIn check-vector-isCompressedFile Vectorized.
 #' @export
 isCompressedFile <- function(x) {
@@ -48,6 +49,7 @@ isCompressedFile <- function(x) {
 
 
 ## Scalar ======================================================================
+
 #' @describeIn check-vector-isCompressedFile Scalar.
 #' @export
 isACompressedFile <- function(x, nullOK = FALSE) {
