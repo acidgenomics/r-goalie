@@ -24,6 +24,7 @@ NULL
 
 
 ## Vector ======================================================================
+
 #' @describeIn check-vector-isFile Vectorized.
 #' @export
 isFile <- function(x) {
@@ -36,15 +37,13 @@ isFile <- function(x) {
         return(setCause(ok, false = "dir"))
     }
     ok <- bapply(X = x, FUN = file.exists)
-    if (!all(ok)) {
-        return(setCause(ok, false = "not file"))
-    }
-    rep(x = TRUE, times = length(x))
+    setCause(ok, false = "not file")
 }
 
 
 
 ## Scalar ======================================================================
+
 #' @describeIn check-vector-isFile Scalar.
 #' @export
 isAFile <- function(x, nullOK = FALSE) {
