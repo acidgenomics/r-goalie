@@ -43,6 +43,7 @@ NULL
 
 
 ## Vector ======================================================================
+
 #' @describeIn check-vector-hasAccess Vectorized.
 #' @export
 ## Updated 2022-12-14.
@@ -97,6 +98,7 @@ hasAccess <- function(x, access = "r") {
 
 
 ## Scalar ======================================================================
+
 #' @describeIn check-vector-hasAccess Scalar.
 #' @export
 ## Updated 2022-05-13.

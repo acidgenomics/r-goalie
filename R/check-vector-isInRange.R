@@ -64,6 +64,7 @@ NULL
 
 
 ## Vector ======================================================================
+
 #' @describeIn check-vector-isInRange Vectorized.
 #' @export
 isInRange <-
@@ -258,6 +259,7 @@ isProportion <-
 
 
 ## Scalar ======================================================================
+
 #' @describeIn check-vector-isInRange Scalar.
 #' @export
 allAreInRange <-

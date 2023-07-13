@@ -33,7 +33,6 @@ NULL
 
 
 
-## Vector ======================================================================
 #' @describeIn check-vector-isPackageVersion Vectorized.
 #' @export
 isPackageVersion <- function(x, op = ">=") {

@@ -21,6 +21,7 @@ NULL
 
 
 ## Vector ======================================================================
+
 #' @describeIn check-vector-isInstalled Vectorized.
 #' @export
 isInstalled <- function(x, lib = NULL) {
@@ -34,6 +35,7 @@ isInstalled <- function(x, lib = NULL) {
 
 
 ## Scalar ======================================================================
+
 #' @describeIn check-vector-isInstalled Scalar.
 #' @export
 allAreInstalled <- function(x, lib = NULL) {

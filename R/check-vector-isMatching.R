@@ -50,6 +50,7 @@ NULL
 
 
 ## Vector ======================================================================
+
 #' @describeIn check-vector-isMatching Vectorized.
 #' @export
 isMatchingFixed <- function(x, pattern) {
@@ -107,6 +108,7 @@ isNotMatchingRegex <- function(x, pattern) {
 
 
 ## Scalar ======================================================================
+
 #' @describeIn check-vector-isMatching Scalar.
 #' @export
 allAreMatchingFixed <- function(x, pattern) {
