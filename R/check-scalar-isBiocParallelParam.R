@@ -1,7 +1,7 @@
 #' Does the input contain a BiocParallel parameter?
 #'
 #' @name check-scalar-isBiocParallelParam
-#' @note Updated 2022-03-04.
+#' @note Updated 2023-07-21.
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
@@ -33,5 +33,5 @@ isBiocParallelParam <- function(x, .xname = getNameInParent(x)) {
     if (!isTRUE(ok)) {
         return(false("{.var %s} is not a BiocParallel param.", .xname))
     }
-    return(TRUE)
+    TRUE
 }
