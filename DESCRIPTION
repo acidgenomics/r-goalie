@@ -42,6 +42,8 @@ Suggests:
     rmarkdown,
     testthat,
     tibble,
+    tximport,
+    tximportData,
     viridis,
     withr,
     yaml
