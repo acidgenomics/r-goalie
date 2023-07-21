@@ -35,5 +35,5 @@ hasClusters <- function(x, .xname = getNameInParent(x)) {
     if (!isTRUE(ok)) {
         return(false("{.var %s} does not contain clusters.", .xname))
     }
-    return(TRUE)
+    TRUE
 }
