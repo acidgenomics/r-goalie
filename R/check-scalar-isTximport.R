@@ -6,10 +6,23 @@
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
 #'
-#' @seealso `BiocParallel::bpparam`.
+#' @seealso `tximport::tximport`.
 #'
 #' @examples
 #' ## TRUE ====
+#' if (allAreInstalled(c("tximport", "tximportData"))) {
+#'     dir <- system.file("extdata", package = "tximportData")
+#'     samples <- read.table(file.path(dir, "samples.txt"), header = TRUE)
+#'     files <- file.path(dir, "salmon", samples[["run"]], "quant.sf.gz")
+#'     names(files) <- paste0("sample", seq(from = 1L, to = length(files)))
+#'     object <- tximport::tximport(
+#'         files = files,
+#'         type = "salmon",
+#'         txIn = TRUE,
+#'         txOut = TRUE
+#'     )
+#'     isTximport(object)
+#' }
 #'
 #' ## FALSE ====
 #' object <- list()
