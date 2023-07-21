@@ -21,7 +21,7 @@ isBiocParallelParam(x, .xname = getNameInParent(x))
 Does the input contain a BiocParallel parameter?
 }
 \note{
-Updated 2022-03-04.
+Updated 2023-07-21.
 }
 \examples{
 ## TRUE ====
