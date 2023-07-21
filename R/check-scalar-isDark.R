@@ -30,5 +30,5 @@ isDark <- function() {
     if (!isTRUE(ok)) {
         return(false("Dark mode is not enabled."))
     }
-    return(TRUE)
+    TRUE
 }

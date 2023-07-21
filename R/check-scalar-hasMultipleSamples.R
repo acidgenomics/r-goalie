@@ -39,5 +39,5 @@ hasMultipleSamples <- function(x, .xname = getNameInParent(x)) {
     if (!isTRUE(ok)) {
         return(false("{.var %s} does not contain multiple samples.", .xname))
     }
-    return(TRUE)
+    TRUE
 }
