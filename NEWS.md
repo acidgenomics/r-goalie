@@ -1,5 +1,16 @@
 # Release notes
 
+## goalie 0.6.12 (2023-07-24)
+
+New functions:
+
+- `isTximport`: New check function to perform validity checks on tximport `list`
+  return, which isn't currently classed.
+
+Minor changes:
+
+- Updated lintr checks to be compatible with new release.
+
 ## goalie 0.6.11 (2023-07-13)
 
 New functions:
