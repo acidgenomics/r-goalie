@@ -39,7 +39,6 @@ linters: linters_with_defaults(
     missing_package_linter(),
     namespace_linter(),
     nested_ifelse_linter(),
-    no_tab_linter(),
     # This is currently returning too many false positives.
     # > nonportable_path_linter = NULL,
     numeric_leading_zero_linter(),
