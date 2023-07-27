@@ -1,7 +1,3 @@
-## FIXME Tighten this up by erroring if the URL isn't encoded.
-
-
-
 #' Does the input contain a URL?
 #'
 #' @name check-vector-isURL
