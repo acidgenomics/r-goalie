@@ -1,5 +1,14 @@
 # Release notes
 
+## goalie 0.6.13 (2023-07-27)
+
+Minor changes:
+
+- `isURL` now returns `FALSE` for non-encoded URLs (e.g. containing spaces,
+  other invalid characters). This helps protect against unwanted input into
+  httr2 engine for REST API calls. Refer to `utils::URLencode` for encoding
+  checks.
+
 ## goalie 0.6.12 (2023-07-24)
 
 New functions:
