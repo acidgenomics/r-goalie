@@ -1,7 +1,11 @@
+## FIXME Tighten this up by erroring if the URL isn't encoded.
+
+
+
 #' Does the input contain a URL?
 #'
 #' @name check-vector-isURL
-#' @note Updated 2021-07-19.
+#' @note Updated 2023-07-27.
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
@@ -34,9 +38,13 @@ isURL <- function(x, .xname = getNameInParent(x)) {
     if (!isTRUE(ok)) {
         return(ok)
     }
-    pattern <- "^(http(s)?|ftp)\\://.+"
-    ok <- isMatchingRegex(x = x, pattern = pattern)
-    setCause(ok, false = "not URL")
+    ok <- isMatchingRegex(x = x, pattern = "^[^:/]+\\://.+$")
+    if (!all(ok)) {
+        return(setCause(ok, false = "not URL"))
+    }
+    enc <- URLencode(x)
+    ok <- x == enc
+    setCause(ok, false = "not encoded")
 }
 
 
