@@ -34,3 +34,10 @@ test_that("isAURL", {
 test_that("allAreURLs", {
     expect_true(allAreURLs(urls))
 })
+
+test_that("Encoding", {
+    url <- "https://rest.ensembl.org/info/assembly/Homo%20sapiens"
+    expect_true(isAURL(url))
+    url <- "https://rest.ensembl.org/info/assembly/Homo sapiens"
+    expect_false(isAURL(url))
+})
