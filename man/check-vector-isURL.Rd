@@ -36,7 +36,7 @@ Does the input contain a URL?
 
 }}
 \note{
-Updated 2021-07-19.
+Updated 2023-07-27.
 }
 \examples{
 urls <- c("https://www.r-project.org", "ftp://r-project.org")
