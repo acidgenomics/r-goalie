@@ -26,7 +26,7 @@ hasRAM <- function(n) {
         requireNamespaces("AcidBase")
     )
     ram <- AcidBase::ram()
-    ok <- cpus >= n
+    ok <- ram >= n
     if (!isTRUE(ok)) {
         return(false(
             "Not enough RAM (in GB): %s (%s) < %s (%s).",
