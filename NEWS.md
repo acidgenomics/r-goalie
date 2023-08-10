@@ -1,5 +1,12 @@
 # Release notes
 
+## goalie 0.6.14 (2023-08-10)
+
+New functions:
+
+- `hasCPU`: Does the current machine have a sufficient number of CPU cores?
+- `hasRAM`: Does the current machine have sufficient memory (in GB)?
+
 ## goalie 0.6.13 (2023-07-27)
 
 Minor changes:
