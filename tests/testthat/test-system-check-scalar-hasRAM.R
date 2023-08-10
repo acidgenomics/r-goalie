@@ -1,3 +1,5 @@
+skip_if_not_installed("AcidBase")
+
 test_that("TRUE", {
     expect_true(hasRAM(n = 1L))
 })

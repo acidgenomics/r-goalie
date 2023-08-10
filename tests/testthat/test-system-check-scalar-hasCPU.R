@@ -1,3 +1,5 @@
+skip_if_not_installed("AcidBase")
+
 test_that("TRUE", {
     expect_true(hasCPU(n = 1L))
 })
