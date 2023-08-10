@@ -5,6 +5,9 @@
 #'
 #' @inherit check return
 #'
+#' @param n `integer(1)`.
+#' Minimum number of CPU cores.
+#'
 #' @examples
 #' ## TRUE ====
 #' hasCPU(n = 1L)

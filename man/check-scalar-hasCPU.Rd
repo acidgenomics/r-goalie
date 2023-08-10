@@ -7,6 +7,10 @@
 \usage{
 hasCPU(n)
 }
+\arguments{
+\item{n}{\code{integer(1)}.
+Minimum number of CPU cores.}
+}
 \value{
 \code{TRUE} on success;
 \code{FALSE} on failure, with cause set.
