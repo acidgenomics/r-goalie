@@ -46,7 +46,7 @@ install.packages(
 )
 ```
 
-### [conda][] method
+### [Conda][] method
 
 Configure [conda][] to use the [bioconda][] channels.
 
