@@ -1,5 +1,21 @@
 # Release notes
 
+## goalie 0.6.15 (2023-08-24)
+
+New functions:
+
+- Added `isExistingURL` variants of `isURL`, which check if the connection is
+  active and that the URL actually exists, rather than whether it is merely
+  formatted correctly. Also added `isAnExistingURL` and `allAreExistingURLs`
+  variants, similar to the simpler `isURL` checks. The internal logic of this
+  check was ported from the previous `hasInternet` function, but speed up
+  to use a `try` call with a faster timeout.
+
+Major changes:
+
+- `hasInternet` has been reworked to simply wrap `isAnExistingURL` with a call
+  to check if the Bioconductor website is up.
+
 ## goalie 0.6.14 (2023-08-10)
 
 New functions:
