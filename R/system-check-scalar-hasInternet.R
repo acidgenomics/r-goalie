@@ -18,5 +18,5 @@ NULL
 #' @rdname check-scalar-hasInternet
 #' @export
 hasInternet <- function() {
-    isAnExistingURL("http://www.bioconductor.org/")
+    isAnExistingURL("https://www.bioconductor.org/")
 }
