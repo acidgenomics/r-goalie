@@ -1,7 +1,7 @@
 #' Does the input contain a URL?
 #'
 #' @name check-vector-isURL
-#' @note Updated 2023-07-27.
+#' @note Updated 2023-08-24.
 #'
 #' @details
 #' This assert check is intended to be simple and does not check to see if the
@@ -11,7 +11,7 @@
 #' @inheritParams AcidRoxygen::params
 #'
 #' @examples
-#' urls <- c("https://www.r-project.org", "ftp://r-project.org")
+#' urls <- c("https://www.r-project.org/", "ftp://r-project.org/")
 #'
 #' ## TRUE ====
 #' isURL(urls)
