@@ -19,17 +19,19 @@ Uniform Resource Locator (URL).}
 Does the current session have an internet connection?
 }
 \note{
-Updated 2020-05-11.
+Updated 2023-08-24.
 }
 \examples{
 hasInternet()
 }
 \seealso{
 \itemize{
+\item \code{open.connection()}.
 \item \code{Biobase::testBioCConnection()}.
 \item \code{curl::has_internet()}.
 \item \code{curl::nslookup()}.
 \item \code{RCurl::getURL()}.
+\item https://stackoverflow.com/questions/52911812
 \item https://stackoverflow.com/a/17620732/3911732
 }
 }
