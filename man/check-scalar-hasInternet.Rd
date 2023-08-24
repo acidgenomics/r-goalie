@@ -23,5 +23,6 @@ hasInternet()
 \seealso{
 \itemize{
 \item \code{isAnExistingURL()}.
+\item \code{Biobase::testBioCConnection()}.
 }
 }
