@@ -16,10 +16,10 @@
 #'
 #' @examples
 #' ## TRUE ====
-#' isAnExistingURL("https://acidgenomics.com")
+#' isAnExistingURL("https://acidgenomics.com/")
 #'
 #' ## FALSE ====
-#' isAnExistingURL("https://failwhale.acidgenomics.com")
+#' isAnExistingURL("https://failwhale.acidgenomics.com/")
 NULL
 
 
@@ -38,7 +38,11 @@ isExistingURL <- function(x, .xname = getNameInParent(x)) {
         return(ok)
     }
     checkConnection <- function(x) {
-        con <- url(x)
+        if (is(x, "url")) {
+            con <- x
+        } else {
+            con <- url(x)
+        }
         test <- try(
             expr = {
                 suppressWarnings({
@@ -47,11 +51,18 @@ isExistingURL <- function(x, .xname = getNameInParent(x)) {
             },
             silent = TRUE
         )
-        close(con)
+        if (!is(x, "url")) {
+            close(con)
+        }
         ok <- !inherits(test, "try-error")
         ok
     }
-    ok <- bapply(X = x, FUN = checkConnection)
+    if (is(x, "url")) {
+        ok <- checkConnection(x)
+    } else {
+        ok <- bapply(X = x, FUN = checkConnection, USE.NAMES = FALSE)
+    }
+    names(ok) <- .xname
     setCause(ok, false = "URL doesn't exist")
 }
 
