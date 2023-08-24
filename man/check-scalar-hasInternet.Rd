@@ -3,20 +3,16 @@
 \name{check-scalar-hasInternet}
 \alias{check-scalar-hasInternet}
 \alias{hasInternet}
-\title{Does the current session have an internet connection?}
+\title{Does the current session have an Internet connection?}
 \usage{
-hasInternet(url = "http://www.bioconductor.org/")
-}
-\arguments{
-\item{url}{\code{character(1)}.
-Uniform Resource Locator (URL).}
+hasInternet()
 }
 \value{
 \code{TRUE} on success;
 \code{FALSE} on failure, with cause set.
 }
 \description{
-Does the current session have an internet connection?
+Does the current session have an Internet connection?
 }
 \note{
 Updated 2023-08-24.
@@ -26,12 +22,6 @@ hasInternet()
 }
 \seealso{
 \itemize{
-\item \code{open.connection()}.
-\item \code{Biobase::testBioCConnection()}.
-\item \code{curl::has_internet()}.
-\item \code{curl::nslookup()}.
-\item \code{RCurl::getURL()}.
-\item https://stackoverflow.com/questions/52911812
-\item https://stackoverflow.com/a/17620732/3911732
+\item \code{isAnExistingURL()}.
 }
 }
