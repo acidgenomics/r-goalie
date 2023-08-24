@@ -7,6 +7,7 @@
 #'
 #' @seealso
 #' - `isAnExistingURL()`.
+#' - `Biobase::testBioCConnection()`.
 #'
 #' @examples
 #' hasInternet()
