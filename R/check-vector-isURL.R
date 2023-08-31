@@ -1,7 +1,7 @@
 #' Does the input contain a URL?
 #'
 #' @name check-vector-isURL
-#' @note Updated 2023-08-24.
+#' @note Updated 2023-08-25.
 #'
 #' @details
 #' This assert check is intended to be simple and does not check to see if the
@@ -44,6 +44,7 @@ isURL <- function(x, .xname = getNameInParent(x)) {
     }
     enc <- URLencode(x)
     ok <- x == enc
+    names(ok) <- .xname
     setCause(ok, false = "not encoded")
 }
 
