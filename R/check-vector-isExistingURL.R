@@ -1,7 +1,7 @@
 #' Does the input contain an existing (active) URL?
 #'
 #' @name check-vector-isExistingURL
-#' @note Updated 2023-08-24.
+#' @note Updated 2023-08-25.
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
@@ -45,8 +45,9 @@ isExistingURL <- function(x, .xname = getNameInParent(x)) {
         }
         test <- try(
             expr = {
+                ## Timeout is in seconds here.
                 suppressWarnings({
-                    open.connection(con = con, open = "rt", timeout = 2L)
+                    open(con = con, open = "r", timeout = 1L)
                 })
             },
             silent = TRUE
