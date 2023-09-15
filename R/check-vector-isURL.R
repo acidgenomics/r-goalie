@@ -1,7 +1,7 @@
 #' Does the input contain a URL?
 #'
 #' @name check-vector-isURL
-#' @note Updated 2023-08-25.
+#' @note Updated 2023-09-15.
 #'
 #' @details
 #' This assert check is intended to be simple and does not check to see if the
@@ -29,7 +29,7 @@ NULL
 
 #' @describeIn check-vector-isURL Vectorized.
 #' @export
-isURL <- function(x, .xname = getNameInParent(x)) {
+isURL <- function(x) {
     ok <- is(x, "url")
     if (isTRUE(ok)) {
         return(ok)
@@ -44,7 +44,7 @@ isURL <- function(x, .xname = getNameInParent(x)) {
     }
     enc <- URLencode(x)
     ok <- x == enc
-    names(ok) <- .xname
+    names(ok) <- x
     setCause(ok, false = "not encoded")
 }
 
@@ -54,12 +54,12 @@ isURL <- function(x, .xname = getNameInParent(x)) {
 
 #' @describeIn check-vector-isURL Scalar. Requires a single URL.
 #' @export
-isAURL <- function(x, .xname = getNameInParent(x)) {
-    ok <- isScalar(x = x, .xname = .xname)
+isAURL <- function(x) {
+    ok <- isScalar(x)
     if (!isTRUE(ok)) {
         return(ok)
     }
-    ok <- isURL(x = x, .xname = .xname)
+    ok <- isURL(x)
     if (!all(ok)) {
         return(falseFromVector(ok))
     }
@@ -70,8 +70,8 @@ isAURL <- function(x, .xname = getNameInParent(x)) {
 
 #' @describeIn check-vector-isURL Scalar. Checks that all strings are URLs.
 #' @export
-allAreURLs <- function(x, .xname = getNameInParent(x)) {
-    ok <- isURL(x = x, .xname = .xname)
+allAreURLs <- function(x) {
+    ok <- isURL(x)
     if (!all(ok)) {
         return(falseFromVector(ok))
     }
