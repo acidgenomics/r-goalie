@@ -10,10 +10,10 @@
 #' @inheritParams AcidRoxygen::params
 #'
 #' @seealso
+#' - `curlGetHeaders()`: Amazing function with good timeout control.
 #' - `open.connection()`: Base method with no dependencies, but prone to hang
 #' with poor timeout control.
-#' - `curlGetHeaders`.
-#' - `RCurl::url.exists()`.
+#' - `RCurl::url.exists()`: Seems to be good but adds external dependency.
 #' - urlchecker and curl packages.
 #' - https://github.com/r-lib/urlchecker/blob/main/inst/tools/urltools.R
 #' - https://stackoverflow.com/questions/52911812
