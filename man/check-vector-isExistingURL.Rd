@@ -7,17 +7,14 @@
 \alias{allAreExistingURLs}
 \title{Does the input contain an existing (active) URL?}
 \usage{
-isExistingURL(x, .xname = getNameInParent(x))
+isExistingURL(x)
 
-isAnExistingURL(x, .xname = getNameInParent(x))
+isAnExistingURL(x)
 
-allAreExistingURLs(x, .xname = getNameInParent(x))
+allAreExistingURLs(x)
 }
 \arguments{
 \item{x}{Object.}
-
-\item{.xname}{Name of object defined in \code{x}.
-\emph{Not intended to be used directly.}}
 }
 \value{
 \code{TRUE} on success;
@@ -25,6 +22,9 @@ allAreExistingURLs(x, .xname = getNameInParent(x))
 }
 \description{
 Does the input contain an existing (active) URL?
+}
+\details{
+Requires RCurl package to be installed.
 }
 \section{Functions}{
 \itemize{
@@ -48,7 +48,8 @@ isAnExistingURL("https://failwhale.acidgenomics.com/")
 }
 \seealso{
 \itemize{
-\item \code{open.connection()}.
+\item \code{open.connection()}: Base method with no dependencies, but prone to hang
+with poor timeout control.
 \item \code{RCurl::url.exists()}.
 \item \code{curl::has_internet()}.
 \item \code{curl::nslookup()}.
