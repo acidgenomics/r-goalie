@@ -48,10 +48,10 @@ isAnExistingURL("https://failwhale.acidgenomics.com/")
 }
 \seealso{
 \itemize{
+\item \code{curlGetHeaders()}: Amazing function with good timeout control.
 \item \code{open.connection()}: Base method with no dependencies, but prone to hang
 with poor timeout control.
-\item \code{curlGetHeaders}.
-\item \code{RCurl::url.exists()}.
+\item \code{RCurl::url.exists()}: Seems to be good but adds external dependency.
 \item urlchecker and curl packages.
 \item https://github.com/r-lib/urlchecker/blob/main/inst/tools/urltools.R
 \item https://stackoverflow.com/questions/52911812
