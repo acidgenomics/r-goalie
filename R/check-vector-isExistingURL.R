@@ -1,18 +1,17 @@
-## FIXME This needs to timeout on failure faster still...argh.
-## isAnExistingURL("ftp://ftp.ensembl.org/pub/")
-
-
-
 #' Does the input contain an existing (active) URL?
 #'
 #' @name check-vector-isExistingURL
 #' @note Updated 2023-09-15.
 #'
+#' @details
+#' Requires RCurl package to be installed.
+#'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
 #'
 #' @seealso
-#' - `open.connection()`.
+#' - `open.connection()`: Base method with no dependencies, but prone to hang
+#'   with poor timeout control.
 #' - `RCurl::url.exists()`.
 #' - `curl::has_internet()`.
 #' - `curl::nslookup()`.
@@ -31,22 +30,20 @@ NULL
 
 ## Vector ======================================================================
 
-## FIXME Names of isURL check isn't what we want.
-
 #' @describeIn check-vector-isExistingURL Vectorized.
 #' @export
-isExistingURL <- function(x, .xname = getNameInParent(x)) {
+isExistingURL <- function(x) {
     ok <- as.logical(capabilities(what = "http/ftp"))
     if (!isTRUE(ok)) {
         return(false("R session does not have Internet access."))
     }
-    ok <- isURL(x, .xname = .xname)
+    ok <- isURL(x)
     if (!all(ok)) {
         return(ok)
     }
     assert(requireNamespaces("RCurl"))
     ok <- RCurl::url.exists(x)
-    names(ok) <- .xname
+    names(ok) <- x
     setCause(ok, false = "URL doesn't exist")
 }
 
@@ -56,12 +53,12 @@ isExistingURL <- function(x, .xname = getNameInParent(x)) {
 
 #' @describeIn check-vector-isExistingURL Scalar. Requires a single URL.
 #' @export
-isAnExistingURL <- function(x, .xname = getNameInParent(x)) {
-    ok <- isScalar(x = x, .xname = .xname)
+isAnExistingURL <- function(x) {
+    ok <- isScalar(x)
     if (!isTRUE(ok)) {
         return(ok)
     }
-    ok <- isExistingURL(x = x, .xname = .xname)
+    ok <- isExistingURL(x)
     if (!all(ok)) {
         return(falseFromVector(ok))
     }
@@ -73,8 +70,8 @@ isAnExistingURL <- function(x, .xname = getNameInParent(x)) {
 #' @describeIn check-vector-isExistingURL Scalar. Checks that all strings are
 #' existing URLs.
 #' @export
-allAreExistingURLs <- function(x, .xname = getNameInParent(x)) {
-    ok <- isExistingURL(x = x, .xname = .xname)
+allAreExistingURLs <- function(x) {
+    ok <- isExistingURL(x)
     if (!all(ok)) {
         return(falseFromVector(ok))
     }
