@@ -7,17 +7,14 @@
 \alias{allAreURLs}
 \title{Does the input contain a URL?}
 \usage{
-isURL(x, .xname = getNameInParent(x))
+isURL(x)
 
-isAURL(x, .xname = getNameInParent(x))
+isAURL(x)
 
-allAreURLs(x, .xname = getNameInParent(x))
+allAreURLs(x)
 }
 \arguments{
 \item{x}{Object.}
-
-\item{.xname}{Name of object defined in \code{x}.
-\emph{Not intended to be used directly.}}
 }
 \value{
 \code{TRUE} on success;
@@ -40,10 +37,10 @@ URL exists (is active). For that, refer to \code{isExistingURL} instead.
 
 }}
 \note{
-Updated 2023-07-27.
+Updated 2023-09-15.
 }
 \examples{
-urls <- c("https://www.r-project.org", "ftp://r-project.org")
+urls <- c("https://www.r-project.org/", "ftp://r-project.org/")
 
 ## TRUE ====
 isURL(urls)

@@ -1,16 +1,21 @@
+## FIXME This needs to timeout on failure faster still...argh.
+## isAnExistingURL("ftp://ftp.ensembl.org/pub/")
+
+
+
 #' Does the input contain an existing (active) URL?
 #'
 #' @name check-vector-isExistingURL
-#' @note Updated 2023-08-25.
+#' @note Updated 2023-09-15.
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
 #'
 #' @seealso
 #' - `open.connection()`.
+#' - `RCurl::url.exists()`.
 #' - `curl::has_internet()`.
 #' - `curl::nslookup()`.
-#' - `RCurl::getURL()`.
 #' - https://stackoverflow.com/questions/52911812
 #' - https://stackoverflow.com/a/17620732/3911732
 #'
@@ -26,6 +31,8 @@ NULL
 
 ## Vector ======================================================================
 
+## FIXME Names of isURL check isn't what we want.
+
 #' @describeIn check-vector-isExistingURL Vectorized.
 #' @export
 isExistingURL <- function(x, .xname = getNameInParent(x)) {
@@ -37,32 +44,8 @@ isExistingURL <- function(x, .xname = getNameInParent(x)) {
     if (!all(ok)) {
         return(ok)
     }
-    checkConnection <- function(x) {
-        if (is(x, "url")) {
-            con <- x
-        } else {
-            con <- url(x)
-        }
-        test <- try(
-            expr = {
-                ## Timeout is in seconds here.
-                suppressWarnings({
-                    open(con = con, open = "r", timeout = 1L)
-                })
-            },
-            silent = TRUE
-        )
-        if (!is(x, "url")) {
-            close(con)
-        }
-        ok <- !inherits(test, "try-error")
-        ok
-    }
-    if (is(x, "url")) {
-        ok <- checkConnection(x)
-    } else {
-        ok <- bapply(X = x, FUN = checkConnection, USE.NAMES = FALSE)
-    }
+    assert(requireNamespaces("RCurl"))
+    ok <- RCurl::url.exists(x)
     names(ok) <- .xname
     setCause(ok, false = "URL doesn't exist")
 }
