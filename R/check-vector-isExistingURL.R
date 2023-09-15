@@ -99,7 +99,7 @@ NULL
                 url = x,
                 redirect = TRUE,
                 verify = TRUE,
-                timeout = 2L
+                timeout = 3L
             )
         },
         silent = TRUE
