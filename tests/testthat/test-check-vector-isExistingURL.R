@@ -22,6 +22,12 @@ test_that("URL connection support", {
     close(x)
 })
 
+test_that("Only HTTP and FTP", {
+    ok <- isAnExistingURL("gopher://foobar")
+    expect_false(ok)
+    expect_match(cause(ok), "doesn't match")
+})
+
 test_that("isAnExistingURL", {
     ok <- isAnExistingURL(urls[[1L]])
     expect_true(ok)

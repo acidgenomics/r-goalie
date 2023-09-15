@@ -1,10 +1,20 @@
+## Here's a forbidden example:
+## http://ftp.wormbase.org/
+## sftp://sftp-private.ncbi.nlm.nih.gov/
+##
+## Here's a successful example:
+## ftp://ftp.ensembl.org/pub/release-110/mysql/
+## ftp://ftp.wormbase.org/
+
+
+
 #' Does the input contain an existing (active) URL?
 #'
 #' @name check-vector-isExistingURL
 #' @note Updated 2023-09-15.
 #'
 #' @details
-#' Requires RCurl package to be installed.
+#' Supports HTTPS, HTTP, and FTP protocols.
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
@@ -12,9 +22,10 @@
 #' @seealso
 #' - `open.connection()`: Base method with no dependencies, but prone to hang
 #' with poor timeout control.
+#' - `curlGetHeaders`.
 #' - `RCurl::url.exists()`.
-#' - `curl::has_internet()`.
-#' - `curl::nslookup()`.
+#' - urlchecker and curl packages.
+#' - https://github.com/r-lib/urlchecker/blob/main/inst/tools/urltools.R
 #' - https://stackoverflow.com/questions/52911812
 #' - https://stackoverflow.com/a/17620732/3911732
 #'
@@ -41,8 +52,12 @@ isExistingURL <- function(x) {
     if (!all(ok)) {
         return(ok)
     }
+    ok <- isMatchingRegex(x = x, pattern = "^(ftp|http|https)://")
+    if (!all(ok)) {
+        return(ok)
+    }
     if (is(x, "url")) {
-        checkConnection <- function(x) {
+        checkCon <- function(x) {
             test <- try(
                 expr = {
                     suppressWarnings({
@@ -54,10 +69,42 @@ isExistingURL <- function(x) {
             ok <- !inherits(test, "try-error")
             ok
         }
-        ok <- checkConnection(x)
+        ok <- checkCon(x)
     } else {
-        assert(requireNamespaces("RCurl"))
-        ok <- RCurl::url.exists(x)
+        checkFtp <- function(x) {
+            h <- try(
+                expr = {
+                    curlGetHeaders(
+                        url = x,
+                        redirect = TRUE,
+                        verify = TRUE,
+                        timeout = 2L
+                    )
+                },
+                silent = TRUE
+            )
+            if (inherits(h, "try-error")) {
+                return(FALSE)
+            }
+            TRUE
+        }
+        checkHttp <- function(x) {
+            h <- try(
+                expr = {
+                    curlGetHeaders(
+                        url = x,
+                        redirect = TRUE,
+                        verify = TRUE,
+                        timeout = 1L
+                    )
+                },
+                silent = TRUE
+            )
+            if (inherits(h, "try-error")) {
+                return(FALSE)
+            }
+            TRUE
+        }
     }
     names(ok) <- x
     setCause(ok, false = "URL doesn't exist")

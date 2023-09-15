@@ -24,7 +24,7 @@ allAreExistingURLs(x)
 Does the input contain an existing (active) URL?
 }
 \details{
-Requires RCurl package to be installed.
+Supports HTTPS, HTTP, and FTP protocols.
 }
 \section{Functions}{
 \itemize{
@@ -50,9 +50,10 @@ isAnExistingURL("https://failwhale.acidgenomics.com/")
 \itemize{
 \item \code{open.connection()}: Base method with no dependencies, but prone to hang
 with poor timeout control.
+\item \code{curlGetHeaders}.
 \item \code{RCurl::url.exists()}.
-\item \code{curl::has_internet()}.
-\item \code{curl::nslookup()}.
+\item urlchecker and curl packages.
+\item https://github.com/r-lib/urlchecker/blob/main/inst/tools/urltools.R
 \item https://stackoverflow.com/questions/52911812
 \item https://stackoverflow.com/a/17620732/3911732
 }
