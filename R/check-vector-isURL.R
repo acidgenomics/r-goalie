@@ -32,6 +32,7 @@ NULL
 isURL <- function(x) {
     ok <- is(x, "url")
     if (isTRUE(ok)) {
+        names(ok) <- "connection"
         return(ok)
     }
     ok <- isCharacter(x)
