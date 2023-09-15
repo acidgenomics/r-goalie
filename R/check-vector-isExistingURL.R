@@ -46,7 +46,7 @@ isExistingURL <- function(x) {
             test <- try(
                 expr = {
                     suppressWarnings({
-                        open.connection(con = con, open = "rt", timeout = 1L)
+                        open.connection(con = x, open = "rt", timeout = 1L)
                     })
                 },
                 silent = TRUE
