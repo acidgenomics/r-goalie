@@ -14,9 +14,6 @@ test_that("isExistingURL", {
     )
 })
 
-## FIXME Need to add back in connection support. This is currently causing
-## a segfault, so rework.
-
 test_that("URL connection support", {
     x <- url(urls[[1L]])
     expect_s3_class(x, "url")
