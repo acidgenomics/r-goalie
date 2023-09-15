@@ -87,9 +87,9 @@ NULL
 #' @seealso
 #' - https://en.wikipedia.org/wiki/List_of_FTP_server_return_codes
 #' - https://www.rfc-editor.org/rfc/rfc959
-#'   Section 4.2.2 "Numeric Order List of Reply Codes"
+#' Section 4.2.2 "Numeric Order List of Reply Codes"
 #' - https://www.rfc-editor.org/rfc/rfc2228
-#'   Section 5 "New FTP Replies".
+#' Section 5 "New FTP Replies".
 #' - https://github.com/r-lib/urlchecker/blob/main/inst/tools/urltools.R
 #'
 #' @examples
