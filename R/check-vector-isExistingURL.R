@@ -69,8 +69,16 @@ NULL
 #' @note Updated 2023-09-15.
 #' @noRd
 #'
-#' @section FTP server error codes:
-#' Only need those >= 400.
+#' @section FTP server status codes:
+#'
+#' - 1xx: positive preliminary reply
+#' - 2xx: positive completion reply
+#' - 3xx: positive intermediate reply
+#' - 4xx: transient negative completion reply
+#' - 5xx: permanent negative completion reply
+#' - 6xx: protected reply
+#'
+#' Only codes >= 400 represent errors.
 #'
 #' @param x `character(1)`.
 #'
@@ -118,13 +126,20 @@ NULL
 
 
 
-#' Check an HTTP or HTTPS URL
+#' Check an HTTP(S) URL
 #'
 #' @note Updated 2023-09-15.
 #' @noRd
 #'
-#' @section HTTP server error codes:
-#' Only need those >= 400.
+#' @section HTTP server status codes:
+#'
+#' - 1xx: informational response
+#' - 2xx: successful
+#' - 3xx: redirection
+#' - 4xx: client error
+#' - 5xx: server error
+#'
+#' Only codes >= 400 represent errors.
 #'
 #' @param x `character(1)`.
 #'
@@ -132,6 +147,7 @@ NULL
 #'
 #' @seealso
 #' - https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+#' - https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
 #' - https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml
 #'
 #' @examples
