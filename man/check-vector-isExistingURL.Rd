@@ -37,21 +37,21 @@ existing URLs.
 
 }}
 \note{
-Updated 2023-08-24.
+Updated 2023-09-15.
 }
 \examples{
 ## TRUE ====
-isAnExistingURL("https://acidgenomics.com")
+isAnExistingURL("https://acidgenomics.com/")
 
 ## FALSE ====
-isAnExistingURL("https://failwhale.acidgenomics.com")
+isAnExistingURL("https://failwhale.acidgenomics.com/")
 }
 \seealso{
 \itemize{
 \item \code{open.connection()}.
+\item \code{RCurl::url.exists()}.
 \item \code{curl::has_internet()}.
 \item \code{curl::nslookup()}.
-\item \code{RCurl::getURL()}.
 \item https://stackoverflow.com/questions/52911812
 \item https://stackoverflow.com/a/17620732/3911732
 }
