@@ -8,6 +8,8 @@ Minor changes:
   a direct connection check, as this is more reliable for returning `FALSE` for
   some offline servers, such as the Ensembl FTP server, which has stability
   issues.
+- Now using `requireNamespaces` instead of `requireNamespace` consistently
+  internally in the package.
 
 ## goalie 0.6.15 (2023-08-24)
 
