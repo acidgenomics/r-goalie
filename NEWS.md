@@ -1,5 +1,13 @@
 # Release notes
 
+## goalie 0.6.17 (2023-09-15)
+
+Minor changes:
+
+- `isAnExistingURL`: Reworked engine back to use base R via `curlGetHeaders`
+  function. Returns `FALSE` for status codes >= 400 for both HTTP(S) and FTP.
+  No longer need to include RCurl as a suggested package.
+
 ## goalie 0.6.16 (2023-09-15)
 
 Minor changes:
