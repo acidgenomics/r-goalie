@@ -52,6 +52,7 @@ isExistingURL <- function(x) {
                 silent = TRUE
             )
             ok <- !inherits(test, "try-error")
+            ok
         }
         ok <- checkConnection(x)
     } else {
