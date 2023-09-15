@@ -11,7 +11,7 @@
 #'
 #' @seealso
 #' - `open.connection()`: Base method with no dependencies, but prone to hang
-#'   with poor timeout control.
+#' with poor timeout control.
 #' - `RCurl::url.exists()`.
 #' - `curl::has_internet()`.
 #' - `curl::nslookup()`.

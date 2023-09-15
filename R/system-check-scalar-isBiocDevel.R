@@ -23,10 +23,7 @@ isBiocDevel <- function() {
     if (!isTRUE(ok)) {
         return(ok)
     }
-    assert(
-        requireNamespace("BiocManager", quietly = TRUE),
-        requireNamespace("yaml", quietly = TRUE)
-    )
+    assert(requireNamespaces(c("BiocManager", "yaml")))
     version <- BiocManager::version()
     yaml <- yaml::read_yaml("https://bioconductor.org/config.yaml")
     assert(isSubset("devel_version", names(yaml)))

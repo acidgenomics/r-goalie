@@ -40,7 +40,7 @@ hasNoDuplicates <- function(x, .xname = getNameInParent(x)) {
     ok <- anyDuplicated(x) == 0L
     if (!isTRUE(ok)) {
         if (is(x, "Rle")) {
-            assert(requireNamespace("S4Vectors", quietly = TRUE))
+            assert(requireNamespaces("S4Vectors"))
             x <- S4Vectors::decode(x)
         }
         dupeIndicies <- which(duplicated(x))

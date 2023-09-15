@@ -29,7 +29,7 @@ hasMultipleSamples <- function(x, .xname = getNameInParent(x)) {
     if (!isTRUE(ok)) {
         return(false("{.var %s} is not {.cls SummarizedExperiment}.", .xname))
     }
-    assert(requireNamespace("Biobase", quietly = TRUE))
+    assert(requireNamespaces("Biobase"))
     ok <- tryCatch(
         expr = {
             length(Biobase::sampleNames(x)) > 1L
