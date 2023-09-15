@@ -181,13 +181,14 @@ isExistingURL <- function(x) {
     if (!all(ok)) {
         return(ok)
     }
-    ok <- isMatchingRegex(x = x, pattern = "^(ftp|http|https)://")
-    if (!all(ok)) {
-        return(ok)
-    }
     if (is(x, "url")) {
         ok <- .checkCon(x)
+        names(ok) <- "connection"
     } else {
+        ok <- isMatchingRegex(x = x, pattern = "^(ftp|http|https)://")
+        if (!all(ok)) {
+            return(ok)
+        }
         ok <- bapply(
             X = x,
             FUN = function(x) {
@@ -201,8 +202,8 @@ isExistingURL <- function(x) {
                 ok
             }
         )
+        names(ok) <- x
     }
-    names(ok) <- x
     setCause(ok, false = "URL doesn't exist")
 }
 
