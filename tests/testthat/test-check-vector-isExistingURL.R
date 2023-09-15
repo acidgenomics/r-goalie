@@ -9,10 +9,13 @@ test_that("isExistingURL", {
     expect_identical(
         object = cause(ok),
         expected = c(
-            "\"https://failwhale.acidgenomics.com/\"" = "URL doesn't exist"
+            "https://failwhale.acidgenomics.com/" = "URL doesn't exist"
         )
     )
 })
+
+## FIXME Need to add back in connection support. This is currently causing
+## a segfault, so rework.
 
 test_that("URL connection support", {
     x <- url(urls[[1L]])
@@ -30,7 +33,7 @@ test_that("isAnExistingURL", {
     expect_false(ok)
     expect_identical(
         object = cause(ok),
-        expected = "{.var urls} doesn't have a length of 1."
+        expected = "{.var x} doesn't have a length of 1."
     )
 })
 
