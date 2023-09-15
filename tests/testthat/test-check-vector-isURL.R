@@ -28,7 +28,7 @@ test_that("isAURL", {
     expect_false(ok)
     expect_identical(
         object = cause(ok),
-        expected = "{.var urls} doesn't have a length of 1."
+        expected = "{.var x} doesn't have a length of 1."
     )
 })
 
