@@ -28,7 +28,7 @@ hasSubset <-
              metadata = "subset",
              .xname = getNameInParent(x)) {
         assert(
-            requireNamespace("S4Vectors", quietly = TRUE),
+            requireNamespaces("S4Vectors"),
             is(x, "Annotated"),
             isCharacter(metadata)
         )

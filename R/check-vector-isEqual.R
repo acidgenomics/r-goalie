@@ -36,7 +36,7 @@ NULL
 #' @export
 isEqualTo <- function(x, y) {
     if (is(x, "Rle") || is(y, "Rle")) {
-        assert(requireNamespace("S4Vectors", quietly = TRUE))
+        assert(requireNamespaces("S4Vectors"))
         x <- S4Vectors::decode(x)
         y <- S4Vectors::decode(y)
     }
@@ -56,7 +56,7 @@ isEqualTo <- function(x, y) {
 #' @export
 isNotEqualTo <- function(x, y) {
     if (is(x, "Rle") || is(y, "Rle")) {
-        assert(requireNamespace("S4Vectors", quietly = TRUE))
+        assert(requireNamespaces("S4Vectors"))
         x <- S4Vectors::decode(x)
         y <- S4Vectors::decode(y)
     }
@@ -75,7 +75,7 @@ isNotEqualTo <- function(x, y) {
 #' @export
 isGreaterThan <- function(x, y) {
     if (is(x, "Rle") || is(y, "Rle")) {
-        assert(requireNamespace("S4Vectors", quietly = TRUE))
+        assert(requireNamespaces("S4Vectors"))
         x <- S4Vectors::decode(x)
         y <- S4Vectors::decode(y)
     }
@@ -94,7 +94,7 @@ isGreaterThan <- function(x, y) {
 #' @export
 isGreaterThanOrEqualTo <- function(x, y) {
     if (is(x, "Rle") || is(y, "Rle")) {
-        assert(requireNamespace("S4Vectors", quietly = TRUE))
+        assert(requireNamespaces("S4Vectors"))
         x <- S4Vectors::decode(x)
         y <- S4Vectors::decode(y)
     }
@@ -113,7 +113,7 @@ isGreaterThanOrEqualTo <- function(x, y) {
 #' @export
 isLessThan <- function(x, y) {
     if (is(x, "Rle") || is(y, "Rle")) {
-        assert(requireNamespace("S4Vectors", quietly = TRUE))
+        assert(requireNamespaces("S4Vectors"))
         x <- S4Vectors::decode(x)
         y <- S4Vectors::decode(y)
     }
@@ -132,7 +132,7 @@ isLessThan <- function(x, y) {
 #' @export
 isLessThanOrEqualTo <- function(x, y) {
     if (is(x, "Rle") || is(y, "Rle")) {
-        assert(requireNamespace("S4Vectors", quietly = TRUE))
+        assert(requireNamespaces("S4Vectors"))
         x <- S4Vectors::decode(x)
         y <- S4Vectors::decode(y)
     }

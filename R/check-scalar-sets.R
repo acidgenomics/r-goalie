@@ -66,7 +66,7 @@ isSubset <-
             return(ok)
         }
         if (isS4(x) || isS4(y)) {
-            assert(requireNamespace("S4Vectors", quietly = TRUE))
+            assert(requireNamespaces("S4Vectors"))
             `%in%` <- S4Vectors::`%in%` # nolint
         }
         ok <- all(x %in% y)
