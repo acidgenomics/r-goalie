@@ -188,12 +188,18 @@ isExistingURL <- function(x) {
     if (is(x, "url")) {
         ok <- .checkCon(x)
     } else {
-        protocol <- strsplit(x, split = ":")[[1L]][[1L]]
-        ok <- switch(
-            EXPR = protocol,
-            "ftp" = .checkFtp(x),
-            "http" = .checkHttp(x),
-            "https" = .checkHttp(x)
+        ok <- bapply(
+            X = x,
+            FUN = function(x) {
+                protocol <- strsplit(x, split = ":")[[1L]][[1L]]
+                ok <- switch(
+                    EXPR = protocol,
+                    "ftp" = .checkFtp(x),
+                    "http" = .checkHttp(x),
+                    "https" = .checkHttp(x)
+                )
+                ok
+            }
         )
     }
     names(ok) <- x
