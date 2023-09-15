@@ -41,8 +41,23 @@ isExistingURL <- function(x) {
     if (!all(ok)) {
         return(ok)
     }
-    assert(requireNamespaces("RCurl"))
-    ok <- RCurl::url.exists(x)
+    if (is(x, "url")) {
+        checkConnection <- function(x) {
+            test <- try(
+                expr = {
+                    suppressWarnings({
+                        open.connection(con = con, open = "rt", timeout = 1L)
+                    })
+                },
+                silent = TRUE
+            )
+            ok <- !inherits(test, "try-error")
+        }
+        ok <- checkConnection(x)
+    } else {
+        assert(requireNamespaces("RCurl"))
+        ok <- RCurl::url.exists(x)
+    }
     names(ok) <- x
     setCause(ok, false = "URL doesn't exist")
 }
