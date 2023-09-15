@@ -1,5 +1,14 @@
 # Release notes
 
+## goalie 0.6.16 (2023-09-15)
+
+Minor changes:
+
+- `isAnExistingURL`: Reworked internal code to use RCurl::url.exists instead of
+  a direct connection check, as this is more reliable for returning `FALSE` for
+  some offline servers, such as the Ensembl FTP server, which has stability
+  issues.
+
 ## goalie 0.6.15 (2023-08-24)
 
 New functions:
