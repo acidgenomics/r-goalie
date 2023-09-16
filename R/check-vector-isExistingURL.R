@@ -1,3 +1,7 @@
+## FIXME Need to check for capabilities("libcurl")
+
+
+
 #' Does the input contain an existing (active) URL?
 #'
 #' @name check-vector-isExistingURL
