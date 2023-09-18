@@ -1,6 +1,9 @@
 #+TITLE: goalie
 #+STARTUP: content
 * Development
+** TODO Add n support to hasCols.
+** TODO Add n support to hasRows.
+** TODO Add support for a specific dimension to hasDims.
 ** TODO Add a better general `isDuplicate` function.
     Return a more intuitive T/F vector for dupes in a data.frame for example.
     Consider reworking with our `hasDuplicates` general function.
