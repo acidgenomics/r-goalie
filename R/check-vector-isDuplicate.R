@@ -28,8 +28,11 @@ NULL
 #' @describeIn check-vector-isDuplicate Vectorized.
 #' @export
 isDuplicate <- function(x) {
-    ## Allowing NA here, so don't use `isCharacter` check.
-    ok <- is.character(x)
+    ok <- is.vector(x)
+    if (!isTRUE(ok)) {
+        return(ok)
+    }
+    ok <- hasLength(x)
     if (!isTRUE(ok)) {
         return(ok)
     }
