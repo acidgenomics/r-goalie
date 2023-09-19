@@ -42,7 +42,19 @@ test_that("numeric", {
         object = as.logical(ok),
         expected = c(FALSE, FALSE, FALSE)
     )
+})
 
+test_that("logical", {
+    expect_identical(
+        object = isDuplicate(c(FALSE, FALSE)),
+        expected = c(TRUE, TRUE)
+    )
+    ok <- isDuplicate(c(FALSE, TRUE))
+    expect_s4_class(ok, "goalie")
+    expect_identical(
+        object = as.logical(ok),
+        expected = c(FALSE, FALSE)
+    )
 })
 
 test_that("Invalid input", {
