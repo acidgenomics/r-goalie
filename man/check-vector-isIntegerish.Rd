@@ -3,10 +3,13 @@
 \name{check-vector-isIntegerish}
 \alias{check-vector-isIntegerish}
 \alias{isIntegerish}
+\alias{allAreIntegerish}
 \alias{isInt}
 \title{Is the input integer(ish)?}
 \usage{
 isIntegerish(x, .xname = getNameInParent(x))
+
+allAreIntegerish(x)
 
 isInt(x, nullOK = FALSE)
 }
@@ -30,6 +33,8 @@ Check for valid input of either explicit (e.g. \code{1L}) and/or implict
 \section{Functions}{
 \itemize{
 \item \code{isIntegerish()}: Vectorized.
+
+\item \code{allAreIntegerish()}: Scalar.
 
 \item \code{isInt()}: Scalar.
 
