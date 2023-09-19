@@ -1,6 +1,3 @@
 #+TITLE: goalie
 #+STARTUP: content
 * Development
-** TODO Add n support to hasCols.
-** TODO Add n support to hasRows.
-** TODO Add support for a specific dimension to hasDims.
