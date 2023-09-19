@@ -16,9 +16,10 @@ hasCols(x, n = NULL, .xname = getNameInParent(x))
 \arguments{
 \item{x}{Object.}
 
-\item{n}{\code{integer}.
+\item{n}{\code{integer} or \code{NULL}.
 Expected dimension number.
-For \code{hasDims}, \code{integer(2)} is required, corresponding to rows, columns.}
+For \code{hasDims}, \code{integer(2)} is required, corresponding to rows, columns.
+If \code{NULL}, only checks for non-zero dimensions.}
 
 \item{.xname}{Name of object defined in \code{x}.
 \emph{Not intended to be used directly.}}
