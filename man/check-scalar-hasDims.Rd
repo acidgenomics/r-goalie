@@ -7,14 +7,18 @@
 \alias{hasCols}
 \title{Does the input have dimensions?}
 \usage{
-hasDims(x, .xname = getNameInParent(x))
+hasDims(x, n = NULL, .xname = getNameInParent(x))
 
-hasRows(x, .xname = getNameInParent(x))
+hasRows(x, n = NULL, .xname = getNameInParent(x))
 
-hasCols(x, .xname = getNameInParent(x))
+hasCols(x, n = NULL, .xname = getNameInParent(x))
 }
 \arguments{
 \item{x}{Object.}
+
+\item{n}{\code{integer}.
+Expected dimension number.
+For \code{hasDims}, \code{integer(2)} is required, corresponding to rows, columns.}
 
 \item{.xname}{Name of object defined in \code{x}.
 \emph{Not intended to be used directly.}}
@@ -27,7 +31,7 @@ hasCols(x, .xname = getNameInParent(x))
 Does the input have dimensions?
 }
 \note{
-Updated 2019-08-10.
+Updated 2023-09-19.
 }
 \examples{
 ## TRUE ====
@@ -38,6 +42,13 @@ hasCols(x)
 
 ## Note that dims don't have to be non-zero, just not NULL.
 hasDims(data.frame())
+
+## Expected dimension number is supported.
+x <- matrix(data = seq(from = 1L, to = 6L), nrow = 3L, ncol = 2L)
+## For `hasDims`, `n` corresponds to rows, columns.
+hasDims(x, n = c(3L, 2L))
+hasRows(x, n = 3L)
+hasCols(x, n = 2L)
 
 ## FALSE ====
 x <- data.frame()
