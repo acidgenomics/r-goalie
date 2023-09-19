@@ -1,7 +1,6 @@
-skip_if_not_installed("datasets")
-
 test_that("hasDims", {
-    expect_true(hasDims(datasets::mtcars))
+    x <- matrix(data = seq(from = 1L, to = 6L), nrow = 3L, ncol = 2L)
+    expect_true(hasDims(x))
     ## Note that dims don't have to be non-zero, just not NULL.
     expect_true(hasDims(data.frame()))
     ok <- hasDims(list())
@@ -15,7 +14,7 @@ test_that("hasDims", {
 
 test_that("hasRows, hasCols", {
     for (fun in list(hasRows, hasCols)) {
-        x <- datasets::mtcars
+        x <- matrix(data = seq(from = 1L, to = 6L), nrow = 3L, ncol = 2L)
         expect_true(fun(x))
         x <- data.frame()
         expect_false(fun(x))
@@ -23,4 +22,16 @@ test_that("hasRows, hasCols", {
         x <- list()
         expect_false(fun(x))
     }
+})
+
+test_that("n length support", {
+    x <- matrix(data = seq(from = 1L, to = 6L), nrow = 3L, ncol = 2L)
+    expect_true(hasDims(x, n = c(3L, 2L)))
+    expect_true(hasDims(x, n = c(3, 2))) # nolint
+    expect_true(hasRows(x, n = 3L))
+    expect_true(hasCols(x, n = 2L))
+    expect_error(hasDims(x, n = 1L))
+
+    expect_error(hasRows(x, n = 1)) # nolint
+    expect_error(hasCols(x, n = 1)) # nolint
 })
