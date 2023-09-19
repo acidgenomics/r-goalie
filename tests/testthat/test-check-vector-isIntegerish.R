@@ -54,3 +54,10 @@ test_that("nullOK", {
     expect_false(isInt(NULL, nullOK = FALSE))
     expect_true(isInt(NULL, nullOK = TRUE))
 })
+
+test_that("allAreIntegerish", {
+    x <- c(1, 2) # nolint
+    expect_true(allAreIntegerish(x))
+    x <- c(1, 1.1) # nolint
+    expect_false(allAreIntegerish(x))
+})
