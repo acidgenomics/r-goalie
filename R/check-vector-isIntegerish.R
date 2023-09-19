@@ -78,6 +78,19 @@ isIntegerish <- function(x, .xname = getNameInParent(x)) {
 
 #' @describeIn check-vector-isIntegerish Scalar.
 #' @export
+## Updated 2023-09-19.
+allAreIntegerish <- function(x) {
+    ok <- isIntegerish(x)
+    if (!all(ok)) {
+        return(falseFromVector(ok))
+    }
+    TRUE
+}
+
+
+
+#' @describeIn check-vector-isIntegerish Scalar.
+#' @export
 isInt <- function(x, nullOK = FALSE) {
     if (isTRUE(nullOK) && is.null(x)) {
         return(TRUE)
