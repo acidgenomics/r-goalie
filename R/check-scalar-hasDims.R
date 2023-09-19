@@ -1,10 +1,14 @@
 #' Does the input have dimensions?
 #'
 #' @name check-scalar-hasDims
-#' @note Updated 2019-08-10.
+#' @note Updated 2023-09-19.
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
+#'
+#' @param n `integer`.
+#' Expected dimension number.
+#' For `hasDims`, `integer(2)` is required, corresponding to rows, columns.
 #'
 #' @seealso
 #' - `assertive.properties::has_dims()`.
@@ -21,6 +25,13 @@
 #' ## Note that dims don't have to be non-zero, just not NULL.
 #' hasDims(data.frame())
 #'
+#' ## Expected dimension number is supported.
+#' x <- matrix(data = seq(from = 1L, to = 6L), nrow = 3L, ncol = 2L)
+#' ## For `hasDims`, `n` corresponds to rows, columns.
+#' hasDims(x, n = c(3L, 2L))
+#' hasRows(x, n = 3L)
+#' hasCols(x, n = 2L)
+#'
 #' ## FALSE ====
 #' x <- data.frame()
 #' hasDims(list())
@@ -32,13 +43,30 @@ NULL
 
 #' @rdname check-scalar-hasDims
 #' @export
-hasDims <- function(x, .xname = getNameInParent(x)) {
-    if (is.null(dim(x))) {
+hasDims <- function(x, n = NULL, .xname = getNameInParent(x)) {
+    d <- dim(x)
+    if (is.null(d)) {
         return(false(
             "The dimensions of {.var %s} are {.val %s}.",
             .xname, "NULL"
         ))
     }
+    if (!is.null(n)) {
+        assert(
+            hasLength(n, n = 2L),
+            is.integer(n)
+        )
+        ok <- identical(d, n)
+        if (!isTRUE(ok)) {
+            return(false(
+                paste(
+                    "Dimension mismatch for {.var %s}:",
+                    "expected {.val %s}; actual {.val %s}."
+                ),
+                .xname, deparse(n), deparse(d)
+            ))
+        }
+    }
     TRUE
 }
 
@@ -46,16 +74,29 @@ hasDims <- function(x, .xname = getNameInParent(x)) {
 
 #' @rdname check-scalar-hasDims
 #' @export
-hasRows <- function(x, .xname = getNameInParent(x)) {
-    nrowx <- nrow(x)
-    if (is.null(nrowx)) {
+hasRows <- function(x, n = NULL, .xname = getNameInParent(x)) {
+    nr <- nrow(x)
+    if (is.null(nr)) {
         return(false(
             "The number of rows in {.var %s} is {.val %s}.",
             .xname, "NULL"
         ))
     }
-    if (identical(nrowx, 0L)) {
-        return(false("The number of rows in {.var %s} is zero.", .xname))
+    if (!is.null(n)) {
+        assert(isInt(n))
+        if (!identical(nr, n)) {
+            return(false(
+                paste(
+                    "Row number mismatch for {.var %s}:",
+                    "expected {.val %s}; actual {.val %s}."
+                ),
+                .xname, n, nr
+            ))
+        }
+    } else {
+        if (identical(nr, 0L)) {
+            return(false("The number of rows in {.var %s} is zero.", .xname))
+        }
     }
     TRUE
 }
@@ -64,16 +105,29 @@ hasRows <- function(x, .xname = getNameInParent(x)) {
 
 #' @rdname check-scalar-hasDims
 #' @export
-hasCols <- function(x, .xname = getNameInParent(x)) {
-    ncolx <- ncol(x)
-    if (is.null(ncolx)) {
+hasCols <- function(x, n = NULL, .xname = getNameInParent(x)) {
+    nc <- ncol(x)
+    if (is.null(nc)) {
         return(false(
             "The number of columns in {.var %s} is {.val %s}.",
             .xname, "NULL"
         ))
     }
-    if (identical(ncolx, 0L)) {
-        return(false("The number of columns in {.var %s} is zero.", .xname))
+    if (!is.null(n)) {
+        assert(isInt(n))
+        if (!identical(nc, n)) {
+            return(false(
+                paste(
+                    "Column number mismatch for {.var %s}:",
+                    "expected {.val %s}; actual {.val %s}."
+                ),
+                .xname, n, nc
+            ))
+        }
+    } else {
+        if (identical(nc, 0L)) {
+            return(false("The number of columns in {.var %s} is zero.", .xname))
+        }
     }
     TRUE
 }
