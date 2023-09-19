@@ -15,6 +15,7 @@ Minor changes:
   expected dimensions. Note that for `hasDims`, this needs to be length 2.
   Integerish values (e.g. `1` instead of `1L`) are supported, but direct
   input of integer is recommended.
+- `isExistingURL`: Now checks for `libcurl` support in R session.
 
 ## goalie 0.6.17 (2023-09-15)
 
