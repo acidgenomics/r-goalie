@@ -28,10 +28,42 @@ test_that("n length support", {
     x <- matrix(data = seq(from = 1L, to = 6L), nrow = 3L, ncol = 2L)
     expect_true(hasDims(x, n = c(3L, 2L)))
     expect_true(hasDims(x, n = c(3, 2))) # nolint
+    ok <- hasDims(x, n = c(2L, 3L))
+    expect_s4_class(ok, "goalie")
+    expect_false(ok)
+    expect_identical(
+        object = cause(ok),
+        expected = paste(
+            "Dimension mismatch for {.var x}:",
+            "expected {.val 2:3}; actual {.val 3:2}."
+        )
+    )
+    expect_error(
+        object = hasDims(x, n = 1L),
+        regexp = "hasLength"
+    )
     expect_true(hasRows(x, n = 3L))
+    expect_true(hasRows(x, n = 3)) # nolint
+    ok <- hasRows(x, n = 2L)
+    expect_s4_class(ok, "goalie")
+    expect_false(ok)
+    expect_identical(
+        object = cause(ok),
+        expected = paste(
+            "Row number mismatch for {.var x}:",
+            "expected {.val 2}; actual {.val 3}."
+        )
+    )
     expect_true(hasCols(x, n = 2L))
-    expect_error(hasDims(x, n = 1L))
-
-    expect_error(hasRows(x, n = 1)) # nolint
-    expect_error(hasCols(x, n = 1)) # nolint
+    expect_true(hasCols(x, n = 2)) # nolint
+    ok <- hasCols(x, n = 3L)
+    expect_s4_class(ok, "goalie")
+    expect_false(ok)
+    expect_identical(
+        object = cause(ok),
+        expected = paste(
+            "Column number mismatch for {.var x}:",
+            "expected {.val 3}; actual {.val 2}."
+        )
+    )
 })
