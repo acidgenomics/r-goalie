@@ -7,6 +7,14 @@ New functions:
 - `isDuplicate`: Variant of base `duplicated` that returns `TRUE` for all
   observed duplicated values in a vector. Differs from base `duplicated`,
   which only starts to return `TRUE` on the second observed value.
+- `allAreIntegerish`: Added an additional scalar variant of `isIntegerish`.
+
+Minor changes:
+
+- `hasDims`, `hasRows`, `hasCols`: Now support `n` argument for checking
+  expected dimensions. Note that for `hasDims`, this needs to be length 2.
+  Integerish values (e.g. `1` instead of `1L`) are supported, but direct
+  input of integer is recommended.
 
 ## goalie 0.6.17 (2023-09-15)
 
