@@ -1,6 +1,7 @@
 #' Does the input contain a duplicate value?
 #'
 #' @name check-vector-isDuplicate
+#' @inherit check return
 #' @note Updated 2023-09-19.
 #'
 #' @details
@@ -8,8 +9,8 @@
 #' function, which only returns `TRUE` after the first observed duplicate value.
 #' Our check here returns `TRUE` for all values that are duplicated.
 #'
-#' @inherit check
-#' @inheritParams AcidRoxygen::params
+#' @param x `vector`.
+#' Any vector type (e.g. `character`, `logical`, `numeric`).
 #'
 #' @examples
 #' ## TRUE ====
