@@ -36,11 +36,9 @@ isDuplicate <- function(x) {
     x <- unname(x)
     lgl <- duplicated(x)
     if (!any(lgl)) {
-        names(lgl) <- x
         return(setCause(lgl, false = "unique"))
     }
     vals <- x[lgl]
     ok <- x %in% vals
-    names(ok) <- x
     setCause(ok, false = "unique")
 }
