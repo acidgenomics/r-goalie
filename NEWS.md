@@ -1,5 +1,13 @@
 # Release notes
 
+## goalie 0.6.18 (2023-09-19)
+
+New functions:
+
+- `isDuplicate`: Variant of base `duplicated` that returns `TRUE` for all
+  observed duplicated values in a vector. Differs from base `duplicated`,
+  which only starts to return `TRUE` on the second observed value.
+
 ## goalie 0.6.17 (2023-09-15)
 
 Minor changes:
