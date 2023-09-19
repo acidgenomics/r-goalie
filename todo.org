@@ -4,17 +4,3 @@
 ** TODO Add n support to hasCols.
 ** TODO Add n support to hasRows.
 ** TODO Add support for a specific dimension to hasDims.
-** TODO Add a better general `isDuplicate` function.
-    Return a more intuitive T/F vector for dupes in a data.frame for example.
-    Consider reworking with our `hasDuplicates` general function.
-** TODO Consider adding `nullOK` argument to `isScalar`.
-** TODO Cause attributes are causing weird extra data frame rendering issues
-   inside of R Markdown. Does switching to S4 help with this?
-   For example, try rendering the bcbioRNASeq vignette.
-** TODO Consider updating 'validate()' and 'validateClasses()' to inform the
-   user about 'updateObject' function.
-** TODO Consider adding `isFormula` check.
-** TODO isEmpty masks some Bioconductor functions.
-** TODO skip_on_ci utility.
-** TODO isInstalled.
-** TODO isNonEmpty("") returns TRUE.
