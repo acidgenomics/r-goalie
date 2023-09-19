@@ -5,7 +5,7 @@
 #' Does the input contain an existing (active) URL?
 #'
 #' @name check-vector-isExistingURL
-#' @note Updated 2023-09-15.
+#' @note Updated 2023-09-19.
 #'
 #' @details
 #' Supports HTTPS, HTTP, and FTP protocols.
@@ -196,6 +196,10 @@ isExistingURL <- function(x) {
     ok <- as.logical(capabilities(what = "http/ftp"))
     if (!isTRUE(ok)) {
         return(false("R session does not have Internet access."))
+    }
+    ok <- as.logical(capabilities(what = "libcurl"))
+    if (!isTRUE(ok)) {
+        return(false("R session does not support libcurl."))
     }
     ok <- isURL(x)
     if (!all(ok)) {
