@@ -6,9 +6,10 @@
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
 #'
-#' @param n `integer`.
+#' @param n `integer` or `NULL`.
 #' Expected dimension number.
 #' For `hasDims`, `integer(2)` is required, corresponding to rows, columns.
+#' If `NULL`, only checks for non-zero dimensions.
 #'
 #' @seealso
 #' - `assertive.properties::has_dims()`.
