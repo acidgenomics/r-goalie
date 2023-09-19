@@ -54,10 +54,9 @@ hasDims <- function(x, n = NULL, .xname = getNameInParent(x)) {
     if (!is.null(n)) {
         assert(
             hasLength(n, n = 2L),
-            is.integer(n)
+            allAreIntegerish(n)
         )
-        ok <- identical(d, n)
-        if (!isTRUE(ok)) {
+        if (!all(d == n)) {
             return(false(
                 paste(
                     "Dimension mismatch for {.var %s}:",
@@ -84,7 +83,7 @@ hasRows <- function(x, n = NULL, .xname = getNameInParent(x)) {
     }
     if (!is.null(n)) {
         assert(isInt(n))
-        if (!identical(nr, n)) {
+        if (isFALSE(nr == n)) {
             return(false(
                 paste(
                     "Row number mismatch for {.var %s}:",
@@ -115,7 +114,7 @@ hasCols <- function(x, n = NULL, .xname = getNameInParent(x)) {
     }
     if (!is.null(n)) {
         assert(isInt(n))
-        if (!identical(nc, n)) {
+        if (isFALSE(nc == n)) {
             return(false(
                 paste(
                     "Column number mismatch for {.var %s}:",
