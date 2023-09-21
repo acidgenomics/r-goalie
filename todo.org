@@ -1,3 +1,7 @@
 #+TITLE: goalie
 #+STARTUP: content
 * Development
+** TODO Need to address BiocCheck namespace unload failure.
+    Error in unloadNamespace(pkg_ns) :
+      namespace ‘goalie’ is imported by ‘AcidCLI’, ‘AcidBase’ so cannot be unloaded
+    Calls: check ... checkManDocumentation -> checkExportsAreDocumented -> unloadNamespace
