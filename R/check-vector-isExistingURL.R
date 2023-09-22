@@ -126,11 +126,9 @@ NULL
 
 
 
-## FIXME figshare returns 403 forbidden for curl...how to fix?
-
 #' Check an HTTP(S) URL
 #'
-#' @note Updated 2023-09-15.
+#' @note Updated 2023-09-22.
 #' @noRd
 #'
 #' @section HTTP server status codes:
