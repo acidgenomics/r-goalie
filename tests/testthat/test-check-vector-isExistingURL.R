@@ -1,7 +1,8 @@
 urls <- c(
     "https://www.r-project.org/",
     "ftp://r-project.org/",
-    "https://ndownloader.figshare.com/files/35020903"
+    "https://ndownloader.figshare.com/files/35020903",
+    "https://figshare.com/ndownloader/files/40448834"
 )
 
 test_that("isExistingURL", {
