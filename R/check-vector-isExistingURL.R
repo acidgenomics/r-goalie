@@ -1,3 +1,8 @@
+## FIXME This URL fails the check:
+## https://ndownloader.figshare.com/files/35020903
+
+
+
 #' Does the input contain an existing (active) URL?
 #'
 #' @name check-vector-isExistingURL
