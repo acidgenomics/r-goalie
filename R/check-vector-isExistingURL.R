@@ -174,13 +174,7 @@ NULL
     if (!isTRUE(ok)) {
         return(FALSE)
     }
-    ok <- isSubset(
-        x = h[[1L]],
-        y = c(
-            "HTTP/1.1 302 Found\r\n",
-            "HTTP/2 302 \r\n"
-        )
-    )
+    ok <- grepl(pattern = "302", x = h[[1L]])
     if (isTRUE(ok)) {
         return(TRUE)
     }
