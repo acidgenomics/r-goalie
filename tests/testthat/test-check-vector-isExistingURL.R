@@ -1,4 +1,8 @@
-urls <- c("https://www.r-project.org/", "ftp://r-project.org/")
+urls <- c(
+    "https://www.r-project.org/",
+    "ftp://r-project.org/",
+    "https://ndownloader.figshare.com/files/35020903"
+)
 
 test_that("isExistingURL", {
     ok <- isExistingURL(urls)

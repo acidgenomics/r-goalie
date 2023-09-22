@@ -1,12 +1,7 @@
-## FIXME This URL fails the check:
-## https://ndownloader.figshare.com/files/35020903
-
-
-
 #' Does the input contain an existing (active) URL?
 #'
 #' @name check-vector-isExistingURL
-#' @note Updated 2023-09-19.
+#' @note Updated 2023-09-21.
 #'
 #' @details
 #' Supports HTTPS, HTTP, and FTP protocols.
@@ -131,6 +126,8 @@ NULL
 
 
 
+## FIXME figshare returns 403 forbidden for curl...how to fix?
+
 #' Check an HTTP(S) URL
 #'
 #' @note Updated 2023-09-15.
@@ -178,6 +175,10 @@ NULL
     ok <- !inherits(h, "try-error")
     if (!isTRUE(ok)) {
         return(FALSE)
+    }
+    ok <- identical(x = h[[1L]], y = "HTTP/1.1 302 Found\r\n")
+    if (isTRUE(ok)) {
+        return(TRUE)
     }
     status <- attr(h, "status")
     ok <- status < 400L
