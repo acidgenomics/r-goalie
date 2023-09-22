@@ -176,7 +176,13 @@ NULL
     if (!isTRUE(ok)) {
         return(FALSE)
     }
-    ok <- identical(x = h[[1L]], y = "HTTP/1.1 302 Found\r\n")
+    ok <- isSubset(
+        x = h[[1L]],
+        y = c(
+            "HTTP/1.1 302 Found\r\n",
+            "HTTP/2 302 \r\n"
+        )
+    )
     if (isTRUE(ok)) {
         return(TRUE)
     }
