@@ -1,6 +1,6 @@
 #' Does the input contain an existing (active) URL?
 #'
-#' @name check-vector-isExistingURL
+#' @name check-vector-isExistingUrl
 #' @note Updated 2023-09-21.
 #'
 #' @details
@@ -190,9 +190,9 @@ NULL
 
 ## Vector ======================================================================
 
-#' @describeIn check-vector-isExistingURL Vectorized.
+#' @describeIn check-vector-isExistingUrl Vectorized.
 #' @export
-isExistingURL <- function(x) {
+isExistingUrl <- function(x) {
     ok <- as.logical(capabilities(what = "http/ftp"))
     if (!isTRUE(ok)) {
         return(false("R session does not have Internet access."))
@@ -235,14 +235,14 @@ isExistingURL <- function(x) {
 
 ## Scalar ======================================================================
 
-#' @describeIn check-vector-isExistingURL Scalar. Requires a single URL.
+#' @describeIn check-vector-isExistingUrl Scalar. Requires a single URL.
 #' @export
 isAnExistingUrl <- function(x) {
     ok <- isScalar(x)
     if (!isTRUE(ok)) {
         return(ok)
     }
-    ok <- isExistingURL(x)
+    ok <- isExistingUrl(x)
     if (!all(ok)) {
         return(falseFromVector(ok))
     }
@@ -251,11 +251,11 @@ isAnExistingUrl <- function(x) {
 
 
 
-#' @describeIn check-vector-isExistingURL Scalar. Checks that all strings are
+#' @describeIn check-vector-isExistingUrl Scalar. Checks that all strings are
 #' existing URLs.
 #' @export
 allAreExistingUrls <- function(x) {
-    ok <- isExistingURL(x)
+    ok <- isExistingUrl(x)
     if (!all(ok)) {
         return(falseFromVector(ok))
     }
