@@ -21,10 +21,10 @@
 #'
 #' @examples
 #' ## TRUE ====
-#' isAnExistingURL("https://acidgenomics.com/")
+#' isAnExistingUrl("https://acidgenomics.com/")
 #'
 #' ## FALSE ====
-#' isAnExistingURL("https://failwhale.acidgenomics.com/")
+#' isAnExistingUrl("https://failwhale.acidgenomics.com/")
 NULL
 
 
@@ -201,7 +201,7 @@ isExistingURL <- function(x) {
     if (!isTRUE(ok)) {
         return(false("R session does not support libcurl."))
     }
-    ok <- isURL(x)
+    ok <- isUrl(x)
     if (!all(ok)) {
         return(ok)
     }
@@ -237,7 +237,7 @@ isExistingURL <- function(x) {
 
 #' @describeIn check-vector-isExistingURL Scalar. Requires a single URL.
 #' @export
-isAnExistingURL <- function(x) {
+isAnExistingUrl <- function(x) {
     ok <- isScalar(x)
     if (!isTRUE(ok)) {
         return(ok)
@@ -254,7 +254,7 @@ isAnExistingURL <- function(x) {
 #' @describeIn check-vector-isExistingURL Scalar. Checks that all strings are
 #' existing URLs.
 #' @export
-allAreExistingURLs <- function(x) {
+allAreExistingUrls <- function(x) {
     ok <- isExistingURL(x)
     if (!all(ok)) {
         return(falseFromVector(ok))

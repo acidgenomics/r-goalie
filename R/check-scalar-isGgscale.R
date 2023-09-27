@@ -1,6 +1,6 @@
 #' Does the input contain a ggplot2 scale?
 #'
-#' @name check-scalar-isGGScale
+#' @name check-scalar-isGgscale
 #' @note Updated 2019-09-14.
 #'
 #' @inherit check
@@ -28,18 +28,18 @@
 #' fill_d <- scale_fill_manual(values = c("red", "blue"))
 #' class(fill_d)
 #'
-#' isGGScale(x = color_c, scale = "continuous", aes = "color")
-#' isGGScale(x = color_d, scale = "discrete", aes = "color")
-#' isGGScale(x = fill_c, scale = "continuous", aes = "fill")
-#' isGGScale(x = fill_d, scale = "discrete", aes = "fill")
+#' isGgscale(x = color_c, scale = "continuous", aes = "color")
+#' isGgscale(x = color_d, scale = "discrete", aes = "color")
+#' isGgscale(x = fill_c, scale = "continuous", aes = "fill")
+#' isGgscale(x = fill_d, scale = "discrete", aes = "fill")
 NULL
 
 
 
-#' @rdname check-scalar-isGGScale
+#' @rdname check-scalar-isGgscale
 #' @export
 ## Updated 2019-07-15.
-isGGScale <-
+isGgscale <-
     function(x,
              scale = c("continuous", "discrete"),
              aes = c("color", "colour", "fill"),

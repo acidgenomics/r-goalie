@@ -1,6 +1,6 @@
 #' Does the current machine have a sufficient number of CPU cores?
 #'
-#' @name check-scalar-hasCPU
+#' @name check-scalar-hasCpu
 #' @note Updated 2023-08-10.
 #'
 #' @inherit check return
@@ -10,17 +10,17 @@
 #'
 #' @examples
 #' ## TRUE ====
-#' hasCPU(n = 1L)
+#' hasCpu(n = 1L)
 #'
 #' ## FALSE ====
-#' hasCPU(n = Inf)
+#' hasCpu(n = Inf)
 NULL
 
 
 
-#' @rdname check-scalar-hasCPU
+#' @rdname check-scalar-hasCpu
 #' @export
-hasCPU <- function(n) {
+hasCpu <- function(n) {
     assert(
         isInt(n),
         requireNamespaces("AcidBase")

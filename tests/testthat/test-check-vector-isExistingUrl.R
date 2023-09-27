@@ -22,24 +22,24 @@ test_that("isExistingURL", {
 test_that("URL connection support", {
     x <- url(urls[[1L]])
     expect_s3_class(x, "url")
-    ok <- isAnExistingURL(x)
+    ok <- isAnExistingUrl(x)
     expect_true(ok)
     close(x)
 })
 
 test_that("Only HTTP(S) and FTP", {
-    ok <- isAnExistingURL("gopher://foobar")
+    ok <- isAnExistingUrl("gopher://foobar")
     expect_false(ok)
     expect_match(cause(ok), "doesn't match")
-    ok <- isAnExistingURL("sftp://sftp-private.ncbi.nlm.nih.gov/")
+    ok <- isAnExistingUrl("sftp://sftp-private.ncbi.nlm.nih.gov/")
     expect_false(ok)
     expect_match(cause(ok), "doesn't match")
 })
 
-test_that("isAnExistingURL", {
-    ok <- isAnExistingURL(urls[[1L]])
+test_that("isAnExistingUrl", {
+    ok <- isAnExistingUrl(urls[[1L]])
     expect_true(ok)
-    ok <- isAnExistingURL(urls)
+    ok <- isAnExistingUrl(urls)
     expect_s4_class(ok, "goalie")
     expect_false(ok)
     expect_identical(
@@ -48,7 +48,7 @@ test_that("isAnExistingURL", {
     )
 })
 
-test_that("allAreExistingURLs", {
-    ok <- allAreExistingURLs(urls)
+test_that("allAreExistingUrls", {
+    ok <- allAreExistingUrls(urls)
     expect_true(ok)
 })
