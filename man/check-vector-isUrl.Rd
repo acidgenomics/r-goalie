@@ -25,7 +25,7 @@ Does the input contain a URL?
 }
 \details{
 This assert check is intended to be simple and does not check to see if the
-URL exists (is active). For that, refer to \code{isExistingURL} instead.
+URL exists (is active). For that, refer to \code{isExistingUrl} instead.
 }
 \section{Functions}{
 \itemize{
