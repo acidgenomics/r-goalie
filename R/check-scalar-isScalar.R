@@ -37,11 +37,11 @@ NULL
 #' @export
 isScalar <-
     function(x,
-             nullOK = FALSE,
+             nullOk = FALSE,
              .xname = getNameInParent(x)) {
         if (is.null(x)) {
             ifelse(
-                test = isTRUE(nullOK),
+                test = isTRUE(nullOk),
                 yes = {
                     return(TRUE)
                 },
@@ -63,9 +63,9 @@ isScalar <-
 #' @export
 isScalarAtomic <-
     function(x,
-             nullOK = FALSE,
+             nullOk = FALSE,
              .xname = getNameInParent(x)) {
-        ok <- isScalar(x, nullOK = nullOK, .xname = .xname)
+        ok <- isScalar(x, nullOk = nullOk, .xname = .xname)
         if (is.null(x) && isTRUE(ok)) {
             return(TRUE)
         } else if (!isTRUE(ok)) {
@@ -84,9 +84,9 @@ isScalarAtomic <-
 #' @export
 isScalarCharacter <-
     function(x,
-             nullOK = FALSE,
+             nullOk = FALSE,
              .xname = getNameInParent(x)) {
-        ok <- isScalar(x, nullOK = nullOK, .xname = .xname)
+        ok <- isScalar(x, nullOk = nullOk, .xname = .xname)
         if (is.null(x) && isTRUE(ok)) {
             return(TRUE)
         } else if (!isTRUE(ok)) {
@@ -105,9 +105,9 @@ isScalarCharacter <-
 #' @export
 isScalarDouble <-
     function(x,
-             nullOK = FALSE,
+             nullOk = FALSE,
              .xname = getNameInParent(x)) {
-        ok <- isScalar(x, nullOK = nullOK, .xname = .xname)
+        ok <- isScalar(x, nullOk = nullOk, .xname = .xname)
         if (is.null(x) && isTRUE(ok)) {
             return(TRUE)
         } else if (!isTRUE(ok)) {
@@ -126,9 +126,9 @@ isScalarDouble <-
 #' @export
 isScalarInteger <-
     function(x,
-             nullOK = FALSE,
+             nullOk = FALSE,
              .xname = getNameInParent(x)) {
-        ok <- isScalar(x, nullOK = nullOK, .xname = .xname)
+        ok <- isScalar(x, nullOk = nullOk, .xname = .xname)
         if (is.null(x) && isTRUE(ok)) {
             return(TRUE)
         } else if (!isTRUE(ok)) {
@@ -147,9 +147,9 @@ isScalarInteger <-
 #' @export
 isScalarIntegerish <-
     function(x,
-             nullOK = FALSE,
+             nullOk = FALSE,
              .xname = getNameInParent(x)) {
-        ok <- isScalar(x, nullOK = nullOK, .xname = .xname)
+        ok <- isScalar(x, nullOk = nullOk, .xname = .xname)
         if (is.null(x) && isTRUE(ok)) {
             return(TRUE)
         } else if (!isTRUE(ok)) {
@@ -168,9 +168,9 @@ isScalarIntegerish <-
 #' @export
 isScalarList <-
     function(x,
-             nullOK = FALSE,
+             nullOk = FALSE,
              .xname = getNameInParent(x)) {
-        ok <- isScalar(x, nullOK = nullOK, .xname = .xname)
+        ok <- isScalar(x, nullOk = nullOk, .xname = .xname)
         if (is.null(x) && isTRUE(ok)) {
             return(TRUE)
         } else if (!isTRUE(ok)) {
@@ -189,9 +189,9 @@ isScalarList <-
 #' @export
 isScalarLogical <-
     function(x,
-             nullOK = FALSE,
+             nullOk = FALSE,
              .xname = getNameInParent(x)) {
-        ok <- isScalar(x, nullOK = nullOK, .xname = .xname)
+        ok <- isScalar(x, nullOk = nullOk, .xname = .xname)
         if (is.null(x) && isTRUE(ok)) {
             return(TRUE)
         } else if (!isTRUE(ok)) {
@@ -210,9 +210,9 @@ isScalarLogical <-
 #' @export
 isScalarNumeric <-
     function(x,
-             nullOK = FALSE,
+             nullOk = FALSE,
              .xname = getNameInParent(x)) {
-        ok <- isScalar(x, nullOK = nullOK, .xname = .xname)
+        ok <- isScalar(x, nullOk = nullOk, .xname = .xname)
         if (is.null(x) && isTRUE(ok)) {
             return(TRUE)
         } else if (!isTRUE(ok)) {
@@ -231,9 +231,9 @@ isScalarNumeric <-
 #' @export
 isScalarVector <-
     function(x,
-             nullOK = FALSE,
+             nullOk = FALSE,
              .xname = getNameInParent(x)) {
-        ok <- isScalar(x, nullOK = nullOK, .xname = .xname)
+        ok <- isScalar(x, nullOk = nullOk, .xname = .xname)
         if (is.null(x) && isTRUE(ok)) {
             return(TRUE)
         } else if (!isTRUE(ok)) {

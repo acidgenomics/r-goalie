@@ -11,16 +11,13 @@ isIntegerish(x, .xname = getNameInParent(x))
 
 allAreIntegerish(x)
 
-isInt(x, nullOK = FALSE)
+isInt(x, nullOk = FALSE)
 }
 \arguments{
 \item{x}{Object.}
 
 \item{.xname}{Name of object defined in \code{x}.
 \emph{Not intended to be used directly.}}
-
-\item{nullOK}{\code{logical(1)}.
-If set to \code{TRUE}, \code{x} may also be \code{NULL}.}
 }
 \value{
 \code{TRUE} on success;

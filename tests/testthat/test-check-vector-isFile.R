@@ -53,9 +53,9 @@ test_that("FALSE", {
     expect_false(ok)
 })
 
-test_that("nullOK", {
-    expect_true(isAFile(NULL, nullOK = TRUE))
-    expect_false(isAFile(NULL, nullOK = FALSE))
+test_that("nullOk", {
+    expect_true(isAFile(NULL, nullOk = TRUE))
+    expect_false(isAFile(NULL, nullOk = FALSE))
 })
 
 

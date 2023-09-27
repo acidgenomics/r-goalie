@@ -50,9 +50,9 @@ test_that("FALSE : NA input", {
     )
 })
 
-test_that("nullOK", {
-    expect_false(isInt(NULL, nullOK = FALSE))
-    expect_true(isInt(NULL, nullOK = TRUE))
+test_that("nullOk", {
+    expect_false(isInt(NULL, nullOk = FALSE))
+    expect_true(isInt(NULL, nullOk = TRUE))
 })
 
 test_that("allAreIntegerish", {

@@ -9,15 +9,12 @@
 \usage{
 isCompressedFile(x)
 
-isACompressedFile(x, nullOK = FALSE)
+isACompressedFile(x, nullOk = FALSE)
 
 allAreCompressedFiles(x)
 }
 \arguments{
 \item{x}{Object.}
-
-\item{nullOK}{\code{logical(1)}.
-If set to \code{TRUE}, \code{x} may also be \code{NULL}.}
 }
 \value{
 \code{TRUE} on success;

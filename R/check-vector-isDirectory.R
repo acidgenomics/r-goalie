@@ -40,8 +40,8 @@ isDirectory <- function(x) {
 
 #' @describeIn check-vector-isDirectory Scalar.
 #' @export
-isADirectory <- function(x, nullOK = FALSE) {
-    if (isTRUE(nullOK) && is.null(x)) {
+isADirectory <- function(x, nullOk = FALSE) {
+    if (isTRUE(nullOk) && is.null(x)) {
         return(TRUE)
     }
     ok <- isString(x)

@@ -50,9 +50,9 @@ test_that("FALSE : not scalar", {
     )
 })
 
-test_that("nullOK", {
-    expect_false(isADirectory(NULL, nullOK = FALSE))
-    expect_true(isADirectory(NULL, nullOK = TRUE))
+test_that("nullOk", {
+    expect_false(isADirectory(NULL, nullOk = FALSE))
+    expect_true(isADirectory(NULL, nullOk = TRUE))
 })
 
 

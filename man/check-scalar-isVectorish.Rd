@@ -5,13 +5,10 @@
 \alias{isVectorish}
 \title{Is the input vector(ish)?}
 \usage{
-isVectorish(x, nullOK = FALSE, .xname = getNameInParent(x))
+isVectorish(x, nullOk = FALSE, .xname = getNameInParent(x))
 }
 \arguments{
 \item{x}{Object.}
-
-\item{nullOK}{\code{logical(1)}.
-If set to \code{TRUE}, \code{x} may also be \code{NULL}.}
 
 \item{.xname}{Name of object defined in \code{x}.
 \emph{Not intended to be used directly.}}
