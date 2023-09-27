@@ -19,7 +19,7 @@ test_that("FALSE", {
     expect_false(isGGScale(x = fc, scale = "discrete", aes = "fill"))
 })
 
-test_that("nullOK", {
-    expect_true(isGGScale(x = NULL, nullOK = TRUE))
-    expect_false(isGGScale(x = NULL, nullOK = FALSE))
+test_that("nullOk", {
+    expect_true(isGGScale(x = NULL, nullOk = TRUE))
+    expect_false(isGGScale(x = NULL, nullOk = FALSE))
 })

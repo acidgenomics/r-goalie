@@ -25,9 +25,9 @@ test_that("FALSE : no 'n' formal", {
     )
 })
 
-test_that("nullOK", {
-    expect_false(isHexColorFunction(NULL, nullOK = FALSE))
-    expect_true(isHexColorFunction(NULL, nullOK = TRUE))
+test_that("nullOk", {
+    expect_false(isHexColorFunction(NULL, nullOk = FALSE))
+    expect_true(isHexColorFunction(NULL, nullOk = TRUE))
 })
 
 test_that("Function with 'n' formal that isn't supported", {
