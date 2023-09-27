@@ -91,8 +91,8 @@ allAreIntegerish <- function(x) {
 
 #' @describeIn check-vector-isIntegerish Scalar.
 #' @export
-isInt <- function(x, nullOK = FALSE) {
-    if (isTRUE(nullOK) && is.null(x)) {
+isInt <- function(x, nullOk = FALSE) {
+    if (isTRUE(nullOk) && is.null(x)) {
         return(TRUE)
     }
     isScalarIntegerish(x)

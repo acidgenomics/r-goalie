@@ -51,8 +51,8 @@ isSymlink <- function(x) {
 
 #' @describeIn check-vector-isSymlink Scalar.
 #' @export
-isASymlink <- function(x, nullOK = FALSE) {
-    if (isTRUE(nullOK) && is.null(x)) {
+isASymlink <- function(x, nullOk = FALSE) {
+    if (isTRUE(nullOk) && is.null(x)) {
         return(TRUE)
     }
     ok <- isString(x)

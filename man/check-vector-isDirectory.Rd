@@ -12,21 +12,18 @@
 \usage{
 isDirectory(x)
 
-isADirectory(x, nullOK = FALSE)
+isADirectory(x, nullOk = FALSE)
 
 allAreDirectories(x)
 
 isDir(x)
 
-isADir(x, nullOK = FALSE)
+isADir(x, nullOk = FALSE)
 
 allAreDirs(x)
 }
 \arguments{
 \item{x}{Object.}
-
-\item{nullOK}{\code{logical(1)}.
-If set to \code{TRUE}, \code{x} may also be \code{NULL}.}
 }
 \value{
 \code{TRUE} on success;

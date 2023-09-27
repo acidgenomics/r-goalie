@@ -52,8 +52,8 @@ isCompressedFile <- function(x) {
 
 #' @describeIn check-vector-isCompressedFile Scalar.
 #' @export
-isACompressedFile <- function(x, nullOK = FALSE) {
-    if (isTRUE(nullOK) && is.null(x)) {
+isACompressedFile <- function(x, nullOk = FALSE) {
+    if (isTRUE(nullOk) && is.null(x)) {
         return(TRUE)
     }
     ok <- isString(x)

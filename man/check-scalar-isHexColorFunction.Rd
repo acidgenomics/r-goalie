@@ -5,13 +5,10 @@
 \alias{isHexColorFunction}
 \title{Does the argument contain a function that returns hexadecimal colors?}
 \usage{
-isHexColorFunction(x, nullOK = FALSE, .xname = getNameInParent(x))
+isHexColorFunction(x, nullOk = FALSE, .xname = getNameInParent(x))
 }
 \arguments{
 \item{x}{Object.}
-
-\item{nullOK}{\code{logical(1)}.
-If set to \code{TRUE}, \code{x} may also be \code{NULL}.}
 
 \item{.xname}{Name of object defined in \code{x}.
 \emph{Not intended to be used directly.}}

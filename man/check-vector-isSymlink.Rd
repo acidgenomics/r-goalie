@@ -9,15 +9,12 @@
 \usage{
 isSymlink(x)
 
-isASymlink(x, nullOK = FALSE)
+isASymlink(x, nullOk = FALSE)
 
 allAreSymlinks(x)
 }
 \arguments{
 \item{x}{Object.}
-
-\item{nullOK}{\code{logical(1)}.
-If set to \code{TRUE}, \code{x} may also be \code{NULL}.}
 }
 \value{
 \code{TRUE} on success;

@@ -43,10 +43,10 @@ isGGScale <-
     function(x,
              scale = c("continuous", "discrete"),
              aes = c("color", "colour", "fill"),
-             nullOK = FALSE) {
+             nullOk = FALSE) {
         scale <- match.arg(scale)
         aes <- match.arg(aes)
-        if (isTRUE(nullOK) && is.null(x)) {
+        if (isTRUE(nullOk) && is.null(x)) {
             return(TRUE)
         }
         ## Check that the object inherits all of the required classes.

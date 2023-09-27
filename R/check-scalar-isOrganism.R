@@ -27,9 +27,9 @@ NULL
 #' @export
 isOrganism <-
     function(x,
-             nullOK = FALSE,
+             nullOk = FALSE,
              .xname = getNameInParent(x)) {
-        if (isTRUE(nullOK) && is.null(x)) {
+        if (isTRUE(nullOk) && is.null(x)) {
             return(TRUE)
         }
         ok <- isString(x)

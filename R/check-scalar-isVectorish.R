@@ -30,9 +30,9 @@ NULL
 #' @export
 isVectorish <-
     function(x,
-             nullOK = FALSE,
+             nullOk = FALSE,
              .xname = getNameInParent(x)) {
-        if (isTRUE(nullOK) && is.null(x)) {
+        if (isTRUE(nullOk) && is.null(x)) {
             return(TRUE)
         }
         if (is.factor(x) || is(x, "Rle")) {

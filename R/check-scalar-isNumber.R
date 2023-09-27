@@ -1,7 +1,7 @@
 #' @describeIn check-scalar-isScalar Alias for [isScalarNumeric()].
 #' @export
-isNumber <- function(x, nullOK = FALSE) {
-    if (isTRUE(nullOK) && is.null(x)) {
+isNumber <- function(x, nullOk = FALSE) {
+    if (isTRUE(nullOk) && is.null(x)) {
         return(TRUE)
     }
     isScalarNumeric(x)

@@ -46,8 +46,8 @@ isFile <- function(x) {
 
 #' @describeIn check-vector-isFile Scalar.
 #' @export
-isAFile <- function(x, nullOK = FALSE) {
-    if (isTRUE(nullOK) && is.null(x)) {
+isAFile <- function(x, nullOk = FALSE) {
+    if (isTRUE(nullOk) && is.null(x)) {
         return(TRUE)
     }
     ok <- isString(x)

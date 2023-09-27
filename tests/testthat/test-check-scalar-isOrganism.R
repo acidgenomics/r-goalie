@@ -9,7 +9,7 @@ test_that("FALSE", {
     expect_false(isOrganism("homo_sapiens"))
 })
 
-test_that("nullOK", {
-    expect_false(isOrganism(NULL, nullOK = FALSE))
-    expect_true(isOrganism(NULL, nullOK = TRUE))
+test_that("nullOk", {
+    expect_false(isOrganism(NULL, nullOk = FALSE))
+    expect_true(isOrganism(NULL, nullOk = TRUE))
 })

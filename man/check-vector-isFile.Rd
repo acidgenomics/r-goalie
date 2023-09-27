@@ -9,15 +9,12 @@
 \usage{
 isFile(x)
 
-isAFile(x, nullOK = FALSE)
+isAFile(x, nullOk = FALSE)
 
 allAreFiles(x)
 }
 \arguments{
 \item{x}{Object.}
-
-\item{nullOK}{\code{logical(1)}.
-If set to \code{TRUE}, \code{x} may also be \code{NULL}.}
 }
 \value{
 \code{TRUE} on success;
