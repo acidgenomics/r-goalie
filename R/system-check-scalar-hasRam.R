@@ -1,6 +1,6 @@
 #' Does the current machine have a sufficient RAM?
 #'
-#' @name check-scalar-hasRAM
+#' @name check-scalar-hasRam
 #' @note Updated 2023-08-10.
 #'
 #' @inherit check return
@@ -10,17 +10,17 @@
 #'
 #' @examples
 #' ## TRUE ====
-#' hasRAM(n = 1L)
+#' hasRam(n = 1L)
 #'
 #' ## FALSE ====
-#' hasRAM(n = Inf)
+#' hasRam(n = Inf)
 NULL
 
 
 
-#' @rdname check-scalar-hasRAM
+#' @rdname check-scalar-hasRam
 #' @export
-hasRAM <- function(n) {
+hasRam <- function(n) {
     assert(
         isInt(n),
         requireNamespaces("AcidBase")

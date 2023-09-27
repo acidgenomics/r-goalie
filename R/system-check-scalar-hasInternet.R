@@ -6,7 +6,7 @@
 #' @inherit check return
 #'
 #' @seealso
-#' - `isAnExistingURL()`.
+#' - `isAnExistingUrl()`.
 #' - `Biobase::testBioCConnection()`.
 #'
 #' @examples
@@ -18,5 +18,5 @@ NULL
 #' @rdname check-scalar-hasInternet
 #' @export
 hasInternet <- function() {
-    isAnExistingURL("https://www.bioconductor.org/")
+    isAnExistingUrl("https://www.bioconductor.org/")
 }

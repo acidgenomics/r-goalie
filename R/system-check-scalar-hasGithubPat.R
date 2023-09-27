@@ -2,7 +2,7 @@
 #'
 #' Required for package installs from GitHub, otherwise will hit rate limit.
 #'
-#' @name check-scalar-hasGitHubPAT
+#' @name check-scalar-hasGithubPat
 #' @note Updated 2019-10-04.
 #'
 #' @inherit check return
@@ -10,17 +10,17 @@
 #' @examples
 #' ## TRUE ====
 #' Sys.setenv("GITHUB_PAT" = "XXX")
-#' hasGitHubPAT()
+#' hasGithubPat()
 #'
 #' ## FALSE ====
 #' Sys.setenv("GITHUB_PAT" = "")
-#' hasGitHubPAT()
+#' hasGithubPat()
 NULL
 
 
 
-#' @rdname check-scalar-hasGitHubPAT
+#' @rdname check-scalar-hasGithubPat
 #' @export
-hasGitHubPAT <- function() {
+hasGithubPat <- function() {
     isTRUE(nzchar(Sys.getenv("GITHUB_PAT")))
 }

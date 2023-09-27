@@ -4,20 +4,20 @@
 
 #' Is the operating system macOS?
 #'
-#' @name check-scalar-isMacOS
+#' @name check-scalar-isMacos
 #' @note Updated 2020-04-12.
 #'
 #' @inherit check return
 #'
 #' @examples
-#' isMacOS()
+#' isMacos()
 NULL
 
 
 
-#' @rdname check-scalar-isMacOS
+#' @rdname check-scalar-isMacos
 #' @export
-isMacOS <- function() {
+isMacos <- function() {
     ok <- isTRUE(grepl(pattern = "darwin", x = R.Version()[["os"]]))
 
     if (!isTRUE(ok)) {

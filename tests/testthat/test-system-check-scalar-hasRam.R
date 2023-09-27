@@ -1,12 +1,12 @@
 skip_if_not_installed("AcidBase")
 
 test_that("TRUE", {
-    expect_true(hasRAM(n = 1L))
+    expect_true(hasRam(n = 1L))
 })
 
 test_that("FALSE", {
     actual <- AcidBase::ram()
-    ok <- hasRAM(n = Inf)
+    ok <- hasRam(n = Inf)
     expect_false(ok)
     expect_identical(
         object = cause(ok),

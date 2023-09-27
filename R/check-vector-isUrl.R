@@ -1,6 +1,6 @@
 #' Does the input contain a URL?
 #'
-#' @name check-vector-isURL
+#' @name check-vector-isUrl
 #' @note Updated 2023-09-15.
 #'
 #' @details
@@ -14,22 +14,22 @@
 #' urls <- c("https://www.r-project.org/", "ftp://r-project.org/")
 #'
 #' ## TRUE ====
-#' isURL(urls)
-#' isAURL(urls[[1L]])
-#' allAreURLs(urls)
+#' isUrl(urls)
+#' isAUrl(urls[[1L]])
+#' allAreUrls(urls)
 #'
 #' ## FALSE ====
-#' isURL("xxx")
-#' isAURL(urls)
+#' isUrl("xxx")
+#' isAUrl(urls)
 NULL
 
 
 
 ## Vector ======================================================================
 
-#' @describeIn check-vector-isURL Vectorized.
+#' @describeIn check-vector-isUrl Vectorized.
 #' @export
-isURL <- function(x) {
+isUrl <- function(x) {
     ok <- is(x, "url")
     if (isTRUE(ok)) {
         names(ok) <- "connection"
@@ -53,14 +53,14 @@ isURL <- function(x) {
 
 ## Scalar ======================================================================
 
-#' @describeIn check-vector-isURL Scalar. Requires a single URL.
+#' @describeIn check-vector-isUrl Scalar. Requires a single URL.
 #' @export
-isAURL <- function(x) {
+isAUrl <- function(x) {
     ok <- isScalar(x)
     if (!isTRUE(ok)) {
         return(ok)
     }
-    ok <- isURL(x)
+    ok <- isUrl(x)
     if (!all(ok)) {
         return(falseFromVector(ok))
     }
@@ -69,10 +69,10 @@ isAURL <- function(x) {
 
 
 
-#' @describeIn check-vector-isURL Scalar. Checks that all strings are URLs.
+#' @describeIn check-vector-isUrl Scalar. Checks that all strings are URLs.
 #' @export
-allAreURLs <- function(x) {
-    ok <- isURL(x)
+allAreUrls <- function(x) {
+    ok <- isUrl(x)
     if (!all(ok)) {
         return(falseFromVector(ok))
     }

@@ -4,20 +4,20 @@
 
 #' Is the current R session running inside Visual Studio Code?
 #'
-#' @name check-scalar-isVSCode
+#' @name check-scalar-isVscode
 #' @note Updated 2022-10-18.
 #'
 #' @inherit check return
 #'
 #' @examples
-#' isVSCode()
+#' isVscode()
 NULL
 
 
 
-#' @rdname check-scalar-isVSCode
+#' @rdname check-scalar-isVscode
 #' @export
-isVSCode <- function() {
+isVscode <- function() {
     ok <- isTRUE(nzchar(Sys.getenv("VSCODE_INIT_R")))
     if (!isTRUE(ok)) {
         return(false("Visual Studio Code not detected."))
