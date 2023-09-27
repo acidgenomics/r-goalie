@@ -5,7 +5,7 @@
 #'
 #' @details
 #' This assert check is intended to be simple and does not check to see if the
-#' URL exists (is active). For that, refer to `isExistingURL` instead.
+#' URL exists (is active). For that, refer to `isExistingUrl` instead.
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params

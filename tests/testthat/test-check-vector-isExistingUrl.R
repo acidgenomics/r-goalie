@@ -5,10 +5,10 @@ urls <- c(
     "https://figshare.com/ndownloader/files/40448834"
 )
 
-test_that("isExistingURL", {
-    ok <- isExistingURL(urls)
+test_that("isExistingUrl", {
+    ok <- isExistingUrl(urls)
     expect_true(all(ok))
-    ok <- isExistingURL("https://failwhale.acidgenomics.com/")
+    ok <- isExistingUrl("https://failwhale.acidgenomics.com/")
     expect_s4_class(ok, "goalie")
     expect_false(ok)
     expect_identical(
