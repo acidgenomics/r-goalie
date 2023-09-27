@@ -1,12 +1,12 @@
 skip_if_not_installed("AcidBase")
 
 test_that("TRUE", {
-    expect_true(hasCPU(n = 1L))
+    expect_true(hasCpu(n = 1L))
 })
 
 test_that("FALSE", {
     actual <- AcidBase::cpus()
-    ok <- hasCPU(n = Inf)
+    ok <- hasCpu(n = Inf)
     expect_false(ok)
     expect_identical(
         object = cause(ok),
