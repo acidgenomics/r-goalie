@@ -7,7 +7,7 @@
 \alias{isInt}
 \title{Is the input integer(ish)?}
 \usage{
-isIntegerish(x, .xname = getNameInParent(x))
+isIntegerish(x, infiniteOk = TRUE, naOk = FALSE, .xname = getNameInParent(x))
 
 allAreIntegerish(x)
 
@@ -16,8 +16,17 @@ isInt(x, nullOk = FALSE)
 \arguments{
 \item{x}{Object.}
 
+\item{infiniteOk}{\code{logical(1)}.
+Allow infinite values (\code{Inf} or \code{-Inf}) to pass.}
+
+\item{naOk}{\code{logical(1)}.
+Allow \code{NA} values to pass.}
+
 \item{.xname}{Name of object defined in \code{x}.
 \emph{Not intended to be used directly.}}
+
+\item{nullOk}{\code{logical(1)}.
+If set to \code{TRUE}, \code{x} may also be \code{NULL}.}
 }
 \value{
 \code{TRUE} on success;
@@ -37,7 +46,7 @@ Check for valid input of either explicit (e.g. \code{1L}) and/or implict
 
 }}
 \note{
-Updated 2022-12-14.
+Updated 2023-09-29.
 }
 \examples{
 ## TRUE ====
