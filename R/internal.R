@@ -172,7 +172,7 @@ NULL
 
 #' Sanitize vector input to names
 #'
-#' @note Updated 2021-02-23.
+#' @note Updated 2023-09-29.
 #' @noRd
 #'
 #' @details
@@ -197,9 +197,9 @@ NULL
 #' ## Doesn't use 'make.names()' to sanitize.
 #' .toNames(c("sample-1", "hello world"))
 .toNames <- function(x) {
-    ## Assert check for `is.vector()` instead of `is.atomic()` here will error
-    ## out for `na.omit()` return.
-    stopifnot(is.atomic(x))
+    if (!is.atomic(x)) {
+        return("x")
+    }
     if (is.double(x)) {
         x <- ifelse(
             test = is.na(x),
