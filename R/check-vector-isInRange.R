@@ -80,11 +80,11 @@ isInRange <-
         if (!isTRUE(ok)) {
             return(ok)
         }
-        xnames <- .toNames(x)
+        cn <- toCauseNames(x)
         ok <- is.numeric(x)
         if (!isTRUE(ok)) {
             ko <- rep(x = FALSE, times = length(x))
-            names(ko) <- xnames
+            names(ko) <- cn
             return(setCause(ko, false = "not numeric"))
         }
         tooLow <- (if (closed[[1L]]) `<` else `<=`)(x, lower)
@@ -92,7 +92,7 @@ isInRange <-
         ok <- rep.int(TRUE, length(x))
         ok[tooLow] <- FALSE
         ok[tooHigh] <- FALSE
-        names(ok) <- xnames
+        names(ok) <- cn
         setCause(ok, false = ifelse(tooLow, "too low", "too high"))
     }
 

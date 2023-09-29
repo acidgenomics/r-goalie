@@ -48,11 +48,11 @@ isIntegerish <- function(
     if (!isTRUE(ok)) {
         return(ok)
     }
-    xnames <- .toNames(x)
+    cn <- toCauseNames(x)
     ok <- is.numeric(x)
     if (!isTRUE(ok)) {
         ko <- rep(x = FALSE, times = length(x))
-        names(ko) <- xnames
+        names(ko) <- cn
         return(setCause(ko, false = "not numeric"))
     }
     if (isTRUE(naOk)) {
@@ -63,7 +63,7 @@ isIntegerish <- function(
     }
     ok <- is.integer(x)
     if (all(ok)) {
-        names(ok) <- xnames
+        names(ok) <- cn
         return(ok)
     }
     ok <- bapply(
@@ -76,7 +76,7 @@ isIntegerish <- function(
             ))
         }
     )
-    names(ok) <- xnames
+    names(ok) <- cn
     setCause(ok, false = "not integer")
 }
 

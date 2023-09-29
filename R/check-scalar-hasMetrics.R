@@ -1,10 +1,8 @@
 #' Does the object contain quality control metrics?
 #'
 #' @name check-scalar-hasMetrics
+#' @inherit check return
 #' @note Updated 2021-01-04.
-#'
-#' @inherit check
-#' @inheritParams AcidRoxygen::params
 #'
 #' @param x `SummarizedExperiment`.
 #'
@@ -25,9 +23,7 @@ NULL
 #' @rdname check-scalar-hasMetrics
 #' @export
 hasMetrics <-
-    function(x,
-             colData = c("nCount", "nFeature"),
-             .xname = getNameInParent(x)) {
+    function(x, colData = c("nCount", "nFeature")) {
         if (!is(x, "SummarizedExperiment")) {
             return(FALSE)
         }
@@ -38,7 +34,7 @@ hasMetrics <-
         if (!isTRUE(ok)) {
             return(false(
                 "{.var %s} doesn't contain metrics in {.fun %s}: %s.",
-                .xname, "colData",
+                toCauseName(x), "colData",
                 toString(setdiff(c1, c2), width = 100L)
             ))
         }

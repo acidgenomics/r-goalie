@@ -32,16 +32,16 @@ NULL
 
 #' @rdname check-scalar-hasNonzeroRowsAndCols
 #' @export
-hasNonzeroRowsAndCols <- function(x, .xname = getNameInParent(x)) {
-    ok <- isAny(x = x, classes = c("matrix", "Matrix"), .xname = .xname)
+hasNonzeroRowsAndCols <- function(x) {
+    ok <- isAny(x, classes = c("matrix", "Matrix"))
     if (!isTRUE(ok)) {
         return(ok)
     }
-    ok <- hasRows(x, .xname = .xname)
+    ok <- hasRows(x)
     if (!isTRUE(ok)) {
         return(ok)
     }
-    ok <- hasCols(x, .xname = .xname)
+    ok <- hasCols(x)
     if (!isTRUE(ok)) {
         return(ok)
     }
@@ -62,7 +62,7 @@ hasNonzeroRowsAndCols <- function(x, .xname = getNameInParent(x)) {
                 msg1 = "{.var %s} has %s zero row at position %s.",
                 msg2 = "{.var %s} has %s zero rows at positions %s."
             ),
-            .xname, n, which
+            toCauseName(x), n, which
         ))
     }
     zeroCols <- colSums(x) == 0L
@@ -75,7 +75,7 @@ hasNonzeroRowsAndCols <- function(x, .xname = getNameInParent(x)) {
                 msg1 = "{.var %s} has %s zero column at position %s.",
                 msg2 = "{.var %s} has %s zero columns at positions %s."
             ),
-            .xname, n, which
+            toCauseName(x), n, which
         ))
     }
     TRUE

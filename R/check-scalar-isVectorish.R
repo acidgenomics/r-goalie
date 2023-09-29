@@ -30,8 +30,7 @@ NULL
 #' @export
 isVectorish <-
     function(x,
-             nullOk = FALSE,
-             .xname = getNameInParent(x)) {
+             nullOk = FALSE) {
         if (isTRUE(nullOk) && is.null(x)) {
             return(TRUE)
         }
@@ -40,7 +39,7 @@ isVectorish <-
         }
         ok <- is.vector(x)
         if (!isTRUE(ok)) {
-            return(false("{.var %s} is not a vector.", .xname))
+            return(false("{.var %s} is not a vector.", toCauseName(x)))
         }
         TRUE
     }

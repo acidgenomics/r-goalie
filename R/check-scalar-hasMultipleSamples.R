@@ -24,20 +24,28 @@ NULL
 
 #' @rdname check-scalar-hasMultipleSamples
 #' @export
-hasMultipleSamples <- function(x, .xname = getNameInParent(x)) {
+hasMultipleSamples <- function(x) {
     ok <- is(x, "SummarizedExperiment")
     if (!isTRUE(ok)) {
-        return(false("{.var %s} is not {.cls SummarizedExperiment}.", .xname))
+        return(false(
+            "{.var %s} is not {.cls SummarizedExperiment}.",
+            toCauseName(x)
+        ))
     }
     requireNamespaces("Biobase")
     ok <- tryCatch(
         expr = {
             length(Biobase::sampleNames(x)) > 1L
         },
-        error = function(e) FALSE
+        error = function(e) {
+            FALSE
+        }
     )
     if (!isTRUE(ok)) {
-        return(false("{.var %s} does not contain multiple samples.", .xname))
+        return(false(
+            "{.var %s} does not contain multiple samples.",
+            toCauseName(x)
+        ))
     }
     TRUE
 }

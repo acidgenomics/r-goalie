@@ -6,7 +6,7 @@
 \alias{nElements}
 \title{Does the input have elements?}
 \usage{
-hasElements(x, n = NULL, .xname = getNameInParent(x))
+hasElements(x, n = NULL)
 
 nElements(x)
 }
@@ -15,9 +15,6 @@ nElements(x)
 
 \item{n}{\code{integer(1)}.
 Number to include.}
-
-\item{.xname}{Name of object defined in \code{x}.
-\emph{Not intended to be used directly.}}
 }
 \value{
 \code{TRUE} on success;
@@ -32,7 +29,7 @@ Does the input have elements?
 
 }}
 \note{
-Updated 2019-10-04.
+Updated 2023-09-29.
 }
 \examples{
 ## TRUE ====

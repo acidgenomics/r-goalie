@@ -5,13 +5,10 @@
 \alias{hasNonzeroRowsAndCols}
 \title{Does the input contain non-zero rows and columns?}
 \usage{
-hasNonzeroRowsAndCols(x, .xname = getNameInParent(x))
+hasNonzeroRowsAndCols(x)
 }
 \arguments{
 \item{x}{Object.}
-
-\item{.xname}{Name of object defined in \code{x}.
-\emph{Not intended to be used directly.}}
 }
 \value{
 \code{TRUE} on success;

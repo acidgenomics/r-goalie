@@ -27,18 +27,19 @@
 #' @rdname check-scalar-isCharacter
 #' @export
 isCharacter <-
-    function(x,
-             nullOk = FALSE,
-             .xname = getNameInParent(x)) {
+    function(x, nullOk = FALSE) {
         if (isTRUE(nullOk) && is.null(x)) {
             return(TRUE)
         }
         ok <- is.character(x)
         if (!isTRUE(ok)) {
-            return(false("{.var %s} is not character.", .xname))
+            return(false(
+                "{.var %s} is not character.",
+                toCauseName(x)
+            ))
         }
         ## Don't allow `character(0)`.
-        ok <- hasLength(x, .xname = .xname)
+        ok <- hasLength(x)
         if (!isTRUE(ok)) {
             return(ok)
         }
@@ -47,7 +48,7 @@ isCharacter <-
         if (!all(ok)) {
             return(false(
                 "{.var %s} has empty string at: %s.",
-                .xname, toString(which(!ok), width = 50L)
+                toCauseName(x), toString(which(!ok), width = 50L)
             ))
         }
         ## Don't allow `NA_character_`.
@@ -55,7 +56,7 @@ isCharacter <-
         if (!all(ok)) {
             return(false(
                 "{.var %s} has {.val %s} at: %s.",
-                .xname, "NA", toString(which(!ok), width = 50L)
+                toCauseName(x), "NA", toString(which(!ok), width = 50L)
             ))
         }
         TRUE

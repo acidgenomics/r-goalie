@@ -4,7 +4,7 @@
 #' function will intentionally error.
 #'
 #' @name check-scalar-areSameLength
-#' @note Updated 2019-08-10.
+#' @note Updated 2023-09-29.
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
@@ -26,14 +26,12 @@ NULL
 #' @rdname check-scalar-areSameLength
 #' @export
 areSameLength <-
-    function(x, y,
-             .xname = getNameInParent(x),
-             .yname = getNameInParent(y)) {
-        ok <- hasLength(x = x, .xname = .xname)
+    function(x, y) {
+        ok <- hasLength(x)
         if (!isTRUE(ok)) {
             return(ok)
         }
-        ok <- hasLength(x = y, .xname = .yname)
+        ok <- hasLength(y)
         if (!isTRUE(ok)) {
             return(ok)
         }
@@ -41,7 +39,7 @@ areSameLength <-
         if (!isTRUE(ok)) {
             return(false(
                 "{.var %s} doesn't have the same length as {.var %s}.",
-                .xname, .yname
+                toCauseName(x), toCauseName(y)
             ))
         }
         TRUE

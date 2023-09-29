@@ -21,17 +21,20 @@ NULL
 
 #' @rdname check-scalar-isFlag
 #' @export
-isFlag <- function(x, .xname = getNameInParent(x)) {
+isFlag <- function(x) {
     ok <- isScalarLogical(x)
     if (!isTRUE(ok)) {
         return(false(
             "{.var %s} is not a boolean flag ({.val %s}/{.val %s}).",
-            .xname, "TRUE", "FALSE"
+            toCauseName(x), "TRUE", "FALSE"
         ))
     }
     ## Check for `NA`, which is logical but not a flag.
     if (is.na(x)) {
-        return(false("{.var %s} is {.val %s}.", .xname, "NA"))
+        return(false(
+            "{.var %s} is {.val %s}.",
+            toCauseName(x), "NA"
+        ))
     }
     TRUE
 }

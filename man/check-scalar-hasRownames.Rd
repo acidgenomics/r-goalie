@@ -5,13 +5,10 @@
 \alias{hasRownames}
 \title{Does the input have row names?}
 \usage{
-hasRownames(x, .xname = getNameInParent(x))
+hasRownames(x)
 }
 \arguments{
 \item{x}{Object.}
-
-\item{.xname}{Name of object defined in \code{x}.
-\emph{Not intended to be used directly.}}
 }
 \value{
 \code{TRUE} on success;

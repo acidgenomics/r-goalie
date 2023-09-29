@@ -5,13 +5,10 @@
 \alias{hasMultipleSamples}
 \title{Does the input object contain multiple samples?}
 \usage{
-hasMultipleSamples(x, .xname = getNameInParent(x))
+hasMultipleSamples(x)
 }
 \arguments{
 \item{x}{Object.}
-
-\item{.xname}{Name of object defined in \code{x}.
-\emph{Not intended to be used directly.}}
 }
 \value{
 \code{TRUE} on success;

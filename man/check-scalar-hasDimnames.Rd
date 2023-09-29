@@ -6,15 +6,12 @@
 \alias{hasColnames}
 \title{Does the input have dimnames?}
 \usage{
-hasDimnames(x, .xname = getNameInParent(x))
+hasDimnames(x)
 
-hasColnames(x, .xname = getNameInParent(x))
+hasColnames(x)
 }
 \arguments{
 \item{x}{Object.}
-
-\item{.xname}{Name of object defined in \code{x}.
-\emph{Not intended to be used directly.}}
 }
 \value{
 \code{TRUE} on success;
@@ -24,7 +21,7 @@ hasColnames(x, .xname = getNameInParent(x))
 Does the input have dimnames?
 }
 \note{
-Updated 2021-10-07.
+Updated 2023-09-29.
 }
 \examples{
 ## TRUE ====

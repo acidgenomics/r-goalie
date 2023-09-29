@@ -6,15 +6,12 @@
 \alias{allAreHexColors}
 \title{Does the input contain hexadecimal colors?}
 \usage{
-isHexColor(x, .xname = getNameInParent(x))
+isHexColor(x)
 
-allAreHexColors(x, .xname = getNameInParent(x))
+allAreHexColors(x)
 }
 \arguments{
 \item{x}{Object.}
-
-\item{.xname}{Name of object defined in \code{x}.
-\emph{Not intended to be used directly.}}
 }
 \value{
 \code{TRUE} on success;

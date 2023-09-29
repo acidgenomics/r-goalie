@@ -35,7 +35,7 @@ NULL
 .grepl <- function(x, ...) {
     if (!is.atomic(x)) {
         ok <- FALSE
-        names(ok) <- .toNames(x)
+        names(ok) <- toCauseName(x)
         return(ok)
     }
     if (isS4(x)) {
@@ -45,10 +45,8 @@ NULL
     ok <- grepl(x = x, ...)
     if (isS4(x)) {
         ok <- as.logical(ok)
-        names(ok) <- .toNames(as.character(x))
-    } else {
-        names(ok) <- .toNames(x)
     }
+    names(ok) <- toCauseNames(x)
     ok
 }
 

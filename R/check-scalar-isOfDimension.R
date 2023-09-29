@@ -25,22 +25,20 @@ NULL
 
 #' @rdname check-scalar-isOfDimension
 #' @export
-isOfDimension <- function(x, n, .xname = getNameInParent(x)) {
+isOfDimension <- function(x, n) {
     dimX <- dim(x)
     if (is.null(n)) {
         if (hasDims(x)) {
             return(false(
-                sprintf(
-                    "{.var %s} has %s {.val %s}, not {.val %s}.",
-                    .xname,
-                    ngettext(
-                        n = length(dimX),
-                        msg1 = "dimension",
-                        msg2 = "dimensions"
-                    ),
-                    deparse(dimX),
-                    "NULL"
-                )
+                "{.var %s} has %s {.val %s}, not {.val %s}.",
+                toCauseName(x),
+                ngettext(
+                    n = length(dimX),
+                    msg1 = "dimension",
+                    msg2 = "dimensions"
+                ),
+                deparse(dimX),
+                "NULL"
             ))
         }
         return(TRUE)
@@ -55,7 +53,7 @@ isOfDimension <- function(x, n, .xname = getNameInParent(x)) {
                 msg2 = "Dimensions %s of {.var %s} are incorrect."
             ),
             toString(notok, width = 50L),
-            .xname
+            toCauseName(x)
         ))
     }
     TRUE

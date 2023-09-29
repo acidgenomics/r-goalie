@@ -7,11 +7,11 @@
 \alias{hasCols}
 \title{Does the input have dimensions?}
 \usage{
-hasDims(x, n = NULL, .xname = getNameInParent(x))
+hasDims(x, n = NULL)
 
-hasRows(x, n = NULL, .xname = getNameInParent(x))
+hasRows(x, n = NULL)
 
-hasCols(x, n = NULL, .xname = getNameInParent(x))
+hasCols(x, n = NULL)
 }
 \arguments{
 \item{x}{Object.}
@@ -20,9 +20,6 @@ hasCols(x, n = NULL, .xname = getNameInParent(x))
 Expected dimension number.
 For \code{hasDims}, \code{integer(2)} is required, corresponding to rows, columns.
 If \code{NULL}, only checks for non-zero dimensions.}
-
-\item{.xname}{Name of object defined in \code{x}.
-\emph{Not intended to be used directly.}}
 }
 \value{
 \code{TRUE} on success;

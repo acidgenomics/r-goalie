@@ -5,16 +5,13 @@
 \alias{matchesUniqueGeneNames}
 \title{Do the input gene names match unique values in the corresponding object?}
 \usage{
-matchesUniqueGeneNames(x, genes, .xname = getNameInParent(x))
+matchesUniqueGeneNames(x, genes)
 }
 \arguments{
 \item{x}{Object.}
 
 \item{genes}{\code{character}.
 Gene identifiers.}
-
-\item{.xname}{Name of object defined in \code{x}.
-\emph{Not intended to be used directly.}}
 }
 \value{
 \code{TRUE} on success;

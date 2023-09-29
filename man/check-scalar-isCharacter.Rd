@@ -5,16 +5,13 @@
 \alias{isCharacter}
 \title{Does the input contain a (non-empty) character vector?}
 \usage{
-isCharacter(x, nullOk = FALSE, .xname = getNameInParent(x))
+isCharacter(x, nullOk = FALSE)
 }
 \arguments{
 \item{x}{Object.}
 
 \item{nullOk}{\code{logical(1)}.
 If set to \code{TRUE}, \code{x} may also be \code{NULL}.}
-
-\item{.xname}{Name of object defined in \code{x}.
-\emph{Not intended to be used directly.}}
 }
 \value{
 \code{TRUE} on success;
