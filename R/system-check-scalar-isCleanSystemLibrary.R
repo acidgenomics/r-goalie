@@ -1,11 +1,7 @@
-## nocov start
-
-
-
 #' Is the R system library clean?
 #'
 #' @name check-scalar-isCleanSystemLibrary
-#' @note Updated 2022-10-18.
+#' @note Updated 2023-09-29.
 #'
 #' @inherit check return
 #'
@@ -33,8 +29,7 @@ isCleanSystemLibrary <- function() {
     }
     ## Check for packages built against a different point release.
     version <- getRversion()
-    stopifnot(all(grepl("^\\d\\.\\d\\.\\d$", version)))
-    version <- gsub("\\.\\d$", "", version)
+    version <- sub(pattern = "\\.\\d$", replacement = "", x = version)
     if (!all(grepl(
         pattern = paste0("^", version),
         x = system[, "Built"]
@@ -44,7 +39,3 @@ isCleanSystemLibrary <- function() {
     }
     TRUE
 }
-
-
-
-## nocov end

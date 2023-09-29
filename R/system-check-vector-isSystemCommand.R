@@ -1,7 +1,7 @@
 #' Is a system command installed?
 #'
 #' @name check-vector-isSystemCommand
-#' @note Updated 2020-04-08.
+#' @note Updated 2023-09-29.
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
