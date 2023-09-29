@@ -37,7 +37,7 @@ URL exists (is active). For that, refer to \code{isExistingUrl} instead.
 
 }}
 \note{
-Updated 2023-09-15.
+Updated 2023-09-29.
 }
 \examples{
 urls <- c("https://www.r-project.org/", "ftp://r-project.org/")
