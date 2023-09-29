@@ -1,7 +1,7 @@
 #' Does the input contain a URL?
 #'
 #' @name check-vector-isUrl
-#' @note Updated 2023-09-15.
+#' @note Updated 2023-09-29.
 #'
 #' @details
 #' This assert check is intended to be simple and does not check to see if the
