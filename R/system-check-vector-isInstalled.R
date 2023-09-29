@@ -1,7 +1,7 @@
 #' Is the package installed?
 #'
 #' @name check-vector-isInstalled
-#' @note Updated 2022-10-18.
+#' @note Updated 2023-09-29.
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
@@ -25,10 +25,22 @@ NULL
 #' @describeIn check-vector-isInstalled Vectorized.
 #' @export
 isInstalled <- function(x, lib = NULL) {
+    ok <- hasLength(x)
+    if (!isTRUE(ok)) {
+        return(ok)
+    }
+    ok <- isCharacter(x)
+    xnames <- .toNames(x)
+    ok <- isCharacter(x)
+    if (!isTRUE(ok)) {
+        ko <- rep(x = FALSE, times = length(x))
+        names(ko) <- xnames
+        return(setCause(ko, false = "not character"))
+    }
     pkgs <- .packages(all.available = TRUE, lib.loc = lib)
     # GitHub packages are "owner/repo", so using basename here.
     ok <- basename(x) %in% pkgs
-    names(ok) <- .toNames(x)
+    names(ok) <- xnames
     setCause(ok, false = "not installed")
 }
 
