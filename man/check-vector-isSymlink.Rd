@@ -39,7 +39,7 @@ Supported on Linux and macOS but not Windows.
 
 }}
 \note{
-Updated 2023-07-13.
+Updated 2023-09-29.
 }
 \examples{
 if (!isWindows()) {

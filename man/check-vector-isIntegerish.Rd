@@ -7,7 +7,7 @@
 \alias{isInt}
 \title{Is the input integer(ish)?}
 \usage{
-isIntegerish(x, infiniteOk = TRUE, naOk = FALSE, .xname = getNameInParent(x))
+isIntegerish(x, infiniteOk = TRUE, naOk = FALSE)
 
 allAreIntegerish(x)
 
@@ -21,9 +21,6 @@ Allow infinite values (\code{Inf} or \code{-Inf}) to pass.}
 
 \item{naOk}{\code{logical(1)}.
 Allow \code{NA} values to pass.}
-
-\item{.xname}{Name of object defined in \code{x}.
-\emph{Not intended to be used directly.}}
 
 \item{nullOk}{\code{logical(1)}.
 If set to \code{TRUE}, \code{x} may also be \code{NULL}.}

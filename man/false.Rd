@@ -16,7 +16,7 @@ false(...)
 Set a false goalie check with cause attribute
 }
 \note{
-Updated 2021-02-23.
+Updated 2023-09-29.
 }
 \examples{
 x <- false("{.var \%s} is invalid.", "xxx")
