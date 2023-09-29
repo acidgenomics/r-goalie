@@ -29,7 +29,7 @@ Our check here returns \code{TRUE} for all values that are duplicated.
 
 }}
 \note{
-Updated 2023-09-19.
+Updated 2023-09-29.
 }
 \examples{
 ## TRUE ====
