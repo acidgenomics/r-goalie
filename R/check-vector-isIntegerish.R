@@ -4,10 +4,16 @@
 #' (e.g. `1`) `integer`.
 #'
 #' @name check-vector-isIntegerish
-#' @note Updated 2022-12-14.
+#' @note Updated 2023-09-29.
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
+#'
+#' @param infiniteOk `logical(1)`.
+#' Allow infinite values (`Inf` or `-Inf`) to pass.
+#'
+#' @param naOk `logical(1)`.
+#' Allow `NA` values to pass.
 #'
 #' @seealso
 #' - `isInt()` or `isScalarIntegerish()` for scalar.
@@ -30,23 +36,37 @@ NULL
 
 #' @describeIn check-vector-isIntegerish Vectorized.
 #' @export
-isIntegerish <- function(x, .xname = getNameInParent(x)) {
+isIntegerish <- function(
+        x,
+        infiniteOk = TRUE,
+        naOk = FALSE,
+        .xname = getNameInParent(x)) {
+    assert(
+        isFlag(infiniteOk),
+        isFlag(naOk)
+    )
     if (is(x, "Rle")) {
         assert(requireNamespaces("S4Vectors"))
         x <- S4Vectors::decode(x)
     }
-    ## Check for numeric vector.
     ok <- is.numeric(x)
     if (!isTRUE(ok)) {
         return(false("{.var %s} is not numeric.", .xname))
     }
-    ## Require that vector doesn't contain NA.
-    ok <- !is.na(x)
-    if (!all(ok)) {
-        names(ok) <- .toNames(x)
-        return(setCause(ok, false = "NA"))
+    if (isFALSE(naOk)) {
+        ok <- !is.na(x)
+        if (any(!ok)) {
+            names(ok) <- .toNames(x)
+            return(setCause(ok, false = "NA"))
+        }
     }
-    ## Early return without running `all.equal()` for integer or infinite (Inf).
+    if (isFALSE(infiniteOk)) {
+        ok <- !is.infinite(x)
+        if (any(!ok)) {
+            names(ok) <- .toNames(x)
+            return(setCause(ok, false = "infinite"))
+        }
+    }
     ok <- bapply(
         X = x,
         FUN = function(x) {
@@ -54,18 +74,20 @@ isIntegerish <- function(x, .xname = getNameInParent(x)) {
         }
     )
     names(ok) <- .toNames(x)
-    ## Check if numeric is equal to integer, based on tolerance.
     if (all(ok)) {
         return(ok)
     }
     ok <- bapply(
         X = x,
         FUN = function(x) {
-            isTRUE(all.equal(
+            if (is.infinite(x) || is.na(x)) {
+                return(TRUE)
+            }
+            all.equal(
                 target = as.integer(x),
                 current = x,
                 tolerance = .tolerance
-            ))
+            )
         }
     )
     names(ok) <- .toNames(x)
