@@ -28,7 +28,7 @@ Is a system command installed?
 
 }}
 \note{
-Updated 2020-04-08.
+Updated 2023-09-29.
 }
 \examples{
 ## TRUE ====
