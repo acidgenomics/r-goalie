@@ -2,7 +2,7 @@
 #'
 #' @name check-vector-isDuplicate
 #' @inherit check return
-#' @note Updated 2023-09-19.
+#' @note Updated 2023-09-29.
 #'
 #' @details
 #' This check is designed to serve as a complement to the base `duplicated`
@@ -29,20 +29,17 @@ NULL
 #' @describeIn check-vector-isDuplicate Vectorized.
 #' @export
 isDuplicate <- function(x) {
-    ok <- is.vector(x)
-    if (!isTRUE(ok)) {
-        return(ok)
-    }
     ok <- hasLength(x)
     if (!isTRUE(ok)) {
         return(ok)
     }
-    x <- unname(x)
-    lgl <- duplicated(x)
-    if (!any(lgl)) {
-        return(setCause(lgl, false = "unique"))
+    ok <- is.vector(x)
+    if (!isTRUE(ok)) {
+        return(false("Not vector: %s."))
     }
+    lgl <- duplicated(x)
     vals <- x[lgl]
     ok <- x %in% vals
+    names(ok) <- toCauseNames(x)
     setCause(ok, false = "unique")
 }
