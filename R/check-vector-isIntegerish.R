@@ -51,7 +51,7 @@ isIntegerish <- function(
     xnames <- .toNames(x)
     ok <- is.numeric(x)
     if (!isTRUE(ok)) {
-        ko <- rep(FALSE, length(x))
+        ko <- rep(x = FALSE, times = length(x))
         names(ko) <- xnames
         return(setCause(ko, false = "not numeric"))
     }

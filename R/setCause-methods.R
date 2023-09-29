@@ -65,10 +65,10 @@ NULL
 
 
 
-## Updated 2021-02-23.
+## Updated 2023-09-29.
 `setCause,goalie` <- # nolint
     function(object, ...) {
-        names <- names(object)
+        names <- names(cause(object))
         object <- as.logical(object)
         names(object) <- names
         setCause(object = object, ...)

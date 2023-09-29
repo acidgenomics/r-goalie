@@ -35,23 +35,26 @@ isSymlink <- function(x) {
     if (!isTRUE(ok)) {
         return(ok)
     }
-    ko <- rep(FALSE, length(x))
+    xnames <- .toNames(x)
     ok <- isCharacter(x)
     if (!isTRUE(ok)) {
+        ko <- rep(x = FALSE, times = length(x))
+        names(ko) <- xnames
         return(setCause(ko, false = "not character"))
     }
     ok <- !isWindows()
     if (!isTRUE(ok)) {
-        names(ko) <- x
+        ko <- rep(x = FALSE, times = length(x))
+        names(ko) <- xnames
         return(setCause(ko, false = "windows"))
     }
     ok <- file.exists(x)
     if (!all(ok)) {
-        names(ok) <- x
+        names(ok) <- xnames
         return(setCause(ok, false = "doesn't exist"))
     }
     ok <- nzchar(Sys.readlink(x), keepNA = TRUE)
-    names(ok) <- x
+    names(ok) <- xnames
     setCause(ok, false = "not symlink")
 }
 
