@@ -26,7 +26,6 @@ NULL
 #' @rdname check-scalar-isOfDimension
 #' @export
 isOfDimension <- function(x, n, .xname = getNameInParent(x)) {
-    assert((is.numeric(n) && identical(length(n), 2L)) || is.null(n))
     dimX <- dim(x)
     if (is.null(n)) {
         if (hasDims(x)) {

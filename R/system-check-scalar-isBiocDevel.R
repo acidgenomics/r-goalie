@@ -18,15 +18,15 @@ NULL
 #' @rdname check-scalar-isBiocDevel
 #' @export
 isBiocDevel <- function() {
+    ## FIXME Return FALSE on internet failure.
     assert(hasInternet())
     ok <- isInstalled("BiocManager")
     if (!isTRUE(ok)) {
         return(ok)
     }
-    assert(requireNamespaces(c("BiocManager", "yaml")))
+    requireNamespaces(c("BiocManager", "yaml"))
     version <- BiocManager::version()
     yaml <- yaml::read_yaml("https://bioconductor.org/config.yaml")
-    assert(isSubset("devel_version", names(yaml)))
     develVersion <- yaml[["devel_version"]]
     ok <- identical(x = as.character(version), y = as.character(develVersion))
     if (!isTRUE(ok)) {

@@ -39,7 +39,6 @@ isPackageVersion <- function(x, op = ">=") {
     packages <- basename(names(x))
     versions <- package_version(x)
     op <- get(x = op, inherits = TRUE)
-    assert(is.primitive(op))
     ok <- as.logical(Map(
         f = function(package, version, op) {
             if (!isInstalled(package)) {

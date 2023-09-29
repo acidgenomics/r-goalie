@@ -74,17 +74,9 @@ isInRange <-
              closed = c(TRUE, TRUE),
              .xname = getNameInParent(x)) {
         if (is(x, "Rle")) {
-            assert(requireNamespaces("S4Vectors"))
+            requireNamespaces("S4Vectors")
             x <- S4Vectors::decode(x)
         }
-        assert(
-            is.numeric(x),
-            is.vector(x),
-            !anyNA(x),
-            is.numeric(lower) && !is.na(lower),
-            is.numeric(upper) && !is.na(upper),
-            is.logical(closed) && identical(length(closed), 2L)
-        )
         tooLow <- (if (closed[[1L]]) `<` else `<=`)(x, lower)
         tooHigh <- (if (closed[[2L]]) `>` else `>=`)(x, upper)
         ok <- rep.int(TRUE, length(x))

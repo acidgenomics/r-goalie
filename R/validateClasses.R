@@ -59,7 +59,8 @@ validateClasses <-
             is(expected, "list"),
             isFlag(subset),
             hasNames(object),
-            hasNames(expected)
+            hasNames(expected),
+            msg = "Invalid input."
         )
         if (isTRUE(subset)) {
             assert(isSubset(names(expected), names(object)))

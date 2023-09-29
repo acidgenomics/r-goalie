@@ -53,10 +53,6 @@ hasDims <- function(x, n = NULL, .xname = getNameInParent(x)) {
         ))
     }
     if (!is.null(n)) {
-        assert(
-            hasLength(n, n = 2L),
-            allAreIntegerish(n)
-        )
         if (!all(d == n)) {
             return(false(
                 paste(
@@ -83,7 +79,6 @@ hasRows <- function(x, n = NULL, .xname = getNameInParent(x)) {
         ))
     }
     if (!is.null(n)) {
-        assert(isInt(n))
         if (isFALSE(nr == n)) {
             return(false(
                 paste(
@@ -114,7 +109,6 @@ hasCols <- function(x, n = NULL, .xname = getNameInParent(x)) {
         ))
     }
     if (!is.null(n)) {
-        assert(isInt(n))
         if (isFALSE(nc == n)) {
             return(false(
                 paste(
