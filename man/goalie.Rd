@@ -21,7 +21,7 @@ This value should not be named.}
 Define a goalie check classed return
 }
 \note{
-Updated 2021-02-23.
+Updated 2023-09-29.
 }
 \examples{
 x <- goalie(
