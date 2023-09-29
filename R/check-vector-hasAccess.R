@@ -48,24 +48,23 @@ NULL
 #' @export
 ## Updated 2022-12-14.
 hasAccess <- function(x, access = "r") {
-    ok <- isCharacter(x)
+    ok <- hasLength(x)
     if (!isTRUE(ok)) {
         return(ok)
     }
-    ## Here we're converting the "rwx" flags to the `file.access()` modes.
-    access <- tolower(access)
-    access <- strsplit(access, "")[[1L]]
-    if (!isSubset(access, c("r", "w", "x")) || hasDuplicates(access)) {
-        return(false(
-            paste0(
-                "{.var %s} is not a valid access code.\n",
-                "Unique combinations of {.val %s}, {.val %s} ",
-                "and {.val %s} are allowed."
-            ),
-            paste0(access, collapse = ""),
-            "r", "w", "x"
-        ))
+    cn <- toCauseNames(x)
+    ok <- isCharacter(x)
+    if (!isTRUE(ok)) {
+        ko <- rep(x = FALSE, times = length(x))
+        names(ko) <- cn
+        return(setCause(ko, false = "not character"))
     }
+    ## Here we're converting the "rwx" flags to the `file.access()` modes.
+    access <- strsplit(
+        x = tolower(access),
+        split = "",
+        fixed = TRUE
+    )[[1L]]
     ## String file checker that we can loop with `bapply()` below.
     checkAccess <- function(x, access) {
         if (isSubset("r", access)) {
@@ -92,6 +91,7 @@ hasAccess <- function(x, access = "r") {
         TRUE
     }
     ok <- bapply(X = x, FUN = checkAccess, access = access)
+    names(ok) <- cn
     setCause(ok, false = "no access")
 }
 
