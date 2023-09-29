@@ -3,7 +3,7 @@
 #' Works for either file or directory paths.
 #'
 #' @name check-vector-hasAccess
-#' @note Updated 2022-12-14.
+#' @note Updated 2023-09-29.
 #'
 #' @inherit check return
 #'
