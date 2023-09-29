@@ -4,7 +4,7 @@
 #' Currently only performs a simple check, based on file extension match.
 #'
 #' @name check-vector-isCompressedFile
-#' @note Updated 2023-05-31.
+#' @note Updated 2023-09-29.
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
@@ -16,13 +16,13 @@
 #' @examples
 #' ## TRUE ====
 #' x <- c("sample1.fastq.gz", "sample2.fastq.bz2")
-#' file.create(x)
+#' invisible(file.create(x))
 #' isCompressedFile(x)
 #' unlink(x)
 #'
 #' ## FALSE ====
 #' x <- c("sample1.fastq", "sample2.fastq")
-#' file.create(x)
+#' invisible(file.create(x))
 #' isCompressedFile(x)
 #' unlink(x)
 NULL
@@ -34,15 +34,15 @@ NULL
 #' @describeIn check-vector-isCompressedFile Vectorized.
 #' @export
 isCompressedFile <- function(x) {
-    ok <- allAreFiles(x)
-    if (!isTRUE(ok)) {
+    ok <- isFile(x)
+    if (!all(ok)) {
         return(ok)
     }
-    ok <- bapply(
-        X = tolower(basename(x)),
-        FUN = isMatchingRegex,
+    ok <- isMatchingRegex(
+        x = tolower(basename(x)),
         pattern = compressExtPattern
     )
+    names(ok) <- toCauseNames(x)
     setCause(ok, false = "no compress ext")
 }
 
