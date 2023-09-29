@@ -61,6 +61,7 @@ isNotEqualTo <- function(x, y) {
         x <- S4Vectors::decode(x)
         y <- S4Vectors::decode(y)
     }
+    ## FIXME Return FALSE on these.
     assert(
         is.numeric(x), is.numeric(y),
         is.vector(x), is.vector(y)
@@ -80,7 +81,7 @@ isGreaterThan <- function(x, y) {
         x <- S4Vectors::decode(x)
         y <- S4Vectors::decode(y)
     }
-    ## FIXME Just return FALSE on these.
+    ## FIXME Return FALSE on these.
     assert(
         is.numeric(x), is.numeric(y),
         is.vector(x), is.vector(y)
@@ -100,7 +101,7 @@ isGreaterThanOrEqualTo <- function(x, y) {
         x <- S4Vectors::decode(x)
         y <- S4Vectors::decode(y)
     }
-    ## FIXME Just return FALSE on these
+    ## FIXME Return FALSE on these.
     assert(
         is.numeric(x), is.numeric(y),
         is.vector(x), is.vector(y)
@@ -120,6 +121,7 @@ isLessThan <- function(x, y) {
         x <- S4Vectors::decode(x)
         y <- S4Vectors::decode(y)
     }
+    ## FIXME Return FALSE on these.
     assert(
         is.numeric(x), is.numeric(y),
         is.vector(x), is.vector(y)
@@ -139,6 +141,7 @@ isLessThanOrEqualTo <- function(x, y) {
         x <- S4Vectors::decode(x)
         y <- S4Vectors::decode(y)
     }
+    ## FIXME Return FALSE on these.
     assert(
         is.numeric(x), is.numeric(y),
         is.vector(x), is.vector(y)
