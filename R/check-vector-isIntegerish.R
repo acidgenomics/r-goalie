@@ -1,7 +1,3 @@
-## FIXME The logic isn't quite right here using early returns, need to rethink.
-
-
-
 #' Is the input integer(ish)?
 #'
 #' Check for valid input of either explicit (e.g. `1L`) and/or implict
@@ -43,54 +39,44 @@ NULL
 isIntegerish <- function(
         x,
         infiniteOk = TRUE,
-        naOk = FALSE,
-        .xname = getNameInParent(x)) {
+        naOk = FALSE) {
     if (is(x, "Rle")) {
         requireNamespaces("S4Vectors")
         x <- S4Vectors::decode(x)
     }
+    ok <- hasLength(x)
+    if (!isTRUE(ok)) {
+        return(ok)
+    }
+    xnames <- .toNames(x)
     ok <- is.numeric(x)
     if (!isTRUE(ok)) {
-        return(false("{.var %s} is not numeric.", .xname))
+        ko <- rep(FALSE, length(x))
+        names(ko) <- xnames
+        return(setCause(ko, false = "not numeric"))
     }
-    if (isFALSE(naOk)) {
-        ok <- !is.na(x)
-        if (any(!ok)) {
-            names(ok) <- .toNames(x)
-            return(setCause(ok, false = "NA"))
-        }
+    if (isTRUE(naOk)) {
+        x[is.na(x)] <- 0L
     }
-    if (isFALSE(infiniteOk)) {
-        ok <- !is.infinite(x)
-        if (any(!ok)) {
-            names(ok) <- .toNames(x)
-            return(setCause(ok, false = "infinite"))
-        }
+    if (isTRUE(infiniteOk)) {
+        x[is.infinite(x)] <- 0L
     }
-    ok <- bapply(
-        X = x,
-        FUN = function(x) {
-            is.integer(x) || is.infinite(x)
-        }
-    )
-    names(ok) <- .toNames(x)
+    ok <- is.integer(x)
     if (all(ok)) {
+        names(ok) <- xnames
         return(ok)
     }
     ok <- bapply(
         X = x,
         FUN = function(x) {
-            if (is.infinite(x) || is.na(x)) {
-                return(TRUE)
-            }
-            all.equal(
+            isTRUE(all.equal(
                 target = as.integer(x),
                 current = x,
                 tolerance = .tolerance
-            )
+            ))
         }
     )
-    names(ok) <- .toNames(x)
+    names(ok) <- xnames
     setCause(ok, false = "not integer")
 }
 
