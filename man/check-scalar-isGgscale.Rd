@@ -21,6 +21,9 @@ Type of scale, either \code{"continuous"} or \code{"discrete"}.}
 \item{aes}{\code{character(1)}.
 Aesthetic mapping, either  \code{"color"}/\code{"colour"} or \code{"fill"}.
 Note that ggplot2 prefers British spelling.}
+
+\item{nullOk}{\code{logical(1)}.
+If set to \code{TRUE}, \code{x} may also be \code{NULL}.}
 }
 \value{
 \code{TRUE} on success;

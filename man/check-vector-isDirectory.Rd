@@ -24,6 +24,9 @@ allAreDirs(x)
 }
 \arguments{
 \item{x}{Object.}
+
+\item{nullOk}{\code{logical(1)}.
+If set to \code{TRUE}, \code{x} may also be \code{NULL}.}
 }
 \value{
 \code{TRUE} on success;
