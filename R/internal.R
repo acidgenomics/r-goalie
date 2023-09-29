@@ -49,8 +49,6 @@ NULL
 #'
 #' @note Updated 2021-02-23.
 #' @noRd
-#'
-#' @seealso `base::stopifnot()`.
 .deparse <-
     function(call, cutoff = 60L) {
         ch <- deparse(call, width.cutoff = cutoff)
