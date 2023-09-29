@@ -33,6 +33,11 @@ NULL
 ## Alternatively, could check directly for Rle and decode here instead.
 ## Updated 2022-12-14.
 .grepl <- function(x, ...) {
+    if (!is.atomic(x)) {
+        ok <- FALSE
+        names(ok) <- .toNames(x)
+        return(ok)
+    }
     if (isS4(x)) {
         requireNamespaces("S4Vectors")
         grepl <- S4Vectors::grepl
