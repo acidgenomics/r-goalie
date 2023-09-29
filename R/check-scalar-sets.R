@@ -46,16 +46,19 @@ NULL
 #' @rdname check-scalar-sets
 #' @export
 isSubset <-
-    function(x,
-             y,
-             .xname = getNameInParent(x),
-             .yname = getNameInParent(y)) {
+    function(x, y) {
         ## FIXME Return FALSE if not vectorish here.
         if (is.null(x)) {
-            return(false(gettext("{.var %s} is NULL."), .xname))
+            return(false(
+                "{.var %s} is NULL.",
+                toCauseName(x)
+            ))
         }
         if (is.null(y)) {
-            return(false(gettext("{.var %s} is NULL."), .yname))
+            return(false(
+                "{.var %s} is NULL.",
+                toCauseName(y)
+            ))
         }
         ## FIXME Return FALSE on these.
         assert(isVectorish(x), isVectorish(y))
@@ -75,8 +78,10 @@ isSubset <-
         if (!isTRUE(ok)) {
             setdiff <- setdiff(x, y)
             return(false(
-                gettext("{.var %s} has elements not in {.var %s}: %s"),
-                .xname, .yname, toString(setdiff, width = 100L)
+                "{.var %s} has elements not in {.var %s}: %s",
+                toCauseName(x),
+                toCauseName(y),
+                toString(setdiff, width = 100L)
             ))
         }
         TRUE
@@ -89,11 +94,8 @@ isSubset <-
 #' @rdname check-scalar-sets
 #' @export
 isSuperset <-
-    function(x,
-             y,
-             .xname = getNameInParent(x),
-             .yname = getNameInParent(y)) {
-        isSubset(x = y, y = x, .xname = .yname, .yname = .xname)
+    function(x, y) {
+        isSubset(x = y, y = x)
     }
 
 
@@ -101,24 +103,22 @@ isSuperset <-
 #' @rdname check-scalar-sets
 #' @export
 areDisjointSets <-
-    function(x,
-             y,
-             .xname = getNameInParent(x),
-             .yname = getNameInParent(y)) {
+    function(x, y) {
         ## FIXME Return FALSE on these.
         if (!is.null(x)) {
             ## FIXME Return FALSE on these.
-            assert(isVectorish(x, .xname = .xname))
+            assert(isVectorish(x))
         }
         if (!is.null(y)) {
             ## FIXME Return FALSE on these.
-            assert(isVectorish(y, .xname = .yname))
+            assert(isVectorish(y))
         }
         intersect <- intersect(x, y)
         if (hasLength(intersect)) {
             return(false(
-                gettext("{.var %s} and {.var %s} have common elements: %s"),
-                .xname, .yname, toString(intersect, width = 100L)
+                "{.var %s} and {.var %s} have common elements: %s",
+                toCauseName(x), toCauseName(y),
+                toString(intersect, width = 100L)
             ))
         }
         TRUE
@@ -129,23 +129,20 @@ areDisjointSets <-
 #' @rdname check-scalar-sets
 #' @export
 areIntersectingSets <-
-    function(x,
-             y,
-             .xname = getNameInParent(x),
-             .yname = getNameInParent(y)) {
+    function(x, y) {
         if (!is.null(x)) {
             ## FIXME Return FALSE on these.
-            assert(isVectorish(x, .xname = .xname))
+            assert(isVectorish(x))
         }
         if (!is.null(y)) {
             ## FIXME Return FALSE on these.
-            assert(isVectorish(y, .xname = .yname))
+            assert(isVectorish(y))
         }
         intersect <- intersect(x, y)
         if (!hasLength(intersect)) {
             return(false(
-                gettext("{.var %s} and {.var %s} have 0 common elements."),
-                .xname, .yname
+                "{.var %s} and {.var %s} have 0 common elements.",
+                toCauseName(x), toCauseName(y)
             ))
         }
         TRUE
@@ -156,27 +153,25 @@ areIntersectingSets <-
 #' @rdname check-scalar-sets
 #' @export
 areSetEqual <-
-    function(x,
-             y,
-             .xname = getNameInParent(x),
-             .yname = getNameInParent(y)) {
+    function(x, y) {
         if (!is.null(x)) {
             ## FIXME Return FALSE on these.
-            assert(isVectorish(x, .xname = .xname))
+            assert(isVectorish(x))
         }
         if (!is.null(y)) {
             ## FIXME Return FALSE on these.
-            assert(isVectorish(y, .xname = .yname))
+            assert(isVectorish(y))
         }
         x <- unique(x)
         y <- unique(y)
         if (length(x) != length(y)) {
             return(false(
-                gettext(paste(
+                paste(
                     "{.var %s} and {.var %s} have different numbers",
                     "of elements (%d versus %d)."
-                )),
-                .xname, .yname, length(x), length(y)
+                ),
+                toCauseName(x), toCauseName(y),
+                length(x), length(y)
             ))
         }
         ok <- isSubset(x, y)

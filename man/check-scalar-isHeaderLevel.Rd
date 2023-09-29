@@ -5,13 +5,10 @@
 \alias{isHeaderLevel}
 \title{Does the input contain a Markdown header level?}
 \usage{
-isHeaderLevel(x, .xname = getNameInParent(x))
+isHeaderLevel(x)
 }
 \arguments{
 \item{x}{Object.}
-
-\item{.xname}{Name of object defined in \code{x}.
-\emph{Not intended to be used directly.}}
 }
 \value{
 \code{TRUE} on success;
@@ -21,7 +18,7 @@ isHeaderLevel(x, .xname = getNameInParent(x))
 Markdown supports header levels \code{1}-\code{7} (\verb{<H1>}-\verb{<H7>}).
 }
 \note{
-Updated 2022-10-18.
+Updated 2023-09-29.
 }
 \examples{
 ## TRUE ====

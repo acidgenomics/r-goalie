@@ -1,11 +1,7 @@
-## Documenting `hasRownames()` in a separate Rd file because it's complicated.
-
-
-
 #' Does the input have dimnames?
 #'
 #' @name check-scalar-hasDimnames
-#' @note Updated 2021-10-07.
+#' @note Updated 2023-09-29.
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
@@ -33,41 +29,62 @@ NULL
 
 #' @rdname check-scalar-hasDimnames
 #' @export
-hasDimnames <- function(x, .xname = getNameInParent(x)) {
+hasDimnames <- function(x) {
     dimnames <- tryCatch(
         expr = dimnames(x),
-        error = function(e) e
+        error = function(e) {
+            e
+        }
     )
     if (is(dimnames, "error")) {
-        false("{.fun %s} command on {.var %s} failed.", "dimnames", .xname)
-    } else if (is.null(dimnames)) {
-        false(
-            "The dimension names of {.var %s} are {.val %s}.",
-            .xname, "NULL"
-        )
-    } else if (!any(nzchar(unlist(dimnames, use.names = FALSE)))) {
-        false("The dimension names of {.var %s} are all empty.", .xname)
-    } else {
-        TRUE
+        return(false(
+            "{.fun %s} command on {.var %s} failed.", "dimnames",
+            toCauseName(x)
+        ))
     }
+    if (is.null(dimnames)) {
+        return(false(
+            "The dimension names of {.var %s} are {.val %s}.",
+            toCauseName(x), "NULL"
+        ))
+    }
+    if (!any(nzchar(unlist(dimnames, use.names = FALSE)))) {
+        return(false(
+            "The dimension names of {.var %s} are all empty.",
+            toCauseName(x)
+        ))
+    }
+    TRUE
 }
 
 
 
 #' @rdname check-scalar-hasDimnames
 #' @export
-hasColnames <- function(x, .xname = getNameInParent(x)) {
+hasColnames <- function(x) {
     colnames <- tryCatch(
         expr = colnames(x),
-        error = function(e) e
+        error = function(e) {
+            e
+        }
     )
     if (is(colnames, "error")) {
-        false("{.fun %s} command on {.var %s} failed.", "colnames", .xname)
-    } else if (is.null(colnames)) {
-        false("The column names of {.var %s} are {.val %s}.", .xname, "NULL")
-    } else if (!any(nzchar(colnames))) {
-        false("The column names of {.var %s} are all empty.", .xname)
-    } else {
-        TRUE
+        return(false(
+            "{.fun %s} command on {.var %s} failed.", "colnames",
+            toCauseName(x)
+        ))
     }
+    if (is.null(colnames)) {
+        return(false(
+            "The column names of {.var %s} are {.val %s}.",
+            toCauseName(x), "NULL"
+        ))
+    }
+    if (!any(nzchar(colnames))) {
+        return(false(
+            "The column names of {.var %s} are all empty.",
+            toCauseName(x)
+        ))
+    }
+    TRUE
 }

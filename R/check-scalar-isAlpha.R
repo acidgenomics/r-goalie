@@ -21,12 +21,15 @@ NULL
 
 #' @rdname check-scalar-isAlpha
 #' @export
-isAlpha <- function(x, .xname = getNameInParent(x)) {
+isAlpha <- function(x) {
     ok <- isScalarDouble(x)
     if (!isTRUE(ok)) {
-        return(false("{.var %s} is not scalar double.", .xname))
+        return(false(
+            "{.var %s} is not scalar double.",
+            toCauseName(x)
+        ))
     }
-    ok <- isInOpenRange(x, lower = 0L, upper = 1L, .xname = .xname)
+    ok <- isInOpenRange(x, lower = 0L, upper = 1L)
     if (!isTRUE(ok)) {
         return(ok)
     }

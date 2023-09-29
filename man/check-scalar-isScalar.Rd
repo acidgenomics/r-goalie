@@ -19,36 +19,33 @@
 \usage{
 isNumber(x, nullOk = FALSE)
 
-isScalar(x, nullOk = FALSE, .xname = getNameInParent(x))
+isScalar(x, nullOk = FALSE)
 
-isScalarAtomic(x, nullOk = FALSE, .xname = getNameInParent(x))
+isScalarAtomic(x, nullOk = FALSE)
 
-isScalarCharacter(x, nullOk = FALSE, .xname = getNameInParent(x))
+isScalarCharacter(x, nullOk = FALSE)
 
-isScalarDouble(x, nullOk = FALSE, .xname = getNameInParent(x))
+isScalarDouble(x, nullOk = FALSE)
 
-isScalarInteger(x, nullOk = FALSE, .xname = getNameInParent(x))
+isScalarInteger(x, nullOk = FALSE)
 
-isScalarIntegerish(x, nullOk = FALSE, .xname = getNameInParent(x))
+isScalarIntegerish(x, nullOk = FALSE)
 
-isScalarList(x, nullOk = FALSE, .xname = getNameInParent(x))
+isScalarList(x, nullOk = FALSE)
 
-isScalarLogical(x, nullOk = FALSE, .xname = getNameInParent(x))
+isScalarLogical(x, nullOk = FALSE)
 
-isScalarNumeric(x, nullOk = FALSE, .xname = getNameInParent(x))
+isScalarNumeric(x, nullOk = FALSE)
 
-isScalarVector(x, nullOk = FALSE, .xname = getNameInParent(x))
+isScalarVector(x, nullOk = FALSE)
 
-isNonScalar(x, .xname = getNameInParent(x))
+isNonScalar(x)
 }
 \arguments{
 \item{x}{Object.}
 
 \item{nullOk}{\code{logical(1)}.
 If set to \code{TRUE}, \code{x} may also be \code{NULL}.}
-
-\item{.xname}{Name of object defined in \code{x}.
-\emph{Not intended to be used directly.}}
 }
 \value{
 \code{TRUE} on success;

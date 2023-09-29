@@ -5,16 +5,13 @@
 \alias{isOfDimension}
 \title{Does the input contain specific dimensions?}
 \usage{
-isOfDimension(x, n, .xname = getNameInParent(x))
+isOfDimension(x, n)
 }
 \arguments{
 \item{x}{Object.}
 
 \item{n}{\code{integer(1)}.
 Number to include.}
-
-\item{.xname}{Name of object defined in \code{x}.
-\emph{Not intended to be used directly.}}
 }
 \value{
 \code{TRUE} on success;

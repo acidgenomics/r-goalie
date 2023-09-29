@@ -41,7 +41,7 @@ NULL
 
 #' @rdname check-scalar-hasRownames
 #' @export
-hasRownames <- function(x, .xname = getNameInParent(x)) {
+hasRownames <- function(x) {
     ## Classes that extend data.frame but intentionally don't support row names.
     if (inherits(x, "data.table")) {
         return(false(
@@ -57,12 +57,14 @@ hasRownames <- function(x, .xname = getNameInParent(x)) {
     ## Early return if `rownames()` function fails.
     rownames <- tryCatch(
         expr = rownames(x),
-        error = function(e) e
+        error = function(e) {
+            e
+        }
     )
     if (is(rownames, "error")) {
         return(false(
             "{.fun %s} command on {.var %s} failed.",
-            "rownames", .xname
+            "rownames", toCauseName(x)
         ))
     }
     ## Standard data frames can't return NULL row names, so check against
@@ -76,7 +78,7 @@ hasRownames <- function(x, .xname = getNameInParent(x)) {
         if (!isTRUE(ok)) {
             return(false(
                 "{.var %s} has integer row names (soft {.val %s}).",
-                .xname, "NULL"
+                toCauseName(x), "NULL"
             ))
         }
         return(TRUE)
@@ -84,7 +86,10 @@ hasRownames <- function(x, .xname = getNameInParent(x)) {
     ## Other classes (e.g. matrix, DataFrame) do support NULL row names.
     ok <- !is.null(rownames)
     if (!isTRUE(ok)) {
-        return(false("{.var %s} has {.val %s} row names.", .xname, "NULL"))
+        return(false(
+            "{.var %s} has {.val %s} row names.",
+            toCauseName(x), "NULL"
+        ))
     }
     TRUE
 }

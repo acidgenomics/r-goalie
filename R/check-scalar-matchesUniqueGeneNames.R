@@ -36,10 +36,10 @@ NULL
 
 #' @rdname check-scalar-matchesUniqueGeneNames
 #' @export
-matchesUniqueGeneNames <- function(x, genes, .xname = getNameInParent(x)) {
+matchesUniqueGeneNames <- function(x, genes) {
     ok <- isS4(x)
     if (!isTRUE(ok)) {
-        return(false("{.var %s} is not an S4 class object.", .xname))
+        return(false("{.var %s} is not an S4 class object.", toCauseName(x)))
     }
     ok <- isCharacter(genes)
     if (!isTRUE(ok)) {
@@ -54,7 +54,7 @@ matchesUniqueGeneNames <- function(x, genes, .xname = getNameInParent(x)) {
     all <- as.character(x[["geneName"]])
     ## Check for gene names (symbols).
     if (identical(length(all), 0L)) {
-        return(false("Gene names are not defined in {.var %s}.", .xname))
+        return(false("Gene names are not defined in {.var %s}.", toCauseName(x)))
     }
     ## Require that the user passed in gene names.
     ok <- isSubset(genes, all)
@@ -62,7 +62,7 @@ matchesUniqueGeneNames <- function(x, genes, .xname = getNameInParent(x)) {
         setdiff <- setdiff(genes, all)
         return(false(
             "Gene names missing in {.var %s}: %s",
-            .xname, toString(setdiff, width = 100L)
+            toCauseName(x), toString(setdiff, width = 100L)
         ))
     }
     ## Get a vector of all duplicated gene names in the object.
@@ -72,7 +72,7 @@ matchesUniqueGeneNames <- function(x, genes, .xname = getNameInParent(x)) {
     if (length(intersect) > 0L) {
         return(false(
             "Non-unique gene names in {.var %s}: %s",
-            .xname, toString(intersect, width = 100L)
+            toCauseName(x), toString(intersect, width = 100L)
         ))
     }
     TRUE

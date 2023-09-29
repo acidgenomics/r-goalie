@@ -24,10 +24,10 @@ NULL
 
 #' @rdname check-scalar-hasDuplicates
 #' @export
-hasDuplicates <- function(x, .xname = getNameInParent(x)) {
+hasDuplicates <- function(x) {
     ok <- anyDuplicated(x) > 0L
     if (!isTRUE(ok)) {
-        return(false("{.var %s} has no duplicates.", .xname))
+        return(false("{.var %s} has no duplicates.", toCauseName(x)))
     }
     TRUE
 }
@@ -36,7 +36,7 @@ hasDuplicates <- function(x, .xname = getNameInParent(x)) {
 
 #' @rdname check-scalar-hasDuplicates
 #' @export
-hasNoDuplicates <- function(x, .xname = getNameInParent(x)) {
+hasNoDuplicates <- function(x) {
     ok <- anyDuplicated(x) == 0L
     if (!isTRUE(ok)) {
         if (is(x, "Rle")) {
@@ -50,7 +50,7 @@ hasNoDuplicates <- function(x, .xname = getNameInParent(x)) {
                 msg1 = "{.var %s} has a duplicate at position %s.",
                 msg2 = "{.var %s} has duplicates at positions %s."
             ),
-            .xname,
+            toCauseName(x),
             toString(dupeIndicies, width = 100L)
         ))
     }

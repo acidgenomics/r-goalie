@@ -5,7 +5,7 @@
 \alias{hasLength}
 \title{Does the input have a non-zero or defined length?}
 \usage{
-hasLength(x, n = NULL, .xname = getNameInParent(x))
+hasLength(x, n = NULL)
 }
 \arguments{
 \item{x}{Object.}
@@ -13,9 +13,6 @@ hasLength(x, n = NULL, .xname = getNameInParent(x))
 \item{n}{\code{NULL} or \code{integer}.
 If \code{NULL} (default), the function will check to see if the input length is
 non-zero.}
-
-\item{.xname}{Name of object defined in \code{x}.
-\emph{Not intended to be used directly.}}
 }
 \value{
 \code{TRUE} on success;
@@ -25,7 +22,7 @@ non-zero.}
 Does the input have a non-zero or defined length?
 }
 \note{
-Updated 2021-10-08.
+Updated 2023-09-29.
 }
 \examples{
 ## TRUE ====

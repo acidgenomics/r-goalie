@@ -22,7 +22,7 @@ NULL
 
 #' @rdname check-scalar-isAny
 #' @export
-isAny <- function(x, classes, .xname = getNameInParent(x)) {
+isAny <- function(x, classes) {
     ok <- isCharacter(classes)
     if (!isTRUE(ok)) {
         return(ok)
@@ -31,7 +31,7 @@ isAny <- function(x, classes, .xname = getNameInParent(x)) {
     if (!isTRUE(ok)) {
         return(false(
             "{.var %s} is not any of: %s.",
-            .xname, toString(classes, width = 50L)
+            toCauseName(x), toString(classes, width = 50L)
         ))
     }
     TRUE

@@ -21,23 +21,25 @@ NULL
 
 #' @rdname check-scalar-hasNames
 #' @export
-hasNames <- function(x, .xname = getNameInParent(x)) {
+hasNames <- function(x) {
     names <- tryCatch(
         expr = names(x),
-        error = function(e) e
+        error = function(e) {
+            e
+        }
     )
     if (is(names, "error")) {
         false(
             "{.fun %s} command on {.var %s} failed.",
-            "names", .xname
+            "names", toCauseName(x)
         )
     } else if (is.null(names)) {
         false(
             "The names of {.var %s} are {.val %s}.",
-            .xname, "NULL"
+            toCauseName(x), "NULL"
         )
     } else if (!any(nzchar(names))) {
-        false("The names of {.var %s} are all empty.", .xname)
+        false("The names of {.var %s} are all empty.", toCauseName(x))
     } else {
         TRUE
     }

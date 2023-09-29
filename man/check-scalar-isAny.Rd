@@ -5,16 +5,13 @@
 \alias{isAny}
 \title{Does the object belong to or inherit any of these classes?}
 \usage{
-isAny(x, classes, .xname = getNameInParent(x))
+isAny(x, classes)
 }
 \arguments{
 \item{x}{Object.}
 
 \item{classes}{\code{character}.
 Object classes.}
-
-\item{.xname}{Name of object defined in \code{x}.
-\emph{Not intended to be used directly.}}
 }
 \value{
 \code{TRUE} on success;

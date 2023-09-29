@@ -47,7 +47,7 @@ isEqualTo <- function(x, y) {
     )
     diff <- abs(x - y)
     ok <- diff <= .tolerance
-    names(ok) <- .toNames(x)
+    names(ok) <- toCauseNames(x)
     setCause(ok, sprintf("not equal to %g; abs diff = %g", y, diff))
 }
 
@@ -67,7 +67,7 @@ isNotEqualTo <- function(x, y) {
         is.vector(x), is.vector(y)
     )
     ok <- abs(x - y) > .tolerance
-    names(ok) <- .toNames(x)
+    names(ok) <- toCauseNames(x)
     setCause(ok, sprintf("equal to %g", y))
 }
 
@@ -87,7 +87,7 @@ isGreaterThan <- function(x, y) {
         is.vector(x), is.vector(y)
     )
     ok <- x > y
-    names(ok) <- .toNames(x)
+    names(ok) <- toCauseNames(x)
     setCause(ok, false = paste("less than or equal to", y))
 }
 
@@ -107,7 +107,7 @@ isGreaterThanOrEqualTo <- function(x, y) {
         is.vector(x), is.vector(y)
     )
     ok <- x >= y
-    names(ok) <- .toNames(x)
+    names(ok) <- toCauseNames(x)
     setCause(ok, false = paste("less than", y))
 }
 
@@ -127,7 +127,7 @@ isLessThan <- function(x, y) {
         is.vector(x), is.vector(y)
     )
     ok <- x < y
-    names(ok) <- .toNames(x)
+    names(ok) <- toCauseNames(x)
     setCause(ok, false = paste("greater than or equal to", y))
 }
 
@@ -147,7 +147,7 @@ isLessThanOrEqualTo <- function(x, y) {
         is.vector(x), is.vector(y)
     )
     ok <- x <= y
-    names(ok) <- .toNames(x)
+    names(ok) <- toCauseNames(x)
     setCause(ok, false = paste("greater than", y))
 }
 

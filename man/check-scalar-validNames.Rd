@@ -5,13 +5,10 @@
 \alias{validNames}
 \title{Are these valid names?}
 \usage{
-validNames(x, .xname = getNameInParent(x))
+validNames(x)
 }
 \arguments{
 \item{x}{Object.}
-
-\item{.xname}{Name of object defined in \code{x}.
-\emph{Not intended to be used directly.}}
 }
 \value{
 \code{TRUE} on success;
@@ -21,7 +18,7 @@ validNames(x, .xname = getNameInParent(x))
 Are these valid names?
 }
 \note{
-Updated 2022-05-13.
+Updated 2023-09-29.
 }
 \examples{
 ## TRUE ====

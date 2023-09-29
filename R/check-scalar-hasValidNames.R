@@ -37,22 +37,27 @@ NULL
 
 #' @rdname check-scalar-hasValidNames
 #' @export
-hasValidNames <- function(x, .xname = getNameInParent(x)) {
+hasValidNames <- function(x) {
     names <- tryCatch(
         expr = names(x),
-        error = function(e) e
+        error = function(e) {
+            e
+        }
     )
     if (is(names, "error")) {
         return(false(
             "{.fun %s} command on {.var %s} failed.",
-            "names", .xname
+            "names", toCauseName(x)
         ))
     }
     ok <- length(names) > 0L
     if (!isTRUE(ok)) {
-        return(false("{.var %s} doesn't have names.", .xname))
+        return(false(
+            "{.var %s} doesn't have names.",
+            toCauseName(x)
+        ))
     }
-    ok <- validNames(names, .xname = .xname)
+    ok <- validNames(names)
     if (!isTRUE(ok)) {
         return(ok)
     }
@@ -63,30 +68,32 @@ hasValidNames <- function(x, .xname = getNameInParent(x)) {
 
 #' @rdname check-scalar-hasValidNames
 #' @export
-hasValidDimnames <- function(x, .xname = getNameInParent(x)) {
+hasValidDimnames <- function(x) {
     ## Check for `dimnames()` failure.
     dimnames <- tryCatch(
         expr = dimnames(x),
-        error = function(e) e
+        error = function(e) {
+            e
+        }
     )
     if (is(dimnames, "error")) {
         return(false(
             "{.fun %s} command on {.var %s} failed.",
-            "dimnames", .xname
+            "dimnames", toCauseName(x)
         ))
     }
     ## Row names.
     if (isTRUE(hasRownames(x))) {
-        rownames <- rownames(x)
-        ok <- validNames(rownames, .xname = .xname)
+        rn <- rownames(x)
+        ok <- validNames(rn)
         if (!isTRUE(ok)) {
             return(ok)
         }
     }
     ## Column names.
     if (isTRUE(hasColnames(x))) {
-        colnames <- colnames(x)
-        ok <- validNames(colnames, .xname = .xname)
+        cn <- colnames(x)
+        ok <- validNames(cn)
         if (!isTRUE(ok)) {
             return(ok)
         }

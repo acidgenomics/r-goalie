@@ -37,14 +37,14 @@ NULL
 isExisting <-
     function(x,
              envir = parent.frame(),
-             inherits = FALSE,
-             .xname = getNameInParent(x)) {
+             inherits = FALSE) {
         ok <- bapply(
             X = x,
             FUN = exists,
             envir = envir,
             inherits = inherits
         )
+        names(ok) <- toCauseNames(x)
         setCause(ok, false = "non-existing")
     }
 
@@ -52,18 +52,17 @@ isExisting <-
 
 #' @describeIn check-vector-isExisting Vectorized.
 #' @export
-## Updated 2022-05-13.
+## Updated 2023-09-29.
 isNonExisting <-
     function(x,
              envir = parent.frame(),
-             inherits = FALSE,
-             .xname = getNameInParent(x)) {
+             inherits = FALSE) {
         ok <- !isExisting(
             x = x,
             envir = envir,
-            inherits = inherits,
-            .xname = .xname
+            inherits = inherits
         )
+        names(ok) <- toCauseNames(x)
         setCause(ok, false = "existing")
     }
 
@@ -73,17 +72,15 @@ isNonExisting <-
 
 #' @describeIn check-vector-isExisting Scalar.
 #' @export
-## Updated 2022-05-13.
+## Updated 2023-09-29.
 allAreExisting <-
     function(x,
              envir = parent.frame(),
-             inherits = FALSE,
-             .xname = getNameInParent(x)) {
+             inherits = FALSE) {
         ok <- isExisting(
             x = x,
             envir = envir,
-            inherits = inherits,
-            .xname = .xname
+            inherits = inherits
         )
         if (!all(ok)) {
             return(falseFromVector(ok))
@@ -95,17 +92,15 @@ allAreExisting <-
 
 #' @describeIn check-vector-isExisting Scalar.
 #' @export
-## Updated 2022-05-13.
+## Updated 2023-09-29.
 allAreNonExisting <-
     function(x,
              envir = parent.frame(),
-             inherits = FALSE,
-             .xname = getNameInParent(x)) {
+             inherits = FALSE) {
         ok <- isNonExisting(
             x = x,
             envir = envir,
-            inherits = inherits,
-            .xname = .xname
+            inherits = inherits
         )
         if (!all(ok)) {
             return(falseFromVector(ok))

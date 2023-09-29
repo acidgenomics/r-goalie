@@ -39,11 +39,11 @@ isUrl <- function(x) {
     if (!isTRUE(ok)) {
         return(ok)
     }
-    xnames <- .toNames(x)
+    cn <- toCauseNames(x)
     ok <- isCharacter(x)
     if (!isTRUE(ok)) {
         ko <- rep(x = FALSE, times = length(x))
-        names(ko) <- xnames
+        names(ko) <- cn
         return(setCause(ko, false = "not character"))
     }
     ok <- isMatchingRegex(x = x, pattern = "^[^:/]+\\://.+$")
@@ -52,7 +52,7 @@ isUrl <- function(x) {
     }
     enc <- URLencode(x)
     ok <- x == enc
-    names(ok) <- xnames
+    names(ok) <- cn
     setCause(ok, false = "not encoded")
 }
 

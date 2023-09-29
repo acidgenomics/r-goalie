@@ -5,18 +5,12 @@
 \alias{areSameLength}
 \title{Do the inputs have the same length?}
 \usage{
-areSameLength(x, y, .xname = getNameInParent(x), .yname = getNameInParent(y))
+areSameLength(x, y)
 }
 \arguments{
 \item{x}{Object.}
 
 \item{y}{Object.}
-
-\item{.xname}{Name of object defined in \code{x}.
-\emph{Not intended to be used directly.}}
-
-\item{.yname}{Name of object defined in \code{y}.
-\emph{Not intended to be used directly.}}
 }
 \value{
 \code{TRUE} on success;
@@ -29,7 +23,7 @@ Do the inputs have the same length?
 Non-zero lengths for \code{x} and \code{y} are required, otherwise the check
 function will intentionally error.
 
-Updated 2019-08-10.
+Updated 2023-09-29.
 }
 \examples{
 ## TRUE ====

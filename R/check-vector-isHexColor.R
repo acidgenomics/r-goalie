@@ -27,8 +27,9 @@ NULL
 
 #' @describeIn check-vector-isHexColor Vectorized.
 #' @export
-isHexColor <- function(x, .xname = getNameInParent(x)) {
-    ok <- isCharacter(x = x, .xname = .xname)
+isHexColor <- function(x) {
+    ## FIXME Need to improve vectorization here.
+    ok <- isCharacter(x)
     if (!isTRUE(ok)) {
         return(ok)
     }
@@ -44,8 +45,8 @@ isHexColor <- function(x, .xname = getNameInParent(x)) {
 
 #' @describeIn check-vector-isHexColor Scalar.
 #' @export
-allAreHexColors <- function(x, .xname = getNameInParent(x)) {
-    ok <- isHexColor(x = x, .xname = .xname)
+allAreHexColors <- function(x) {
+    ok <- isHexColor(x)
     if (!all(ok)) {
         return(falseFromVector(ok))
     }

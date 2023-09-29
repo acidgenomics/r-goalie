@@ -1,10 +1,8 @@
 #' Does the object contain a subset of data?
 #'
 #' @name check-scalar-hasSubset
+#' @inherit check return
 #' @note Updated 2023-09-29.
-#'
-#' @inherit check
-#' @inheritParams AcidRoxygen::params
 #'
 #' @param x `Annotated`.
 #'
@@ -24,13 +22,11 @@ NULL
 #' @rdname check-scalar-hasSubset
 #' @export
 hasSubset <-
-    function(x,
-             metadata = "subset",
-             .xname = getNameInParent(x)) {
+    function(x, metadata = "subset") {
         if (!is(x, "Annotated")) {
             return(false(
                 "{.var %s} is not {.cls %s} class.",
-                .xname, "Annotated"
+                toCauseName(x), "Annotated"
             ))
         }
         requireNamespaces("S4Vectors")
@@ -40,7 +36,7 @@ hasSubset <-
         if (!isTRUE(ok)) {
             return(false(
                 "{.var %s} doesn't contain slots in {.fun %s}: %s.",
-                .xname, "metadata",
+                toCauseName(x), "metadata",
                 toString(setdiff(m1, m2), width = 100L)
             ))
         }

@@ -33,10 +33,13 @@ NULL
 
 #' @rdname check-scalar-isTximport
 #' @export
-isTximport <- function(x, .xname = getNameInParent(x)) {
+isTximport <- function(x) {
     ok <- is.list(x)
     if (!isTRUE(ok)) {
-        return(false("{.var %s} is not a list.", .xname))
+        return(false(
+            "{.var %s} is not a list.",
+            toCauseName(x)
+        ))
     }
     ok <- areIntersectingSets(
         x = c(
@@ -49,27 +52,36 @@ isTximport <- function(x, .xname = getNameInParent(x)) {
         y = names(x)
     )
     if (!isTRUE(ok)) {
-        return(false("{.var %s} is not a tximport list.", .xname))
+        return(false(
+            "{.var %s} is not a tximport list.",
+            toCauseName(x)
+        ))
     }
     ok <- identical(
         x = dimnames(x[["abundance"]]),
         y = dimnames(x[["counts"]])
     )
     if (!isTRUE(ok)) {
-        return(false("{.var %s} has mismatched dimnames.", .xname))
+        return(false(
+            "{.var %s} has mismatched dimnames.",
+            toCauseName(x)
+        ))
     }
     ok <- identical(
         x = dimnames(x[["abundance"]]),
         y = dimnames(x[["length"]])
     )
     if (!isTRUE(ok)) {
-        return(false("{.var %s} has mismatched dimnames.", .xname))
+        return(false(
+            "{.var %s} has mismatched dimnames.",
+            toCauseName(x)
+        ))
     }
     ok <- isString(x[["countsFromAbundance"]])
     if (!isTRUE(ok)) {
         return(false(
             "{.var %s} is missing {.var %s} metadata.",
-            .xname, "countsFromAbundance"
+            toCauseName(x), "countsFromAbundance"
         ))
     }
     TRUE

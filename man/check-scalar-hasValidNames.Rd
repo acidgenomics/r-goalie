@@ -6,15 +6,12 @@
 \alias{hasValidDimnames}
 \title{Does the input object have syntactically valid names?}
 \usage{
-hasValidNames(x, .xname = getNameInParent(x))
+hasValidNames(x)
 
-hasValidDimnames(x, .xname = getNameInParent(x))
+hasValidDimnames(x)
 }
 \arguments{
 \item{x}{Object.}
-
-\item{.xname}{Name of object defined in \code{x}.
-\emph{Not intended to be used directly.}}
 }
 \value{
 \code{TRUE} on success;

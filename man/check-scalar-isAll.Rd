@@ -5,16 +5,13 @@
 \alias{isAll}
 \title{Does the input belong to or inherit all of these classes?}
 \usage{
-isAll(x, classes, .xname = getNameInParent(x))
+isAll(x, classes)
 }
 \arguments{
 \item{x}{Object.}
 
 \item{classes}{\code{character}.
 Object classes.}
-
-\item{.xname}{Name of object defined in \code{x}.
-\emph{Not intended to be used directly.}}
 }
 \value{
 \code{TRUE} on success;

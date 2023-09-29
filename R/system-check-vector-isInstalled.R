@@ -29,17 +29,17 @@ isInstalled <- function(x, lib = NULL) {
     if (!isTRUE(ok)) {
         return(ok)
     }
-    xnames <- .toNames(x)
+    cn <- toCauseNames(x)
     ok <- isCharacter(x)
     if (!isTRUE(ok)) {
         ko <- rep(x = FALSE, times = length(x))
-        names(ko) <- xnames
+        names(ko) <- cn
         return(setCause(ko, false = "not character"))
     }
     pkgs <- .packages(all.available = TRUE, lib.loc = lib)
     # GitHub packages are "owner/repo", so using basename here.
     ok <- basename(x) %in% pkgs
-    names(ok) <- xnames
+    names(ok) <- cn
     setCause(ok, false = "not installed")
 }
 

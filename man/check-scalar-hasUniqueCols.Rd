@@ -5,13 +5,10 @@
 \alias{hasUniqueCols}
 \title{Does the input have columns with unique values?}
 \usage{
-hasUniqueCols(x, .xname = getNameInParent(x))
+hasUniqueCols(x)
 }
 \arguments{
 \item{x}{Object.}
-
-\item{.xname}{Name of object defined in \code{x}.
-\emph{Not intended to be used directly.}}
 }
 \value{
 \code{TRUE} on success;

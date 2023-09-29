@@ -36,9 +36,7 @@ NULL
 #' @rdname check-scalar-isScalar
 #' @export
 isScalar <-
-    function(x,
-             nullOk = FALSE,
-             .xname = getNameInParent(x)) {
+    function(x, nullOk = FALSE) {
         if (is.null(x)) {
             ifelse(
                 test = isTRUE(nullOk),
@@ -46,13 +44,19 @@ isScalar <-
                     return(TRUE)
                 },
                 no = {
-                    return(false("{.var %s} is {.val %s}.", .xname, "NULL"))
+                    return(false(
+                        "{.var %s} is {.val %s}.",
+                        toCauseName(x), "NULL"
+                    ))
                 }
             )
         }
         ok <- identical(length(x), 1L)
         if (!isTRUE(ok)) {
-            return(false("{.var %s} doesn't have a length of 1.", .xname))
+            return(false(
+                "{.var %s} doesn't have a length of 1.",
+                toCauseName(x)
+            ))
         }
         TRUE
     }
@@ -62,10 +66,8 @@ isScalar <-
 #' @rdname check-scalar-isScalar
 #' @export
 isScalarAtomic <-
-    function(x,
-             nullOk = FALSE,
-             .xname = getNameInParent(x)) {
-        ok <- isScalar(x, nullOk = nullOk, .xname = .xname)
+    function(x, nullOk = FALSE) {
+        ok <- isScalar(x, nullOk = nullOk)
         if (is.null(x) && isTRUE(ok)) {
             return(TRUE)
         } else if (!isTRUE(ok)) {
@@ -73,7 +75,10 @@ isScalarAtomic <-
         }
         ok <- is.atomic(x)
         if (!isTRUE(ok)) {
-            return(false("{.var %s} is not atomic.", .xname))
+            return(false(
+                "{.var %s} is not atomic.",
+                toCauseName(x)
+            ))
         }
         TRUE
     }
@@ -83,10 +88,8 @@ isScalarAtomic <-
 #' @rdname check-scalar-isScalar
 #' @export
 isScalarCharacter <-
-    function(x,
-             nullOk = FALSE,
-             .xname = getNameInParent(x)) {
-        ok <- isScalar(x, nullOk = nullOk, .xname = .xname)
+    function(x, nullOk = FALSE) {
+        ok <- isScalar(x, nullOk = nullOk)
         if (is.null(x) && isTRUE(ok)) {
             return(TRUE)
         } else if (!isTRUE(ok)) {
@@ -94,7 +97,10 @@ isScalarCharacter <-
         }
         ok <- is.character(x)
         if (!isTRUE(ok)) {
-            return(false("{.var %s} is not character.", .xname))
+            return(false(
+                "{.var %s} is not character.",
+                toCauseName(x)
+            ))
         }
         TRUE
     }
@@ -104,10 +110,8 @@ isScalarCharacter <-
 #' @rdname check-scalar-isScalar
 #' @export
 isScalarDouble <-
-    function(x,
-             nullOk = FALSE,
-             .xname = getNameInParent(x)) {
-        ok <- isScalar(x, nullOk = nullOk, .xname = .xname)
+    function(x, nullOk = FALSE) {
+        ok <- isScalar(x, nullOk = nullOk)
         if (is.null(x) && isTRUE(ok)) {
             return(TRUE)
         } else if (!isTRUE(ok)) {
@@ -115,7 +119,10 @@ isScalarDouble <-
         }
         ok <- is.double(x)
         if (!isTRUE(ok)) {
-            return(false("{.var %s} is not double.", .xname))
+            return(false(
+                "{.var %s} is not double.",
+                toCauseName(x)
+            ))
         }
         TRUE
     }
@@ -125,10 +132,8 @@ isScalarDouble <-
 #' @rdname check-scalar-isScalar
 #' @export
 isScalarInteger <-
-    function(x,
-             nullOk = FALSE,
-             .xname = getNameInParent(x)) {
-        ok <- isScalar(x, nullOk = nullOk, .xname = .xname)
+    function(x, nullOk = FALSE) {
+        ok <- isScalar(x, nullOk = nullOk)
         if (is.null(x) && isTRUE(ok)) {
             return(TRUE)
         } else if (!isTRUE(ok)) {
@@ -136,7 +141,10 @@ isScalarInteger <-
         }
         ok <- is.integer(x)
         if (!isTRUE(ok)) {
-            return(false("{.var %s} is not integer.", .xname))
+            return(false(
+                "{.var %s} is not integer.",
+                toCauseName(x)
+            ))
         }
         TRUE
     }
@@ -146,16 +154,14 @@ isScalarInteger <-
 #' @rdname check-scalar-isScalar
 #' @export
 isScalarIntegerish <-
-    function(x,
-             nullOk = FALSE,
-             .xname = getNameInParent(x)) {
-        ok <- isScalar(x, nullOk = nullOk, .xname = .xname)
+    function(x, nullOk = FALSE) {
+        ok <- isScalar(x, nullOk = nullOk)
         if (is.null(x) && isTRUE(ok)) {
             return(TRUE)
         } else if (!isTRUE(ok)) {
             return(ok)
         }
-        ok <- isIntegerish(x, .xname = .xname)
+        ok <- isIntegerish(x)
         if (!isTRUE(ok)) {
             return(ok)
         }
@@ -167,10 +173,8 @@ isScalarIntegerish <-
 #' @rdname check-scalar-isScalar
 #' @export
 isScalarList <-
-    function(x,
-             nullOk = FALSE,
-             .xname = getNameInParent(x)) {
-        ok <- isScalar(x, nullOk = nullOk, .xname = .xname)
+    function(x, nullOk = FALSE) {
+        ok <- isScalar(x, nullOk = nullOk)
         if (is.null(x) && isTRUE(ok)) {
             return(TRUE)
         } else if (!isTRUE(ok)) {
@@ -178,7 +182,7 @@ isScalarList <-
         }
         ok <- is.list(x)
         if (!isTRUE(ok)) {
-            return(false("{.var %s} is not list.", .xname))
+            return(false("{.var %s} is not list.", toCauseName(x)))
         }
         TRUE
     }
@@ -188,10 +192,8 @@ isScalarList <-
 #' @rdname check-scalar-isScalar
 #' @export
 isScalarLogical <-
-    function(x,
-             nullOk = FALSE,
-             .xname = getNameInParent(x)) {
-        ok <- isScalar(x, nullOk = nullOk, .xname = .xname)
+    function(x, nullOk = FALSE) {
+        ok <- isScalar(x, nullOk = nullOk)
         if (is.null(x) && isTRUE(ok)) {
             return(TRUE)
         } else if (!isTRUE(ok)) {
@@ -199,7 +201,10 @@ isScalarLogical <-
         }
         ok <- is.logical(x)
         if (!isTRUE(ok)) {
-            return(false("{.var %s} is not logical.", .xname))
+            return(false(
+                "{.var %s} is not logical.",
+                toCauseName(x)
+            ))
         }
         TRUE
     }
@@ -209,10 +214,8 @@ isScalarLogical <-
 #' @rdname check-scalar-isScalar
 #' @export
 isScalarNumeric <-
-    function(x,
-             nullOk = FALSE,
-             .xname = getNameInParent(x)) {
-        ok <- isScalar(x, nullOk = nullOk, .xname = .xname)
+    function(x, nullOk = FALSE) {
+        ok <- isScalar(x, nullOk = nullOk)
         if (is.null(x) && isTRUE(ok)) {
             return(TRUE)
         } else if (!isTRUE(ok)) {
@@ -220,7 +223,10 @@ isScalarNumeric <-
         }
         ok <- is.numeric(x)
         if (!isTRUE(ok)) {
-            return(false("{.var %s} is not numeric.", .xname))
+            return(false(
+                "{.var %s} is not numeric.",
+                toCauseName(x)
+            ))
         }
         TRUE
     }
@@ -230,10 +236,8 @@ isScalarNumeric <-
 #' @rdname check-scalar-isScalar
 #' @export
 isScalarVector <-
-    function(x,
-             nullOk = FALSE,
-             .xname = getNameInParent(x)) {
-        ok <- isScalar(x, nullOk = nullOk, .xname = .xname)
+    function(x, nullOk = FALSE) {
+        ok <- isScalar(x, nullOk = nullOk)
         if (is.null(x) && isTRUE(ok)) {
             return(TRUE)
         } else if (!isTRUE(ok)) {
@@ -241,7 +245,10 @@ isScalarVector <-
         }
         ok <- is.vector(x)
         if (!isTRUE(ok)) {
-            return(false("{.var %s} is not vector.", .xname))
+            return(false(
+                "{.var %s} is not vector.",
+                toCauseName(x)
+            ))
         }
         TRUE
     }
@@ -251,11 +258,13 @@ isScalarVector <-
 #' @rdname check-scalar-isScalar
 #' @export
 isNonScalar <-
-    function(x,
-             .xname = getNameInParent(x)) {
+    function(x) {
         ok <- isFALSE(isScalar(x))
         if (!isTRUE(ok)) {
-            return(false("{.var %s} is scalar (has a length of 1).", .xname))
+            return(false(
+                "{.var %s} is scalar (has a length of 1).",
+                toCauseName(x)
+            ))
         }
         TRUE
     }

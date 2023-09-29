@@ -20,12 +20,12 @@ NULL
 
 #' @rdname check-scalar-isAll
 #' @export
-isAll <- function(x, classes, .xname = getNameInParent(x)) {
+isAll <- function(x, classes) {
     ok <- all(.is2(x, class = classes))
     if (!isTRUE(ok)) {
         return(false(
             "{.var %s} is not all of: %s.",
-            .xname, toString(classes, width = 50L)
+            toCauseName(x), toString(classes, width = 50L)
         ))
     }
     TRUE

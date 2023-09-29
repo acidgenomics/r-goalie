@@ -3,7 +3,7 @@
 #' Markdown supports header levels `1`-`7` (`<H1>`-`<H7>`).
 #'
 #' @name check-scalar-isHeaderLevel
-#' @note Updated 2022-10-18.
+#' @note Updated 2023-09-29.
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
@@ -19,7 +19,7 @@ NULL
 
 #' @rdname check-scalar-isHeaderLevel
 #' @export
-isHeaderLevel <- function(x, .xname = getNameInParent(x)) {
+isHeaderLevel <- function(x) {
     ok <- isScalarIntegerish(x)
     if (!isTRUE(ok)) {
         return(ok)
@@ -32,7 +32,7 @@ isHeaderLevel <- function(x, .xname = getNameInParent(x)) {
                 "{.var %s} is not a valid Markdown header.\n",
                 "Markdown supports header levels 1-7."
             ),
-            .xname
+            toCauseName(x)
         ))
     }
     TRUE

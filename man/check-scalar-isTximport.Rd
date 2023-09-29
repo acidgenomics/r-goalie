@@ -5,13 +5,10 @@
 \alias{isTximport}
 \title{Does the input contain a tximport list?}
 \usage{
-isTximport(x, .xname = getNameInParent(x))
+isTximport(x)
 }
 \arguments{
 \item{x}{Object.}
-
-\item{.xname}{Name of object defined in \code{x}.
-\emph{Not intended to be used directly.}}
 }
 \value{
 \code{TRUE} on success;

@@ -5,13 +5,10 @@
 \alias{allAreAtomic}
 \title{Does the input contain elements that are all atomic?}
 \usage{
-allAreAtomic(x, .xname = getNameInParent(x))
+allAreAtomic(x)
 }
 \arguments{
 \item{x}{Object.}
-
-\item{.xname}{Name of object defined in \code{x}.
-\emph{Not intended to be used directly.}}
 }
 \value{
 \code{TRUE} on success;
@@ -21,7 +18,7 @@ allAreAtomic(x, .xname = getNameInParent(x))
 Does the input contain elements that are all atomic?
 }
 \note{
-Updated 2019-08-10.
+Updated 2023-09-29.
 }
 \examples{
 ## TRUE ====
