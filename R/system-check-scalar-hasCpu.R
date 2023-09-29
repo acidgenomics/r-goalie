@@ -21,10 +21,7 @@ NULL
 #' @rdname check-scalar-hasCpu
 #' @export
 hasCpu <- function(n) {
-    assert(
-        isInt(n),
-        requireNamespaces("AcidBase")
-    )
+    requireNamespaces("AcidBase")
     cpus <- AcidBase::cpus()
     ok <- cpus >= n
     if (!isTRUE(ok)) {

@@ -21,10 +21,7 @@ NULL
 #' @rdname check-scalar-hasRam
 #' @export
 hasRam <- function(n) {
-    assert(
-        isInt(n),
-        requireNamespaces("AcidBase")
-    )
+    requireNamespaces("AcidBase")
     ram <- AcidBase::ram()
     ok <- ram >= n
     if (!isTRUE(ok)) {

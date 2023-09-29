@@ -28,11 +28,10 @@ hasMetrics <-
     function(x,
              colData = c("nCount", "nFeature"),
              .xname = getNameInParent(x)) {
-        assert(
-            requireNamespaces("SummarizedExperiment"),
-            is(x, "SummarizedExperiment"),
-            isCharacter(colData)
-        )
+        if (!is(x, "SummarizedExperiment")) {
+            return(FALSE)
+        }
+        requireNamespaces("SummarizedExperiment")
         c1 <- colData
         c2 <- colnames(SummarizedExperiment::colData(x))
         ok <- isSubset(c1, c2)

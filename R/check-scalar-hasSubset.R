@@ -27,11 +27,11 @@ hasSubset <-
     function(x,
              metadata = "subset",
              .xname = getNameInParent(x)) {
-        assert(
-            requireNamespaces("S4Vectors"),
-            is(x, "Annotated"),
-            isCharacter(metadata)
-        )
+        ## FIXME Need to return with cause here.
+        if (!is(x, "Annotated")) {
+            return(FALSE)
+        }
+        requireNamespaces("S4Vectors")
         m1 <- metadata
         m2 <- names(S4Vectors::metadata(x))
         ok <- isSubset(m1, m2)

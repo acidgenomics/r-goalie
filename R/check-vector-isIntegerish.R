@@ -1,3 +1,7 @@
+## FIXME The logic isn't quite right here using early returns, need to rethink.
+
+
+
 #' Is the input integer(ish)?
 #'
 #' Check for valid input of either explicit (e.g. `1L`) and/or implict
@@ -41,12 +45,8 @@ isIntegerish <- function(
         infiniteOk = TRUE,
         naOk = FALSE,
         .xname = getNameInParent(x)) {
-    assert(
-        isFlag(infiniteOk),
-        isFlag(naOk)
-    )
     if (is(x, "Rle")) {
-        assert(requireNamespaces("S4Vectors"))
+        requireNamespaces("S4Vectors")
         x <- S4Vectors::decode(x)
     }
     ok <- is.numeric(x)
