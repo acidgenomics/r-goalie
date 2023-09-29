@@ -50,13 +50,14 @@ isSubset <-
              y,
              .xname = getNameInParent(x),
              .yname = getNameInParent(y)) {
+        ## FIXME Return FALSE if not vectorish here.
         if (is.null(x)) {
             return(false(gettext("{.var %s} is NULL."), .xname))
         }
         if (is.null(y)) {
             return(false(gettext("{.var %s} is NULL."), .yname))
         }
-        ## FIXME Return FALSE on failures here.
+        ## FIXME Return FALSE on these.
         assert(isVectorish(x), isVectorish(y))
         ok <- hasLength(x)
         if (!isTRUE(ok)) {
@@ -104,10 +105,13 @@ areDisjointSets <-
              y,
              .xname = getNameInParent(x),
              .yname = getNameInParent(y)) {
+        ## FIXME Return FALSE on these.
         if (!is.null(x)) {
+            ## FIXME Return FALSE on these.
             assert(isVectorish(x, .xname = .xname))
         }
         if (!is.null(y)) {
+            ## FIXME Return FALSE on these.
             assert(isVectorish(y, .xname = .yname))
         }
         intersect <- intersect(x, y)
@@ -130,9 +134,11 @@ areIntersectingSets <-
              .xname = getNameInParent(x),
              .yname = getNameInParent(y)) {
         if (!is.null(x)) {
+            ## FIXME Return FALSE on these.
             assert(isVectorish(x, .xname = .xname))
         }
         if (!is.null(y)) {
+            ## FIXME Return FALSE on these.
             assert(isVectorish(y, .xname = .yname))
         }
         intersect <- intersect(x, y)
@@ -155,9 +161,11 @@ areSetEqual <-
              .xname = getNameInParent(x),
              .yname = getNameInParent(y)) {
         if (!is.null(x)) {
+            ## FIXME Return FALSE on these.
             assert(isVectorish(x, .xname = .xname))
         }
         if (!is.null(y)) {
+            ## FIXME Return FALSE on these.
             assert(isVectorish(y, .xname = .yname))
         }
         x <- unique(x)
