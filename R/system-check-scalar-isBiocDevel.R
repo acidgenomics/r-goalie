@@ -1,11 +1,7 @@
-## nocov start
-
-
-
 #' Is the current Bioconductor installation under development?
 #'
 #' @name check-scalar-isBiocDevel
-#' @note Updated 2021-01-04.
+#' @note Updated 2023-09-29.
 #'
 #' @inherit check return
 #'
@@ -18,8 +14,10 @@ NULL
 #' @rdname check-scalar-isBiocDevel
 #' @export
 isBiocDevel <- function() {
-    ## FIXME Return FALSE on internet failure.
-    assert(hasInternet())
+    ok <- hasInternet()
+    if (!isTRUE(ok)) {
+        return(ok)
+    }
     ok <- isInstalled("BiocManager")
     if (!isTRUE(ok)) {
         return(ok)
@@ -37,7 +35,3 @@ isBiocDevel <- function() {
     }
     TRUE
 }
-
-
-
-## nocov end
