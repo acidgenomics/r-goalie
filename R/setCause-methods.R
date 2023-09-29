@@ -38,9 +38,8 @@ NULL
     function(object,
              false = "false",
              missing = "missing") {
-        ## Early return without cause if TRUE.
-        ## Consider wrapping in `unname()` call here.
         if (!anyNA(object) && all(object, na.rm = TRUE)) {
+            object <- unname(object)
             return(object)
         }
         isNA <- is.na(object)
@@ -52,7 +51,6 @@ NULL
             missing <- rep_len(missing, length)
             cause[isNA] <- missing[isNA]
         }
-        ## Define the FALSE index.
         index <- !(object | isNA)
         if (identical(length(false), 1L)) {
             cause[index] <- false
@@ -60,6 +58,8 @@ NULL
             false <- rep_len(false, length)
             cause[index] <- false[index]
         }
+        names(cause) <- names(object)
+        object <- unname(object)
         goalie(object = object, cause = cause)
     }
 
