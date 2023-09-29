@@ -40,8 +40,8 @@ isPackageVersion <- function(x, op = ">=") {
     if (!isTRUE(ok)) {
         return(ok)
     }
-    ok <- isCharacter(x) || is(x, "package_version")
     xnames <- .toNames(x)
+    ok <- isCharacter(x) || is(x, "package_version")
     if (!isTRUE(ok)) {
         ko <- rep(x = FALSE, times = length(x))
         names(ko) <- xnames

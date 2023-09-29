@@ -29,7 +29,6 @@ isInstalled <- function(x, lib = NULL) {
     if (!isTRUE(ok)) {
         return(ok)
     }
-    ok <- isCharacter(x)
     xnames <- .toNames(x)
     ok <- isCharacter(x)
     if (!isTRUE(ok)) {
