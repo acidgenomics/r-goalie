@@ -5,13 +5,10 @@
 \alias{isBiocParallelParam}
 \title{Does the input contain a BiocParallel parameter?}
 \usage{
-isBiocParallelParam(x, .xname = getNameInParent(x))
+isBiocParallelParam(x)
 }
 \arguments{
 \item{x}{Object.}
-
-\item{.xname}{Name of object defined in \code{x}.
-\emph{Not intended to be used directly.}}
 }
 \value{
 \code{TRUE} on success;

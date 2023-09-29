@@ -40,11 +40,11 @@ isPackageVersion <- function(x, op = ">=") {
     if (!isTRUE(ok)) {
         return(ok)
     }
-    xnames <- .toNames(x)
+    cn <- toCauseNames(x)
     ok <- isCharacter(x) || is(x, "package_version")
     if (!isTRUE(ok)) {
         ko <- rep(x = FALSE, times = length(x))
-        names(ko) <- xnames
+        names(ko) <- cn
         return(setCause(ko, false = "not character or package version"))
     }
     packages <- basename(names(x))
@@ -61,6 +61,6 @@ isPackageVersion <- function(x, op = ">=") {
         version = versions,
         MoreArgs = list("op" = op)
     ))
-    names(ok) <- xnames
+    names(ok) <- cn
     setCause(ok, false = "version check fail")
 }

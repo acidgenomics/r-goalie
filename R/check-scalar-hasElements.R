@@ -1,7 +1,7 @@
 #' Does the input have elements?
 #'
 #' @name check-scalar-hasElements
-#' @note Updated 2019-10-04.
+#' @note Updated 2023-09-29.
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
@@ -28,11 +28,11 @@ NULL
 
 #' @rdname check-scalar-hasElements
 #' @export
-hasElements <- function(x, n = NULL, .xname = getNameInParent(x)) {
+hasElements <- function(x, n = NULL) {
     nElementsX <- nElements(x)
     if (is.null(n)) {
         if (identical(nElementsX, 0L)) {
-            return(false("{.var %s} has 0 elements.", .xname))
+            return(false("{.var %s} has 0 elements.", toCauseName(x)))
         } else {
             return(TRUE)
         }
@@ -46,7 +46,7 @@ hasElements <- function(x, n = NULL, .xname = getNameInParent(x)) {
                 "{.var %s} has %d element, not %d.",
                 "{.var %s} has %d elements, not %d."
             ),
-            .xname,
+            toCauseName(x),
             nElementsX,
             nElementsN
         ))

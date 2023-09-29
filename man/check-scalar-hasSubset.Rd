@@ -5,16 +5,13 @@
 \alias{hasSubset}
 \title{Does the object contain a subset of data?}
 \usage{
-hasSubset(x, metadata = "subset", .xname = getNameInParent(x))
+hasSubset(x, metadata = "subset")
 }
 \arguments{
 \item{x}{\code{Annotated}.}
 
 \item{metadata}{\code{character}.
 Names in \code{\link[S4Vectors:Annotated-class]{metadata()}} that denote object is subset.}
-
-\item{.xname}{Name of object defined in \code{x}.
-\emph{Not intended to be used directly.}}
 }
 \value{
 \code{TRUE} on success;

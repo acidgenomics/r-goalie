@@ -6,15 +6,12 @@
 \alias{hasNoDuplicates}
 \title{Does the input have duplicates?}
 \usage{
-hasDuplicates(x, .xname = getNameInParent(x))
+hasDuplicates(x)
 
-hasNoDuplicates(x, .xname = getNameInParent(x))
+hasNoDuplicates(x)
 }
 \arguments{
 \item{x}{Object.}
-
-\item{.xname}{Name of object defined in \code{x}.
-\emph{Not intended to be used directly.}}
 }
 \value{
 \code{TRUE} on success;

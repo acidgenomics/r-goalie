@@ -1,7 +1,7 @@
 #' Does the input object contain clusters?
 #'
 #' @name check-scalar-hasClusters
-#' @note Updated 2022-03-04.
+#' @note Updated 2023-09-29.
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
@@ -24,16 +24,21 @@ NULL
 
 #' @rdname check-scalar-hasClusters
 #' @export
-hasClusters <- function(x, .xname = getNameInParent(x)) {
+hasClusters <- function(x) {
     requireNamespaces("AcidGenerics")
     ok <- tryCatch(
         expr = {
             is.factor(AcidGenerics::clusters(x))
         },
-        error = function(e) FALSE
+        error = function(e) {
+            FALSE
+        }
     )
     if (!isTRUE(ok)) {
-        return(false("{.var %s} does not contain clusters.", .xname))
+        return(false(
+            "{.var %s} does not contain clusters.",
+            toCauseName(x)
+        ))
     }
     TRUE
 }

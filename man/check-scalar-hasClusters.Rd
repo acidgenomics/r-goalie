@@ -5,13 +5,10 @@
 \alias{hasClusters}
 \title{Does the input object contain clusters?}
 \usage{
-hasClusters(x, .xname = getNameInParent(x))
+hasClusters(x)
 }
 \arguments{
 \item{x}{Object.}
-
-\item{.xname}{Name of object defined in \code{x}.
-\emph{Not intended to be used directly.}}
 }
 \value{
 \code{TRUE} on success;
@@ -21,7 +18,7 @@ hasClusters(x, .xname = getNameInParent(x))
 Does the input object contain clusters?
 }
 \note{
-Updated 2022-03-04.
+Updated 2023-09-29.
 }
 \examples{
 data(SingleCellExperiment_Seurat, package = "AcidTest")

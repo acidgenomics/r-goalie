@@ -22,8 +22,7 @@ NULL
 #' @export
 isString <-
     function(x,
-             nullOk = FALSE,
-             .xname = getNameInParent(x)) {
+             nullOk = FALSE) {
         if (isTRUE(nullOk) && is.null(x)) {
             return(TRUE)
         }
@@ -33,15 +32,15 @@ isString <-
         }
         ok <- is.character(x)
         if (!isTRUE(ok)) {
-            return(false("{.var %s} is not character.", .xname))
+            return(false("{.var %s} is not character.", toCauseName(x)))
         }
         ok <- !is.na(x)
         if (!isTRUE(ok)) {
-            return(false("{.var %s} is {.val %s}.", .xname, "NA"))
+            return(false("{.var %s} is {.val %s}.", toCauseName(x), "NA"))
         }
         ok <- !identical(x, "")
         if (!isTRUE(ok)) {
-            return(false("{.var %s} contains empty string.", .xname))
+            return(false("{.var %s} contains empty string.", toCauseName(x)))
         }
         TRUE
     }

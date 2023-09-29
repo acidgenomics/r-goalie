@@ -5,13 +5,10 @@
 \alias{isFlag}
 \title{Does the input contain a boolean flag?}
 \usage{
-isFlag(x, .xname = getNameInParent(x))
+isFlag(x)
 }
 \arguments{
 \item{x}{Object.}
-
-\item{.xname}{Name of object defined in \code{x}.
-\emph{Not intended to be used directly.}}
 }
 \value{
 \code{TRUE} on success;

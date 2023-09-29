@@ -5,13 +5,10 @@
 \alias{isAlpha}
 \title{Does the input contain an alpha level?}
 \usage{
-isAlpha(x, .xname = getNameInParent(x))
+isAlpha(x)
 }
 \arguments{
 \item{x}{Object.}
-
-\item{.xname}{Name of object defined in \code{x}.
-\emph{Not intended to be used directly.}}
 }
 \value{
 \code{TRUE} on success;

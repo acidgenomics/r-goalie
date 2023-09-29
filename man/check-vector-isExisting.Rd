@@ -8,33 +8,13 @@
 \alias{allAreNonExisting}
 \title{Does the requested input exist in the environment?}
 \usage{
-isExisting(
-  x,
-  envir = parent.frame(),
-  inherits = FALSE,
-  .xname = getNameInParent(x)
-)
+isExisting(x, envir = parent.frame(), inherits = FALSE)
 
-isNonExisting(
-  x,
-  envir = parent.frame(),
-  inherits = FALSE,
-  .xname = getNameInParent(x)
-)
+isNonExisting(x, envir = parent.frame(), inherits = FALSE)
 
-allAreExisting(
-  x,
-  envir = parent.frame(),
-  inherits = FALSE,
-  .xname = getNameInParent(x)
-)
+allAreExisting(x, envir = parent.frame(), inherits = FALSE)
 
-allAreNonExisting(
-  x,
-  envir = parent.frame(),
-  inherits = FALSE,
-  .xname = getNameInParent(x)
-)
+allAreNonExisting(x, envir = parent.frame(), inherits = FALSE)
 }
 \arguments{
 \item{x}{\code{character}.
@@ -45,9 +25,6 @@ Environment.}
 
 \item{inherits}{\code{logical(1)}.
 Should the enclosing frames of the \code{environment} be searched?}
-
-\item{.xname}{Name of object defined in \code{x}.
-\emph{Not intended to be used directly.}}
 }
 \value{
 \code{TRUE} on success;

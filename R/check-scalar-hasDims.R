@@ -44,12 +44,12 @@ NULL
 
 #' @rdname check-scalar-hasDims
 #' @export
-hasDims <- function(x, n = NULL, .xname = getNameInParent(x)) {
+hasDims <- function(x, n = NULL) {
     d <- dim(x)
     if (is.null(d)) {
         return(false(
             "The dimensions of {.var %s} are {.val %s}.",
-            .xname, "NULL"
+            toCauseName(x), "NULL"
         ))
     }
     if (!is.null(n)) {
@@ -59,7 +59,7 @@ hasDims <- function(x, n = NULL, .xname = getNameInParent(x)) {
                     "Dimension mismatch for {.var %s}:",
                     "expected {.val %s}; actual {.val %s}."
                 ),
-                .xname, deparse(n), deparse(d)
+                toCauseName(x), deparse(n), deparse(d)
             ))
         }
     }
@@ -70,12 +70,12 @@ hasDims <- function(x, n = NULL, .xname = getNameInParent(x)) {
 
 #' @rdname check-scalar-hasDims
 #' @export
-hasRows <- function(x, n = NULL, .xname = getNameInParent(x)) {
+hasRows <- function(x, n = NULL) {
     nr <- nrow(x)
     if (is.null(nr)) {
         return(false(
             "The number of rows in {.var %s} is {.val %s}.",
-            .xname, "NULL"
+            toCauseName(x), "NULL"
         ))
     }
     if (!is.null(n)) {
@@ -85,12 +85,15 @@ hasRows <- function(x, n = NULL, .xname = getNameInParent(x)) {
                     "Row number mismatch for {.var %s}:",
                     "expected {.val %s}; actual {.val %s}."
                 ),
-                .xname, n, nr
+                toCauseName(x), n, nr
             ))
         }
     } else {
         if (identical(nr, 0L)) {
-            return(false("The number of rows in {.var %s} is zero.", .xname))
+            return(false(
+                "The number of rows in {.var %s} is zero.",
+                toCauseName(x)
+            ))
         }
     }
     TRUE
@@ -100,12 +103,12 @@ hasRows <- function(x, n = NULL, .xname = getNameInParent(x)) {
 
 #' @rdname check-scalar-hasDims
 #' @export
-hasCols <- function(x, n = NULL, .xname = getNameInParent(x)) {
+hasCols <- function(x, n = NULL) {
     nc <- ncol(x)
     if (is.null(nc)) {
         return(false(
             "The number of columns in {.var %s} is {.val %s}.",
-            .xname, "NULL"
+            toCauseName(x), "NULL"
         ))
     }
     if (!is.null(n)) {
@@ -115,12 +118,15 @@ hasCols <- function(x, n = NULL, .xname = getNameInParent(x)) {
                     "Column number mismatch for {.var %s}:",
                     "expected {.val %s}; actual {.val %s}."
                 ),
-                .xname, n, nc
+                toCauseName(x), n, nc
             ))
         }
     } else {
         if (identical(nc, 0L)) {
-            return(false("The number of columns in {.var %s} is zero.", .xname))
+            return(false(
+                "The number of columns in {.var %s} is zero.",
+                toCauseName(x)
+            ))
         }
     }
     TRUE

@@ -5,7 +5,7 @@
 \alias{hasMetrics}
 \title{Does the object contain quality control metrics?}
 \usage{
-hasMetrics(x, colData = c("nCount", "nFeature"), .xname = getNameInParent(x))
+hasMetrics(x, colData = c("nCount", "nFeature"))
 }
 \arguments{
 \item{x}{\code{SummarizedExperiment}.}
@@ -13,9 +13,6 @@ hasMetrics(x, colData = c("nCount", "nFeature"), .xname = getNameInParent(x))
 \item{colData}{\code{character}.
 Column names in \code{\link[SummarizedExperiment:SummarizedExperiment-class]{colData()}} containing
 expected quality control metrics.}
-
-\item{.xname}{Name of object defined in \code{x}.
-\emph{Not intended to be used directly.}}
 }
 \value{
 \code{TRUE} on success;

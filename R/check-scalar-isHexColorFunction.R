@@ -26,23 +26,24 @@ NULL
 #' @rdname check-scalar-isHexColorFunction
 #' @export
 isHexColorFunction <-
-    function(x,
-             nullOk = FALSE,
-             .xname = getNameInParent(x)) {
+    function(x, nullOk = FALSE) {
         if (isTRUE(nullOk) && is.null(x)) {
             return(TRUE)
         }
         ## Check for function.
         ok <- is.function(x)
         if (!isTRUE(ok)) {
-            return(false("{.var %s} is not a function.", .xname))
+            return(false(
+                "{.var %s} is not a function.",
+                toCauseName(x)
+            ))
         }
         ## Check for `n` formal.
         ok <- isSubset("n", formalArgs(x))
         if (!isTRUE(ok)) {
             return(false(
                 "{.var %s} doesn't contain an {.arg %s} argument.",
-                .xname, "n"
+                toCauseName(x), "n"
             ))
         }
         ## Check for hex value return.
@@ -50,7 +51,7 @@ isHexColorFunction <-
         if (!is.character(colors) || identical(length(colors), 0L)) {
             return(false(
                 "{.var %s} function didn't return any hex colors.",
-                .xname
+                toCauseName(x)
             ))
         }
         ok <- allAreHexColors(colors)

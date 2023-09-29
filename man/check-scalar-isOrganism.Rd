@@ -5,16 +5,13 @@
 \alias{isOrganism}
 \title{Is the string input a full Latin organism name?}
 \usage{
-isOrganism(x, nullOk = FALSE, .xname = getNameInParent(x))
+isOrganism(x, nullOk = FALSE)
 }
 \arguments{
 \item{x}{Object.}
 
 \item{nullOk}{\code{logical(1)}.
 If set to \code{TRUE}, \code{x} may also be \code{NULL}.}
-
-\item{.xname}{Name of object defined in \code{x}.
-\emph{Not intended to be used directly.}}
 }
 \value{
 \code{TRUE} on success;

@@ -26,9 +26,7 @@ NULL
 #' @rdname check-scalar-isOrganism
 #' @export
 isOrganism <-
-    function(x,
-             nullOk = FALSE,
-             .xname = getNameInParent(x)) {
+    function(x, nullOk = FALSE) {
         if (isTRUE(nullOk) && is.null(x)) {
             return(TRUE)
         }

@@ -9,31 +9,20 @@
 \alias{areSetEqual}
 \title{Set comparisons}
 \usage{
-isSubset(x, y, .xname = getNameInParent(x), .yname = getNameInParent(y))
+isSubset(x, y)
 
-isSuperset(x, y, .xname = getNameInParent(x), .yname = getNameInParent(y))
+isSuperset(x, y)
 
-areDisjointSets(x, y, .xname = getNameInParent(x), .yname = getNameInParent(y))
+areDisjointSets(x, y)
 
-areIntersectingSets(
-  x,
-  y,
-  .xname = getNameInParent(x),
-  .yname = getNameInParent(y)
-)
+areIntersectingSets(x, y)
 
-areSetEqual(x, y, .xname = getNameInParent(x), .yname = getNameInParent(y))
+areSetEqual(x, y)
 }
 \arguments{
 \item{x}{Object.}
 
 \item{y}{Object.}
-
-\item{.xname}{Name of object defined in \code{x}.
-\emph{Not intended to be used directly.}}
-
-\item{.yname}{Name of object defined in \code{y}.
-\emph{Not intended to be used directly.}}
 }
 \value{
 \code{TRUE} on success;
