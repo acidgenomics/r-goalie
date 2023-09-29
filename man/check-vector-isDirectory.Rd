@@ -51,11 +51,11 @@ Does the input contain a directory?
 
 }}
 \note{
-Updated 2020-06-26.
+Updated 2023-09-29.
 }
 \examples{
 ## TRUE ====
-isDirectory(c("~", "~"))
+isDirectory(c("~", "."))
 isADirectory("~")
 
 ## FALSE ====

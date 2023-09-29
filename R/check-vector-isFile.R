@@ -1,7 +1,7 @@
 #' Does the input contain a file?
 #'
 #' @name check-vector-isFile
-#' @note Updated 2023-07-13.
+#' @note Updated 2023-09-29.
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
@@ -28,15 +28,24 @@ NULL
 #' @describeIn check-vector-isFile Vectorized.
 #' @export
 isFile <- function(x) {
-    ok <- isCharacter(x)
+    ok <- hasLength(x)
     if (!isTRUE(ok)) {
         return(ok)
     }
-    ok <- !bapply(X = x, FUN = dir.exists)
+    cn <- toCauseNames(x)
+    ok <- isCharacter(x)
+    if (!isTRUE(ok)) {
+        ko <- rep(x = FALSE, times = length(x))
+        names(ko) <- cn
+        return(setCause(ko, false = "not character"))
+    }
+    ok <- !dir.exists(x)
     if (!all(ok)) {
+        names(ok) <- cn
         return(setCause(ok, false = "dir"))
     }
-    ok <- bapply(X = x, FUN = file.exists)
+    ok <- file.exists(x)
+    names(ok) <- cn
     setCause(ok, false = "not file")
 }
 
