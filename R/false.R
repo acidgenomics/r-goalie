@@ -1,7 +1,7 @@
 #' Set a false goalie check with cause attribute
 #'
 #' @export
-#' @note Updated 2021-02-23.
+#' @note Updated 2023-09-29.
 #'
 #' @param ... Elements to pass to internal [`sprintf()`][base::sprintf] call.
 #'
@@ -12,6 +12,5 @@
 #' print(x)
 #' print(cause(x))
 false <- function(...) {
-    stopifnot(isTRUE(nargs() > 0L))
     goalie(object = FALSE, cause = sprintf(...))
 }
