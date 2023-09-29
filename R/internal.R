@@ -196,7 +196,8 @@ NULL
 #' .toNames(c("sample-1", "hello world"))
 .toNames <- function(x) {
     if (!is.atomic(x)) {
-        return("1")
+        x <- as.character(class(x))[[1L]]
+        return(x)
     }
     if (is.double(x)) {
         x <- ifelse(
