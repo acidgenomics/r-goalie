@@ -39,18 +39,18 @@ Currently only performs a simple check, based on file extension match.
 
 }}
 \note{
-Updated 2023-05-31.
+Updated 2023-09-29.
 }
 \examples{
 ## TRUE ====
 x <- c("sample1.fastq.gz", "sample2.fastq.bz2")
-file.create(x)
+invisible(file.create(x))
 isCompressedFile(x)
 unlink(x)
 
 ## FALSE ====
 x <- c("sample1.fastq", "sample2.fastq")
-file.create(x)
+invisible(file.create(x))
 isCompressedFile(x)
 unlink(x)
 }
