@@ -1,7 +1,7 @@
 #' Does the input contain a directory?
 #'
 #' @name check-vector-isDirectory
-#' @note Updated 2020-06-26.
+#' @note Updated 2023-09-29.
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
@@ -12,7 +12,7 @@
 #'
 #' @examples
 #' ## TRUE ====
-#' isDirectory(c("~", "~"))
+#' isDirectory(c("~", "."))
 #' isADirectory("~")
 #'
 #' ## FALSE ====
@@ -26,11 +26,19 @@ NULL
 #' @describeIn check-vector-isDirectory Vectorized.
 #' @export
 isDirectory <- function(x) {
-    ok <- isCharacter(x)
+    ok <- hasLength(x)
     if (!isTRUE(ok)) {
         return(ok)
     }
-    ok <- bapply(X = x, FUN = dir.exists)
+    cn <- toCauseNames(x)
+    ok <- isCharacter(x)
+    if (!isTRUE(ok)) {
+        ko <- rep(x = FALSE, times = length(x))
+        names(ko) <- cn
+        return(setCause(ko, false = "not character"))
+    }
+    ok <- dir.exists(x)
+    names(ok) <- cn
     setCause(ok, false = "not dir")
 }
 
