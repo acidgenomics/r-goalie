@@ -26,71 +26,49 @@
 \alias{allAreProportion}
 \title{Is the input in range?}
 \usage{
-isInRange(
-  x,
-  lower = -Inf,
-  upper = Inf,
-  closed = c(TRUE, TRUE),
-  .xname = getNameInParent(x)
-)
+isInRange(x, lower = -Inf, upper = Inf, closed = c(TRUE, TRUE))
 
-isInClosedRange(x, lower = -Inf, upper = Inf, .xname = getNameInParent(x))
+isInClosedRange(x, lower = -Inf, upper = Inf)
 
-isInOpenRange(x, lower = -Inf, upper = Inf, .xname = getNameInParent(x))
+isInOpenRange(x, lower = -Inf, upper = Inf)
 
-isInLeftOpenRange(x, lower = -Inf, upper = Inf, .xname = getNameInParent(x))
+isInLeftOpenRange(x, lower = -Inf, upper = Inf)
 
-isInRightOpenRange(x, lower = -Inf, upper = Inf, .xname = getNameInParent(x))
+isInRightOpenRange(x, lower = -Inf, upper = Inf)
 
-isNegative(x, .xname = getNameInParent(x))
+isNegative(x)
 
-isPositive(x, .xname = getNameInParent(x))
+isPositive(x)
 
-isNonNegative(x, .xname = getNameInParent(x))
+isNonNegative(x)
 
-isNonPositive(x, .xname = getNameInParent(x))
+isNonPositive(x)
 
-isPercentage(x, .xname = getNameInParent(x))
+isPercentage(x)
 
-isProportion(x, .xname = getNameInParent(x))
+isProportion(x)
 
-allAreInRange(
-  x,
-  lower = -Inf,
-  upper = Inf,
-  closed = c(TRUE, TRUE),
-  .xname = getNameInParent(x)
-)
+allAreInRange(x, lower = -Inf, upper = Inf, closed = c(TRUE, TRUE))
 
-allAreInClosedRange(x, lower = -Inf, upper = Inf, .xname = getNameInParent(x))
+allAreInClosedRange(x, lower = -Inf, upper = Inf)
 
-allAreInOpenRange(x, lower = -Inf, upper = Inf, .xname = getNameInParent(x))
+allAreInOpenRange(x, lower = -Inf, upper = Inf)
 
-allAreInLeftOpenRange(
-  x,
-  lower = -Inf,
-  upper = Inf,
-  .xname = getNameInParent(x)
-)
+allAreInLeftOpenRange(x, lower = -Inf, upper = Inf)
 
-allAreInRightOpenRange(
-  x,
-  lower = -Inf,
-  upper = Inf,
-  .xname = getNameInParent(x)
-)
+allAreInRightOpenRange(x, lower = -Inf, upper = Inf)
 
-allAreNegative(x, .xname = getNameInParent(x))
+allAreNegative(x)
 
-allArePositive(x, .xname = getNameInParent(x))
+allArePositive(x)
 
-allAreNonNegative(x, .xname = getNameInParent(x))
+allAreNonNegative(x)
 
-allAreNonPositive(x, .xname = getNameInParent(x))
+allAreNonPositive(x)
 
-allArePercentage(x, .xname = getNameInParent(x))
+allArePercentage(x)
 
-allAreProportion(x, .xname = getNameInParent(x))
+allAreProportion(x)
 }
 \arguments{
 \item{x}{Object.}
@@ -103,9 +81,6 @@ Upper boundary.}
 
 \item{closed}{\code{logical(2)}.
 Should the lower (1) and upper (2) bounaries be closed?}
-
-\item{.xname}{Name of object defined in \code{x}.
-\emph{Not intended to be used directly.}}
 }
 \value{
 \code{TRUE} on success;
@@ -162,7 +137,7 @@ Is the input in range?
 
 }}
 \note{
-Updated 2022-12-14.
+Updated 2023-09-29.
 }
 \section{Intervals}{
 
