@@ -56,6 +56,7 @@ isSubset <-
         if (is.null(y)) {
             return(false(gettext("{.var %s} is NULL."), .yname))
         }
+        ## FIXME Return FALSE on failures here.
         assert(isVectorish(x), isVectorish(y))
         ok <- hasLength(x)
         if (!isTRUE(ok)) {
@@ -66,7 +67,7 @@ isSubset <-
             return(ok)
         }
         if (isS4(x) || isS4(y)) {
-            assert(requireNamespaces("S4Vectors"))
+            requireNamespaces("S4Vectors")
             `%in%` <- S4Vectors::`%in%` # nolint
         }
         ok <- all(x %in% y)

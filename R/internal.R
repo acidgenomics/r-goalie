@@ -39,7 +39,7 @@ NULL
 #' @note Updated 2021-01-04.
 #' @noRd
 .coerceSummarizedExperimentToMatrix <- function(object) {
-    assert(requireNamespaces("SummarizedExperiment"))
+    requireNamespaces("SummarizedExperiment")
     SummarizedExperiment::assay(object)
 }
 

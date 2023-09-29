@@ -34,7 +34,7 @@ NULL
 ## Updated 2022-12-14.
 .grepl <- function(x, ...) {
     if (isS4(x)) {
-        assert(requireNamespaces("S4Vectors"))
+        requireNamespaces("S4Vectors")
         grepl <- S4Vectors::grepl
     }
     ok <- grepl(x = x, ...)

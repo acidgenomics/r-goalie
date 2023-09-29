@@ -33,13 +33,12 @@ NULL
 
 #' @describeIn check-vector-isExisting Vectorized.
 #' @export
-## Updated 2022-12-14.
+## Updated 2023-09-29.
 isExisting <-
     function(x,
              envir = parent.frame(),
              inherits = FALSE,
              .xname = getNameInParent(x)) {
-        assert(isCharacter(x, .xname = .xname))
         ok <- bapply(
             X = x,
             FUN = exists,

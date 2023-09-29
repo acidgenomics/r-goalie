@@ -46,7 +46,7 @@ hasNonzeroRowsAndCols <- function(x, .xname = getNameInParent(x)) {
         return(ok)
     }
     if (is(x, "Matrix")) {
-        assert(requireNamespaces("Matrix"))
+        requireNamespaces("Matrix")
         colSums <- Matrix::colSums
         rowSums <- Matrix::rowSums
     }

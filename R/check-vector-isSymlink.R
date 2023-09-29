@@ -31,6 +31,7 @@ NULL
 #' @describeIn check-vector-isSymlink Vectorized.
 #' @export
 isSymlink <- function(x) {
+    ## FIXME Return FALSE on Windows.
     assert(!isWindows())
     ok <- isCharacter(x)
     if (!isTRUE(ok)) {

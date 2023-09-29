@@ -36,10 +36,11 @@ NULL
 #' @export
 isEqualTo <- function(x, y) {
     if (is(x, "Rle") || is(y, "Rle")) {
-        assert(requireNamespaces("S4Vectors"))
+        requireNamespaces("S4Vectors")
         x <- S4Vectors::decode(x)
         y <- S4Vectors::decode(y)
     }
+    ## FIXME Just return FALSE on these.
     assert(
         is.numeric(x), is.numeric(y),
         is.vector(x), is.vector(y)
@@ -56,7 +57,7 @@ isEqualTo <- function(x, y) {
 #' @export
 isNotEqualTo <- function(x, y) {
     if (is(x, "Rle") || is(y, "Rle")) {
-        assert(requireNamespaces("S4Vectors"))
+        requireNamespaces("S4Vectors")
         x <- S4Vectors::decode(x)
         y <- S4Vectors::decode(y)
     }
@@ -75,10 +76,11 @@ isNotEqualTo <- function(x, y) {
 #' @export
 isGreaterThan <- function(x, y) {
     if (is(x, "Rle") || is(y, "Rle")) {
-        assert(requireNamespaces("S4Vectors"))
+        requireNamespaces("S4Vectors")
         x <- S4Vectors::decode(x)
         y <- S4Vectors::decode(y)
     }
+    ## FIXME Just return FALSE on these.
     assert(
         is.numeric(x), is.numeric(y),
         is.vector(x), is.vector(y)
@@ -94,10 +96,11 @@ isGreaterThan <- function(x, y) {
 #' @export
 isGreaterThanOrEqualTo <- function(x, y) {
     if (is(x, "Rle") || is(y, "Rle")) {
-        assert(requireNamespaces("S4Vectors"))
+        requireNamespaces("S4Vectors")
         x <- S4Vectors::decode(x)
         y <- S4Vectors::decode(y)
     }
+    ## FIXME Just return FALSE on these
     assert(
         is.numeric(x), is.numeric(y),
         is.vector(x), is.vector(y)
@@ -113,7 +116,7 @@ isGreaterThanOrEqualTo <- function(x, y) {
 #' @export
 isLessThan <- function(x, y) {
     if (is(x, "Rle") || is(y, "Rle")) {
-        assert(requireNamespaces("S4Vectors"))
+        requireNamespaces("S4Vectors")
         x <- S4Vectors::decode(x)
         y <- S4Vectors::decode(y)
     }
@@ -132,7 +135,7 @@ isLessThan <- function(x, y) {
 #' @export
 isLessThanOrEqualTo <- function(x, y) {
     if (is(x, "Rle") || is(y, "Rle")) {
-        assert(requireNamespaces("S4Vectors"))
+        requireNamespaces("S4Vectors")
         x <- S4Vectors::decode(x)
         y <- S4Vectors::decode(y)
     }

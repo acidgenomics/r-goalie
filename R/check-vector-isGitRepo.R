@@ -29,7 +29,7 @@ isGitRepo <- function(x) {
     if (!isTRUE(ok)) {
         return(ok)
     }
-    assert(requireNamespaces("AcidBase"))
+    requireNamespaces("AcidBase")
     ok <- bapply(
         X = x,
         FUN = function(x) {

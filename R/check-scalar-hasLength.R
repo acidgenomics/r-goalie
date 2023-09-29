@@ -36,7 +36,6 @@ hasLength <- function(x, n = NULL, .xname = getNameInParent(x)) {
             return(TRUE)
         }
     }
-    assert(isInt(n), isTRUE(n >= 0L))
     ok <- identical(length, n)
     if (!isTRUE(ok)) {
         return(false("{.var %s} doesn't have a length of %d.", .xname, n))

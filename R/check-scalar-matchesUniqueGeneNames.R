@@ -47,7 +47,7 @@ matchesUniqueGeneNames <- function(x, genes, .xname = getNameInParent(x)) {
     }
     ## Get all of the gene names stashed in the x.
     if (is(x, "SummarizedExperiment")) {
-        assert(requireNamespaces("SummarizedExperiment"))
+        requireNamespaces("SummarizedExperiment")
         x <- SummarizedExperiment::rowData(x)
     }
     ## Coercing to character here to handle Rle/factor matching.

@@ -25,7 +25,7 @@ NULL
 #' @rdname check-scalar-hasClusters
 #' @export
 hasClusters <- function(x, .xname = getNameInParent(x)) {
-    assert(requireNamespaces("AcidGenerics"))
+    requireNamespaces("AcidGenerics")
     ok <- tryCatch(
         expr = {
             is.factor(AcidGenerics::clusters(x))
