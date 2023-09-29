@@ -1,7 +1,7 @@
 #' Does the input contain a symbolic link?
 #'
 #' @name check-vector-isSymlink
-#' @note Updated 2023-07-13.
+#' @note Updated 2023-09-29.
 #'
 #' @details
 #' Supported on Linux and macOS but not Windows.
@@ -31,14 +31,23 @@ NULL
 #' @describeIn check-vector-isSymlink Vectorized.
 #' @export
 isSymlink <- function(x) {
-    ## FIXME Return FALSE on Windows.
-    assert(!isWindows())
-    ok <- isCharacter(x)
+    ok <- hasLength(x)
     if (!isTRUE(ok)) {
         return(ok)
     }
+    ko <- rep(FALSE, length(x))
+    ok <- isCharacter(x)
+    if (!isTRUE(ok)) {
+        return(setCause(ko, false = "not character"))
+    }
+    ok <- !isWindows()
+    if (!isTRUE(ok)) {
+        names(ko) <- x
+        return(setCause(ko, false = "windows"))
+    }
     ok <- file.exists(x)
     if (!all(ok)) {
+        names(ok) <- x
         return(setCause(ok, false = "doesn't exist"))
     }
     ok <- nzchar(Sys.readlink(x), keepNA = TRUE)
