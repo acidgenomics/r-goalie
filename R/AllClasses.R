@@ -29,7 +29,7 @@ setValidity(
         if (!is.null(names(object))) {
             return("Object has names assigned.")
         }
-        if (is.null(names(cause))) {
+        if (length(object) > 1L && is.null(names(cause))) {
             return("Cause attribute doesn't have names assigned.")
         }
         if (isTRUE(all(object))) {
