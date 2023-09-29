@@ -22,12 +22,10 @@ NULL
 
 
 
-## Updated 2021-02-23.
+## Updated 2023-09-29.
 `cause,goalie` <- # nolint
     function(object) {
-        x <- slot(object, name = "cause")
-        names(x) <- names(object)
-        x
+        slot(object, name = "cause")
     }
 
 

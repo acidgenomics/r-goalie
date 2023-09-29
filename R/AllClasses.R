@@ -26,8 +26,11 @@ setValidity(
         if (!identical(length(object), length(cause))) {
             return("Cause attribute not the same length as check return.")
         }
-        if (!is.null(names(cause))) {
-            return("Cause attribute has names assigned.")
+        if (!is.null(names(object))) {
+            return("Object has names assigned.")
+        }
+        if (is.null(names(cause))) {
+            return("Cause attribute doesn't have names assigned.")
         }
         if (isTRUE(all(object))) {
             ok <- vapply(
