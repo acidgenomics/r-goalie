@@ -1,7 +1,7 @@
 #' Define a goalie check classed return
 #'
 #' @export
-#' @note Updated 2021-02-23.
+#' @note Updated 2023-09-29.
 #'
 #' @param object `logical`.
 #'
@@ -23,15 +23,8 @@
 #' print(x)
 #' print(cause(x))
 goalie <- function(object, cause) {
-    stopifnot(
-        is.logical(object),
-        length(object) >= 1L
-    )
     if (isTRUE(all(object))) {
-        stopifnot(isTRUE(missing(cause)))
         cause <- rep(x = NA_character_, times = length(object))
-    } else {
-        stopifnot(is.character(cause))
     }
     new(Class = "goalie", ".Data" = object, "cause" = cause)
 }
