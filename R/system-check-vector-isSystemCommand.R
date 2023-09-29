@@ -21,8 +21,20 @@ NULL
 #' @describeIn check-vector-isSystemCommand Vectorized.
 #' @export
 isSystemCommand <- function(x) {
+    ok <- hasLength(x)
+    if (!isTRUE(ok)) {
+        return(ok)
+    }
+    ok <- isCharacter(x)
+    xnames <- .toNames(x)
+    ok <- isCharacter(x)
+    if (!isTRUE(ok)) {
+        ko <- rep(x = FALSE, times = length(x))
+        names(ko) <- xnames
+        return(setCause(ko, false = "not character"))
+    }
     ok <- nzchar(Sys.which(x))
-    names(ok) <- .toNames(x)
+    names(ok) <- xnames
     setCause(ok, false = "not command")
 }
 
