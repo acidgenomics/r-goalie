@@ -1,3 +1,3 @@
-test_that("IsRstudio", {
-    expect_type(IsRstudio(), "logical")
+test_that("isRstudio", {
+    expect_type(isRstudio(), "logical")
 })
