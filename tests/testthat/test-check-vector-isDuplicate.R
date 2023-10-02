@@ -9,6 +9,7 @@ test_that("character", {
         object = nocause(ok),
         expected = c(TRUE, TRUE, TRUE, TRUE, FALSE, FALSE, TRUE, TRUE)
     )
+    ## nolint start
     expect_identical(
         object = cause(ok),
         expected = c(
@@ -22,6 +23,7 @@ test_that("character", {
             "NA" = NA
         )
     )
+    ## nolint end
     ok <- isDuplicate(c("a", "b", "c"))
     expect_s4_class(ok, "goalie")
     expect_identical(nocause(ok), rep(FALSE, 3L))
@@ -38,6 +40,7 @@ test_that("numeric", {
         object = nocause(ok),
         expected = c(TRUE, TRUE, TRUE, TRUE, FALSE, FALSE, TRUE, TRUE)
     )
+    ## nolint start
     expect_identical(
         object = cause(ok),
         expected = c(
@@ -51,6 +54,7 @@ test_that("numeric", {
             "NA" = NA
         )
     )
+    ## nolint end
     ok <- isDuplicate(c(1L, 2L, 3L))
     expect_s4_class(ok, "goalie")
     expect_identical(
