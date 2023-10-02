@@ -28,10 +28,7 @@ Updated 2023-09-29.
 ## Any FALSE.
 x <- goalie(
     object = c(FALSE, TRUE),
-    cause = c(
-        "1" = "failed check",
-        "2" = NA_character_
-    )
+    cause = c("xxx", NA_character_)
 )
 print(x)
 print(cause(x))
