@@ -137,7 +137,7 @@ NULL
     if (!isTRUE(ok)) {
         return(false(
             "{.var %s} is not of class {.var %s}; it has %s.",
-            toCauseName(x), class, .typeDescription(x)
+            .toName(x), class, .typeDescription(x)
         ))
     }
     TRUE
@@ -170,6 +170,26 @@ NULL
 #' .safeDeparse(is.character("a"))
 .safeDeparse <- function(expr, ...) {
     paste0(deparse(expr, width.cutoff = 500L, ...), collapse = "")
+}
+
+
+
+#' Return the object as a name for use in cause attribute
+#'
+#' @note Updated 2023-10-02.
+#' @noRd
+.toName <- function(x) {
+    if (is.null(x)) {
+        return("NULL")
+    }
+    cls <- as.character(class(x))[[1L]]
+    if (!is.atomic(x)) {
+        return(cls)
+    }
+    if (identical(length(x), 1L)) {
+        return(as.character(x))
+    }
+    cls
 }
 
 

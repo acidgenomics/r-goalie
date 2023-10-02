@@ -27,7 +27,7 @@ NULL
 hasDuplicates <- function(x) {
     ok <- anyDuplicated(x) > 0L
     if (!isTRUE(ok)) {
-        return(false("{.var %s} has no duplicates.", toCauseName(x)))
+        return(false("{.var %s} has no duplicates.", .toName(x)))
     }
     TRUE
 }
@@ -50,7 +50,7 @@ hasNoDuplicates <- function(x) {
                 msg1 = "{.var %s} has a duplicate at position %s.",
                 msg2 = "{.var %s} has duplicates at positions %s."
             ),
-            toCauseName(x),
+            .toName(x),
             toString(dupeIndicies, width = 100L)
         ))
     }

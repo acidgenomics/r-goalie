@@ -29,7 +29,7 @@ hasMultipleSamples <- function(x) {
     if (!isTRUE(ok)) {
         return(false(
             "{.var %s} is not {.cls SummarizedExperiment}.",
-            toCauseName(x)
+            .toName(x)
         ))
     }
     requireNamespaces("Biobase")
@@ -44,7 +44,7 @@ hasMultipleSamples <- function(x) {
     if (!isTRUE(ok)) {
         return(false(
             "{.var %s} does not contain multiple samples.",
-            toCauseName(x)
+            .toName(x)
         ))
     }
     TRUE

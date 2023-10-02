@@ -42,7 +42,6 @@ isCompressedFile <- function(x) {
         x = tolower(basename(x)),
         pattern = compressExtPattern
     )
-    names(ok) <- toCauseNames(x)
     setCause(ok, false = "no compress ext")
 }
 

@@ -52,7 +52,7 @@ validNames <- function(x) {
                 "{.var %s} doesn't contain valid names: %s\n",
                 "See {.fun %s} for details."
             ),
-            toCauseName(x), toString(info, width = 100L), "make.names"
+            .toName(x), toString(info, width = 100L), "make.names"
         ))
     }
     TRUE

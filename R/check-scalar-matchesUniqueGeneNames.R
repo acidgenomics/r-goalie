@@ -41,7 +41,7 @@ matchesUniqueGeneNames <- function(x, genes) {
     if (!isTRUE(ok)) {
         return(false(
             "{.var %s} is not an S4 class object.",
-            toCauseName(x)
+            .toName(x)
         ))
     }
     ok <- isCharacter(genes)
@@ -59,7 +59,7 @@ matchesUniqueGeneNames <- function(x, genes) {
     if (identical(length(all), 0L)) {
         return(false(
             "Gene names are not defined in {.var %s}.",
-            toCauseName(x)
+            .toName(x)
         ))
     }
     ## Require that the user passed in gene names.
@@ -68,7 +68,7 @@ matchesUniqueGeneNames <- function(x, genes) {
         setdiff <- setdiff(genes, all)
         return(false(
             "Gene names missing in {.var %s}: %s",
-            toCauseName(x), toString(setdiff, width = 100L)
+            .toName(x), toString(setdiff, width = 100L)
         ))
     }
     ## Get a vector of all duplicated gene names in the object.
@@ -78,7 +78,7 @@ matchesUniqueGeneNames <- function(x, genes) {
     if (length(intersect) > 0L) {
         return(false(
             "Non-unique gene names in {.var %s}: %s",
-            toCauseName(x), toString(intersect, width = 100L)
+            .toName(x), toString(intersect, width = 100L)
         ))
     }
     TRUE

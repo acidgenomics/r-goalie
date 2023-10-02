@@ -39,7 +39,7 @@ hasUniqueCols <- function(x) {
     if (!isTRUE(ok)) {
         return(false(
             "{.var %s} doesn't have >= 2 columns.",
-            toCauseName(x)
+            .toName(x)
         ))
     }
     ## Ensure coercion to matrix, so we can use the S3 assay method for
@@ -52,7 +52,7 @@ hasUniqueCols <- function(x) {
     if (!isTRUE(ok)) {
         return(false(
             "{.var %s} has duplicated columns at: %s",
-            toCauseName(x), toString(which(dupes), width = 200L)
+            .toName(x), toString(which(dupes), width = 200L)
         ))
     }
     TRUE

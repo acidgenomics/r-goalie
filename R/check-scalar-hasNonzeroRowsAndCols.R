@@ -62,7 +62,7 @@ hasNonzeroRowsAndCols <- function(x) {
                 msg1 = "{.var %s} has %s zero row at position %s.",
                 msg2 = "{.var %s} has %s zero rows at positions %s."
             ),
-            toCauseName(x), n, which
+            .toName(x), n, which
         ))
     }
     zeroCols <- colSums(x) == 0L
@@ -75,7 +75,7 @@ hasNonzeroRowsAndCols <- function(x) {
                 msg1 = "{.var %s} has %s zero column at position %s.",
                 msg2 = "{.var %s} has %s zero columns at positions %s."
             ),
-            toCauseName(x), n, which
+            .toName(x), n, which
         ))
     }
     TRUE

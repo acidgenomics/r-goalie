@@ -32,15 +32,15 @@ isString <-
         }
         ok <- is.character(x)
         if (!isTRUE(ok)) {
-            return(false("{.var %s} is not character.", toCauseName(x)))
+            return(false("{.var %s} is not character.", .toName(x)))
         }
         ok <- !is.na(x)
         if (!isTRUE(ok)) {
-            return(false("{.var %s} is {.val %s}.", toCauseName(x), "NA"))
+            return(false("{.var %s} is {.val %s}.", .toName(x), "NA"))
         }
         ok <- !identical(x, "")
         if (!isTRUE(ok)) {
-            return(false("{.var %s} contains empty string.", toCauseName(x)))
+            return(false("{.var %s} contains empty string.", .toName(x)))
         }
         TRUE
     }

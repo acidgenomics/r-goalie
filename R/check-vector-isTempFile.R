@@ -37,7 +37,6 @@ isTempFile <- function(x) {
         return(ok)
     }
     ok <- isMatchingFixed(x = x, pattern = tempdir())
-    names(ok) <- toCauseNames(x)
     setCause(ok, false = "not temp file")
 }
 

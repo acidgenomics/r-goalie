@@ -31,7 +31,7 @@ allAreAtomic <- function(x) {
     if (!isTRUE(ok)) {
         return(false(
             "Not all elements in {.var %s} are atomic.",
-            toCauseName(x)
+            .toName(x)
         ))
     }
     TRUE

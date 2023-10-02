@@ -32,20 +32,16 @@ isFile <- function(x) {
     if (!isTRUE(ok)) {
         return(ok)
     }
-    cn <- toCauseNames(x)
     ok <- isCharacter(x)
     if (!isTRUE(ok)) {
         ko <- rep(x = FALSE, times = length(x))
-        names(ko) <- cn
         return(setCause(ko, false = "not character"))
     }
     ok <- !dir.exists(x)
     if (!all(ok)) {
-        names(ok) <- cn
         return(setCause(ok, false = "dir"))
     }
     ok <- file.exists(x)
-    names(ok) <- cn
     setCause(ok, false = "not file")
 }
 

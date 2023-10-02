@@ -25,17 +25,14 @@ isGitRepo <- function(x) {
     if (!isTRUE(ok)) {
         return(ok)
     }
-    cn <- toCauseNames(x)
     ok <- isCharacter(x)
     if (!isTRUE(ok)) {
         ko <- rep(x = FALSE, times = length(x))
-        names(ko) <- cn
         return(setCause(ko, false = "not character"))
     }
     ok <- isSystemCommand("git")
     if (!isTRUE(ok)) {
         ko <- rep(x = FALSE, times = length(x))
-        names(ko) <- cn
         return(setCause(ko, false = "no git"))
     }
     requireNamespaces("AcidBase")
@@ -71,7 +68,6 @@ isGitRepo <- function(x) {
             ok
         }
     )
-    names(ok) <- cn
     setCause(ok, false = "not git repo")
 }
 
