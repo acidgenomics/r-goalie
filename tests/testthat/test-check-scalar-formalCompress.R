@@ -10,8 +10,8 @@ test_that("FALSE : unsupported string", {
     expect_identical(
         object = cause(ok),
         expected = paste0(
-            "{.var compress} has elements not in ",
-            "{.var c(\"bzip2\", \"gzip\", \"xz\")}: xxx"
+            "{.var xxx} has elements not in ",
+            "{.var bzip2, gzip, xz}: xxx"
         )
     )
 })
@@ -22,7 +22,7 @@ test_that("FALSE : not character", {
     expect_s4_class(ok, "goalie")
     expect_identical(
         object = cause(ok),
-        expected = "{.var compress} is not any of: character, logical."
+        expected = "{.var NULL} is not any of: character, logical."
     )
 })
 
@@ -32,6 +32,6 @@ test_that("FALSE : logical NA is not boolean", {
     expect_s4_class(ok, "goalie")
     expect_identical(
         object = cause(ok),
-        expected = "{.var compress} is {.val NA}."
+        expected = "{.var NA} is {.val NA}."
     )
 })
