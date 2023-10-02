@@ -4,20 +4,20 @@
 
 #' Is the current R session running inside RStudio?
 #'
-#' @name check-scalar-isRStudio
+#' @name check-scalar-IsRstudio
 #' @note Updated 2020-04-12.
 #'
 #' @inherit check return
 #'
 #' @examples
-#' isRStudio()
+#' IsRstudio()
 NULL
 
 
 
-#' @rdname check-scalar-isRStudio
+#' @rdname check-scalar-IsRstudio
 #' @export
-isRStudio <- function() {
+IsRstudio <- function() {
     ok <- isTRUE(nzchar(Sys.getenv("RSTUDIO_USER_IDENTITY")))
     if (!isTRUE(ok)) {
         return(false("RStudio not detected."))
