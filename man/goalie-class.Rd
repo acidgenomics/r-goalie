@@ -11,5 +11,5 @@
 Contains a \code{logical} with \code{cause} attributes.
 }
 \note{
-Updated 2021-02-23.
+Updated 2023-10-02.
 }
