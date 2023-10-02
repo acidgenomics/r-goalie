@@ -30,15 +30,20 @@ NULL
         idx <- which(object == FALSE)
         cause <- cause(object)[idx]
         object <- object[idx]
-        x <- Map(
-            f = function(pos, value) {
-                paste0(pos, ": ", value)
-            },
-            pos = idx,
-            value = cause
-        )
-        x <- unlist(x)
-        x <- toString(x, width = 500L)
+        if (identical(length(unique(cause)), 1L)) {
+            x <- paste0(unique(cause), ": ", toString(head(idx)), ".")
+        } else {
+            x <- Map(
+                f = function(pos, value) {
+                    paste0("[[", pos, "]]: ", value)
+                },
+                pos = idx,
+                value = cause
+            )
+            x <- head(x)
+            x <- unlist(x)
+            x <- paste(x, collapse = "\n")
+        }
         ## Need to ensure "%" is encoded as "%%" before handing off to
         ## cause attribute setter, which calls `sprintf` internally.
         x <- gsub(pattern = "%", replacement = "%%", x = x)
