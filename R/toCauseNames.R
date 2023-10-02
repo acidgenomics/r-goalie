@@ -1,7 +1,7 @@
 #' Sanitize vector input to cause names
 #'
 #' @name toCauseNames
-#' @note Updated 2023-09-29.
+#' @note Updated 2023-10-02.
 #'
 #' @details
 #' Names resulting from this function do not necessarily return valid, and will
@@ -33,6 +33,9 @@ NULL
 #' @rdname toCauseNames
 #' @export
 toCauseNames <- function(x) {
+    if (is.null(x)) {
+        return("NULL")
+    }
     if (!is.atomic(x)) {
         x <- as.character(class(x))[[1L]]
         return(x)
@@ -65,6 +68,9 @@ toCauseNames <- function(x) {
 #' @describeIn toCauseNames Scalar variant.
 #' @export
 toCauseName <- function(x) {
+    if (is.null(x)) {
+        return("NULL")
+    }
     if (!is.atomic(x)) {
         x <- as.character(class(x))[[1L]]
         return(x)

@@ -28,7 +28,7 @@ not be identical to output from \code{\link[base:make.names]{make.names()}}.
 
 }}
 \note{
-Updated 2023-09-29.
+Updated 2023-10-02.
 }
 \examples{
 ## Non-character vectors are supported.
