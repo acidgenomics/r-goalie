@@ -15,10 +15,9 @@ test_that("FALSE : not expected length", {
     ok <- hasLength(x = "xxx", n = 2L)
     expect_s4_class(ok, "goalie")
     expect_false(ok)
-    cause(ok)
     expect_identical(
         object = cause(ok),
-        expected = "{.var \"xxx\"} doesn't have a length of 2."
+        expected = "{.var xxx} doesn't have a length of 2."
     )
 })
 
@@ -38,7 +37,7 @@ test_that("FALSE : empty character", {
     expect_false(ok)
     expect_identical(
         object = cause(ok),
-        expected = "{.var character()} has length 0."
+        expected = "{.var character} has length 0."
     )
 })
 
@@ -48,6 +47,6 @@ test_that("FALSE : empty data frame", {
     expect_false(ok)
     expect_identical(
         object = cause(ok),
-        expected = "{.var data.frame()} has length 0."
+        expected = "{.var data.frame} has length 0."
     )
 })
