@@ -28,12 +28,11 @@ test_that("URL connection support", {
 })
 
 test_that("Only HTTP(S) and FTP", {
-    ok <- isAnExistingUrl("gopher://foobar")
-    expect_false(ok)
-    expect_match(cause(ok), "doesn't match")
-    ok <- isAnExistingUrl("sftp://sftp-private.ncbi.nlm.nih.gov/")
-    expect_false(ok)
-    expect_match(cause(ok), "doesn't match")
+    for (url in c("gopher://foobar", "sftp://sftp-private.ncbi.nlm.nih.gov/")) {
+        ok <- isAnExistingUrl(url)
+        expect_false(ok)
+        expect_match(cause(ok), "unsupported protocol")
+    }
 })
 
 test_that("isAnExistingUrl", {
@@ -44,7 +43,7 @@ test_that("isAnExistingUrl", {
     expect_false(ok)
     expect_identical(
         object = cause(ok),
-        expected = "{.var x} doesn't have a length of 1."
+        expected = "{.var character} doesn't have a length of 1."
     )
 })
 
