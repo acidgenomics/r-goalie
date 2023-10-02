@@ -28,18 +28,14 @@ test_that("FALSE : NA input", {
     expect_s4_class(ok, "goalie")
     expect_identical(
         object = nocause(ok),
-        expected = c(
-            "1.000000000000000e+00" = TRUE,
-            "2.000000000000000e+00" = TRUE,
-            "NA" = FALSE
-        )
+        expected = c(TRUE, TRUE, FALSE)
     )
     expect_identical(
         object = cause(ok),
         expected = c(
             "1.000000000000000e+00" = NA_character_,
             "2.000000000000000e+00" = NA_character_,
-            "NA" = "NA"
+            "NA" = "not integer"
         )
     )
 })
