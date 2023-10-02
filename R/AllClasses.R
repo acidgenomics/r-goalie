@@ -14,21 +14,21 @@ setClass(
 setValidity(
     Class = "goalie",
     method = function(object) {
-        cause <- slot(object, name = "cause")
         if (anyNA(object)) {
             return("Object contains NA.")
         }
         if (!is.null(names(object))) {
-            return("Object has names assigned.")
+            return("Object is named.")
         }
+        cause <- slot(object, name = "cause")
         if (!is.character(cause)) {
             return("Cause attribute is not character.")
         }
+        if (!is.null(names(cause))) {
+            return("Cause attribute is named.")
+        }
         if (!identical(length(object), length(cause))) {
             return("Cause attribute not the same length as check return.")
-        }
-        if (length(object) > 1L && is.null(names(cause))) {
-            return("Cause attribute doesn't have names assigned.")
         }
         if (any(object)) {
             ok <- vapply(

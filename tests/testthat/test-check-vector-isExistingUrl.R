@@ -43,7 +43,7 @@ test_that("isAnExistingUrl", {
     expect_false(ok)
     expect_identical(
         object = cause(ok),
-        expected = "{.var character} doesn't have a length of 1."
+        expected = "{.var character} doesn't have a length of 1.")
     )
 })
 

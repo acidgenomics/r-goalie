@@ -21,19 +21,20 @@ NULL
 
 
 
-## Updated 2022-05-13.
+## Updated 2023-10-02.
 `falseFromVector,goalie` <- # nolint
     function(object) {
-        cause <- cause(object)
-        if (isFALSE(object) && is.null(names(cause))) {
+        if (isFALSE(object)) {
             return(object)
         }
-        cause <- cause[which(object == FALSE)]
+        idx <- which(object == FALSE)
+        cause <- cause(object)[idx]
+        object <- object[idx]
         x <- Map(
-            f = function(name, value) {
-                paste0(name, ": ", value)
+            f = function(pos, value) {
+                paste0(pos, ": ", value)
             },
-            name = names(cause),
+            pos = idx,
             value = cause
         )
         x <- unlist(x)

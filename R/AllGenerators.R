@@ -18,10 +18,7 @@
 #' ## Any FALSE.
 #' x <- goalie(
 #'     object = c(FALSE, TRUE),
-#'     cause = c(
-#'         "1" = "failed check",
-#'         "2" = NA_character_
-#'     )
+#'     cause = c("xxx", NA_character_)
 #' )
 #' print(x)
 #' print(cause(x))
@@ -34,11 +31,10 @@ goalie <- function(object, cause) {
         if (identical(length(object), 0L)) {
             stop("Invalid input.")
         }
-        object <- unname(object)
+        if (!is.null(names(object))) {
+            stop("Object is named.")
+        }
         return(object)
-    }
-    if (is.null(names(cause))) {
-        names(cause) <- as.character(seq_along(cause))
     }
     new(Class = "goalie", ".Data" = object, "cause" = cause)
 }
