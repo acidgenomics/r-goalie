@@ -1,7 +1,7 @@
 #' Cause attribute
 #'
 #' @name cause
-#' @note Updated 2021-02-23.
+#' @note Updated 2023-10-02.
 #'
 #' @inheritParams AcidRoxygen::params
 #'
@@ -11,8 +11,8 @@
 #' x <- goalie(
 #'     object = c(FALSE, TRUE),
 #'     cause = c(
-#'         "Element 1 is FALSE.",
-#'         NA_character_
+#'         "1" = "Element 1 is FALSE.",
+#'         "2" = NA_character_
 #'     )
 #' )
 #' print(x)
