@@ -64,7 +64,7 @@ hasRownames <- function(x) {
     if (is(rownames, "error")) {
         return(false(
             "{.fun %s} command on {.var %s} failed.",
-            "rownames", toCauseName(x)
+            "rownames", .toName(x)
         ))
     }
     ## Standard data frames can't return NULL row names, so check against
@@ -78,7 +78,7 @@ hasRownames <- function(x) {
         if (!isTRUE(ok)) {
             return(false(
                 "{.var %s} has integer row names (soft {.val %s}).",
-                toCauseName(x), "NULL"
+                .toName(x), "NULL"
             ))
         }
         return(TRUE)
@@ -88,7 +88,7 @@ hasRownames <- function(x) {
     if (!isTRUE(ok)) {
         return(false(
             "{.var %s} has {.val %s} row names.",
-            toCauseName(x), "NULL"
+            .toName(x), "NULL"
         ))
     }
     TRUE

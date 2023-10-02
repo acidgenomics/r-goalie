@@ -42,11 +42,9 @@ isExisting <-
         if (!isTRUE(ok)) {
             return(ok)
         }
-        cn <- toCauseNames(x)
         ok <- isCharacter(x)
         if (!isTRUE(ok)) {
             ko <- rep(x = FALSE, times = length(x))
-            names(ko) <- cn
             return(setCause(ko, false = "not character"))
         }
         ok <- bapply(
@@ -55,7 +53,6 @@ isExisting <-
             envir = envir,
             inherits = inherits
         )
-        names(ok) <- cn
         setCause(ok, false = "non-existing")
     }
 
@@ -73,7 +70,6 @@ isNonExisting <-
             envir = envir,
             inherits = inherits
         )
-        names(ok) <- toCauseNames(x)
         setCause(ok, false = "existing")
     }
 

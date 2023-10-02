@@ -80,11 +80,9 @@ isInRange <-
             requireNamespaces("S4Vectors")
             x <- S4Vectors::decode(x)
         }
-        cn <- toCauseNames(x)
         ok <- is.numeric(x)
         if (!isTRUE(ok)) {
             ko <- rep(x = FALSE, times = length(x))
-            names(ko) <- cn
             return(setCause(ko, false = "not numeric"))
         }
         tooLow <- (if (closed[[1L]]) `<` else `<=`)(x, lower)
@@ -92,7 +90,6 @@ isInRange <-
         ok <- rep.int(TRUE, length(x))
         ok[tooLow] <- FALSE
         ok[tooHigh] <- FALSE
-        names(ok) <- cn
         setCause(ok, false = ifelse(tooLow, "too low", "too high"))
     }
 

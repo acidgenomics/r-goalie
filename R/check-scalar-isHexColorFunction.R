@@ -35,7 +35,7 @@ isHexColorFunction <-
         if (!isTRUE(ok)) {
             return(false(
                 "{.var %s} is not a function.",
-                toCauseName(x)
+                .toName(x)
             ))
         }
         ## Check for `n` formal.
@@ -43,7 +43,7 @@ isHexColorFunction <-
         if (!isTRUE(ok)) {
             return(false(
                 "{.var %s} doesn't contain an {.arg %s} argument.",
-                toCauseName(x), "n"
+                .toName(x), "n"
             ))
         }
         ## Check for hex value return.
@@ -51,7 +51,7 @@ isHexColorFunction <-
         if (!is.character(colors) || identical(length(colors), 0L)) {
             return(false(
                 "{.var %s} function didn't return any hex colors.",
-                toCauseName(x)
+                .toName(x)
             ))
         }
         ok <- allAreHexColors(colors)

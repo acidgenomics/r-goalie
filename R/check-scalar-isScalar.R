@@ -46,7 +46,7 @@ isScalar <-
                 no = {
                     return(false(
                         "{.var %s} is {.val %s}.",
-                        toCauseName(x), "NULL"
+                        .toName(x), "NULL"
                     ))
                 }
             )
@@ -55,7 +55,7 @@ isScalar <-
         if (!isTRUE(ok)) {
             return(false(
                 "{.var %s} doesn't have a length of 1.",
-                toCauseName(x)
+                .toName(x)
             ))
         }
         TRUE
@@ -77,7 +77,7 @@ isScalarAtomic <-
         if (!isTRUE(ok)) {
             return(false(
                 "{.var %s} is not atomic.",
-                toCauseName(x)
+                .toName(x)
             ))
         }
         TRUE
@@ -99,7 +99,7 @@ isScalarCharacter <-
         if (!isTRUE(ok)) {
             return(false(
                 "{.var %s} is not character.",
-                toCauseName(x)
+                .toName(x)
             ))
         }
         TRUE
@@ -121,7 +121,7 @@ isScalarDouble <-
         if (!isTRUE(ok)) {
             return(false(
                 "{.var %s} is not double.",
-                toCauseName(x)
+                .toName(x)
             ))
         }
         TRUE
@@ -143,7 +143,7 @@ isScalarInteger <-
         if (!isTRUE(ok)) {
             return(false(
                 "{.var %s} is not integer.",
-                toCauseName(x)
+                .toName(x)
             ))
         }
         TRUE
@@ -182,7 +182,7 @@ isScalarList <-
         }
         ok <- is.list(x)
         if (!isTRUE(ok)) {
-            return(false("{.var %s} is not list.", toCauseName(x)))
+            return(false("{.var %s} is not list.", .toName(x)))
         }
         TRUE
     }
@@ -203,7 +203,7 @@ isScalarLogical <-
         if (!isTRUE(ok)) {
             return(false(
                 "{.var %s} is not logical.",
-                toCauseName(x)
+                .toName(x)
             ))
         }
         TRUE
@@ -225,7 +225,7 @@ isScalarNumeric <-
         if (!isTRUE(ok)) {
             return(false(
                 "{.var %s} is not numeric.",
-                toCauseName(x)
+                .toName(x)
             ))
         }
         TRUE
@@ -247,7 +247,7 @@ isScalarVector <-
         if (!isTRUE(ok)) {
             return(false(
                 "{.var %s} is not vector.",
-                toCauseName(x)
+                .toName(x)
             ))
         }
         TRUE
@@ -263,7 +263,7 @@ isNonScalar <-
         if (!isTRUE(ok)) {
             return(false(
                 "{.var %s} is scalar (has a length of 1).",
-                toCauseName(x)
+                .toName(x)
             ))
         }
         TRUE

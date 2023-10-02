@@ -26,14 +26,14 @@ isFlag <- function(x) {
     if (!isTRUE(ok)) {
         return(false(
             "{.var %s} is not a boolean flag ({.val %s}/{.val %s}).",
-            toCauseName(x), "TRUE", "FALSE"
+            .toName(x), "TRUE", "FALSE"
         ))
     }
     ## Check for `NA`, which is logical but not a flag.
     if (is.na(x)) {
         return(false(
             "{.var %s} is {.val %s}.",
-            toCauseName(x), "NA"
+            .toName(x), "NA"
         ))
     }
     TRUE

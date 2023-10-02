@@ -35,14 +35,10 @@ isDuplicate <- function(x) {
     }
     ok <- is.vector(x)
     if (!isTRUE(ok)) {
-        return(false(
-            "Not vector: %s.",
-            toCauseName(x)
-        ))
+        return(false("Not vector: %s.", .toName(x)))
     }
     lgl <- duplicated(x)
     vals <- x[lgl]
     ok <- x %in% vals
-    names(ok) <- toCauseNames(x)
     setCause(ok, false = "unique")
 }

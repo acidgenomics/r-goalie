@@ -32,7 +32,7 @@ hasElements <- function(x, n = NULL) {
     nElementsX <- nElements(x)
     if (is.null(n)) {
         if (identical(nElementsX, 0L)) {
-            return(false("{.var %s} has 0 elements.", toCauseName(x)))
+            return(false("{.var %s} has 0 elements.", .toName(x)))
         } else {
             return(TRUE)
         }
@@ -46,7 +46,7 @@ hasElements <- function(x, n = NULL) {
                 "{.var %s} has %d element, not %d.",
                 "{.var %s} has %d elements, not %d."
             ),
-            toCauseName(x),
+            .toName(x),
             nElementsX,
             nElementsN
         ))

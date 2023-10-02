@@ -49,7 +49,7 @@ hasDims <- function(x, n = NULL) {
     if (is.null(d)) {
         return(false(
             "The dimensions of {.var %s} are {.val %s}.",
-            toCauseName(x), "NULL"
+            .toName(x), "NULL"
         ))
     }
     if (!is.null(n)) {
@@ -59,7 +59,7 @@ hasDims <- function(x, n = NULL) {
                     "Dimension mismatch for {.var %s}:",
                     "expected {.val %s}; actual {.val %s}."
                 ),
-                toCauseName(x), deparse(n), deparse(d)
+                .toName(x), deparse(n), deparse(d)
             ))
         }
     }
@@ -75,7 +75,7 @@ hasRows <- function(x, n = NULL) {
     if (is.null(nr)) {
         return(false(
             "The number of rows in {.var %s} is {.val %s}.",
-            toCauseName(x), "NULL"
+            .toName(x), "NULL"
         ))
     }
     if (!is.null(n)) {
@@ -85,14 +85,14 @@ hasRows <- function(x, n = NULL) {
                     "Row number mismatch for {.var %s}:",
                     "expected {.val %s}; actual {.val %s}."
                 ),
-                toCauseName(x), n, nr
+                .toName(x), n, nr
             ))
         }
     } else {
         if (identical(nr, 0L)) {
             return(false(
                 "The number of rows in {.var %s} is zero.",
-                toCauseName(x)
+                .toName(x)
             ))
         }
     }
@@ -108,7 +108,7 @@ hasCols <- function(x, n = NULL) {
     if (is.null(nc)) {
         return(false(
             "The number of columns in {.var %s} is {.val %s}.",
-            toCauseName(x), "NULL"
+            .toName(x), "NULL"
         ))
     }
     if (!is.null(n)) {
@@ -118,14 +118,14 @@ hasCols <- function(x, n = NULL) {
                     "Column number mismatch for {.var %s}:",
                     "expected {.val %s}; actual {.val %s}."
                 ),
-                toCauseName(x), n, nc
+                .toName(x), n, nc
             ))
         }
     } else {
         if (identical(nc, 0L)) {
             return(false(
                 "The number of columns in {.var %s} is zero.",
-                toCauseName(x)
+                .toName(x)
             ))
         }
     }

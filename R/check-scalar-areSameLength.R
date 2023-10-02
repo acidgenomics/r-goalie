@@ -39,7 +39,7 @@ areSameLength <-
         if (!isTRUE(ok)) {
             return(false(
                 "{.var %s} doesn't have the same length as {.var %s}.",
-                toCauseName(x), toCauseName(y)
+                .toName(x), .toName(y)
             ))
         }
         TRUE

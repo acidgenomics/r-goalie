@@ -39,7 +39,7 @@ isVectorish <-
         }
         ok <- is.vector(x)
         if (!isTRUE(ok)) {
-            return(false("{.var %s} is not a vector.", toCauseName(x)))
+            return(false("{.var %s} is not a vector.", .toName(x)))
         }
         TRUE
     }

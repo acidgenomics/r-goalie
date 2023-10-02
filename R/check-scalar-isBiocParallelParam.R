@@ -33,7 +33,7 @@ isBiocParallelParam <- function(x) {
     if (!isTRUE(ok)) {
         return(false(
             "{.var %s} is not a BiocParallel param.",
-            toCauseName(x)
+            .toName(x)
         ))
     }
     TRUE
