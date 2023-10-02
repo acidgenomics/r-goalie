@@ -10,12 +10,13 @@ goalie(object, cause)
 \item{object}{\code{logical}.}
 
 \item{cause}{\code{character}.
-Corresponding cause attribute for logical \code{object}.
-Note that \code{TRUE} values must contain \code{NA_character_} cause.
-This value should not be named.}
+Only applies when \code{object} vector contains any \code{FALSE} values.
+The \code{cause} attribute must be named.
+Cause values corresponding to \code{TRUE} must be set \code{NA}.}
 }
 \value{
-\code{goalie}, which extends \code{logical}.
+All \code{TRUE}: \code{logical}.
+Any \code{FALSE}: \code{goalie}, which extends \code{logical}.
 }
 \description{
 Define a goalie check classed return
@@ -24,13 +25,18 @@ Define a goalie check classed return
 Updated 2023-09-29.
 }
 \examples{
+## Any FALSE.
 x <- goalie(
-    object = c("aaa" = FALSE, "bbb" = TRUE),
+    object = c(FALSE, TRUE),
     cause = c(
-        "'aaa' is FALSE.",
-        NA_character_
+        "1" = "failed check",
+        "2" = NA_character_
     )
 )
 print(x)
 print(cause(x))
+
+## All TRUE.
+x <- goalie(rep(TRUE, 2L))
+print(x)
 }

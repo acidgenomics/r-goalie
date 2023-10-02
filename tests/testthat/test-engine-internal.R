@@ -1,4 +1,3 @@
-## FIXME Move this to a separate unit test.
 test_that("toCauseNames complex", {
     object <- complex(length.out = 2L)
     expect_type(object, "complex")
