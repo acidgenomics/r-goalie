@@ -62,8 +62,8 @@ isSubset <-
             setdiff <- setdiff(x, y)
             return(false(
                 "{.var %s} has elements not in {.var %s}: %s",
-                toCauseName(x),
-                toCauseName(y),
+                .toName(x),
+                .toName(y),
                 toString(setdiff, width = 100L)
             ))
         }
@@ -97,7 +97,7 @@ areDisjointSets <-
         if (hasLength(int)) {
             return(false(
                 "{.var %s} and {.var %s} have common elements: %s",
-                toCauseName(x), toCauseName(y),
+                .toName(x), .toName(y),
                 toString(int, width = 100L)
             ))
         }
@@ -122,7 +122,7 @@ areIntersectingSets <-
         if (!hasLength(int)) {
             return(false(
                 "{.var %s} and {.var %s} have 0 common elements.",
-                toCauseName(x), toCauseName(y)
+                .toName(x), .toName(y)
             ))
         }
         TRUE
@@ -151,7 +151,7 @@ areSetEqual <-
                     "{.var %s} and {.var %s} have different numbers",
                     "of elements (%d versus %d)."
                 ),
-                toCauseName(x), toCauseName(y),
+                .toName(x), .toName(y),
                 length(x), length(y)
             ))
         }

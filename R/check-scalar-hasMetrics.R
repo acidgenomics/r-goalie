@@ -34,7 +34,7 @@ hasMetrics <-
         if (!isTRUE(ok)) {
             return(false(
                 "{.var %s} doesn't contain metrics in {.fun %s}: %s.",
-                toCauseName(x), "colData",
+                .toName(x), "colData",
                 toString(setdiff(c1, c2), width = 100L)
             ))
         }

@@ -26,7 +26,7 @@ isAlpha <- function(x) {
     if (!isTRUE(ok)) {
         return(false(
             "{.var %s} is not scalar double.",
-            toCauseName(x)
+            .toName(x)
         ))
     }
     ok <- isInOpenRange(x, lower = 0L, upper = 1L)

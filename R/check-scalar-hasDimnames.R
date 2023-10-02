@@ -39,19 +39,19 @@ hasDimnames <- function(x) {
     if (is(dimnames, "error")) {
         return(false(
             "{.fun %s} command on {.var %s} failed.", "dimnames",
-            toCauseName(x)
+            .toName(x)
         ))
     }
     if (is.null(dimnames)) {
         return(false(
             "The dimension names of {.var %s} are {.val %s}.",
-            toCauseName(x), "NULL"
+            .toName(x), "NULL"
         ))
     }
     if (!any(nzchar(unlist(dimnames, use.names = FALSE)))) {
         return(false(
             "The dimension names of {.var %s} are all empty.",
-            toCauseName(x)
+            .toName(x)
         ))
     }
     TRUE
@@ -71,19 +71,19 @@ hasColnames <- function(x) {
     if (is(colnames, "error")) {
         return(false(
             "{.fun %s} command on {.var %s} failed.", "colnames",
-            toCauseName(x)
+            .toName(x)
         ))
     }
     if (is.null(colnames)) {
         return(false(
             "The column names of {.var %s} are {.val %s}.",
-            toCauseName(x), "NULL"
+            .toName(x), "NULL"
         ))
     }
     if (!any(nzchar(colnames))) {
         return(false(
             "The column names of {.var %s} are all empty.",
-            toCauseName(x)
+            .toName(x)
         ))
     }
     TRUE

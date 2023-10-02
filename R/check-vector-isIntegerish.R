@@ -47,11 +47,9 @@ isIntegerish <- function(x,
         requireNamespaces("S4Vectors")
         x <- S4Vectors::decode(x)
     }
-    cn <- toCauseNames(x)
     ok <- is.numeric(x)
     if (!isTRUE(ok)) {
         ko <- rep(x = FALSE, times = length(x))
-        names(ko) <- cn
         return(setCause(ko, false = "not numeric"))
     }
     x[is.na(x)] <- ifelse(test = naOk, yes = 0L, no = 0.1)
@@ -70,7 +68,6 @@ isIntegerish <- function(x,
             ))
         }
     )
-    names(ok) <- cn
     setCause(ok, false = "not integer")
 }
 

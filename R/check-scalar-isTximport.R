@@ -38,7 +38,7 @@ isTximport <- function(x) {
     if (!isTRUE(ok)) {
         return(false(
             "{.var %s} is not a list.",
-            toCauseName(x)
+            .toName(x)
         ))
     }
     ok <- areIntersectingSets(
@@ -54,7 +54,7 @@ isTximport <- function(x) {
     if (!isTRUE(ok)) {
         return(false(
             "{.var %s} is not a tximport list.",
-            toCauseName(x)
+            .toName(x)
         ))
     }
     ok <- identical(
@@ -64,7 +64,7 @@ isTximport <- function(x) {
     if (!isTRUE(ok)) {
         return(false(
             "{.var %s} has mismatched dimnames.",
-            toCauseName(x)
+            .toName(x)
         ))
     }
     ok <- identical(
@@ -74,14 +74,14 @@ isTximport <- function(x) {
     if (!isTRUE(ok)) {
         return(false(
             "{.var %s} has mismatched dimnames.",
-            toCauseName(x)
+            .toName(x)
         ))
     }
     ok <- isString(x[["countsFromAbundance"]])
     if (!isTRUE(ok)) {
         return(false(
             "{.var %s} is missing {.var %s} metadata.",
-            toCauseName(x), "countsFromAbundance"
+            .toName(x), "countsFromAbundance"
         ))
     }
     TRUE

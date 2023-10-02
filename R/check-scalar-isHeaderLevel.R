@@ -32,7 +32,7 @@ isHeaderLevel <- function(x) {
                 "{.var %s} is not a valid Markdown header.\n",
                 "Markdown supports header levels 1-7."
             ),
-            toCauseName(x)
+            .toName(x)
         ))
     }
     TRUE

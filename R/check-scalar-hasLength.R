@@ -31,7 +31,7 @@ hasLength <- function(x, n = NULL) {
     length <- length(x)
     if (is.null(n)) {
         if (identical(length, 0L)) {
-            return(false("{.var %s} has length 0.", toCauseName(x)))
+            return(false("{.var %s} has length 0.", .toName(x)))
         } else {
             return(TRUE)
         }
@@ -40,7 +40,7 @@ hasLength <- function(x, n = NULL) {
     if (!isTRUE(ok)) {
         return(false(
             "{.var %s} doesn't have a length of %d.",
-            toCauseName(x), n
+            .toName(x), n
         ))
     }
     TRUE

@@ -219,7 +219,6 @@ isExistingUrl <- function(x) {
             )
         }
     )
-    names(ok) <- toCauseNames(x)
     setCause(ok, false = "URL doesn't exist")
 }
 

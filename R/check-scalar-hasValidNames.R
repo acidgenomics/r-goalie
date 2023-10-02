@@ -47,14 +47,14 @@ hasValidNames <- function(x) {
     if (is(names, "error")) {
         return(false(
             "{.fun %s} command on {.var %s} failed.",
-            "names", toCauseName(x)
+            "names", .toName(x)
         ))
     }
     ok <- length(names) > 0L
     if (!isTRUE(ok)) {
         return(false(
             "{.var %s} doesn't have names.",
-            toCauseName(x)
+            .toName(x)
         ))
     }
     ok <- validNames(names)
@@ -79,7 +79,7 @@ hasValidDimnames <- function(x) {
     if (is(dimnames, "error")) {
         return(false(
             "{.fun %s} command on {.var %s} failed.",
-            "dimnames", toCauseName(x)
+            "dimnames", .toName(x)
         ))
     }
     ## Row names.

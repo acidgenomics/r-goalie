@@ -31,7 +31,7 @@ isAny <- function(x, classes) {
     if (!isTRUE(ok)) {
         return(false(
             "{.var %s} is not any of: %s.",
-            toCauseName(x), toString(classes, width = 50L)
+            .toName(x), toString(classes, width = 50L)
         ))
     }
     TRUE

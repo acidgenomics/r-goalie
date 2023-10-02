@@ -32,17 +32,14 @@ isHexColor <- function(x) {
     if (!isTRUE(ok)) {
         return(ok)
     }
-    cn <- toCauseNames(x)
     ok <- isCharacter(x)
     if (!isTRUE(ok)) {
         ko <- rep(x = FALSE, times = length(x))
-        names(ko) <- cn
         return(setCause(ko, false = "not character"))
     }
     ## `viridis()` adds an extra "FF" to the end of hex color return.
     pattern <- "^(#[0-9A-F]{6})"
     ok <- isMatchingRegex(x = x, pattern = pattern)
-    names(ok) <- cn
     setCause(ok, false = sprintf("doesn't match {.var %s}", pattern))
 }
 

@@ -52,11 +52,9 @@ hasAccess <- function(x, access = "r") {
     if (!isTRUE(ok)) {
         return(ok)
     }
-    cn <- toCauseNames(x)
     ok <- isCharacter(x)
     if (!isTRUE(ok)) {
         ko <- rep(x = FALSE, times = length(x))
-        names(ko) <- cn
         return(setCause(ko, false = "not character"))
     }
     ## Here we're converting the "rwx" flags to the `file.access()` modes.
@@ -91,7 +89,6 @@ hasAccess <- function(x, access = "r") {
         TRUE
     }
     ok <- bapply(X = x, FUN = checkAccess, access = access)
-    names(ok) <- cn
     setCause(ok, false = "no access")
 }
 

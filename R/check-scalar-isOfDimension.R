@@ -31,7 +31,7 @@ isOfDimension <- function(x, n) {
         if (hasDims(x)) {
             return(false(
                 "{.var %s} has %s {.val %s}, not {.val %s}.",
-                toCauseName(x),
+                .toName(x),
                 ngettext(
                     n = length(dimX),
                     msg1 = "dimension",
@@ -53,7 +53,7 @@ isOfDimension <- function(x, n) {
                 msg2 = "Dimensions %s of {.var %s} are incorrect."
             ),
             toString(notok, width = 50L),
-            toCauseName(x)
+            .toName(x)
         ))
     }
     TRUE
