@@ -21,7 +21,7 @@ test_that("FALSE : not file", {
     expect_identical(object = nocause(ok), rep(FALSE, 2L))
     expect_identical(
         object = cause(ok),
-        expected = c("aaa" = "not file", "bbb" = "not file")
+        expected = rep("not file", 2L)
     )
 })
 
@@ -31,7 +31,7 @@ test_that("FALSE : not character", {
     expect_false(ok)
     expect_identical(
         object = cause(ok),
-        expected = c("1" = "not character")
+        expected = "not character"
     )
 })
 

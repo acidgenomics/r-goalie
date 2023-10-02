@@ -9,21 +9,14 @@ test_that("character", {
         object = nocause(ok),
         expected = c(TRUE, TRUE, TRUE, TRUE, FALSE, FALSE, TRUE, TRUE)
     )
-    ## nolint start
     expect_identical(
         object = cause(ok),
         expected = c(
-            "a" = NA,
-            "a" = NA,
-            "b" = NA,
-            "b" = NA,
-            "c" = "unique",
-            "d" = "unique",
-            "NA" = NA,
-            "NA" = NA
+            rep(NA, 4L),
+            rep("unique", 2L),
+            rep(NA, 2L)
         )
     )
-    ## nolint end
     ok <- isDuplicate(c("a", "b", "c"))
     expect_s4_class(ok, "goalie")
     expect_identical(nocause(ok), rep(FALSE, 3L))
@@ -40,26 +33,19 @@ test_that("numeric", {
         object = nocause(ok),
         expected = c(TRUE, TRUE, TRUE, TRUE, FALSE, FALSE, TRUE, TRUE)
     )
-    ## nolint start
     expect_identical(
         object = cause(ok),
         expected = c(
-            "1" = NA,
-            "1" = NA,
-            "2" = NA,
-            "2" = NA,
-            "3" = "unique",
-            "4" = "unique",
-            "NA" = NA,
-            "NA" = NA
+            rep(NA, 4L),
+            rep("unique", 2L),
+            rep(NA, 2L)
         )
     )
-    ## nolint end
     ok <- isDuplicate(c(1L, 2L, 3L))
     expect_s4_class(ok, "goalie")
     expect_identical(
-        object = as.logical(ok),
-        expected = c(FALSE, FALSE, FALSE)
+        object = nocause(ok),
+        expected = rep(FALSE, 3L)
     )
 })
 
@@ -71,8 +57,8 @@ test_that("logical", {
     ok <- isDuplicate(c(FALSE, TRUE))
     expect_s4_class(ok, "goalie")
     expect_identical(
-        object = as.logical(ok),
-        expected = c(FALSE, FALSE)
+        object = nocause(ok),
+        expected = rep(FALSE, 2L)
     )
 })
 

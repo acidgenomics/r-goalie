@@ -19,7 +19,7 @@ test_that("FALSE", {
     expect_false(ok)
     expect_identical(
         object = cause(ok),
-        expected = c("1.000000000000000e-01" = "not integer")
+        expected = "not integer"
     )
 })
 
@@ -33,9 +33,8 @@ test_that("FALSE : NA input", {
     expect_identical(
         object = cause(ok),
         expected = c(
-            "1.000000000000000e+00" = NA_character_,
-            "2.000000000000000e+00" = NA_character_,
-            "NA" = "not integer"
+            rep(NA_character_, 2L),
+            "not integer"
         )
     )
 })
