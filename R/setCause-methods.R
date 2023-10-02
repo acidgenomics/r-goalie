@@ -4,15 +4,12 @@
 #' object.
 #'
 #' @name setCause
-#' @note Updated 2021-02-23.
+#' @note Updated 2023-10-02.
 #'
 #' @inheritParams AcidRoxygen::params
 #'
 #' @param false `character`.
 #' A character vector to set the cause to, when `x` is `FALSE`.
-#'
-#' @param missing `character`.
-#' A character vector to set the cause to, when `x` is `NA`.
 #'
 #' @return `goalie`.
 #'
@@ -23,43 +20,40 @@
 #'
 #' @examples
 #' x <- setCause(
-#'     object = c(TRUE, TRUE, FALSE, FALSE, NA, NA),
-#'     false = "foo",
-#'     missing = "bar"
+#'     object = c(TRUE, TRUE, FALSE, FALSE),
+#'     false = "false"
 #' )
 #' print(x)
-#' cause(x)
+#' print(cause(x))
 NULL
 
 
 
-## Updated 2021-02-23.
+## Updated 2023-10-02.
 `setCause,logical` <- # nolint
-    function(object,
-             false = "false",
-             missing = "missing") {
-        if (!anyNA(object) && all(object, na.rm = TRUE)) {
+    function(object, false) {
+        if (anyNA(object)) {
+            stop("Object contains NA.")
+        }
+        if (all(object)) {
             object <- unname(object)
             return(object)
         }
-        isNA <- is.na(object)
-        length <- length(object)
-        cause <- rep(x = NA_character_, times = length)
-        if (identical(length(missing), 1L)) {
-            cause[isNA] <- missing
-        } else {
-            missing <- rep_len(missing, length)
-            cause[isNA] <- missing[isNA]
-        }
-        index <- !(object | isNA)
+        ln <- length(object)
+        cause <- rep(x = NA_character_, times = ln)
+        idx <- !object
         if (identical(length(false), 1L)) {
-            cause[index] <- false
+            cause[idx] <- false
         } else {
-            false <- rep_len(false, length)
-            cause[index] <- false[index]
+            false <- rep_len(false, ln)
+            cause[idx] <- false[idx]
         }
-        names(cause) <- names(object)
-        object <- unname(object)
+        if (is.null(names(object))) {
+            names(cause) <- as.character(seq_along(object))
+        } else {
+            names(cause) <- names(object)
+            object <- unname(object)
+        }
         goalie(object = object, cause = cause)
     }
 

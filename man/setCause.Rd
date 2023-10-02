@@ -10,7 +10,7 @@ setCause(object, ...)
 
 \S4method{setCause}{goalie}(object, ...)
 
-\S4method{setCause}{logical}(object, false = "false", missing = "missing")
+\S4method{setCause}{logical}(object, false)
 }
 \arguments{
 \item{object}{Object.}
@@ -19,9 +19,6 @@ setCause(object, ...)
 
 \item{false}{\code{character}.
 A character vector to set the cause to, when \code{x} is \code{FALSE}.}
-
-\item{missing}{\code{character}.
-A character vector to set the cause to, when \code{x} is \code{NA}.}
 }
 \value{
 \code{goalie}.
@@ -31,16 +28,15 @@ Sets the \code{cause} \link[base:attributes]{attribute} of an object and returns
 object.
 }
 \note{
-Updated 2021-02-23.
+Updated 2023-10-02.
 }
 \examples{
 x <- setCause(
-    object = c(TRUE, TRUE, FALSE, FALSE, NA, NA),
-    false = "foo",
-    missing = "bar"
+    object = c(TRUE, TRUE, FALSE, FALSE),
+    false = "false"
 )
 print(x)
-cause(x)
+print(cause(x))
 }
 \seealso{
 \itemize{
