@@ -1,7 +1,7 @@
 #' Does the input contain hexadecimal colors?
 #'
 #' @name check-vector-isHexColor
-#' @note Updated 2020-04-07.
+#' @note Updated 2023-10-02.
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
@@ -28,14 +28,21 @@ NULL
 #' @describeIn check-vector-isHexColor Vectorized.
 #' @export
 isHexColor <- function(x) {
-    ## FIXME Need to improve vectorization here.
-    ok <- isCharacter(x)
+    ok <- hasLength(x)
     if (!isTRUE(ok)) {
         return(ok)
     }
-    ## NOTE `viridis()` adds an extra "FF" to the end of hex color return.
+    cn <- toCauseNames(x)
+    ok <- isCharacter(x)
+    if (!isTRUE(ok)) {
+        ko <- rep(x = FALSE, times = length(x))
+        names(ko) <- cn
+        return(setCause(ko, false = "not character"))
+    }
+    ## `viridis()` adds an extra "FF" to the end of hex color return.
     pattern <- "^(#[0-9A-F]{6})"
     ok <- isMatchingRegex(x = x, pattern = pattern)
+    names(ok) <- cn
     setCause(ok, false = sprintf("doesn't match {.var %s}", pattern))
 }
 

@@ -5,7 +5,7 @@
 #' variables in a single call.
 #'
 #' @name check-vector-isExisting
-#' @note Updated 2022-12-14.
+#' @note Updated 2023-10-02.
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
@@ -33,18 +33,29 @@ NULL
 
 #' @describeIn check-vector-isExisting Vectorized.
 #' @export
-## Updated 2023-09-29.
+## Updated 2023-10-02.
 isExisting <-
     function(x,
              envir = parent.frame(),
              inherits = FALSE) {
+        ok <- hasLength(x)
+        if (!isTRUE(ok)) {
+            return(ok)
+        }
+        cn <- toCauseNames(x)
+        ok <- isCharacter(x)
+        if (!isTRUE(ok)) {
+            ko <- rep(x = FALSE, times = length(x))
+            names(ko) <- cn
+            return(setCause(ko, false = "not character"))
+        }
         ok <- bapply(
             X = x,
             FUN = exists,
             envir = envir,
             inherits = inherits
         )
-        names(ok) <- toCauseNames(x)
+        names(ok) <- cn
         setCause(ok, false = "non-existing")
     }
 

@@ -72,13 +72,13 @@ isInRange <-
              lower = -Inf,
              upper = Inf,
              closed = c(TRUE, TRUE)) {
-        if (is(x, "Rle")) {
-            requireNamespaces("S4Vectors")
-            x <- S4Vectors::decode(x)
-        }
         ok <- hasLength(x)
         if (!isTRUE(ok)) {
             return(ok)
+        }
+        if (is(x, "Rle")) {
+            requireNamespaces("S4Vectors")
+            x <- S4Vectors::decode(x)
         }
         cn <- toCauseNames(x)
         ok <- is.numeric(x)
