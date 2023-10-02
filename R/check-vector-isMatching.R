@@ -31,12 +31,10 @@ NULL
 
 ## grep matching that dynamically handles S4 objects, if necessary.
 ## Alternatively, could check directly for Rle and decode here instead.
-## Updated 2022-12-14.
+## Updated 2023-10-02.
 .grepl <- function(x, ...) {
     if (!is.atomic(x)) {
-        ok <- FALSE
-        names(ok) <- toCauseName(x)
-        return(ok)
+        return(FALSE)
     }
     if (isS4(x)) {
         requireNamespaces("S4Vectors")
@@ -46,7 +44,6 @@ NULL
     if (isS4(x)) {
         ok <- as.logical(ok)
     }
-    names(ok) <- toCauseNames(x)
     ok
 }
 
@@ -63,7 +60,7 @@ isMatchingFixed <- function(x, pattern) {
         ignore.case = FALSE,
         fixed = TRUE
     )
-    setCause(ok, false = gettextf("doesn't match {.var %s}", pattern))
+    setCause(ok, false = sprintf("doesn't match {.var %s}", pattern))
 }
 
 
@@ -77,7 +74,7 @@ isMatchingRegex <- function(x, pattern) {
         ignore.case = FALSE,
         fixed = FALSE
     )
-    setCause(ok, false = gettextf("doesn't match {.var %s}", pattern))
+    setCause(ok, false = sprintf("doesn't match {.var %s}", pattern))
 }
 
 
@@ -91,7 +88,7 @@ isNotMatchingFixed <- function(x, pattern) {
         ignore.case = FALSE,
         fixed = TRUE
     )
-    setCause(ok, false = gettextf("matches {.var %s}", pattern))
+    setCause(ok, false = sprintf("matches {.var %s}", pattern))
 }
 
 
@@ -105,7 +102,7 @@ isNotMatchingRegex <- function(x, pattern) {
         ignore.case = FALSE,
         fixed = FALSE
     )
-    setCause(ok, false = gettextf("matches {.var %s}", pattern))
+    setCause(ok, false = sprintf("matches {.var %s}", pattern))
 }
 
 
