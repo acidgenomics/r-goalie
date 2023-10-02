@@ -1,7 +1,7 @@
 #' Is the package installed and a specific version?
 #'
 #' @name check-vector-isPackageVersion
-#' @note Updated 2023-09-29.
+#' @note Updated 2023-10-02.
 #'
 #' @param x `character`.
 #' Named character vector.
@@ -57,7 +57,8 @@ isPackageVersion <- function(x, op = ">=") {
         },
         package = packages,
         version = versions,
-        MoreArgs = list("op" = op)
+        MoreArgs = list("op" = op),
+        USE.NAMES = FALSE
     ))
     setCause(ok, false = "version check fail")
 }
