@@ -9,9 +9,9 @@ test_that("FALSE : unsupported string", {
     expect_s4_class(ok, "goalie")
     expect_identical(
         object = cause(ok),
-        expected = paste0(
-            "{.var xxx} has elements not in ",
-            "{.var bzip2, gzip, xz}: xxx"
+        expected = paste(
+            "{.var xxx} has elements not in",
+            "{.var character}: xxx"
         )
     )
 })
