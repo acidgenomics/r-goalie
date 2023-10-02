@@ -12,7 +12,7 @@ test_that("FALSE : not integer", {
     expect_false(ok)
     expect_identical(
         object = cause(ok),
-        expected = c("1.000000000000000e-01" = "not integer")
+        expected = "not integer"
     )
 })
 
