@@ -32,8 +32,7 @@ NULL
 isUrl <- function(x) {
     ok <- is(x, "url")
     if (isTRUE(ok)) {
-        names(ok) <- "connection"
-        return(ok)
+        return(TRUE)
     }
     ok <- hasLength(x)
     if (!isTRUE(ok)) {
