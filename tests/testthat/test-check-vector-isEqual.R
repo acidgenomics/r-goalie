@@ -14,10 +14,7 @@ test_that("isEqualTo : FALSE", {
     y <- 0L
     ok <- isEqualTo(x = x, y = y)
     expect_s4_class(ok, "goalie")
-    expect_identical(
-        object = nocause(ok),
-        expected = c("1" = FALSE, "2" = FALSE)
-    )
+    expect_identical(nocause(ok), rep(FALSE, 2L))
     expected <- c(
         "not equal to 0; abs diff = 1",
         "not equal to 0; abs diff = 2"
