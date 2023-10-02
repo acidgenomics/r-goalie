@@ -1,38 +1,24 @@
-pass <- c("sample1.fastq.gz", "sample2.fastq.bz2")
-fail <- c("sample1.fastq", "sample2.fastq")
-file.create(pass, fail)
-
-
+pass <- file.path(
+    tempdir(),
+    c("sample1.fastq.gz", "sample2.fastq.bz2")
+)
+fail <- file.path(
+    tempdir(),
+    c("sample1.fastq", "sample2.fastq")
+)
+invisible(file.create(pass, fail))
 
 test_that("TRUE", {
     expect_true(all(isCompressedFile(pass)))
-})
-
-test_that("FALSE", {
-    expect_false(any(isCompressedFile(fail)))
-})
-
-
-
-test_that("TRUE", {
     expect_true(isACompressedFile(pass[[1L]]))
-})
-
-test_that("FALSE", {
-    expect_false(isACompressedFile(pass))
-    expect_false(isACompressedFile(fail[[1L]]))
-})
-
-
-
-test_that("TRUE", {
     expect_true(allAreCompressedFiles(pass))
 })
 
 test_that("FALSE", {
+    expect_false(any(isCompressedFile(fail)))
+    expect_false(isACompressedFile(pass))
+    expect_false(isACompressedFile(fail[[1L]]))
     expect_false(allAreCompressedFiles(fail))
 })
 
-
-
-file.remove(pass, fail)
+invisible(file.remove(pass, fail))
