@@ -57,6 +57,6 @@ test_that("goalie cause support", {
     )
     expect_error(
         object = assert(isADir("XXX")),
-        regexp = "Cause: XXX: not dir"
+        regexp = "Cause: not dir"
     )
 })

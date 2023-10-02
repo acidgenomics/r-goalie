@@ -7,21 +7,14 @@ test_that("All TRUE", {
 })
 
 test_that("Any FALSE", {
-    expect_error(
-        object = goalie(
-            object = c(FALSE, FALSE),
-            cause = c("AAA", "BBB")
-        ),
-        regexp = "Cause attribute doesn't have names assigned."
-    )
     object <- goalie(
         object = c(FALSE, FALSE),
-        cause = c("1" = "AAA", "2" = "BBB")
+        cause = c("AAA", "BBB")
     )
     expect_s4_class(object, "goalie")
     expect_identical(
         object = cause(object),
-        expected = c("1" = "AAA", "2" = "BBB")
+        expected = c("AAA", "BBB")
     )
 })
 
