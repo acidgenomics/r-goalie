@@ -1,7 +1,7 @@
 #' Does the input contain an existing (active) URL?
 #'
 #' @name check-vector-isExistingUrl
-#' @note Updated 2023-09-21.
+#' @note Updated 2023-10-02.
 #'
 #' @details
 #' Supports HTTPS, HTTP, and FTP protocols.
@@ -193,41 +193,26 @@ NULL
 #' @describeIn check-vector-isExistingUrl Vectorized.
 #' @export
 isExistingUrl <- function(x) {
-    ok <- as.logical(capabilities(what = "http/ftp"))
-    if (!isTRUE(ok)) {
-        return(false("R session does not have Internet access."))
-    }
-    ok <- as.logical(capabilities(what = "libcurl"))
-    if (!isTRUE(ok)) {
-        return(false("R session does not support libcurl."))
-    }
     ok <- isUrl(x)
     if (!all(ok)) {
         return(ok)
     }
-    if (is(x, "url")) {
-        ok <- .checkCon(x)
-        names(ok) <- "connection"
-    } else {
-        ok <- isMatchingRegex(x = x, pattern = "^(ftp|http|https)://")
-        if (!all(ok)) {
-            return(ok)
-        }
-        ok <- bapply(
-            X = x,
-            FUN = function(x) {
-                protocol <- strsplit(x, split = ":")[[1L]][[1L]]
-                ok <- switch(
-                    EXPR = protocol,
-                    "ftp" = .checkFtp(x),
-                    "http" = .checkHttp(x),
-                    "https" = .checkHttp(x)
-                )
-                ok
-            }
-        )
-        names(ok) <- x
+    ok <- isMatchingRegex(x = x, pattern = "^(ftp|http|https)://")
+    if (!all(ok)) {
+        return(ok)
     }
+    ok <- bapply(
+        X = x,
+        FUN = function(x) {
+            switch(
+                EXPR = strsplit(x, split = ":")[[1L]][[1L]],
+                "ftp" = .checkFtp(x),
+                "http" = .checkHttp(x),
+                "https" = .checkHttp(x)
+            )
+        }
+    )
+    names(ok) <- cn
     setCause(ok, false = "URL doesn't exist")
 }
 
