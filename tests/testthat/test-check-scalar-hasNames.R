@@ -14,7 +14,7 @@ test_that("FALSE : matrix", {
     expect_s4_class(ok, "goalie")
     expect_identical(
         object = cause(ok),
-        expected = "The names of {.var matrix()} are {.val NULL}."
+        expected = "The names of {.var NA} are {.val NULL}."
     )
 })
 
@@ -24,6 +24,6 @@ test_that("FALSE : data frame", {
     expect_s4_class(ok, "goalie")
     expect_identical(
         object = cause(ok),
-        expected = "The names of {.var data.frame()} are all empty."
+        expected = "The names of {.var data.frame} are all empty."
     )
 })
