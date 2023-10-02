@@ -1,8 +1,5 @@
 test_that("All TRUE", {
-    expect_identical(
-        object = goalie(TRUE),
-        expected = TRUE
-    )
+    expect_true(goalie(TRUE))
     expect_identical(
         object = goalie(rep(TRUE, 2L)),
         expected = rep(TRUE, 2L)
