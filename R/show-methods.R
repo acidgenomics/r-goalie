@@ -2,7 +2,7 @@
 #'
 #' @name show
 #' @author Michael Steinbaugh
-#' @note Updated 2022-02-07.
+#' @note Updated 2023-10-02.
 #'
 #' @inheritParams AcidRoxygen::params
 #'
@@ -11,11 +11,8 @@
 #' @examples
 #' ## Match the default logical print method.
 #' x <- goalie(
-#'     object = c("aaa" = FALSE, "bbb" = TRUE),
-#'     cause = c(
-#'         "'aaa' is FALSE.",
-#'         NA_character_
-#'     )
+#'     object = c(FALSE, TRUE),
+#'     cause = c("xxx", NA_character_)
 #' )
 #' show(x)
 NULL
