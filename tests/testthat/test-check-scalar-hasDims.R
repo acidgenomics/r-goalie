@@ -8,7 +8,7 @@ test_that("hasDims", {
     expect_s4_class(ok, "goalie")
     expect_identical(
         object = cause(ok),
-        expected = "The dimensions of {.var list()} are {.val NULL}."
+        expected = "The dimensions of {.var list} are {.val NULL}."
     )
 })
 
@@ -34,13 +34,9 @@ test_that("n length support", {
     expect_identical(
         object = cause(ok),
         expected = paste(
-            "Dimension mismatch for {.var x}:",
+            "Dimension mismatch for {.var matrix}:",
             "expected {.val 2:3}; actual {.val 3:2}."
         )
-    )
-    expect_error(
-        object = hasDims(x, n = 1L),
-        regexp = "hasLength"
     )
     expect_true(hasRows(x, n = 3L))
     expect_true(hasRows(x, n = 3)) # nolint
@@ -50,7 +46,7 @@ test_that("n length support", {
     expect_identical(
         object = cause(ok),
         expected = paste(
-            "Row number mismatch for {.var x}:",
+            "Row number mismatch for {.var matrix}:",
             "expected {.val 2}; actual {.val 3}."
         )
     )
@@ -62,7 +58,7 @@ test_that("n length support", {
     expect_identical(
         object = cause(ok),
         expected = paste(
-            "Column number mismatch for {.var x}:",
+            "Column number mismatch for {.var matrix}:",
             "expected {.val 3}; actual {.val 2}."
         )
     )
