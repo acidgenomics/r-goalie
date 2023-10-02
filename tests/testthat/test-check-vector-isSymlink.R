@@ -49,4 +49,4 @@ test_that("FALSE", {
 
 
 
-invisible(unlink(c(from, to)))
+unlink(c(from, to))

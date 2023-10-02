@@ -1,6 +1,6 @@
 test_that("TRUE", {
     x <- tempfile()
-    file.create(x)
+    invisible(file.create(x))
     expect_true(isATempFile(x))
     expect_true(allAreTempFiles(x))
     unlink(x)
