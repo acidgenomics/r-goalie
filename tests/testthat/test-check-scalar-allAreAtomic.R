@@ -10,7 +10,7 @@ test_that("FALSE : non-atomic", {
     expect_identical(
         object = cause(ok),
         expected = paste(
-            "Not all elements in {.var list(a = \"x\", b = list())}",
+            "Not all elements in {.var list}",
             "are atomic."
         )
     )
@@ -22,6 +22,6 @@ test_that("FALSE : length 0", {
     expect_false(ok)
     expect_identical(
         object = cause(ok),
-        expected = "{.var data.frame()} has length 0."
+        expected = "{.var data.frame} has length 0."
     )
 })
