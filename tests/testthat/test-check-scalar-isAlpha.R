@@ -7,12 +7,12 @@ test_that("FALSE : out of bounds", {
     ok <- isAlpha(0) # nolint
     expect_identical(
         object = cause(ok),
-        expected = c("0.000000000000000e+00" = "too low")
+        expected = "too low"
     )
     ok <- isAlpha(1) # nolint
     expect_identical(
         object = cause(ok),
-        expected = c("1.000000000000000e+00" = "too high")
+        expected = "too high"
     )
 })
 
