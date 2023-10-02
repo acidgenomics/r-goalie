@@ -66,7 +66,8 @@ isGitRepo <- function(x) {
                 }
             )
             ok
-        }
+        },
+        USE.NAMES = FALSE
     )
     setCause(ok, false = "not git repo")
 }
