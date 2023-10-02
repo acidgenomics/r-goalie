@@ -36,9 +36,9 @@ toCauseNames <- function(x) {
     if (is.null(x)) {
         return("NULL")
     }
+    cls <- as.character(class(x))[[1L]]
     if (!is.atomic(x)) {
-        x <- as.character(class(x))[[1L]]
-        return(x)
+        return(clx)
     }
     if (is.double(x)) {
         x <- ifelse(
@@ -71,9 +71,12 @@ toCauseName <- function(x) {
     if (is.null(x)) {
         return("NULL")
     }
+    cls <- as.character(class(x))[[1L]]
     if (!is.atomic(x)) {
-        x <- as.character(class(x))[[1L]]
-        return(x)
+        return(cls)
     }
-    toString(x, width = 50L)
+    if (identical(length(x), 1L)) {
+        return(as.character(x))
+    }
+    cls
 }
