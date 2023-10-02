@@ -144,7 +144,7 @@ areSetEqual <-
         }
         x <- unique(x)
         y <- unique(y)
-        ok <- length(x) != length(y)
+        ok <- length(x) == length(y)
         if (!isTRUE(ok)) {
             return(false(
                 paste(
