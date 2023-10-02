@@ -17,6 +17,6 @@ test_that("FALSE", {
     expect_false(ok)
     expect_identical(
         object = cause(ok),
-        expected = "{.var list()} does not contain clusters."
+        expected = "{.var list} does not contain clusters."
     )
 })
