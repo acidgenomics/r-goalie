@@ -1,7 +1,7 @@
 #' Set comparisons
 #'
 #' @name check-scalar-sets
-#' @note Updated 2022-12-14.
+#' @note Updated 2023-10-02.
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
@@ -41,32 +41,15 @@ NULL
 
 
 
-## Assertive has `strictly` mode, which enforces that x, y are not set equal.
-
 #' @rdname check-scalar-sets
 #' @export
 isSubset <-
     function(x, y) {
-        ## FIXME Return FALSE if not vectorish here.
-        if (is.null(x)) {
-            return(false(
-                "{.var %s} is NULL.",
-                toCauseName(x)
-            ))
-        }
-        if (is.null(y)) {
-            return(false(
-                "{.var %s} is NULL.",
-                toCauseName(y)
-            ))
-        }
-        ## FIXME Return FALSE on these.
-        assert(isVectorish(x), isVectorish(y))
-        ok <- hasLength(x)
+        ok <- isVectorish(x)
         if (!isTRUE(ok)) {
             return(ok)
         }
-        ok <- hasLength(y)
+        ok <- hasLength(x)
         if (!isTRUE(ok)) {
             return(ok)
         }
@@ -89,8 +72,6 @@ isSubset <-
 
 
 
-## This is essentially an `isSubset()` call with x and y flipped.
-
 #' @rdname check-scalar-sets
 #' @export
 isSuperset <-
@@ -104,21 +85,20 @@ isSuperset <-
 #' @export
 areDisjointSets <-
     function(x, y) {
-        ## FIXME Return FALSE on these.
-        if (!is.null(x)) {
-            ## FIXME Return FALSE on these.
-            assert(isVectorish(x))
+        ok <- isVectorish(x)
+        if (!isTRUE(ok)) {
+            return(ok)
         }
-        if (!is.null(y)) {
-            ## FIXME Return FALSE on these.
-            assert(isVectorish(y))
+        ok <- hasLength(x)
+        if (!isTRUE(ok)) {
+            return(ok)
         }
-        intersect <- intersect(x, y)
-        if (hasLength(intersect)) {
+        int <- intersect(x, y)
+        if (hasLength(int)) {
             return(false(
                 "{.var %s} and {.var %s} have common elements: %s",
                 toCauseName(x), toCauseName(y),
-                toString(intersect, width = 100L)
+                toString(int, width = 100L)
             ))
         }
         TRUE
@@ -130,16 +110,16 @@ areDisjointSets <-
 #' @export
 areIntersectingSets <-
     function(x, y) {
-        if (!is.null(x)) {
-            ## FIXME Return FALSE on these.
-            assert(isVectorish(x))
+        ok <- isVectorish(x)
+        if (!isTRUE(ok)) {
+            return(ok)
         }
-        if (!is.null(y)) {
-            ## FIXME Return FALSE on these.
-            assert(isVectorish(y))
+        ok <- hasLength(x)
+        if (!isTRUE(ok)) {
+            return(ok)
         }
-        intersect <- intersect(x, y)
-        if (!hasLength(intersect)) {
+        int <- intersect(x, y)
+        if (!hasLength(int)) {
             return(false(
                 "{.var %s} and {.var %s} have 0 common elements.",
                 toCauseName(x), toCauseName(y)
@@ -154,17 +134,18 @@ areIntersectingSets <-
 #' @export
 areSetEqual <-
     function(x, y) {
-        if (!is.null(x)) {
-            ## FIXME Return FALSE on these.
-            assert(isVectorish(x))
+        ok <- isVectorish(x)
+        if (!isTRUE(ok)) {
+            return(ok)
         }
-        if (!is.null(y)) {
-            ## FIXME Return FALSE on these.
-            assert(isVectorish(y))
+        ok <- hasLength(x)
+        if (!isTRUE(ok)) {
+            return(ok)
         }
         x <- unique(x)
         y <- unique(y)
-        if (length(x) != length(y)) {
+        ok <- length(x) != length(y)
+        if (!isTRUE(ok)) {
             return(false(
                 paste(
                     "{.var %s} and {.var %s} have different numbers",
