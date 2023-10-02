@@ -107,7 +107,7 @@ NULL
                 url = x,
                 redirect = TRUE,
                 verify = TRUE,
-                timeout = 3L
+                timeout = 5L
             )
         },
         silent = TRUE
@@ -128,7 +128,7 @@ NULL
 
 #' Check an HTTP(S) URL
 #'
-#' @note Updated 2023-09-22.
+#' @note Updated 2023-10-02.
 #' @noRd
 #'
 #' @section HTTP server status codes:
@@ -165,7 +165,7 @@ NULL
                 url = x,
                 redirect = TRUE,
                 verify = TRUE,
-                timeout = 1L
+                timeout = 3L
             )
         },
         silent = TRUE
@@ -203,6 +203,10 @@ isExistingUrl <- function(x) {
     ok <- isUrl(x)
     if (!all(ok)) {
         return(ok)
+    }
+    ok <- isMatchingRegex(x = x, pattern = "^(ftp|http|https)://")
+    if (!all(ok)) {
+        return(setCause(ok, false = "unsupported protocol"))
     }
     ok <- bapply(
         X = x,
