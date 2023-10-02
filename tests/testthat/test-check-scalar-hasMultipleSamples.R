@@ -19,7 +19,7 @@ test_that("FALSE", {
     expect_false(ok)
     expect_identical(
         object = cause(ok),
-        expected = "{.var list()} is not {.cls SummarizedExperiment}."
+        expected = "{.var list} is not {.cls SummarizedExperiment}."
     )
     object <- SummarizedExperiment::SummarizedExperiment(
         assay = matrix(
@@ -37,6 +37,9 @@ test_that("FALSE", {
     expect_false(ok)
     expect_identical(
         object = cause(ok),
-        expected = "{.var object} does not contain multiple samples."
+        expected = paste(
+            "{.var SummarizedExperiment} does not",
+            "contain multiple samples."
+        )
     )
 })

@@ -30,7 +30,7 @@ test_that("FALSE : rows containing all zeros", {
     expect_s4_class(ok, "goalie")
     expect_identical(
         object = cause(ok),
-        expected = "{.var x} has 1 zero row at position 2."
+        expected = "{.var dgCMatrix} has 1 zero row at position 2."
     )
 })
 
@@ -45,7 +45,7 @@ test_that("FALSE : columns containing all zeros", {
     expect_s4_class(ok, "goalie")
     expect_identical(
         object = cause(ok),
-        expected = "{.var x} has 2 zero columns at positions 3, 4."
+        expected = "{.var matrix} has 2 zero columns at positions 3, 4."
     )
 })
 
@@ -56,7 +56,7 @@ test_that("FALSE : no rows", {
     expect_s4_class(ok, "goalie")
     expect_identical(
         object = cause(ok),
-        expected = "The number of rows in {.var x} is zero."
+        expected = "The number of rows in {.var matrix} is zero."
     )
 })
 
@@ -67,7 +67,7 @@ test_that("FALSE : no columns", {
     expect_s4_class(ok, "goalie")
     expect_identical(
         object = cause(ok),
-        expected = "The number of columns in {.var x} is zero."
+        expected = "The number of columns in {.var matrix} is zero."
     )
 })
 
@@ -78,6 +78,6 @@ test_that("FALSE : no rows or columns", {
     expect_s4_class(ok, "goalie")
     expect_identical(
         object = cause(ok),
-        expected = "The number of rows in {.var x} is zero."
+        expected = "The number of rows in {.var matrix} is zero."
     )
 })
