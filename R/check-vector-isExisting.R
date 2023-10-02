@@ -50,6 +50,7 @@ isExisting <-
         ok <- bapply(
             X = x,
             FUN = exists,
+            USE.NAMES = FALSE,
             envir = envir,
             inherits = inherits
         )

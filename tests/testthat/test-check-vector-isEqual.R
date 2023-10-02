@@ -15,12 +15,13 @@ test_that("isEqualTo : FALSE", {
     ok <- isEqualTo(x = x, y = y)
     expect_s4_class(ok, "goalie")
     expect_identical(nocause(ok), rep(FALSE, 2L))
-    expected <- c(
-        "not equal to 0; abs diff = 1",
-        "not equal to 0; abs diff = 2"
+    expect_identical(
+        object = cause(ok),
+        expected = c(
+            "not equal to 0; abs diff = 1",
+            "not equal to 0; abs diff = 2"
+        )
     )
-    names(expected) <- x
-    expect_identical(cause(ok), expected)
     ok <- allAreEqualTo(x = x, y = y)
     expect_s4_class(ok, "goalie")
     expect_false(ok)

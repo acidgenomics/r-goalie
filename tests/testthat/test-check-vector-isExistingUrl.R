@@ -11,12 +11,7 @@ test_that("isExistingUrl", {
     ok <- isExistingUrl("https://failwhale.acidgenomics.com/")
     expect_s4_class(ok, "goalie")
     expect_false(ok)
-    expect_identical(
-        object = cause(ok),
-        expected = c(
-            "https://failwhale.acidgenomics.com/" = "URL doesn't exist"
-        )
-    )
+    expect_identical(cause(ok), "URL doesn't exist")
 })
 
 test_that("URL connection support", {
@@ -43,7 +38,7 @@ test_that("isAnExistingUrl", {
     expect_false(ok)
     expect_identical(
         object = cause(ok),
-        expected = "{.var character} doesn't have a length of 1.")
+        expected = "{.var character} doesn't have a length of 1."
     )
 })
 

@@ -12,7 +12,7 @@ test_that("FALSE", {
     expect_s4_class(ok, "goalie")
     expect_identical(
         object = cause(ok),
-        expected = c("function" = "not character")
+        expected = "not character"
     )
     expect_false(ok)
 })

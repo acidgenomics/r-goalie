@@ -8,7 +8,7 @@ test_that("isUrl", {
     expect_false(ok)
     expect_identical(
         object = cause(ok),
-        expected = c("xxx" = "not URL")
+        expected = "not URL"
     )
 })
 

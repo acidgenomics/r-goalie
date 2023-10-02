@@ -14,7 +14,7 @@ test_that("FALSE", {
     ok <- isExisting(c("x", "y"))
     expect_s4_class(ok, "goalie")
     expect_identical(nocause(ok), rep(FALSE, 2L))
-    expect_identical(cause(ok), c("x" = "non-existing", "y" = "non-existing"))
+    expect_identical(cause(ok), rep("non-existing", 2L))
 })
 
 
