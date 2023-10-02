@@ -11,9 +11,7 @@ test_that("FALSE : no access", {
     ok <- hasAccess(x)
     expect_s4_class(ok, "goalie")
     expect_identical(nocause(ok), rep(FALSE, 2L))
-    expected <- c("no access", "no access")
-    names(expected) <- x
-    expect_identical(cause(ok), expected)
+    expect_identical(cause(ok), rep("no access", 2L))
     ok <- allHaveAccess(x)
     expect_s4_class(ok, "goalie")
     expect_false(ok)
