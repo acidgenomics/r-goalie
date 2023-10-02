@@ -36,10 +36,9 @@ NULL
 
 #' @describeIn check-vector-isIntegerish Vectorized.
 #' @export
-isIntegerish <- function(
-        x,
-        infiniteOk = TRUE,
-        naOk = FALSE) {
+isIntegerish <- function(x,
+                         infiniteOk = TRUE,
+                         naOk = FALSE) {
     ok <- hasLength(x)
     if (!isTRUE(ok)) {
         return(ok)
