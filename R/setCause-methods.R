@@ -48,12 +48,6 @@ NULL
             false <- rep_len(false, ln)
             cause[idx] <- false[idx]
         }
-        if (is.null(names(object))) {
-            names(cause) <- as.character(seq_along(object))
-        } else {
-            names(cause) <- names(object)
-            object <- unname(object)
-        }
         goalie(object = object, cause = cause)
     }
 
