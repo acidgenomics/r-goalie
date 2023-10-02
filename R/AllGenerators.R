@@ -37,5 +37,8 @@ goalie <- function(object, cause) {
         object <- unname(object)
         return(object)
     }
+    if (is.null(names(cause))) {
+        names(cause) <- as.character(seq_along(cause))
+    }
     new(Class = "goalie", ".Data" = object, "cause" = cause)
 }
