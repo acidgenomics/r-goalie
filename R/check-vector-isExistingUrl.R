@@ -217,7 +217,8 @@ isExistingUrl <- function(x) {
                 "http" = .checkHttp(x),
                 "https" = .checkHttp(x)
             )
-        }
+        },
+        USE.NAMES = FALSE
     )
     setCause(ok, false = "URL doesn't exist")
 }
