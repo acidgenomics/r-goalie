@@ -88,7 +88,7 @@ hasAccess <- function(x, access = "r") {
         }
         TRUE
     }
-    ok <- bapply(X = x, FUN = checkAccess, access = access)
+    ok <- bapply(X = x, FUN = checkAccess, USE.NAMES = FALSE, access = access)
     setCause(ok, false = "no access")
 }
 
