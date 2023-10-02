@@ -35,25 +35,14 @@ NULL
 #' @describeIn check-vector-isEqual Vectorized.
 #' @export
 isEqualTo <- function(x, y) {
-    ok <- hasLength(x)
-    if (!isTRUE(ok)) {
-        return(ok)
-    }
     if (is(x, "Rle") || is(y, "Rle")) {
         requireNamespaces("S4Vectors")
         x <- S4Vectors::decode(x)
         y <- S4Vectors::decode(y)
     }
-    cn <- toCauseNames(x)
-    ok <- is.numeric(x)
-    if (!isTRUE(ok)) {
-        ko <- rep(x = FALSE, times = length(x))
-        names(ko) <- cn
-        return(setCause(ko, false = "not numeric"))
-    }
     diff <- abs(x - y)
     ok <- diff <= .tolerance
-    names(ok) <- cn
+    names(ok) <- toCauseNames(x)
     setCause(ok, sprintf("not equal to %g; abs diff = %g", y, diff))
 }
 
@@ -67,11 +56,6 @@ isNotEqualTo <- function(x, y) {
         x <- S4Vectors::decode(x)
         y <- S4Vectors::decode(y)
     }
-    ## FIXME Return FALSE on these.
-    assert(
-        is.numeric(x), is.numeric(y),
-        is.vector(x), is.vector(y)
-    )
     ok <- abs(x - y) > .tolerance
     names(ok) <- toCauseNames(x)
     setCause(ok, sprintf("equal to %g", y))
@@ -87,11 +71,6 @@ isGreaterThan <- function(x, y) {
         x <- S4Vectors::decode(x)
         y <- S4Vectors::decode(y)
     }
-    ## FIXME Return FALSE on these.
-    assert(
-        is.numeric(x), is.numeric(y),
-        is.vector(x), is.vector(y)
-    )
     ok <- x > y
     names(ok) <- toCauseNames(x)
     setCause(ok, false = paste("less than or equal to", y))
@@ -107,11 +86,6 @@ isGreaterThanOrEqualTo <- function(x, y) {
         x <- S4Vectors::decode(x)
         y <- S4Vectors::decode(y)
     }
-    ## FIXME Return FALSE on these.
-    assert(
-        is.numeric(x), is.numeric(y),
-        is.vector(x), is.vector(y)
-    )
     ok <- x >= y
     names(ok) <- toCauseNames(x)
     setCause(ok, false = paste("less than", y))
@@ -127,11 +101,6 @@ isLessThan <- function(x, y) {
         x <- S4Vectors::decode(x)
         y <- S4Vectors::decode(y)
     }
-    ## FIXME Return FALSE on these.
-    assert(
-        is.numeric(x), is.numeric(y),
-        is.vector(x), is.vector(y)
-    )
     ok <- x < y
     names(ok) <- toCauseNames(x)
     setCause(ok, false = paste("greater than or equal to", y))
@@ -147,11 +116,6 @@ isLessThanOrEqualTo <- function(x, y) {
         x <- S4Vectors::decode(x)
         y <- S4Vectors::decode(y)
     }
-    ## FIXME Return FALSE on these.
-    assert(
-        is.numeric(x), is.numeric(y),
-        is.vector(x), is.vector(y)
-    )
     ok <- x <= y
     names(ok) <- toCauseNames(x)
     setCause(ok, false = paste("greater than", y))
