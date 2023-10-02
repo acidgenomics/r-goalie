@@ -1,21 +1,15 @@
 test_that("TRUE", {
     expect_identical(
         object = isIntegerish(seq_len(2L)),
-        expected = c("1" = TRUE, "2" = TRUE)
+        expected = rep(TRUE, 2L)
     )
     expect_identical(
         object = isIntegerish(c(1, 2)), # nolint
-        expected = c(
-            "1.000000000000000e+00" = TRUE,
-            "2.000000000000000e+00" = TRUE
-        )
+        expected = rep(TRUE, 2L)
     )
     expect_identical(
         object = isIntegerish(S4Vectors::Rle(c(1, 2))), # nolint
-        expected = c(
-            "1.000000000000000e+00" = TRUE,
-            "2.000000000000000e+00" = TRUE
-        )
+        expected = rep(TRUE, 2L)
     )
 })
 
