@@ -1,11 +1,11 @@
 skip_on_os("windows")
 
-from <- "from.txt"
-to <- "to.txt"
+from <- file.path(tempdir(), "from.txt")
+to <- file.path(tempdir(), "to.txt")
 unlink(from)
 unlink(to)
-file.create(from)
-file.symlink(from = from, to = to)
+invisible(file.create(from))
+invisible(file.symlink(from = from, to = to))
 
 
 
@@ -18,11 +18,11 @@ test_that("FALSE : not symlink", {
     expect_s4_class(ok, "goalie")
     expect_identical(
         object = nocause(ok),
-        expected = c("from.txt" = FALSE, "to.txt" = TRUE)
+        expected = c(FALSE, TRUE)
     )
     expect_identical(
-        object = cause(ok),
-        expected = c("from.txt" = "not symlink", "to.txt" = NA_character_)
+        object = unname(cause(ok)),
+        expected = c("not symlink", NA_character_)
     )
 })
 
@@ -49,4 +49,4 @@ test_that("FALSE", {
 
 
 
-unlink(c(from, to))
+invisible(unlink(c(from, to)))
