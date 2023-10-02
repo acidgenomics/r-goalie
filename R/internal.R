@@ -113,7 +113,8 @@ NULL
             X = class,
             FUN = function(cl) {
                 .is2(x, cl)
-            }
+            },
+            USE.NAMES = FALSE
         )
         return(setCause(
             object = ok,
