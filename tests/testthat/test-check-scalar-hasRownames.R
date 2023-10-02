@@ -17,8 +17,8 @@ test_that("hasRownames", {
             tibble::tibble
         ),
         cause = c(
-            "{.var data} has integer row names (soft {.val NULL}).",
-            "{.var data} has {.val NULL} row names.",
+            "{.var data.frame} has integer row names (soft {.val NULL}).",
+            "{.var DFrame} has {.val NULL} row names.",
             "{.cls data.table} class doesn't support row names.",
             "{.cls tbl_df} class doesn't support row names."
         )
@@ -41,7 +41,7 @@ test_that("FALSE : data.frame sequence row names", {
     expect_s4_class(ok, "goalie")
     expect_identical(
         object = cause(ok),
-        expected = "{.var x} has integer row names (soft {.val NULL})."
+        expected = "{.var data.frame} has integer row names (soft {.val NULL})."
     )
 })
 
@@ -53,6 +53,6 @@ test_that("FALSE : DataFrame NULL", {
     expect_s4_class(ok, "goalie")
     expect_identical(
         object = cause(ok),
-        expected = "{.var x} has {.val NULL} row names."
+        expected = "{.var DFrame} has {.val NULL} row names."
     )
 })
