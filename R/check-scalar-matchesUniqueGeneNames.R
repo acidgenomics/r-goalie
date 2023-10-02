@@ -39,7 +39,10 @@ NULL
 matchesUniqueGeneNames <- function(x, genes) {
     ok <- isS4(x)
     if (!isTRUE(ok)) {
-        return(false("{.var %s} is not an S4 class object.", toCauseName(x)))
+        return(false(
+            "{.var %s} is not an S4 class object.",
+            toCauseName(x)
+        ))
     }
     ok <- isCharacter(genes)
     if (!isTRUE(ok)) {
@@ -54,7 +57,10 @@ matchesUniqueGeneNames <- function(x, genes) {
     all <- as.character(x[["geneName"]])
     ## Check for gene names (symbols).
     if (identical(length(all), 0L)) {
-        return(false("Gene names are not defined in {.var %s}.", toCauseName(x)))
+        return(false(
+            "Gene names are not defined in {.var %s}.",
+            toCauseName(x)
+        ))
     }
     ## Require that the user passed in gene names.
     ok <- isSubset(genes, all)
