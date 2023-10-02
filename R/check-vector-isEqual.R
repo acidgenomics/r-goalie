@@ -1,7 +1,7 @@
 #' How does the input relate to a value?
 #'
 #' @name check-vector-isEqual
-#' @note Updated 2022-12-14.
+#' @note Updated 2023-10-02.
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
@@ -35,19 +35,29 @@ NULL
 #' @describeIn check-vector-isEqual Vectorized.
 #' @export
 isEqualTo <- function(x, y) {
+    ok <- hasLength(x)
+    if (!isTRUE(ok)) {
+        return(ok)
+    }
+    ok <- hasLength(y)
+    if (!isTRUE(ok)) {
+        return(ok)
+    }
+    cn <- toCauseNames(x)
+    ok <- is.numeric(x) && is.numeric(y) && identical(length(x), length(y))
+    if (!isTRUE(ok)) {
+        ko <- rep(x = FALSE, times = length(x))
+        names(ko) <- cn
+        return(setCause(ko, false = "not numeric"))
+    }
     if (is(x, "Rle") || is(y, "Rle")) {
         requireNamespaces("S4Vectors")
         x <- S4Vectors::decode(x)
         y <- S4Vectors::decode(y)
     }
-    ## FIXME Just return FALSE on these.
-    assert(
-        is.numeric(x), is.numeric(y),
-        is.vector(x), is.vector(y)
-    )
     diff <- abs(x - y)
     ok <- diff <= .tolerance
-    names(ok) <- toCauseNames(x)
+    names(ok) <- cn
     setCause(ok, sprintf("not equal to %g; abs diff = %g", y, diff))
 }
 

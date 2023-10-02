@@ -1,7 +1,7 @@
 #' Does the input contain a symbolic link?
 #'
 #' @name check-vector-isSymlink
-#' @note Updated 2023-09-29.
+#' @note Updated 2023-10-02.
 #'
 #' @details
 #' Supported on Linux and macOS but not Windows.
