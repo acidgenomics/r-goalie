@@ -1,5 +1,5 @@
-files <- c("example1.txt", "example2.txt")
-file.create(files)
+files <- file.path(tempdir(), c("example1.txt", "example2.txt"))
+invisible(file.create(files))
 
 
 
@@ -9,21 +9,16 @@ test_that("TRUE", {
 
 ## Directories currently return TRUE, similar to base R `dir.exists()`.
 ## May want to tighten this in a future update to actual files only.
+
 test_that("TRUE : directory input", {
     ok <- isFile(c("~", "."))
-    expect_identical(
-        object = nocause(ok),
-        expected = c("~" = FALSE, "." = FALSE)
-    )
+    expect_identical(nocause(ok), rep(FALSE, 2L))
 })
 
 test_that("FALSE : not file", {
     ok <- isFile(c("aaa", "bbb"))
     expect_s4_class(ok, "goalie")
-    expect_identical(
-        object = nocause(ok),
-        expected = c("aaa" = FALSE, "bbb" = FALSE)
-    )
+    expect_identical(object = nocause(ok), rep(FALSE, 2L))
     expect_identical(
         object = cause(ok),
         expected = c("aaa" = "not file", "bbb" = "not file")
@@ -36,7 +31,7 @@ test_that("FALSE : not character", {
     expect_false(ok)
     expect_identical(
         object = cause(ok),
-        expected = "{.var x} is not character."
+        expected = c("1" = "not character")
     )
 })
 
@@ -70,4 +65,4 @@ test_that("FALSE", {
 
 
 
-file.remove(files)
+invisible(file.remove(files))
