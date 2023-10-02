@@ -7,17 +7,14 @@ test_that("TRUE", {
     a <- 1L
     b <- 2L
     ok <- isExisting(c("a", "b"))
-    expect_identical(ok, c(a = TRUE, b = TRUE))
+    expect_identical(ok, rep(TRUE, 2L))
 })
 
 test_that("FALSE", {
     ok <- isExisting(c("x", "y"))
     expect_s4_class(ok, "goalie")
-    expect_identical(nocause(ok), c(x = FALSE, y = FALSE))
-    expect_identical(
-        cause(ok),
-        c(x = "non-existing", y = "non-existing")
-    )
+    expect_identical(nocause(ok), rep(FALSE, 2L))
+    expect_identical(cause(ok), c("x" = "non-existing", "y" = "non-existing"))
 })
 
 

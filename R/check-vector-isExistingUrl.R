@@ -193,11 +193,14 @@ NULL
 #' @describeIn check-vector-isExistingUrl Vectorized.
 #' @export
 isExistingUrl <- function(x) {
-    ok <- isUrl(x)
-    if (!all(ok)) {
-        return(ok)
+    if (is(x, "url")) {
+        return(ifelse(
+            test = .checkCon(x),
+            yes = TRUE,
+            no = false("URL doesn't exist.")
+        ))
     }
-    ok <- isMatchingRegex(x = x, pattern = "^(ftp|http|https)://")
+    ok <- isUrl(x)
     if (!all(ok)) {
         return(ok)
     }
@@ -212,7 +215,7 @@ isExistingUrl <- function(x) {
             )
         }
     )
-    names(ok) <- cn
+    names(ok) <- toCauseNames(x)
     setCause(ok, false = "URL doesn't exist")
 }
 
