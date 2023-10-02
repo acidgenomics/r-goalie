@@ -18,7 +18,7 @@ NULL
 ## Standard functions ==========================================================
 
 #' @importFrom methods as formalArgs is isGeneric new selectMethod setClass
-#' setGeneric setMethod setValidity slot signature slot
+#' setGeneric setMethod setValidity show signature slot
 #' @importFrom utils URLencode capture.output head installed.packages
 #' packageVersion
 NULL
