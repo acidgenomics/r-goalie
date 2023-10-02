@@ -55,16 +55,11 @@ isIntegerish <- function(
         names(ko) <- cn
         return(setCause(ko, false = "not numeric"))
     }
-    if (isTRUE(naOk)) {
-        x[is.na(x)] <- 0L
-    }
-    if (isTRUE(infiniteOk)) {
-        x[is.infinite(x)] <- 0L
-    }
+    x[is.na(x)] <- ifelse(test = naOk, yes = 0L, no = 0.1)
+    x[is.infinite(x)] <- ifelse(test = infiniteOk, yes = 0L, no = 0.1)
     ok <- is.integer(x)
     if (all(ok)) {
-        names(ok) <- cn
-        return(ok)
+        return(rep(x = TRUE, times = length(x)))
     }
     ok <- bapply(
         X = x,
