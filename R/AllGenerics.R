@@ -33,3 +33,9 @@ setGeneric(
         standardGeneric("setCause")
     }
 )
+
+#' @rdname show
+#' @name show
+#' @usage show(object)
+#' @export
+NULL

@@ -21,11 +21,11 @@ falseFromVector(object, ...)
 Set a scalar false goalie check with cause attribute
 }
 \note{
-Updated 2022-05-13.
+Updated 2023-10-02.
 }
 \examples{
 x <- goalie(
-    object = c("aaa" = FALSE, "bbb" = TRUE, "ccc" = FALSE),
+    object = c(FALSE, TRUE, FALSE),
     cause = c("xxx", NA, "yyy")
 )
 print(x)

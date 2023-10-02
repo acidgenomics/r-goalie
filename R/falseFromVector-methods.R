@@ -1,7 +1,7 @@
 #' Set a scalar false goalie check with cause attribute
 #'
 #' @name falseFromVector
-#' @note Updated 2022-05-13.
+#' @note Updated 2023-10-02.
 #'
 #' @inheritParams AcidRoxygen::params
 #'
@@ -9,7 +9,7 @@
 #'
 #' @examples
 #' x <- goalie(
-#'     object = c("aaa" = FALSE, "bbb" = TRUE, "ccc" = FALSE),
+#'     object = c(FALSE, TRUE, FALSE),
 #'     cause = c("xxx", NA, "yyy")
 #' )
 #' print(x)
