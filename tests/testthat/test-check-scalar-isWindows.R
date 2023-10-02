@@ -1,3 +1,4 @@
 test_that("logical", {
-    expect_type(isWindows(), "logical")
+    ok <- isWindows()
+    expect_type(ok, "logical")
 })

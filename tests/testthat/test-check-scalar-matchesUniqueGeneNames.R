@@ -31,10 +31,7 @@ test_that("Not an S4 object", {
     expect_s4_class(ok, "goalie")
     expect_identical(
         object = cause(ok),
-        expected = paste(
-            "{.var SummarizedExperiment::assay(se)}",
-            "is not an S4 class object."
-        )
+        expected = "{.var matrix} is not an S4 class object."
     )
 })
 
@@ -44,7 +41,7 @@ test_that("Invalid genes input", {
     expect_s4_class(ok, "goalie")
     expect_identical(
         object = cause(ok),
-        expected = "{.var genes} is not character."
+        expected = "{.var NULL} is not character."
     )
 })
 

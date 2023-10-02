@@ -1,3 +1,4 @@
 test_that("isVanilla", {
-    expect_type(isVanilla(), "logical")
+    ok <- isVanilla()
+    expect_type(ok, "logical")
 })

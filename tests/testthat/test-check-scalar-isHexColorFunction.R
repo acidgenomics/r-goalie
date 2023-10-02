@@ -8,7 +8,7 @@ test_that("FALSE : not a function", {
     expect_s4_class(ok, "goalie")
     expect_identical(
         object = cause(ok),
-        expected = "{.var \"viridis\"} is not a function."
+        expected = "{.var viridis} is not a function."
     )
 })
 
@@ -18,10 +18,7 @@ test_that("FALSE : no 'n' formal", {
     expect_s4_class(ok, "goalie")
     expect_identical(
         object = cause(ok),
-        expected = paste(
-            "{.var ggplot2::scale_color_manual} doesn't contain",
-            "an {.arg n} argument."
-        )
+        expected = "{.var function} doesn't contain an {.arg n} argument."
     )
 })
 
@@ -39,7 +36,7 @@ test_that("Function with 'n' formal that isn't supported", {
     expect_s4_class(ok, "goalie")
     expect_identical(
         object = cause(ok),
-        expected = "{.var f} function didn't return any hex colors."
+        expected = "{.var function} function didn't return any hex colors."
     )
     f <- function(n) {
         "XXX"

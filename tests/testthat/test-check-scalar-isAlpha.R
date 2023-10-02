@@ -20,7 +20,7 @@ test_that("FALSE : not scalar double", {
     ok <- isAlpha(c(0.1, 0.1))
     expect_identical(
         object = cause(ok),
-        expected = "{.var c(0.1, 0.1)} is not scalar double."
+        expected = "{.var numeric} is not scalar double."
     )
 })
 
@@ -30,6 +30,6 @@ test_that("FALSE : zero integer", {
     expect_s4_class(ok, "goalie")
     expect_identical(
         object = cause(ok),
-        expected = "{.var 0L} is not scalar double."
+        expected = "{.var 0} is not scalar double."
     )
 })

@@ -1,3 +1,4 @@
 test_that("isVscode", {
-    expect_type(isVscode(), "logical")
+    ok <- isVscode()
+    expect_type(ok, "logical")
 })

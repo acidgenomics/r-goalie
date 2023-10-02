@@ -10,7 +10,7 @@ test_that("FALSE : logical but not boolean", {
     expect_identical(
         object = cause(ok),
         expected = paste(
-            "{.var c(TRUE, TRUE)} is not a boolean flag",
+            "{.var logical} is not a boolean flag",
             "({.val TRUE}/{.val FALSE})."
         )
     )
@@ -23,7 +23,7 @@ test_that("FALSE : integer", {
     expect_identical(
         object = cause(ok),
         expected = paste(
-            "{.var 1L} is not a boolean flag",
+            "{.var 1} is not a boolean flag",
             "({.val TRUE}/{.val FALSE})."
         )
     )
