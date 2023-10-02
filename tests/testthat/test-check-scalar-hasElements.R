@@ -12,11 +12,9 @@ test_that("FALSE", {
     expect_s4_class(ok, "goalie")
     expect_identical(
         object = cause(ok),
-        expected = "{.var list()} has 0 elements, not 1."
+        expected = "{.var list} has 0 elements, not 1."
     )
 })
-
-
 
 skip_if_not_installed("datasets")
 
@@ -32,7 +30,7 @@ test_that("FALSE : dimension mismatch", {
     expect_false(ok)
     expect_identical(
         object = cause(ok),
-        expected = "Dimensions 1, 2 of {.var datasets::mtcars} are incorrect."
+        expected = "Dimensions 1, 2 of {.var data.frame} are incorrect."
     )
 })
 
@@ -43,7 +41,7 @@ test_that("FALSE : expecting dim", {
     expect_identical(
         object = cause(ok),
         expected = paste(
-            "{.var datasets::mtcars} has dimensions {.val c(32L, 11L)},",
+            "{.var data.frame} has dimensions {.val c(32L, 11L)},",
             "not {.val NULL}."
         )
     )

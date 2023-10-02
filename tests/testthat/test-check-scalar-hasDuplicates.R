@@ -8,7 +8,7 @@ test_that("hasDuplicates : FALSE", {
     expect_s4_class(ok, "goalie")
     expect_identical(
         object = cause(ok),
-        expected = "{.var c(\"a\", \"b\")} has no duplicates."
+        expected = "{.var character} has no duplicates."
     )
 })
 
@@ -24,7 +24,7 @@ test_that("hasNoDuplicates : FALSE", {
     expect_identical(
         object = cause(ok),
         expected = paste(
-            "{.var x}",
+            "{.var character}",
             "has duplicates at positions 2, 4."
         )
     )
