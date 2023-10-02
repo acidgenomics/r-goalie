@@ -1,7 +1,7 @@
 #' Does the input contain a Git repository?
 #'
 #' @name check-vector-isGitRepo
-#' @note Updated 2022-12-14.
+#' @note Updated 2023-10-02.
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
@@ -21,13 +21,22 @@ NULL
 #' @describeIn check-vector-isGitRepo Vectorized.
 #' @export
 isGitRepo <- function(x) {
-    ok <- isCharacter(x)
-    if (!all(ok)) {
+    ok <- hasLength(x)
+    if (!isTRUE(ok)) {
         return(ok)
+    }
+    cn <- toCauseNames(x)
+    ok <- isCharacter(x)
+    if (!isTRUE(ok)) {
+        ko <- rep(x = FALSE, times = length(x))
+        names(ko) <- cn
+        return(setCause(ko, false = "not character"))
     }
     ok <- isSystemCommand("git")
     if (!isTRUE(ok)) {
-        return(ok)
+        ko <- rep(x = FALSE, times = length(x))
+        names(ko) <- cn
+        return(setCause(ko, false = "no git"))
     }
     requireNamespaces("AcidBase")
     ok <- bapply(
@@ -52,12 +61,17 @@ isGitRepo <- function(x) {
                     )
                     isADir(gitDir)
                 },
-                warning = function(w) FALSE,
-                error = function(e) FALSE
+                warning = function(w) {
+                    FALSE
+                },
+                error = function(e) {
+                    FALSE
+                }
             )
             ok
         }
     )
+    names(ok) <- cn
     setCause(ok, false = "not git repo")
 }
 

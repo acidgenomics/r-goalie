@@ -40,13 +40,13 @@ isIntegerish <- function(
         x,
         infiniteOk = TRUE,
         naOk = FALSE) {
-    if (is(x, "Rle")) {
-        requireNamespaces("S4Vectors")
-        x <- S4Vectors::decode(x)
-    }
     ok <- hasLength(x)
     if (!isTRUE(ok)) {
         return(ok)
+    }
+    if (is(x, "Rle")) {
+        requireNamespaces("S4Vectors")
+        x <- S4Vectors::decode(x)
     }
     cn <- toCauseNames(x)
     ok <- is.numeric(x)
