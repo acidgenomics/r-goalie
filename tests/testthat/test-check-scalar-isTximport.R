@@ -21,6 +21,6 @@ test_that("FALSE", {
     expect_false(ok)
     expect_identical(
         object = cause(ok),
-        expected = "{.var list()} is not a tximport list."
+        expected = "{.var list} is not a tximport list."
     )
 })

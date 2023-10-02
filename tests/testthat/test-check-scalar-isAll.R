@@ -10,6 +10,6 @@ test_that("FALSE", {
     expect_s4_class(ok, "goalie")
     expect_identical(
         object = cause(ok),
-        expected = "{.var x} is not all of: integer, NULL."
+        expected = "{.var 1} is not all of: integer, NULL."
     )
 })

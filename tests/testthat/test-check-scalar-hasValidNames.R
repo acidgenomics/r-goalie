@@ -25,7 +25,7 @@ test_that("Unset names", {
     expect_s4_class(ok, "goalie")
     expect_identical(
         object = cause(ok),
-        expected = "{.var x} doesn't have names."
+        expected = "{.var data.frame} doesn't have names."
     )
 })
 
