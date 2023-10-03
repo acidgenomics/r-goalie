@@ -1,5 +1,28 @@
 # Release notes
 
+## goalie 0.7.0 (2023-10-03)
+
+Major changes:
+
+- Reworked primary `goalie` class to only accept unnamed input and unnamed
+  cause attribute. Hardened validity checks to error if names are attempted
+  to be passed through. This required updating some internal `bapply` calls
+  to set `USE.NAMES` as `FALSE`.
+- Vectorized checks should now always return the same length as the input.
+- Now enforcing strict camel case for function names.
+- Renamed `hasCPU` to `hasCpu`.
+- Renamed `hasGitHubPAT` to `hasGithubPat`.
+- Renamed `hasRAM` to `hasRam`.
+- Renamed `isGGScale` to `isGgscale`.
+- Renamed `isMacOS` to `isMacos`.
+- Renamed `isRStudio` to `isRstudio`.
+- Renamed `isExistingURL` to `isExistingUrl`, and other variants.
+- Renamed `isURL` to `isUrl`, and other variants.
+
+Minor changes:
+
+- No longer using `getNameInParent` approach, which makes functions cleaner.
+
 ## goalie 0.6.18 (2023-09-19)
 
 New functions:
