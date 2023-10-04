@@ -49,10 +49,6 @@ isSubset <-
         if (!isTRUE(ok)) {
             return(ok)
         }
-        ok <- hasLength(x)
-        if (!isTRUE(ok)) {
-            return(ok)
-        }
         if (isS4(x) || isS4(y)) {
             requireNamespaces("S4Vectors")
             `%in%` <- S4Vectors::`%in%` # nolint
@@ -89,10 +85,6 @@ areDisjointSets <-
         if (!isTRUE(ok)) {
             return(ok)
         }
-        ok <- hasLength(x)
-        if (!isTRUE(ok)) {
-            return(ok)
-        }
         int <- intersect(x, y)
         if (hasLength(int)) {
             return(false(
@@ -114,10 +106,6 @@ areIntersectingSets <-
         if (!isTRUE(ok)) {
             return(ok)
         }
-        ok <- hasLength(x)
-        if (!isTRUE(ok)) {
-            return(ok)
-        }
         int <- intersect(x, y)
         if (!hasLength(int)) {
             return(false(
@@ -135,10 +123,6 @@ areIntersectingSets <-
 areSetEqual <-
     function(x, y) {
         ok <- isVectorish(x)
-        if (!isTRUE(ok)) {
-            return(ok)
-        }
-        ok <- hasLength(x)
         if (!isTRUE(ok)) {
             return(ok)
         }
