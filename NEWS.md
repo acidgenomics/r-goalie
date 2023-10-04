@@ -1,5 +1,11 @@
 # Release notes
 
+## goalie 0.7.1 (2023-10-04)
+
+Minor changes:
+
+- Remove length checks for set comparisons.
+
 ## goalie 0.7.0 (2023-10-03)
 
 Major changes:
