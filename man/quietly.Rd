@@ -25,3 +25,10 @@ quietly({
 })
 print(object)
 }
+\seealso{
+\itemize{
+\item \code{sink()} and \code{nullfile()}.
+\item \code{utils::capture.output()}.
+\item https://stackoverflow.com/questions/2723034/
+}
+}
