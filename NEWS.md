@@ -1,5 +1,11 @@
 # Release notes
 
+## goalie 0.7.2 (2023-10-06)
+
+Major changes:
+
+- Remove import requirement of utils package.
+
 ## goalie 0.7.1 (2023-10-04)
 
 Minor changes:
