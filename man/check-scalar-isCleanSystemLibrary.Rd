@@ -15,7 +15,7 @@ isCleanSystemLibrary()
 Is the R system library clean?
 }
 \note{
-Updated 2023-09-29.
+Updated 2023-10-06.
 }
 \examples{
 isCleanSystemLibrary()

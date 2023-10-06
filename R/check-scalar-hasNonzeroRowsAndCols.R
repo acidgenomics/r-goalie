@@ -55,7 +55,7 @@ hasNonzeroRowsAndCols <- function(x) {
     zeroRows <- rowSums(x) == 0L
     if (any(zeroRows)) {
         n <- sum(zeroRows, na.rm = TRUE)
-        which <- toString(x = head(which(zeroRows)), width = 100L)
+        which <- toString(x = .head(which(zeroRows)), width = 100L)
         return(false(
             ngettext(
                 n = n,
@@ -68,7 +68,7 @@ hasNonzeroRowsAndCols <- function(x) {
     zeroCols <- colSums(x) == 0L
     if (any(zeroCols)) {
         n <- sum(zeroCols, na.rm = TRUE)
-        which <- toString(head(which(zeroCols)), width = 100L)
+        which <- toString(.head(which(zeroCols)), width = 100L)
         return(false(
             ngettext(
                 n = n,

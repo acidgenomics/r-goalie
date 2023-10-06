@@ -26,12 +26,11 @@ Updated 2022-05-13.
 \examples{
 ## TRUE ====
 x <- list("a" = 1L, "b" = 2L)
-names(x)
-hasValidNames(x)
+print(names(x))
+print(hasValidNames(x))
 
 x <- datasets::iris
-lapply(X = dimnames(x), FUN = head)
-hasValidDimnames(x)
+print(hasValidDimnames(x))
 
 ## FALSE ====
 x <- list(
@@ -40,12 +39,10 @@ x <- list(
     "foo-bar" = 3 # no hyphens
 )
 print(x)
-hasValidNames(x)
+print(hasValidNames(x))
 
 x <- datasets::mtcars
-# Note the spaces in the row names here.
-lapply(X = dimnames(x), FUN = head)
-hasValidDimnames(x)
+print(hasValidDimnames(x))
 }
 \seealso{
 \code{validNames()}.
