@@ -9,6 +9,11 @@
 #'
 #' @return Invisible `NULL`.
 #'
+#' @seealso
+#' - `sink()` and `nullfile()`.
+#' - `utils::capture.output()`.
+#' - https://stackoverflow.com/questions/2723034/
+#'
 #' @examples
 #' quietly({
 #'     message("hello world")
@@ -16,15 +21,14 @@
 #' })
 #' print(object)
 quietly <- function(expr) {
-    stopifnot(requireNamespace("utils", quietly = TRUE))
     invisible({
-        utils::capture.output({
-            suppressWarnings({
-                suppressMessages({
-                    expr
-                })
+        sink(file = nullfile(), type = "output")
+        suppressWarnings({
+            suppressMessages({
+                expr
             })
         })
+        sink()
         NULL
     })
 }
