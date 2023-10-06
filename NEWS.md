@@ -1,5 +1,13 @@
 # Release notes
 
+## goalie 0.7.3 (2023-10-06)
+
+Minor changes:
+
+- `hasDims`, `hasRows`, `hasCols`: Add edge case support for `DFrameList`
+  class, which uses `dims` instead of `dim`, `nrows` instead of `nrow`, and
+  `ncols` instead of `ncol`.
+
 ## goalie 0.7.2 (2023-10-06)
 
 Major changes:
