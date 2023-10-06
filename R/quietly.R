@@ -21,6 +21,7 @@
 #' })
 #' print(object)
 quietly <- function(expr) {
+    ## nolint start
     invisible({
         sink(file = nullfile(), type = "output")
         suppressWarnings({
@@ -31,4 +32,5 @@ quietly <- function(expr) {
         sink()
         NULL
     })
+    ## nolint end
 }
