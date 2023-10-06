@@ -1,7 +1,7 @@
 #' Is the R system library clean?
 #'
 #' @name check-scalar-isCleanSystemLibrary
-#' @note Updated 2023-09-29.
+#' @note Updated 2023-10-06.
 #'
 #' @inherit check return
 #'
@@ -14,7 +14,8 @@ NULL
 #' @rdname check-scalar-isCleanSystemLibrary
 #' @export
 isCleanSystemLibrary <- function() {
-    x <- installed.packages()
+    requireNamespaces("utils")
+    x <- utils::installed.packages()
     ## Subset information on base packages.
     base <- x[which(x[, "Priority"] == "base"), , drop = FALSE]
     ## Expect a single system library.

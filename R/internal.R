@@ -76,6 +76,19 @@ NULL
 
 
 
+#' Head of vector
+#'
+#' @note Updated 2023-10-06.
+#' @noRd
+#'
+#' @seealso
+#' - `utils::head`.
+.head <- function(x) {
+    x[seq(from = 1L, to = min(length(x), 6L))]
+}
+
+
+
 #' Is an object from a class?
 #'
 #' Alternate version of [`is()`][methods::is] that supports multiple checks in a

@@ -16,7 +16,7 @@ Invisible \code{NULL}.
 Suppress all warnings, messages, and console output.
 }
 \note{
-Updated 2023-04-26.
+Updated 2023-10-06.
 }
 \examples{
 quietly({

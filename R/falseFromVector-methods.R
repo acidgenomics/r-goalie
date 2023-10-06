@@ -21,7 +21,7 @@ NULL
 
 
 
-## Updated 2023-10-02.
+## Updated 2023-10-06.
 `falseFromVector,goalie` <- # nolint
     function(object) {
         if (isFALSE(object)) {
@@ -31,7 +31,7 @@ NULL
         cause <- cause(object)[idx]
         object <- object[idx]
         if (identical(length(unique(cause)), 1L)) {
-            x <- paste0(unique(cause), ": ", toString(head(idx)), ".")
+            x <- paste0(unique(cause), ": ", toString(.head(idx)), ".")
         } else {
             x <- Map(
                 f = function(pos, value) {
@@ -40,7 +40,7 @@ NULL
                 pos = idx,
                 value = cause
             )
-            x <- head(x)
+            x <- .head(x)
             x <- unlist(x)
             x <- paste(x, collapse = "\n")
         }

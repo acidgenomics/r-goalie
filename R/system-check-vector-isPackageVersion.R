@@ -1,7 +1,7 @@
 #' Is the package installed and a specific version?
 #'
 #' @name check-vector-isPackageVersion
-#' @note Updated 2023-10-02.
+#' @note Updated 2023-10-06.
 #'
 #' @param x `character`.
 #' Named character vector.
@@ -15,8 +15,8 @@
 #' ## TRUE ====
 #' isPackageVersion(
 #'     x = c(
-#'         "base" = packageVersion("base"),
-#'         "utils" = packageVersion("utils")
+#'         "base" = utils::packageVersion("base"),
+#'         "utils" = utils::packageVersion("utils")
 #'     ),
 #'     op = "=="
 #' )
@@ -24,8 +24,8 @@
 #' ## FALSE ====
 #' isPackageVersion(
 #'     x = c(
-#'         "base" = packageVersion("base"),
-#'         "utils" = packageVersion("utils")
+#'         "base" = utils::packageVersion("base"),
+#'         "utils" = utils::packageVersion("utils")
 #'     ),
 #'     op = ">"
 #' )
@@ -48,12 +48,13 @@ isPackageVersion <- function(x, op = ">=") {
     packages <- basename(names(x))
     versions <- package_version(x)
     op <- get(x = op, inherits = TRUE)
+    requireNamespaces("utils")
     ok <- unlist(Map(
         f = function(package, version, op) {
             if (!isInstalled(package)) {
                 return(FALSE)
             }
-            op(e1 = packageVersion(package), e2 = version)
+            op(e1 = utils::packageVersion(package), e2 = version)
         },
         package = packages,
         version = versions,
