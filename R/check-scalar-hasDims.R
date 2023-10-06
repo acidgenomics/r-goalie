@@ -1,7 +1,7 @@
 #' Does the input have dimensions?
 #'
 #' @name check-scalar-hasDims
-#' @note Updated 2023-09-19.
+#' @note Updated 2023-10-06.
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
@@ -12,6 +12,9 @@
 #' If `NULL`, only checks for non-zero dimensions.
 #'
 #' @seealso
+#' - `dim()` or `BiocGenerics::dims()` for `DFrameList`.
+#' - `nrow()` or `BiocGenerics::nrows()` for `DFrameList`.
+#' - `ncol()` or `BiocGenerics::ncols()` for `DFrameList`.
 #' - `assertive.properties::has_dims()`.
 #' - `assertive.properties::has_rows()`.
 #' - `assertive.properties::has_cols()`.
@@ -45,6 +48,21 @@ NULL
 #' @rdname check-scalar-hasDims
 #' @export
 hasDims <- function(x, n = NULL) {
+    if (is(x, "DFrameList")) {
+        requireNamespaces("BiocGenerics")
+        if (!is.null(n)) {
+            stop("'n' is not supported for 'DFrameList'.")
+        }
+        d <- BiocGenerics::dims(x)
+        ok <- length(d) > 0L
+        return(setCause(
+            object = ok,
+            false = sprintf(
+                "The dimensions of {.var %s} are empty.",
+                .toName(x)
+            )
+        ))
+    }
     d <- dim(x)
     if (is.null(d)) {
         return(false(
@@ -67,6 +85,8 @@ hasDims <- function(x, n = NULL) {
 }
 
 
+
+## FIXME Need to rework this for DFL.
 
 #' @rdname check-scalar-hasDims
 #' @export
@@ -100,6 +120,8 @@ hasRows <- function(x, n = NULL) {
 }
 
 
+
+## FIXME Need to rework this for DFL.
 
 #' @rdname check-scalar-hasDims
 #' @export
