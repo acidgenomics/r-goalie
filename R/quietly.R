@@ -16,7 +16,7 @@
 #' })
 #' print(object)
 quietly <- function(expr) {
-    requireNamespaces("utils")
+    stopifnot(requireNamespace("utils", quietly = TRUE))
     invisible({
         utils::capture.output({
             suppressWarnings({
