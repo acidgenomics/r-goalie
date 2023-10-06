@@ -5,6 +5,7 @@
 Major changes:
 
 - Remove import requirement of utils package.
+- `quietly` now uses base R `sink` instead of `utils::capture.output`.
 
 ## goalie 0.7.1 (2023-10-04)
 
