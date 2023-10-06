@@ -54,11 +54,11 @@ hasDims <- function(x, n = NULL) {
             stop("'n' is not supported for 'DFrameList'.")
         }
         d <- BiocGenerics::dims(x)
-        ok <- length(d) > 0L
+        ok <- isTRUE(length(d) > 0L) && all(rowSums(d) > 0L)
         return(setCause(
             object = ok,
             false = sprintf(
-                "The dimensions of {.var %s} are empty.",
+                "Not all dimensions in {.var %s} are non-zero.",
                 .toName(x)
             )
         ))
@@ -86,11 +86,24 @@ hasDims <- function(x, n = NULL) {
 
 
 
-## FIXME Need to rework this for DFL.
-
 #' @rdname check-scalar-hasDims
 #' @export
 hasRows <- function(x, n = NULL) {
+    if (is(x, "DFrameList")) {
+        requireNamespaces("BiocGenerics")
+        if (!is.null(n)) {
+            stop("'n' is not supported for 'DFrameList'.")
+        }
+        nr <- BiocGenerics::nrows(x)
+        ok <- all(nr > 0L)
+        return(setCause(
+            object = ok,
+            false = sprintf(
+                "Not all rows in {.var %s} are non-zero.",
+                .toName(x)
+            )
+        ))
+    }
     nr <- nrow(x)
     if (is.null(nr)) {
         return(false(
@@ -121,11 +134,24 @@ hasRows <- function(x, n = NULL) {
 
 
 
-## FIXME Need to rework this for DFL.
-
 #' @rdname check-scalar-hasDims
 #' @export
 hasCols <- function(x, n = NULL) {
+    if (is(x, "DFrameList")) {
+        requireNamespaces("BiocGenerics")
+        if (!is.null(n)) {
+            stop("'n' is not supported for 'DFrameList'.")
+        }
+        nc <- BiocGenerics::ncols(x)
+        ok <- all(nc > 0L)
+        return(setCause(
+            object = ok,
+            false = sprintf(
+                "Not all columns in {.var %s} are non-zero.",
+                .toName(x)
+            )
+        ))
+    }
     nc <- ncol(x)
     if (is.null(nc)) {
         return(false(
