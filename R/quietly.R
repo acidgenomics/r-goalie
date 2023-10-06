@@ -3,7 +3,7 @@
 #' Suppress all warnings, messages, and console output.
 #'
 #' @export
-#' @note Updated 2023-04-26.
+#' @note Updated 2023-10-06.
 #'
 #' @param expr Expression to evaluate.
 #'
@@ -16,8 +16,9 @@
 #' })
 #' print(object)
 quietly <- function(expr) {
+    requireNamespaces("utils")
     invisible({
-        capture.output({
+        utils::capture.output({
             suppressWarnings({
                 suppressMessages({
                     expr

@@ -25,14 +25,14 @@ Is the package installed and a specific version?
 
 }}
 \note{
-Updated 2023-10-02.
+Updated 2023-10-06.
 }
 \examples{
 ## TRUE ====
 isPackageVersion(
     x = c(
-        "base" = packageVersion("base"),
-        "utils" = packageVersion("utils")
+        "base" = utils::packageVersion("base"),
+        "utils" = utils::packageVersion("utils")
     ),
     op = "=="
 )
@@ -40,8 +40,8 @@ isPackageVersion(
 ## FALSE ====
 isPackageVersion(
     x = c(
-        "base" = packageVersion("base"),
-        "utils" = packageVersion("utils")
+        "base" = utils::packageVersion("base"),
+        "utils" = utils::packageVersion("utils")
     ),
     op = ">"
 )
