@@ -1,8 +1,8 @@
 Package: goalie
 Title: Assertive Check Functions
 Description: Assertive check functions for defensive R programming.
-Version: 0.7.3
-Date: 2023-10-06
+Version: 0.7.4
+Date: 2023-10-25
 Authors@R: c(
     person(
         "Michael", "Steinbaugh",
@@ -29,6 +29,7 @@ Suggests:
     AcidSingleCell,
     AcidTest,
     Biobase,
+    BiocGenerics,
     BiocManager,
     BiocParallel,
     Matrix,
