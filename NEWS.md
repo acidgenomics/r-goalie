@@ -1,5 +1,12 @@
 # Release notes
 
+## goalie 0.7.4 (2023-10-25)
+
+Minor changes:
+
+- Updated suggested packages so automated build checks pass. This required
+  adding BiocGenerics and memuse, which is used by `AcidBase::ram`.
+
 ## goalie 0.7.3 (2023-10-06)
 
 Minor changes:
