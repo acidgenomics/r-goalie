@@ -38,6 +38,7 @@ Suggests:
     SummarizedExperiment,
     data.table,
     ggplot2,
+    memuse,
     rmarkdown,
     testthat,
     tibble,
