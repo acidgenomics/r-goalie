@@ -29,7 +29,7 @@ If \code{NULL}, only checks for non-zero dimensions.}
 Does the input have dimensions?
 }
 \note{
-Updated 2023-09-19.
+Updated 2023-10-06.
 }
 \examples{
 ## TRUE ====
@@ -56,6 +56,9 @@ hasCols(x)
 }
 \seealso{
 \itemize{
+\item \code{dim()} or \code{BiocGenerics::dims()} for \code{DFrameList}.
+\item \code{nrow()} or \code{BiocGenerics::nrows()} for \code{DFrameList}.
+\item \code{ncol()} or \code{BiocGenerics::ncols()} for \code{DFrameList}.
 \item \code{assertive.properties::has_dims()}.
 \item \code{assertive.properties::has_rows()}.
 \item \code{assertive.properties::has_cols()}.
