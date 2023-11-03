@@ -9,9 +9,9 @@
 \usage{
 isExistingAwsS3Uri(x, profile = "default")
 
-isAnExistingAwsS3Uri(x)
+isAnExistingAwsS3Uri(x, profile = "default")
 
-allAreExistingAwsS3Uris(x)
+allAreExistingAwsS3Uris(x, profile = "default")
 }
 \arguments{
 \item{x}{Object.}
@@ -56,5 +56,6 @@ isAnExistingAwsS3Uri(
 \seealso{
 \itemize{
 \item https://www.learnaws.org/2023/01/30/aws-s3-cli-check-file/
+\item koopa function \code{koopa_is_existing_aws_s3_uri}.
 }
 }
