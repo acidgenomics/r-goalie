@@ -49,5 +49,5 @@ allAreAwsS3Uris(uris)
 
 ## FALSE ====
 isAwsS3Uri("xxx")
-isAnAwsS3Uri(uri)
+isAnAwsS3Uri(uris)
 }
