@@ -36,7 +36,7 @@ Requires the AWS CLI to be installed.
 \item \code{isAnExistingAwsS3Uri()}: Scalar. Requires a single URI.
 
 \item \code{allAreExistingAwsS3Uris()}: Scalar. Checks that all strings
-are existing URis.
+are existing URIs.
 
 }}
 \note{
