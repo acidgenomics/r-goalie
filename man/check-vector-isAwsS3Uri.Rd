@@ -45,7 +45,7 @@ uris <- c("s3://acidgenomics.com/", "s3://koopa.acidgenomics.com/")
 ## TRUE ====
 isAwsS3Uri(uris)
 isAnAwsS3Uri(uris[[1L]])
-allAreAwsS3Uris(urls)
+allAreAwsS3Uris(uris)
 
 ## FALSE ====
 isAwsS3Uri("xxx")
