@@ -17,8 +17,7 @@ allAreExistingAwsS3Uris(x, profile = "default")
 \item{x}{Object.}
 
 \item{profile}{\code{character(1)}.
-AWS profile name.
-Refer to \verb{aws help} for details.}
+AWS profile name.}
 }
 \value{
 \code{TRUE} on success;
@@ -26,6 +25,9 @@ Refer to \verb{aws help} for details.}
 }
 \description{
 Does the input contain an existing (active) AWS S3 URI?
+}
+\details{
+Requires the AWS CLI to be installed.
 }
 \section{Functions}{
 \itemize{
@@ -42,19 +44,20 @@ Updated 2023-11-03.
 }
 \examples{
 ## TRUE ====
-isAnExistingAwsS3Uri(
-    x = "s3://koopa.acidgenomics.com/install",
-    profile = "acidgenomics"
-)
+## > isAnExistingAwsS3Uri(
+## >     x = "s3://koopa.acidgenomics.com/install",
+## >     profile = "acidgenomics"
+## > )
 
 ## FALSE ====
-isAnExistingAwsS3Uri(
-    x = "s3://koopa.acidgenomics.com/foo",
-    profile = "acidgenomics"
-)
+## > isAnExistingAwsS3Uri(
+## >     x = "s3://koopa.acidgenomics.com/foo",
+## >     profile = "acidgenomics"
+## > )
 }
 \seealso{
 \itemize{
+\item \verb{aws help}.
 \item https://www.learnaws.org/2023/01/30/aws-s3-cli-check-file/
 \item koopa function \code{koopa_is_existing_aws_s3_uri}.
 }
