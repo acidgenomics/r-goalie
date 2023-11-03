@@ -3,29 +3,32 @@
 #' @name check-vector-isExistingAwsS3Uri
 #' @note Updated 2023-11-03.
 #'
+#' @details
+#' Requires the AWS CLI to be installed.
+#'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
 #'
 #' @param profile `character(1)`.
 #' AWS profile name.
-#' Refer to `aws help` for details.
 #'
 #' @seealso
+#' - `aws help`.
 #' - https://www.learnaws.org/2023/01/30/aws-s3-cli-check-file/
 #' - koopa function `koopa_is_existing_aws_s3_uri`.
 #'
 #' @examples
 #' ## TRUE ====
-#' isAnExistingAwsS3Uri(
-#'     x = "s3://koopa.acidgenomics.com/install",
-#'     profile = "acidgenomics"
-#' )
+#' ## > isAnExistingAwsS3Uri(
+#' ## >     x = "s3://koopa.acidgenomics.com/install",
+#' ## >     profile = "acidgenomics"
+#' ## > )
 #'
 #' ## FALSE ====
-#' isAnExistingAwsS3Uri(
-#'     x = "s3://koopa.acidgenomics.com/foo",
-#'     profile = "acidgenomics"
-#' )
+#' ## > isAnExistingAwsS3Uri(
+#' ## >     x = "s3://koopa.acidgenomics.com/foo",
+#' ## >     profile = "acidgenomics"
+#' ## > )
 NULL
 
 
@@ -114,7 +117,7 @@ isAnExistingAwsS3Uri <- function(x, profile = "default") {
 #' are existing URis.
 #' @export
 allAreExistingAwsS3Uris <- function(x, profile = "default") {
-    ok <- isExistingUrl(x = x, profile = profile)
+    ok <- isExistingAwsS3Uri(x = x, profile = profile)
     if (!all(ok)) {
         return(falseFromVector(ok))
     }
