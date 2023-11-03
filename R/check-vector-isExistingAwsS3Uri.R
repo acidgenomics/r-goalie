@@ -114,7 +114,7 @@ isAnExistingAwsS3Uri <- function(x, profile = "default") {
 
 
 #' @describeIn check-vector-isExistingAwsS3Uri Scalar. Checks that all strings
-#' are existing URis.
+#' are existing URIs.
 #' @export
 allAreExistingAwsS3Uris <- function(x, profile = "default") {
     ok <- isExistingAwsS3Uri(x = x, profile = profile)
