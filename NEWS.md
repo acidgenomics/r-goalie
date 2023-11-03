@@ -1,5 +1,12 @@
 # Release notes
 
+## goalie 0.7.5 (2023-11-03)
+
+New functions:
+
+- `isAwsS3Uri`: Check if the input contains AWS S3 URIs.
+- `isExistingAwsS3Uri`: Check if the input contains AWS S3 URIs that exist.
+
 ## goalie 0.7.4 (2023-10-25)
 
 Minor changes:
