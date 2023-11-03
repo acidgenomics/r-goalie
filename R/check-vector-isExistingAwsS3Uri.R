@@ -48,7 +48,7 @@ isExistingAwsS3Uri <- function(x, profile = "default") {
     requireNamespaces("AcidBase")
     ok <- bapply(
         X = x,
-        profile = profile
+        profile = profile,
         FUN = function(x, profile) {
             bucket <- sub(
                 pattern = "^s3://([^/]+)/(.+)$",
@@ -96,12 +96,12 @@ isExistingAwsS3Uri <- function(x, profile = "default") {
 
 #' @describeIn check-vector-isExistingAwsS3Uri Scalar. Requires a single URI.
 #' @export
-isAnExistingAwsS3Uri <- function(x) {
+isAnExistingAwsS3Uri <- function(x, profile = "default") {
     ok <- isScalar(x)
     if (!isTRUE(ok)) {
         return(ok)
     }
-    ok <- isExistingUrl(x)
+    ok <- isExistingAwsS3Uri(x = x, profile = profile)
     if (!all(ok)) {
         return(falseFromVector(ok))
     }
@@ -113,8 +113,8 @@ isAnExistingAwsS3Uri <- function(x) {
 #' @describeIn check-vector-isExistingAwsS3Uri Scalar. Checks that all strings
 #' are existing URis.
 #' @export
-allAreExistingAwsS3Uris <- function(x) {
-    ok <- isExistingUrl(x)
+allAreExistingAwsS3Uris <- function(x, profile = "default") {
+    ok <- isExistingUrl(x = x, profile = profile)
     if (!all(ok)) {
         return(falseFromVector(ok))
     }
