@@ -1,5 +1,11 @@
 # Release notes
 
+## goalie 0.7.6 (UNRELEASED)
+
+Minor changes:
+
+- `quietly`: Now correctly closes `sink` connection on error.
+
 ## goalie 0.7.5 (2023-11-03)
 
 New functions:
