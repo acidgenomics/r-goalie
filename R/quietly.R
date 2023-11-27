@@ -34,7 +34,7 @@ quietly <- function(expr) {
         },
         error = function(e) {
             sink()
-            simpleError(e)
+            e
         },
         message = function(m) {
             invokeRestart("muffleMessage")
