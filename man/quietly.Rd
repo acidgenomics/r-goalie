@@ -16,7 +16,7 @@ Invisible \code{NULL}.
 Suppress all warnings, messages, and console output.
 }
 \note{
-Updated 2023-10-06.
+Updated 2023-11-27.
 }
 \examples{
 quietly({
@@ -27,8 +27,12 @@ print(object)
 }
 \seealso{
 \itemize{
+\item \code{help("conditions")}
 \item \code{sink()} and \code{nullfile()}.
 \item \code{utils::capture.output()}.
 \item https://stackoverflow.com/questions/2723034/
+\item https://stackoverflow.com/questions/18730491/
+\item https://stackoverflow.com/questions/25320381/
+\item https://stackoverflow.com/questions/4948361/
 }
 }
