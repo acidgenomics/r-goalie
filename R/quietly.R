@@ -1,3 +1,7 @@
+## FIXME This doesn't close sink on error correctly currently.
+
+
+
 #' Perform an action quietly
 #'
 #' Suppress all warnings, messages, and console output.
