@@ -1,6 +1,6 @@
 # Release notes
 
-## goalie 0.7.6 (UNRELEASED)
+## goalie 0.7.6 (2023-11-28)
 
 Minor changes:
 
