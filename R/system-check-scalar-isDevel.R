@@ -1,7 +1,3 @@
-## nocov start
-
-
-
 #' Is the current session running inside R-devel?
 #'
 #' @name check-scalar-isDevel
@@ -27,7 +23,3 @@ isDevel <- function() {
     }
     TRUE
 }
-
-
-
-## nocov end

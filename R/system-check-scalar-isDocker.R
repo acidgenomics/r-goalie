@@ -1,7 +1,3 @@
-## nocov start
-
-
-
 #' Is the R session running inside Docker?
 #'
 #' @name check-scalar-isDocker
@@ -31,7 +27,3 @@ isDocker <-
         }
         TRUE
     }
-
-
-
-## nocov end
