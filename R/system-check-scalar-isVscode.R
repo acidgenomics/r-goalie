@@ -1,7 +1,3 @@
-## nocov start
-
-
-
 #' Is the current R session running inside Visual Studio Code?
 #'
 #' @name check-scalar-isVscode
@@ -24,7 +20,3 @@ isVscode <- function() {
     }
     TRUE
 }
-
-
-
-## nocov end
