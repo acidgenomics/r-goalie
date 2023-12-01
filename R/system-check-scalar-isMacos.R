@@ -1,7 +1,3 @@
-## nocov start
-
-
-
 #' Is the operating system macOS?
 #'
 #' @name check-scalar-isMacos
@@ -25,7 +21,3 @@ isMacos <- function() {
     }
     TRUE
 }
-
-
-
-## nocov end
