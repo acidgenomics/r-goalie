@@ -27,11 +27,12 @@ genus \emph{Homo}, and our species is \emph{sapiens} -- so the scientific name i
 \emph{Homo sapiens}.
 }
 \note{
-Updated 2020-01-06.
+Updated 2023-12-04.
 }
 \examples{
 ## TRUE ====
 isOrganism("Homo sapiens")
+isOrganism("Canis lupus familiaris")
 
 ## FALSE ====
 isOrganism("Human")

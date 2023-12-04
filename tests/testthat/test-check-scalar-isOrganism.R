@@ -1,6 +1,7 @@
 test_that("TRUE", {
     expect_true(isOrganism("Homo sapiens"))
     expect_true(isOrganism("Mus musculus"))
+    expect_true(isOrganism("Canis lupus familiaris"))
 })
 
 test_that("FALSE", {
