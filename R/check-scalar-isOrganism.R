@@ -7,7 +7,7 @@
 #' *Homo sapiens*.
 #'
 #' @name check-scalar-isOrganism
-#' @note Updated 2020-01-06.
+#' @note Updated 2023-12-04.
 #'
 #' @inherit check
 #' @inheritParams AcidRoxygen::params
@@ -15,6 +15,7 @@
 #' @examples
 #' ## TRUE ====
 #' isOrganism("Homo sapiens")
+#' isOrganism("Canis lupus familiaris")
 #'
 #' ## FALSE ====
 #' isOrganism("Human")
@@ -34,7 +35,10 @@ isOrganism <-
         if (!isTRUE(ok)) {
             return(ok)
         }
-        ok <- isMatchingRegex(x = x, pattern = "^[A-Z][a-z]+ [a-z]+$")
+        ok <- isMatchingRegex(
+            x = x,
+            pattern = "^[A-Z][a-z]+\\s[a-z]+(\\s[a-z]+)?$"
+        )
         if (!isTRUE(ok)) {
             return(ok)
         }

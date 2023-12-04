@@ -1,5 +1,12 @@
 # Release notes
 
+## goalie 0.7.7 (2023-12-04)
+
+Minor changes:
+
+- `isOrganism`: Added support for full latin with three names, such as
+  `"Canis lupus familiaris"`.
+
 ## goalie 0.7.6 (2023-11-28)
 
 Minor changes:
