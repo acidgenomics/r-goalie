@@ -72,5 +72,5 @@ packages:
 [bioconda]: https://bioconda.github.io/
 [bioconductor]: https://bioconductor.org/
 [checkmate]: https://cran.r-project.org/package=checkmate
-[conda]: https://conda.io/
+[conda]: https://docs.conda.io/
 [r]: https://www.r-project.org/
