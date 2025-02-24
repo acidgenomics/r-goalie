@@ -69,6 +69,11 @@ NULL
 #' @note Updated 2025-02-24.
 #' @noRd
 #'
+#' Note that we're setting `verify = FALSE` in `curlGetHeaders` call here to
+#' avoid self-signed certificate issues that can arise behind corporate
+#' firewalls and with non-standard R installations. This should not be a
+#' security issue, since we're just checking to see if the URL exists here.
+#'
 #' @section FTP server status codes:
 #'
 #' - 1xx: positive preliminary reply
@@ -130,6 +135,11 @@ NULL
 #'
 #' @note Updated 2025-02-24.
 #' @noRd
+#'
+#' Note that we're setting `verify = FALSE` in `curlGetHeaders` call here to
+#' avoid self-signed certificate issues that can arise behind corporate
+#' firewalls and with non-standard R installations. This should not be a
+#' security issue, since we're just checking to see if the URL exists here.
 #'
 #' @section HTTP server status codes:
 #'
