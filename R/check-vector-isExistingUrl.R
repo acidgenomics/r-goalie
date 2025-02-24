@@ -1,7 +1,7 @@
 #' Does the input contain an existing (active) URL?
 #'
 #' @name check-vector-isExistingUrl
-#' @note Updated 2023-10-02.
+#' @note Updated 2025-02-24.
 #'
 #' @details
 #' Supports HTTPS, HTTP, and FTP protocols.
@@ -66,7 +66,7 @@ NULL
 
 #' Check an FTP URL
 #'
-#' @note Updated 2023-09-15.
+#' @note Updated 2025-02-24.
 #' @noRd
 #'
 #' @section FTP server status codes:
@@ -106,7 +106,7 @@ NULL
             curlGetHeaders(
                 url = x,
                 redirect = TRUE,
-                verify = TRUE,
+                verify = FALSE,
                 timeout = 5L
             )
         },
@@ -128,7 +128,7 @@ NULL
 
 #' Check an HTTP(S) URL
 #'
-#' @note Updated 2023-10-02.
+#' @note Updated 2025-02-24.
 #' @noRd
 #'
 #' @section HTTP server status codes:
@@ -164,7 +164,7 @@ NULL
             curlGetHeaders(
                 url = x,
                 redirect = TRUE,
-                verify = TRUE,
+                verify = FALSE,
                 timeout = 3L
             )
         },
