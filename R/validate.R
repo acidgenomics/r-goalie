@@ -61,12 +61,12 @@ validate <- function(..., msg = NULL) {
             ## Validity checks must return `logical(1)` or `character(1)`.
             ## In the event of `FALSE`, return `character(1)` automatically.
             if (isTRUE(r)) {
-                return(TRUE)
+                return(TRUE) # nolint
             } else if (is.character(r)) {
                 ## We're allowing the user to pass `character(1)` through here,
                 ## enabling the use of other check functions (see checkmate
                 ## package for examples).
-                return(r)
+                return(r) # nolint
             } else if (isFALSE(r)) {
                 namedMsg <- names(mc)[-1L][[i]]
                 if (!is.null(namedMsg)) {
@@ -82,7 +82,7 @@ validate <- function(..., msg = NULL) {
                         msg <- paste0(msg, "\nCause: ", cause)
                     }
                 }
-                return(msg)
+                return(msg) # nolint
             } else {
                 stop(sprintf(
                     paste0(
@@ -102,7 +102,7 @@ validate <- function(..., msg = NULL) {
     }
     if (is.null(msg)) {
         fail <- unlist(Filter(f = Negate(isTRUE), x = checks))
-        msg <- paste0(fail, collapse = "\n")
+        msg <- paste(fail, sep = "", collapse = "\n")
     }
     if (!is.character(msg) || length(msg) != 1L) {
         stop("Invalid 'msg' input.")
