@@ -14,7 +14,7 @@ test_that("isMatchingFixed : FALSE", {
     expect_s4_class(ok, "goalie")
     expect_false(any(ok))
     ok <- allAreMatchingFixed(x = x, pattern = pattern)
-    expect_false(ok)
+    expect_false(nocause(ok))
 })
 
 test_that("isMatchingRegex : TRUE", {
@@ -34,7 +34,7 @@ test_that("isMatchingRegex : FALSE", {
     expect_false(any(ok))
     ok <- allAreMatchingRegex(x = x, pattern = pattern)
     expect_s4_class(ok, "goalie")
-    expect_false(ok)
+    expect_false(nocause(ok))
 })
 
 test_that("isNotMatchingFixed : TRUE", {
@@ -54,7 +54,7 @@ test_that("isNotMatchingFixed : FALSE", {
     expect_false(any(ok))
     ok <- allAreNotMatchingFixed(x = x, pattern = pattern)
     expect_s4_class(ok, "goalie")
-    expect_false(ok)
+    expect_false(nocause(ok))
 })
 
 test_that("isNotMatchingRegex : TRUE", {
@@ -73,5 +73,5 @@ test_that("isNotMatchingRegex : FALSE", {
     expect_s4_class(ok, "goalie")
     expect_false(any(ok))
     ok <- allAreNotMatchingRegex(x = x, pattern = pattern)
-    expect_false(ok)
+    expect_false(nocause(ok))
 })

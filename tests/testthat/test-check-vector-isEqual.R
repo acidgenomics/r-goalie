@@ -24,7 +24,7 @@ test_that("isEqualTo : FALSE", {
     )
     ok <- allAreEqualTo(x = x, y = y)
     expect_s4_class(ok, "goalie")
-    expect_false(ok)
+    expect_false(nocause(ok))
 })
 
 test_that("isNotEqualTo : TRUE", {
@@ -44,7 +44,7 @@ test_that("isNotEqualTo : FALSE", {
     expect_false(any(ok))
     ok <- allAreNotEqualTo(x = x, y = y)
     expect_s4_class(ok, "goalie")
-    expect_false(ok)
+    expect_false(nocause(ok))
 })
 
 test_that("isGreaterThan : TRUE", {
@@ -64,7 +64,7 @@ test_that("isGreaterThan : FALSE", {
     expect_false(any(ok))
     ok <- allAreGreaterThan(x = x, y = y)
     expect_s4_class(ok, "goalie")
-    expect_false(ok)
+    expect_false(nocause(ok))
 })
 
 test_that("isGreaterThanOrEqualTo : TRUE", {
@@ -84,7 +84,7 @@ test_that("isGreaterThanOrEqualTo : FALSE", {
     expect_false(any(ok))
     ok <- allAreGreaterThanOrEqualTo(x = x, y = y)
     expect_s4_class(ok, "goalie")
-    expect_false(ok)
+    expect_false(nocause(ok))
 })
 
 test_that("isLessThan : TRUE", {
@@ -104,7 +104,7 @@ test_that("isLessThan : FALSE", {
     expect_false(any(ok))
     ok <- allAreLessThan(x = x, y = y)
     expect_s4_class(ok, "goalie")
-    expect_false(ok)
+    expect_false(nocause(ok))
 })
 
 test_that("isLessThanOrEqualTo : TRUE", {
@@ -124,5 +124,5 @@ test_that("isLessThanOrEqualTo : FALSE", {
     expect_false(any(ok))
     ok <- allAreLessThanOrEqualTo(x = x, y = y)
     expect_s4_class(ok, "goalie")
-    expect_false(ok)
+    expect_false(nocause(ok))
 })

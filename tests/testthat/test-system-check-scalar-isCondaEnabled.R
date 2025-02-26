@@ -32,7 +32,7 @@ test_that("FALSE", {
         code = {
             ok <- isCondaEnabled()
             expect_s4_class(ok, "goalie")
-            expect_false(ok)
+            expect_false(nocause(ok))
             expect_identical(cause(ok), "Conda is not enabled.")
         }
     )
@@ -44,7 +44,7 @@ test_that("FALSE", {
         code = {
             ok <- isCondaEnabled(ignoreBase = TRUE)
             expect_s4_class(ok, "goalie")
-            expect_false(ok)
+            expect_false(nocause(ok))
             expect_identical(
                 object = cause(ok),
                 expected = "Ignoring active conda {.val base} environment."

@@ -15,7 +15,7 @@ test_that("FALSE", {
         new = c("GITHUB_PAT" = ""),
         code = {
             ok <- hasGithubPat()
-            expect_false(ok)
+            expect_false(nocause(ok))
         }
     )
 })

@@ -4,7 +4,7 @@ test_that("hasDuplicates : TRUE", {
 
 test_that("hasDuplicates : FALSE", {
     ok <- hasDuplicates(c("a", "b"))
-    expect_false(ok)
+    expect_false(nocause(ok))
     expect_s4_class(ok, "goalie")
     expect_identical(
         object = cause(ok),
@@ -19,7 +19,7 @@ test_that("hasNoDuplicates : TRUE", {
 test_that("hasNoDuplicates : FALSE", {
     x <- c("a", "a", "b", "b")
     ok <- hasNoDuplicates(x)
-    expect_false(ok)
+    expect_false(nocause(ok))
     expect_s4_class(ok, "goalie")
     expect_identical(
         object = cause(ok),
@@ -30,6 +30,6 @@ test_that("hasNoDuplicates : FALSE", {
     )
     y <- S4Vectors::Rle(x)
     ok <- hasNoDuplicates(y)
-    expect_false(ok)
+    expect_false(nocause(ok))
     expect_s4_class(ok, "goalie")
 })

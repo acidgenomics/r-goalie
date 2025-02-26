@@ -8,7 +8,7 @@ test_that("FALSE", {
     expect_false(hasElements(character()))
     expect_false(hasElements(list()))
     ok <- hasElements(list(), n = 1L)
-    expect_false(ok)
+    expect_false(nocause(ok))
     expect_s4_class(ok, "goalie")
     expect_identical(
         object = cause(ok),
@@ -27,7 +27,7 @@ test_that("TRUE", {
 test_that("FALSE : dimension mismatch", {
     ok <- isOfDimension(datasets::mtcars, n = c(1L, 1L))
     expect_s4_class(ok, "goalie")
-    expect_false(ok)
+    expect_false(nocause(ok))
     expect_identical(
         object = cause(ok),
         expected = "Dimensions 1, 2 of {.var data.frame} are incorrect."
@@ -37,7 +37,7 @@ test_that("FALSE : dimension mismatch", {
 test_that("FALSE : expecting dim", {
     ok <- isOfDimension(datasets::mtcars, n = NULL)
     expect_s4_class(ok, "goalie")
-    expect_false(ok)
+    expect_false(nocause(ok))
     expect_identical(
         object = cause(ok),
         expected = paste(

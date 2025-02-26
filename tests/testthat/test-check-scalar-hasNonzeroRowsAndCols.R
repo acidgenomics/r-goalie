@@ -26,7 +26,7 @@ test_that("FALSE : rows containing all zeros", {
         x = 7L * (seq_len(7L))
     )
     ok <- hasNonzeroRowsAndCols(x)
-    expect_false(ok)
+    expect_false(nocause(ok))
     expect_s4_class(ok, "goalie")
     expect_identical(
         object = cause(ok),
@@ -41,7 +41,7 @@ test_that("FALSE : columns containing all zeros", {
         byrow = FALSE
     )
     ok <- hasNonzeroRowsAndCols(x)
-    expect_false(ok)
+    expect_false(nocause(ok))
     expect_s4_class(ok, "goalie")
     expect_identical(
         object = cause(ok),
@@ -52,7 +52,7 @@ test_that("FALSE : columns containing all zeros", {
 test_that("FALSE : no rows", {
     x <- matrix(nrow = 0L, ncol = 1L)
     ok <- hasNonzeroRowsAndCols(x)
-    expect_false(ok)
+    expect_false(nocause(ok))
     expect_s4_class(ok, "goalie")
     expect_identical(
         object = cause(ok),
@@ -63,7 +63,7 @@ test_that("FALSE : no rows", {
 test_that("FALSE : no columns", {
     x <- matrix(nrow = 1L, ncol = 0L)
     ok <- hasNonzeroRowsAndCols(x)
-    expect_false(ok)
+    expect_false(nocause(ok))
     expect_s4_class(ok, "goalie")
     expect_identical(
         object = cause(ok),
@@ -74,7 +74,7 @@ test_that("FALSE : no columns", {
 test_that("FALSE : no rows or columns", {
     x <- matrix(nrow = 0L, ncol = 0L)
     ok <- hasNonzeroRowsAndCols(x)
-    expect_false(ok)
+    expect_false(nocause(ok))
     expect_s4_class(ok, "goalie")
     expect_identical(
         object = cause(ok),

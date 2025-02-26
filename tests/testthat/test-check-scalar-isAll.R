@@ -6,7 +6,7 @@ test_that("TRUE", {
 
 test_that("FALSE", {
     ok <- isAll(x, classes = c("integer", "NULL"))
-    expect_false(ok)
+    expect_false(nocause(ok))
     expect_s4_class(ok, "goalie")
     expect_identical(
         object = cause(ok),

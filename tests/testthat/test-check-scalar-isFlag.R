@@ -5,7 +5,7 @@ test_that("TRUE", {
 
 test_that("FALSE : logical but not boolean", {
     ok <- isFlag(c(TRUE, TRUE))
-    expect_false(ok)
+    expect_false(nocause(ok))
     expect_s4_class(ok, "goalie")
     expect_identical(
         object = cause(ok),
@@ -18,7 +18,7 @@ test_that("FALSE : logical but not boolean", {
 
 test_that("FALSE : integer", {
     ok <- isFlag(1L)
-    expect_false(ok)
+    expect_false(nocause(ok))
     expect_s4_class(ok, "goalie")
     expect_identical(
         object = cause(ok),
@@ -31,7 +31,7 @@ test_that("FALSE : integer", {
 
 test_that("FALSE : NA is logical but not boolean", {
     ok <- isFlag(NA)
-    expect_false(ok)
+    expect_false(nocause(ok))
     expect_s4_class(ok, "goalie")
     expect_identical(
         object = cause(ok),

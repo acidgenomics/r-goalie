@@ -8,7 +8,7 @@ test_that("TRUE", {
 
 test_that("FALSE", {
     ok <- isAny(x, classes = c("character", "data.frame"))
-    expect_false(ok)
+    expect_false(nocause(ok))
     expect_s4_class(ok, "goalie")
     expect_identical(
         object = cause(ok),
@@ -18,7 +18,7 @@ test_that("FALSE", {
 
 test_that("Invalid classes argument", {
     ok <- isAny("XXX", classes = NULL)
-    expect_false(ok)
+    expect_false(nocause(ok))
     expect_s4_class(ok, "goalie")
     expect_identical(
         object = cause(ok),

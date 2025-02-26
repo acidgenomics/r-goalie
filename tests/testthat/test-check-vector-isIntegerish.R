@@ -16,7 +16,7 @@ test_that("TRUE", {
 test_that("FALSE", {
     ok <- isIntegerish(0.1)
     expect_s4_class(ok, "goalie")
-    expect_false(ok)
+    expect_false(nocause(ok))
     expect_identical(
         object = cause(ok),
         expected = "not integer"

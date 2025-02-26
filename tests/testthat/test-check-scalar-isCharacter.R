@@ -5,7 +5,7 @@ test_that("TRUE", {
 
 test_that("FALSE : numeric sequence", {
     ok <- isCharacter(seq_len(5L))
-    expect_false(ok)
+    expect_false(nocause(ok))
     expect_s4_class(ok, "goalie")
     expect_identical(
         object = cause(ok),

@@ -14,5 +14,5 @@ test_that("FALSE", {
         object = cause(ok),
         expected = "not character"
     )
-    expect_false(ok)
+    expect_false(nocause(ok))
 })

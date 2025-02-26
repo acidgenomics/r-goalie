@@ -15,7 +15,7 @@ test_that("FALSE", {
         new = list("acid.dark" = NULL),
         code = {
             ok <- isDark()
-            expect_false(ok)
+            expect_false(nocause(ok))
             expect_s4_class(ok, "goalie")
             expect_identical(
                 object = cause(ok),

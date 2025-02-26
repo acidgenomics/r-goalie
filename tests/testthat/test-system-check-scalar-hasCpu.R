@@ -7,7 +7,7 @@ test_that("TRUE", {
 test_that("FALSE", {
     actual <- AcidBase::cpus()
     ok <- hasCpu(n = Inf)
-    expect_false(ok)
+    expect_false(nocause(ok))
     expect_identical(
         object = cause(ok),
         expected = sprintf(
