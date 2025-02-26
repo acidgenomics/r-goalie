@@ -15,10 +15,10 @@ test_that("TRUE", {
 })
 
 test_that("FALSE", {
-    expect_false(any(isCompressedFile(fail)))
-    expect_false(isACompressedFile(pass))
-    expect_false(isACompressedFile(fail[[1L]]))
-    expect_false(allAreCompressedFiles(fail))
+    expect_false(nocause(any(isCompressedFile(fail))))
+    expect_false(nocause(isACompressedFile(pass)))
+    expect_false(nocause(isACompressedFile(fail[[1L]])))
+    expect_false(nocause(allAreCompressedFiles(fail)))
 })
 
 invisible(file.remove(pass, fail))

@@ -7,5 +7,5 @@ test_that("TRUE", {
 test_that("FALSE", {
     x <- c("AAA", "BBB")
     expect_false(all(isInstalled(x)))
-    expect_false(allAreInstalled(x))
+    expect_false(nocause(allAreInstalled(x)))
 })

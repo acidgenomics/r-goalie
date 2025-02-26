@@ -9,7 +9,7 @@ test_that("TRUE", {
         package = "AcidTest",
         envir = environment()
     )
-    expect_false(hasMultipleSamples(SingleCellExperiment_Seurat))
+    expect_false(nocause(hasMultipleSamples(SingleCellExperiment_Seurat)))
     expect_true(hasMultipleSamples(SingleCellExperiment_splatter))
 })
 

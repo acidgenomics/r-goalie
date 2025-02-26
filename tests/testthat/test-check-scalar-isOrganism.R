@@ -5,12 +5,12 @@ test_that("TRUE", {
 })
 
 test_that("FALSE", {
-    expect_false(isOrganism("Human"))
-    expect_false(isOrganism("Homo Sapiens"))
-    expect_false(isOrganism("homo_sapiens"))
+    expect_false(nocause(isOrganism("Human")))
+    expect_false(nocause(isOrganism("Homo Sapiens")))
+    expect_false(nocause(isOrganism("homo_sapiens")))
 })
 
 test_that("nullOk", {
-    expect_false(isOrganism(NULL, nullOk = FALSE))
+    expect_false(nocause(isOrganism(NULL, nullOk = FALSE)))
     expect_true(isOrganism(NULL, nullOk = TRUE))
 })
