@@ -10,7 +10,7 @@ test_that("FALSE", {
     y <- list(b = 2L, c = 3L)
     ok <- areSameLength(x = x, y = y)
     expect_s4_class(ok, "goalie")
-    expect_false(ok)
+    expect_false(nocause(ok))
     expect_identical(
         object = cause(ok),
         expected = "{.var list} doesn't have the same length as {.var list}."

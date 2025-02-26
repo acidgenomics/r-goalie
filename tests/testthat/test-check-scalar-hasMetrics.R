@@ -9,7 +9,7 @@ x <- RangedSummarizedExperiment
 
 test_that("FALSE", {
     ok <- hasMetrics(x)
-    expect_false(ok)
+    expect_false(nocause(ok))
     expect_s4_class(ok, "goalie")
     expect_match(cause(ok), "nCount, nFeature")
 })

@@ -26,7 +26,7 @@ test_that("FALSE : not scalar double", {
 
 test_that("FALSE : zero integer", {
     ok <- isAlpha(0L)
-    expect_false(ok)
+    expect_false(nocause(ok))
     expect_s4_class(ok, "goalie")
     expect_identical(
         object = cause(ok),

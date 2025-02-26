@@ -6,7 +6,7 @@ test_that("TRUE", {
 test_that("Duplicated columns", {
     x <- matrix(data = rep(seq_len(10L), times = 2L), ncol = 2L)
     ok <- hasUniqueCols(x)
-    expect_false(ok)
+    expect_false(nocause(ok))
     expect_s4_class(ok, "goalie")
     expect_match(
         as.character(cause(ok)),
@@ -17,7 +17,7 @@ test_that("Duplicated columns", {
 test_that("1 column", {
     x <- matrix(data = rep(seq_len(10L), times = 1L), ncol = 1L)
     ok <- hasUniqueCols(x)
-    expect_false(ok)
+    expect_false(nocause(ok))
     expect_s4_class(ok, "goalie")
     expect_identical(
         object = cause(ok),

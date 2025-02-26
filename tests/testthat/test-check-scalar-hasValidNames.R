@@ -10,7 +10,7 @@ test_that("FALSE", {
         `foo-bar` = 3L # no hyphens
     )
     ok <- hasValidNames(x)
-    expect_false(ok)
+    expect_false(nocause(ok))
     expect_s4_class(ok, "goalie")
     expect_match(
         object = cause(ok),
@@ -21,7 +21,7 @@ test_that("FALSE", {
 test_that("Unset names", {
     x <- data.frame()
     ok <- hasValidNames(x)
-    expect_false(ok)
+    expect_false(nocause(ok))
     expect_s4_class(ok, "goalie")
     expect_identical(
         object = cause(ok),
@@ -42,7 +42,7 @@ test_that("FALSE", {
     ## Note the spaces in the row names here.
     x <- datasets::mtcars
     ok <- hasValidDimnames(x)
-    expect_false(ok)
+    expect_false(nocause(ok))
     expect_s4_class(ok, "goalie")
     expect_match(
         object = cause(ok),
@@ -54,7 +54,7 @@ test_that("FALSE", {
         check.names = FALSE
     )
     ok <- hasValidDimnames(x)
-    expect_false(ok)
+    expect_false(nocause(ok))
     expect_s4_class(ok, "goalie")
     expect_match(
         object = cause(ok),

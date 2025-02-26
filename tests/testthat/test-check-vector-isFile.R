@@ -28,7 +28,7 @@ test_that("FALSE : not file", {
 test_that("FALSE : not character", {
     ok <- isFile(1L)
     expect_s4_class(ok, "goalie")
-    expect_false(ok)
+    expect_false(nocause(ok))
     expect_identical(
         object = cause(ok),
         expected = "not character"
@@ -45,7 +45,7 @@ test_that("FALSE", {
     expect_false(isAFile("~"))
     ok <- isAFile("aaa")
     expect_s4_class(ok, "goalie")
-    expect_false(ok)
+    expect_false(nocause(ok))
 })
 
 test_that("nullOk", {

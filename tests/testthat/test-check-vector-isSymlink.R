@@ -34,7 +34,7 @@ test_that("TRUE", {
 test_that("FALSE", {
     ok <- isASymlink(from)
     expect_s4_class(ok, "goalie")
-    expect_false(ok)
+    expect_false(nocause(ok))
 })
 
 

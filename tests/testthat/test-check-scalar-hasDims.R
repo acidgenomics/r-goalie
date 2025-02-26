@@ -4,7 +4,7 @@ test_that("hasDims", {
     ## Note that dims don't have to be non-zero, just not NULL.
     expect_true(hasDims(data.frame()))
     ok <- hasDims(list())
-    expect_false(ok)
+    expect_false(nocause(ok))
     expect_s4_class(ok, "goalie")
     expect_identical(
         object = cause(ok),
@@ -30,7 +30,7 @@ test_that("n length support", {
     expect_true(hasDims(x, n = c(3, 2))) # nolint
     ok <- hasDims(x, n = c(2L, 3L))
     expect_s4_class(ok, "goalie")
-    expect_false(ok)
+    expect_false(nocause(ok))
     expect_identical(
         object = cause(ok),
         expected = paste(
@@ -42,7 +42,7 @@ test_that("n length support", {
     expect_true(hasRows(x, n = 3)) # nolint
     ok <- hasRows(x, n = 2L)
     expect_s4_class(ok, "goalie")
-    expect_false(ok)
+    expect_false(nocause(ok))
     expect_identical(
         object = cause(ok),
         expected = paste(
@@ -54,7 +54,7 @@ test_that("n length support", {
     expect_true(hasCols(x, n = 2)) # nolint
     ok <- hasCols(x, n = 3L)
     expect_s4_class(ok, "goalie")
-    expect_false(ok)
+    expect_false(nocause(ok))
     expect_identical(
         object = cause(ok),
         expected = paste(

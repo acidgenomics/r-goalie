@@ -1,7 +1,7 @@
 test_that("cause", {
     ok <- false("xxx")
     expect_s4_class(ok, "goalie")
-    expect_false(ok)
+    expect_false(nocause(ok))
     expect_identical(cause(ok), "xxx")
 })
 

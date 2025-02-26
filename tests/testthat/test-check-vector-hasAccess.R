@@ -14,13 +14,13 @@ test_that("FALSE : no access", {
     expect_identical(cause(ok), rep("no access", 2L))
     ok <- allHaveAccess(x)
     expect_s4_class(ok, "goalie")
-    expect_false(ok)
+    expect_false(nocause(ok))
 })
 
 test_that("FALSE : NULL input", {
     ok <- hasAccess(NULL)
     expect_s4_class(ok, "goalie")
-    expect_false(ok)
+    expect_false(nocause(ok))
     expect_identical(
         object = cause(ok),
         expected = "{.var NULL} has length 0."

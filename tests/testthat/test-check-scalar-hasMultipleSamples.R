@@ -16,7 +16,7 @@ test_that("TRUE", {
 test_that("FALSE", {
     ok <- hasMultipleSamples(list())
     expect_s4_class(ok, "goalie")
-    expect_false(ok)
+    expect_false(nocause(ok))
     expect_identical(
         object = cause(ok),
         expected = "{.var list} is not {.cls SummarizedExperiment}."
@@ -34,7 +34,7 @@ test_that("FALSE", {
     )
     ok <- hasMultipleSamples(object)
     expect_s4_class(ok, "goalie")
-    expect_false(ok)
+    expect_false(nocause(ok))
     expect_identical(
         object = cause(ok),
         expected = paste(

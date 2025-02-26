@@ -1,7 +1,7 @@
 test_that("All FALSE", {
     ok <- setCause(object = FALSE, false = "xxx")
     expect_s4_class(ok, "goalie")
-    expect_false(ok)
+    expect_false(nocause(ok))
     expect_identical(
         object = cause(ok),
         expected = "xxx"
