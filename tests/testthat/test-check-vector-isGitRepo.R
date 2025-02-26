@@ -6,7 +6,7 @@ test_that("isGitRepo", {
     expect_type(ok, "logical")
     ok <- allAreGitRepos(x)
     expect_type(ok, "logical")
-    expect_false(isGitRepo(1L))
+    expect_false(nocause(isGitRepo(1L)))
     expect_false(nocause(isAGitRepo(1L)))
     expect_false(nocause(allAreGitRepos(1L)))
 })
