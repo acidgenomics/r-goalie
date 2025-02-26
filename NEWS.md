@@ -1,5 +1,15 @@
 # Release notes
 
+## goalie 0.7.8 (2025-12-260
+
+Minor changes:
+
+- Dropping R requirement to 4.0, to better support legacy systems.
+- Updated unit test logical checks against `expect_false`, which no longer
+  work with a `cause` attribute defined.
+- Improve exception handling when memuse is not installed.
+- `hasGithubPat` now returns with a cause attribute when false.
+
 ## goalie 0.7.7 (2023-12-04)
 
 Minor changes:
