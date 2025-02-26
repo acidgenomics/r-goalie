@@ -40,7 +40,7 @@ test_that("FALSE : NA input", {
 })
 
 test_that("nullOk", {
-    expect_false(isInt(NULL, nullOk = FALSE))
+    expect_false(nocause(isInt(NULL, nullOk = FALSE)))
     expect_true(isInt(NULL, nullOk = TRUE))
 })
 
@@ -48,5 +48,5 @@ test_that("allAreIntegerish", {
     x <- c(1, 2) # nolint
     expect_true(allAreIntegerish(x))
     x <- c(1, 1.1) # nolint
-    expect_false(allAreIntegerish(x))
+    expect_false(nocause(allAreIntegerish(x)))
 })

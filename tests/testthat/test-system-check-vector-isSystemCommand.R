@@ -8,8 +8,8 @@ test_that("TRUE", {
 test_that("FALSE", {
     x <- c("AAA", "BBB")
     expect_false(all(isSystemCommand(x)))
-    expect_false(allAreSystemCommands(x))
-    expect_false(isASystemCommand(x))
-    expect_false(isASystemCommand(x[[1L]]))
-    expect_false(isSystemCommand(1L))
+    expect_false(nocause(allAreSystemCommands(x)))
+    expect_false(nocause(isASystemCommand(x)))
+    expect_false(nocause(isASystemCommand(x[[1L]])))
+    expect_false(nocause(isSystemCommand(1L)))
 })

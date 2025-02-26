@@ -42,7 +42,7 @@ test_that("TRUE", {
 })
 
 test_that("FALSE", {
-    expect_false(isAFile("~"))
+    expect_false(nocause(isAFile("~")))
     ok <- isAFile("aaa")
     expect_s4_class(ok, "goalie")
     expect_false(nocause(ok))
@@ -50,7 +50,7 @@ test_that("FALSE", {
 
 test_that("nullOk", {
     expect_true(isAFile(NULL, nullOk = TRUE))
-    expect_false(isAFile(NULL, nullOk = FALSE))
+    expect_false(nocause(isAFile(NULL, nullOk = FALSE)))
 })
 
 
@@ -60,7 +60,7 @@ test_that("TRUE", {
 })
 
 test_that("FALSE", {
-    expect_false(allAreFiles("aaa"))
+    expect_false(nocause(allAreFiles("aaa")))
 })
 
 

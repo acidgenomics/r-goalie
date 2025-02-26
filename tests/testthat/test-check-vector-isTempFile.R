@@ -8,6 +8,6 @@ test_that("TRUE", {
 
 test_that("FALSE", {
     x <- tempfile()
-    expect_false(isATempFile(x))
-    expect_false(allAreTempFiles(x))
+    expect_false(nocause(isATempFile(x)))
+    expect_false(nocause(allAreTempFiles(x)))
 })

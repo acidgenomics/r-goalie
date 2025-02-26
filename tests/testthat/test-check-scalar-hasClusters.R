@@ -8,7 +8,7 @@ test_that("TRUE", {
         envir = environment()
     )
     expect_true(hasClusters(SingleCellExperiment_Seurat))
-    expect_false(hasClusters(SingleCellExperiment_splatter))
+    expect_false(nocause(hasClusters(SingleCellExperiment_splatter)))
 })
 
 test_that("FALSE", {

@@ -17,10 +17,10 @@ test_that("hasRows, hasCols", {
         x <- matrix(data = seq(from = 1L, to = 6L), nrow = 3L, ncol = 2L)
         expect_true(fun(x))
         x <- data.frame()
-        expect_false(fun(x))
+        expect_false(nocause(fun(x)))
         ## Support NULL.
         x <- list()
-        expect_false(fun(x))
+        expect_false(nocause(fun(x)))
     }
 })
 
