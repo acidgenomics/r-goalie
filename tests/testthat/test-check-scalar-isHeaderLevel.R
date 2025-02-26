@@ -4,6 +4,6 @@ test_that("TRUE", {
 })
 
 test_that("FALSE", {
-    expect_false(isHeaderLevel(seq_len(7L)))
-    expect_false(isHeaderLevel(0L))
+    expect_false(nocause(isHeaderLevel(seq_len(7L))))
+    expect_false(nocause(isHeaderLevel(0L)))
 })
