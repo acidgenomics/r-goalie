@@ -1,3 +1,4 @@
+skip_if_not_installed("memuse")
 skip_if_not_installed("AcidBase")
 
 test_that("TRUE", {
