@@ -5,10 +5,10 @@ test_that("TRUE", {
 })
 
 test_that("FALSE", {
-    expect_false(isNumber(seq_len(2L)))
+    expect_false(nocause(isNumber(seq_len(2L))))
 })
 
 test_that("nullOk", {
     expect_true(isNumber(NULL, nullOk = TRUE))
-    expect_false(isNumber(NULL, nullOk = FALSE))
+    expect_false(nocause(isNumber(NULL, nullOk = FALSE)))
 })
