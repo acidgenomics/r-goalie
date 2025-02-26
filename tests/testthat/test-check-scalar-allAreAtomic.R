@@ -6,7 +6,7 @@ test_that("TRUE", {
 test_that("FALSE : non-atomic", {
     ok <- allAreAtomic(list(a = "x", b = list()))
     expect_s4_class(ok, "goalie")
-    expect_false(ok)
+    expect_false(nocause(ok))
     expect_identical(
         object = cause(ok),
         expected = paste(
@@ -19,7 +19,7 @@ test_that("FALSE : non-atomic", {
 test_that("FALSE : length 0", {
     ok <- allAreAtomic(data.frame())
     expect_s4_class(ok, "goalie")
-    expect_false(ok)
+    expect_false(nocause(ok))
     expect_identical(
         object = cause(ok),
         expected = "{.var data.frame} has length 0."
