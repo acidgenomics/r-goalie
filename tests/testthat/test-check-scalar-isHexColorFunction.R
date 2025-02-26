@@ -1,4 +1,5 @@
 test_that("TRUE", {
+    skip_if_not_installed("viridis")
     expect_true(isHexColorFunction(viridis::viridis))
 })
 
