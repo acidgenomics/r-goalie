@@ -44,7 +44,7 @@ test_that("TRUE", {
 })
 
 test_that("FALSE", {
-    expect_false(allAreSymlinks(c(from, from)))
+    expect_false(nocause(allAreSymlinks(c(from, from))))
 })
 
 

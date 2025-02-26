@@ -15,13 +15,13 @@ test_that("FALSE : numeric sequence", {
 
 ## Note that `isCharacter()` is intentionally more strict than `is.character()`.
 test_that("FALSE : empty", {
-    expect_false(isCharacter(NULL))
-    expect_false(isCharacter(character()))
-    expect_false(isCharacter(""))
-    expect_false(isCharacter(NA_character_))
+    expect_false(nocause(isCharacter(NULL)))
+    expect_false(nocause(isCharacter(character())))
+    expect_false(nocause(isCharacter("")))
+    expect_false(nocause(isCharacter(NA_character_)))
 })
 
 test_that("nullOk", {
-    expect_false(isCharacter(NULL, nullOk = FALSE))
+    expect_false(nocause(isCharacter(NULL, nullOk = FALSE)))
     expect_true(isCharacter(NULL, nullOk = TRUE))
 })

@@ -4,9 +4,9 @@ test_that("TRUE", {
 })
 
 test_that("FALSE", {
-    expect_false(hasElements(NULL))
-    expect_false(hasElements(character()))
-    expect_false(hasElements(list()))
+    expect_false(nocause(hasElements(NULL)))
+    expect_false(nocause(hasElements(character())))
+    expect_false(nocause(hasElements(list())))
     ok <- hasElements(list(), n = 1L)
     expect_false(nocause(ok))
     expect_s4_class(ok, "goalie")

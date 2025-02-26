@@ -63,7 +63,7 @@ test_that("logical", {
 })
 
 test_that("Invalid input", {
-    expect_false(isDuplicate(NULL))
-    expect_false(isDuplicate(list()))
-    expect_false(isDuplicate(data.frame()))
+    expect_false(nocause(isDuplicate(NULL)))
+    expect_false(nocause(isDuplicate(list())))
+    expect_false(nocause(isDuplicate(data.frame())))
 })

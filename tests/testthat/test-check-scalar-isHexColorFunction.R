@@ -23,7 +23,7 @@ test_that("FALSE : no 'n' formal", {
 })
 
 test_that("nullOk", {
-    expect_false(isHexColorFunction(NULL, nullOk = FALSE))
+    expect_false(nocause(isHexColorFunction(NULL, nullOk = FALSE)))
     expect_true(isHexColorFunction(NULL, nullOk = TRUE))
 })
 
