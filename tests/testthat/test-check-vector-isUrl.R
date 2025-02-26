@@ -5,7 +5,7 @@ test_that("isUrl", {
     expect_true(all(ok))
     ok <- isUrl("xxx")
     expect_s4_class(ok, "goalie")
-    expect_false(ok)
+    expect_false(nocause(ok))
     expect_identical(
         object = cause(ok),
         expected = "not URL"
@@ -25,7 +25,7 @@ test_that("isAUrl", {
     expect_true(ok)
     ok <- isAUrl(urls)
     expect_s4_class(ok, "goalie")
-    expect_false(ok)
+    expect_false(nocause(ok))
     expect_identical(
         object = cause(ok),
         expected = "{.var character} doesn't have a length of 1."
@@ -43,5 +43,5 @@ test_that("Encoding", {
     expect_true(ok)
     url <- "https://rest.ensembl.org/info/assembly/Homo sapiens"
     ok <- isAUrl(url)
-    expect_false(ok)
+    expect_false(nocause(ok))
 })

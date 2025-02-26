@@ -6,7 +6,7 @@ test_that("hasRownames", {
         f = function(fun, cause) {
             data <- fun()
             ok <- hasRownames(data)
-            expect_false(ok)
+            expect_false(nocause(ok))
             expect_s4_class(ok, "goalie")
             expect_identical(cause(ok), cause)
         },
@@ -37,7 +37,7 @@ test_that("TRUE", {
 test_that("FALSE : data.frame sequence row names", {
     x <- data.frame(a = seq_len(2L))
     ok <- hasRownames(x)
-    expect_false(ok)
+    expect_false(nocause(ok))
     expect_s4_class(ok, "goalie")
     expect_identical(
         object = cause(ok),
@@ -49,7 +49,7 @@ test_that("FALSE : DataFrame NULL", {
     skip_if_not_installed("S4Vectors")
     x <- S4Vectors::DataFrame("a" = seq_len(2L))
     ok <- hasRownames(x)
-    expect_false(ok)
+    expect_false(nocause(ok))
     expect_s4_class(ok, "goalie")
     expect_identical(
         object = cause(ok),

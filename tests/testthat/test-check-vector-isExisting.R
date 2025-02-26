@@ -27,7 +27,7 @@ test_that("TRUE", {
 
 test_that("FALSE", {
     ok <- allAreExisting(c("x", "y"))
-    expect_false(ok)
+    expect_false(nocause(ok))
     expect_s4_class(ok, "goalie")
 })
 
@@ -42,6 +42,6 @@ test_that("FALSE", {
     a <- 1L
     b <- 2L
     ok <- allAreNonExisting(c("a", "b"))
-    expect_false(ok)
+    expect_false(nocause(ok))
     expect_s4_class(ok, "goalie")
 })

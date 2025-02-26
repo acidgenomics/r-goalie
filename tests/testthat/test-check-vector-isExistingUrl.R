@@ -10,7 +10,7 @@ test_that("isExistingUrl", {
     expect_true(all(ok))
     ok <- isExistingUrl("https://failwhale.acidgenomics.com/")
     expect_s4_class(ok, "goalie")
-    expect_false(ok)
+    expect_false(nocause(ok))
     expect_identical(cause(ok), "URL doesn't exist")
 })
 
@@ -25,7 +25,7 @@ test_that("URL connection support", {
 test_that("Only HTTP(S) and FTP", {
     for (url in c("gopher://foobar", "sftp://sftp-private.ncbi.nlm.nih.gov/")) {
         ok <- isAnExistingUrl(url)
-        expect_false(ok)
+        expect_false(nocause(ok))
         expect_match(cause(ok), "unsupported protocol")
     }
 })
@@ -35,7 +35,7 @@ test_that("isAnExistingUrl", {
     expect_true(ok)
     ok <- isAnExistingUrl(urls)
     expect_s4_class(ok, "goalie")
-    expect_false(ok)
+    expect_false(nocause(ok))
     expect_identical(
         object = cause(ok),
         expected = "{.var character} doesn't have a length of 1."

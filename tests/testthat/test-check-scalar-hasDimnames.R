@@ -9,7 +9,7 @@ test_that("hasDimnames", {
         expect_true(fun(x))
         x <- data.frame()
         ok <- fun(x)
-        expect_false(ok)
+        expect_false(nocause(ok))
         expect_s4_class(ok, "goalie")
     }
 })

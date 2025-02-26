@@ -9,7 +9,7 @@ test_that("TRUE", {
 test_that("FALSE : not integer", {
     ok <- isInt(0.1)
     expect_s4_class(ok, "goalie")
-    expect_false(ok)
+    expect_false(nocause(ok))
     expect_identical(
         object = cause(ok),
         expected = "not integer"
@@ -19,7 +19,7 @@ test_that("FALSE : not integer", {
 test_that("FALSE : not scalar", {
     ok <- isInt(seq_len(2L))
     expect_s4_class(ok, "goalie")
-    expect_false(ok)
+    expect_false(nocause(ok))
     expect_identical(
         object = cause(ok),
         expected = "{.var integer} doesn't have a length of 1."

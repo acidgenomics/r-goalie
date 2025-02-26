@@ -22,7 +22,7 @@ test_that("isInClosedRange : FALSE", {
     expect_false(any(ok))
     ok <- allAreInRange(x, lower = lower, upper = upper)
     expect_s4_class(ok, "goalie")
-    expect_false(ok)
+    expect_false(nocause(ok))
     ok <- isInClosedRange(x, lower = lower, upper = upper)
     expect_s4_class(ok, "goalie")
     expect_false(any(ok))
@@ -46,7 +46,7 @@ test_that("isInOpenRange : FALSE", {
     expect_false(any(ok))
     ok <- allAreInOpenRange(x, lower = lower, upper = upper)
     expect_s4_class(ok, "goalie")
-    expect_false(ok)
+    expect_false(nocause(ok))
 })
 
 test_that("isInLeftOpenRange : TRUE", {
@@ -64,7 +64,7 @@ test_that("isInLeftOpenRange : FALSE", {
     expect_false(any(ok))
     ok <- allAreInLeftOpenRange(x, lower = lower)
     expect_s4_class(ok, "goalie")
-    expect_false(ok)
+    expect_false(nocause(ok))
 })
 
 test_that("IsInRightOpenRange : TRUE", {
@@ -82,7 +82,7 @@ test_that("IsInRightOpenRange : FALSE", {
     expect_false(any(ok))
     ok <- allAreInRightOpenRange(x, upper = upper)
     expect_s4_class(ok, "goalie")
-    expect_false(ok)
+    expect_false(nocause(ok))
 })
 
 test_that("isNegative : TRUE", {
@@ -100,7 +100,7 @@ test_that("isNegative : FALSE", {
     expect_false(any(ok))
     ok <- allAreNegative(x)
     expect_s4_class(ok, "goalie")
-    expect_false(ok)
+    expect_false(nocause(ok))
 })
 
 test_that("isPositive : TRUE", {
@@ -118,7 +118,7 @@ test_that("isPositive : FALSE", {
     expect_false(any(ok))
     ok <- allArePositive(x)
     expect_s4_class(ok, "goalie")
-    expect_false(ok)
+    expect_false(nocause(ok))
 })
 
 test_that("isNonNegative : TRUE", {
@@ -136,7 +136,7 @@ test_that("isNonNegative : FALSE", {
     expect_false(any(ok))
     ok <- allAreNonNegative(x)
     expect_s4_class(ok, "goalie")
-    expect_false(ok)
+    expect_false(nocause(ok))
 })
 
 test_that("isNonPositive : TRUE", {
@@ -154,7 +154,7 @@ test_that("isNonPositive : FALSE", {
     expect_false(any(ok))
     ok <- allAreNonPositive(x)
     expect_s4_class(ok, "goalie")
-    expect_false(ok)
+    expect_false(nocause(ok))
 })
 
 test_that("isPercentage : TRUE", {
@@ -172,7 +172,7 @@ test_that("isPercentage : FALSE", {
     expect_s4_class(ok, "goalie")
     expect_false(any(ok))
     ok <- allArePercentage(c(100L, 200L))
-    expect_false(ok)
+    expect_false(nocause(ok))
     expect_s4_class(ok, "goalie")
     expect_match(cause(ok), "too high")
 })
@@ -193,5 +193,5 @@ test_that("isProportion : FALSE", {
     expect_false(any(ok))
     ok <- allAreProportion(x)
     expect_s4_class(ok, "goalie")
-    expect_false(ok)
+    expect_false(nocause(ok))
 })

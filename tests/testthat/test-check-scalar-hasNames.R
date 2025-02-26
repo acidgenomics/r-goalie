@@ -10,7 +10,7 @@ test_that("TRUE", {
 
 test_that("FALSE : matrix", {
     ok <- hasNames(matrix())
-    expect_false(ok)
+    expect_false(nocause(ok))
     expect_s4_class(ok, "goalie")
     expect_identical(
         object = cause(ok),
@@ -20,7 +20,7 @@ test_that("FALSE : matrix", {
 
 test_that("FALSE : data frame", {
     ok <- hasNames(data.frame())
-    expect_false(ok)
+    expect_false(nocause(ok))
     expect_s4_class(ok, "goalie")
     expect_identical(
         object = cause(ok),
