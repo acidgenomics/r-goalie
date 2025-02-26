@@ -14,6 +14,7 @@ test_that("FALSE : not a function", {
 })
 
 test_that("FALSE : no 'n' formal", {
+    skip_if_not_installed("ggplot2")
     ok <- isHexColorFunction(ggplot2::scale_color_manual)
     expect_false(nocause(ok))
     expect_s4_class(ok, "goalie")
