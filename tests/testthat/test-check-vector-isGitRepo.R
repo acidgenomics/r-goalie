@@ -1,3 +1,5 @@
+skip_if_not_installed("AcidBase")
+
 test_that("isGitRepo", {
     x <- getwd()
     ok <- isGitRepo(x)
