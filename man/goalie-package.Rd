@@ -2,6 +2,7 @@
 % Please edit documentation in R/package.R
 \docType{package}
 \name{goalie-package}
+\alias{goalie-package}
 \title{goalie}
 \description{
 Assertive check functions for defensive R programming.

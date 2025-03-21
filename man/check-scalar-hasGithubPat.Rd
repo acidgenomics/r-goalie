@@ -15,7 +15,7 @@ hasGithubPat()
 Required for package installs from GitHub, otherwise will hit rate limit.
 }
 \note{
-Updated 2019-10-04.
+Updated 2025-02-26.
 }
 \examples{
 ## TRUE ====
