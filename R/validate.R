@@ -102,7 +102,7 @@ validate <- function(..., msg = NULL) {
     }
     if (is.null(msg)) {
         fail <- unlist(Filter(f = Negate(isTRUE), x = checks))
-        msg <- paste(fail, sep = "", collapse = "\n")
+        msg <- paste(fail, sep = "", collapse = "\n") # nolint
     }
     if (!is.character(msg) || length(msg) != 1L) {
         stop("Invalid 'msg' input.")

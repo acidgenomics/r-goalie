@@ -165,7 +165,7 @@ NULL
 #' [safeDeparse()] is modified version of [`deparse()`][base::deparse] that
 #' always returns `character(1)`.
 #'
-#' @note Updated 2020-01-04.
+#' @note Updated 2025-03-21.
 #' @noRd
 #'
 #' @param expr `expression`.
@@ -182,7 +182,13 @@ NULL
 #' @examples
 #' .safeDeparse(is.character("a"))
 .safeDeparse <- function(expr, ...) {
-    paste0(deparse(expr, width.cutoff = 500L, ...), collapse = "")
+    ## nolint start
+    paste0(
+        deparse(expr, width.cutoff = 500L, ...),
+        sep = "",
+        collapse = ""
+    )
+    ## nolint end
 }
 
 
