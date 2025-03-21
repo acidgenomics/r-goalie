@@ -1,6 +1,6 @@
 # Release notes
 
-## goalie 0.7.8 (2025-12-260
+## goalie 0.7.8 (2025-03-21)
 
 Minor changes:
 
@@ -9,6 +9,7 @@ Minor changes:
   work with a `cause` attribute defined.
 - Improve exception handling when memuse is not installed.
 - `hasGithubPat` now returns with a cause attribute when false.
+- Documentation reformatting for roxygen2 changes.
 
 ## goalie 0.7.7 (2023-12-04)
 
