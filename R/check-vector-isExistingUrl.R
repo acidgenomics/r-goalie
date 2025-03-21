@@ -69,6 +69,7 @@ NULL
 #' @note Updated 2025-02-24.
 #' @noRd
 #'
+#' @details
 #' Note that we're setting `verify = FALSE` in `curlGetHeaders` call here to
 #' avoid self-signed certificate issues that can arise behind corporate
 #' firewalls and with non-standard R installations. This should not be a
@@ -136,6 +137,7 @@ NULL
 #' @note Updated 2025-02-24.
 #' @noRd
 #'
+#' @details
 #' Note that we're setting `verify = FALSE` in `curlGetHeaders` call here to
 #' avoid self-signed certificate issues that can arise behind corporate
 #' firewalls and with non-standard R installations. This should not be a
