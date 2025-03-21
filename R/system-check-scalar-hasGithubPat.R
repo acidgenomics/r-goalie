@@ -23,7 +23,7 @@ NULL
 #' @export
 hasGithubPat <- function() {
     ok <- isTRUE(nzchar(Sys.getenv("GITHUB_PAT")))
-        if (!isTRUE(ok)) {
+    if (!isTRUE(ok)) {
         return(false(
             "{.var %s} is not a defined environment variable.",
             "GITHUB_PAT"
