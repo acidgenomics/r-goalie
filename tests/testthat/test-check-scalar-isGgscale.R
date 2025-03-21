@@ -13,10 +13,18 @@ test_that("TRUE", {
 })
 
 test_that("FALSE", {
-    expect_false(nocause(isGgscale(x = cd, scale = "continuous", aes = "color")))
-    expect_false(nocause(isGgscale(x = cc, scale = "discrete", aes = "color")))
-    expect_false(nocause(isGgscale(x = fd, scale = "continuous", aes = "fill")))
-    expect_false(nocause(isGgscale(x = fc, scale = "discrete", aes = "fill")))
+    expect_false(nocause(
+        isGgscale(x = cd, scale = "continuous", aes = "color")
+    ))
+    expect_false(nocause(
+        isGgscale(x = cc, scale = "discrete", aes = "color")
+    ))
+    expect_false(nocause(
+        isGgscale(x = fd, scale = "continuous", aes = "fill")
+    ))
+    expect_false(nocause(
+        isGgscale(x = fc, scale = "discrete", aes = "fill")
+    ))
 })
 
 test_that("nullOk", {
