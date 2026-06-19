@@ -1,5 +1,11 @@
 # Release notes
 
+## goalie 0.7.9 (2026-06-19)
+
+License changes:
+
+- Switched from AGPL-3.0 to Apache-2.0.
+
 ## goalie 0.7.8 (2025-03-21)
 
 Minor changes:
