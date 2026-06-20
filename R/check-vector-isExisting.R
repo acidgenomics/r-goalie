@@ -28,16 +28,13 @@
 NULL
 
 
-
 ## Vector ======================================================================
 
 #' @describeIn check-vector-isExisting Vectorized.
 #' @export
 ## Updated 2023-10-02.
 isExisting <-
-    function(x,
-             envir = parent.frame(),
-             inherits = FALSE) {
+    function(x, envir = parent.frame(), inherits = FALSE) {
         ok <- hasLength(x)
         if (!isTRUE(ok)) {
             return(ok)
@@ -50,7 +47,7 @@ isExisting <-
         ok <- bapply(
             X = x,
             FUN = exists,
-            USE.NAMES = FALSE,
+            useNames = FALSE,
             envir = envir,
             inherits = inherits
         )
@@ -58,14 +55,11 @@ isExisting <-
     }
 
 
-
 #' @describeIn check-vector-isExisting Vectorized.
 #' @export
 ## Updated 2023-09-29.
 isNonExisting <-
-    function(x,
-             envir = parent.frame(),
-             inherits = FALSE) {
+    function(x, envir = parent.frame(), inherits = FALSE) {
         ok <- !isExisting(
             x = x,
             envir = envir,
@@ -75,16 +69,13 @@ isNonExisting <-
     }
 
 
-
 ## Scalar ======================================================================
 
 #' @describeIn check-vector-isExisting Scalar.
 #' @export
 ## Updated 2023-09-29.
 allAreExisting <-
-    function(x,
-             envir = parent.frame(),
-             inherits = FALSE) {
+    function(x, envir = parent.frame(), inherits = FALSE) {
         ok <- isExisting(
             x = x,
             envir = envir,
@@ -97,14 +88,11 @@ allAreExisting <-
     }
 
 
-
 #' @describeIn check-vector-isExisting Scalar.
 #' @export
 ## Updated 2023-09-29.
 allAreNonExisting <-
-    function(x,
-             envir = parent.frame(),
-             inherits = FALSE) {
+    function(x, envir = parent.frame(), inherits = FALSE) {
         ok <- isNonExisting(
             x = x,
             envir = envir,

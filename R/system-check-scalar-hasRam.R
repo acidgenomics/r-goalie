@@ -17,7 +17,6 @@
 NULL
 
 
-
 #' @rdname check-scalar-hasRam
 #' @export
 hasRam <- function(n) {
@@ -27,8 +26,10 @@ hasRam <- function(n) {
     if (!isTRUE(ok)) {
         return(false(
             "Not enough RAM (in GB): %s (%s) < %s (%s).",
-            as.character(ram), "current",
-            as.character(n), "expected"
+            as.character(ram),
+            "current",
+            as.character(n),
+            "expected"
         ))
     }
     TRUE

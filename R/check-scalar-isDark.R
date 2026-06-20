@@ -22,7 +22,6 @@
 NULL
 
 
-
 #' @rdname check-scalar-isDark
 #' @export
 isDark <- function() {

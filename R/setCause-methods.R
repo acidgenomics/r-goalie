@@ -28,12 +28,11 @@
 NULL
 
 
-
 ## Updated 2023-10-02.
 `setCause,logical` <- # nolint
     function(object, false) {
         if (anyNA(object)) {
-            stop("Object contains NA.")
+            stop("Object contains NA.", call. = FALSE)
         }
         if (all(object)) {
             object <- unname(object)
@@ -52,7 +51,6 @@ NULL
     }
 
 
-
 ## Updated 2023-09-29.
 `setCause,goalie` <- # nolint
     function(object, ...) {
@@ -61,7 +59,6 @@ NULL
         names(object) <- names
         setCause(object = object, ...)
     }
-
 
 
 #' @rdname setCause

@@ -24,7 +24,6 @@
 NULL
 
 
-
 #' @rdname check-scalar-hasLength
 #' @export
 hasLength <- function(x, n = NULL) {
@@ -40,7 +39,8 @@ hasLength <- function(x, n = NULL) {
     if (!isTRUE(ok)) {
         return(false(
             "{.var %s} doesn't have a length of %d.",
-            .toName(x), n
+            .toName(x),
+            n
         ))
     }
     TRUE

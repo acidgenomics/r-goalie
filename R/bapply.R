@@ -18,7 +18,7 @@
 #'
 #' @param ... Additional arguments passed to [vapply()][base::vapply].
 #'
-#' @param USE.NAMES `logical(1)`.
+#' @param useNames `logical(1)`.
 #' If `TRUE` and `X` is character, use `X` as [`names`][base::names] for the
 #' result, unless it has names already.
 #'
@@ -30,12 +30,12 @@
 #'
 #' @examples
 #' bapply(X = list(a = "example", b = 1), FUN = is.character)
-bapply <- function(X, FUN, ..., USE.NAMES = TRUE) { # nolint
+bapply <- function(X, FUN, ..., useNames = TRUE) {
     vapply(
         X = X,
         FUN = FUN,
         FUN.VALUE = logical(1L),
         ...,
-        USE.NAMES = USE.NAMES
+        USE.NAMES = useNames
     )
 }

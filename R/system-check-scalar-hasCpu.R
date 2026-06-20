@@ -17,7 +17,6 @@
 NULL
 
 
-
 #' @rdname check-scalar-hasCpu
 #' @export
 hasCpu <- function(n) {
@@ -27,8 +26,10 @@ hasCpu <- function(n) {
     if (!isTRUE(ok)) {
         return(false(
             "Not enough CPU cores: %s (%s) < %s (%s).",
-            as.character(cpus), "current",
-            as.character(n), "expected"
+            as.character(cpus),
+            "current",
+            as.character(n),
+            "expected"
         ))
     }
     TRUE

@@ -2,7 +2,6 @@ files <- file.path(tempdir(), c("example1.txt", "example2.txt"))
 invisible(file.create(files))
 
 
-
 test_that("TRUE", {
     expect_true(all(isFile(files)))
 })
@@ -36,7 +35,6 @@ test_that("FALSE : not character", {
 })
 
 
-
 test_that("TRUE", {
     expect_true(isAFile(files[[1L]]))
 })
@@ -54,7 +52,6 @@ test_that("nullOk", {
 })
 
 
-
 test_that("TRUE", {
     expect_true(allAreFiles(files))
 })
@@ -62,7 +59,6 @@ test_that("TRUE", {
 test_that("FALSE", {
     expect_false(nocause(allAreFiles("aaa")))
 })
-
 
 
 invisible(file.remove(files))

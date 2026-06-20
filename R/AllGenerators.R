@@ -29,10 +29,10 @@
 goalie <- function(object, cause) {
     if (all(object)) {
         if (identical(length(object), 0L)) {
-            stop("Invalid input.")
+            stop("Invalid input.", call. = FALSE)
         }
         if (!is.null(names(object))) {
-            stop("Object is named.")
+            stop("Object is named.", call. = FALSE)
         }
         return(object)
     }

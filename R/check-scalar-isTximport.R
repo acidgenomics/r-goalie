@@ -30,7 +30,6 @@
 NULL
 
 
-
 #' @rdname check-scalar-isTximport
 #' @export
 isTximport <- function(x) {
@@ -81,7 +80,8 @@ isTximport <- function(x) {
     if (!isTRUE(ok)) {
         return(false(
             "{.var %s} is missing {.var %s} metadata.",
-            .toName(x), "countsFromAbundance"
+            .toName(x),
+            "countsFromAbundance"
         ))
     }
     TRUE

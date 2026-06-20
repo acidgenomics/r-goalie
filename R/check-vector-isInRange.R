@@ -62,16 +62,12 @@
 NULL
 
 
-
 ## Vector ======================================================================
 
 #' @describeIn check-vector-isInRange Vectorized.
 #' @export
 isInRange <-
-    function(x,
-             lower = -Inf,
-             upper = Inf,
-             closed = c(TRUE, TRUE)) {
+    function(x, lower = -Inf, upper = Inf, closed = c(TRUE, TRUE)) {
         ok <- hasLength(x)
         if (!isTRUE(ok)) {
             return(ok)
@@ -94,13 +90,10 @@ isInRange <-
     }
 
 
-
 #' @describeIn check-vector-isInRange Vectorized.
 #' @export
 isInClosedRange <-
-    function(x,
-             lower = -Inf,
-             upper = Inf) {
+    function(x, lower = -Inf, upper = Inf) {
         isInRange(
             x = x,
             lower = lower,
@@ -110,13 +103,10 @@ isInClosedRange <-
     }
 
 
-
 #' @describeIn check-vector-isInRange Vectorized.
 #' @export
 isInOpenRange <-
-    function(x,
-             lower = -Inf,
-             upper = Inf) {
+    function(x, lower = -Inf, upper = Inf) {
         isInRange(
             x = x,
             lower = lower,
@@ -126,13 +116,10 @@ isInOpenRange <-
     }
 
 
-
 #' @describeIn check-vector-isInRange Vectorized.
 #' @export
 isInLeftOpenRange <-
-    function(x,
-             lower = -Inf,
-             upper = Inf) {
+    function(x, lower = -Inf, upper = Inf) {
         isInRange(
             x = x,
             lower = lower,
@@ -142,13 +129,10 @@ isInLeftOpenRange <-
     }
 
 
-
 #' @describeIn check-vector-isInRange Vectorized.
 #' @export
 isInRightOpenRange <-
-    function(x,
-             lower = -Inf,
-             upper = Inf) {
+    function(x, lower = -Inf, upper = Inf) {
         isInRange(
             x = x,
             lower = lower,
@@ -156,7 +140,6 @@ isInRightOpenRange <-
             closed = c(TRUE, FALSE)
         )
     }
-
 
 
 #' @describeIn check-vector-isInRange Vectorized.
@@ -172,7 +155,6 @@ isNegative <-
     }
 
 
-
 #' @describeIn check-vector-isInRange Vectorized.
 #' @export
 isPositive <-
@@ -184,7 +166,6 @@ isPositive <-
             closed = c(FALSE, TRUE)
         )
     }
-
 
 
 #' @describeIn check-vector-isInRange Vectorized.
@@ -200,7 +181,6 @@ isNonNegative <-
     }
 
 
-
 #' @describeIn check-vector-isInRange Vectorized.
 #' @export
 isNonPositive <-
@@ -212,7 +192,6 @@ isNonPositive <-
             closed = c(TRUE, TRUE)
         )
     }
-
 
 
 #' @describeIn check-vector-isInRange Vectorized.
@@ -228,7 +207,6 @@ isPercentage <-
     }
 
 
-
 #' @describeIn check-vector-isInRange Vectorized.
 #' @export
 isProportion <-
@@ -242,16 +220,12 @@ isProportion <-
     }
 
 
-
 ## Scalar ======================================================================
 
 #' @describeIn check-vector-isInRange Scalar.
 #' @export
 allAreInRange <-
-    function(x,
-             lower,
-             upper,
-             closed) {
+    function(x, lower, upper, closed) {
         ok <- isInRange(
             x = x,
             lower = lower,
@@ -267,13 +241,10 @@ allAreInRange <-
 formals(allAreInRange) <- formals(isInRange)
 
 
-
 #' @describeIn check-vector-isInRange Scalar.
 #' @export
 allAreInClosedRange <-
-    function(x,
-             lower,
-             upper) {
+    function(x, lower, upper) {
         ok <- isInClosedRange(
             x = x,
             lower = lower,
@@ -288,13 +259,10 @@ allAreInClosedRange <-
 formals(allAreInClosedRange) <- formals(isInClosedRange)
 
 
-
 #' @describeIn check-vector-isInRange Scalar.
 #' @export
 allAreInOpenRange <-
-    function(x,
-             lower,
-             upper) {
+    function(x, lower, upper) {
         ok <- isInOpenRange(
             x = x,
             lower = lower,
@@ -309,13 +277,10 @@ allAreInOpenRange <-
 formals(allAreInOpenRange) <- formals(isInOpenRange)
 
 
-
 #' @describeIn check-vector-isInRange Scalar.
 #' @export
 allAreInLeftOpenRange <-
-    function(x,
-             lower,
-             upper) {
+    function(x, lower, upper) {
         ok <- isInLeftOpenRange(
             x = x,
             lower = lower,
@@ -330,13 +295,10 @@ allAreInLeftOpenRange <-
 formals(allAreInLeftOpenRange) <- formals(isInLeftOpenRange)
 
 
-
 #' @describeIn check-vector-isInRange Scalar.
 #' @export
 allAreInRightOpenRange <-
-    function(x,
-             lower,
-             upper) {
+    function(x, lower, upper) {
         ok <- isInRightOpenRange(
             x = x,
             lower = lower,
@@ -351,7 +313,6 @@ allAreInRightOpenRange <-
 formals(allAreInRightOpenRange) <- formals(isInRightOpenRange)
 
 
-
 #' @describeIn check-vector-isInRange Scalar.
 #' @export
 allAreNegative <-
@@ -362,7 +323,6 @@ allAreNegative <-
         }
         TRUE
     }
-
 
 
 #' @describeIn check-vector-isInRange Scalar.
@@ -377,7 +337,6 @@ allArePositive <-
     }
 
 
-
 #' @describeIn check-vector-isInRange Scalar.
 #' @export
 allAreNonNegative <-
@@ -388,7 +347,6 @@ allAreNonNegative <-
         }
         TRUE
     }
-
 
 
 #' @describeIn check-vector-isInRange Scalar.
@@ -403,7 +361,6 @@ allAreNonPositive <-
     }
 
 
-
 #' @describeIn check-vector-isInRange Scalar.
 #' @export
 allArePercentage <-
@@ -414,7 +371,6 @@ allArePercentage <-
         }
         TRUE
     }
-
 
 
 #' @describeIn check-vector-isInRange Scalar.

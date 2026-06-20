@@ -28,7 +28,6 @@
 NULL
 
 
-
 ## grep matching that dynamically handles S4 objects, if necessary.
 ## Alternatively, could check directly for Rle and decode here instead.
 ## Updated 2023-10-02.
@@ -48,7 +47,6 @@ NULL
 }
 
 
-
 ## Vector ======================================================================
 
 #' @describeIn check-vector-isMatching Vectorized.
@@ -64,7 +62,6 @@ isMatchingFixed <- function(x, pattern) {
 }
 
 
-
 #' @describeIn check-vector-isMatching Vectorized.
 #' @export
 isMatchingRegex <- function(x, pattern) {
@@ -76,7 +73,6 @@ isMatchingRegex <- function(x, pattern) {
     )
     setCause(ok, false = sprintf("doesn't match {.var %s}", pattern))
 }
-
 
 
 #' @describeIn check-vector-isMatching Vectorized.
@@ -92,7 +88,6 @@ isNotMatchingFixed <- function(x, pattern) {
 }
 
 
-
 #' @describeIn check-vector-isMatching Vectorized.
 #' @export
 isNotMatchingRegex <- function(x, pattern) {
@@ -104,7 +99,6 @@ isNotMatchingRegex <- function(x, pattern) {
     )
     setCause(ok, false = sprintf("matches {.var %s}", pattern))
 }
-
 
 
 ## Scalar ======================================================================
@@ -120,7 +114,6 @@ allAreMatchingFixed <- function(x, pattern) {
 }
 
 
-
 #' @describeIn check-vector-isMatching Scalar.
 #' @export
 allAreMatchingRegex <- function(x, pattern) {
@@ -132,7 +125,6 @@ allAreMatchingRegex <- function(x, pattern) {
 }
 
 
-
 #' @describeIn check-vector-isMatching Scalar.
 #' @export
 allAreNotMatchingFixed <- function(x, pattern) {
@@ -142,7 +134,6 @@ allAreNotMatchingFixed <- function(x, pattern) {
     }
     TRUE
 }
-
 
 
 #' @describeIn check-vector-isMatching Scalar.

@@ -5,7 +5,7 @@ test_that("TRUE", {
     samples <- read.table(file.path(dir, "samples.txt"), header = TRUE)
     files <- file.path(dir, "salmon", samples[["run"]], "quant.sf.gz")
     names(files) <- paste0("sample", seq(from = 1L, to = length(files)))
-    object <- tximport::tximport(
+    object <- tximport::tximport( # nolint: namespace_linter.
         files = files,
         type = "salmon",
         txIn = TRUE,

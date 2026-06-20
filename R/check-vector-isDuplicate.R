@@ -23,7 +23,6 @@
 NULL
 
 
-
 ## Vector ======================================================================
 
 #' @describeIn check-vector-isDuplicate Vectorized.

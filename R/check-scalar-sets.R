@@ -40,7 +40,6 @@
 NULL
 
 
-
 #' @rdname check-scalar-sets
 #' @export
 isSubset <-
@@ -67,14 +66,12 @@ isSubset <-
     }
 
 
-
 #' @rdname check-scalar-sets
 #' @export
 isSuperset <-
     function(x, y) {
         isSubset(x = y, y = x)
     }
-
 
 
 #' @rdname check-scalar-sets
@@ -89,13 +86,13 @@ areDisjointSets <-
         if (hasLength(int)) {
             return(false(
                 "{.var %s} and {.var %s} have common elements: %s",
-                .toName(x), .toName(y),
+                .toName(x),
+                .toName(y),
                 toString(int, width = 100L)
             ))
         }
         TRUE
     }
-
 
 
 #' @rdname check-scalar-sets
@@ -110,12 +107,12 @@ areIntersectingSets <-
         if (!hasLength(int)) {
             return(false(
                 "{.var %s} and {.var %s} have 0 common elements.",
-                .toName(x), .toName(y)
+                .toName(x),
+                .toName(y)
             ))
         }
         TRUE
     }
-
 
 
 #' @rdname check-scalar-sets
@@ -135,8 +132,10 @@ areSetEqual <-
                     "{.var %s} and {.var %s} have different numbers",
                     "of elements (%d versus %d)."
                 ),
-                .toName(x), .toName(y),
-                length(x), length(y)
+                .toName(x),
+                .toName(y),
+                length(x),
+                length(y)
             ))
         }
         ok <- isSubset(x, y)

@@ -37,7 +37,8 @@ test_that("FALSE : rows containing all zeros", {
 test_that("FALSE : columns containing all zeros", {
     x <- matrix(
         data = c(rep(1L, times = 8L), rep(0L, times = 8L)),
-        nrow = 4L, ncol = 4L,
+        nrow = 4L,
+        ncol = 4L,
         byrow = FALSE
     )
     ok <- hasNonzeroRowsAndCols(x)

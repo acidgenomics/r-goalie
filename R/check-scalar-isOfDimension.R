@@ -22,7 +22,6 @@
 NULL
 
 
-
 #' @rdname check-scalar-isOfDimension
 #' @export
 isOfDimension <- function(x, n) {

@@ -25,12 +25,10 @@
 NULL
 
 
-
 #' @rdname check-scalar-isVectorish
 #' @export
 isVectorish <-
-    function(x,
-             nullOk = FALSE) {
+    function(x, nullOk = FALSE) {
         if (isTRUE(nullOk) && is.null(x)) {
             return(TRUE)
         }

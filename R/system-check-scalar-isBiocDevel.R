@@ -10,7 +10,6 @@
 NULL
 
 
-
 #' @rdname check-scalar-isBiocDevel
 #' @export
 isBiocDevel <- function() {

@@ -35,15 +35,16 @@
 NULL
 
 
-
 #' @rdname check-scalar-isGgscale
 #' @export
 ## Updated 2019-07-15.
 isGgscale <-
-    function(x,
-             scale = c("continuous", "discrete"),
-             aes = c("color", "colour", "fill"),
-             nullOk = FALSE) {
+    function(
+        x,
+        scale = c("continuous", "discrete"),
+        aes = c("color", "colour", "fill"),
+        nullOk = FALSE
+    ) {
         scale <- match.arg(scale)
         aes <- match.arg(aes)
         if (isTRUE(nullOk) && is.null(x)) {

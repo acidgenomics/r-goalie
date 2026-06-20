@@ -18,7 +18,6 @@
 NULL
 
 
-
 #' @rdname check-scalar-isFlag
 #' @export
 isFlag <- function(x) {
@@ -26,14 +25,17 @@ isFlag <- function(x) {
     if (!isTRUE(ok)) {
         return(false(
             "{.var %s} is not a boolean flag ({.val %s}/{.val %s}).",
-            .toName(x), "TRUE", "FALSE"
+            .toName(x),
+            "TRUE",
+            "FALSE"
         ))
     }
     ## Check for `NA`, which is logical but not a flag.
     if (is.na(x)) {
         return(false(
             "{.var %s} is {.val %s}.",
-            .toName(x), "NA"
+            .toName(x),
+            "NA"
         ))
     }
     TRUE

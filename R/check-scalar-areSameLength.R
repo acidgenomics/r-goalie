@@ -22,7 +22,6 @@
 NULL
 
 
-
 #' @rdname check-scalar-areSameLength
 #' @export
 areSameLength <-
@@ -39,7 +38,8 @@ areSameLength <-
         if (!isTRUE(ok)) {
             return(false(
                 "{.var %s} doesn't have the same length as {.var %s}.",
-                .toName(x), .toName(y)
+                .toName(x),
+                .toName(y)
             ))
         }
         TRUE

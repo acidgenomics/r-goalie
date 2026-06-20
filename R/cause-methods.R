@@ -18,13 +18,11 @@
 NULL
 
 
-
 ## Updated 2023-09-29.
 `cause,goalie` <- # nolint
     function(object) {
         slot(object, name = "cause")
     }
-
 
 
 #' @rdname cause

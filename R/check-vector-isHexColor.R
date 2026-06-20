@@ -22,7 +22,6 @@
 NULL
 
 
-
 ## Vector ======================================================================
 
 #' @describeIn check-vector-isHexColor Vectorized.
@@ -42,7 +41,6 @@ isHexColor <- function(x) {
     ok <- isMatchingRegex(x = x, pattern = pattern)
     setCause(ok, false = sprintf("doesn't match {.var %s}", pattern))
 }
-
 
 
 ## Scalar ======================================================================

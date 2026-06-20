@@ -19,7 +19,6 @@
 NULL
 
 
-
 #' @rdname check-scalar-isBiocParallelParam
 #' @export
 isBiocParallelParam <- function(x) {
@@ -28,7 +27,7 @@ isBiocParallelParam <- function(x) {
             attributes(class(x))[["package"]],
             "BiocParallel"
         ),
-        grepl("Param$", class(x))
+        endsWith(class(x), "Param")
     )
     if (!isTRUE(ok)) {
         return(false(
