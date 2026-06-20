@@ -10,7 +10,6 @@
 NULL
 
 
-
 #' @rdname check-scalar-isDevel
 #' @export
 isDevel <- function() {

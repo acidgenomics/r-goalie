@@ -10,4 +10,5 @@
 ^doc$
 ^docs$
 ^pkgdown$
+^air\.toml$
 ^todo\.org$

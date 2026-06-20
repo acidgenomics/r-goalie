@@ -10,7 +10,6 @@
 NULL
 
 
-
 #' @rdname check-scalar-isCleanSystemLibrary
 #' @export
 isCleanSystemLibrary <- function() {
@@ -31,10 +30,12 @@ isCleanSystemLibrary <- function() {
     ## Check for packages built against a different point release.
     version <- getRversion()
     version <- sub(pattern = "\\.\\d$", replacement = "", x = version)
-    if (!all(grepl(
-        pattern = paste0("^", version),
-        x = system[, "Built"]
-    ))) {
+    if (
+        !all(grepl(
+            pattern = paste0("^", version),
+            x = system[, "Built"]
+        ))
+    ) {
         ## e.g. Ubuntu CRAN binary install now fails this.
         return(false("Detected packages built against a different release."))
     }

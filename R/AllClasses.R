@@ -32,7 +32,7 @@ setValidity(
         }
         if (any(object)) {
             ok <- vapply(
-                X = cause[which(object == TRUE)],
+                X = cause[which(object)],
                 FUN = identical,
                 y = NA_character_,
                 FUN.VALUE = logical(1L),
@@ -43,7 +43,7 @@ setValidity(
             }
         }
         ok <- vapply(
-            X = cause[which(object == FALSE)],
+            X = cause[which(!object)],
             FUN = function(x) {
                 isTRUE(nzchar(x)) || return(FALSE)
                 isFALSE(is.na(x)) || return(FALSE)

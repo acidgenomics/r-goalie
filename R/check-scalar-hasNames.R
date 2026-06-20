@@ -18,7 +18,6 @@
 NULL
 
 
-
 #' @rdname check-scalar-hasNames
 #' @export
 hasNames <- function(x) {
@@ -31,16 +30,18 @@ hasNames <- function(x) {
     if (is(names, "error")) {
         false(
             "{.fun %s} command on {.var %s} failed.",
-            "names", .toName(x)
+            "names",
+            .toName(x)
         )
     } else if (is.null(names)) {
         false(
             "The names of {.var %s} are {.val %s}.",
-            .toName(x), "NULL"
+            .toName(x),
+            "NULL"
         )
-    } else if (!any(nzchar(names))) {
-        false("The names of {.var %s} are all empty.", .toName(x))
-    } else {
+    } else if (any(nzchar(names))) {
         TRUE
+    } else {
+        false("The names of {.var %s} are all empty.", .toName(x))
     }
 }

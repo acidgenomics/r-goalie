@@ -32,7 +32,6 @@
 NULL
 
 
-
 #' @rdname check-scalar-isScalar
 #' @export
 isScalar <-
@@ -40,15 +39,12 @@ isScalar <-
         if (is.null(x)) {
             ifelse(
                 test = isTRUE(nullOk),
-                yes = {
-                    return(TRUE)
-                },
-                no = {
-                    return(false(
-                        "{.var %s} is {.val %s}.",
-                        .toName(x), "NULL"
-                    ))
-                }
+                yes = return(TRUE),
+                no = return(false(
+                    "{.var %s} is {.val %s}.",
+                    .toName(x),
+                    "NULL"
+                ))
             )
         }
         ok <- identical(length(x), 1L)
@@ -60,7 +56,6 @@ isScalar <-
         }
         TRUE
     }
-
 
 
 #' @rdname check-scalar-isScalar
@@ -84,7 +79,6 @@ isScalarAtomic <-
     }
 
 
-
 #' @rdname check-scalar-isScalar
 #' @export
 isScalarCharacter <-
@@ -104,7 +98,6 @@ isScalarCharacter <-
         }
         TRUE
     }
-
 
 
 #' @rdname check-scalar-isScalar
@@ -128,7 +121,6 @@ isScalarDouble <-
     }
 
 
-
 #' @rdname check-scalar-isScalar
 #' @export
 isScalarInteger <-
@@ -150,7 +142,6 @@ isScalarInteger <-
     }
 
 
-
 #' @rdname check-scalar-isScalar
 #' @export
 isScalarIntegerish <-
@@ -169,7 +160,6 @@ isScalarIntegerish <-
     }
 
 
-
 #' @rdname check-scalar-isScalar
 #' @export
 isScalarList <-
@@ -186,7 +176,6 @@ isScalarList <-
         }
         TRUE
     }
-
 
 
 #' @rdname check-scalar-isScalar
@@ -210,7 +199,6 @@ isScalarLogical <-
     }
 
 
-
 #' @rdname check-scalar-isScalar
 #' @export
 isScalarNumeric <-
@@ -232,7 +220,6 @@ isScalarNumeric <-
     }
 
 
-
 #' @rdname check-scalar-isScalar
 #' @export
 isScalarVector <-
@@ -252,7 +239,6 @@ isScalarVector <-
         }
         TRUE
     }
-
 
 
 #' @rdname check-scalar-isScalar

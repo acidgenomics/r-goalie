@@ -32,7 +32,6 @@
 NULL
 
 
-
 ## Vector ======================================================================
 
 #' @describeIn check-vector-isExistingAwsS3Uri Vectorized.
@@ -68,10 +67,14 @@ isExistingAwsS3Uri <- function(x, profile = "default") {
                     invisible(AcidBase::shell(
                         command = "aws",
                         args = c(
-                            "--profile", profile,
-                            "s3api", "head-object",
-                            "--bucket", bucket,
-                            "--key", key,
+                            "--profile",
+                            profile,
+                            "s3api",
+                            "head-object",
+                            "--bucket",
+                            bucket,
+                            "--key",
+                            key,
                             "--no-cli-pager"
                         ),
                         print = FALSE,
@@ -94,7 +97,6 @@ isExistingAwsS3Uri <- function(x, profile = "default") {
 }
 
 
-
 ## Scalar ======================================================================
 
 #' @describeIn check-vector-isExistingAwsS3Uri Scalar. Requires a single URI.
@@ -110,7 +112,6 @@ isAnExistingAwsS3Uri <- function(x, profile = "default") {
     }
     TRUE
 }
-
 
 
 #' @describeIn check-vector-isExistingAwsS3Uri Scalar. Checks that all strings

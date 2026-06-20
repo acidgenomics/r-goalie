@@ -24,7 +24,6 @@
 NULL
 
 
-
 ## Vector ======================================================================
 
 #' @describeIn check-vector-isUrl Vectorized.
@@ -54,7 +53,6 @@ isUrl <- function(x) {
 }
 
 
-
 ## Scalar ======================================================================
 
 #' @describeIn check-vector-isUrl Scalar. Requires a single URL.
@@ -70,7 +68,6 @@ isAUrl <- function(x) {
     }
     TRUE
 }
-
 
 
 #' @describeIn check-vector-isUrl Scalar. Checks that all strings are URLs.

@@ -28,7 +28,6 @@
 NULL
 
 
-
 ## Vector ======================================================================
 
 #' @describeIn check-vector-isCompressedFile Vectorized.
@@ -44,7 +43,6 @@ isCompressedFile <- function(x) {
     )
     setCause(ok, false = "no compress ext")
 }
-
 
 
 ## Scalar ======================================================================
@@ -65,7 +63,6 @@ isACompressedFile <- function(x, nullOk = FALSE) {
     }
     TRUE
 }
-
 
 
 #' @describeIn check-vector-isCompressedFile Scalar.

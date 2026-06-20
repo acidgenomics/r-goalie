@@ -20,14 +20,13 @@
 NULL
 
 
-
 ## Updated 2023-10-06.
 `falseFromVector,goalie` <- # nolint
     function(object) {
         if (isFALSE(object)) {
             return(object)
         }
-        idx <- which(object == FALSE)
+        idx <- which(!object)
         cause <- cause(object)[idx]
         object <- object[idx]
         if (identical(length(unique(cause)), 1L)) {
@@ -46,10 +45,9 @@ NULL
         }
         ## Need to ensure "%" is encoded as "%%" before handing off to
         ## cause attribute setter, which calls `sprintf` internally.
-        x <- gsub(pattern = "%", replacement = "%%", x = x)
+        x <- gsub(pattern = "%", replacement = "%%", x = x, fixed = TRUE)
         false(x)
     }
-
 
 
 #' @rdname falseFromVector

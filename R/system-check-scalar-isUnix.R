@@ -13,7 +13,6 @@
 NULL
 
 
-
 #' @rdname check-scalar-isUnix
 #' @export
 isUnix <- function() {

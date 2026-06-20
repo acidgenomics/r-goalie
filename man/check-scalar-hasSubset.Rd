@@ -11,7 +11,7 @@ hasSubset(x, metadata = "subset")
 \item{x}{\code{Annotated}.}
 
 \item{metadata}{\code{character}.
-Names in \code{\link[S4Vectors:Annotated-class]{metadata()}} that denote object is subset.}
+Names in \code{\link[S4Vectors:metadata]{metadata()}} that denote object is subset.}
 }
 \value{
 \code{TRUE} on success;

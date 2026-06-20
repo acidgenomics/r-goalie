@@ -37,7 +37,7 @@
 validate <- function(..., msg = NULL) {
     n <- ...length()
     if (identical(n, 0L)) {
-        stop("No validate check is defined.")
+        stop("No validate check is defined.", call. = FALSE)
     }
     dots <- as.call(substitute(...()))
     ## Support character passthrough.
@@ -52,7 +52,7 @@ validate <- function(..., msg = NULL) {
         FUN = function(i, mc) {
             r <- ...elt(i)
             if (length(r) != 1L) {
-                stop("Invalid input to validate.")
+                stop("Invalid input to validate.", call. = FALSE)
             }
             if (!is(r, "goalie")) {
                 r <- unname(r)
@@ -84,15 +84,19 @@ validate <- function(..., msg = NULL) {
                 }
                 return(msg) # nolint
             } else {
-                stop(sprintf(
-                    paste0(
-                        "Validity failure.\n",
-                        "Check did not return",
-                        "'logical(1)' or 'character(1)'.\n",
-                        "[%s]: %s"
+                stop(
+                    sprintf(
+                        paste0(
+                            "Validity failure.\n",
+                            "Check did not return",
+                            "'logical(1)' or 'character(1)'.\n",
+                            "[%s]: %s"
+                        ),
+                        i,
+                        call
                     ),
-                    i, call
-                ))
+                    call. = FALSE
+                )
             }
         }
     )
@@ -105,10 +109,11 @@ validate <- function(..., msg = NULL) {
         msg <- paste(fail, sep = "", collapse = "\n") # nolint
     }
     if (!is.character(msg) || length(msg) != 1L) {
-        stop("Invalid 'msg' input.")
+        stop("Invalid 'msg' input.", call. = FALSE)
     }
     msg <- paste0(
-        msg, "\n",
+        msg,
+        "\n",
         "If supported, {.fun updateObject} ",
         "may help resolve these issues."
     )

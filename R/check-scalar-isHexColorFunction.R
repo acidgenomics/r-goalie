@@ -22,7 +22,6 @@
 NULL
 
 
-
 #' @rdname check-scalar-isHexColorFunction
 #' @export
 isHexColorFunction <-
@@ -43,7 +42,8 @@ isHexColorFunction <-
         if (!isTRUE(ok)) {
             return(false(
                 "{.var %s} doesn't contain an {.arg %s} argument.",
-                .toName(x), "n"
+                .toName(x),
+                "n"
             ))
         }
         ## Check for hex value return.

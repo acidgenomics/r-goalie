@@ -5,7 +5,8 @@ test_that("TRUE", {
     expect_true(hasLength(
         data.frame(
             "a" = c("aa", "bb"),
-            "b" = c("cc", "dd")
+            "b" = c("cc", "dd"),
+            stringsAsFactors = FALSE
         )
     ))
     expect_true(hasLength(""))

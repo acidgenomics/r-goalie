@@ -1,8 +1,6 @@
 ## Note that these checks don't inherit by default, so place the variables to
 ## check inside the `test_that()` call.
 
-
-
 test_that("TRUE", {
     a <- 1L
     b <- 2L
@@ -18,7 +16,6 @@ test_that("FALSE", {
 })
 
 
-
 test_that("TRUE", {
     a <- 1L
     b <- 2L
@@ -30,7 +27,6 @@ test_that("FALSE", {
     expect_false(nocause(ok))
     expect_s4_class(ok, "goalie")
 })
-
 
 
 test_that("TRUE", {

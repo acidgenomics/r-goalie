@@ -15,7 +15,6 @@
 NULL
 
 
-
 ## Vector ======================================================================
 
 #' @describeIn check-vector-isGitRepo Vectorized.
@@ -67,11 +66,10 @@ isGitRepo <- function(x) {
             )
             ok
         },
-        USE.NAMES = FALSE
+        useNames = FALSE
     )
     setCause(ok, false = "not git repo")
 }
-
 
 
 ## Scalar ======================================================================
@@ -89,7 +87,6 @@ isAGitRepo <- function(x) {
     }
     TRUE
 }
-
 
 
 #' @describeIn check-vector-isGitRepo Scalar.

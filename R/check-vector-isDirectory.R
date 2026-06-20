@@ -20,7 +20,6 @@
 NULL
 
 
-
 ## Vector ======================================================================
 
 #' @describeIn check-vector-isDirectory Vectorized.
@@ -38,7 +37,6 @@ isDirectory <- function(x) {
     ok <- dir.exists(x)
     setCause(ok, false = "not dir")
 }
-
 
 
 ## Scalar ======================================================================
@@ -69,7 +67,6 @@ allAreDirectories <- function(x) {
     }
     TRUE
 }
-
 
 
 ## Aliases =====================================================================

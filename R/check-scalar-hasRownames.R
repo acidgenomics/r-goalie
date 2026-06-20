@@ -38,7 +38,6 @@
 NULL
 
 
-
 #' @rdname check-scalar-hasRownames
 #' @export
 hasRownames <- function(x) {
@@ -64,7 +63,8 @@ hasRownames <- function(x) {
     if (is(rownames, "error")) {
         return(false(
             "{.fun %s} command on {.var %s} failed.",
-            "rownames", .toName(x)
+            "rownames",
+            .toName(x)
         ))
     }
     ## Standard data frames can't return NULL row names, so check against
@@ -78,7 +78,8 @@ hasRownames <- function(x) {
         if (!isTRUE(ok)) {
             return(false(
                 "{.var %s} has integer row names (soft {.val %s}).",
-                .toName(x), "NULL"
+                .toName(x),
+                "NULL"
             ))
         }
         return(TRUE)
@@ -88,7 +89,8 @@ hasRownames <- function(x) {
     if (!isTRUE(ok)) {
         return(false(
             "{.var %s} has {.val %s} row names.",
-            .toName(x), "NULL"
+            .toName(x),
+            "NULL"
         ))
     }
     TRUE

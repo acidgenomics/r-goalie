@@ -21,7 +21,6 @@
 NULL
 
 
-
 #' @rdname check-scalar-hasClusters
 #' @export
 hasClusters <- function(x) {

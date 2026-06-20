@@ -18,7 +18,6 @@
 NULL
 
 
-
 #' @rdname check-scalar-isAlpha
 #' @export
 isAlpha <- function(x) {
