@@ -28,7 +28,6 @@
 NULL
 
 
-
 ## Internal functions ==========================================================
 
 #' Check a URL connection
@@ -61,7 +60,6 @@ NULL
     ok <- !inherits(test, "try-error")
     ok
 }
-
 
 
 #' Check an FTP URL
@@ -131,7 +129,6 @@ NULL
 }
 
 
-
 #' Check an HTTP(S) URL
 #'
 #' @note Updated 2025-02-24.
@@ -186,7 +183,7 @@ NULL
     if (!isTRUE(ok)) {
         return(FALSE)
     }
-    ok <- grepl(pattern = "302", x = h[[1L]])
+    ok <- grepl(pattern = "302", x = h[[1L]], fixed = TRUE)
     if (isTRUE(ok)) {
         return(TRUE)
     }
@@ -197,7 +194,6 @@ NULL
     }
     ok
 }
-
 
 
 ## Vector ======================================================================
@@ -224,17 +220,16 @@ isExistingUrl <- function(x) {
         X = x,
         FUN = function(x) {
             switch(
-                EXPR = strsplit(x, split = ":")[[1L]][[1L]],
+                EXPR = strsplit(x, split = ":", fixed = TRUE)[[1L]][[1L]],
                 "ftp" = .checkFtp(x),
                 "http" = .checkHttp(x),
                 "https" = .checkHttp(x)
             )
         },
-        USE.NAMES = FALSE
+        useNames = FALSE
     )
     setCause(ok, false = "URL doesn't exist")
 }
-
 
 
 ## Scalar ======================================================================
@@ -252,7 +247,6 @@ isAnExistingUrl <- function(x) {
     }
     TRUE
 }
-
 
 
 #' @describeIn check-vector-isExistingUrl Scalar. Checks that all strings are

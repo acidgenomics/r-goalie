@@ -17,12 +17,10 @@
 NULL
 
 
-
 #' @rdname check-scalar-isString
 #' @export
 isString <-
-    function(x,
-             nullOk = FALSE) {
+    function(x, nullOk = FALSE) {
         if (isTRUE(nullOk) && is.null(x)) {
             return(TRUE)
         }

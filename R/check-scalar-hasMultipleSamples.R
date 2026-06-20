@@ -21,7 +21,6 @@
 NULL
 
 
-
 #' @rdname check-scalar-hasMultipleSamples
 #' @export
 hasMultipleSamples <- function(x) {

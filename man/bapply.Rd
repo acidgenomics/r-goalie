@@ -4,7 +4,7 @@
 \alias{bapply}
 \title{Boolean apply}
 \usage{
-bapply(X, FUN, ..., USE.NAMES = TRUE)
+bapply(X, FUN, ..., useNames = TRUE)
 }
 \arguments{
 \item{X}{\code{atomic} or \code{list}.}
@@ -13,9 +13,9 @@ bapply(X, FUN, ..., USE.NAMES = TRUE)
 An assert check function that returns \code{logical(1)} boolean flag
 (\code{TRUE}/\code{FALSE}) to \link[base:apply]{apply}.}
 
-\item{...}{Additional arguments passed to \link[base:lapply]{vapply()}.}
+\item{...}{Additional arguments passed to \link[base:vapply]{vapply()}.}
 
-\item{USE.NAMES}{\code{logical(1)}.
+\item{useNames}{\code{logical(1)}.
 If \code{TRUE} and \code{X} is character, use \code{X} as \code{\link[base:names]{names}} for the
 result, unless it has names already.}
 }
@@ -23,7 +23,7 @@ result, unless it has names already.}
 \code{logical}.
 }
 \description{
-\code{\link[=bapply]{bapply()}} is a wrapper for \code{\link[base:lapply]{vapply()}} that enforces
+\code{\link[=bapply]{bapply()}} is a wrapper for \code{\link[base:vapply]{vapply()}} that enforces
 \code{FUN.VALUE = logical(1)}.
 }
 \note{

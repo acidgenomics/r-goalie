@@ -1,5 +1,13 @@
 # Release notes
 
+## goalie 0.7.10 (2026-06-19)
+
+Minor changes:
+
+- Modernized tooling: removed per-package `.lintr` in favour of global
+  `~/.lintr`; added `air.toml`; migrated to roxygen2 8.0
+  (`Config/roxygen2/version`).
+
 ## goalie 0.7.9 (2026-06-19)
 
 License changes:

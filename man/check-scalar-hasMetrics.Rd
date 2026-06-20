@@ -11,7 +11,7 @@ hasMetrics(x, colData = c("nCount", "nFeature"))
 \item{x}{\code{SummarizedExperiment}.}
 
 \item{colData}{\code{character}.
-Column names in \code{\link[SummarizedExperiment:SummarizedExperiment-class]{colData()}} containing
+Column names in \code{\link[SummarizedExperiment:colData]{colData()}} containing
 expected quality control metrics.}
 }
 \value{

@@ -26,7 +26,6 @@
 NULL
 
 
-
 ## Vector ======================================================================
 
 #' @describeIn check-vector-isTempFile Vectorized.
@@ -39,7 +38,6 @@ isTempFile <- function(x) {
     ok <- isMatchingFixed(x = x, pattern = tempdir())
     setCause(ok, false = "not temp file")
 }
-
 
 
 ## Scalar ======================================================================
@@ -57,7 +55,6 @@ isATempFile <- function(x) {
     }
     TRUE
 }
-
 
 
 #' @describeIn check-vector-isTempFile Scalar.

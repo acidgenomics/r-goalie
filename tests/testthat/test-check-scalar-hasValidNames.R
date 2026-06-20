@@ -5,7 +5,7 @@ test_that("TRUE", {
 
 test_that("FALSE", {
     x <- list(
-        `1`       = 1L, # can't start with number
+        `1` = 1L, # can't start with number
         `foo bar` = 2L, # no spaces
         `foo-bar` = 3L # no hyphens
     )
@@ -30,7 +30,6 @@ test_that("Unset names", {
 })
 
 
-
 skip_if_not_installed("datasets")
 
 test_that("TRUE", {
@@ -51,7 +50,8 @@ test_that("FALSE", {
     x <- data.frame(
         `1` = "a",
         `2` = "b",
-        check.names = FALSE
+        check.names = FALSE,
+        stringsAsFactors = FALSE
     )
     ok <- hasValidDimnames(x)
     expect_false(nocause(ok))

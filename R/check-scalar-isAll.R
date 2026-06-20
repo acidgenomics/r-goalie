@@ -17,7 +17,6 @@
 NULL
 
 
-
 #' @rdname check-scalar-isAll
 #' @export
 isAll <- function(x, classes) {
@@ -25,7 +24,8 @@ isAll <- function(x, classes) {
     if (!isTRUE(ok)) {
         return(false(
             "{.var %s} is not all of: %s.",
-            .toName(x), toString(classes, width = 50L)
+            .toName(x),
+            toString(classes, width = 50L)
         ))
     }
     TRUE

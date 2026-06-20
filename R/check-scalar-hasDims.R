@@ -44,14 +44,13 @@
 NULL
 
 
-
 #' @rdname check-scalar-hasDims
 #' @export
 hasDims <- function(x, n = NULL) {
     if (is(x, "DFrameList")) {
         requireNamespaces("BiocGenerics")
         if (!is.null(n)) {
-            stop("'n' is not supported for 'DFrameList'.")
+            stop("'n' is not supported for 'DFrameList'.", call. = FALSE)
         }
         d <- BiocGenerics::dims(x)
         ok <- isTRUE(length(d) > 0L) && all(rowSums(d) > 0L)
@@ -67,23 +66,23 @@ hasDims <- function(x, n = NULL) {
     if (is.null(d)) {
         return(false(
             "The dimensions of {.var %s} are {.val %s}.",
-            .toName(x), "NULL"
+            .toName(x),
+            "NULL"
         ))
     }
-    if (!is.null(n)) {
-        if (!all(d == n)) {
-            return(false(
-                paste(
-                    "Dimension mismatch for {.var %s}:",
-                    "expected {.val %s}; actual {.val %s}."
-                ),
-                .toName(x), deparse(n), deparse(d)
-            ))
-        }
+    if (!is.null(n) && !all(d == n)) {
+        return(false(
+            paste(
+                "Dimension mismatch for {.var %s}:",
+                "expected {.val %s}; actual {.val %s}."
+            ),
+            .toName(x),
+            deparse(n),
+            deparse(d)
+        ))
     }
     TRUE
 }
-
 
 
 #' @rdname check-scalar-hasDims
@@ -92,7 +91,7 @@ hasRows <- function(x, n = NULL) {
     if (is(x, "DFrameList")) {
         requireNamespaces("BiocGenerics")
         if (!is.null(n)) {
-            stop("'n' is not supported for 'DFrameList'.")
+            stop("'n' is not supported for 'DFrameList'.", call. = FALSE)
         }
         nr <- BiocGenerics::nrows(x)
         ok <- all(nr > 0L)
@@ -108,7 +107,8 @@ hasRows <- function(x, n = NULL) {
     if (is.null(nr)) {
         return(false(
             "The number of rows in {.var %s} is {.val %s}.",
-            .toName(x), "NULL"
+            .toName(x),
+            "NULL"
         ))
     }
     if (!is.null(n)) {
@@ -118,20 +118,19 @@ hasRows <- function(x, n = NULL) {
                     "Row number mismatch for {.var %s}:",
                     "expected {.val %s}; actual {.val %s}."
                 ),
-                .toName(x), n, nr
+                .toName(x),
+                n,
+                nr
             ))
         }
-    } else {
-        if (identical(nr, 0L)) {
-            return(false(
-                "The number of rows in {.var %s} is zero.",
-                .toName(x)
-            ))
-        }
+    } else if (identical(nr, 0L)) {
+        return(false(
+            "The number of rows in {.var %s} is zero.",
+            .toName(x)
+        ))
     }
     TRUE
 }
-
 
 
 #' @rdname check-scalar-hasDims
@@ -140,7 +139,7 @@ hasCols <- function(x, n = NULL) {
     if (is(x, "DFrameList")) {
         requireNamespaces("BiocGenerics")
         if (!is.null(n)) {
-            stop("'n' is not supported for 'DFrameList'.")
+            stop("'n' is not supported for 'DFrameList'.", call. = FALSE)
         }
         nc <- BiocGenerics::ncols(x)
         ok <- all(nc > 0L)
@@ -156,7 +155,8 @@ hasCols <- function(x, n = NULL) {
     if (is.null(nc)) {
         return(false(
             "The number of columns in {.var %s} is {.val %s}.",
-            .toName(x), "NULL"
+            .toName(x),
+            "NULL"
         ))
     }
     if (!is.null(n)) {
@@ -166,16 +166,16 @@ hasCols <- function(x, n = NULL) {
                     "Column number mismatch for {.var %s}:",
                     "expected {.val %s}; actual {.val %s}."
                 ),
-                .toName(x), n, nc
+                .toName(x),
+                n,
+                nc
             ))
         }
-    } else {
-        if (identical(nc, 0L)) {
-            return(false(
-                "The number of columns in {.var %s} is zero.",
-                .toName(x)
-            ))
-        }
+    } else if (identical(nc, 0L)) {
+        return(false(
+            "The number of columns in {.var %s} is zero.",
+            .toName(x)
+        ))
     }
     TRUE
 }

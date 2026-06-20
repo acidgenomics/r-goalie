@@ -22,7 +22,6 @@
 NULL
 
 
-
 ## Updated 2021-02-23.
 `nocause,goalie` <- # nolint
     function(object) {
@@ -31,7 +30,6 @@ NULL
         names(object) <- names
         object
     }
-
 
 
 #' @rdname nocause

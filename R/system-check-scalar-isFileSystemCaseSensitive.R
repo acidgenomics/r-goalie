@@ -23,7 +23,6 @@
 NULL
 
 
-
 #' @rdname check-scalar-isFileSystemCaseSensitive
 #' @export
 isFileSystemCaseSensitive <- function(dir = getwd()) {

@@ -10,7 +10,6 @@
 NULL
 
 
-
 #' @rdname check-scalar-isRstudio
 #' @export
 isRstudio <- function() {

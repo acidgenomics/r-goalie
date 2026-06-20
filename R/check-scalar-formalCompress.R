@@ -17,7 +17,6 @@
 NULL
 
 
-
 #' @rdname check-scalar-formalCompress
 #' @export
 formalCompress <- function(compress) {

@@ -35,15 +35,18 @@ requireNamespaces <- function(packages) {
     })
     if (!isTRUE(all(ok))) {
         fail <- names(ok)[!ok]
-        stop(sprintf(
-            fmt = "%s not installed: %s.",
-            ngettext(
-                n = length(fail),
-                msg1 = "Package",
-                msg2 = "Packages"
+        stop(
+            sprintf(
+                fmt = "%s not installed: %s.",
+                ngettext(
+                    n = length(fail),
+                    msg1 = "Package",
+                    msg2 = "Packages"
+                ),
+                toString(fail)
             ),
-            toString(fail)
-        ))
+            call. = FALSE
+        )
     }
     invisible(TRUE)
 }

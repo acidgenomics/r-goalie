@@ -26,7 +26,6 @@
 NULL
 
 
-
 #' @rdname check-scalar-hasUniqueCols
 #' @export
 hasUniqueCols <- function(x) {
@@ -52,7 +51,8 @@ hasUniqueCols <- function(x) {
     if (!isTRUE(ok)) {
         return(false(
             "{.var %s} has duplicated columns at: %s",
-            .toName(x), toString(which(dupes), width = 200L)
+            .toName(x),
+            toString(which(dupes), width = 200L)
         ))
     }
     TRUE

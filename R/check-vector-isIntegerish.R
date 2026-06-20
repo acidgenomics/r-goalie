@@ -31,14 +31,11 @@
 NULL
 
 
-
 ## Vector ======================================================================
 
 #' @describeIn check-vector-isIntegerish Vectorized.
 #' @export
-isIntegerish <- function(x,
-                         infiniteOk = TRUE,
-                         naOk = FALSE) {
+isIntegerish <- function(x, infiniteOk = TRUE, naOk = FALSE) {
     ok <- hasLength(x)
     if (!isTRUE(ok)) {
         return(ok)
@@ -72,7 +69,6 @@ isIntegerish <- function(x,
 }
 
 
-
 ## Scalar ======================================================================
 
 #' @describeIn check-vector-isIntegerish Scalar.
@@ -85,7 +81,6 @@ allAreIntegerish <- function(x) {
     }
     TRUE
 }
-
 
 
 #' @describeIn check-vector-isIntegerish Scalar.

@@ -24,7 +24,6 @@
 NULL
 
 
-
 ## Vector ======================================================================
 
 #' @describeIn check-vector-isAwsS3Uri Vectorized.
@@ -50,7 +49,6 @@ isAwsS3Uri <- function(x) {
 }
 
 
-
 ## Scalar ======================================================================
 
 #' @describeIn check-vector-isAwsS3Uri Scalar. Requires a single URI.
@@ -66,7 +64,6 @@ isAnAwsS3Uri <- function(x) {
     }
     TRUE
 }
-
 
 
 #' @describeIn check-vector-isAwsS3Uri Scalar. Checks that all strings are URIs.

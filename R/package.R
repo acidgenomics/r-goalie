@@ -7,16 +7,14 @@
 "_PACKAGE"
 
 
-
 ## S3 classes ==================================================================
 
 #' @importClassesFrom methods logical
 NULL
 
 
-
 ## Standard functions ==========================================================
 
 #' @importFrom methods as formalArgs is isGeneric new selectMethod setClass
-#' setGeneric setMethod setValidity show signature slot
+#' @importFrom methods setGeneric setMethod setValidity show signature slot
 NULL

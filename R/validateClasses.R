@@ -81,7 +81,8 @@ validateClasses <-
         }
         paste0(
             "Class checks failed: ",
-            toString(names(valid)[!valid], width = 200L), ".\n",
+            toString(names(valid)[!valid], width = 200L),
+            ".\n",
             "If supported, 'updateObject()' ",
             "may help resolve these issues."
         )

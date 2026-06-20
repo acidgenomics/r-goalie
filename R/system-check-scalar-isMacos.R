@@ -10,11 +10,12 @@
 NULL
 
 
-
 #' @rdname check-scalar-isMacos
 #' @export
 isMacos <- function() {
-    ok <- isTRUE(grepl(pattern = "darwin", x = R.Version()[["os"]]))
+    ok <- isTRUE(grepl(
+        pattern = "darwin", x = R.Version()[["os"]], fixed = TRUE
+    ))
 
     if (!isTRUE(ok)) {
         return(false("macOS not detected."))

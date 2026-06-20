@@ -18,7 +18,6 @@
 NULL
 
 
-
 #' @rdname check-scalar-hasSubset
 #' @export
 hasSubset <-
@@ -26,7 +25,8 @@ hasSubset <-
         if (!is(x, "Annotated")) {
             return(false(
                 "{.var %s} is not {.cls %s} class.",
-                .toName(x), "Annotated"
+                .toName(x),
+                "Annotated"
             ))
         }
         requireNamespaces("S4Vectors")
@@ -36,7 +36,8 @@ hasSubset <-
         if (!isTRUE(ok)) {
             return(false(
                 "{.var %s} doesn't contain slots in {.fun %s}: %s.",
-                .toName(x), "metadata",
+                .toName(x),
+                "metadata",
                 toString(setdiff(m1, m2), width = 100L)
             ))
         }

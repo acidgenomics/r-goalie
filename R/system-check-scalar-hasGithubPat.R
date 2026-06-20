@@ -18,7 +18,6 @@
 NULL
 
 
-
 #' @rdname check-scalar-hasGithubPat
 #' @export
 hasGithubPat <- function() {

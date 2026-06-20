@@ -41,7 +41,7 @@ test_that("Not boolean", {
 
 test_that("Invalid input, checking stop passthrough", {
     expect_error(
-        object = assert(stop("XXX")),
+        object = assert(stop("XXX", call. = FALSE)),
         regexp = "XXX"
     )
 })

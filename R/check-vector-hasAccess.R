@@ -32,15 +32,12 @@
 NULL
 
 
-
 ## `file.access()` mode values:
 ## - 0: [-] existence
 ## - 1: [x] execute
 ## - 2: [w] write
 ## - 4: [r] read
 ## Function returns `0` on success, `-1` on failure.
-
-
 
 ## Vector ======================================================================
 
@@ -88,10 +85,9 @@ hasAccess <- function(x, access = "r") {
         }
         TRUE
     }
-    ok <- bapply(X = x, FUN = checkAccess, USE.NAMES = FALSE, access = access)
+    ok <- bapply(X = x, FUN = checkAccess, useNames = FALSE, access = access)
     setCause(ok, false = "no access")
 }
-
 
 
 ## Scalar ======================================================================

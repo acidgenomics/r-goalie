@@ -19,7 +19,6 @@
 NULL
 
 
-
 #' @rdname check-scalar-hasMetrics
 #' @export
 hasMetrics <-
@@ -34,7 +33,8 @@ hasMetrics <-
         if (!isTRUE(ok)) {
             return(false(
                 "{.var %s} doesn't contain metrics in {.fun %s}: %s.",
-                .toName(x), "colData",
+                .toName(x),
+                "colData",
                 toString(setdiff(c1, c2), width = 100L)
             ))
         }

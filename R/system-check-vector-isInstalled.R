@@ -19,7 +19,6 @@
 NULL
 
 
-
 ## Vector ======================================================================
 
 #' @describeIn check-vector-isInstalled Vectorized.
@@ -39,7 +38,6 @@ isInstalled <- function(x, lib = NULL) {
     ok <- basename(x) %in% pkgs
     setCause(ok, false = "not installed")
 }
-
 
 
 ## Scalar ======================================================================

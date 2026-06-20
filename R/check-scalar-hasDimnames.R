@@ -26,7 +26,6 @@
 NULL
 
 
-
 #' @rdname check-scalar-hasDimnames
 #' @export
 hasDimnames <- function(x) {
@@ -38,14 +37,16 @@ hasDimnames <- function(x) {
     )
     if (is(dimnames, "error")) {
         return(false(
-            "{.fun %s} command on {.var %s} failed.", "dimnames",
+            "{.fun %s} command on {.var %s} failed.",
+            "dimnames",
             .toName(x)
         ))
     }
     if (is.null(dimnames)) {
         return(false(
             "The dimension names of {.var %s} are {.val %s}.",
-            .toName(x), "NULL"
+            .toName(x),
+            "NULL"
         ))
     }
     if (!any(nzchar(unlist(dimnames, use.names = FALSE)))) {
@@ -56,7 +57,6 @@ hasDimnames <- function(x) {
     }
     TRUE
 }
-
 
 
 #' @rdname check-scalar-hasDimnames
@@ -70,14 +70,16 @@ hasColnames <- function(x) {
     )
     if (is(colnames, "error")) {
         return(false(
-            "{.fun %s} command on {.var %s} failed.", "colnames",
+            "{.fun %s} command on {.var %s} failed.",
+            "colnames",
             .toName(x)
         ))
     }
     if (is.null(colnames)) {
         return(false(
             "The column names of {.var %s} are {.val %s}.",
-            .toName(x), "NULL"
+            .toName(x),
+            "NULL"
         ))
     }
     if (!any(nzchar(colnames))) {
