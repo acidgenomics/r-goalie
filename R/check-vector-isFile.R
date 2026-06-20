@@ -22,7 +22,6 @@
 NULL
 
 
-
 ## Vector ======================================================================
 
 #' @describeIn check-vector-isFile Vectorized.
@@ -46,7 +45,6 @@ isFile <- function(x) {
 }
 
 
-
 ## Scalar ======================================================================
 
 #' @describeIn check-vector-isFile Scalar.
@@ -65,7 +63,6 @@ isAFile <- function(x, nullOk = FALSE) {
     }
     TRUE
 }
-
 
 
 #' @describeIn check-vector-isFile Scalar.

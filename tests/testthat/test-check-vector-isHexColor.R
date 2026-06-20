@@ -1,6 +1,6 @@
 test_that("TRUE", {
     skip_if_not_installed("viridis")
-    x <- viridis::viridis(n = 2L)
+    x <- viridis::viridis(n = 2L) # nolint: namespace_linter.
     ok <- isHexColor(x)
     expect_identical(ok, rep(TRUE, 2L))
 })

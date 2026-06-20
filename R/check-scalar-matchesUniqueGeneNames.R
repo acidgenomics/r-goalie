@@ -33,7 +33,6 @@
 NULL
 
 
-
 #' @rdname check-scalar-matchesUniqueGeneNames
 #' @export
 matchesUniqueGeneNames <- function(x, genes) {
@@ -68,7 +67,8 @@ matchesUniqueGeneNames <- function(x, genes) {
         setdiff <- setdiff(genes, all)
         return(false(
             "Gene names missing in {.var %s}: %s",
-            .toName(x), toString(setdiff, width = 100L)
+            .toName(x),
+            toString(setdiff, width = 100L)
         ))
     }
     ## Get a vector of all duplicated gene names in the object.
@@ -78,7 +78,8 @@ matchesUniqueGeneNames <- function(x, genes) {
     if (length(intersect) > 0L) {
         return(false(
             "Non-unique gene names in {.var %s}: %s",
-            .toName(x), toString(intersect, width = 100L)
+            .toName(x),
+            toString(intersect, width = 100L)
         ))
     }
     TRUE

@@ -23,7 +23,6 @@
 NULL
 
 
-
 #' @rdname check-scalar-isOrganism
 #' @export
 isOrganism <-

@@ -22,7 +22,6 @@ test_that("FALSE : NULL input", {
 })
 
 
-
 test_that("TRUE", {
     ok <- isADirectory(".")
     expect_true(ok)
@@ -49,7 +48,6 @@ test_that("nullOk", {
     expect_false(nocause(isADirectory(NULL, nullOk = FALSE)))
     expect_true(isADirectory(NULL, nullOk = TRUE))
 })
-
 
 
 test_that("TRUE", {

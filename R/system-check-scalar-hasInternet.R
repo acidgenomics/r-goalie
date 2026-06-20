@@ -14,7 +14,6 @@
 NULL
 
 
-
 #' @rdname check-scalar-hasInternet
 #' @export
 hasInternet <- function() {

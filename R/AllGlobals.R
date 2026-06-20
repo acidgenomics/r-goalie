@@ -13,7 +13,6 @@
 )
 
 
-
 ## extPattern ==================================================================
 
 #' File extension pattern matching
@@ -37,13 +36,14 @@ NULL
 #' @export
 extPattern <- paste0(
     "\\.([a-zA-Z0-9]+)",
-    "(", .compressExtPattern, ")?$"
+    "(",
+    .compressExtPattern,
+    ")?$"
 )
 
 #' @rdname extPattern
 #' @export
 compressExtPattern <- paste0(.compressExtPattern, "$")
-
 
 
 ## tolerance ===================================================================

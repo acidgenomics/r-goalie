@@ -21,7 +21,6 @@
 NULL
 
 
-
 #' @rdname check-scalar-hasDuplicates
 #' @export
 hasDuplicates <- function(x) {
@@ -31,7 +30,6 @@ hasDuplicates <- function(x) {
     }
     TRUE
 }
-
 
 
 #' @rdname check-scalar-hasDuplicates

@@ -10,11 +10,12 @@
 NULL
 
 
-
 #' @rdname check-scalar-isLinux
 #' @export
 isLinux <- function() {
-    ok <- isTRUE(grepl(pattern = "linux", x = R.Version()[["os"]]))
+    ok <- isTRUE(grepl(
+        pattern = "linux", x = R.Version()[["os"]], fixed = TRUE
+    ))
     if (!isTRUE(ok)) {
         return(false("Linux not detected."))
     }

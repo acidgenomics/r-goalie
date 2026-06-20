@@ -8,7 +8,6 @@ invisible(file.create(from))
 invisible(file.symlink(from = from, to = to))
 
 
-
 test_that("TRUE", {
     expect_true(all(isSymlink(to)))
 })
@@ -38,7 +37,6 @@ test_that("FALSE", {
 })
 
 
-
 test_that("TRUE", {
     expect_true(allAreSymlinks(c(to, to)))
 })
@@ -46,7 +44,6 @@ test_that("TRUE", {
 test_that("FALSE", {
     expect_false(nocause(allAreSymlinks(c(from, from))))
 })
-
 
 
 unlink(c(from, to))

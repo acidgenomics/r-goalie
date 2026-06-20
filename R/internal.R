@@ -9,7 +9,6 @@
 NULL
 
 
-
 #' Capitalize
 #'
 #' @note Updated 2019-10-30.
@@ -31,7 +30,6 @@ NULL
 }
 
 
-
 #' Coerce a SummarizedExperiment to a matrix
 #'
 #' @details Using primary assay here.
@@ -42,7 +40,6 @@ NULL
     requireNamespaces("SummarizedExperiment")
     SummarizedExperiment::assay(object)
 }
-
 
 
 #' Deparse
@@ -57,7 +54,6 @@ NULL
         }
         ch
     }
-
 
 
 #' Get dimensions
@@ -75,7 +71,6 @@ NULL
 }
 
 
-
 #' Head of vector
 #'
 #' @note Updated 2023-10-06.
@@ -86,7 +81,6 @@ NULL
 .head <- function(x) {
     x[seq(from = 1L, to = min(length(x), 6L))]
 }
-
 
 
 #' Is an object from a class?
@@ -119,7 +113,7 @@ NULL
 #' .is2(mean, class = c("function", "data.frame"))
 .is2 <- function(x, class) {
     if (!is.character(class) || identical(length(class), 0L)) {
-        stop("'class' must be non-empty character.")
+        stop("'class' must be non-empty character.", call. = FALSE)
     }
     if (length(class) > 1L) {
         ok <- bapply(
@@ -127,7 +121,7 @@ NULL
             FUN = function(cl) {
                 .is2(x, cl)
             },
-            USE.NAMES = FALSE
+            useNames = FALSE
         )
         return(setCause(
             object = ok,
@@ -150,19 +144,20 @@ NULL
     if (!isTRUE(ok)) {
         return(false(
             "{.var %s} is not of class {.var %s}; it has %s.",
-            .toName(x), class, .typeDescription(x)
+            .toName(x),
+            class,
+            .typeDescription(x)
         ))
     }
     TRUE
 }
 
 
-
 #' Expression deparsing
 #'
 #' Turn unevaluated expressions into character strings.
 #'
-#' [safeDeparse()] is modified version of [`deparse()`][base::deparse] that
+#' `.safeDeparse()` is a modified version of [`deparse()`][base::deparse] that
 #' always returns `character(1)`.
 #'
 #' @note Updated 2025-03-21.
@@ -192,7 +187,6 @@ NULL
 }
 
 
-
 #' Return the object as a name for use in cause attribute
 #'
 #' @note Updated 2023-10-02.
@@ -210,7 +204,6 @@ NULL
     }
     cls
 }
-
 
 
 #' Get the type description
@@ -232,7 +225,8 @@ NULL
     } else if (is.function(x)) {
         x <- sprintf(
             fmt = "class '%s %s'",
-            typeof(x), toString(class(x))
+            typeof(x),
+            toString(class(x))
         )
     } else if (isS4(x)) {
         x <- sprintf("S4 class {.var %s}", toString(class(x)))

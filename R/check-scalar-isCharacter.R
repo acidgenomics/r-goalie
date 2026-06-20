@@ -48,7 +48,8 @@ isCharacter <-
         if (!all(ok)) {
             return(false(
                 "{.var %s} has empty string at: %s.",
-                .toName(x), toString(which(!ok), width = 50L)
+                .toName(x),
+                toString(which(!ok), width = 50L)
             ))
         }
         ## Don't allow `NA_character_`.
@@ -56,7 +57,9 @@ isCharacter <-
         if (!all(ok)) {
             return(false(
                 "{.var %s} has {.val %s} at: %s.",
-                .toName(x), "NA", toString(which(!ok), width = 50L)
+                .toName(x),
+                "NA",
+                toString(which(!ok), width = 50L)
             ))
         }
         TRUE

@@ -15,7 +15,6 @@
 NULL
 
 
-
 ## Vector ======================================================================
 
 #' @describeIn check-vector-isSystemCommand Vectorized.
@@ -35,7 +34,6 @@ isSystemCommand <- function(x) {
 }
 
 
-
 ## Scalar ======================================================================
 
 #' @describeIn check-vector-isSystemCommand Scalar.
@@ -51,7 +49,6 @@ isASystemCommand <- function(x) {
     }
     TRUE
 }
-
 
 
 #' @describeIn check-vector-isMatching Scalar.

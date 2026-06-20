@@ -19,7 +19,6 @@
 NULL
 
 
-
 #' @rdname check-scalar-isAny
 #' @export
 isAny <- function(x, classes) {
@@ -31,7 +30,8 @@ isAny <- function(x, classes) {
     if (!isTRUE(ok)) {
         return(false(
             "{.var %s} is not any of: %s.",
-            .toName(x), toString(classes, width = 50L)
+            .toName(x),
+            toString(classes, width = 50L)
         ))
     }
     TRUE

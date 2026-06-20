@@ -10,7 +10,6 @@
 NULL
 
 
-
 #' @rdname check-scalar-isDocker
 #' @export
 isDocker <-
@@ -21,7 +20,7 @@ isDocker <-
             return(ok)
         }
         x <- readLines(file)
-        ok <- any(grepl(pattern = ":/docker/", x = x))
+        ok <- any(grepl(pattern = ":/docker/", x = x, fixed = TRUE))
         if (!isTRUE(ok)) {
             return(false("Docker not detected."))
         }

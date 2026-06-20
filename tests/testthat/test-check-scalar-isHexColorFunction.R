@@ -1,6 +1,8 @@
 test_that("TRUE", {
     skip_if_not_installed("viridis")
+    ## nolint start: namespace_linter.
     expect_true(isHexColorFunction(viridis::viridis))
+    ## nolint end
 })
 
 test_that("FALSE : not a function", {

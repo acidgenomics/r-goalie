@@ -18,7 +18,6 @@
 NULL
 
 
-
 ## Updated 2023-10-02.
 `show,goalie` <- # nolint
     function(object) {
@@ -26,7 +25,6 @@ NULL
         x <- unname(x)
         show(x)
     }
-
 
 
 #' @rdname show

@@ -29,7 +29,6 @@
 NULL
 
 
-
 ## Vector ======================================================================
 
 #' @describeIn check-vector-isEqual Vectorized.
@@ -46,7 +45,6 @@ isEqualTo <- function(x, y) {
 }
 
 
-
 #' @describeIn check-vector-isEqual Vectorized.
 #' @export
 isNotEqualTo <- function(x, y) {
@@ -58,7 +56,6 @@ isNotEqualTo <- function(x, y) {
     ok <- abs(x - y) > .tolerance
     setCause(ok, sprintf("equal to %g", y))
 }
-
 
 
 #' @describeIn check-vector-isEqual Vectorized.
@@ -74,7 +71,6 @@ isGreaterThan <- function(x, y) {
 }
 
 
-
 #' @describeIn check-vector-isEqual Vectorized.
 #' @export
 isGreaterThanOrEqualTo <- function(x, y) {
@@ -86,7 +82,6 @@ isGreaterThanOrEqualTo <- function(x, y) {
     ok <- x >= y
     setCause(ok, false = paste("less than", y))
 }
-
 
 
 #' @describeIn check-vector-isEqual Vectorized.
@@ -102,7 +97,6 @@ isLessThan <- function(x, y) {
 }
 
 
-
 #' @describeIn check-vector-isEqual Vectorized.
 #' @export
 isLessThanOrEqualTo <- function(x, y) {
@@ -114,7 +108,6 @@ isLessThanOrEqualTo <- function(x, y) {
     ok <- x <= y
     setCause(ok, false = paste("greater than", y))
 }
-
 
 
 ## Scalar ======================================================================
@@ -130,7 +123,6 @@ allAreEqualTo <- function(x, y) {
 }
 
 
-
 #' @describeIn check-vector-isEqual Scalar.
 #' @export
 allAreNotEqualTo <- function(x, y) {
@@ -140,7 +132,6 @@ allAreNotEqualTo <- function(x, y) {
     }
     TRUE
 }
-
 
 
 #' @describeIn check-vector-isEqual Scalar.
@@ -154,7 +145,6 @@ allAreGreaterThan <- function(x, y) {
 }
 
 
-
 #' @describeIn check-vector-isEqual Scalar.
 #' @export
 allAreGreaterThanOrEqualTo <- function(x, y) {
@@ -166,7 +156,6 @@ allAreGreaterThanOrEqualTo <- function(x, y) {
 }
 
 
-
 #' @describeIn check-vector-isEqual Scalar.
 #' @export
 allAreLessThan <- function(x, y) {
@@ -176,7 +165,6 @@ allAreLessThan <- function(x, y) {
     }
     TRUE
 }
-
 
 
 #' @describeIn check-vector-isEqual Scalar.

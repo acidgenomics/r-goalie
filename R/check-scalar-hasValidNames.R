@@ -31,7 +31,6 @@
 NULL
 
 
-
 #' @rdname check-scalar-hasValidNames
 #' @export
 hasValidNames <- function(x) {
@@ -44,7 +43,8 @@ hasValidNames <- function(x) {
     if (is(names, "error")) {
         return(false(
             "{.fun %s} command on {.var %s} failed.",
-            "names", .toName(x)
+            "names",
+            .toName(x)
         ))
     }
     ok <- length(names) > 0L
@@ -62,7 +62,6 @@ hasValidNames <- function(x) {
 }
 
 
-
 #' @rdname check-scalar-hasValidNames
 #' @export
 hasValidDimnames <- function(x) {
@@ -76,7 +75,8 @@ hasValidDimnames <- function(x) {
     if (is(dimnames, "error")) {
         return(false(
             "{.fun %s} command on {.var %s} failed.",
-            "dimnames", .toName(x)
+            "dimnames",
+            .toName(x)
         ))
     }
     ## Row names.

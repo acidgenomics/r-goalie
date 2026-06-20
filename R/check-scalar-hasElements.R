@@ -25,7 +25,6 @@
 NULL
 
 
-
 #' @rdname check-scalar-hasElements
 #' @export
 hasElements <- function(x, n = NULL) {
@@ -53,7 +52,6 @@ hasElements <- function(x, n = NULL) {
     }
     TRUE
 }
-
 
 
 #' @describeIn check-scalar-hasElements Return the number of elements in object.

@@ -33,7 +33,7 @@
 assert <- function(..., msg = NULL) {
     n <- ...length()
     if (identical(n, 0L)) {
-        stop("No assert check is defined.")
+        stop("No assert check is defined.", call. = FALSE)
     }
     dots <- as.call(substitute(...()))
     for (i in seq_len(n)) {
@@ -43,14 +43,18 @@ assert <- function(..., msg = NULL) {
         }
         call <- .deparse(dots[[i]])
         if (!(is.logical(r) && identical(length(r), 1L))) {
-            stop(sprintf(
-                paste0(
-                    "Assert failure.\n",
-                    "Check did not return a boolean flag (TRUE/FALSE).\n",
-                    "[%s]: %s"
+            stop(
+                sprintf(
+                    paste0(
+                        "Assert failure.\n",
+                        "Check did not return a boolean flag (TRUE/FALSE).\n",
+                        "[%s]: %s"
+                    ),
+                    i,
+                    call
                 ),
-                i, call
-            ))
+                call. = FALSE
+            )
         } else if (isTRUE(r)) {
             next
         }
@@ -70,16 +74,17 @@ assert <- function(..., msg = NULL) {
             }
         }
         if (!is.character(msg) || length(msg) != 1L) {
-            stop("Invalid 'msg' input.")
+            stop("Invalid 'msg' input.", call. = FALSE)
         }
         if (isInstalled("AcidCLI")) {
             stop <- AcidCLI::abort
         } else {
             msg <- gsub(pattern = .cliPattern, replacement = "'\\1'", x = msg)
         }
+        p <- sys.parent(1L)
         stop(simpleError(
             message = msg,
-            call = if (p <- sys.parent(1L)) {
+            call = if (p) {
                 sys.call(p)
             }
         ))

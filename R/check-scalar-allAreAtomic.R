@@ -19,7 +19,6 @@
 NULL
 
 
-
 #' @rdname check-scalar-allAreAtomic
 #' @export
 allAreAtomic <- function(x) {

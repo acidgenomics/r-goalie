@@ -46,7 +46,6 @@
 NULL
 
 
-
 #' @rdname check-scalar-isCondaEnabled
 #' @export
 isCondaEnabled <- function(ignoreBase = TRUE) {

@@ -3,7 +3,8 @@ test_that("TRUE", {
     expect_true(hasNames(
         data.frame(
             "a" = c("aa", "bb"),
-            "b" = c("cc", "dd")
+            "b" = c("cc", "dd"),
+            stringsAsFactors = FALSE
         )
     ))
 })

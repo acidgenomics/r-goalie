@@ -25,7 +25,6 @@
 NULL
 
 
-
 ## Vector ======================================================================
 
 #' @describeIn check-vector-isSymlink Vectorized.
@@ -54,7 +53,6 @@ isSymlink <- function(x) {
 }
 
 
-
 ## Scalar ======================================================================
 
 #' @describeIn check-vector-isSymlink Scalar.
@@ -73,7 +71,6 @@ isASymlink <- function(x, nullOk = FALSE) {
     }
     TRUE
 }
-
 
 
 #' @describeIn check-vector-isSymlink Scalar.
