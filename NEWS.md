@@ -1,5 +1,3 @@
-# Release notes
-
 ## goalie 0.7.10 (2026-06-19)
 
 Minor changes:
@@ -845,7 +843,7 @@ Minor changes:
   package.
 
 [acid genomics]: https://acidgenomics.com/
-[acidbase]: https://r.acidgenomics.com/packages/acidbase/
-[basejump]: https://r.acidgenomics.com/packages/basejump/
+[acidbase]: https://r.acidgenomics.com/acidbase/
+[basejump]: https://r.acidgenomics.com/basejump/
 [koopa]: https://koopa.acidgenomics.com/
-[syntactic]: https://r.acidgenomics.com/packages/syntactic/
+[syntactic]: https://r.acidgenomics.com/syntactic/
